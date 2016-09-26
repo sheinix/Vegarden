@@ -7,6 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD46A6861D9919FC004D7405 /* Row+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A65C1D9919FC004D7405 /* Row+CoreDataClass.swift */; };
+		BD46A6871D9919FD004D7405 /* Row+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A65D1D9919FC004D7405 /* Row+CoreDataProperties.swift */; };
+		BD46A6881D9919FD004D7405 /* CropState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A65E1D9919FC004D7405 /* CropState+CoreDataClass.swift */; };
+		BD46A6891D9919FD004D7405 /* CropState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A65F1D9919FC004D7405 /* CropState+CoreDataProperties.swift */; };
+		BD46A68A1D9919FD004D7405 /* Soil+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6601D9919FC004D7405 /* Soil+CoreDataClass.swift */; };
+		BD46A68B1D9919FD004D7405 /* Soil+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6611D9919FC004D7405 /* Soil+CoreDataProperties.swift */; };
+		BD46A68C1D9919FD004D7405 /* Seedling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6621D9919FC004D7405 /* Seedling+CoreDataClass.swift */; };
+		BD46A68D1D9919FD004D7405 /* Seedling+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6631D9919FC004D7405 /* Seedling+CoreDataProperties.swift */; };
+		BD46A68E1D9919FD004D7405 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6641D9919FC004D7405 /* Location+CoreDataClass.swift */; };
+		BD46A68F1D9919FD004D7405 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6651D9919FC004D7405 /* Location+CoreDataProperties.swift */; };
+		BD46A6901D9919FD004D7405 /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6661D9919FC004D7405 /* Crop+CoreDataClass.swift */; };
+		BD46A6911D9919FD004D7405 /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6671D9919FC004D7405 /* Crop+CoreDataProperties.swift */; };
+		BD46A6921D9919FD004D7405 /* Grown+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6681D9919FC004D7405 /* Grown+CoreDataClass.swift */; };
+		BD46A6931D9919FD004D7405 /* Grown+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6691D9919FC004D7405 /* Grown+CoreDataProperties.swift */; };
+		BD46A6941D9919FD004D7405 /* Irrigated+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66A1D9919FC004D7405 /* Irrigated+CoreDataClass.swift */; };
+		BD46A6951D9919FD004D7405 /* Irrigated+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66B1D9919FC004D7405 /* Irrigated+CoreDataProperties.swift */; };
+		BD46A6961D9919FD004D7405 /* PaddockLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66C1D9919FC004D7405 /* PaddockLocation+CoreDataClass.swift */; };
+		BD46A6971D9919FD004D7405 /* PaddockLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66D1D9919FC004D7405 /* PaddockLocation+CoreDataProperties.swift */; };
+		BD46A6981D9919FD004D7405 /* Herb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66E1D9919FC004D7405 /* Herb+CoreDataClass.swift */; };
+		BD46A6991D9919FD004D7405 /* Herb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A66F1D9919FC004D7405 /* Herb+CoreDataProperties.swift */; };
+		BD46A69A1D9919FD004D7405 /* RowLifeState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6701D9919FC004D7405 /* RowLifeState+CoreDataClass.swift */; };
+		BD46A69B1D9919FD004D7405 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6711D9919FC004D7405 /* RowLifeState+CoreDataProperties.swift */; };
+		BD46A69C1D9919FD004D7405 /* Weed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6721D9919FC004D7405 /* Weed+CoreDataClass.swift */; };
+		BD46A69D1D9919FD004D7405 /* Weed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6731D9919FC004D7405 /* Weed+CoreDataProperties.swift */; };
+		BD46A69E1D9919FD004D7405 /* Fertilized+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6741D9919FC004D7405 /* Fertilized+CoreDataClass.swift */; };
+		BD46A69F1D9919FD004D7405 /* Fertilized+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6751D9919FC004D7405 /* Fertilized+CoreDataProperties.swift */; };
+		BD46A6A01D9919FD004D7405 /* Veggie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6761D9919FC004D7405 /* Veggie+CoreDataClass.swift */; };
+		BD46A6A11D9919FD004D7405 /* Veggie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6771D9919FC004D7405 /* Veggie+CoreDataProperties.swift */; };
+		BD46A6A21D9919FD004D7405 /* Harvested+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6781D9919FC004D7405 /* Harvested+CoreDataClass.swift */; };
+		BD46A6A31D9919FD004D7405 /* Harvested+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6791D9919FC004D7405 /* Harvested+CoreDataProperties.swift */; };
+		BD46A6A41D9919FD004D7405 /* GardenLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67A1D9919FC004D7405 /* GardenLocation+CoreDataClass.swift */; };
+		BD46A6A51D9919FD004D7405 /* GardenLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67B1D9919FC004D7405 /* GardenLocation+CoreDataProperties.swift */; };
+		BD46A6A61D9919FD004D7405 /* Growing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67C1D9919FC004D7405 /* Growing+CoreDataClass.swift */; };
+		BD46A6A71D9919FD004D7405 /* Growing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67D1D9919FC004D7405 /* Growing+CoreDataProperties.swift */; };
+		BD46A6A81D9919FD004D7405 /* Fruit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67E1D9919FC004D7405 /* Fruit+CoreDataClass.swift */; };
+		BD46A6A91D9919FD004D7405 /* Fruit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A67F1D9919FC004D7405 /* Fruit+CoreDataProperties.swift */; };
+		BD46A6AA1D9919FD004D7405 /* Seed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6801D9919FC004D7405 /* Seed+CoreDataClass.swift */; };
+		BD46A6AB1D9919FD004D7405 /* Seed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6811D9919FC004D7405 /* Seed+CoreDataProperties.swift */; };
+		BD46A6AC1D9919FD004D7405 /* Paddock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6821D9919FC004D7405 /* Paddock+CoreDataClass.swift */; };
+		BD46A6AD1D9919FD004D7405 /* Paddock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6831D9919FC004D7405 /* Paddock+CoreDataProperties.swift */; };
+		BD46A6AE1D9919FD004D7405 /* Garden+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6841D9919FC004D7405 /* Garden+CoreDataClass.swift */; };
+		BD46A6AF1D9919FD004D7405 /* Garden+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46A6851D9919FC004D7405 /* Garden+CoreDataProperties.swift */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
 		BD7B8EAF1D9118080063347D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAE1D9118080063347D /* MasterViewController.swift */; };
@@ -17,6 +59,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD46A65C1D9919FC004D7405 /* Row+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Row+CoreDataClass.swift"; path = "../Row+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A65D1D9919FC004D7405 /* Row+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Row+CoreDataProperties.swift"; path = "../Row+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A65E1D9919FC004D7405 /* CropState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataClass.swift"; path = "../CropState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A65F1D9919FC004D7405 /* CropState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataProperties.swift"; path = "../CropState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6601D9919FC004D7405 /* Soil+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Soil+CoreDataClass.swift"; path = "../Soil+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6611D9919FC004D7405 /* Soil+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Soil+CoreDataProperties.swift"; path = "../Soil+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6621D9919FC004D7405 /* Seedling+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seedling+CoreDataClass.swift"; path = "../Seedling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6631D9919FC004D7405 /* Seedling+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seedling+CoreDataProperties.swift"; path = "../Seedling+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6641D9919FC004D7405 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "../Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6651D9919FC004D7405 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6661D9919FC004D7405 /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataClass.swift"; path = "../Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6671D9919FC004D7405 /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataProperties.swift"; path = "../Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6681D9919FC004D7405 /* Grown+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Grown+CoreDataClass.swift"; path = "../Grown+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6691D9919FC004D7405 /* Grown+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Grown+CoreDataProperties.swift"; path = "../Grown+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A66A1D9919FC004D7405 /* Irrigated+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Irrigated+CoreDataClass.swift"; path = "../Irrigated+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A66B1D9919FC004D7405 /* Irrigated+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Irrigated+CoreDataProperties.swift"; path = "../Irrigated+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A66C1D9919FC004D7405 /* PaddockLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PaddockLocation+CoreDataClass.swift"; path = "../PaddockLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A66D1D9919FC004D7405 /* PaddockLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PaddockLocation+CoreDataProperties.swift"; path = "../PaddockLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A66E1D9919FC004D7405 /* Herb+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Herb+CoreDataClass.swift"; path = "../Herb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A66F1D9919FC004D7405 /* Herb+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Herb+CoreDataProperties.swift"; path = "../Herb+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6701D9919FC004D7405 /* RowLifeState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RowLifeState+CoreDataClass.swift"; path = "../RowLifeState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6711D9919FC004D7405 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RowLifeState+CoreDataProperties.swift"; path = "../RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6721D9919FC004D7405 /* Weed+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weed+CoreDataClass.swift"; path = "../Weed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6731D9919FC004D7405 /* Weed+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weed+CoreDataProperties.swift"; path = "../Weed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6741D9919FC004D7405 /* Fertilized+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataClass.swift"; path = "../Fertilized+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6751D9919FC004D7405 /* Fertilized+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataProperties.swift"; path = "../Fertilized+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6761D9919FC004D7405 /* Veggie+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Veggie+CoreDataClass.swift"; path = "../Veggie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6771D9919FC004D7405 /* Veggie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Veggie+CoreDataProperties.swift"; path = "../Veggie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6781D9919FC004D7405 /* Harvested+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Harvested+CoreDataClass.swift"; path = "../Harvested+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6791D9919FC004D7405 /* Harvested+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Harvested+CoreDataProperties.swift"; path = "../Harvested+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A67A1D9919FC004D7405 /* GardenLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GardenLocation+CoreDataClass.swift"; path = "../GardenLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A67B1D9919FC004D7405 /* GardenLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GardenLocation+CoreDataProperties.swift"; path = "../GardenLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A67C1D9919FC004D7405 /* Growing+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Growing+CoreDataClass.swift"; path = "../Growing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A67D1D9919FC004D7405 /* Growing+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Growing+CoreDataProperties.swift"; path = "../Growing+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A67E1D9919FC004D7405 /* Fruit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fruit+CoreDataClass.swift"; path = "../Fruit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A67F1D9919FC004D7405 /* Fruit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fruit+CoreDataProperties.swift"; path = "../Fruit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6801D9919FC004D7405 /* Seed+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seed+CoreDataClass.swift"; path = "../Seed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6811D9919FC004D7405 /* Seed+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seed+CoreDataProperties.swift"; path = "../Seed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6821D9919FC004D7405 /* Paddock+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Paddock+CoreDataClass.swift"; path = "../Paddock+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6831D9919FC004D7405 /* Paddock+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Paddock+CoreDataProperties.swift"; path = "../Paddock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BD46A6841D9919FC004D7405 /* Garden+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Garden+CoreDataClass.swift"; path = "../Garden+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BD46A6851D9919FC004D7405 /* Garden+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Garden+CoreDataProperties.swift"; path = "../Garden+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD7B8EAC1D9118080063347D /* Vegarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vegarden.xcdatamodel; sourceTree = "<group>"; };
@@ -39,6 +123,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD46A6B01D991A1A004D7405 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BD46A65C1D9919FC004D7405 /* Row+CoreDataClass.swift */,
+				BD46A65D1D9919FC004D7405 /* Row+CoreDataProperties.swift */,
+				BD46A65E1D9919FC004D7405 /* CropState+CoreDataClass.swift */,
+				BD46A65F1D9919FC004D7405 /* CropState+CoreDataProperties.swift */,
+				BD46A6601D9919FC004D7405 /* Soil+CoreDataClass.swift */,
+				BD46A6611D9919FC004D7405 /* Soil+CoreDataProperties.swift */,
+				BD46A6621D9919FC004D7405 /* Seedling+CoreDataClass.swift */,
+				BD46A6631D9919FC004D7405 /* Seedling+CoreDataProperties.swift */,
+				BD46A6641D9919FC004D7405 /* Location+CoreDataClass.swift */,
+				BD46A6651D9919FC004D7405 /* Location+CoreDataProperties.swift */,
+				BD46A6661D9919FC004D7405 /* Crop+CoreDataClass.swift */,
+				BD46A6671D9919FC004D7405 /* Crop+CoreDataProperties.swift */,
+				BD46A6681D9919FC004D7405 /* Grown+CoreDataClass.swift */,
+				BD46A6691D9919FC004D7405 /* Grown+CoreDataProperties.swift */,
+				BD46A66A1D9919FC004D7405 /* Irrigated+CoreDataClass.swift */,
+				BD46A66B1D9919FC004D7405 /* Irrigated+CoreDataProperties.swift */,
+				BD46A66C1D9919FC004D7405 /* PaddockLocation+CoreDataClass.swift */,
+				BD46A66D1D9919FC004D7405 /* PaddockLocation+CoreDataProperties.swift */,
+				BD46A66E1D9919FC004D7405 /* Herb+CoreDataClass.swift */,
+				BD46A66F1D9919FC004D7405 /* Herb+CoreDataProperties.swift */,
+				BD46A6701D9919FC004D7405 /* RowLifeState+CoreDataClass.swift */,
+				BD46A6711D9919FC004D7405 /* RowLifeState+CoreDataProperties.swift */,
+				BD46A6721D9919FC004D7405 /* Weed+CoreDataClass.swift */,
+				BD46A6731D9919FC004D7405 /* Weed+CoreDataProperties.swift */,
+				BD46A6741D9919FC004D7405 /* Fertilized+CoreDataClass.swift */,
+				BD46A6751D9919FC004D7405 /* Fertilized+CoreDataProperties.swift */,
+				BD46A6761D9919FC004D7405 /* Veggie+CoreDataClass.swift */,
+				BD46A6771D9919FC004D7405 /* Veggie+CoreDataProperties.swift */,
+				BD46A6781D9919FC004D7405 /* Harvested+CoreDataClass.swift */,
+				BD46A6791D9919FC004D7405 /* Harvested+CoreDataProperties.swift */,
+				BD46A67A1D9919FC004D7405 /* GardenLocation+CoreDataClass.swift */,
+				BD46A67B1D9919FC004D7405 /* GardenLocation+CoreDataProperties.swift */,
+				BD46A67C1D9919FC004D7405 /* Growing+CoreDataClass.swift */,
+				BD46A67D1D9919FC004D7405 /* Growing+CoreDataProperties.swift */,
+				BD46A67E1D9919FC004D7405 /* Fruit+CoreDataClass.swift */,
+				BD46A67F1D9919FC004D7405 /* Fruit+CoreDataProperties.swift */,
+				BD46A6801D9919FC004D7405 /* Seed+CoreDataClass.swift */,
+				BD46A6811D9919FC004D7405 /* Seed+CoreDataProperties.swift */,
+				BD46A6821D9919FC004D7405 /* Paddock+CoreDataClass.swift */,
+				BD46A6831D9919FC004D7405 /* Paddock+CoreDataProperties.swift */,
+				BD46A6841D9919FC004D7405 /* Garden+CoreDataClass.swift */,
+				BD46A6851D9919FC004D7405 /* Garden+CoreDataProperties.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		BD7B8E9D1D9118060063347D = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +191,7 @@
 		BD7B8EA81D9118080063347D /* Vegarden */ = {
 			isa = PBXGroup;
 			children = (
+				BD46A6B01D991A1A004D7405 /* CoreData */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
 				BD7B8EAE1D9118080063347D /* MasterViewController.swift */,
 				BD7B8EB01D9118080063347D /* DetailViewController.swift */,
@@ -143,10 +277,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD46A6A71D9919FD004D7405 /* Growing+CoreDataProperties.swift in Sources */,
+				BD46A68E1D9919FD004D7405 /* Location+CoreDataClass.swift in Sources */,
+				BD46A68B1D9919FD004D7405 /* Soil+CoreDataProperties.swift in Sources */,
+				BD46A69B1D9919FD004D7405 /* RowLifeState+CoreDataProperties.swift in Sources */,
+				BD46A6A51D9919FD004D7405 /* GardenLocation+CoreDataProperties.swift in Sources */,
+				BD46A6871D9919FD004D7405 /* Row+CoreDataProperties.swift in Sources */,
+				BD46A69A1D9919FD004D7405 /* RowLifeState+CoreDataClass.swift in Sources */,
+				BD46A6AA1D9919FD004D7405 /* Seed+CoreDataClass.swift in Sources */,
+				BD46A6921D9919FD004D7405 /* Grown+CoreDataClass.swift in Sources */,
+				BD46A6891D9919FD004D7405 /* CropState+CoreDataProperties.swift in Sources */,
+				BD46A6A21D9919FD004D7405 /* Harvested+CoreDataClass.swift in Sources */,
+				BD46A69E1D9919FD004D7405 /* Fertilized+CoreDataClass.swift in Sources */,
+				BD46A6961D9919FD004D7405 /* PaddockLocation+CoreDataClass.swift in Sources */,
+				BD46A6881D9919FD004D7405 /* CropState+CoreDataClass.swift in Sources */,
+				BD46A6AF1D9919FD004D7405 /* Garden+CoreDataProperties.swift in Sources */,
+				BD46A6A41D9919FD004D7405 /* GardenLocation+CoreDataClass.swift in Sources */,
+				BD46A6971D9919FD004D7405 /* PaddockLocation+CoreDataProperties.swift in Sources */,
+				BD46A68A1D9919FD004D7405 /* Soil+CoreDataClass.swift in Sources */,
+				BD46A6A11D9919FD004D7405 /* Veggie+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
+				BD46A69F1D9919FD004D7405 /* Fertilized+CoreDataProperties.swift in Sources */,
+				BD46A6AB1D9919FD004D7405 /* Seed+CoreDataProperties.swift in Sources */,
+				BD46A6A31D9919FD004D7405 /* Harvested+CoreDataProperties.swift in Sources */,
+				BD46A6911D9919FD004D7405 /* Crop+CoreDataProperties.swift in Sources */,
+				BD46A6861D9919FC004D7405 /* Row+CoreDataClass.swift in Sources */,
+				BD46A6AD1D9919FD004D7405 /* Paddock+CoreDataProperties.swift in Sources */,
+				BD46A6991D9919FD004D7405 /* Herb+CoreDataProperties.swift in Sources */,
+				BD46A68F1D9919FD004D7405 /* Location+CoreDataProperties.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
+				BD46A6A81D9919FD004D7405 /* Fruit+CoreDataClass.swift in Sources */,
+				BD46A6901D9919FD004D7405 /* Crop+CoreDataClass.swift in Sources */,
+				BD46A6931D9919FD004D7405 /* Grown+CoreDataProperties.swift in Sources */,
+				BD46A6A01D9919FD004D7405 /* Veggie+CoreDataClass.swift in Sources */,
+				BD46A6941D9919FD004D7405 /* Irrigated+CoreDataClass.swift in Sources */,
+				BD46A6A91D9919FD004D7405 /* Fruit+CoreDataProperties.swift in Sources */,
+				BD46A6A61D9919FD004D7405 /* Growing+CoreDataClass.swift in Sources */,
+				BD46A6981D9919FD004D7405 /* Herb+CoreDataClass.swift in Sources */,
 				BD7B8EAF1D9118080063347D /* MasterViewController.swift in Sources */,
+				BD46A68C1D9919FD004D7405 /* Seedling+CoreDataClass.swift in Sources */,
+				BD46A69C1D9919FD004D7405 /* Weed+CoreDataClass.swift in Sources */,
+				BD46A69D1D9919FD004D7405 /* Weed+CoreDataProperties.swift in Sources */,
+				BD46A68D1D9919FD004D7405 /* Seedling+CoreDataProperties.swift in Sources */,
+				BD46A6AE1D9919FD004D7405 /* Garden+CoreDataClass.swift in Sources */,
 				BD7B8EB11D9118080063347D /* DetailViewController.swift in Sources */,
+				BD46A6AC1D9919FD004D7405 /* Paddock+CoreDataClass.swift in Sources */,
+				BD46A6951D9919FD004D7405 /* Irrigated+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
