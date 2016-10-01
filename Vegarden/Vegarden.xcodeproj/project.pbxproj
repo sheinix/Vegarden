@@ -16,6 +16,21 @@
 		BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB51D9118080063347D /* Assets.xcassets */; };
 		BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */; };
 		BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */; };
+		BD83BF731D9FFA1C00C7D79A /* SMTabbedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF711D9FFA1C00C7D79A /* SMTabbedSplitViewController.m */; };
+		BD83BF8D1D9FFC4D00C7D79A /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF841D9FFC4D00C7D79A /* SMDetailViewController.m */; };
+		BD83BF8E1D9FFC4D00C7D79A /* SMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF861D9FFC4D00C7D79A /* SMMasterViewController.m */; };
+		BD83BF8F1D9FFC4D00C7D79A /* SMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF881D9FFC4D00C7D79A /* SMTabBar.m */; };
+		BD83BF901D9FFC4D00C7D79A /* SMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF8A1D9FFC4D00C7D79A /* SMTabBarItem.m */; };
+		BD83BF911D9FFC4D00C7D79A /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF8C1D9FFC4D00C7D79A /* SMTabBarItemCell.m */; };
+		BD83BF931D9FFE9C00C7D79A /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */; };
+		BD83BF9F1D9FFF7500C7D79A /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF9D1D9FFF7500C7D79A /* MyGardenViewController.swift */; };
+		BD83BFA01D9FFF7500C7D79A /* MyGardenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD83BF9E1D9FFF7500C7D79A /* MyGardenViewController.xib */; };
+		BD83BFA31D9FFFA000C7D79A /* MyCropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA11D9FFFA000C7D79A /* MyCropsViewController.swift */; };
+		BD83BFA41D9FFFA000C7D79A /* MyCropsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD83BFA21D9FFFA000C7D79A /* MyCropsViewController.xib */; };
+		BD83BFA71D9FFFD000C7D79A /* LifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */; };
+		BD83BFA81D9FFFD000C7D79A /* LifeCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD83BFA61D9FFFD000C7D79A /* LifeCycleViewController.xib */; };
+		BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA91DA0034700C7D79A /* AboutViewController.swift */; };
+		BD83BFAC1DA0034700C7D79A /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD83BFAA1DA0034700C7D79A /* AboutViewController.xib */; };
 		BDE061601D9FDC660003364D /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */; };
 		BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */; };
 		BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */; };
@@ -74,6 +89,28 @@
 		BD7B8EB81D9118080063347D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD7B8EBA1D9118080063347D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vegarden-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD83BF701D9FFA1C00C7D79A /* SMTabbedSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMTabbedSplitViewController.h; path = TabbedFlow/SMTabbedSplitViewController.h; sourceTree = "<group>"; };
+		BD83BF711D9FFA1C00C7D79A /* SMTabbedSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMTabbedSplitViewController.m; path = TabbedFlow/SMTabbedSplitViewController.m; sourceTree = "<group>"; };
+		BD83BF831D9FFC4D00C7D79A /* SMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDetailViewController.h; sourceTree = "<group>"; };
+		BD83BF841D9FFC4D00C7D79A /* SMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDetailViewController.m; sourceTree = "<group>"; };
+		BD83BF851D9FFC4D00C7D79A /* SMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMasterViewController.h; sourceTree = "<group>"; };
+		BD83BF861D9FFC4D00C7D79A /* SMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMasterViewController.m; sourceTree = "<group>"; };
+		BD83BF871D9FFC4D00C7D79A /* SMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBar.h; sourceTree = "<group>"; };
+		BD83BF881D9FFC4D00C7D79A /* SMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBar.m; sourceTree = "<group>"; };
+		BD83BF891D9FFC4D00C7D79A /* SMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItem.h; sourceTree = "<group>"; };
+		BD83BF8A1D9FFC4D00C7D79A /* SMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItem.m; sourceTree = "<group>"; };
+		BD83BF8B1D9FFC4D00C7D79A /* SMTabBarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItemCell.h; sourceTree = "<group>"; };
+		BD83BF8C1D9FFC4D00C7D79A /* SMTabBarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItemCell.m; sourceTree = "<group>"; };
+		BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		BD83BF9D1D9FFF7500C7D79A /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
+		BD83BF9E1D9FFF7500C7D79A /* MyGardenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGardenViewController.xib; sourceTree = "<group>"; };
+		BD83BFA11D9FFFA000C7D79A /* MyCropsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCropsViewController.swift; sourceTree = "<group>"; };
+		BD83BFA21D9FFFA000C7D79A /* MyCropsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCropsViewController.xib; sourceTree = "<group>"; };
+		BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleViewController.swift; sourceTree = "<group>"; };
+		BD83BFA61D9FFFD000C7D79A /* LifeCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeCycleViewController.xib; sourceTree = "<group>"; };
+		BD83BFA91DA0034700C7D79A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BD83BFAA1DA0034700C7D79A /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataClass.swift"; path = "CoreData/Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataProperties.swift"; path = "CoreData/Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataClass.swift"; path = "CoreData/CropState+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -218,17 +255,55 @@
 			isa = PBXGroup;
 			children = (
 				BD46A6B01D991A1A004D7405 /* CoreData */,
+				BD83BF6D1D9FF9FA00C7D79A /* TabbedFlow */,
+				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
 				BD7B8EAE1D9118080063347D /* MasterViewController.swift */,
 				BD7B8EB01D9118080063347D /* DetailViewController.swift */,
-				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				BD7B8EB21D9118080063347D /* Main.storyboard */,
+				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				BD7B8EBA1D9118080063347D /* Info.plist */,
 				BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */,
 			);
 			path = Vegarden;
+			sourceTree = "<group>";
+		};
+		BD83BF6D1D9FF9FA00C7D79A /* TabbedFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BD83BF831D9FFC4D00C7D79A /* SMDetailViewController.h */,
+				BD83BF841D9FFC4D00C7D79A /* SMDetailViewController.m */,
+				BD83BF851D9FFC4D00C7D79A /* SMMasterViewController.h */,
+				BD83BF861D9FFC4D00C7D79A /* SMMasterViewController.m */,
+				BD83BF871D9FFC4D00C7D79A /* SMTabBar.h */,
+				BD83BF881D9FFC4D00C7D79A /* SMTabBar.m */,
+				BD83BF891D9FFC4D00C7D79A /* SMTabBarItem.h */,
+				BD83BF8A1D9FFC4D00C7D79A /* SMTabBarItem.m */,
+				BD83BF8B1D9FFC4D00C7D79A /* SMTabBarItemCell.h */,
+				BD83BF8C1D9FFC4D00C7D79A /* SMTabBarItemCell.m */,
+				BD83BF701D9FFA1C00C7D79A /* SMTabbedSplitViewController.h */,
+				BD83BF711D9FFA1C00C7D79A /* SMTabbedSplitViewController.m */,
+				BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */,
+			);
+			name = TabbedFlow;
+			sourceTree = "<group>";
+		};
+		BD83BF941D9FFEA300C7D79A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */,
+				BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */,
+				BD83BFA61D9FFFD000C7D79A /* LifeCycleViewController.xib */,
+				BD83BFA11D9FFFA000C7D79A /* MyCropsViewController.swift */,
+				BD83BFA21D9FFFA000C7D79A /* MyCropsViewController.xib */,
+				BD83BF9D1D9FFF7500C7D79A /* MyGardenViewController.swift */,
+				BD83BF9E1D9FFF7500C7D79A /* MyGardenViewController.xib */,
+				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
+				BD83BFAA1DA0034700C7D79A /* AboutViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
+				BD83BFAC1DA0034700C7D79A /* AboutViewController.xib in Resources */,
+				BD83BFA81D9FFFD000C7D79A /* LifeCycleViewController.xib in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
+				BD83BFA41D9FFFA000C7D79A /* MyCropsViewController.xib in Resources */,
+				BD83BFA01D9FFF7500C7D79A /* MyGardenViewController.xib in Resources */,
 				BD7B8EB41D9118080063347D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +440,7 @@
 				BDE061751D9FDC660003364D /* Irrigated+CoreDataProperties.swift in Sources */,
 				BDE0616F1D9FDC660003364D /* Grown+CoreDataProperties.swift in Sources */,
 				BDE061631D9FDC660003364D /* CropState+CoreDataProperties.swift in Sources */,
+				BD83BF8D1D9FFC4D00C7D79A /* SMDetailViewController.m in Sources */,
 				BDE0617D1D9FDC660003364D /* Row+CoreDataProperties.swift in Sources */,
 				BDE0616C1D9FDC660003364D /* Growing+CoreDataClass.swift in Sources */,
 				BDE061741D9FDC660003364D /* Irrigated+CoreDataClass.swift in Sources */,
@@ -375,16 +455,22 @@
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,
 				BDE0617B1D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift in Sources */,
+				BD83BF901D9FFC4D00C7D79A /* SMTabBarItem.m in Sources */,
+				BD83BF9F1D9FFF7500C7D79A /* MyGardenViewController.swift in Sources */,
 				BDE061861D9FDC660003364D /* Veggie+CoreDataClass.swift in Sources */,
 				BDE061891D9FDC660003364D /* Weed+CoreDataProperties.swift in Sources */,
 				BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */,
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
+				BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */,
+				BD83BFA31D9FFFA000C7D79A /* MyCropsViewController.swift in Sources */,
 				BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */,
 				BDE061791D9FDC660003364D /* Paddock+CoreDataProperties.swift in Sources */,
 				BDE061851D9FDC660003364D /* Soil+CoreDataProperties.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */,
 				BDE0616B1D9FDC660003364D /* GardenLocation+CoreDataProperties.swift in Sources */,
+				BD83BFA71D9FFFD000C7D79A /* LifeCycleViewController.swift in Sources */,
+				BD83BF8F1D9FFC4D00C7D79A /* SMTabBar.m in Sources */,
 				BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
 				BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */,
@@ -393,9 +479,13 @@
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				BDE0616A1D9FDC660003364D /* GardenLocation+CoreDataClass.swift in Sources */,
+				BD83BF911D9FFC4D00C7D79A /* SMTabBarItemCell.m in Sources */,
+				BD83BF731D9FFA1C00C7D79A /* SMTabbedSplitViewController.m in Sources */,
 				BDE061841D9FDC660003364D /* Soil+CoreDataClass.swift in Sources */,
 				BDE061721D9FDC660003364D /* Herb+CoreDataClass.swift in Sources */,
 				BDE061781D9FDC660003364D /* Paddock+CoreDataClass.swift in Sources */,
+				BD83BF931D9FFE9C00C7D79A /* CommonViewController.swift in Sources */,
+				BD83BF8E1D9FFC4D00C7D79A /* SMMasterViewController.m in Sources */,
 				BD7B8EAF1D9118080063347D /* MasterViewController.swift in Sources */,
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
@@ -529,11 +619,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C8499A962H;
 				INFOPLIST_FILE = Vegarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sheinix.Vegarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -544,11 +637,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C8499A962H;
 				INFOPLIST_FILE = Vegarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sheinix.Vegarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

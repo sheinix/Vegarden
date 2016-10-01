@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
@@ -17,15 +18,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as! UISplitViewController
+       
         
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        splitViewController.delegate = self
+        //Set the splitVC:
+        
+        let split = SMTabbedSplitViewController.init(tabbedSplit:)
+        
+        
+        //Crops View Controller & tab
+        
+        let cropsVC = MyCropsViewController()
+        cropsVC.view.backgroundColor = UIColor.green
+    
+        let cropTab = SMTabBarItem.init(vc: cropsVC, image: nil, andTitle: "My Crops")
+        
+        //My Garden View Controller & tab
+        
+        let myGardenVC = MyGardenViewController()
+        myGardenVC.view.backgroundColor = UIColor.red
+        
+        let gardenTab = SMTabBarItem.init(vc: myGardenVC, image: nil, andTitle: "My Garden")
+        
+        //LifeCycle View Controller & tab
+        
+        let lifeCycleVC = LifeCycleViewController()
+        lifeCycleVC.view.backgroundColor = UIColor.blue
+        
+        let lifeCycleTab = SMTabBarItem.init(vc: lifeCycleVC, image: nil, andTitle: "Life Cycle")
+        
+        //About View Controller & tab
+        
+        let aboutVC = AboutViewController()
+        aboutVC.view.backgroundColor = UIColor.lightGray
+        
+        let aboutTab = SMTabBarItem.init(vc: aboutVC, image: nil, andTitle: "About")
+        
+    
+        //Set the ViewControllers to the split
+        
+        split().tabsViewControllers = [cropTab, gardenTab, lifeCycleTab, aboutTab]
+    
+        split().background = UIColor.clear
+        
+        self.window!.rootViewController = split();
 
-        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        let controller = masterNavigationController.topViewController as! MasterViewController
+        
+        
+        
+        
+        // Override point for customization after application launch.
+//        let splitViewController = self.window!.rootViewController as! UISplitViewController
+//        
+//        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+//        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+//        splitViewController.delegate = self
+//
+//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+//        let controller = masterNavigationController.topViewController as! MasterViewController
+        
+       
+        
+        
+        
         
         PersistenceManager.shared.setupPersistanceStack()
         
