@@ -15,6 +15,7 @@
 		BD7B8EB41D9118080063347D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB21D9118080063347D /* Main.storyboard */; };
 		BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB51D9118080063347D /* Assets.xcassets */; };
 		BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */; };
+		BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */; };
 		BDE061601D9FDC660003364D /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */; };
 		BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */; };
 		BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */; };
@@ -72,6 +73,7 @@
 		BD7B8EB51D9118080063347D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD7B8EB81D9118080063347D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD7B8EBA1D9118080063347D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataClass.swift"; path = "CoreData/Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataProperties.swift"; path = "CoreData/Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataClass.swift"; path = "CoreData/CropState+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
 				BD7B8EAE1D9118080063347D /* MasterViewController.swift */,
 				BD7B8EB01D9118080063347D /* DetailViewController.swift */,
+				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				BD7B8EB21D9118080063347D /* Main.storyboard */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
@@ -386,6 +389,7 @@
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
 				BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
+				BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */,
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				BDE0616A1D9FDC660003364D /* GardenLocation+CoreDataClass.swift in Sources */,

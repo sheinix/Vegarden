@@ -6,11 +6,14 @@ target 'Vegarden' do
   use_frameworks!
 
   # Pods for Vegarden
-
+	
+	workspace 'Vegarden'
+  	
   	source 'https://github.com/CocoaPods/Specs.git'
 
  	pod "LiquidFloatingActionButton"
 	pod 'AFNetworking', '~> 3.0'
+	pod "MagicalRecord"
 	#pod 'SwiftString'
 	#pod 'FoldingCell' #Problems with swfit 3 not resolved I reckon
 
