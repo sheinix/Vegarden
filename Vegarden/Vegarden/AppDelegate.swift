@@ -18,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-       
+
+        window = UIWindow(frame:UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
         
         //Set the splitVC:
         
@@ -29,39 +32,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         let cropsVC = MyCropsViewController()
         cropsVC.view.backgroundColor = UIColor.green
-    
-        let cropTab = SMTabBarItem.init(vc: cropsVC, image: nil, andTitle: "My Crops")
+        
+        let cropTab = SMTabBarItem.init(vc: cropsVC, image: UIImage(named:"@Twitter"), andTitle: "My Crops")
         
         //My Garden View Controller & tab
         
         let myGardenVC = MyGardenViewController()
-        myGardenVC.view.backgroundColor = UIColor.red
+        myGardenVC.view.backgroundColor = UIColor.brown
         
-        let gardenTab = SMTabBarItem.init(vc: myGardenVC, image: nil, andTitle: "My Garden")
+        let gardenTab = SMTabBarItem.init(vc: myGardenVC, image: UIImage(named:"@Facebook"), andTitle: "My Garden")
         
         //LifeCycle View Controller & tab
         
         let lifeCycleVC = LifeCycleViewController()
         lifeCycleVC.view.backgroundColor = UIColor.blue
         
-        let lifeCycleTab = SMTabBarItem.init(vc: lifeCycleVC, image: nil, andTitle: "Life Cycle")
+        let lifeCycleTab = SMTabBarItem.init(vc: lifeCycleVC, image: UIImage(named:"@Youtube"), andTitle: "Life Cycle")
         
         //About View Controller & tab
         
         let aboutVC = AboutViewController()
         aboutVC.view.backgroundColor = UIColor.lightGray
         
-        let aboutTab = SMTabBarItem.init(vc: aboutVC, image: nil, andTitle: "About")
+        let aboutTab = SMTabBarItem.init(vc: aboutVC, image: UIImage(named:"@Linkedin"), andTitle: "About")
         
     
         //Set the ViewControllers to the split
         
-        split().tabsViewControllers = [cropTab, gardenTab, lifeCycleTab, aboutTab]
-    
-        split().background = UIColor.clear
-        
-        self.window!.rootViewController = split();
+       // split().tabsViewControllers = Array<[CommonViewController]>()
 
+   
+        let array1 = [cropTab, gardenTab, lifeCycleTab, aboutTab]
+        
+        
+        split().tabsViewControllers = array1
+        
+//        if case (split().tabsViewControllers!) = array1 {
+//              print("tabviewcontroller no nilllll!!!")
+//        }else {
+//            print("tabviewcontroller ES nil!!!")
+//        }
+
+    
+        split().background = UIColor.brown
+        
+        window?.rootViewController = split()
         
         
         
@@ -107,32 +122,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        PersistenceManager().saveContext()
     }
 
     // MARK: - Split view
 
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-        if topAsDetailController.detailItem == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-            return true
-        }
-        return false
-    }
+//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+//        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+//        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+//        if topAsDetailController.detailItem == nil {
+//            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+//            return true
+//        }
+//        return false
+//    }
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+//    lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Vegarden")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
+//        let container = NSPersistentContainer(name: "Vegarden")
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                  
@@ -144,27 +159,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        })
+//        return container
+//    }()
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
+//    func saveContext () {
+//        let context = persistentContainer.viewContext
+//        if context.hasChanges {
+//            do {
+//                try context.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nserror = error as NSError
+//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//            }
+//        }
+//    }
 
 }
 

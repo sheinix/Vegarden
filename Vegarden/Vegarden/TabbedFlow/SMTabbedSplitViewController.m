@@ -69,7 +69,7 @@
     
     [super loadView];
     
-    self.view.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor redColor]; //Clear Color change later!
     
     if (_splitType == SMTabbedSplt) {
         
@@ -161,6 +161,13 @@
 }
 
 - (void)setTabsViewControllers:(NSArray *)tabsViewControllers {
+    
+    
+    if (_tabsViewControllers == NULL || _tabBar.tabsButtons == NULL) {
+        
+        _tabsViewControllers = [[NSMutableArray alloc] initWithCapacity:tabsViewControllers.count];
+        _tabBar.tabsButtons = [[NSMutableArray alloc] initWithCapacity:tabsViewControllers.count];
+    }
     
     _tabsViewControllers = tabsViewControllers;
     _tabBar.tabsButtons = _tabsViewControllers;

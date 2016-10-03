@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
+		BD203E1A1DA2248200951732 /* normalTabs in Resources */ = {isa = PBXBuildFile; fileRef = BD203E181DA2248200951732 /* normalTabs */; };
+		BD203E1B1DA2248200951732 /* selectedTab in Resources */ = {isa = PBXBuildFile; fileRef = BD203E191DA2248200951732 /* selectedTab */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
-		BD7B8EAF1D9118080063347D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAE1D9118080063347D /* MasterViewController.swift */; };
-		BD7B8EB11D9118080063347D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EB01D9118080063347D /* DetailViewController.swift */; };
-		BD7B8EB41D9118080063347D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB21D9118080063347D /* Main.storyboard */; };
 		BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB51D9118080063347D /* Assets.xcassets */; };
 		BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */; };
 		BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */; };
@@ -79,12 +78,11 @@
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		990DCAFE6F54E5AD9F2D944F /* Pods-Vegarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.debug.xcconfig"; sourceTree = "<group>"; };
+		BD203E181DA2248200951732 /* normalTabs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = normalTabs; sourceTree = "<group>"; };
+		BD203E191DA2248200951732 /* selectedTab */ = {isa = PBXFileReference; lastKnownFileType = folder; path = selectedTab; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD7B8EAC1D9118080063347D /* Vegarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vegarden.xcdatamodel; sourceTree = "<group>"; };
-		BD7B8EAE1D9118080063347D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BD7B8EB01D9118080063347D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BD7B8EB31D9118080063347D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD7B8EB51D9118080063347D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD7B8EB81D9118080063347D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD7B8EBA1D9118080063347D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,11 +256,10 @@
 				BD83BF6D1D9FF9FA00C7D79A /* TabbedFlow */,
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
-				BD7B8EAE1D9118080063347D /* MasterViewController.swift */,
-				BD7B8EB01D9118080063347D /* DetailViewController.swift */,
-				BD7B8EB21D9118080063347D /* Main.storyboard */,
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
+				BD203E181DA2248200951732 /* normalTabs */,
+				BD203E191DA2248200951732 /* selectedTab */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				BD7B8EBA1D9118080063347D /* Info.plist */,
 				BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */,
@@ -373,10 +370,11 @@
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
 				BD83BFAC1DA0034700C7D79A /* AboutViewController.xib in Resources */,
 				BD83BFA81D9FFFD000C7D79A /* LifeCycleViewController.xib in Resources */,
+				BD203E1B1DA2248200951732 /* selectedTab in Resources */,
+				BD203E1A1DA2248200951732 /* normalTabs in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
 				BD83BFA41D9FFFA000C7D79A /* MyCropsViewController.xib in Resources */,
 				BD83BFA01D9FFF7500C7D79A /* MyGardenViewController.xib in Resources */,
-				BD7B8EB41D9118080063347D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,27 +484,17 @@
 				BDE061781D9FDC660003364D /* Paddock+CoreDataClass.swift in Sources */,
 				BD83BF931D9FFE9C00C7D79A /* CommonViewController.swift in Sources */,
 				BD83BF8E1D9FFC4D00C7D79A /* SMMasterViewController.m in Sources */,
-				BD7B8EAF1D9118080063347D /* MasterViewController.swift in Sources */,
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
 				BDE061881D9FDC660003364D /* Weed+CoreDataClass.swift in Sources */,
 				BDE0616E1D9FDC660003364D /* Grown+CoreDataClass.swift in Sources */,
 				BDE061801D9FDC660003364D /* Seed+CoreDataClass.swift in Sources */,
-				BD7B8EB11D9118080063347D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BD7B8EB21D9118080063347D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD7B8EB31D9118080063347D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
