@@ -21,80 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
         window = UIWindow(frame:UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        
-        //Set the splitVC:
-        
-        let split = SMTabbedSplitViewController.init(tabbedSplit:)
-        
-        
-        //Crops View Controller & tab
-        
-        let cropsVC = MyCropsViewController()
-        cropsVC.view.backgroundColor = UIColor.green
-        
-        let cropTab = SMTabBarItem.init(vc: cropsVC, image: UIImage(named:"@Twitter"), andTitle: "My Crops")
-        
-        //My Garden View Controller & tab
-        
-        let myGardenVC = MyGardenViewController()
-        myGardenVC.view.backgroundColor = UIColor.brown
-        
-        let gardenTab = SMTabBarItem.init(vc: myGardenVC, image: UIImage(named:"@Facebook"), andTitle: "My Garden")
-        
-        //LifeCycle View Controller & tab
-        
-        let lifeCycleVC = LifeCycleViewController()
-        lifeCycleVC.view.backgroundColor = UIColor.blue
-        
-        let lifeCycleTab = SMTabBarItem.init(vc: lifeCycleVC, image: UIImage(named:"@Youtube"), andTitle: "Life Cycle")
-        
-        //About View Controller & tab
-        
-        let aboutVC = AboutViewController()
-        aboutVC.view.backgroundColor = UIColor.lightGray
-        
-        let aboutTab = SMTabBarItem.init(vc: aboutVC, image: UIImage(named:"@Linkedin"), andTitle: "About")
-        
-    
-        //Set the ViewControllers to the split
-        
-       // split().tabsViewControllers = Array<[CommonViewController]>()
 
-   
-        let array1 = [cropTab, gardenTab, lifeCycleTab, aboutTab]
+        self.window!.rootViewController = UISplitViewController()
         
-        
-        split().tabsViewControllers = array1
-        
-//        if case (split().tabsViewControllers!) = array1 {
-//              print("tabviewcontroller no nilllll!!!")
-//        }else {
-//            print("tabviewcontroller ES nil!!!")
-//        }
-
-    
-        split().background = UIColor.brown
-        
-        window?.rootViewController = split()
-        
-        
-        
-        
-        // Override point for customization after application launch.
-//        let splitViewController = self.window!.rootViewController as! UISplitViewController
-//        
-//        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-//        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-//        splitViewController.delegate = self
-//
-//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-//        let controller = masterNavigationController.topViewController as! MasterViewController
-        
-       
-        
-        
-        
+    let splitViewController = self.window!.rootViewController as! UISplitViewController
+    let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+    navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        splitViewController.delegate = self
         
         PersistenceManager.shared.setupPersistanceStack()
         
@@ -126,16 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     // MARK: - Split view
-
-//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-//        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-//        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-//        if topAsDetailController.detailItem == nil {
-//            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-//            return true
-//        }
-//        return false
-//    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+        if topAsDetailController.detailItem == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
+    }
     // MARK: - Core Data stack
 
 //    lazy var persistentContainer: NSPersistentContainer = {
