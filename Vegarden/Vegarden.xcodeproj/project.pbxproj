@@ -13,6 +13,7 @@
 		BD203E441DA2301200951732 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E421DA2301200951732 /* DetailViewController.swift */; };
 		BD203E481DA2305800951732 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E461DA2305800951732 /* MasterViewController.swift */; };
 		BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD203E4C1DA4F84000951732 /* Main.storyboard */; };
+		BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C0F31DA50FBD00265405 /* Constants.swift */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
 		BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB51D9118080063347D /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		BD203E421DA2301200951732 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BD203E461DA2305800951732 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		BD203E4C1DA4F84000951732 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BD37C0F31DA50FBD00265405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD7B8EAC1D9118080063347D /* Vegarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vegarden.xcdatamodel; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
+				BD37C0F31DA50FBD00265405 /* Constants.swift */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
 				BD203E181DA2248200951732 /* normalTabs */,
 				BD203E191DA2248200951732 /* selectedTab */,
@@ -461,6 +464,7 @@
 				BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */,
 				BDE0617A1D9FDC660003364D /* PaddockLocation+CoreDataClass.swift in Sources */,
 				BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */,
+				BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */,
 				BDE0617E1D9FDC660003364D /* RowLifeState+CoreDataClass.swift in Sources */,
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,

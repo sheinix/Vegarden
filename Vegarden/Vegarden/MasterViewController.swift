@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
-    var objects = ["My Crops", "Crops LifeCylce", "My Garden", "About"]
+    var objects = [MainViews.MyCropsView, MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView]
     
     
     override func viewDidLoad() {
@@ -37,15 +37,35 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == SegueIdentifiers.showNewViewFromSideTabBar {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let object = objects[indexPath.row] as String!
+                //let object = objects[indexPath.row] as Any!
                 
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                var controller = (segue.destination as! UINavigationController).topViewController as! CommonViewController
                 
-                controller.detailItem = object
+                switch objects[indexPath.row] {
+                    
+                case MainViews.MyCropsView:
+                    controller = MyCropsViewController()
+                    
+                case MainViews.LifeCycleView:
+                    controller = LifeCycleViewController()
+                    
+                case MainViews.MyGardenView:
+                    controller = MyGardenViewController()
+                    
+                case MainViews.AboutView:
+                    controller = AboutViewController()
+                    
+                default:
+                    controller = AboutViewController()
+                }
+                
+        
+               // controller.detailItem = object
+                
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
