@@ -11,9 +11,7 @@
 		BD203E1A1DA2248200951732 /* normalTabs in Resources */ = {isa = PBXBuildFile; fileRef = BD203E181DA2248200951732 /* normalTabs */; };
 		BD203E1B1DA2248200951732 /* selectedTab in Resources */ = {isa = PBXBuildFile; fileRef = BD203E191DA2248200951732 /* selectedTab */; };
 		BD203E441DA2301200951732 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E421DA2301200951732 /* DetailViewController.swift */; };
-		BD203E451DA2301200951732 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD203E431DA2301200951732 /* DetailViewController.xib */; };
 		BD203E481DA2305800951732 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E461DA2305800951732 /* MasterViewController.swift */; };
-		BD203E491DA2305800951732 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD203E471DA2305800951732 /* MasterViewController.xib */; };
 		BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD203E4C1DA4F84000951732 /* Main.storyboard */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
@@ -86,9 +84,7 @@
 		BD203E181DA2248200951732 /* normalTabs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = normalTabs; sourceTree = "<group>"; };
 		BD203E191DA2248200951732 /* selectedTab */ = {isa = PBXFileReference; lastKnownFileType = folder; path = selectedTab; sourceTree = "<group>"; };
 		BD203E421DA2301200951732 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BD203E431DA2301200951732 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		BD203E461DA2305800951732 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BD203E471DA2305800951732 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
 		BD203E4C1DA4F84000951732 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -302,9 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				BD203E461DA2305800951732 /* MasterViewController.swift */,
-				BD203E471DA2305800951732 /* MasterViewController.xib */,
 				BD203E421DA2301200951732 /* DetailViewController.swift */,
-				BD203E431DA2301200951732 /* DetailViewController.xib */,
 				BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */,
 				BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */,
 				BD83BFA61D9FFFD000C7D79A /* LifeCycleViewController.xib */,
@@ -382,7 +376,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD203E491DA2305800951732 /* MasterViewController.xib in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
 				BD83BFAC1DA0034700C7D79A /* AboutViewController.xib in Resources */,
 				BD83BFA81D9FFFD000C7D79A /* LifeCycleViewController.xib in Resources */,
@@ -390,7 +383,6 @@
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
 				BD203E1A1DA2248200951732 /* normalTabs in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
-				BD203E451DA2301200951732 /* DetailViewController.xib in Resources */,
 				BD83BFA41D9FFFA000C7D79A /* MyCropsViewController.xib in Resources */,
 				BD83BFA01D9FFF7500C7D79A /* MyGardenViewController.xib in Resources */,
 			);
