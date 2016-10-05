@@ -41,8 +41,6 @@ class MasterViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                //let object = objects[indexPath.row] as Any!
-                
                 var controller = (segue.destination as! UINavigationController).topViewController as! CommonViewController
                 
                 switch objects[indexPath.row] {
@@ -63,8 +61,6 @@ class MasterViewController: UITableViewController {
                     controller = AboutViewController()
                 }
                 
-        
-               // controller.detailItem = object
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
