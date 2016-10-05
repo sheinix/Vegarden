@@ -41,25 +41,31 @@ class MasterViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                var controller = (segue.destination as! UINavigationController).topViewController as! CommonViewController
+                
+                
+                var controllerType : CommonViewController
                 
                 switch objects[indexPath.row] {
                     
                 case MainViews.MyCropsView:
-                    controller = MyCropsViewController()
+                    controllerType = MyCropsViewController()
                     
                 case MainViews.LifeCycleView:
-                    controller = LifeCycleViewController()
+                    controllerType = LifeCycleViewController()
                     
                 case MainViews.MyGardenView:
-                    controller = MyGardenViewController()
+                    controllerType = MyGardenViewController()
                     
                 case MainViews.AboutView:
-                    controller = AboutViewController()
+                    controllerType = AboutViewController()
                     
                 default:
-                    controller = AboutViewController()
+                    controllerType = AboutViewController()
                 }
+                
+                let classController = controllerType.self
+                
+                let controller = (segue.destination as! UINavigationController).topViewController as! classcotroller
                 
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
