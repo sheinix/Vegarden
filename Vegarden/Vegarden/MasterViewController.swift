@@ -10,7 +10,7 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    var detailViewController: DetailViewController? = nil
+//    var detailViewController: DetailViewController? = nil
     var objects = [MainViews.MyCropsView, MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView]
     
     
@@ -19,8 +19,8 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+//            let controllers = split.viewControllers
+//            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
     }
     
@@ -36,40 +36,14 @@ class MasterViewController: UITableViewController {
     
     // MARK: - Segues
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == SegueIdentifiers.showNewViewFromSideTabBar {
-            
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                
-                
-                //TODO Review this part of code because it can be written much better!
-                
-                var controller : CommonViewController
-                
-                switch objects[indexPath.row] {
-                    
-                case MainViews.MyCropsView:
-                     controller = (segue.destination as! UINavigationController).topViewController as! MyCropsViewController
-                    
-                case MainViews.LifeCycleView:
-                    controller = (segue.destination as! UINavigationController).topViewController as! LifeCycleViewController
-                    
-                case MainViews.MyGardenView:
-                    controller = (segue.destination as! UINavigationController).topViewController as! MyGardenViewController
-                    
-                case MainViews.AboutView:
-                    controller = (segue.destination as! UINavigationController).topViewController as! AboutViewController
-                    
-                default:
-                    controller = (segue.destination as! UINavigationController).topViewController as! AboutViewController
-                }
-                
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//   
+//        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+//        controller.viewControllerInside = insideVC
+//        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+//        controller.navigationItem.leftItemsSupplementBackButton = true
+//        
+//    }
     
     // MARK: - Table View
     
@@ -92,5 +66,30 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var segueId : String!
+        
+        switch objects[indexPath.row] {
+            
+        case MainViews.MyCropsView:
+            segueId = SegueIdentifiers.showMyCropsView
+            
+        case MainViews.LifeCycleView:
+            segueId = SegueIdentifiers.showLifeCycleView
+            
+        case MainViews.MyGardenView:
+            segueId = SegueIdentifiers.showMyGardenView
+            
+        case MainViews.AboutView:
+            segueId = SegueIdentifiers.showAboutView
+            
+        default:
+            segueId = SegueIdentifiers.showAboutView
+        }
+        
+        self.performSegue(withIdentifier: segueId, sender: self)
     }
 }

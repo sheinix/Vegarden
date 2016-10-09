@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="CommonViewController" customModule="Vegarden" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="LifeCycleViewController" customModule="Vegarden" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
@@ -33,14 +34,36 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-Tr-RBJ">
+                                <frame key="frameInset" minX="166" minY="153" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinche label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-VB-Frp">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="sC6-VB-Frp" secondAttribute="bottom" constant="493" id="EQp-WC-Q30"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sC6-VB-Frp" secondAttribute="trailing" constant="100" id="OVx-Ob-uhQ"/>
+                            <constraint firstItem="sC6-VB-Frp" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="89" id="mq0-6V-nsB"/>
+                            <constraint firstItem="sC6-VB-Frp" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="150" id="pKA-gQ-TUF"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="LifeCycle" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="label" destination="sC6-VB-Frp" id="3Mc-mG-qb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="2677.5999999999999" y="419.64017991004499"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -69,11 +92,11 @@
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -83,7 +106,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showLifeCycleView" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,10 +117,53 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="qGx-ee-TKj" kind="showDetail" identifier="showMyCropsView" id="8eC-X5-6dT"/>
+                        <segue destination="Ulf-iw-qSp" kind="showDetail" identifier="showMyGardenView" id="CXt-aM-vjy"/>
+                        <segue destination="noJ-DX-uOa" kind="showDetail" identifier="showAboutView" id="S5k-eW-em7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
+        </scene>
+        <!--My Garden-->
+        <scene sceneID="7g0-Hg-Wzp">
+            <objects>
+                <viewController title="My Garden" id="9GY-AB-pqc" customClass="MyGardenViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VJt-fr-sH5"/>
+                        <viewControllerLayoutGuide type="bottom" id="qdT-rX-GIu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="geL-Nu-rZB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Garden" id="12y-Dc-Mcm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCu-RC-Zb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="-903.59820089955031"/>
+        </scene>
+        <!--MyCrops-->
+        <scene sceneID="MsZ-Dg-nao">
+            <objects>
+                <viewController id="O3e-ub-KdG" customClass="MyCropsViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PGM-em-Cng"/>
+                        <viewControllerLayoutGuide type="bottom" id="DqO-j6-aD8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RAM-gs-x2b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MyCrops" id="1Kp-3z-EBU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bX2-6w-Ek1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -113,7 +179,80 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="1809" y="420"/>
+        </scene>
+        <!--About Vegarden-->
+        <scene sceneID="MUF-9E-6eu">
+            <objects>
+                <viewController id="W3b-c5-BzW" customClass="AboutViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5zW-Wp-ibN"/>
+                        <viewControllerLayoutGuide type="bottom" id="HUn-Qr-i4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8EE-b3-so1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About Vegarden" id="zI5-Iz-rE2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5d5-VF-epu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="1102"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e8v-r3-JHB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qGx-ee-TKj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p01-Po-kw1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O3e-ub-KdG" kind="relationship" relationship="rootViewController" id="0XL-vp-lAp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9KH-Vo-tLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="-247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZYV-8y-KIY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ulf-iw-qSp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uWC-BU-zgC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9GY-AB-pqc" kind="relationship" relationship="rootViewController" id="otq-b1-kjq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrp-J1-un9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.8" y="-904.49775112443785"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rBf-sc-uJb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="noJ-DX-uOa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l02-Lj-pkj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W3b-c5-BzW" kind="relationship" relationship="rootViewController" id="7gu-Ov-Jd6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUM-2K-gtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="1111"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -16,7 +16,7 @@ class LifeCycleViewController: CommonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label = UILabel()
+//        label = UILabel()
         label.text = MainViews.LifeCycleView
         
     }

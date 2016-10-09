@@ -27,6 +27,10 @@ struct MainViews {
 
 
 struct SegueIdentifiers {
-    static let showNewViewFromSideTabBar = "showDetail"
+    static let showMyCropsView = "showMyCropsView"
+    static let showMyGardenView = "showMyGardenView"
+    static let showLifeCycleView = "showLifeCycleView"
+    static let showAboutView = "showAboutView"
+    
 //    static let Detail = "DetailViewController"
 }
