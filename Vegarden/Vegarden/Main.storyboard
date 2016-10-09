@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -17,6 +17,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                        <segue destination="gFG-Wk-Wde" kind="showDetail" identifier="showMyCropsView" id="WGk-IK-vHI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
@@ -92,11 +93,11 @@
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <frame key="frameInset" minX="15" width="345" height="43"/>
+                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -118,7 +119,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="qGx-ee-TKj" kind="showDetail" identifier="showMyCropsView" id="8eC-X5-6dT"/>
                         <segue destination="Ulf-iw-qSp" kind="showDetail" identifier="showMyGardenView" id="CXt-aM-vjy"/>
                         <segue destination="noJ-DX-uOa" kind="showDetail" identifier="showAboutView" id="S5k-eW-em7"/>
                     </connections>
@@ -145,25 +145,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCu-RC-Zb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2748" y="-903.59820089955031"/>
-        </scene>
-        <!--MyCrops-->
-        <scene sceneID="MsZ-Dg-nao">
-            <objects>
-                <viewController id="O3e-ub-KdG" customClass="MyCropsViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PGM-em-Cng"/>
-                        <viewControllerLayoutGuide type="bottom" id="DqO-j6-aD8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RAM-gs-x2b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="MyCrops" id="1Kp-3z-EBU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bX2-6w-Ek1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2748" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -200,23 +181,91 @@
             </objects>
             <point key="canvasLocation" x="2678" y="1102"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="e8v-r3-JHB">
+        <!--My Crops Collection View Controller-->
+        <scene sceneID="lOK-Yi-UVO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qGx-ee-TKj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p01-Po-kw1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="O3e-ub-KdG" kind="relationship" relationship="rootViewController" id="0XL-vp-lAp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9KH-Vo-tLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionViewController id="gFG-Wk-Wde" customClass="MyCropsCollectionViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NjZ-S8-XLq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r1P-gJ-PhT">
+                            <size key="itemSize" width="219" height="189"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Qff-n6-ooV" customClass="MyCropsCollectionViewCell" customModule="Vegarden" customModuleProvider="target">
+                                <rect key="frame" x="78" y="0.0" width="219" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="219" height="189"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-bG-G3v" customClass="RoundedCornersView" customModule="Vegarden" customModuleProvider="target">
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AKo-pD-hvr">
+                                                    <frame key="frameInset" minX="8" minY="136" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-gJ-FWZ">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-bq-TFA">
+                                                    <color key="backgroundColor" red="0.18996866732074269" green="1" blue="0.29348715628865996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="cgT-wi-ohc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-b4-HJW">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Jge-gJ-FWZ" firstAttribute="top" secondItem="aIO-bq-TFA" secondAttribute="bottom" constant="8" id="3Gg-vu-Hgu"/>
+                                                <constraint firstAttribute="bottom" secondItem="aIO-bq-TFA" secondAttribute="bottom" constant="54" id="5Dx-6q-T9h"/>
+                                                <constraint firstItem="aIO-bq-TFA" firstAttribute="centerX" secondItem="S1G-bG-G3v" secondAttribute="centerX" id="7gg-hP-lCK"/>
+                                                <constraint firstItem="Jge-gJ-FWZ" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" id="INi-nE-b9J"/>
+                                                <constraint firstItem="aIO-bq-TFA" firstAttribute="width" secondItem="S1G-bG-G3v" secondAttribute="width" id="J3w-ah-RgT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kbb-b4-HJW" secondAttribute="trailing" constant="124" id="Qam-iC-KEI"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jge-gJ-FWZ" secondAttribute="trailing" constant="143" id="S3V-EC-3Gi"/>
+                                                <constraint firstAttribute="trailing" secondItem="aIO-bq-TFA" secondAttribute="trailing" id="VD7-nd-jdw"/>
+                                                <constraint firstItem="Kbb-b4-HJW" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" constant="4" id="pfe-QY-nf9"/>
+                                                <constraint firstItem="Kbb-b4-HJW" firstAttribute="top" secondItem="Jge-gJ-FWZ" secondAttribute="bottom" constant="-2" id="zA2-EO-e9D"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="S1G-bG-G3v" firstAttribute="leading" secondItem="Qff-n6-ooV" secondAttribute="leadingMargin" id="IOr-kz-VcJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="S1G-bG-G3v" secondAttribute="trailing" id="NaQ-v3-Dz0"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="S1G-bG-G3v" secondAttribute="bottom" id="qIS-EU-apB"/>
+                                    <constraint firstItem="S1G-bG-G3v" firstAttribute="top" secondItem="Qff-n6-ooV" secondAttribute="topMargin" id="vGf-FV-WAU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="captionLabel" destination="Jge-gJ-FWZ" id="4vf-bJ-JBA"/>
+                                    <outlet property="commentLabel" destination="Kbb-b4-HJW" id="hAn-R9-S3F"/>
+                                    <outlet property="imageView" destination="aIO-bq-TFA" id="g8p-sf-3uA"/>
+                                    <outlet property="imageViewHeightLayoutConstraint" destination="cgT-wi-ohc" id="VZS-p4-F6B"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gFG-Wk-Wde" id="KAI-jf-e2g"/>
+                            <outlet property="delegate" destination="gFG-Wk-Wde" id="0gZ-3y-Mol"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="IEs-B5-l17"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1D-bP-1lQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="-247"/>
+            <point key="canvasLocation" x="3672.8000000000002" y="-217.24137931034485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZYV-8y-KIY">
@@ -254,8 +303,27 @@
             </objects>
             <point key="canvasLocation" x="1759" y="1111"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jCy-ED-1B1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p6h-Ud-H2a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3y-LT-MBd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gFG-Wk-Wde" kind="relationship" relationship="rootViewController" id="oki-Gt-kVJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMt-ej-VKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733.5999999999999" y="-217.24137931034485"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
+        <segue reference="oki-Gt-kVJ"/>
     </inferredMetricsTieBreakers>
 </document>

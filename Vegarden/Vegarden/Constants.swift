@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
