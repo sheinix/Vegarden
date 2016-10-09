@@ -37,36 +37,33 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == SegueIdentifiers.showNewViewFromSideTabBar {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
                 
+                //TODO Review this part of code because it can be written much better!
                 
-                var controllerType : CommonViewController
+                var controller : CommonViewController
                 
                 switch objects[indexPath.row] {
                     
                 case MainViews.MyCropsView:
-                    controllerType = MyCropsViewController()
+                     controller = (segue.destination as! UINavigationController).topViewController as! MyCropsViewController
                     
                 case MainViews.LifeCycleView:
-                    controllerType = LifeCycleViewController()
+                    controller = (segue.destination as! UINavigationController).topViewController as! LifeCycleViewController
                     
                 case MainViews.MyGardenView:
-                    controllerType = MyGardenViewController()
+                    controller = (segue.destination as! UINavigationController).topViewController as! MyGardenViewController
                     
                 case MainViews.AboutView:
-                    controllerType = AboutViewController()
+                    controller = (segue.destination as! UINavigationController).topViewController as! AboutViewController
                     
                 default:
-                    controllerType = AboutViewController()
+                    controller = (segue.destination as! UINavigationController).topViewController as! AboutViewController
                 }
-                
-                let classController = controllerType.self
-                
-                let controller = (segue.destination as! UINavigationController).topViewController as! classcotroller
-                
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
