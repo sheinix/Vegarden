@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 private let reuseIdentifier = "MyCropCell"
 
 class MyCropsCollectionViewController: UICollectionViewController {
 
-    var myCrops = ["Carrot", "Beethroot", "Cabbage", "Broccoli", "CauliFlower", "Red Chard", "Corn"]
+    var myCrops = CropVeggie.allPhotos()
     
     
     override func viewDidLoad() {
@@ -23,7 +24,8 @@ class MyCropsCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.automaticallyAdjustsScrollViewInsets = true;
+        
         // Do any additional setup after loading the view.
     }
 
@@ -59,7 +61,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCropsCollectionViewCell
 
-        cell.photo = myCrops[indexPath.item]
+        cell.crop = myCrops[indexPath.item]
     
         return cell
     }
@@ -95,4 +97,30 @@ class MyCropsCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension MyCropsCollectionViewController : PinterestLayoutDelegate {
+    
+    // 1. Returns the photo height
+    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath , withWidth width:CGFloat) -> CGFloat {
+        
+        let crop = myCrops[indexPath.item]
+        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+        let rect  = AVMakeRect(aspectRatio: crop.image.size, insideRect: boundingRect)
+        return rect.size.height
+    }
+    
+    // 2. Returns the annotation size based on the text
+    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
+        
+        let annotationPadding = CGFloat(4)
+        let annotationHeaderHeight = CGFloat(17)
+        
+        let crop = myCrops[indexPath.item]
+        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+        let commentHeight = crop.heightForComment(font: font, width: width)
+        let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
+        
+        return height
+    }
 }

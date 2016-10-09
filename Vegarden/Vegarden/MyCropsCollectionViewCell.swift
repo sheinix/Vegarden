@@ -17,7 +17,7 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
     
     var crop: CropVeggie? {
         didSet {
-            if let photo = CropVeggie {
+            if let crop = crop {
                 imageView.image = crop.image
                 captionLabel.text = crop.caption
                 commentLabel.text = crop.comment
