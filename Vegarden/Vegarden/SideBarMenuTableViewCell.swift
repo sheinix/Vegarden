@@ -9,10 +9,14 @@
 import UIKit
 
 class SideBarMenuTableViewCell: UITableViewCell {
+    
+    @IBOutlet internal weak var tabImgView: UIImageView!
+//    @IBOutlet private weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet private weak var tabTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

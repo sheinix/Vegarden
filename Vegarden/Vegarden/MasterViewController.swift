@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
     
 //    var detailViewController: DetailViewController? = nil
-    var objects = [MainViews.MyCropsView, MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView]
+    let objects = [MainViews.MyCropsView, MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView]
     
     
     override func viewDidLoad() {
@@ -56,12 +56,43 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.sideTabCellIdentifier, for: indexPath) as! SideBarMenuTableViewCell
         
-        let object = objects[indexPath.row] 
-        cell.textLabel!.text = object.description
+        var img : UIImage
+        
+        
+        switch objects[indexPath.row] {
+          
+        case MainViews.MyCropsView:
+                img = UIImage(named: "crops")!
+            
+            case MainViews.LifeCycleView:
+                img = UIImage(named: "lifecycle")!
+            
+            case MainViews.MyGardenView:
+                img = UIImage(named: "garden")!
+            
+            case MainViews.AboutView:
+                img = UIImage(named: "info")!
+            
+        default:
+                img = UIImage(named: "info")!
+        }
+        
+        
+        (cell as SideBarMenuTableViewCell).tabImgView.image = img
+        
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        let cell = tableView.cellForRow(at: indexPath)
+//        let imgView = (cell as! SideBarMenuTableViewCell).tabImgView
+//        
+//        return (imgView?.frame.height)!
+//    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

@@ -32,7 +32,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinche label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-VB-Frp">
@@ -73,33 +73,34 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
-        <!--Master-->
+        <!--Menu-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Menu" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" rowHeight="169" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD" customClass="SideBarMenuTableViewCell" customModule="Vegarden">
-                                <rect key="frame" x="0.0" y="86" width="320" height="169"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SideTabScreenCellIdentifier" rowHeight="169" id="WCw-Qf-5nD" customClass="SideBarMenuTableViewCell" customModule="Vegarden">
+                                <rect key="frame" x="0.0" y="86" width="375" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="320" height="168"/>
+                                    <frame key="frameInset" width="375" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <frame key="frameInset" minX="15" width="290" height="168"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V"/>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6Zi-FO-c9V" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="3An-vP-d3S"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6Zi-FO-c9V" secondAttribute="trailing" constant="65" id="IUj-8a-HQI"/>
+                                        <constraint firstItem="6Zi-FO-c9V" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="66" id="hNk-4B-rJO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6Zi-FO-c9V" secondAttribute="bottom" id="m6t-XK-szr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="tabImgView" destination="6Zi-FO-c9V" id="FU9-RL-qJ9"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showLifeCycleView" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -130,7 +131,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qdT-rX-GIu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="geL-Nu-rZB">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -165,7 +166,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HUn-Qr-i4v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8EE-b3-so1">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -180,13 +181,13 @@
             <objects>
                 <collectionViewController id="gFG-Wk-Wde" customClass="MyCropsCollectionViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NjZ-S8-XLq">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="YET-vG-PfL" customClass="PinterestLayout" customModule="Vegarden" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCropCell" id="Qff-n6-ooV" customClass="MyCropsCollectionViewCell" customModule="Vegarden">
-                                <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
+                                <rect key="frame" x="51" y="0.0" width="274" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>

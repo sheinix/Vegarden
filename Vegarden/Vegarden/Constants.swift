@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 struct UINumbericConstants {
-    static let widthSideMenu : CGFloat = 2.0
+    static let widthSideMenu : CGFloat = 1.0
+    static let floatingBttnSize : CGFloat = 100
+    static let floattingBttnCGSize : CGSize = CGSize(width:floatingBttnSize, height:floatingBttnSize)
 }
-
 
 struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
@@ -30,7 +31,6 @@ struct MainViews {
     static let MyGardenView: String = "My Garden"
     static let AboutView: String = "About"
 }
-
 
 struct SegueIdentifiers {
     static let showMyCropsView = "showMyCropsView"

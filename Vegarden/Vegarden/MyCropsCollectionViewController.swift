@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import LiquidFloatingActionButton
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -31,6 +32,18 @@ class MyCropsCollectionViewController: UICollectionViewController {
             layout.delegate = self
         }
 
+        //MARK - Floating Button
+        let bttnFrame = CGRect(origin: CGPoint(x: view.frame.size.width - UINumbericConstants.floatingBttnSize,y :view.frame.size.height - UINumbericConstants.floatingBttnSize), size: UINumbericConstants.floattingBttnCGSize)
+        
+        let floatingActionButton = LiquidFloatingActionButton(frame:bttnFrame)
+        floatingActionButton.dataSource = self
+        floatingActionButton.delegate = self
+//        floatingActionButton.color = UIC
+        
+            
+        view.addSubview(floatingActionButton)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,6 +116,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
 
 }
 
+// MARK: PinterestLayoutDelegate
 extension MyCropsCollectionViewController : PinterestLayoutDelegate {
     
     // 1. Returns the photo height
@@ -126,5 +140,26 @@ extension MyCropsCollectionViewController : PinterestLayoutDelegate {
         let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
         
         return height
+    }
+}
+
+// MARK: LiquidFloatingActionButtonDelegate
+extension MyCropsCollectionViewController : LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
+    
+    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+        return 3
+    }
+    
+    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
+        
+        return LiquidFloatingCell(icon: UIImage(named: "crops")!)
+        
+    }
+    
+    
+    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        
+        
+        print("print item at index: /index")
     }
 }

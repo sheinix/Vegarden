@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
+		960CCF6E1DABC36300CB62C5 /* crops.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6A1DABC36300CB62C5 /* crops.png */; };
+		960CCF6F1DABC36300CB62C5 /* garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6B1DABC36300CB62C5 /* garden.png */; };
+		960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6D1DABC36300CB62C5 /* lifecycle.png */; };
 		96D62C301DA9F4DF00DEF4EC /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* Photos.plist */; };
 		96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C311DA9F5A700DEF4EC /* 01.jpg */; };
 		96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C321DA9F5A700DEF4EC /* 02.jpg */; };
@@ -83,6 +86,9 @@
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
+		960CCF6A1DABC36300CB62C5 /* crops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crops.png; sourceTree = "<group>"; };
+		960CCF6B1DABC36300CB62C5 /* garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden.png; sourceTree = "<group>"; };
+		960CCF6D1DABC36300CB62C5 /* lifecycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifecycle.png; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 		96D62C311DA9F5A700DEF4EC /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		96D62C321DA9F5A700DEF4EC /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
@@ -286,6 +292,9 @@
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				BD37C0F31DA50FBD00265405 /* Constants.swift */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
+				960CCF6A1DABC36300CB62C5 /* crops.png */,
+				960CCF6B1DABC36300CB62C5 /* garden.png */,
+				960CCF6D1DABC36300CB62C5 /* lifecycle.png */,
 				96D62C311DA9F5A700DEF4EC /* 01.jpg */,
 				96D62C321DA9F5A700DEF4EC /* 02.jpg */,
 				96D62C331DA9F5A700DEF4EC /* 03.jpg */,
@@ -389,6 +398,9 @@
 				96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */,
 				96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */,
 				96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */,
+				960CCF6E1DABC36300CB62C5 /* crops.png in Resources */,
+				960CCF6F1DABC36300CB62C5 /* garden.png in Resources */,
+				960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */,
 				96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */,
 				96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */,
 				96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */,
