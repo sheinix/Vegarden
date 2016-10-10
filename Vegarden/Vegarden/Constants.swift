@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+struct UINumbericConstants {
+    static let widthSideMenu : CGFloat = 2.0
+}
+
+
 struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
     //static let Large = "LargeCellIdentifier"
