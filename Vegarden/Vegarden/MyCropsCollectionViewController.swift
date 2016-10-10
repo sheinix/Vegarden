@@ -23,10 +23,14 @@ class MyCropsCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+       // self.collectionView!.register(MyCropsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.automaticallyAdjustsScrollViewInsets = true;
         
-        // Do any additional setup after loading the view.
+        // set the pinterest layout
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+            layout.delegate = self
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

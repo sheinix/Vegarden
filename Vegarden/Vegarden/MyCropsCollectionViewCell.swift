@@ -25,10 +25,12 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
         }
     }
     
+   
+    
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)
         if let attributes = layoutAttributes as? PinterestLayoutAttributes {
-            imageViewHeightLayoutConstraint.constant = attributes.photoHeight
+            imageViewHeightLayoutConstraint?.constant = attributes.photoHeight
         }
     }
 

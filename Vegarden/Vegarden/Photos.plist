@@ -58,13 +58,5 @@
 		<key>Photo</key>
 		<string>07</string>
 	</dict>
-	<dict>
-		<key>Caption</key>
-		<string>Lunch</string>
-		<key>Comment</key>
-		<string>Mic and Greg grab a quick bite to eat between WatchKit sessions.</string>
-		<key>Photo</key>
-		<string>08</string>
-	</dict>
 </array>
 </plist>
