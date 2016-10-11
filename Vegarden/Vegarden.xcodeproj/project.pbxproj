@@ -20,6 +20,7 @@
 		96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C351DA9F5A700DEF4EC /* 05.jpg */; };
 		96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C361DA9F5A700DEF4EC /* 06.jpeg */; };
 		96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C371DA9F5A700DEF4EC /* 07.jpeg */; };
+		AC077F2210D0A23DCF345FF6 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */; };
 		BD203E481DA2305800951732 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E461DA2305800951732 /* MasterViewController.swift */; };
 		BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD203E4C1DA4F84000951732 /* Main.storyboard */; };
 		BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B31DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift */; };
@@ -98,6 +99,7 @@
 		96D62C361DA9F5A700DEF4EC /* 06.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06.jpeg; sourceTree = "<group>"; };
 		96D62C371DA9F5A700DEF4EC /* 07.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 07.jpeg; sourceTree = "<group>"; };
 		990DCAFE6F54E5AD9F2D944F /* Pods-Vegarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.debug.xcconfig"; sourceTree = "<group>"; };
+		B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD203E461DA2305800951732 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		BD203E4C1DA4F84000951732 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD3307B31DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCropsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -169,12 +171,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */,
+				AC077F2210D0A23DCF345FF6 /* Pods_Vegarden.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55AE3718F559B73804B39E4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F59DDC4D0791FBC80CE3F13 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +278,7 @@
 				BD7B8EA71D9118080063347D /* Products */,
 				6F59DDC4D0791FBC80CE3F13 /* Pods */,
 				7A1AD46C11CADAE35089C031 /* c */,
+				55AE3718F559B73804B39E4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

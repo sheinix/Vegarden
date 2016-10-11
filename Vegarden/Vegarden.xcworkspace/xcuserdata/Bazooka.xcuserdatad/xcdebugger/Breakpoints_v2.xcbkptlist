@@ -127,13 +127,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vegarden/MyCropsCollectionViewController.swift"
-            timestampString = "497802074.357812"
+            timestampString = "497849820.009911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "liquidFloatingActionButton(_:didSelectItemAtIndex:)"
-            landmarkType = "7">
+            startingLineNumber = "170"
+            endingLineNumber = "170">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -181,38 +179,6 @@
             startingLineNumber = "231"
             endingLineNumber = "231"
             landmarkName = "didTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/LiquidFloatingActionButton/Pod/Classes/LiquidFloatingActionButton.swift"
-            timestampString = "497802269.364218"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "open()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/LiquidFloatingActionButton/Pod/Classes/LiquidFloatingActionButton.swift"
-            timestampString = "497802270.729792"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "close()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

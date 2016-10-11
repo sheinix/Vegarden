@@ -8,7 +8,9 @@
 
 import UIKit
 import AVFoundation
-import LiquidFloatingActionButton
+//import LiquidFloatingActionButton
+import KCFloatingActionButton
+
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -33,16 +35,8 @@ class MyCropsCollectionViewController: UICollectionViewController {
         }
 
         //MARK - Floating Button
-        let bttnFrame = CGRect(origin: CGPoint(x: view.frame.size.width - UINumbericConstants.floatingBttnSize,y :view.frame.size.height - UINumbericConstants.floatingBttnSize), size: UINumbericConstants.floattingBttnCGSize)
         
-        let floatingActionButton = LiquidFloatingActionButton(frame:bttnFrame)
-        floatingActionButton.dataSource = self
-        floatingActionButton.delegate = self
-//        floatingActionButton.color = UIC
-        
-            
-        view.addSubview(floatingActionButton)
-        
+        setupFloatingBttn()
         
     }
 
@@ -61,8 +55,24 @@ class MyCropsCollectionViewController: UICollectionViewController {
     }
     */
 
+    
+    func setupFloatingBttn() {
+        
+        let bttnFrame = CGRect(origin: CGPoint(x: view.frame.size.width - UINumbericConstants.floatingBttnSize,y :view.frame.size.height - UINumbericConstants.floatingBttnSize), size: UINumbericConstants.floattingBttnCGSize)
+       
+        let fab = KCFloatingActionButton()
+        fab.frame = bttnFrame
+        fab.addItem("Add Crop", icon: UIImage(named: "crops")!, handler: { item in
+            let alert = UIAlertController(title: "Hey", message: "Implement AddCrop!...", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok men!", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            fab.close()
+        })
+        
+        view.addSubview(fab)
+    }
+    
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
@@ -144,22 +154,22 @@ extension MyCropsCollectionViewController : PinterestLayoutDelegate {
 }
 
 // MARK: LiquidFloatingActionButtonDelegate
-extension MyCropsCollectionViewController : LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
-    
-    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
-        return 3
-    }
-    
-    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
-        
-        return LiquidFloatingCell(icon: UIImage(named: "crops")!)
-        
-    }
-    
-    
-    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-        
-        
-        print("print item at index: /index")
-    }
-}
+//extension MyCropsCollectionViewController : LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
+//    
+//    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+//        return 3
+//    }
+//    
+//    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
+//        
+//        return LiquidFloatingCell(icon: UIImage(named: "crops")!)
+//        
+//    }
+//    
+//    
+//    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+//        
+//        
+//        print("print item at index: /index")
+//    }
+//}
