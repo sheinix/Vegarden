@@ -15,12 +15,15 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var captionLabel: UILabel!
     @IBOutlet private weak var commentLabel: UILabel!
     
+    open var imgView: UIImageView?
+    
     var crop: CropVeggie? {
         didSet {
             if let crop = crop {
                 imageView.image = crop.image
                 captionLabel.text = crop.caption
                 commentLabel.text = crop.comment
+                imgView = imageView
             }
         }
     }

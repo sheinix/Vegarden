@@ -8,9 +8,8 @@
 
 import UIKit
 import AVFoundation
-//import LiquidFloatingActionButton
 import KCFloatingActionButton
-
+import RMPZoomTransitionAnimator
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -23,7 +22,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
        // self.collectionView!.register(MyCropsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -35,7 +34,6 @@ class MyCropsCollectionViewController: UICollectionViewController {
         }
 
         //MARK - Floating Button
-        
         setupFloatingBttn()
         
     }
@@ -102,12 +100,12 @@ class MyCropsCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
@@ -153,23 +151,40 @@ extension MyCropsCollectionViewController : PinterestLayoutDelegate {
     }
 }
 
-// MARK: LiquidFloatingActionButtonDelegate
-//extension MyCropsCollectionViewController : LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
-//    
-//    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
-//        return 3
-//    }
-//    
-//    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
-//        
-//        return LiquidFloatingCell(icon: UIImage(named: "crops")!)
-//        
-//    }
-//    
-//    
-//    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-//        
-//        
-//        print("print item at index: /index")
-//    }
-//}
+extension MyCropsCollectionViewController: RMPZoomTransitionAnimating, RMPZoomTransitionDelegate {
+
+    func transitionSourceImageView() -> UIImageView! {
+        
+        let selectedIdxPath = collectionView?.indexPathsForSelectedItems?.first
+        
+        let cell : MyCropsCollectionViewCell = (collectionView?.cellForItem(at: selectedIdxPath!) as! MyCropsCollectionViewCell)
+        
+        let imgView = UIImageView(image: cell.imgView?.image)
+        
+        
+        imgView.contentMode = (cell.imgView?.contentMode)!;
+        imgView.clipsToBounds = true;
+        imgView.isUserInteractionEnabled = false;
+        imgView.frame = (cell.imgView?.convert((cell.imgView?.frame)!, from: collectionView?.superview))!
+        
+        return imgView;
+
+    }
+    
+    func transitionSourceBackgroundColor() -> UIColor! {
+        
+        return collectionView!.backgroundColor;
+    }
+    
+    func transitionDestinationImageViewFrame() -> CGRect {
+
+        let selectedIdxPath = collectionView?.indexPathsForSelectedItems?.first
+        
+        let cell : MyCropsCollectionViewCell = (collectionView?.cellForItem(at: selectedIdxPath!) as! MyCropsCollectionViewCell)
+
+        let cellFrameInSuperview = cell.imgView?.convert((cell.imgView?.frame)!, to: collectionView?.superview)
+        
+        return cellFrameInSuperview!
+
+    }
+}
