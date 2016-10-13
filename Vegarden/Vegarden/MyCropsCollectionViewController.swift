@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import KCFloatingActionButton
-import RMPZoomTransitionAnimator
+import CHTCollectionViewWaterfallLayout
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -153,38 +153,4 @@ extension MyCropsCollectionViewController : PinterestLayoutDelegate {
 
 extension MyCropsCollectionViewController: RMPZoomTransitionAnimating, RMPZoomTransitionDelegate {
 
-    func transitionSourceImageView() -> UIImageView! {
-        
-        let selectedIdxPath = collectionView?.indexPathsForSelectedItems?.first
-        
-        let cell : MyCropsCollectionViewCell = (collectionView?.cellForItem(at: selectedIdxPath!) as! MyCropsCollectionViewCell)
-        
-        let imgView = UIImageView(image: cell.imgView?.image)
-        
-        
-        imgView.contentMode = (cell.imgView?.contentMode)!;
-        imgView.clipsToBounds = true;
-        imgView.isUserInteractionEnabled = false;
-        imgView.frame = (cell.imgView?.convert((cell.imgView?.frame)!, from: collectionView?.superview))!
-        
-        return imgView;
-
-    }
-    
-    func transitionSourceBackgroundColor() -> UIColor! {
-        
-        return collectionView!.backgroundColor;
-    }
-    
-    func transitionDestinationImageViewFrame() -> CGRect {
-
-        let selectedIdxPath = collectionView?.indexPathsForSelectedItems?.first
-        
-        let cell : MyCropsCollectionViewCell = (collectionView?.cellForItem(at: selectedIdxPath!) as! MyCropsCollectionViewCell)
-
-        let cellFrameInSuperview = cell.imgView?.convert((cell.imgView?.frame)!, to: collectionView?.superview)
-        
-        return cellFrameInSuperview!
-
-    }
 }

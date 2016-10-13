@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D171256A9D09B120FC242F505875D4AC'
-               BlueprintName = 'RMPZoomTransitionAnimator-RMPZoomTransitionAnimator'
+               BlueprintIdentifier = '52C1B5A2084F9B3A2B61A89803680B93'
+               BlueprintName = 'CHTCollectionViewWaterfallLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RMPZoomTransitionAnimator.bundle'>
+               BuildableName = 'CHTCollectionViewWaterfallLayout.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
