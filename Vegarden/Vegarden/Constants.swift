@@ -17,7 +17,8 @@ struct UINumbericConstants {
 
 struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
-    //static let Large = "LargeCellIdentifier"
+    static let CropDetailViewCellIdentify = "CropDetailViewCellIdentify"
+    static let CropDetailTableViewCellIdentify = "CropDetailTableViewCellIdentify"
 }
 
 struct FontSizes {

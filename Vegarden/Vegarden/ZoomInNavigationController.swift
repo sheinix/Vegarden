@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RMPZoomTransitionAnimator
+import CHTCollectionViewWaterfallLayout
 
 class ZoomInNavigationController: UINavigationController {
 
@@ -32,20 +32,44 @@ class ZoomInNavigationController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func popViewController(animated: Bool) -> UIViewController {
+        
+        //viewWillAppearWithPageIndex
+        let childrenCount = self.viewControllers.count
+        let toViewController = self.viewControllers[childrenCount-2] as! VWaterFallViewControllerProtocol
+        let toView = toViewController.transitionCollectionView()
+        let popedViewController = self.viewControllers[childrenCount-1] as! UICollectionViewController
+        let popView  = popedViewController.collectionView!;
+        let indexPath = popView.fromPageIndexPath()
+       
+        toViewController.viewWillAppearWithPageIndex(pageIndex: indexPath.row)
+        toView?.setToIndexPath(indexPath: indexPath)
+        
+        return super.popViewController(animated: animated)!
+    }
 }
 
 extension ZoomInNavigationController : UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        // minimum implementation for example
-        let animator = RMPZoomTransitionAnimator()
-        animator.goingForward = (operation == UINavigationControllerOperation.push);
-        animator.sourceTransition = (fromVC as? RMPZoomTransitionAnimating as! (RMPZoomTransitionAnimating & RMPZoomTransitionDelegate)!)
-        animator.destinationTransition = (toVC as? RMPZoomTransitionAnimating as! (RMPZoomTransitionAnimating & RMPZoomTransitionDelegate)!)
+        let fromVCConfromA = (fromVC as? VTransitionProtocol)
+        let fromVCConfromB = (fromVC as? VWaterFallViewControllerProtocol)
+        let fromVCConfromC = (fromVC as? VHorizontalPageViewControllerProtocol)
         
-        return animator;
+        let toVCConfromA = (toVC as? VTransitionProtocol)
+        let toVCConfromB = (toVC as? VWaterFallViewControllerProtocol)
+        let toVCConfromC = (toVC as? VHorizontalPageViewControllerProtocol)
+        
+        if((fromVCConfromA != nil)&&(toVCConfromA != nil)&&(
+            (fromVCConfromB != nil && toVCConfromC != nil)||(fromVCConfromC != nil && toVCConfromB != nil))){
+            
+            let transition = VTransition()
+            transition.presenting = operation == .pop
+            return  transition
+        }else{
+            return nil
+        }
         
     }
 }

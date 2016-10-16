@@ -16,31 +16,50 @@ private let reuseIdentifier = "MyCropCell"
 class MyCropsCollectionViewController: UICollectionViewController {
 
     var myCrops = CropVeggie.allPhotos()
-    
+    let delegateHolder = ZoomInNavigationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
-
+        self.navigationController!.delegate = delegateHolder
+        (self.collectionView?.collectionViewLayout as! CHTCollectionViewWaterfallLayout).columnCount = 2
+        
         // Register cell classes
        // self.collectionView!.register(MyCropsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.automaticallyAdjustsScrollViewInsets = true;
         
         // set the pinterest layout
-        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
-            layout.delegate = self
-        }
+//        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+//            layout.delegate = self
+//        }
 
         //MARK - Floating Button
         setupFloatingBttn()
+        
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+// Set a layout for the detailview:
+    
+    func pageDetailViewControllerLayout () -> UICollectionViewFlowLayout {
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        let itemSize  = self.navigationController!.isNavigationBarHidden ?
+            CGSize(width:screenWidth, height:screenHeight+20) : CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight)
+        
+        flowLayout.itemSize = itemSize
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.scrollDirection = .horizontal
+        
+        return flowLayout
     }
 
     /*
@@ -87,21 +106,23 @@ class MyCropsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCropsCollectionViewCell
 
         cell.crop = myCrops[indexPath.item]
-    
+        
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
     
-    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      
+        let pageDetailViewController =
+            CropDetailCollectionViewController(collectionViewLayout: pageDetailViewControllerLayout(), currentIndexPath:indexPath as NSIndexPath)
+        
+        pageDetailViewController.cropList = myCrops
+        collectionView.setToIndexPath(indexPath: indexPath as NSIndexPath)
+        navigationController!.pushViewController(pageDetailViewController, animated: true)
+    }
+    
+    // MARK: UICollectionViewDelegate
+ 
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -112,45 +133,64 @@ class MyCropsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return false
     }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
     */
 
 }
 
-// MARK: PinterestLayoutDelegate
-extension MyCropsCollectionViewController : PinterestLayoutDelegate {
-    
-    // 1. Returns the photo height
-    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath , withWidth width:CGFloat) -> CGFloat {
+// MARK: CHTCollectionViewWaterfallLayoutDelegate
+extension MyCropsCollectionViewController : CHTCollectionViewDelegateWaterfallLayout {
+    /**
+     *  Asks the delegate for the size of the specified item’s cell.
+     *
+     *  @param collectionView
+     *    The collection view object displaying the waterfall layout.
+     *  @param collectionViewLayout
+     *    The layout object requesting the information.
+     *  @param indexPath
+     *    The index path of the item.
+     *
+     *  @return
+     *    The original size of the specified item. Both width and height must be greater than 0.
+     */
+    @available(iOS 6.0, *)
+    public func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
+                
+        let image = self.myCrops[indexPath.row].image
         
-        let crop = myCrops[indexPath.item]
-        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect  = AVMakeRect(aspectRatio: crop.image.size, insideRect: boundingRect)
-        return rect.size.height
+        return CGSize(width: (image.size.width), height: (image.size.height))
     }
+
     
-    // 2. Returns the annotation size based on the text
-    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        
-        let annotationPadding = CGFloat(4)
-        let annotationHeaderHeight = CGFloat(17)
-        
-        let crop = myCrops[indexPath.item]
-        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
-        let commentHeight = crop.heightForComment(font: font, width: width)
-        let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
-        
-        return height
-    }
 }
 
-extension MyCropsCollectionViewController: RMPZoomTransitionAnimating, RMPZoomTransitionDelegate {
-
+extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewControllerProtocol {
+    
+    func viewWillAppearWithPageIndex(pageIndex : NSInteger) {
+        
+        var position : UICollectionViewScrollPosition =
+            UICollectionViewScrollPosition.centeredHorizontally.intersection(.centeredVertically)
+      
+        let image =  self.myCrops[pageIndex].image
+        
+        let imageHeight = image.size.height*gridWidth/image.size.width
+        
+        if imageHeight > 400 {//whatever you like, it's the max value for height of image
+            position = .top
+        }
+        
+        let currentIndexPath = NSIndexPath(row: pageIndex, section: 0)
+        let collectionView = self.collectionView!;
+        collectionView.setToIndexPath(indexPath: currentIndexPath)
+        if pageIndex<2{
+            collectionView.setContentOffset(CGPoint.zero, animated: false)
+            
+        }else{
+            
+            collectionView.scrollToItem(at: currentIndexPath as IndexPath, at: position, animated: false)
+        }
+    }
+    
+    func transitionCollectionView() -> UICollectionView!{
+        return collectionView
+    }
 }
