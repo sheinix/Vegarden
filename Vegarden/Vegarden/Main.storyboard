@@ -11,6 +11,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -86,21 +87,30 @@
                                 <rect key="frame" x="0.0" y="86" width="375" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="169"/>
+                                    <frame key="frameInset" width="375" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-1L-2gv">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mIw-1L-2gv" secondAttribute="trailing" constant="10" id="2TC-Zb-B2x"/>
                                         <constraint firstItem="6Zi-FO-c9V" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="3An-vP-d3S"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="6Zi-FO-c9V" secondAttribute="trailing" constant="65" id="IUj-8a-HQI"/>
-                                        <constraint firstItem="6Zi-FO-c9V" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="66" id="hNk-4B-rJO"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6Zi-FO-c9V" secondAttribute="bottom" id="m6t-XK-szr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6Zi-FO-c9V" secondAttribute="trailing" id="IUj-8a-HQI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mIw-1L-2gv" secondAttribute="bottom" constant="1.5" id="OHf-hD-o9e"/>
+                                        <constraint firstItem="6Zi-FO-c9V" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="hNk-4B-rJO"/>
+                                        <constraint firstItem="mIw-1L-2gv" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="10" id="iWV-PF-ug6"/>
+                                        <constraint firstItem="mIw-1L-2gv" firstAttribute="top" secondItem="6Zi-FO-c9V" secondAttribute="bottom" constant="7.5" id="jz5-z7-mP1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="tabImgView" destination="6Zi-FO-c9V" id="FU9-RL-qJ9"/>
+                                    <outlet property="titleLabel" destination="mIw-1L-2gv" id="EeM-eH-Ip2"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showLifeCycleView" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -212,7 +222,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="aIO-bq-TFA" firstAttribute="top" secondItem="S1G-bG-G3v" secondAttribute="top" id="0Lz-PD-baq"/>
                                                 <constraint firstAttribute="trailing" secondItem="Kbb-b4-HJW" secondAttribute="trailing" constant="4" id="0dl-iN-kZB"/>
@@ -225,6 +235,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="Jge-gJ-FWZ" secondAttribute="trailing" constant="4" id="pFH-sA-7dy"/>
                                                 <constraint firstItem="aIO-bq-TFA" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" id="swB-SQ-6EH"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                 </view>

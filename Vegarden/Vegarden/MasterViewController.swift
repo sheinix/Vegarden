@@ -10,23 +10,25 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-//    var detailViewController: DetailViewController? = nil
-    let objects = [MainViews.MyCropsView, MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView]
+    let objects = [MainViews.MyCropsView,
+                   MainViews.LifeCycleView,
+                   MainViews.MyGardenView,
+                   MainViews.AboutView]
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-//        if let split = self.splitViewController {
-////            let controllers = split.viewControllers
-////            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-//        }
+        self.tableView.isScrollEnabled = false
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.backgroundColor = UIColor(red: 213, green: 240, blue: 226, alpha: 0.5)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,28 +62,30 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.sideTabCellIdentifier, for: indexPath) as! SideBarMenuTableViewCell
         
         var img : UIImage
-        
+        var title : String
         
         switch objects[indexPath.row] {
           
-        case MainViews.MyCropsView:
+            case MainViews.MyCropsView:
                 img = UIImage(named: "crops")!
-            
+                title = MainViews.MyCropsView
             case MainViews.LifeCycleView:
                 img = UIImage(named: "lifecycle")!
-            
+                title = MainViews.LifeCycleView
             case MainViews.MyGardenView:
                 img = UIImage(named: "garden")!
-            
+                title = MainViews.MyGardenView
             case MainViews.AboutView:
                 img = UIImage(named: "info")!
-            
+                title = MainViews.AboutView
         default:
                 img = UIImage(named: "info")!
+                title = MainViews.AboutView
         }
         
         
         (cell as SideBarMenuTableViewCell).tabImgView.image = img
+        (cell as SideBarMenuTableViewCell).titleLabel.text = title
         
         return cell
     }

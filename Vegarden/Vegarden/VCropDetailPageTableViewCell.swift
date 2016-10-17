@@ -31,6 +31,7 @@ class VCropDetailPageTableViewCell: UITableViewCell {
         if (imageView.image != nil) {
             let imageHeight = imageView.image!.size.height*screenWidth/imageView.image!.size.width
             imageView.frame = CGRect(x:0, y:0, width:screenWidth, height:imageHeight)
+            imageView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         }
     }
 

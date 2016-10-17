@@ -14,11 +14,11 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
     let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
-   
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        backgroundColor = UIColor.lightGray
+        backgroundColor = UIColor.clear
         
         contentView.addSubview(tableView)
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
@@ -54,6 +54,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
 //            let image = self.image
             cell?.imageView?.image = self.image
+            cell?.imageView?.layer.cornerRadius = 10
             
         }else{
             cell?.textLabel?.text = "try pull to pop view controller 😃"

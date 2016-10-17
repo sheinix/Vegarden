@@ -11,7 +11,7 @@ import UIKit
 class MyCropsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet private weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var captionLabel: UILabel!
     @IBOutlet private weak var commentLabel: UILabel!
     

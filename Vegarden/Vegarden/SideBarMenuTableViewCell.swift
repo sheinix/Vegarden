@@ -10,6 +10,7 @@ import UIKit
 
 class SideBarMenuTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet internal weak var tabImgView: UIImageView!
 //    @IBOutlet private weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
 //    @IBOutlet private weak var tabTitle: UILabel!

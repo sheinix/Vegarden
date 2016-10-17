@@ -26,6 +26,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
 //        self.navigationController?.navigationBar.backItem?.backBarButtonItem?
+        self.view.layer.cornerRadius = 10
         
     }
 

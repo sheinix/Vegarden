@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 struct UINumbericConstants {
-    static let widthSideMenu : CGFloat = 1.0
+    static let widthSideMenu : CGFloat = 0.2
+    static let minimumWidthSideMenu : CGFloat = 220
+    static let maximumwidthSideMenu : CGFloat = 320
     static let floatingBttnSize : CGFloat = 100
     static let floattingBttnCGSize : CGSize = CGSize(width:floatingBttnSize, height:floatingBttnSize)
+    static let commonCornerRadius : CGFloat = 10
 }
 
 struct CellIdentifiers {

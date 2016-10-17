@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vegarden/MasterViewController.swift"
-            timestampString = "497669081.075837"
+            timestampString = "498389962.152113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "MasterViewController"
             landmarkType = "3">
          </BreakpointContent>
