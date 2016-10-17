@@ -63,12 +63,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vegarden/Popup.m"
-            timestampString = "498380498.715471"
+            timestampString = "498382039.577698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
-            landmarkName = "-setSwipeToDismiss:"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
+            landmarkName = "-panFired:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/Popup.m"
+            timestampString = "498382039.577698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "-setupTextFields"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/Popup.m"
+            timestampString = "498382039.577698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
+            landmarkName = "-setTapBackgroundToDismiss:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

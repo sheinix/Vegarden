@@ -170,8 +170,13 @@ BOOL isWithCustomView = NO;
     [self makeAlertPopupView];
     
     [self setupTitle];
-    (isWithCustomView ? [self setupCustomView]:[self setupSubtitle]);
-    [self setupTextFields];
+    
+    if (isWithCustomView) {
+        [self setupCustomView];
+    } else {
+        [self setupSubtitle];
+        [self setupTextFields];
+    }
     [self setupButtons];
 }
 

@@ -22,6 +22,7 @@ class CropListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.register(CropListTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropListTableViewCellIdentify)
+        self.tableView.allowsSelection = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
