@@ -15,6 +15,8 @@ class ZoomInNavigationController: UINavigationController {
         
         super.viewDidLoad()
         self.delegate = self;
+        self.navigationBar.isTranslucent = true
+        self.navigationBar.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {

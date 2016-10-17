@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -190,16 +190,13 @@
                                 <rect key="frame" x="50.5" y="0.0" width="274" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="275" height="249"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-bG-G3v" customClass="RoundedCornersView" customModule="Vegarden" customModuleProvider="target">
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-bq-TFA">
                                                     <color key="backgroundColor" red="0.18996866732074269" green="1" blue="0.29348715628865996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="cgT-wi-ohc"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-b4-HJW">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -215,16 +212,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="aIO-bq-TFA" firstAttribute="top" secondItem="S1G-bG-G3v" secondAttribute="top" id="0Lz-PD-baq"/>
                                                 <constraint firstAttribute="trailing" secondItem="Kbb-b4-HJW" secondAttribute="trailing" constant="4" id="0dl-iN-kZB"/>
                                                 <constraint firstItem="Jge-gJ-FWZ" firstAttribute="top" secondItem="Kbb-b4-HJW" secondAttribute="bottom" id="0jd-Jf-gkL"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jge-gJ-FWZ" secondAttribute="bottom" constant="4" id="Fdu-v8-efH"/>
                                                 <constraint firstAttribute="trailing" secondItem="aIO-bq-TFA" secondAttribute="trailing" id="ZBM-Zg-YXf"/>
+                                                <constraint firstAttribute="bottom" secondItem="aIO-bq-TFA" secondAttribute="bottom" id="amx-ha-bxk"/>
                                                 <constraint firstItem="Kbb-b4-HJW" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" constant="8" id="g21-Td-7Vm"/>
                                                 <constraint firstItem="Jge-gJ-FWZ" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" constant="4" id="nQS-eL-BCR"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jge-gJ-FWZ" secondAttribute="trailing" constant="4" id="pFH-sA-7dy"/>
-                                                <constraint firstItem="Kbb-b4-HJW" firstAttribute="top" secondItem="aIO-bq-TFA" secondAttribute="bottom" constant="8" id="rxY-8X-2Uy"/>
                                                 <constraint firstItem="aIO-bq-TFA" firstAttribute="leading" secondItem="S1G-bG-G3v" secondAttribute="leading" id="swB-SQ-6EH"/>
                                             </constraints>
                                         </view>
@@ -241,7 +239,6 @@
                                     <outlet property="captionLabel" destination="Jge-gJ-FWZ" id="4vf-bJ-JBA"/>
                                     <outlet property="commentLabel" destination="Kbb-b4-HJW" id="hAn-R9-S3F"/>
                                     <outlet property="imageView" destination="aIO-bq-TFA" id="g8p-sf-3uA"/>
-                                    <outlet property="imageViewHeightLayoutConstraint" destination="cgT-wi-ohc" id="9aW-ix-aVj"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -254,7 +251,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1D-bP-1lQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3672.65625" y="-217.3828125"/>
+            <point key="canvasLocation" x="3671.1999999999998" y="-218.1409295352324"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZYV-8y-KIY">

@@ -14,6 +14,7 @@
 		960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6D1DABC36300CB62C5 /* lifecycle.png */; };
 		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
 		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
+		962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C311DA9F5A700DEF4EC /* 01.jpg */; };
 		96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C321DA9F5A700DEF4EC /* 02.jpg */; };
@@ -33,7 +34,6 @@
 		96F7230C1DB3549B000100B2 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F7230B1DB3549B000100B2 /* Popup.m */; };
 		96F7230F1DB354EF000100B2 /* PopupCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7230E1DB354EF000100B2 /* PopupCustomView.swift */; };
 		96F723111DB360BA000100B2 /* GardenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F723101DB360BA000100B2 /* GardenManager.swift */; };
-		96F723141DB362F3000100B2 /* myOwnedCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F723131DB362F3000100B2 /* myOwnedCrops.plist */; };
 		96F723161DB366FA000100B2 /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F723151DB366FA000100B2 /* HelperManager.swift */; };
 		BD203E481DA2305800951732 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E461DA2305800951732 /* MasterViewController.swift */; };
 		BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD203E4C1DA4F84000951732 /* Main.storyboard */; };
@@ -106,6 +106,7 @@
 		960CCF6D1DABC36300CB62C5 /* lifecycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifecycle.png; sourceTree = "<group>"; };
 		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
 		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
+		962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myOwnedCrops.plist; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96D62C311DA9F5A700DEF4EC /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		96D62C321DA9F5A700DEF4EC /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		96F7230B1DB3549B000100B2 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Popup.m; sourceTree = "<group>"; };
 		96F7230E1DB354EF000100B2 /* PopupCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCustomView.swift; sourceTree = "<group>"; };
 		96F723101DB360BA000100B2 /* GardenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManager.swift; sourceTree = "<group>"; };
-		96F723131DB362F3000100B2 /* myOwnedCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myOwnedCrops.plist; sourceTree = "<group>"; };
 		96F723151DB366FA000100B2 /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 		990DCAFE6F54E5AD9F2D944F /* Pods-Vegarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.debug.xcconfig"; sourceTree = "<group>"; };
 		B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,7 +392,7 @@
 				BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */,
 				BD3307BF1DA9F00900F2EC6F /* Crop.swift */,
 				96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */,
-				96F723131DB362F3000100B2 /* myOwnedCrops.plist */,
+				962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */,
 				BD46A6B01D991A1A004D7405 /* CoreData */,
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
 				96F722F91DB309DD000100B2 /* Extension */,
@@ -503,6 +503,7 @@
 				96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */,
 				96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */,
 				96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */,
+				962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */,
 				960CCF6E1DABC36300CB62C5 /* crops.png in Resources */,
 				960CCF6F1DABC36300CB62C5 /* garden.png in Resources */,
 				960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */,
@@ -512,7 +513,6 @@
 				96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
-				96F723141DB362F3000100B2 /* myOwnedCrops.plist in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
 				96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */,
 			);
