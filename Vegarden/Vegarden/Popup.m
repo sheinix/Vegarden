@@ -7,8 +7,7 @@
 //
 
 #import "Popup.h"
-#import "Vegarden-swift.h"
-@import SnapKit;
+#import "Masonry.h"
 
 static const CGFloat kPopupTitleFontSize = 30;
 static const CGFloat kPopupSubTitleFontSize = 15;
@@ -337,14 +336,15 @@ BOOL isWithCustomView = NO;
     if(pCustomView) {
         
         [popupView addSubview:pCustomView];
-        CGRect frame = popupView.frame;
         
-//        popupView.snp.
-        
-        
-        [pCustomView setClipsToBounds:YES];
+        [pCustomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.equalTo(pCustomView.superview.mas_top).with.offset(titleLabel.frame.size.height * 1.5);
+            make.left.equalTo(pCustomView.superview.mas_left);
+            make.bottom.equalTo(pCustomView.superview.mas_bottom).with.offset(-titleLabel.frame.size.height* 1.5);
+            make.right.equalTo(pCustomView.superview.mas_right);
+        }];
     }
-
 }
 
 - (void)setupSubtitle {
