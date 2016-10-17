@@ -92,6 +92,16 @@ typedef void (^blocky)(void);
                   cancelBlock:(blocky)cancelBlock
                  successBlock:(blocky)successBlock;
 
+//Create a Popup with textfields and success and cancel blocks and a customView inside
+- (instancetype)initWithTitle:(NSString *)title
+                     subTitle:(NSString *)subTitle
+        textFieldPlaceholders:(NSArray *)textFieldPlaceholderArray
+                  cancelTitle:(NSString *)cancelTitle
+                 successTitle:(NSString *)successTitle
+                  cancelBlock:(blocky)cancelBlock
+                 successBlock:(blocky)successBlock
+                   customView:(UIView *)view;
+
 //The transitions for Popup
 @property (nonatomic, assign) PopupIncomingTransitionType incomingTransition;
 @property (nonatomic, assign) PopupOutgoingTransitionType outgoingTransition;

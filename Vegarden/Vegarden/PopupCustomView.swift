@@ -20,13 +20,11 @@ class PopupCustomView: Popup {
 
     public class func getAddCropTableViewPop()-> PopupCustomView {
         
-        let popUp = PopupCustomView(title: "Add Crop",
-                                    subTitle: "Select crops from the list",
-                                    cancelTitle: "Cancel",
-                                    successTitle: "Done",
-                                    cancel: { print("cancel")},
-                                    successBlock: {print("succes")})
         
+        let customView = UIView(frame: CGRect(x:0, y:0, width:300, height:400))
+        customView.backgroundColor = UIColor.yellow
+        
+        let popUp = PopupCustomView(title: "Add Crop", subTitle: "Select from the list", textFieldPlaceholders: [], cancelTitle: "Cancel", successTitle: "Done", cancel: {}, successBlock: {}, customView: customView)
         
         popUp?.backgroundBlurType = PopupBackGroundBlurType.dark
         popUp?.backgroundColor = UIColor.white
@@ -35,16 +33,7 @@ class PopupCustomView: Popup {
         popUp?.outgoingTransition = PopupOutgoingTransitionType.slideToTop
         
         
+        
         return popUp!
     }
-    
-    
-    convenience init(title: String, subTitle:String, cancelTitle:String, succesTitle:String, cancelBlock:@escaping (blocky), succesBlock:@escaping (blocky), view: UIView) {
-    
-        self.init(title: title, subTitle: subTitle, cancelTitle: cancelTitle, successTitle: succesTitle, cancel: cancelBlock, successBlock: succesBlock)
-        
-     
-        
-    }
-    
 }

@@ -7,7 +7,8 @@
 //
 
 #import "Popup.h"
-
+#import "Vegarden-swift.h"
+@import SnapKit;
 
 static const CGFloat kPopupTitleFontSize = 30;
 static const CGFloat kPopupSubTitleFontSize = 15;
@@ -22,11 +23,14 @@ CGFloat popupDimensionWidth = 600.0f;
 CGFloat popupDimensionHeight = 700.0f;
 
 BOOL isBlurSet = YES;
+BOOL isWithCustomView = NO;
 
 @interface Popup () <UITextFieldDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate /*For swiping to dimiss*/> {
     
     UIView *backgroundView;
     UIView *popupView;
+    
+    UIView *pCustomView;
     
     UIScreen *mainScreen;
     
@@ -72,6 +76,7 @@ BOOL isBlurSet = YES;
         pSubTitle = subTitle;
         pCancelTitle = cancelTitle;
         pSuccessTitle = successTitle;
+        isWithCustomView = NO;
         
         [self formulateEverything];
     }
@@ -95,6 +100,7 @@ BOOL isBlurSet = YES;
         pSuccessTitle = successTitle;
         pCancelBlock = cancelBlock;
         pSuccessBlock = successBlock;
+        isWithCustomView = NO;
         
         [self formulateEverything];
     }
@@ -102,6 +108,34 @@ BOOL isBlurSet = YES;
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title
+                     subTitle:(NSString *)subTitle
+        textFieldPlaceholders:(NSArray *)textFieldPlaceholderArray
+                  cancelTitle:(NSString *)cancelTitle
+                 successTitle:(NSString *)successTitle
+                  cancelBlock:(blocky)cancelBlock
+                 successBlock:(blocky)successBlock
+                   customView:(UIView *)view {
+    
+    
+    
+    if ([super init]) {
+        pTitle = title;
+        pSubTitle = subTitle;
+        pTextFieldPlaceholderArray = textFieldPlaceholderArray;
+        pCancelTitle = cancelTitle;
+        pSuccessTitle = successTitle;
+        pCancelBlock = cancelBlock;
+        pSuccessBlock = successBlock;
+        pCustomView = view;
+        isWithCustomView = YES;
+        
+        [self formulateEverything];
+    }
+    
+    return self;
+
+}
 
 - (instancetype)initWithTitle:(NSString *)title
                      subTitle:(NSString *)subTitle
@@ -117,6 +151,7 @@ BOOL isBlurSet = YES;
         pCancelTitle = cancelTitle;
         pSuccessTitle = successTitle;
         pCancelBlock = cancelBlock;
+        isWithCustomView = NO;
         
         [self formulateEverything];
     }
@@ -136,7 +171,7 @@ BOOL isBlurSet = YES;
     [self makeAlertPopupView];
     
     [self setupTitle];
-    [self setupSubtitle];
+    (isWithCustomView ? [self setupCustomView]:[self setupSubtitle]);
     [self setupTextFields];
     [self setupButtons];
 }
@@ -296,6 +331,20 @@ BOOL isBlurSet = YES;
 
         [popupView addSubview:titleLabel];
     }
+}
+- (void) setupCustomView {
+
+    if(pCustomView) {
+        
+        [popupView addSubview:pCustomView];
+        CGRect frame = popupView.frame;
+        
+//        popupView.snp.
+        
+        
+        [pCustomView setClipsToBounds:YES];
+    }
+
 }
 
 - (void)setupSubtitle {

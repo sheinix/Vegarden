@@ -21,19 +21,22 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - SnapKit (3.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - CHTCollectionViewWaterfallLayout
   - KCFloatingActionButton (~> 2.1.0)
   - MagicalRecord
+  - SnapKit (~> 3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 1beda81239a4b5536b7012970fb630e4f76bc984
+PODFILE CHECKSUM: 168309ecd4aa60e7287cb4680e1edfb06b596a1f
 
 COCOAPODS: 1.0.1

@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import KCFloatingActionButton
 import CHTCollectionViewWaterfallLayout
+import SnapKit
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -38,23 +39,6 @@ class MyCropsCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-//// Set a layout for the detailview:
-//    
-//    func pageDetailViewControllerLayout () -> UICollectionViewFlowLayout {
-//        
-//        let flowLayout = UICollectionViewFlowLayout()
-//        let itemSize  = self.navigationController!.isNavigationBarHidden ?
-//            CGSize(width:screenWidth, height:screenHeight+20) : CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight)
-//        
-//        flowLayout.itemSize = itemSize
-//        flowLayout.minimumLineSpacing = 0
-//        flowLayout.minimumInteritemSpacing = 0
-//        flowLayout.scrollDirection = .horizontal
-//        
-//        return flowLayout
-//    }
-
     
     func setupFloatingBttn() {
 
