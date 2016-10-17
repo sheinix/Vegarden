@@ -100,7 +100,7 @@ typedef void (^blocky)(void);
                  successTitle:(NSString *)successTitle
                   cancelBlock:(blocky)cancelBlock
                  successBlock:(blocky)successBlock
-                   customView:(UIView *)view;
+                   customView:(UIViewController *)viewController;
 
 //The transitions for Popup
 @property (nonatomic, assign) PopupIncomingTransitionType incomingTransition;

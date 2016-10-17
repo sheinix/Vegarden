@@ -25,6 +25,8 @@ class CropDetailCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+//        self.navigationController?.navigationBar.backItem?.backBarButtonItem?
+        
     }
 
     override func didReceiveMemoryWarning() {

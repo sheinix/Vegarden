@@ -12,6 +12,8 @@
 		960CCF6E1DABC36300CB62C5 /* crops.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6A1DABC36300CB62C5 /* crops.png */; };
 		960CCF6F1DABC36300CB62C5 /* garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6B1DABC36300CB62C5 /* garden.png */; };
 		960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6D1DABC36300CB62C5 /* lifecycle.png */; };
+		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
+		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C311DA9F5A700DEF4EC /* 01.jpg */; };
 		96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C321DA9F5A700DEF4EC /* 02.jpg */; };
@@ -102,6 +104,8 @@
 		960CCF6A1DABC36300CB62C5 /* crops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crops.png; sourceTree = "<group>"; };
 		960CCF6B1DABC36300CB62C5 /* garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden.png; sourceTree = "<group>"; };
 		960CCF6D1DABC36300CB62C5 /* lifecycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifecycle.png; sourceTree = "<group>"; };
+		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
+		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96D62C311DA9F5A700DEF4EC /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		96D62C321DA9F5A700DEF4EC /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				96F7230A1DB3549B000100B2 /* Popup.h */,
 				96F7230B1DB3549B000100B2 /* Popup.m */,
 				96F7230E1DB354EF000100B2 /* PopupCustomView.swift */,
+				962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */,
+				962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */,
 			);
 			name = PopUpView;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				96F723091DB3118C000100B2 /* VCropDetailPageTableViewCell.swift in Sources */,
 				BDE061771D9FDC660003364D /* Location+CoreDataProperties.swift in Sources */,
 				BDE061671D9FDC660003364D /* Fruit+CoreDataProperties.swift in Sources */,
+				962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */,
 				BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */,
 				BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */,
 				BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */,
@@ -615,6 +622,7 @@
 				BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */,
 				BDE0616B1D9FDC660003364D /* GardenLocation+CoreDataProperties.swift in Sources */,
 				BD83BFA71D9FFFD000C7D79A /* LifeCycleViewController.swift in Sources */,
+				962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */,
 				BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */,
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,

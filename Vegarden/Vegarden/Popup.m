@@ -29,7 +29,7 @@ BOOL isWithCustomView = NO;
     UIView *backgroundView;
     UIView *popupView;
     
-    UIView *pCustomView;
+    UIViewController *pCustomView;
     
     UIScreen *mainScreen;
     
@@ -114,7 +114,7 @@ BOOL isWithCustomView = NO;
                  successTitle:(NSString *)successTitle
                   cancelBlock:(blocky)cancelBlock
                  successBlock:(blocky)successBlock
-                   customView:(UIView *)view {
+                   customView:(UIViewController *)viewController {
     
     
     
@@ -126,7 +126,7 @@ BOOL isWithCustomView = NO;
         pSuccessTitle = successTitle;
         pCancelBlock = cancelBlock;
         pSuccessBlock = successBlock;
-        pCustomView = view;
+        pCustomView = viewController;
         isWithCustomView = YES;
         
         [self formulateEverything];
@@ -335,14 +335,14 @@ BOOL isWithCustomView = NO;
 
     if(pCustomView) {
         
-        [popupView addSubview:pCustomView];
+        [popupView addSubview:pCustomView.view];
         
-        [pCustomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [pCustomView.view mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.equalTo(pCustomView.superview.mas_top).with.offset(titleLabel.frame.size.height * 1.5);
-            make.left.equalTo(pCustomView.superview.mas_left);
-            make.bottom.equalTo(pCustomView.superview.mas_bottom).with.offset(-titleLabel.frame.size.height* 1.5);
-            make.right.equalTo(pCustomView.superview.mas_right);
+            make.top.equalTo(pCustomView.view.superview.mas_top).with.offset(titleLabel.frame.size.height * 1.5);
+            make.left.equalTo(pCustomView.view.superview.mas_left);
+            make.bottom.equalTo(pCustomView.view.superview.mas_bottom).with.offset(-titleLabel.frame.size.height* 1.5);
+            make.right.equalTo(pCustomView.view.superview.mas_right);
         }];
     }
 }

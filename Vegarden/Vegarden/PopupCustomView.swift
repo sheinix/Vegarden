@@ -20,18 +20,19 @@ class PopupCustomView: Popup {
 
     public class func getAddCropTableViewPop()-> PopupCustomView {
         
+        let navController = UINavigationController()
+        let cropList = CropListTableViewController()
+        navController.viewControllers.append(cropList)
         
-        let customView = UIView(frame: CGRect(x:0, y:0, width:300, height:400))
-        customView.backgroundColor = UIColor.yellow
-        
-        let popUp = PopupCustomView(title: "Add Crop", subTitle: "Select from the list", textFieldPlaceholders: [], cancelTitle: "Cancel", successTitle: "Done", cancel: {}, successBlock: {}, customView: customView)
+       
+        let popUp = PopupCustomView(title: "Add Crop", subTitle: "Select from the list", textFieldPlaceholders: [], cancelTitle: "Cancel", successTitle: "Done", cancel: {}, successBlock: {}, customView: navController)
         
         popUp?.backgroundBlurType = PopupBackGroundBlurType.dark
         popUp?.backgroundColor = UIColor.white
         popUp?.roundedCorners = true
         popUp?.incomingTransition = PopupIncomingTransitionType.slideFromBottom
         popUp?.outgoingTransition = PopupOutgoingTransitionType.slideToTop
-        
+        popUp?.swipeToDismiss = false
         
         
         return popUp!

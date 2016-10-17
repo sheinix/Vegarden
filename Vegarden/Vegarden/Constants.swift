@@ -19,6 +19,7 @@ struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
     static let CropDetailViewCellIdentify = "CropDetailViewCellIdentify"
     static let CropDetailTableViewCellIdentify = "CropDetailTableViewCellIdentify"
+    static let CropListTableViewCellIdentify = "CropListTableViewCellIdentify"
 }
 
 struct FontSizes {
