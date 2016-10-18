@@ -39,4 +39,27 @@ class PersistenceManager {
             })
     }
     
+    public func getAllCropsFromPlist(name:String!) -> [CropVeggie] {
+        
+        //TODO : Change for real object
+        var crops = [CropVeggie]()
+        if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
+            
+            if let cropsFromPlist = NSArray(contentsOf: URL) {
+                
+                for dictionary in cropsFromPlist {
+                    let crop = CropVeggie(dictionary: dictionary as! NSDictionary)
+                    crops.append(crop)
+                }
+            }
+        }
+        return crops
+    }
+    
+    public func getMyCropsFromDB() -> [CropVeggie] {
+        
+        //TODO : Implement MagicalRecord fetch for all Crops
+        var crops = [CropVeggie]()
+        return crops
+    }
 }

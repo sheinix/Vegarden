@@ -3,7 +3,8 @@
 //
 
 #import  "Popup.h"
-//#import "SMTabBarItem.h"
+//#define MR_SHORTHAND
+//#import "CoreData+MagicalRecord.h"
 //#import "SMTabBar.h"
 //#import "SMMasterViewController.h"
 //#import "SMDetailViewController.h"

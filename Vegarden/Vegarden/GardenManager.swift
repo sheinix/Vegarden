@@ -23,28 +23,33 @@ class GardenManager {
     
     public func allCrops() -> [CropVeggie] {
      
-        return getObjectsFromPlist(named: "AllCrops")
+        return PersistenceManager.shared.getAllCropsFromPlist(name: "allCrops")
         
     }
     
     public func myOwnedCrops() -> [CropVeggie] {
         
-        return getObjectsFromPlist(named: "myOwnedCrops")
+        return PersistenceManager.shared.getMyCropsFromDB()
     }
     
-    public func getObjectsFromPlist(named name:String!) -> [CropVeggie] {
+    public func addNewCropToGarden(crop: CropVeggie) {
         
-        var photos = [CropVeggie]()
-        if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
-            
-            if let photosFromPlist = NSArray(contentsOf: URL) {
-                
-                for dictionary in photosFromPlist {
-                    let photo = CropVeggie(dictionary: dictionary as! NSDictionary)
-                    photos.append(photo)
-                }
-            }
-        }
-        return photos
+        
     }
+    
+//    public func getObjectsFromPlist(named name:String!) -> [CropVeggie] {
+//        
+//        var photos = [CropVeggie]()
+//        if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
+//            
+//            if let photosFromPlist = NSArray(contentsOf: URL) {
+//                
+//                for dictionary in photosFromPlist {
+//                    let photo = CropVeggie(dictionary: dictionary as! NSDictionary)
+//                    photos.append(photo)
+//                }
+//            }
+//        }
+//        return photos
+//    }
 }

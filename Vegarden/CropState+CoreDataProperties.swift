@@ -1,9 +1,9 @@
 //
 //  CropState+CoreDataProperties.swift
-//  Vegarden
+//  
 //
-//  Created by Juan Nuvreni on 9/26/16.
-//  Copyright © 2016 Juan Nuvreni. All rights reserved.
+//  Created by Sarah Cleland on 18/10/16.
+//
 //
 
 import Foundation
@@ -16,6 +16,6 @@ extension CropState {
         return NSFetchRequest<CropState>(entityName: "CropState");
     }
 
-    @NSManaged public var time: NSDate?
+    @NSManaged public var date: NSDate?
 
 }
