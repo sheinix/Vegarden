@@ -16,6 +16,6 @@ extension CropState {
         return NSFetchRequest<CropState>(entityName: "CropState");
     }
 
-    @NSManaged public var date: NSDate?
+    @NSManaged public var date: NSDate!
 
 }

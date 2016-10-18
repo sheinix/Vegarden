@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
-		960CCF6E1DABC36300CB62C5 /* crops.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6A1DABC36300CB62C5 /* crops.png */; };
-		960CCF6F1DABC36300CB62C5 /* garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6B1DABC36300CB62C5 /* garden.png */; };
-		960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6D1DABC36300CB62C5 /* lifecycle.png */; };
 		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
 		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
 		962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */; };
@@ -20,13 +17,6 @@
 		9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */; };
 		9654A89F1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
-		96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C311DA9F5A700DEF4EC /* 01.jpg */; };
-		96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C321DA9F5A700DEF4EC /* 02.jpg */; };
-		96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C331DA9F5A700DEF4EC /* 03.jpg */; };
-		96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C341DA9F5A700DEF4EC /* 04.jpg */; };
-		96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C351DA9F5A700DEF4EC /* 05.jpg */; };
-		96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C361DA9F5A700DEF4EC /* 06.jpeg */; };
-		96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C371DA9F5A700DEF4EC /* 07.jpeg */; };
 		96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */; };
 		96F722F61DB30988000100B2 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F51DB30988000100B2 /* Macros.swift */; };
 		96F722F81DB309CD000100B2 /* ViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F71DB309CD000100B2 /* ViewsExtensions.swift */; };
@@ -101,9 +91,6 @@
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
-		960CCF6A1DABC36300CB62C5 /* crops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crops.png; sourceTree = "<group>"; };
-		960CCF6B1DABC36300CB62C5 /* garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden.png; sourceTree = "<group>"; };
-		960CCF6D1DABC36300CB62C5 /* lifecycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifecycle.png; sourceTree = "<group>"; };
 		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
 		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
 		962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myOwnedCrops.plist; sourceTree = "<group>"; };
@@ -112,13 +99,6 @@
 		9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
-		96D62C311DA9F5A700DEF4EC /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
-		96D62C321DA9F5A700DEF4EC /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
-		96D62C331DA9F5A700DEF4EC /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
-		96D62C341DA9F5A700DEF4EC /* 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04.jpg; sourceTree = "<group>"; };
-		96D62C351DA9F5A700DEF4EC /* 05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 05.jpg; sourceTree = "<group>"; };
-		96D62C361DA9F5A700DEF4EC /* 06.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06.jpeg; sourceTree = "<group>"; };
-		96D62C371DA9F5A700DEF4EC /* 07.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 07.jpeg; sourceTree = "<group>"; };
 		96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInNavigationController.swift; sourceTree = "<group>"; };
 		96F722F51DB30988000100B2 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		96F722F71DB309CD000100B2 /* ViewsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsExtensions.swift; sourceTree = "<group>"; };
@@ -434,16 +414,6 @@
 				96F723121DB360C1000100B2 /* Managers */,
 				96F722F41DB30968000100B2 /* Constants & Macros */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
-				960CCF6A1DABC36300CB62C5 /* crops.png */,
-				960CCF6B1DABC36300CB62C5 /* garden.png */,
-				960CCF6D1DABC36300CB62C5 /* lifecycle.png */,
-				96D62C311DA9F5A700DEF4EC /* 01.jpg */,
-				96D62C321DA9F5A700DEF4EC /* 02.jpg */,
-				96D62C331DA9F5A700DEF4EC /* 03.jpg */,
-				96D62C341DA9F5A700DEF4EC /* 04.jpg */,
-				96D62C351DA9F5A700DEF4EC /* 05.jpg */,
-				96D62C361DA9F5A700DEF4EC /* 06.jpeg */,
-				96D62C371DA9F5A700DEF4EC /* 07.jpeg */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				BD203E4C1DA4F84000951732 /* Main.storyboard */,
 				BD7B8EBA1D9118080063347D /* Info.plist */,
@@ -532,17 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */,
-				96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */,
-				96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */,
 				962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */,
-				960CCF6E1DABC36300CB62C5 /* crops.png in Resources */,
-				960CCF6F1DABC36300CB62C5 /* garden.png in Resources */,
-				960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */,
-				96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */,
-				96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */,
-				96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */,
-				96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,

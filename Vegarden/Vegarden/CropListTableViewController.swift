@@ -51,7 +51,7 @@ class CropListTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.textLabel?.text = allCrops[indexPath.row].caption
+        cell.textLabel?.text = allCrops[indexPath.row].name
         
         return cell
     }

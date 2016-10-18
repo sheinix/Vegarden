@@ -104,7 +104,7 @@ extension MyCropsCollectionViewController : CHTCollectionViewDelegateWaterfallLa
                 
         let image = self.myCrops[indexPath.row].image
         
-        return CGSize(width: (image.size.width), height: (image.size.height))
+        return CGSize(width: (image!.size.width), height: (image!.size.height))
     }
 
     
@@ -119,7 +119,7 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
       
         let image =  self.myCrops[pageIndex].image
         
-        let imageHeight = image.size.height*gridWidth/image.size.width
+        let imageHeight = (image?.size.height)!*gridWidth/(image?.size.width)!
         
         if imageHeight > 400 {//whatever you like, it's the max value for height of image
             position = .top

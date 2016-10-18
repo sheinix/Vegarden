@@ -21,13 +21,13 @@ class GardenManager {
     }
 
     
-    public func allCrops() -> [CropVeggie] {
+    public func allCrops() -> [Crop] {
      
-        return PersistenceManager.shared.getAllCropsFromPlist(name: "allCrops")
+        return PersistenceManager.shared.getAllCropsFromPlist(name: FileNames.allCropsFileName)
         
     }
     
-    public func myOwnedCrops() -> [CropVeggie] {
+    public func myOwnedCrops() -> [Crop] {
         
         return PersistenceManager.shared.getMyCropsFromDB()
     }

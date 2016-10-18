@@ -13,7 +13,7 @@ private let reuseIdentifier = "Cell"
 class CropDetailCollectionViewController: UICollectionViewController {
 
     var pullOffset = CGPoint.zero
-    var cropList: Array <CropVeggie> = []
+    var cropList: Array <Crop> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

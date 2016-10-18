@@ -39,16 +39,16 @@ class PersistenceManager {
             })
     }
     
-    public func getAllCropsFromPlist(name:String!) -> [CropVeggie] {
+    public func getAllCropsFromPlist(name:String!) -> [Crop] {
         
         //TODO : Change for real object
-        var crops = [CropVeggie]()
+        var crops = [Crop]()
         if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
             
             if let cropsFromPlist = NSArray(contentsOf: URL) {
                 
                 for dictionary in cropsFromPlist {
-                    let crop = CropVeggie(dictionary: dictionary as! NSDictionary)
+                    let crop = Veggie(dictionary: dictionary as! NSDictionary)
                     crops.append(crop)
                 }
             }
@@ -56,10 +56,10 @@ class PersistenceManager {
         return crops
     }
     
-    public func getMyCropsFromDB() -> [CropVeggie] {
+    public func getMyCropsFromDB() -> [Crop] {
         
         //TODO : Implement MagicalRecord fetch for all Crops
-        var crops = [CropVeggie]()
+        let crops = [Crop]()
         return crops
     }
 }

@@ -45,3 +45,7 @@ struct SegueIdentifiers {
     
 //    static let Detail = "DetailViewController"
 }
+
+struct FileNames {
+    static let allCropsFileName = "AllCrops"
+}
