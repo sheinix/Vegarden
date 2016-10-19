@@ -12,4 +12,12 @@ import CoreData
 
 public class Veggie: Crop {
 
+    public class override func getCropFrom(dictionary: NSDictionary) -> Veggie {
+        
+        let veggie = super.getCropFrom(dictionary: dictionary)
+       // veggie.typeCrop = CropTypes.Veggie
+        
+        return veggie as! Veggie
+    }
+
 }

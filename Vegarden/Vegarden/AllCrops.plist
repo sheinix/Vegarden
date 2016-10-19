@@ -12,11 +12,11 @@
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
-		<string></string>
+		<integer>20</integer>
 		<key>phLevels</key>
-		<string></string>
+		<integer>45</integer>
 		<key>spacing</key>
-		<string></string>
+		<integer>6</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
@@ -44,7 +44,7 @@
 		<key>plantFamily</key>
 		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
 		<key>plantType</key>
-		<string></string>
+		<integer>0</integer>
 		<key>plantSize</key>
 		<string></string>
 		<key>phLevels</key>

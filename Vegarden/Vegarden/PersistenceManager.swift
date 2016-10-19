@@ -15,7 +15,7 @@ private let sharedPersistanceManager = PersistenceManager()
 class PersistenceManager {
     
     class var shared: PersistenceManager {
-       
+        
         return sharedPersistanceManager
     }
     
@@ -25,6 +25,11 @@ class PersistenceManager {
         print("set the magical record setupcoredatasatack")
         
         MagicalRecord.setupCoreDataStack(withStoreNamed: "Vegarden")
+        
+        if (UserDefaults.isFirstLaunch()) {
+            populateDB()
+        }
+        
         
         print("done ok")
     }
@@ -39,27 +44,92 @@ class PersistenceManager {
             })
     }
     
-    public func getAllCropsFromPlist(name:String!) -> [Crop] {
+    public func getAllCrops() -> [Crop] {
         
-        //TODO : Change for real object
+        return  Crop.mr_findAll() as! [Crop]
+     
+    }
+    
+    public func getMyCrops() -> [Crop]? {
+        
+        //TODO : Implement MagicalRecord fetch for all Crops
+        let ownedCrops = NSPredicate(format: "owned == true")
+        let crops = Crop.mr_findAll(with: ownedCrops)
+       
+        return crops as! [Crop]?
+    }
+    
+    //TODO Optimize the following codes. They are quite repetitive!
+    
+    public func addCropsToGarden(crops: [Crop]) {
+        
+        let names = crops.map { $0.name }
+        
+        let ownedCrop = NSPredicate(format: "name IN %@ AND owned == false", argumentArray: names)
+        
+        let myCrops = Crop.mr_findAll(with: ownedCrop)
+    
+        for element in myCrops! { (element as! Crop).owned = true }
+        
+        saveContext()
+        
+    }
+    
+    public func addCropToGarden(crop: Crop) {
+       
+        let ownedCrop = NSPredicate(format: "name == %@ AND owned == false", argumentArray: [crop.name])
+        
+        let crop = Crop.mr_findFirst(with: ownedCrop)
+        
+        crop?.owned = true
+        
+        saveContext()
+       
+    }
+    
+    public func removeCropsFromGarden(crops: [Crop]) {
+        
+        let names = crops.map { $0.name }
+        
+        let ownedCrop = NSPredicate(format: "name IN %@ AND owned == true", argumentArray: names)
+        
+        let myCrops = Crop.mr_findAll(with: ownedCrop)
+        
+        for element in myCrops! { (element as! Crop).owned = false }
+        
+        saveContext()
+        
+    }
+    
+    public func removeCropFromGarden(crop: Crop) {
+        
+        let ownedCrop = NSPredicate(format: "name == %@ AND owned == true", argumentArray: [crop.name])
+        
+        let crop = Crop.mr_findFirst(with: ownedCrop)
+        
+        crop?.owned = false
+        
+        saveContext()
+        
+    }
+
+    
+    
+    public func populateDB() {
+   
         var crops = [Crop]()
-        if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
+        if let URL = Bundle.main.url(forResource: "AllCrops", withExtension: "plist") {
             
             if let cropsFromPlist = NSArray(contentsOf: URL) {
                 
                 for dictionary in cropsFromPlist {
-                    let crop = Veggie(dictionary: dictionary as! NSDictionary)
+                    let crop = Veggie.getCropFrom(dictionary: dictionary as! NSDictionary)
+                    
                     crops.append(crop)
                 }
             }
         }
-        return crops
-    }
-    
-    public func getMyCropsFromDB() -> [Crop] {
         
-        //TODO : Implement MagicalRecord fetch for all Crops
-        let crops = [Crop]()
-        return crops
+        saveContext()
     }
 }

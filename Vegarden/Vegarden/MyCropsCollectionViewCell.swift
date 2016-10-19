@@ -20,7 +20,7 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
     var crop: Crop? {
         didSet {
             if let crop = crop {
-                imageView.image = crop.image
+                imageView.image = UIImage(named:crop.picture!)
                 captionLabel.text = crop.name
                 commentLabel.text = crop.family
                 imgView = imageView

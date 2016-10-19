@@ -49,3 +49,12 @@ struct SegueIdentifiers {
 struct FileNames {
     static let allCropsFileName = "AllCrops"
 }
+
+enum CropTypes: Int32 {
+    case Veggie, Fruit, Herb
+}
+//struct CropTypes {
+//    static let Veggie : Int = 1
+//    static let Fruit : Int = 2
+//    static let Herb : Int = 3
+//}

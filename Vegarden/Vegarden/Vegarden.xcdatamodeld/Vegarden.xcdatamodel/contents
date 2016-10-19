@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Crop" representedClassName=".Crop" isAbstract="YES" syncable="YES">
-        <attribute name="cropType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cropSize" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cropType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="diseases" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="family" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="growingTips" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="harvestTips" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phLevels" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="spacing" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="owned" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phLevels" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantingCompanions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantingDirections" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="potentialProblems" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spacing" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="storageAndUse" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="whenToPlant" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="row" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Row" inverseName="crops" inverseEntity="Row" syncable="YES"/>
         <relationship name="states" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CropState" syncable="YES"/>
@@ -57,7 +67,7 @@
     <entity name="Veggie" representedClassName=".Veggie" parentEntity="Crop" syncable="YES"/>
     <entity name="Weed" representedClassName=".Weed" parentEntity="RowLifeState" syncable="YES"/>
     <elements>
-        <element name="Crop" positionX="-1197" positionY="-2601" width="128" height="178"/>
+        <element name="Crop" positionX="-1190" positionY="-2916" width="128" height="328"/>
         <element name="CropState" positionX="-702" positionY="-2599" width="128" height="58"/>
         <element name="Fertilized" positionX="-1089" positionY="-2176" width="128" height="43"/>
         <element name="Fruit" positionX="-758" positionY="-2392" width="128" height="43"/>

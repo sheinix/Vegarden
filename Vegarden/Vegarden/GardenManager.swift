@@ -23,18 +23,24 @@ class GardenManager {
     
     public func allCrops() -> [Crop] {
      
-        return PersistenceManager.shared.getAllCropsFromPlist(name: FileNames.allCropsFileName)
+        return PersistenceManager.shared.getAllCrops()
         
     }
     
-    public func myOwnedCrops() -> [Crop] {
+    public func myOwnedCrops() -> [Crop]? {
         
-        return PersistenceManager.shared.getMyCropsFromDB()
+        return PersistenceManager.shared.getMyCrops()
     }
     
-    public func addNewCropToGarden(crop: CropVeggie) {
+    public func addNewCropsToGarden(crops: [Crop]) {
         
+        PersistenceManager.shared.addCropsToGarden(crops: crops)
         
+    }
+    
+    public func addNewCropToGarden(crop: Crop) {
+        
+        PersistenceManager.shared.addCropToGarden(crop: crop)
     }
     
 //    public func getObjectsFromPlist(named name:String!) -> [CropVeggie] {

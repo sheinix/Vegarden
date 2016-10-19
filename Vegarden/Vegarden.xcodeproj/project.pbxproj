@@ -16,6 +16,7 @@
 		9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8971DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift */; };
 		9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */; };
 		9654A89F1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */; };
+		9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */; };
 		96F722F61DB30988000100B2 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F51DB30988000100B2 /* Macros.swift */; };
@@ -98,6 +99,7 @@
 		9654A8971DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CropState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInNavigationController.swift; sourceTree = "<group>"; };
 		96F722F51DB30988000100B2 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				96F722F71DB309CD000100B2 /* ViewsExtensions.swift */,
+				9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */,
 				BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */,
 				9654A89A1DB5F95800A0A9D9 /* CropState+CoreDataClass.swift in Sources */,
+				9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */,
 				BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */,
 				BDE0617A1D9FDC660003364D /* PaddockLocation+CoreDataClass.swift in Sources */,
 				BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */,
