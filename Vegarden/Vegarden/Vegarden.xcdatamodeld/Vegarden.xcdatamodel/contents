@@ -38,6 +38,7 @@
     <entity name="Growing" representedClassName=".Growing" parentEntity="CropState" syncable="YES"/>
     <entity name="Grown" representedClassName=".Grown" parentEntity="CropState" syncable="YES"/>
     <entity name="Harvested" representedClassName=".Harvested" parentEntity="CropState" syncable="YES"/>
+    <entity name="Harvesting" representedClassName=".Harvesting" parentEntity="CropState" syncable="YES"/>
     <entity name="Herb" representedClassName=".Herb" parentEntity="Crop" syncable="YES"/>
     <entity name="Irrigated" representedClassName=".Irrigated" parentEntity="RowLifeState" syncable="YES"/>
     <entity name="Location" representedClassName=".Location" isAbstract="YES" syncable="YES"/>
@@ -51,10 +52,12 @@
     </entity>
     <entity name="PaddockLocation" representedClassName=".PaddockLocation" parentEntity="Location" syncable="YES"/>
     <entity name="Row" representedClassName=".Row" syncable="YES">
+        <attribute name="estimatedNumberOfCrops" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" minValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="crops" optional="YES" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Crop" inverseName="row" inverseEntity="Crop" syncable="YES"/>
-        <relationship name="lifeCycleState" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RowLifeState" syncable="YES"/>
+        <relationship name="lifeCycleState" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RowLifeState" syncable="YES"/>
         <relationship name="paddock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paddock" inverseName="rows" inverseEntity="Paddock" syncable="YES"/>
     </entity>
     <entity name="RowLifeState" representedClassName=".RowLifeState" isAbstract="YES" syncable="YES">
@@ -63,7 +66,9 @@
     </entity>
     <entity name="Seed" representedClassName=".Seed" parentEntity="CropState" syncable="YES"/>
     <entity name="Seedling" representedClassName=".Seedling" parentEntity="CropState" syncable="YES"/>
-    <entity name="Soil" representedClassName=".Soil" syncable="YES"/>
+    <entity name="Soil" representedClassName=".Soil" syncable="YES">
+        <attribute name="phLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Veggie" representedClassName=".Veggie" parentEntity="Crop" syncable="YES"/>
     <entity name="Weed" representedClassName=".Weed" parentEntity="RowLifeState" syncable="YES"/>
     <elements>
@@ -76,16 +81,17 @@
         <element name="Growing" positionX="-945" positionY="-2637" width="128" height="43"/>
         <element name="Grown" positionX="-963" positionY="-2700" width="128" height="43"/>
         <element name="Harvested" positionX="-963" positionY="-2763" width="128" height="43"/>
+        <element name="Harvesting" positionX="-830" positionY="-2763" width="128" height="43"/>
         <element name="Herb" positionX="-1116" positionY="-2763" width="128" height="43"/>
         <element name="Irrigated" positionX="-1260" positionY="-2358" width="128" height="43"/>
         <element name="Location" positionX="-900" positionY="-2232" width="128" height="43"/>
         <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="133"/>
         <element name="PaddockLocation" positionX="-729" positionY="-2277" width="128" height="43"/>
-        <element name="Row" positionX="-1098" positionY="-2601" width="128" height="118"/>
-        <element name="RowLifeState" positionX="-1091" positionY="-2430" width="128" height="73"/>
+        <element name="Row" positionX="-1098" positionY="-2601" width="128" height="148"/>
+        <element name="RowLifeState" positionX="-1082" positionY="-2413" width="128" height="73"/>
         <element name="Seed" positionX="-866" positionY="-2536" width="128" height="43"/>
         <element name="Seedling" positionX="-945" positionY="-2583" width="128" height="43"/>
-        <element name="Soil" positionX="-794" positionY="-2475" width="128" height="43"/>
+        <element name="Soil" positionX="-794" positionY="-2475" width="128" height="58"/>
         <element name="Veggie" positionX="-1116" positionY="-2709" width="128" height="43"/>
         <element name="Weed" positionX="-1251" positionY="-2421" width="128" height="43"/>
     </elements>

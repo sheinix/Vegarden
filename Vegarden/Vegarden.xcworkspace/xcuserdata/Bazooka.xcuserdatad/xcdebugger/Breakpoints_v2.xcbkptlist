@@ -114,25 +114,9 @@
             timestampString = "498624205.787311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "addCropToGarden(crop:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vegarden/PersistenceManager.swift"
-            timestampString = "498624205.787311"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "addCropToGarden(crop:)"
+            landmarkName = "remove(garden:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,7 +132,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "addCropsToGarden(crops:)"
+            landmarkName = "createGardenNamed(name:in:withPaddocks:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -196,8 +180,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "createGardenNamed(name:in:withPaddocks:)"
-            landmarkType = "7">
+            landmarkName = "PersistenceManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -213,6 +197,38 @@
             startingLineNumber = "117"
             endingLineNumber = "117"
             landmarkName = "myOwnedCrops()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/PersistenceManager.swift"
+            timestampString = "498657146.454159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "plant(crop:in:of:asA:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/PersistenceManager.swift"
+            timestampString = "498656487.026215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getAllGardens()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 
 
+@objc(Herb)
+
 public class Herb: Crop {
 
 }

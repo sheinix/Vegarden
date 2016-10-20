@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(Veggie)
 
 public class Veggie: Crop {
 

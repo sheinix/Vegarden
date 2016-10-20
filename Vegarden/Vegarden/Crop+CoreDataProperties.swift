@@ -24,7 +24,7 @@ extension Crop {
     @NSManaged public var spacing: Int16
     @NSManaged public var whenToPlant: String?
     @NSManaged public var row: Row?
-    @NSManaged public var states: NSSet?
+    @NSManaged public var states: NSArray?
     @NSManaged public var owned: Bool
     @NSManaged public var plantingDirections: String?
     @NSManaged public var plantType: String?

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(PaddockLocation)
 
 public class PaddockLocation: Location {
 

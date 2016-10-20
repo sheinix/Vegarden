@@ -9,7 +9,15 @@
 import Foundation
 import CoreData
 
+@objc(Garden)
 
 public class Garden: NSManagedObject {
 
+    public func cleanEverything() {
+        
+        self.paddocks?.forEach({ (paddock) in
+            (paddock as! Paddock).reset()
+        })
+    }
+    
 }

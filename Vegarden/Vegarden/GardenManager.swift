@@ -20,6 +20,7 @@ class GardenManager {
         return sharedGadenManager
     }
 
+    
 // MARK: - Garden Management Methods
     
     public func createAGardenNamed(name: String!,
@@ -60,9 +61,9 @@ class GardenManager {
     
 // MARK: - Row Management Methods
     
-    public func addRow(rowName: String!, to paddock: Paddock, in garden: Garden) {
+    public func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden) {
         
-        PersistenceManager.shared.addRow(rowName: rowName, to: paddock, in: garden)
+        PersistenceManager.shared.addRow(rowName: rowName, length: length, to: paddock, in: garden)
         
     }
     

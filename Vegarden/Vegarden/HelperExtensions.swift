@@ -26,9 +26,9 @@ extension Int {
     
     init(_ range: Range<Int> ) {
         
-        let delta = range.startIndex < 0 ? abs(range.startIndex) : 0
-        let min = UInt32(range.startIndex + delta)
-        let max = UInt32(range.endIndex   + delta)
+        let delta = range.lowerBound < 0 ? abs(range.lowerBound) : 0
+        let min = UInt32(range.lowerBound + delta)
+        let max = UInt32(range.upperBound   + delta)
         self.init(Int(min + arc4random_uniform(max - min)) - delta)
     }
 }

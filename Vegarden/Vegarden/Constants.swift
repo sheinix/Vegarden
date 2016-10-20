@@ -53,8 +53,18 @@ struct FileNames {
 enum CropTypes: Int16 {
     case Annual, Perenneal, Tuba
 }
-//struct CropTypes {
-//    static let Veggie : Int = 1
-//    static let Fruit : Int = 2
-//    static let Herb : Int = 3
-//}
+
+struct plantingStates {
+
+    enum begining: Int {
+        case Seed, Seedling
+    }
+
+    enum normal: Int {
+        case Planted, Growing, Grown, Harvested
+    }
+}
+
+enum GrowingActions: Int {
+     case WeedAction, WaterAction, FertilizeAction
+}

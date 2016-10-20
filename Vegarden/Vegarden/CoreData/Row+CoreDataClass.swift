@@ -9,7 +9,16 @@
 import Foundation
 import CoreData
 
+@objc(Row)
 
 public class Row: NSManagedObject {
+    
+    public func reset() {
+        
+        _ = self.crops?.map({($0 as! Crop).mr_deleteEntity()})
+        
+        _ = self.lifeCycleState?.map({($0 as! Crop).mr_deleteEntity()})
+        
+    }
 
 }

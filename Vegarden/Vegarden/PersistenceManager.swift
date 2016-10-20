@@ -124,11 +124,12 @@ class PersistenceManager {
     
 // MARK: - Row Management Methods
     
-    public func addRow(rowName: String!, to paddock: Paddock, in garden: Garden) {
+    public func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden) {
         
         let newRow = Row.mr_createEntity()
         newRow?.name = rowName
         newRow?.id = UUID().uuidString
+        newRow?.length = NSNumber(value: length!)
         paddock.addToRows(newRow!)
         
     }
@@ -138,10 +139,12 @@ class PersistenceManager {
         var rowName : String
         
         for _ in (0..<numberOfRows) {
-           
-            rowName = "V_"+String(HelperManager.random(digits: 5))
+ //TODO Check helper method to see how can i get the randoms with a fixed length
+//            rowName = "V_"+String(HelperManager.random(digits: 5))
+             rowName = "V_"+String(arc4random())
             
-            addRow(rowName: rowName, to: paddock, in: garden)
+            
+            addRow(rowName: rowName, length: nil, to: paddock, in: garden)
             
         }
     }
@@ -233,7 +236,80 @@ class PersistenceManager {
         
     }
 
+//MARK: - LifeCycle Methods
+    
+    public func plant(crop: Crop, in row:Row,  of paddock: Paddock, asA:plantingStates.begining) -> Row {
+        
+        let plantingCrop = crop.duplicateAssociated()
+        
+        let state : CropState = (asA == plantingStates.begining.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
+        
+        state.date = NSDate()
+        crop.addToStates(state)
+        
+        plantingCrop?.row = row
+        row.addToCrops(plantingCrop!)
+        
+        if row.length != nil {
+        
+            row.estimatedNumberOfCrops = NSNumber(value:round((row.length?.floatValue)! / Float(crop.spacing)))
+        }
+        
+        return row
+    }
 
+    public func makeGrowingAction(action:GrowingActions, to row:Row, in paddock: Paddock) {
+        
+        let actionMade : RowLifeState
+
+        switch action {
+            
+        case GrowingActions.WeedAction:
+            
+            actionMade = Weed.mr_createEntity()!
+            
+        case GrowingActions.WaterAction:
+            
+            actionMade = Irrigated.mr_createEntity()!
+            
+        case GrowingActions.FertilizeAction:
+            
+            actionMade = Fertilized.mr_createEntity()!
+        }
+        
+        actionMade.isDone = true
+        actionMade.when = NSDate()
+        
+        //Not quite the right name for this, but a growing action taken on a row, it modifies its row cycle state.
+        row.addToLifeCycleState(actionMade)
+    }
+    
+    
+    public func harvest(crop: Crop, from paddock: Paddock) {
+       
+        let harvestingState = Harvesting.mr_createEntity()
+        harvestingState?.date = NSDate()
+        crop.addToStates(harvestingState!)
+        
+    }
+    
+    public func finishHarvestFor(crop: Crop, in paddock: Paddock) {
+        
+        let harvestedState = Harvested.mr_createEntity()
+        harvestedState?.date = NSDate()
+        crop.addToStates(harvestedState!)
+        
+    }
+    
+    public func makeAction(action:GrowingActions, in paddock: Paddock) {
+        
+    }
+    
+    public func makeAction(in garden: Garden) {
+        
+    }
+    
+    
 //MARK: - Helper Methods
     
     public func populateDB() {

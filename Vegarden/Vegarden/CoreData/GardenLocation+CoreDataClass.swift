@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(GardenLocation)
 
 public class GardenLocation: Location {
 
