@@ -33,12 +33,15 @@ public class Crop: NSManagedObject {
         crop.name        =   dictionary["name"] as? String
         crop.picture     =   dictionary["picture"] as? String
         crop.family      =   dictionary["plantFamily"] as? String
+        
         crop.owned       =   false
-        // crop.cropType    =   0// dictionary["plantType"] as? String
-       // crop.cropSize    =   Int32((dictionary["plantSize"] as? NSNumber)!.int32Value)
-      //  crop.phLevels    =   Int32((dictionary["phLevels"] as? NSNumber)!.int32Value)
-      //  crop.spacing     =   Int32((dictionary["spacing"] as? NSNumber)!.int32Value)
-        crop.whenToPlant =   dictionary["whenToPlant"] as? String
+        
+        crop.cropType    =   0// dictionary["plantType"] as? String
+        crop.cropSize    =   Int16((dictionary["plantSize"] as? NSNumber)!.int16Value)
+        crop.phLevels    =   Int16((dictionary["phLevels"] as? NSNumber)!.int16Value)
+        crop.spacing     =   Int16((dictionary["spacing"] as? NSNumber)!.int16Value)
+        
+        crop.whenToPlant        = dictionary["whenToPlant"] as? String
         crop.plantingDirections = dictionary["plantDirections"] as? String
         crop.plantType          = dictionary["plantType"] as? String
         crop.growingTips        = dictionary["growingTips"] as? String

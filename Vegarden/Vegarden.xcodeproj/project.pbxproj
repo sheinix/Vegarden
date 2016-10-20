@@ -17,6 +17,7 @@
 		9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */; };
 		9654A89F1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */; };
 		9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */; };
+		9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */; };
 		96F722F61DB30988000100B2 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F51DB30988000100B2 /* Macros.swift */; };
@@ -37,7 +38,6 @@
 		BD3307BA1DA9EECA00F2EC6F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */; };
 		BD3307BB1DA9EECA00F2EC6F /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */; };
 		BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */; };
-		BD3307C01DA9F00900F2EC6F /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307BF1DA9F00900F2EC6F /* Crop.swift */; };
 		BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C0F31DA50FBD00265405 /* Constants.swift */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
@@ -100,6 +100,7 @@
 		9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagementProtocol.swift; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInNavigationController.swift; sourceTree = "<group>"; };
 		96F722F51DB30988000100B2 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
-		BD3307BF1DA9F00900F2EC6F /* Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
 		BD37C0F31DA50FBD00265405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +285,14 @@
 			name = States;
 			sourceTree = "<group>";
 		};
+		9654A8A21DB8870E00A0A9D9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		96F722D71DAD04AB000100B2 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,7 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */,
-				BD3307BF1DA9F00900F2EC6F /* Crop.swift */,
 				96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */,
 				962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */,
 				BD46A6B01D991A1A004D7405 /* CoreData */,
@@ -414,6 +421,7 @@
 				BD3307BE1DA9EEEB00F2EC6F /* Views */,
 				BD3307BD1DA9EEDB00F2EC6F /* CellViews */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
+				9654A8A21DB8870E00A0A9D9 /* Protocols */,
 				96F723121DB360C1000100B2 /* Managers */,
 				96F722F41DB30968000100B2 /* Constants & Macros */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
@@ -622,11 +630,11 @@
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
 				BD3307BA1DA9EECA00F2EC6F /* PinterestLayout.swift in Sources */,
+				9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */,
 				9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
 				BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */,
 				96F723161DB366FA000100B2 /* HelperManager.swift in Sources */,
-				BD3307C01DA9F00900F2EC6F /* Crop.swift in Sources */,
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,

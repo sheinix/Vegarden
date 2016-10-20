@@ -50,8 +50,8 @@ struct FileNames {
     static let allCropsFileName = "AllCrops"
 }
 
-enum CropTypes: Int32 {
-    case Veggie, Fruit, Herb
+enum CropTypes: Int16 {
+    case Annual, Perenneal, Tuba
 }
 //struct CropTypes {
 //    static let Veggie : Int = 1

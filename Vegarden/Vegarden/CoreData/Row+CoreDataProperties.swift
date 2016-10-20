@@ -16,7 +16,7 @@ extension Row {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var id: Int32
+    @NSManaged public var id: String?
     @NSManaged public var crops: NSSet?
     @NSManaged public var lifeCycleState: RowLifeState?
 

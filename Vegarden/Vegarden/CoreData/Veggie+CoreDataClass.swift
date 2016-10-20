@@ -15,7 +15,7 @@ public class Veggie: Crop {
     public class override func getCropFrom(dictionary: NSDictionary) -> Veggie {
         
         let veggie = super.getCropFrom(dictionary: dictionary)
-       // veggie.typeCrop = CropTypes.Veggie
+       // veggie.typeCrop = CropTypes.Annual
         
         return veggie as! Veggie
     }
