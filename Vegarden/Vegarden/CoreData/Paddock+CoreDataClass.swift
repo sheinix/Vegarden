@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Paddock)
+//@objc(Paddock)
 
 public class Paddock: NSManagedObject {
 

@@ -32,3 +32,24 @@ extension Int {
         self.init(Int(min + arc4random_uniform(max - min)) - delta)
     }
 }
+
+extension Date {
+   
+    public static func daysBetween(start: Date, end: Date) -> Int {
+        
+        return Calendar.current.dateComponents([.day], from: start, to: end).day!
+    }
+    
+
+    public static func addNumberOf(days:Int, to date: Date) -> Date! {
+        
+        var cal = Calendar.current
+        cal.timeZone = TimeZone(abbreviation: "UTC")!
+        
+        var comps = DateComponents()
+        comps.day = days
+        
+        return cal.date(byAdding: comps, to: date)
+    }
+    
+}

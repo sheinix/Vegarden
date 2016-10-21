@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Row)
+//@objc(Row)
 
 public class Row: NSManagedObject {
     

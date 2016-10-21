@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Garden)
+//@objc(Garden)
 
 public class Garden: NSManagedObject {
 

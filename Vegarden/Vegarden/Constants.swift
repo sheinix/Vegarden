@@ -68,3 +68,8 @@ struct plantingStates {
 enum GrowingActions: Int {
      case WeedAction, WaterAction, FertilizeAction
 }
+
+enum TimeLapses {
+    
+    case Days, Weeks, Months 
+}

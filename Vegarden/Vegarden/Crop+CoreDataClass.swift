@@ -9,17 +9,18 @@
 import Foundation
 import CoreData
 
+
 @objc(Crop)
 
 public class Crop: NSManagedObject {
-    
+        
     var typeCrop : CropTypes {
         
         get {
-            return CropTypes(rawValue: self.cropType)!
+            return CropTypes(rawValue: Int16(self.cropType.intValue))!
         }
         set {
-            self.cropType = newValue.rawValue
+            self.cropType = NSNumber(value:Int16(newValue.rawValue))
         }
     }
     
@@ -37,9 +38,10 @@ public class Crop: NSManagedObject {
         crop.owned       =   false
         
         crop.cropType    =   0// dictionary["plantType"] as? String
-        crop.cropSize    =   Int16((dictionary["plantSize"] as? NSNumber)!.int16Value)
-        crop.phLevels    =   Int16((dictionary["phLevels"] as? NSNumber)!.int16Value)
-        crop.spacing     =   Int16((dictionary["spacing"] as? NSNumber)!.int16Value)
+        crop.cropSize    =   NSNumber(value: (Int(dictionary["plantSize"] as! Int)))
+        crop.phLevels    =   NSNumber(value: (Int(dictionary["phLevels"] as! Int)))
+        crop.spacing     =   NSNumber(value: (Int(dictionary["spacing"] as! Int)))
+        crop.timeToHarvest = NSNumber(value: 30)
         
         crop.whenToPlant        = dictionary["whenToPlant"] as? String
         crop.plantingDirections = dictionary["plantDirections"] as? String
@@ -54,6 +56,6 @@ public class Crop: NSManagedObject {
         return crop
         
     }
-
-
+        
+       
 }

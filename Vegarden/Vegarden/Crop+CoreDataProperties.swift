@@ -16,15 +16,16 @@ extension Crop {
     }
     
     @NSManaged public var name: String!
-    @NSManaged public var cropType: Int16
+    @NSManaged public var cropType: NSNumber
     @NSManaged public var picture: String?
     @NSManaged public var family: String?
-    @NSManaged public var cropSize: Int16
-    @NSManaged public var phLevels: Int16
-    @NSManaged public var spacing: Int16
+    @NSManaged public var cropSize: NSNumber
+    @NSManaged public var phLevels: NSNumber
+    @NSManaged public var spacing: NSNumber
+    @NSManaged public var timeToHarvest: NSNumber
     @NSManaged public var whenToPlant: String?
     @NSManaged public var row: Row?
-    @NSManaged public var states: NSArray?
+    @NSManaged public var states: NSSet?
     @NSManaged public var owned: Bool
     @NSManaged public var plantingDirections: String?
     @NSManaged public var plantType: String?

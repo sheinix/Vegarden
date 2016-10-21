@@ -17,6 +17,7 @@
         <attribute name="potentialProblems" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="spacing" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="storageAndUse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeToHarvest" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="whenToPlant" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="row" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Row" inverseName="crops" inverseEntity="Row" syncable="YES"/>
         <relationship name="states" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CropState" syncable="YES"/>
@@ -44,7 +45,7 @@
     <entity name="Location" representedClassName=".Location" isAbstract="YES" syncable="YES"/>
     <entity name="Paddock" representedClassName=".Paddock" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="paddockId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="paddockId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="garden" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Garden" inverseName="paddocks" inverseEntity="Garden" syncable="YES"/>
         <relationship name="location" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
         <relationship name="rows" optional="YES" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Row" inverseName="paddock" inverseEntity="Row" syncable="YES"/>
@@ -72,7 +73,7 @@
     <entity name="Veggie" representedClassName=".Veggie" parentEntity="Crop" syncable="YES"/>
     <entity name="Weed" representedClassName=".Weed" parentEntity="RowLifeState" syncable="YES"/>
     <elements>
-        <element name="Crop" positionX="-1260" positionY="-2767" width="128" height="328"/>
+        <element name="Crop" positionX="-1260" positionY="-2767" width="128" height="343"/>
         <element name="CropState" positionX="-929" positionY="-2479" width="128" height="58"/>
         <element name="Fertilized" positionX="-1107" positionY="-2340" width="128" height="43"/>
         <element name="Fruit" positionX="-1116" positionY="-2655" width="128" height="43"/>

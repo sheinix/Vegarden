@@ -38,6 +38,7 @@ class PersistenceManager {
             saveContext()
         }
         
+        generateASampleGarden()
         
         print("done ok")
     }
@@ -129,7 +130,7 @@ class PersistenceManager {
         let newRow = Row.mr_createEntity()
         newRow?.name = rowName
         newRow?.id = UUID().uuidString
-        newRow?.length = NSNumber(value: length!)
+        newRow?.length = (length == nil ? nil : NSNumber(value: length!))
         paddock.addToRows(newRow!)
         
     }
@@ -245,7 +246,7 @@ class PersistenceManager {
         let state : CropState = (asA == plantingStates.begining.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
         
         state.date = NSDate()
-        crop.addToStates(state)
+        plantingCrop?.addToStates(state)
         
         plantingCrop?.row = row
         row.addToCrops(plantingCrop!)
@@ -328,5 +329,61 @@ class PersistenceManager {
         }
         
         saveContext()
+    }
+    
+    public func generateASampleGarden() {
+        
+        let paddocks = createSamplePaddocks()
+        
+        let sampleGarden = createGardenNamed(name: "Sample Garden", in: nil, withPaddocks: paddocks)
+    
+        addRows(numberOfRows: 10, to: paddocks[0], in: sampleGarden)
+        
+        addRows(numberOfRows: 5, to: paddocks[1], in: sampleGarden)
+        
+        addRows(numberOfRows: 8, to: paddocks[2], in: sampleGarden)
+        
+        let cropToPlant = Crop.mr_findFirst()
+        let paddock = paddocks[0]
+        
+        let plantedRow = plant(crop: cropToPlant!,
+                                in: paddock.rows?.allObjects.first as! Row,
+                                of: paddock,
+                                asA: plantingStates.begining.Seed)
+        
+        
+        let rowsFromFirstPaddock = (sampleGarden.paddocks?.allObjects[0] as! Paddock).rows
+        
+        let _ = (rowsFromFirstPaddock?.allObjects.first as! Row).lifeCycleState
+        
+        print("all good : \(plantedRow)")
+        
+        
+    }
+    public func createSamplePaddocks () -> [Paddock] {
+        
+        let paddock1 = Paddock.mr_createEntity()
+        let paddock2 = Paddock.mr_createEntity()
+        let paddock3 = Paddock.mr_createEntity()
+        
+        
+        paddock1?.paddockId = UUID().uuidString
+        paddock2?.paddockId = UUID().uuidString
+        paddock3?.paddockId = UUID().uuidString
+        
+        paddock1?.name = "Paddock 1"
+        paddock2?.name = "Paddock 2"
+        paddock3?.name = "Paddock 3"
+        
+        paddock1?.location = nil
+        paddock2?.location = nil
+        paddock3?.location = nil
+        
+        paddock1?.soil = nil
+        paddock2?.soil = nil
+        paddock3?.soil = nil
+        
+        return [paddock1!, paddock2!, paddock3!]
+        
     }
 }
