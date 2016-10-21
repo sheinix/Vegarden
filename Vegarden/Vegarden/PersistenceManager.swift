@@ -256,6 +256,13 @@ class PersistenceManager {
             row.estimatedNumberOfCrops = NSNumber(value:round((row.length?.floatValue)! / Float(crop.spacing)))
         }
         
+        
+        let harvestDate = plantingCrop?.getEstimatedHarvestDate()
+        let dayPlanted = plantingCrop?.getDayPlanted()
+        let daysPassed = plantingCrop?.getDaysPassedSincePlanted()
+        let daysToHarvest = plantingCrop?.getEstimatedDaysLeftToHarvest()
+        
+        
         return row
     }
 
@@ -354,9 +361,11 @@ class PersistenceManager {
         
         let rowsFromFirstPaddock = (sampleGarden.paddocks?.allObjects[0] as! Paddock).rows
         
-        let _ = (rowsFromFirstPaddock?.allObjects.first as! Row).lifeCycleState
+       // let plantedRow = (rowsFromFirstPaddock?.allObjects.first as! Row).lifeCycleState
         
         print("all good : \(plantedRow)")
+        
+        
         
         
     }

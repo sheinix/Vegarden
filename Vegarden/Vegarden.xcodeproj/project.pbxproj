@@ -24,6 +24,7 @@
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F01DB9033800971EBF /* FoldingCell.swift */; };
 		96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F21DB9E77200971EBF /* CropExtension.swift */; };
+		96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F41DB9E97C00971EBF /* DateExtension.swift */; };
 		96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */; };
 		96F722F61DB30988000100B2 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F51DB30988000100B2 /* Macros.swift */; };
 		96F722F81DB309CD000100B2 /* ViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F71DB309CD000100B2 /* ViewsExtensions.swift */; };
@@ -113,6 +114,7 @@
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96EE77F01DB9033800971EBF /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		96EE77F21DB9E77200971EBF /* CropExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropExtension.swift; sourceTree = "<group>"; };
+		96EE77F41DB9E97C00971EBF /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInNavigationController.swift; sourceTree = "<group>"; };
 		96F722F51DB30988000100B2 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		96F722F71DB309CD000100B2 /* ViewsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsExtensions.swift; sourceTree = "<group>"; };
@@ -324,15 +326,16 @@
 			name = "Constants & Macros";
 			sourceTree = "<group>";
 		};
-		96F722F91DB309DD000100B2 /* Extension */ = {
+		96F722F91DB309DD000100B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9654A8A51DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.h */,
 				9654A8A61DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m */,
 				96F722F71DB309CD000100B2 /* ViewsExtensions.swift */,
 				9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */,
+				96EE77F41DB9E97C00971EBF /* DateExtension.swift */,
 			);
-			name = Extension;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		96F722FA1DB309FC000100B2 /* Transitions */ = {
@@ -434,7 +437,7 @@
 				962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */,
 				BD46A6B01D991A1A004D7405 /* CoreData */,
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
-				96F722F91DB309DD000100B2 /* Extension */,
+				96F722F91DB309DD000100B2 /* Extensions */,
 				BD3307BE1DA9EEEB00F2EC6F /* Views */,
 				BD3307BD1DA9EEDB00F2EC6F /* CellViews */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
@@ -637,6 +640,7 @@
 				96F723051DB3111A000100B2 /* VCropDetailPageViewCell.swift in Sources */,
 				BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */,
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
+				96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */,
 				BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */,
 				BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */,
 				BDE061791D9FDC660003364D /* Paddock+CoreDataProperties.swift in Sources */,

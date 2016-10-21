@@ -11,27 +11,20 @@ import Foundation
 
 extension Crop {
     
+
+//MARK: - Time Management Methods:
     
     
-    public func timeToHarvestInWeeks() -> Int {
+    public func getEstimatedWeeksLeftToHarvest() -> Int {
         
-        return 1
+        return Date.weeksBetween(start: Date(), end: getEstimatedHarvestDate())
     }
     
-    public func timeToHarvestInDays() -> Int {
+ 
+    public func getEstimatedMonthsLeftToHarvest() -> Int {
         
-        return 1
+        return Date.monthsBetween(start: Date(), end: getEstimatedHarvestDate())
     }
-    
-    public func timeToHarvestInMonts() -> Int {
-        
-        return 1
-    }
-    
-    
-    
-    
-    //MARK: - Time Management Methods:
     
     public func getEstimatedDaysLeftToHarvest() -> Int {
         
