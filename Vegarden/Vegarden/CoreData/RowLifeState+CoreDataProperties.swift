@@ -17,6 +17,6 @@ extension RowLifeState {
     }
 
     @NSManaged public var when: NSDate?
-    @NSManaged public var isDone: Bool
+    @NSManaged public var isDone: NSNumber?
 
 }

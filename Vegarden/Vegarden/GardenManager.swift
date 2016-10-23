@@ -13,11 +13,12 @@ import Foundation
 
 private let sharedGadenManager = GardenManager()
 
-class GardenManager {
+class GardenManager: GardenManagementProtocol {
     
     class var shared: GardenManager {
         
         return sharedGadenManager
+
     }
 
     

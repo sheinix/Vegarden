@@ -22,6 +22,7 @@
 		9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */; };
 		9654A8AB1DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
+		96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */; };
 		96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F01DB9033800971EBF /* FoldingCell.swift */; };
 		96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F21DB9E77200971EBF /* CropExtension.swift */; };
 		96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F41DB9E97C00971EBF /* DateExtension.swift */; };
@@ -112,6 +113,7 @@
 		9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
+		96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersitanceCallBackProtocol.swift; sourceTree = "<group>"; };
 		96EE77F01DB9033800971EBF /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		96EE77F21DB9E77200971EBF /* CropExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropExtension.swift; sourceTree = "<group>"; };
 		96EE77F41DB9E97C00971EBF /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
+				96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
 				BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */,
 				96F723161DB366FA000100B2 /* HelperManager.swift in Sources */,
+				96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */,
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,

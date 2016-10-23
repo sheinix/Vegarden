@@ -54,10 +54,10 @@ enum CropTypes: Int16 {
     case Annual, Perenneal, Tuba
 }
 
-struct plantingStates {
-
+public struct plantingStates {
+    
     enum begining: Int {
-        case Seed, Seedling
+            case Seed, Seedling
     }
 
     enum normal: Int {

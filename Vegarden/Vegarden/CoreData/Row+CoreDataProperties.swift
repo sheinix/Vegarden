@@ -19,8 +19,9 @@ extension Row {
     @NSManaged public var id: String?
     @NSManaged public var length: NSNumber?
     @NSManaged public var estimatedNumberOfCrops: NSNumber?
-    @NSManaged public var crops: NSArray?
+    @NSManaged public var crops: NSSet?
     @NSManaged public var lifeCycleState: NSArray?
+    @NSManaged public var paddock: Paddock?
 
 }
 
@@ -34,10 +35,10 @@ extension Row {
     @NSManaged public func removeFromCrops(_ value: Crop)
 
     @objc(addCrops:)
-    @NSManaged public func addToCrops(_ values: NSArray)
+    @NSManaged public func addToCrops(_ values: NSSet)
 
     @objc(removeCrops:)
-    @NSManaged public func removeFromCrops(_ values: NSArray)
+    @NSManaged public func removeFromCrops(_ values: NSSet)
     
     @objc(addLifeCycleStateObject:)
     @NSManaged public func addToLifeCycleState(_ value: RowLifeState)

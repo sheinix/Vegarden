@@ -19,6 +19,9 @@ class PersistenceManager {
         return sharedPersistanceManager
     }
     
+    weak var callBackDelegate:PersistanceCallBackProtocol?
+    
+    
 // MARK: - CoreData/MagicalRecord Methods
     
     public func getContext() -> NSManagedObjectContext {
@@ -72,15 +75,21 @@ class PersistenceManager {
     
     public func createGardenNamed(name: String!, in location:Location?, withPaddocks paddock: [Paddock]?) -> Garden {
         
-        let garden = Garden.mr_createEntity()
+        let newGarden = Garden.mr_createEntity()
         
-        garden?.name = name
-        garden?.paddocks = NSSet(array: paddock!)
-        garden?.location = location
+        newGarden?.name = name
+        
+        //_ = paddock?.map { ($0 as Paddock).garden = garden }
+        
+        newGarden?.addToPaddocks(NSSet(array: paddock!))
+        _ = newGarden?.paddocks?.allObjects.map { ($0 as! Paddock).garden = newGarden }
+        newGarden?.location = location
         
         saveContext()
         
-        return garden!
+        //TODO FIX IT: When saving context the paddoc.garden = garden relationship is lost!
+        
+        return newGarden!
     }
     
     
@@ -131,7 +140,10 @@ class PersistenceManager {
         newRow?.name = rowName
         newRow?.id = UUID().uuidString
         newRow?.length = (length == nil ? nil : NSNumber(value: length!))
+        newRow?.paddock = paddock
         paddock.addToRows(newRow!)
+        
+        saveContext()
         
     }
     
@@ -244,9 +256,11 @@ class PersistenceManager {
         let plantingCrop = crop.duplicateAssociated()
         
         let state : CropState = (asA == plantingStates.begining.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
-        
+    
         state.date = NSDate()
         plantingCrop?.addToStates(state)
+        
+        //TODO ReCalculate time to harvest depending on how was planted (seed or seedling()
         
         plantingCrop?.row = row
         row.addToCrops(plantingCrop!)
@@ -256,20 +270,68 @@ class PersistenceManager {
             row.estimatedNumberOfCrops = NSNumber(value:round((row.length?.floatValue)! / Float(crop.spacing)))
         }
         
-        
+        //TODO Clean this
         let harvestDate = plantingCrop?.getEstimatedHarvestDate()
         let dayPlanted = plantingCrop?.getDayPlanted()
         let daysPassed = plantingCrop?.getDaysPassedSincePlanted()
         let daysToHarvest = plantingCrop?.getEstimatedDaysLeftToHarvest()
         
+        saveContext()
         
         return row
     }
 
     public func makeGrowingAction(action:GrowingActions, to row:Row, in paddock: Paddock) {
         
+        //Not quite the right name for this, but a growing action taken on a row, it modifies its row cycle state.
+        row.addToLifeCycleState(getStateFor(action: action))
+        
+        saveContext()
+        
+    }
+    
+    public func makeGrowingAction(action:GrowingActions, in paddock: Paddock) {
+        
+        paddock.rows?.forEach({ (row) in
+            makeGrowingAction(action: action, to:row as! Row, in: paddock)
+        })
+        
+    }
+    
+    public func makeGrowingAction(action: GrowingActions, in garden: Garden) {
+        
+        garden.paddocks?.forEach({ (paddock) in
+            makeGrowingAction(action: action, in: paddock as! Paddock)
+        })
+    }
+    
+    public func harvest(crop: Crop, from paddock: Paddock) {
+       
+        let harvestingState = Harvesting.mr_createEntity()
+        harvestingState?.date = NSDate()
+        crop.addToStates(harvestingState!)
+        
+        saveContext()
+        
+    }
+    
+    public func finishHarvestFor(crop: Crop, in paddock: Paddock) {
+        
+        let harvestedState = Harvested.mr_createEntity()
+        harvestedState?.date = NSDate()
+        crop.addToStates(harvestedState!)
+        
+        saveContext()
+        
+    }
+    
+    
+//MARK: - Helper Methods
+    
+    private func getStateFor(action:GrowingActions) -> (RowLifeState) {
+        
         let actionMade : RowLifeState
-
+        
         switch action {
             
         case GrowingActions.WeedAction:
@@ -285,40 +347,12 @@ class PersistenceManager {
             actionMade = Fertilized.mr_createEntity()!
         }
         
-        actionMade.isDone = true
+        actionMade.isDone = NSNumber(booleanLiteral: true)
         actionMade.when = NSDate()
         
-        //Not quite the right name for this, but a growing action taken on a row, it modifies its row cycle state.
-        row.addToLifeCycleState(actionMade)
+        return actionMade
     }
     
-    
-    public func harvest(crop: Crop, from paddock: Paddock) {
-       
-        let harvestingState = Harvesting.mr_createEntity()
-        harvestingState?.date = NSDate()
-        crop.addToStates(harvestingState!)
-        
-    }
-    
-    public func finishHarvestFor(crop: Crop, in paddock: Paddock) {
-        
-        let harvestedState = Harvested.mr_createEntity()
-        harvestedState?.date = NSDate()
-        crop.addToStates(harvestedState!)
-        
-    }
-    
-    public func makeAction(action:GrowingActions, in paddock: Paddock) {
-        
-    }
-    
-    public func makeAction(in garden: Garden) {
-        
-    }
-    
-    
-//MARK: - Helper Methods
     
     public func populateDB() {
    
@@ -344,14 +378,14 @@ class PersistenceManager {
         
         let sampleGarden = createGardenNamed(name: "Sample Garden", in: nil, withPaddocks: paddocks)
     
-        addRows(numberOfRows: 10, to: paddocks[0], in: sampleGarden)
+        addRows(numberOfRows: 10, to: sampleGarden.paddocks?.allObjects[0] as! Paddock, in: sampleGarden)
         
-        addRows(numberOfRows: 5, to: paddocks[1], in: sampleGarden)
+        addRows(numberOfRows: 5, to: sampleGarden.paddocks?.allObjects[1] as! Paddock, in: sampleGarden)
         
-        addRows(numberOfRows: 8, to: paddocks[2], in: sampleGarden)
+        addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock, in: sampleGarden)
         
         let cropToPlant = Crop.mr_findFirst()
-        let paddock = paddocks[0]
+        let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
         
         let plantedRow = plant(crop: cropToPlant!,
                                 in: paddock.rows?.allObjects.first as! Row,
@@ -359,9 +393,9 @@ class PersistenceManager {
                                 asA: plantingStates.begining.Seed)
         
         
-        let rowsFromFirstPaddock = (sampleGarden.paddocks?.allObjects[0] as! Paddock).rows
+       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow, in:plantedRow.paddock! )
         
-       // let plantedRow = (rowsFromFirstPaddock?.allObjects.first as! Row).lifeCycleState
+        harvest(crop: plantedRow.crops?.allObjects[0] as! Crop, from: plantedRow.paddock!)
         
         print("all good : \(plantedRow)")
         

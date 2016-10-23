@@ -11,9 +11,22 @@ import Foundation
 
 extension Crop {
     
-
-//MARK: - Time Management Methods:
+//MARK: - Boolean Methods:
     
+    public func isReadyForHarvest() -> Bool {
+        
+        return (getEstimatedDaysLeftToHarvest() == 0)
+        
+    }
+    
+    public func hasBeenHarvested() -> Bool {
+        
+        return getHarvestingStates() != nil
+        
+    }
+    
+    
+//MARK: - Time Management Methods:
     
     public func getEstimatedWeeksLeftToHarvest() -> Int {
         
@@ -60,15 +73,69 @@ extension Crop {
     
     private func getPlantedtCropState() -> CropState? {
         
+        let orderedStates = getOrderedStates()
+        
+        return orderedStates[0]
+        
+    }
+    
+    private func getAllStates() -> [CropState] {
+        
+        return self.states?.allObjects as! [CropState]
+    }
+    
+    
+    //TODO Make this method work with the planting states! For now use the different Methods above
+//    public func getStatesOf(type:plantingStates) -> [CropState] {
+//        
+//        let returnStates : [CropState]
+//
+//    }
+
+    private func getHarvestingStates() -> [Harvesting]? {
+        
+        var returnStates : [CropState]? = nil
+        
+        
+        self.states?.allObjects.forEach({ (cropState) in
+            
+            if (type(of: cropState) == Harvesting.self) {
+                
+                returnStates?.append(cropState as! CropState)
+            }
+            
+        })
+        
+        return returnStates as! [Harvesting]?
+    }
+
+    private func getOrderedStates() -> [CropState] {
+        
         let orderedStates = self.states?.allObjects.sorted(by: { (date1, date2) -> Bool in
             
             return (date1 as! Date) > (date2 as! Date)
             
         })
         
-        return (orderedStates?[0] as! CropState)
-        
+        return orderedStates as! [CropState]
     }
-
-
+    
+    
+//    public func reCalculateTimeToHarvest() {
+//        
+//        self.timeToHarvest = NSNumber(value:self.computedTimeToHarvest)
+//        
+//    }
+//    
+//    public func getSeedlingTimeToHarvest() -> Int {
+//       
+//        let value = String(self.timeToHarvest.intValue).components(separatedBy: ".")
+//        
+//        return (self.timeToHarvest.intValue % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
+//        
+//    }
+//    
+//    public func getSeedTimeToHarvest() -> Int {
+//        
+//    }
 }

@@ -25,6 +25,19 @@ public class Crop: NSManagedObject {
     }
     
     
+    //Will be the computed time depending on how you plant the crop, if is seedling or seed. self.timeToHarvest will be a double with the Int part matchiing the seed time and the decimal part matching the seedling
+    var computedTimeToHarvest: Int {
+       
+        get {
+            
+            let value = String(self.timeToHarvest.intValue).components(separatedBy: ".")
+            
+            return (self.timeToHarvest.intValue % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
+            
+            }
+    }
+    
+    
     public class func getCropFrom(dictionary: NSDictionary) -> Crop {
         
         //TODO need to know which type of crop is before creating
