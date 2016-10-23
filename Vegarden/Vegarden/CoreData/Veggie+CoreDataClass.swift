@@ -9,7 +9,16 @@
 import Foundation
 import CoreData
 
+//@objc(Veggie)
 
 public class Veggie: Crop {
+
+    public class override func getCropFrom(dictionary: NSDictionary) -> Veggie {
+        
+        let veggie = super.getCropFrom(dictionary: dictionary)
+       // veggie.typeCrop = CropTypes.Annual
+        
+        return veggie as! Veggie
+    }
 
 }

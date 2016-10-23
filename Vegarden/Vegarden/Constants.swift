@@ -45,3 +45,31 @@ struct SegueIdentifiers {
     
 //    static let Detail = "DetailViewController"
 }
+
+struct FileNames {
+    static let allCropsFileName = "AllCrops"
+}
+
+enum CropTypes: Int16 {
+    case Annual, Perenneal, Tuba
+}
+
+public struct plantingStates {
+    
+    enum begining: Int {
+            case Seed, Seedling
+    }
+
+    enum normal: Int {
+        case Planted, Growing, Grown, Harvested
+    }
+}
+
+enum GrowingActions: Int {
+     case WeedAction, WaterAction, FertilizeAction
+}
+
+enum TimeLapses {
+    
+    case Days, Weeks, Months 
+}

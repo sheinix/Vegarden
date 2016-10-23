@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+//@objc(Seedling)
 
 public class Seedling: CropState {
 

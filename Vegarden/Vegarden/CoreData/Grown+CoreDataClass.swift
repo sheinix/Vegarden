@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(Grown)
 
 public class Grown: CropState {
 

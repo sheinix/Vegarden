@@ -17,12 +17,12 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
     
     open var imgView: UIImageView?
     
-    var crop: CropVeggie? {
+    var crop: Crop? {
         didSet {
             if let crop = crop {
-                imageView.image = crop.image
-                captionLabel.text = crop.caption
-                commentLabel.text = crop.comment
+                imageView.image = UIImage(named:crop.picture!)
+                captionLabel.text = crop.name
+                commentLabel.text = crop.family
                 imgView = imageView
             }
         }

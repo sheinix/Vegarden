@@ -16,7 +16,7 @@ extension Paddock {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var paddockId: Int64
+    @NSManaged public var paddockId: String?
     @NSManaged public var garden: Garden?
     @NSManaged public var rows: NSSet?
     @NSManaged public var location: Location?

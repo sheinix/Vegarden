@@ -9,7 +9,15 @@
 import Foundation
 import CoreData
 
+//@objc(Paddock)
 
 public class Paddock: NSManagedObject {
 
+    public func reset() {
+        
+        self.rows?.forEach({ (element) in
+            (element as! Row).reset()
+        })
+    }
+    
 }

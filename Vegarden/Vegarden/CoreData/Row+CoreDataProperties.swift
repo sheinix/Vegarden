@@ -16,9 +16,12 @@ extension Row {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var id: Int32
+    @NSManaged public var id: String?
+    @NSManaged public var length: NSNumber?
+    @NSManaged public var estimatedNumberOfCrops: NSNumber?
     @NSManaged public var crops: NSSet?
-    @NSManaged public var lifeCycleState: RowLifeState?
+    @NSManaged public var lifeCycleState: NSArray?
+    @NSManaged public var paddock: Paddock?
 
 }
 
@@ -36,5 +39,17 @@ extension Row {
 
     @objc(removeCrops:)
     @NSManaged public func removeFromCrops(_ values: NSSet)
+    
+    @objc(addLifeCycleStateObject:)
+    @NSManaged public func addToLifeCycleState(_ value: RowLifeState)
+    
+    @objc(removeLifeCycleStateObject:)
+    @NSManaged public func removeFromLifeCycleState(_ value: RowLifeState)
+    
+    @objc(addLifeCycleState:)
+    @NSManaged public func addToLifeCycleState(_ values: NSArray)
+    
+    @objc(removeLifeCycleState:)
+    @NSManaged public func removeFromLifeCycleState(_ values: NSArray)
 
 }

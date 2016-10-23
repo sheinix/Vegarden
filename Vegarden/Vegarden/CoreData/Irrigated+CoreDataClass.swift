@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(Irrigated)
 
 public class Irrigated: RowLifeState {
 

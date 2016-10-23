@@ -9,20 +9,23 @@
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
-		960CCF6E1DABC36300CB62C5 /* crops.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6A1DABC36300CB62C5 /* crops.png */; };
-		960CCF6F1DABC36300CB62C5 /* garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6B1DABC36300CB62C5 /* garden.png */; };
-		960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 960CCF6D1DABC36300CB62C5 /* lifecycle.png */; };
 		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
 		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
 		962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */; };
+		9654A89A1DB5F95800A0A9D9 /* CropState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8961DB5F95800A0A9D9 /* CropState+CoreDataClass.swift */; };
+		9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8971DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift */; };
+		9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */; };
+		9654A89F1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */; };
+		9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */; };
+		9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */; };
+		9654A8A71DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A61DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m */; };
+		9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */; };
+		9654A8AB1DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
-		96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C311DA9F5A700DEF4EC /* 01.jpg */; };
-		96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C321DA9F5A700DEF4EC /* 02.jpg */; };
-		96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C331DA9F5A700DEF4EC /* 03.jpg */; };
-		96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C341DA9F5A700DEF4EC /* 04.jpg */; };
-		96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C351DA9F5A700DEF4EC /* 05.jpg */; };
-		96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C361DA9F5A700DEF4EC /* 06.jpeg */; };
-		96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C371DA9F5A700DEF4EC /* 07.jpeg */; };
+		96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */; };
+		96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F01DB9033800971EBF /* FoldingCell.swift */; };
+		96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F21DB9E77200971EBF /* CropExtension.swift */; };
+		96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE77F41DB9E97C00971EBF /* DateExtension.swift */; };
 		96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */; };
 		96F722F61DB30988000100B2 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F51DB30988000100B2 /* Macros.swift */; };
 		96F722F81DB309CD000100B2 /* ViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F722F71DB309CD000100B2 /* ViewsExtensions.swift */; };
@@ -42,7 +45,6 @@
 		BD3307BA1DA9EECA00F2EC6F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */; };
 		BD3307BB1DA9EECA00F2EC6F /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */; };
 		BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */; };
-		BD3307C01DA9F00900F2EC6F /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307BF1DA9F00900F2EC6F /* Crop.swift */; };
 		BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C0F31DA50FBD00265405 /* Constants.swift */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
@@ -53,10 +55,6 @@
 		BD83BF9F1D9FFF7500C7D79A /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF9D1D9FFF7500C7D79A /* MyGardenViewController.swift */; };
 		BD83BFA71D9FFFD000C7D79A /* LifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */; };
 		BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA91DA0034700C7D79A /* AboutViewController.swift */; };
-		BDE061601D9FDC660003364D /* Crop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */; };
-		BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */; };
-		BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */; };
-		BDE061631D9FDC660003364D /* CropState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061391D9FDC660003364D /* CropState+CoreDataProperties.swift */; };
 		BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */; };
 		BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */; };
 		BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */; };
@@ -101,20 +99,24 @@
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
-		960CCF6A1DABC36300CB62C5 /* crops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crops.png; sourceTree = "<group>"; };
-		960CCF6B1DABC36300CB62C5 /* garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden.png; sourceTree = "<group>"; };
-		960CCF6D1DABC36300CB62C5 /* lifecycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifecycle.png; sourceTree = "<group>"; };
 		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
 		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
 		962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myOwnedCrops.plist; sourceTree = "<group>"; };
+		9654A8961DB5F95800A0A9D9 /* CropState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CropState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9654A8971DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CropState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagementProtocol.swift; sourceTree = "<group>"; };
+		9654A8A51DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Duplicate.h"; sourceTree = "<group>"; };
+		9654A8A61DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Duplicate.m"; sourceTree = "<group>"; };
+		9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
-		96D62C311DA9F5A700DEF4EC /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
-		96D62C321DA9F5A700DEF4EC /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
-		96D62C331DA9F5A700DEF4EC /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
-		96D62C341DA9F5A700DEF4EC /* 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04.jpg; sourceTree = "<group>"; };
-		96D62C351DA9F5A700DEF4EC /* 05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 05.jpg; sourceTree = "<group>"; };
-		96D62C361DA9F5A700DEF4EC /* 06.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06.jpeg; sourceTree = "<group>"; };
-		96D62C371DA9F5A700DEF4EC /* 07.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 07.jpeg; sourceTree = "<group>"; };
+		96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersitanceCallBackProtocol.swift; sourceTree = "<group>"; };
+		96EE77F01DB9033800971EBF /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		96EE77F21DB9E77200971EBF /* CropExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropExtension.swift; sourceTree = "<group>"; };
+		96EE77F41DB9E97C00971EBF /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		96F722D81DAD04DA000100B2 /* ZoomInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInNavigationController.swift; sourceTree = "<group>"; };
 		96F722F51DB30988000100B2 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		96F722F71DB309CD000100B2 /* ViewsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsExtensions.swift; sourceTree = "<group>"; };
@@ -137,7 +139,6 @@
 		BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
-		BD3307BF1DA9F00900F2EC6F /* Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
 		BD37C0F31DA50FBD00265405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,10 +152,6 @@
 		BD83BF9D1D9FFF7500C7D79A /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
 		BD83BFA51D9FFFD000C7D79A /* LifeCycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleViewController.swift; sourceTree = "<group>"; };
 		BD83BFA91DA0034700C7D79A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataClass.swift"; path = "CoreData/Crop+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Crop+CoreDataProperties.swift"; path = "CoreData/Crop+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataClass.swift"; path = "CoreData/CropState+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BDE061391D9FDC660003364D /* CropState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CropState+CoreDataProperties.swift"; path = "CoreData/CropState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataClass.swift"; path = "CoreData/Fertilized+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataProperties.swift"; path = "CoreData/Fertilized+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fruit+CoreDataClass.swift"; path = "CoreData/Fruit+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -232,6 +229,89 @@
 			name = c;
 			sourceTree = "<group>";
 		};
+		9654A88F1DB5F65800A0A9D9 /* Crop */ = {
+			isa = PBXGroup;
+			children = (
+				9654A8931DB5F6BA00A0A9D9 /* States */,
+				9654A89C1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift */,
+				96EE77F21DB9E77200971EBF /* CropExtension.swift */,
+				9654A89D1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift */,
+				BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */,
+				BDE0613D1D9FDC660003364D /* Fruit+CoreDataProperties.swift */,
+				BDE061481D9FDC660003364D /* Herb+CoreDataClass.swift */,
+				BDE061491D9FDC660003364D /* Herb+CoreDataProperties.swift */,
+				BDE0615C1D9FDC660003364D /* Veggie+CoreDataClass.swift */,
+				BDE0615D1D9FDC660003364D /* Veggie+CoreDataProperties.swift */,
+			);
+			name = Crop;
+			sourceTree = "<group>";
+		};
+		9654A8901DB5F65F00A0A9D9 /* Garden */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0613E1D9FDC660003364D /* Garden+CoreDataClass.swift */,
+				BDE0613F1D9FDC660003364D /* Garden+CoreDataProperties.swift */,
+				BDE061401D9FDC660003364D /* GardenLocation+CoreDataClass.swift */,
+				BDE061411D9FDC660003364D /* GardenLocation+CoreDataProperties.swift */,
+				BDE0614C1D9FDC660003364D /* Location+CoreDataClass.swift */,
+				BDE0614D1D9FDC660003364D /* Location+CoreDataProperties.swift */,
+				BDE0614E1D9FDC660003364D /* Paddock+CoreDataClass.swift */,
+				BDE0614F1D9FDC660003364D /* Paddock+CoreDataProperties.swift */,
+				BDE061501D9FDC660003364D /* PaddockLocation+CoreDataClass.swift */,
+				BDE061511D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift */,
+				BDE0615A1D9FDC660003364D /* Soil+CoreDataClass.swift */,
+				BDE0615B1D9FDC660003364D /* Soil+CoreDataProperties.swift */,
+			);
+			name = Garden;
+			sourceTree = "<group>";
+		};
+		9654A8921DB5F68500A0A9D9 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0614A1D9FDC660003364D /* Irrigated+CoreDataClass.swift */,
+				BDE0614B1D9FDC660003364D /* Irrigated+CoreDataProperties.swift */,
+				BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */,
+				BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */,
+				BDE0615E1D9FDC660003364D /* Weed+CoreDataClass.swift */,
+				BDE0615F1D9FDC660003364D /* Weed+CoreDataProperties.swift */,
+				BDE061521D9FDC660003364D /* Row+CoreDataClass.swift */,
+				BDE061531D9FDC660003364D /* Row+CoreDataProperties.swift */,
+				BDE061541D9FDC660003364D /* RowLifeState+CoreDataClass.swift */,
+				BDE061551D9FDC660003364D /* RowLifeState+CoreDataProperties.swift */,
+			);
+			name = Row;
+			sourceTree = "<group>";
+		};
+		9654A8931DB5F6BA00A0A9D9 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				9654A8961DB5F95800A0A9D9 /* CropState+CoreDataClass.swift */,
+				9654A8971DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift */,
+				BDE061561D9FDC660003364D /* Seed+CoreDataClass.swift */,
+				BDE061571D9FDC660003364D /* Seed+CoreDataProperties.swift */,
+				BDE061581D9FDC660003364D /* Seedling+CoreDataClass.swift */,
+				BDE061591D9FDC660003364D /* Seedling+CoreDataProperties.swift */,
+				BDE061421D9FDC660003364D /* Growing+CoreDataClass.swift */,
+				BDE061431D9FDC660003364D /* Growing+CoreDataProperties.swift */,
+				BDE061441D9FDC660003364D /* Grown+CoreDataClass.swift */,
+				BDE061451D9FDC660003364D /* Grown+CoreDataProperties.swift */,
+				BDE061461D9FDC660003364D /* Harvested+CoreDataClass.swift */,
+				BDE061471D9FDC660003364D /* Harvested+CoreDataProperties.swift */,
+				9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */,
+				9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
+		9654A8A21DB8870E00A0A9D9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
+				96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		96F722D71DAD04AB000100B2 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,12 +329,16 @@
 			name = "Constants & Macros";
 			sourceTree = "<group>";
 		};
-		96F722F91DB309DD000100B2 /* Extension */ = {
+		96F722F91DB309DD000100B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9654A8A51DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.h */,
+				9654A8A61DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m */,
 				96F722F71DB309CD000100B2 /* ViewsExtensions.swift */,
+				9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */,
+				96EE77F41DB9E97C00971EBF /* DateExtension.swift */,
 			);
-			name = Extension;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		96F722FA1DB309FC000100B2 /* Transitions */ = {
@@ -300,6 +384,7 @@
 		BD3307BD1DA9EEDB00F2EC6F /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
+				96EE77F01DB9033800971EBF /* FoldingCell.swift */,
 				96F723071DB3114C000100B2 /* CropDetailPageViewCell */,
 				BD3307B31DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift */,
 				960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */,
@@ -321,48 +406,9 @@
 		BD46A6B01D991A1A004D7405 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				BDE061361D9FDC660003364D /* Crop+CoreDataClass.swift */,
-				BDE061371D9FDC660003364D /* Crop+CoreDataProperties.swift */,
-				BDE061381D9FDC660003364D /* CropState+CoreDataClass.swift */,
-				BDE061391D9FDC660003364D /* CropState+CoreDataProperties.swift */,
-				BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */,
-				BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */,
-				BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */,
-				BDE0613D1D9FDC660003364D /* Fruit+CoreDataProperties.swift */,
-				BDE0613E1D9FDC660003364D /* Garden+CoreDataClass.swift */,
-				BDE0613F1D9FDC660003364D /* Garden+CoreDataProperties.swift */,
-				BDE061401D9FDC660003364D /* GardenLocation+CoreDataClass.swift */,
-				BDE061411D9FDC660003364D /* GardenLocation+CoreDataProperties.swift */,
-				BDE061421D9FDC660003364D /* Growing+CoreDataClass.swift */,
-				BDE061431D9FDC660003364D /* Growing+CoreDataProperties.swift */,
-				BDE061441D9FDC660003364D /* Grown+CoreDataClass.swift */,
-				BDE061451D9FDC660003364D /* Grown+CoreDataProperties.swift */,
-				BDE061461D9FDC660003364D /* Harvested+CoreDataClass.swift */,
-				BDE061471D9FDC660003364D /* Harvested+CoreDataProperties.swift */,
-				BDE061481D9FDC660003364D /* Herb+CoreDataClass.swift */,
-				BDE061491D9FDC660003364D /* Herb+CoreDataProperties.swift */,
-				BDE0614A1D9FDC660003364D /* Irrigated+CoreDataClass.swift */,
-				BDE0614B1D9FDC660003364D /* Irrigated+CoreDataProperties.swift */,
-				BDE0614C1D9FDC660003364D /* Location+CoreDataClass.swift */,
-				BDE0614D1D9FDC660003364D /* Location+CoreDataProperties.swift */,
-				BDE0614E1D9FDC660003364D /* Paddock+CoreDataClass.swift */,
-				BDE0614F1D9FDC660003364D /* Paddock+CoreDataProperties.swift */,
-				BDE061501D9FDC660003364D /* PaddockLocation+CoreDataClass.swift */,
-				BDE061511D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift */,
-				BDE061521D9FDC660003364D /* Row+CoreDataClass.swift */,
-				BDE061531D9FDC660003364D /* Row+CoreDataProperties.swift */,
-				BDE061541D9FDC660003364D /* RowLifeState+CoreDataClass.swift */,
-				BDE061551D9FDC660003364D /* RowLifeState+CoreDataProperties.swift */,
-				BDE061561D9FDC660003364D /* Seed+CoreDataClass.swift */,
-				BDE061571D9FDC660003364D /* Seed+CoreDataProperties.swift */,
-				BDE061581D9FDC660003364D /* Seedling+CoreDataClass.swift */,
-				BDE061591D9FDC660003364D /* Seedling+CoreDataProperties.swift */,
-				BDE0615A1D9FDC660003364D /* Soil+CoreDataClass.swift */,
-				BDE0615B1D9FDC660003364D /* Soil+CoreDataProperties.swift */,
-				BDE0615C1D9FDC660003364D /* Veggie+CoreDataClass.swift */,
-				BDE0615D1D9FDC660003364D /* Veggie+CoreDataProperties.swift */,
-				BDE0615E1D9FDC660003364D /* Weed+CoreDataClass.swift */,
-				BDE0615F1D9FDC660003364D /* Weed+CoreDataProperties.swift */,
+				9654A8901DB5F65F00A0A9D9 /* Garden */,
+				9654A8921DB5F68500A0A9D9 /* Row */,
+				9654A88F1DB5F65800A0A9D9 /* Crop */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -390,28 +436,18 @@
 			isa = PBXGroup;
 			children = (
 				BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */,
-				BD3307BF1DA9F00900F2EC6F /* Crop.swift */,
 				96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */,
 				962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */,
 				BD46A6B01D991A1A004D7405 /* CoreData */,
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
-				96F722F91DB309DD000100B2 /* Extension */,
+				96F722F91DB309DD000100B2 /* Extensions */,
 				BD3307BE1DA9EEEB00F2EC6F /* Views */,
 				BD3307BD1DA9EEDB00F2EC6F /* CellViews */,
 				BD7B8EA91D9118080063347D /* AppDelegate.swift */,
+				9654A8A21DB8870E00A0A9D9 /* Protocols */,
 				96F723121DB360C1000100B2 /* Managers */,
 				96F722F41DB30968000100B2 /* Constants & Macros */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
-				960CCF6A1DABC36300CB62C5 /* crops.png */,
-				960CCF6B1DABC36300CB62C5 /* garden.png */,
-				960CCF6D1DABC36300CB62C5 /* lifecycle.png */,
-				96D62C311DA9F5A700DEF4EC /* 01.jpg */,
-				96D62C321DA9F5A700DEF4EC /* 02.jpg */,
-				96D62C331DA9F5A700DEF4EC /* 03.jpg */,
-				96D62C341DA9F5A700DEF4EC /* 04.jpg */,
-				96D62C351DA9F5A700DEF4EC /* 05.jpg */,
-				96D62C361DA9F5A700DEF4EC /* 06.jpeg */,
-				96D62C371DA9F5A700DEF4EC /* 07.jpeg */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				BD203E4C1DA4F84000951732 /* Main.storyboard */,
 				BD7B8EBA1D9118080063347D /* Info.plist */,
@@ -500,17 +536,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D62C3E1DA9F5A700DEF4EC /* 07.jpeg in Resources */,
-				96D62C3A1DA9F5A700DEF4EC /* 03.jpg in Resources */,
-				96D62C3B1DA9F5A700DEF4EC /* 04.jpg in Resources */,
 				962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */,
-				960CCF6E1DABC36300CB62C5 /* crops.png in Resources */,
-				960CCF6F1DABC36300CB62C5 /* garden.png in Resources */,
-				960CCF711DABC36300CB62C5 /* lifecycle.png in Resources */,
-				96D62C381DA9F5A700DEF4EC /* 01.jpg in Resources */,
-				96D62C3D1DA9F5A700DEF4EC /* 06.jpeg in Resources */,
-				96D62C391DA9F5A700DEF4EC /* 02.jpg in Resources */,
-				96D62C3C1DA9F5A700DEF4EC /* 05.jpg in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
@@ -573,12 +599,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9654A8AB1DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift in Sources */,
 				BDE061811D9FDC660003364D /* Seed+CoreDataProperties.swift in Sources */,
 				96F722FC1DB30A26000100B2 /* VTransition.swift in Sources */,
-				BDE061601D9FDC660003364D /* Crop+CoreDataClass.swift in Sources */,
 				BDE061751D9FDC660003364D /* Irrigated+CoreDataProperties.swift in Sources */,
 				BDE0616F1D9FDC660003364D /* Grown+CoreDataProperties.swift in Sources */,
-				BDE061631D9FDC660003364D /* CropState+CoreDataProperties.swift in Sources */,
 				BDE0617D1D9FDC660003364D /* Row+CoreDataProperties.swift in Sources */,
 				96F722FE1DB30A5B000100B2 /* VTransitionProtocol.swift in Sources */,
 				BDE0616C1D9FDC660003364D /* Growing+CoreDataClass.swift in Sources */,
@@ -589,10 +614,14 @@
 				BD3307BB1DA9EECA00F2EC6F /* RoundedCornersView.swift in Sources */,
 				96F723091DB3118C000100B2 /* VCropDetailPageTableViewCell.swift in Sources */,
 				BDE061771D9FDC660003364D /* Location+CoreDataProperties.swift in Sources */,
+				9654A89F1DB5F9E400A0A9D9 /* Crop+CoreDataProperties.swift in Sources */,
 				BDE061671D9FDC660003364D /* Fruit+CoreDataProperties.swift in Sources */,
 				962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */,
+				9654A8A71DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m in Sources */,
 				BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */,
 				BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */,
+				9654A89A1DB5F95800A0A9D9 /* CropState+CoreDataClass.swift in Sources */,
+				9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */,
 				BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */,
 				BDE0617A1D9FDC660003364D /* PaddockLocation+CoreDataClass.swift in Sources */,
 				BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */,
@@ -603,6 +632,7 @@
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
 				BD3307B91DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift in Sources */,
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,
+				96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */,
 				BDE0617B1D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift in Sources */,
 				960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */,
 				96F723111DB360BA000100B2 /* GardenManager.swift in Sources */,
@@ -613,27 +643,30 @@
 				96F723051DB3111A000100B2 /* VCropDetailPageViewCell.swift in Sources */,
 				BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */,
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
+				96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */,
 				BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */,
 				BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */,
 				BDE061791D9FDC660003364D /* Paddock+CoreDataProperties.swift in Sources */,
 				BDE061851D9FDC660003364D /* Soil+CoreDataProperties.swift in Sources */,
 				96F722F81DB309CD000100B2 /* ViewsExtensions.swift in Sources */,
+				9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */,
 				BDE0616B1D9FDC660003364D /* GardenLocation+CoreDataProperties.swift in Sources */,
 				BD83BFA71D9FFFD000C7D79A /* LifeCycleViewController.swift in Sources */,
 				962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */,
-				BDE061621D9FDC660003364D /* CropState+CoreDataClass.swift in Sources */,
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
-				BDE061611D9FDC660003364D /* Crop+CoreDataProperties.swift in Sources */,
 				BD3307BA1DA9EECA00F2EC6F /* PinterestLayout.swift in Sources */,
+				9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */,
+				9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
 				BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */,
 				96F723161DB366FA000100B2 /* HelperManager.swift in Sources */,
-				BD3307C01DA9F00900F2EC6F /* Crop.swift in Sources */,
+				96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */,
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
+				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,
 				BDE0616A1D9FDC660003364D /* GardenLocation+CoreDataClass.swift in Sources */,
 				BDE061841D9FDC660003364D /* Soil+CoreDataClass.swift in Sources */,
@@ -643,6 +676,7 @@
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
 				BDE061881D9FDC660003364D /* Weed+CoreDataClass.swift in Sources */,
+				9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */,
 				BDE0616E1D9FDC660003364D /* Grown+CoreDataClass.swift in Sources */,
 				BDE061801D9FDC660003364D /* Seed+CoreDataClass.swift in Sources */,
 			);

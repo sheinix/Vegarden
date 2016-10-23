@@ -13,7 +13,7 @@ private let reuseIdentifier = "Cell"
 class CropDetailCollectionViewController: UICollectionViewController {
 
     var pullOffset = CGPoint.zero
-    var cropList: Array <CropVeggie> = []
+    var cropList: Array <Crop> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     let collectionCell: VCropDetailPageViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.CropDetailViewCellIdentify, for: indexPath) as! VCropDetailPageViewCell
     
-        collectionCell.image = (self.cropList[indexPath.row] ).image
+        collectionCell.image = UIImage(named:self.cropList[indexPath.row].picture!)
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset

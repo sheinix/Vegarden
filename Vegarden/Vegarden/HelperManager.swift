@@ -24,5 +24,28 @@ public class HelperManager {
         
         return flowLayout
     }
+    
+//    public static func daysBetween(start: Date, end: Date) -> Int {
+//        
+//        return Calendar.current.dateComponents([.day], from: start, to: end).day!
+//    }
+    
+//    public func daysBetweenDates(startDate: NSDate, endDate: NSDate) -> Int {
+//        
+//
+//        let calendar = Calendar.current
+//        let components = calendar.dateComponents([.day], from: startDate, to: endDate, options: [])
+//        return components.day!
+//    
+//    }
+
+//TODO Fix it
+//    public class func random(digits:Int) -> Int {
+//        
+//        let min = Int(pow(Double(10), Double(digits-1))) - 1
+//        let max = Int(pow(Double(10), Double(digits))) - 1
+//        
+//        return Int(min...max)
+//    }
 }
 

@@ -16,5 +16,5 @@ extension Soil {
         return NSFetchRequest<Soil>(entityName: "Soil");
     }
 
-
+    @NSManaged public var phLevel: Int16
 }

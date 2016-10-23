@@ -102,9 +102,9 @@ extension MyCropsCollectionViewController : CHTCollectionViewDelegateWaterfallLa
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
                 
-        let image = self.myCrops[indexPath.row].image
+        let image = UIImage(named:self.myCrops[indexPath.row].picture!)
         
-        return CGSize(width: (image.size.width), height: (image.size.height))
+        return CGSize(width: (image!.size.width), height: (image!.size.height))
     }
 
     
@@ -117,9 +117,9 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
         var position : UICollectionViewScrollPosition =
             UICollectionViewScrollPosition.centeredHorizontally.intersection(.centeredVertically)
       
-        let image =  self.myCrops[pageIndex].image
+        let image =  UIImage(named:self.myCrops[pageIndex].picture!)
         
-        let imageHeight = image.size.height*gridWidth/image.size.width
+        let imageHeight = (image?.size.height)!*gridWidth/(image?.size.width)!
         
         if imageHeight > 400 {//whatever you like, it's the max value for height of image
             position = .top
