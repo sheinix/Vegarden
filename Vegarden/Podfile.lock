@@ -22,6 +22,7 @@ PODS:
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - Masonry (1.0.2)
+  - MBCircularProgressBar (0.3.4)
   - SnapKit (3.0.2)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - KCFloatingActionButton (~> 2.1.0)
   - MagicalRecord
   - Masonry
+  - MBCircularProgressBar
   - SnapKit (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -38,8 +40,9 @@ SPEC CHECKSUMS:
   KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBCircularProgressBar: ff3b8e2f441214d9ee122a24ba0d4d00cc7de881
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 835214729cf3a63f1ff7ac2cd96eb4a606e23426
+PODFILE CHECKSUM: b4ed9764d279db42e94c15a122788b30d912b54b
 
 COCOAPODS: 1.0.1

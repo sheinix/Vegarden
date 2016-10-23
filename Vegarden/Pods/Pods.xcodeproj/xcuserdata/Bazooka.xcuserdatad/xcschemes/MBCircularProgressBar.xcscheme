@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C6CF0FC17224D222BE3383DD02360B34"
-               BuildableName = "SnapKit.framework"
-               BlueprintName = "SnapKit"
+               BlueprintIdentifier = "860A9179BCFD9F1C616D8653DB2B4F91"
+               BuildableName = "MBCircularProgressBar.framework"
+               BlueprintName = "MBCircularProgressBar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C6CF0FC17224D222BE3383DD02360B34"
-            BuildableName = "SnapKit.framework"
-            BlueprintName = "SnapKit"
+            BlueprintIdentifier = "860A9179BCFD9F1C616D8653DB2B4F91"
+            BuildableName = "MBCircularProgressBar.framework"
+            BlueprintName = "MBCircularProgressBar"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

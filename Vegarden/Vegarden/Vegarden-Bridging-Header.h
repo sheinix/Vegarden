@@ -5,7 +5,7 @@
 #import  "Popup.h"
 //#define MR_SHORTHAND
 #import "NSManagedObject+Duplicate.h"
-//#import "SMTabBar.h"
+#import "GHContextMenuView.h"
 //#import "SMMasterViewController.h"
 //#import "SMDetailViewController.h"
 //#import "SMTabBarItemCell.h"

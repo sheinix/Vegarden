@@ -18,7 +18,7 @@ target 'Vegarden' do
 	pod 'SnapKit', '~> 3.0'
 	pod 'Masonry'
 	#pod 'SwiftString'
-	#pod 'FoldingCell' #Problems with swfit 3 not resolved I reckon
+	pod "MBCircularProgressBar"
 
 	#source 'https://github.com/CocoaPods/Specs.git'
 	#platform :ios, '8.0'
