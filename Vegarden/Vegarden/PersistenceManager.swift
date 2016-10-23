@@ -262,7 +262,7 @@ class PersistenceManager {
         
         //TODO ReCalculate time to harvest depending on how was planted (seed or seedling()
         
-        plantingCrop?.row = row
+        plantingCrop?.addToRow(row)
         row.addToCrops(plantingCrop!)
         
         if row.length != nil {

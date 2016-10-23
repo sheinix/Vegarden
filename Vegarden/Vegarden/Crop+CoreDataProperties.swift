@@ -24,7 +24,7 @@ extension Crop {
     @NSManaged public var spacing: NSNumber
     @NSManaged public var timeToHarvest: NSNumber
     @NSManaged public var whenToPlant: String?
-    @NSManaged public var row: Row?
+    @NSManaged public var row: NSSet?
     @NSManaged public var states: NSSet?
     @NSManaged public var owned: Bool
     @NSManaged public var plantingDirections: String?
@@ -51,5 +51,18 @@ extension Crop {
 
     @objc(removeStates:)
     @NSManaged public func removeFromStates(_ values: NSSet)
+    
+    ////
+    @objc(addRowObject:)
+    @NSManaged public func addToRow(_ value: Row)
+    
+    @objc(removeRowObject:)
+    @NSManaged public func removeFromRow(_ value: Row)
+    
+    @objc(addRow:)
+    @NSManaged public func addToRow(_ values: NSSet)
+    
+    @objc(removeRow:)
+    @NSManaged public func removeFromRow(_ values: NSSet)
 
 }
