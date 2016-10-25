@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,48 +18,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="zx0-G7-5wF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="LifeCycleViewController" customModule="Vegarden" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinche label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-VB-Frp">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="sC6-VB-Frp" secondAttribute="bottom" constant="493" id="EQp-WC-Q30"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sC6-VB-Frp" secondAttribute="trailing" constant="100" id="OVx-Ob-uhQ"/>
-                            <constraint firstItem="sC6-VB-Frp" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="89" id="mq0-6V-nsB"/>
-                            <constraint firstItem="sC6-VB-Frp" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="150" id="pKA-gQ-TUF"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="LifeCycle" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="label" destination="sC6-VB-Frp" id="3Mc-mG-qb6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2748" y="614"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -67,7 +32,6 @@
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
-                        <segue destination="vC3-pB-5Vb" kind="relationship" relationship="detailViewController" id="Tll-UG-LXB"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
@@ -79,15 +43,15 @@
             <objects>
                 <tableViewController title="Menu" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SideTabScreenCellIdentifier" rowHeight="169" id="WCw-Qf-5nD" customClass="SideBarMenuTableViewCell" customModule="Vegarden">
-                                <rect key="frame" x="0.0" y="86" width="375" height="169"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="169"/>
+                                    <frame key="frameInset" width="320" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V"/>
@@ -111,7 +75,6 @@
                                 <connections>
                                     <outlet property="tabImgView" destination="6Zi-FO-c9V" id="FU9-RL-qJ9"/>
                                     <outlet property="titleLabel" destination="mIw-1L-2gv" id="EeM-eH-Ip2"/>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showLifeCycleView" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,6 +89,7 @@
                         <segue destination="Ulf-iw-qSp" kind="showDetail" identifier="showMyGardenView" id="CXt-aM-vjy"/>
                         <segue destination="noJ-DX-uOa" kind="showDetail" identifier="showAboutView" id="S5k-eW-em7"/>
                         <segue destination="p6h-Ud-H2a" kind="showDetail" identifier="showMyCropsView" id="o0m-IF-mI6"/>
+                        <segue destination="QQg-rb-ocj" kind="showDetail" identifier="showLifeCycleView" id="Ppo-ZR-fKO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -141,7 +105,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qdT-rX-GIu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="geL-Nu-rZB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -151,21 +115,164 @@
             </objects>
             <point key="canvasLocation" x="2748" y="-903.59820089955031"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="r7l-gg-dq7">
+        <!--Life Cycle Table View Controller-->
+        <scene sceneID="gET-MY-aR4">
             <objects>
-                <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="FUh-6C-Z6e" customClass="LifeCycleTableViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="638" sectionHeaderHeight="28" sectionFooterHeight="28" id="qIA-1B-4TT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6rU-to-Tl1">
+                            <rect key="frame" x="0.0" y="64" width="768" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="638" id="dpw-n2-iGO" customClass="CropLifeCycleTableViewCell" customModule="Vegarden">
+                                <rect key="frame" x="0.0" y="136" width="768" height="638"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpw-n2-iGO" id="GrN-lR-leE">
+                                    <frame key="frameInset" width="768" height="637"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-14-qfC" customClass="RotatedView" customModule="Vegarden" customModuleProvider="target">
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MO2-35-cEb" customClass="MBCircularProgressBarView">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="MO2-35-cEb" secondAttribute="height" multiplier="1:1" constant="21" id="N0C-Dp-JG8"/>
+                                                        <constraint firstAttribute="width" constant="105" id="mfq-Y3-51v"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="28"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="valueFontSize">
+                                                            <real key="value" value="31"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="valueDecimalFontSize">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="unitFontSize">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressRotationAngle">
+                                                            <real key="value" value="9"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                            <color key="value" red="0.25113761054709238" green="1" blue="0.59041943690888643" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                            <color key="value" red="0.2511376105" green="1" blue="0.59041943689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-B2-Rg5">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="187" id="kEr-RI-TZr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NER-Ag-0BN">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="107" id="67e-3d-97H"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-yv-p4Q">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="107" id="cdA-O2-BYU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9bl-B2-Rg5" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="6rz-UQ-aHf"/>
+                                                <constraint firstAttribute="bottom" secondItem="MO2-35-cEb" secondAttribute="bottom" constant="8" id="B8g-pC-dPT"/>
+                                                <constraint firstItem="MO2-35-cEb" firstAttribute="top" secondItem="JgY-14-qfC" secondAttribute="top" constant="8" id="Bv2-VU-QjS"/>
+                                                <constraint firstAttribute="height" constant="100" id="LCB-hi-LK0"/>
+                                                <constraint firstItem="9bl-B2-Rg5" firstAttribute="top" secondItem="JgY-14-qfC" secondAttribute="top" constant="19" id="Lgj-cy-ogy"/>
+                                                <constraint firstItem="MO2-35-cEb" firstAttribute="leading" secondItem="JgY-14-qfC" secondAttribute="leading" constant="8" id="RLb-Sd-bv7"/>
+                                                <constraint firstItem="Xr5-yv-p4Q" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="Rx1-cH-JPC"/>
+                                                <constraint firstItem="NER-Ag-0BN" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="YgG-KX-Ygv"/>
+                                                <constraint firstItem="NER-Ag-0BN" firstAttribute="top" secondItem="9bl-B2-Rg5" secondAttribute="bottom" constant="3" id="ZsD-7e-Mvk"/>
+                                                <constraint firstItem="Xr5-yv-p4Q" firstAttribute="top" secondItem="NER-Ag-0BN" secondAttribute="bottom" constant="7" id="eTz-49-T06"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bor-In-hOa">
+                                            <color key="backgroundColor" red="0.49306942502941487" green="0.56357078006919015" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="456" id="haR-Z0-4bB"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Bor-In-hOa" secondAttribute="trailing" constant="8" id="1PY-Pu-QhM"/>
+                                        <constraint firstItem="Bor-In-hOa" firstAttribute="leading" secondItem="GrN-lR-leE" secondAttribute="leadingMargin" constant="8" id="Gfm-aj-5JA"/>
+                                        <constraint firstItem="JgY-14-qfC" firstAttribute="top" secondItem="GrN-lR-leE" secondAttribute="topMargin" constant="8" identifier="ForegroundViewTop" id="YcW-Rg-MxB"/>
+                                        <constraint firstItem="Bor-In-hOa" firstAttribute="top" secondItem="GrN-lR-leE" secondAttribute="topMargin" constant="113" identifier="ContainerViewTop" id="aUU-5p-7wH"/>
+                                        <constraint firstItem="JgY-14-qfC" firstAttribute="leading" secondItem="GrN-lR-leE" secondAttribute="leadingMargin" constant="8" id="f4C-gF-OBR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JgY-14-qfC" secondAttribute="trailing" constant="8" id="hwf-nA-54G"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="containerView" destination="Bor-In-hOa" id="NXW-85-BHb"/>
+                                    <outlet property="containerViewTop" destination="aUU-5p-7wH" id="gWU-3m-ezl"/>
+                                    <outlet property="cropName" destination="9bl-B2-Rg5" id="ZJL-h3-ltO"/>
+                                    <outlet property="datePlanted" destination="NER-Ag-0BN" id="T7N-zS-tTe"/>
+                                    <outlet property="foregroundView" destination="JgY-14-qfC" id="Aj0-7L-Vf5"/>
+                                    <outlet property="foregroundViewTop" destination="YcW-Rg-MxB" id="FkW-aI-Vca"/>
+                                    <outlet property="harvestDate" destination="Xr5-yv-p4Q" id="G06-mn-FgR"/>
+                                    <outlet property="ringProgressBar" destination="MO2-35-cEb" id="UHU-bV-28p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FUh-6C-Z6e" id="Frw-DG-oEv"/>
+                            <outlet property="delegate" destination="FUh-6C-Z6e" id="fiW-mC-Pzl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qpb-SW-zjM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARq-BH-ccN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="420"/>
+            <point key="canvasLocation" x="2345.3125" y="443.55468749999994"/>
         </scene>
         <!--About Vegarden-->
         <scene sceneID="MUF-9E-6eu">
@@ -176,7 +283,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HUn-Qr-i4v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8EE-b3-so1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -191,13 +298,13 @@
             <objects>
                 <collectionViewController id="gFG-Wk-Wde" customClass="MyCropsCollectionViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NjZ-S8-XLq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="YET-vG-PfL" customClass="CHTCollectionViewWaterfallLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCropCell" id="Qff-n6-ooV" customClass="MyCropsCollectionViewCell" customModule="Vegarden">
-                                <rect key="frame" x="50.5" y="0.0" width="274" height="249"/>
+                                <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
@@ -309,6 +416,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p6h-Ud-H2a" customClass="ZoomInNavigationController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kgw-uH-uXE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3y-LT-MBd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -322,8 +430,23 @@
             </objects>
             <point key="canvasLocation" x="2733.5999999999999" y="-217.24137931034485"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AqC-b9-CSS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQg-rb-ocj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEe-px-fWX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FUh-6C-Z6e" kind="relationship" relationship="rootViewController" id="PWa-F1-mNd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJG-o3-5cG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="444"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
-    </inferredMetricsTieBreakers>
 </document>

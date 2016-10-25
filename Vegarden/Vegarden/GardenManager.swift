@@ -119,7 +119,10 @@ class GardenManager: GardenManagementProtocol {
         return PersistenceManager.shared.getMyCrops()
     }
     
-    
+    public func myPlantedCrops() -> [Crop]? {
+        
+        return PersistenceManager.shared.getPlantedCrops()
+    }
     
 //    public func getObjectsFromPlist(named name:String!) -> [CropVeggie] {
 //        

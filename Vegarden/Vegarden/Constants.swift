@@ -23,6 +23,7 @@ struct CellIdentifiers {
     static let CropDetailViewCellIdentify = "CropDetailViewCellIdentify"
     static let CropDetailTableViewCellIdentify = "CropDetailTableViewCellIdentify"
     static let CropListTableViewCellIdentify = "CropListTableViewCellIdentify"
+    static let lifeCycleTableViewCellIdentifier = "FoldingCell"
 }
 
 struct FontSizes {

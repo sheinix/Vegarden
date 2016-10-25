@@ -1,0 +1,129 @@
+//
+//  LifeCycleTableViewController.swift
+//  Vegarden
+//
+//  Created by Sarah Cleland on 24/10/16.
+//  Copyright © 2016 Juan Nuvreni. All rights reserved.
+//
+
+import UIKit
+import MBCircularProgressBar
+
+class LifeCycleTableViewController: UITableViewController {
+
+    var myPlantedCrops = [MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView] //GardenManager.shared.myPlantedCrops()
+    var cellHeights = [CGFloat]()
+    
+    let kCloseCellHeight: CGFloat = 150
+    let kOpenCellHeight: CGFloat = 460
+   
+    fileprivate struct C {
+        struct CellHeight {
+            static let close: CGFloat = 150 // equal or greater foregroundView height
+            static let open: CGFloat = 460 // equal or greater containerView height
+        }
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        cellHeights = (0..<Int((myPlantedCrops.count))).map { _ in C.CellHeight.close }
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+       
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return (myPlantedCrops.count)
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard case let cell as FoldingCell = cell else {
+            return
+        }
+        
+        cell.backgroundColor = UIColor.clear
+        
+        if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight {
+            cell.selectedAnimation(false, animated: false, completion:nil)
+        } else {
+            cell.selectedAnimation(true, animated: false, completion: nil)
+        }
+        
+        //cell.number = indexPath.row
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+        let cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.lifeCycleTableViewCellIdentifier, for: indexPath) as! CropLifeCycleTableViewCell)
+        
+        cell.cropName.text = myPlantedCrops[indexPath.row]
+        cell.datePlanted.text = String(describing: Date())
+        cell.harvestDate.text = "Harvest Date: Septembre 10th 2017"
+        (cell.ringProgressBar as! MBCircularProgressBarView).setValue(25, animateWithDuration: 1.0)
+        
+        
+        
+        return cell
+
+    }
+   
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+        return cellHeights[(indexPath as NSIndexPath).row]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! CropLifeCycleTableViewCell
+        
+        if cell.isAnimating() {
+            return
+        }
+        
+        var duration = 0.0
+        if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
+            cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
+            cell.selectedAnimation(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {// close cell
+            cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight
+            cell.selectedAnimation(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            }, completion: nil)
+        
+        
+    }
+
+//MARK: - Helper methods
+
+    private func createCellHeightsArray() {
+        
+        let limit = self.myPlantedCrops.count
+        
+            for _ in 0...limit  {
+                cellHeights.append(kCloseCellHeight)
+            }
+        }
+}

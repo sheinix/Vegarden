@@ -195,6 +195,15 @@ class PersistenceManager {
         return crops as! [Crop]?
     }
     
+    
+    
+    public func getPlantedCrops() -> [Crop] {
+    
+        //TODO Get the crops that are planted! Return [] si no hay
+        return getAllCrops()
+    }
+    
+    
     //TODO Optimize the following codes. They are quite repetitive!
     
     public func addCropsToGarden(crops: [Crop]) {
