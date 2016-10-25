@@ -77,4 +77,16 @@ extension Date {
         if seconds(from: date) > 0 { return "\(seconds(from: date))s" }
         return ""
     }
+    
+    public func inCellDateFormat() -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MMMM dd yyyy"
+    
+        let convertedDateString = dateFormatter.string(from: self)
+        
+        return convertedDateString
+    }
+   
 }

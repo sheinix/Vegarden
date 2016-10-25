@@ -8,15 +8,26 @@
 
 import UIKit
 import SnapKit
+import MBCircularProgressBar
 
 class CropLifeCycleTableViewCell: FoldingCell {
 
-    @IBOutlet weak var ringProgressBar: UIView!
+    @IBOutlet weak var ringProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var cropName: UILabel!
     @IBOutlet weak var datePlanted: UILabel!
     @IBOutlet weak var harvestDate: UILabel!
     
 //    @IBOutlet weak var accesoryView: UIView!
+    
+    var lifeCycleDetailView : LifeCycleDetailiView
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        lifeCycleDetailView = LifeCycleDetailiView()
+        
+        super.init(coder: aDecoder)
+    }
+    
     
     override func awakeFromNib() {
         
@@ -44,6 +55,19 @@ class CropLifeCycleTableViewCell: FoldingCell {
         return durations[itemIndex]
     }
     
+    
+    public func setCellWith(crop: Crop) {
+        
+        self.cropName.text = crop.name
+        self.datePlanted.text = "Date Planted: " + (crop.getDayPlanted()?.inCellDateFormat())!
+        self.harvestDate.text = "Harvest Date: " + (crop.getEstimatedHarvestDate().inCellDateFormat())
+        
+        let progressNumber = CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest())
+        
+        self.ringProgressBar.setValue(progressNumber, animateWithDuration: 3.0)
+        
+       
+    }
     
     private func setupConstraints() {
         

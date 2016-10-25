@@ -230,18 +230,18 @@
                                                 <constraint firstItem="Xr5-yv-p4Q" firstAttribute="top" secondItem="NER-Ag-0BN" secondAttribute="bottom" constant="7" id="eTz-49-T06"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bor-In-hOa">
-                                            <color key="backgroundColor" red="0.49306942502941487" green="0.56357078006919015" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-i2-q2C">
+                                            <color key="backgroundColor" red="0.2511376105" green="1" blue="0.59041943689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="456" id="haR-Z0-4bB"/>
+                                                <constraint firstAttribute="height" constant="456" id="zvK-HV-IbE"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Bor-In-hOa" secondAttribute="trailing" constant="8" id="1PY-Pu-QhM"/>
-                                        <constraint firstItem="Bor-In-hOa" firstAttribute="leading" secondItem="GrN-lR-leE" secondAttribute="leadingMargin" constant="8" id="Gfm-aj-5JA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ftt-i2-q2C" secondAttribute="trailing" constant="8" id="3ux-f3-lza"/>
+                                        <constraint firstItem="ftt-i2-q2C" firstAttribute="top" secondItem="GrN-lR-leE" secondAttribute="topMargin" constant="113" id="8DL-bh-hOx"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ftt-i2-q2C" secondAttribute="leading" constant="-8" id="Vfw-eq-Cgl"/>
                                         <constraint firstItem="JgY-14-qfC" firstAttribute="top" secondItem="GrN-lR-leE" secondAttribute="topMargin" constant="8" identifier="ForegroundViewTop" id="YcW-Rg-MxB"/>
-                                        <constraint firstItem="Bor-In-hOa" firstAttribute="top" secondItem="GrN-lR-leE" secondAttribute="topMargin" constant="113" identifier="ContainerViewTop" id="aUU-5p-7wH"/>
                                         <constraint firstItem="JgY-14-qfC" firstAttribute="leading" secondItem="GrN-lR-leE" secondAttribute="leadingMargin" constant="8" id="f4C-gF-OBR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="JgY-14-qfC" secondAttribute="trailing" constant="8" id="hwf-nA-54G"/>
                                     </constraints>
@@ -252,8 +252,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="containerView" destination="Bor-In-hOa" id="NXW-85-BHb"/>
-                                    <outlet property="containerViewTop" destination="aUU-5p-7wH" id="gWU-3m-ezl"/>
+                                    <outlet property="containerView" destination="ftt-i2-q2C" id="klc-6S-Him"/>
+                                    <outlet property="containerViewTop" destination="8DL-bh-hOx" id="Yse-9p-dGO"/>
                                     <outlet property="cropName" destination="9bl-B2-Rg5" id="ZJL-h3-ltO"/>
                                     <outlet property="datePlanted" destination="NER-Ag-0BN" id="T7N-zS-tTe"/>
                                     <outlet property="foregroundView" destination="JgY-14-qfC" id="Aj0-7L-Vf5"/>
@@ -272,7 +272,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARq-BH-ccN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345.3125" y="443.55468749999994"/>
+            <point key="canvasLocation" x="2344.8000000000002" y="443.02848575712147"/>
+        </scene>
+        <!--Life Cycle Detaili View-->
+        <scene sceneID="gQN-NV-LOw">
+            <objects>
+                <collectionViewController storyboardIdentifier="LifeCycleDetailiView" id="bHy-iT-Zjp" customClass="LifeCycleDetailiView" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zzz-or-uo5">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qC2-o7-tYo">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ES6-xf-IhO">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="bHy-iT-Zjp" id="XSq-95-okH"/>
+                            <outlet property="delegate" destination="bHy-iT-Zjp" id="PZU-Zj-af9"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjA-Q2-lo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="443"/>
         </scene>
         <!--About Vegarden-->
         <scene sceneID="MUF-9E-6eu">
@@ -447,6 +481,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJG-o3-5cG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1524" y="444"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aGa-qy-6yU">
+            <objects>
+                <viewController id="05j-0t-ZKx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J4v-6j-eUp">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkB-Mf-Bvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
