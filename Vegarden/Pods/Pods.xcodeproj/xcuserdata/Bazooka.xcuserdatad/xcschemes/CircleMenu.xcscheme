@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E570E6E327C370CF68D1D3C72F0B665"
-               BuildableName = "SnapKit.framework"
-               BlueprintName = "SnapKit"
+               BlueprintIdentifier = "27533A6098E2BDD80827924FA8F4E742"
+               BuildableName = "CircleMenu.framework"
+               BlueprintName = "CircleMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E570E6E327C370CF68D1D3C72F0B665"
-            BuildableName = "SnapKit.framework"
-            BlueprintName = "SnapKit"
+            BlueprintIdentifier = "27533A6098E2BDD80827924FA8F4E742"
+            BuildableName = "CircleMenu.framework"
+            BlueprintName = "CircleMenu"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

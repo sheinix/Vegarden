@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
+		960C785A1DC0D79E005F41B3 /* CircleActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C78591DC0D79E005F41B3 /* CircleActionMenu.swift */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
 		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
 		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
@@ -103,6 +104,7 @@
 /* Begin PBXFileReference section */
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
+		960C78591DC0D79E005F41B3 /* CircleActionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleActionMenu.swift; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
 		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
 		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */,
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
 				BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */,
+				960C78591DC0D79E005F41B3 /* CircleActionMenu.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,
 				96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */,
 				BDE0617B1D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift in Sources */,
+				960C785A1DC0D79E005F41B3 /* CircleActionMenu.swift in Sources */,
 				960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */,
 				96BB77721DBF030E00DCADA9 /* LifeCycleDetailiView.swift in Sources */,
 				96F723111DB360BA000100B2 /* GardenManager.swift in Sources */,

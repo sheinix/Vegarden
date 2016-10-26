@@ -26,8 +26,8 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.lifeCycleDetailViewCellIdentifier, for: indexPath) as! DetailViewCollectionViewCell)
         
-        cell.stageTitle.text = "HOLAAAAAAAA"
-        
+        cell.stageTitle.text = lifeCycle[indexPath.row]
+    
         return cell
     }
     
@@ -55,20 +55,17 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
 
 extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        return CGSize(width: 100, height: 100)
-    }
-    
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        
+//        return CGSize(width: 100, height: 100)
+//    }
+//    
+//    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //2
-        let paddingSpace = Int(sectionInsets.left) * (self.lifeCycle.count + 1)
-        let availableWidth = Int(view.frame.width) - paddingSpace
-        let widthPerItem = availableWidth / self.lifeCycle.count
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
+
+
+        let width = CGFloat(Int(collectionView.frame.width) / self.lifeCycle.count)
+        return CGSize(width:width,height: collectionView.frame.height)
     }
     
     //3
@@ -77,9 +74,17 @@ extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets
     }
     
-    // 4
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return sectionInsets.left
+        
+        return CGFloat(1)
     }
+    
+
+//
+//    // 4
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        
+//        return sectionInsets.left
+//    }
 }

@@ -13,7 +13,7 @@ import SnapKit
 class LifeCycleTableViewController: UITableViewController {
 
     //CollectionView sources:
-    let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
     let lifeCycle = [lifeCyclceSates.Seed,
                      lifeCyclceSates.Growig,
                      lifeCyclceSates.Harvesting,
@@ -92,18 +92,6 @@ class LifeCycleTableViewController: UITableViewController {
         cell.harvestDate.text = "Harvest Date: Septembre 10th 2017"
         cell.ringProgressBar.setValue(25, animateWithDuration: 1.0)
         
-//        cell.lifeCycleDetailView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LifeCycleDetailiView") as! LifeCycleDetailiView
-//        
-//        self.addChildViewController(cell.lifeCycleDetailView)
-//        cell.lifeCycleDetailView.didMove(toParentViewController: self)
-//        cell.containerView.addSubview(cell.lifeCycleDetailView.view)
-//        
-//        cell.lifeCycleDetailView.view.snp.makeConstraints { (make) in
-//            make.top.equalToSuperview().inset(cell.frame.height).multipliedBy(0.80)
-//            make.bottom.equalToSuperview().inset(5)
-//            make.left.equalToSuperview().inset(5)
-//            make.right.equalToSuperview().inset(5)
-//        }
 
         return cell
 
@@ -125,15 +113,21 @@ class LifeCycleTableViewController: UITableViewController {
         var duration = 0.0
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
          
-            
-            
-//            cell.lifeCycleDetailView.collectionView?.reloadData()
+            cell.copyForegroundViewOfCellIntoContainer()
             
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
             duration = 0.5
                 
         } else {// close cell
+            
+            cell.containerView.subviews.forEach({ (view) in
+                if (view is RotatedView) {
+                    view.removeFromSuperview()
+                }
+            })
+            
+            
             cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight
             cell.selectedAnimation(false, animated: true, completion: nil)
             duration = 0.8
@@ -154,12 +148,39 @@ class LifeCycleTableViewController: UITableViewController {
 //    }
 //MARK: - Helper methods
 
-    private func createCellHeightsArray() {
+    private func copyForegroundViewOfCellIntoContainer(cell: CropLifeCycleTableViewCell) {
         
-        let limit = self.myPlantedCrops.count
-        
-            for _ in 0...limit  {
-                cellHeights.append(kCloseCellHeight)
+        //Get the colletionView and copy the foreground into the "header" of the collection
+        cell.containerView.subviews.forEach({ (view) in
+            
+            if (view is UICollectionView) {
+                
+                let referencedCollectionView = (view as! UICollectionView)
+                let copiedView : UIView = cell.foregroundView.copyView()
+                
+                copiedView.subviews.forEach({ (view) in
+                    if (view is MBCircularProgressBarView) {
+                        //TODO Uncomment when using real datasource!
+                        //  let progressNumber = CGFloat(integerLiteral: myPlantedCrops[indexPath.row].getEstimatedDaysLeftToHarvest())
+                        
+                        //                            (view as!  MBCircularProgressBarView).setValue(progressNumber, animateWithDuration: 3.0)
+                    }
+                })
+                
+                
+                cell.containerView.addSubview(copiedView)
+                
+                copiedView.snp.makeConstraints({ (make) in
+                    make.top.equalToSuperview()
+                    make.left.equalToSuperview()
+                    make.right.equalToSuperview()
+                    make.bottom.equalTo(referencedCollectionView.snp.top)
+                })
+                
+                copiedView.layer.borderColor = cell.layer.borderColor
+                copiedView.layer.borderWidth = cell.layer.borderWidth
+                copiedView.layer.cornerRadius = cell.layer.cornerRadius
             }
-        }
+        })
+    }
 }

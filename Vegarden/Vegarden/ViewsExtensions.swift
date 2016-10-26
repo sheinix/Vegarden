@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 
 extension UIView{
+   
     func origin (point : CGPoint){
         frame.origin.x = point.x
         frame.origin.y = point.y
+    }
+    
+    func copyView() -> UIView {
+        
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))! as! UIView
     }
 }
 

@@ -11,20 +11,20 @@ import UIKit
 class DetailViewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stageTitle: UILabel!
+    @IBOutlet weak var progressStepView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var date2Label: UILabel!
+    @IBOutlet weak var value2Label: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
     
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-    
-//    override init(frame: CGRect) {
-//        
-//      ///  stageTitle = UILabel()
-//        
-//        super.init(frame: frame)
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.cornerRadius = 8
         
     }
 
