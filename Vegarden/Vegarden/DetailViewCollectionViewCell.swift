@@ -10,6 +10,22 @@ import UIKit
 
 class DetailViewCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var stageTitle: UILabel!
     
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
     
+//    override init(frame: CGRect) {
+//        
+//      ///  stageTitle = UILabel()
+//        
+//        super.init(frame: frame)
+//    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+
 }

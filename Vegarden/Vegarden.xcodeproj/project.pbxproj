@@ -26,6 +26,7 @@
 		96BB77701DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */; };
 		96BB77721DBF030E00DCADA9 /* LifeCycleDetailiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB77711DBF030E00DCADA9 /* LifeCycleDetailiView.swift */; };
 		96BB77781DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB77771DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift */; };
+		96BB777A1DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB77791DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift */; };
 		96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */; };
 		96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */; };
 		96E08C0A1DBCFA5A00852683 /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E08C091DBCFA5A00852683 /* GHContextMenuView.m */; };
@@ -121,6 +122,7 @@
 		96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropLifeCycleTableViewCell.swift; sourceTree = "<group>"; };
 		96BB77711DBF030E00DCADA9 /* LifeCycleDetailiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleDetailiView.swift; sourceTree = "<group>"; };
 		96BB77771DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		96BB77791DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleTableViewExtension.swift; sourceTree = "<group>"; };
 		96D62C2F1DA9F4DF00DEF4EC /* AllCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllCrops.plist; sourceTree = "<group>"; };
 		96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersitanceCallBackProtocol.swift; sourceTree = "<group>"; };
 		96E08C081DBCFA5A00852683 /* GHContextMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHContextMenuView.h; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				96BB776B1DBDCED300DCADA9 /* LifeCycleTableViewController.swift */,
+				96BB77791DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift */,
 				96BB77711DBF030E00DCADA9 /* LifeCycleDetailiView.swift */,
 			);
 			name = LifeCycleViewController;
@@ -717,6 +720,7 @@
 				BD83BF931D9FFE9C00C7D79A /* CommonViewController.swift in Sources */,
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
+				96BB777A1DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift in Sources */,
 				BDE061881D9FDC660003364D /* Weed+CoreDataClass.swift in Sources */,
 				9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */,
 				BDE0616E1D9FDC660003364D /* Grown+CoreDataClass.swift in Sources */,

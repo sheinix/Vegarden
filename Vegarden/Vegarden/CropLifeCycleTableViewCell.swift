@@ -16,14 +16,15 @@ class CropLifeCycleTableViewCell: FoldingCell {
     @IBOutlet weak var cropName: UILabel!
     @IBOutlet weak var datePlanted: UILabel!
     @IBOutlet weak var harvestDate: UILabel!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
 //    @IBOutlet weak var accesoryView: UIView!
     
-    var lifeCycleDetailView : LifeCycleDetailiView
+    //var lifeCycleDetailView : LifeCycleDetailiView
     
     required init?(coder aDecoder: NSCoder) {
         
-        lifeCycleDetailView = LifeCycleDetailiView()
+        //lifeCycleDetailView = LifeCycleDetailiView()
         
         super.init(coder: aDecoder)
     }
@@ -40,12 +41,21 @@ class CropLifeCycleTableViewCell: FoldingCell {
 //        containerView.layer.borderWidth = 1
 //        containerView.layer.borderColor = UIColor.lightGray.cgColor
         
-        
+        collectionView.backgroundColor = UIColor.red
       // setupConstraints()
         
         super.awakeFromNib()
     }
 
+    
+    func setCollectionViewDataSourceDelegate <D: UICollectionViewDataSource & UICollectionViewDelegate>
+        (dataSourceDelegate: D, forRow row: Int) {
+        
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.tag = row
+        collectionView.reloadData()
+    }
     
     
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {

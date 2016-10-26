@@ -12,6 +12,16 @@ import SnapKit
 
 class LifeCycleTableViewController: UITableViewController {
 
+    //CollectionView sources:
+    let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    let lifeCycle = [lifeCyclceSates.Seed,
+                     lifeCyclceSates.Growig,
+                     lifeCyclceSates.Harvesting,
+                     lifeCyclceSates.Finish]
+
+    
+    
+    //TableView sources:
     let kCloseCellHeight: CGFloat = 150
     let kOpenCellHeight: CGFloat = 460
     
@@ -68,7 +78,9 @@ class LifeCycleTableViewController: UITableViewController {
             cell.selectedAnimation(true, animated: false, completion: nil)
         }
         
-        //cell.number = indexPath.row
+        //guard let newCell = cell as? CropLifeCycleTableViewCell else { return }
+        
+        (cell as! CropLifeCycleTableViewCell).setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,20 +92,19 @@ class LifeCycleTableViewController: UITableViewController {
         cell.harvestDate.text = "Harvest Date: Septembre 10th 2017"
         cell.ringProgressBar.setValue(25, animateWithDuration: 1.0)
         
-        cell.lifeCycleDetailView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LifeCycleDetailiView") as! LifeCycleDetailiView
-        
-        self.addChildViewController(cell.lifeCycleDetailView)
-        cell.lifeCycleDetailView.didMove(toParentViewController: self)
-        cell.containerView.addSubview(cell.lifeCycleDetailView.view)
-        
-        cell.lifeCycleDetailView.view.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(cell.frame.height).multipliedBy(0.80)
-            make.bottom.equalToSuperview().inset(5)
-            make.left.equalToSuperview().inset(5)
-            make.right.equalToSuperview().inset(5)
-        }
-        
-        
+//        cell.lifeCycleDetailView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LifeCycleDetailiView") as! LifeCycleDetailiView
+//        
+//        self.addChildViewController(cell.lifeCycleDetailView)
+//        cell.lifeCycleDetailView.didMove(toParentViewController: self)
+//        cell.containerView.addSubview(cell.lifeCycleDetailView.view)
+//        
+//        cell.lifeCycleDetailView.view.snp.makeConstraints { (make) in
+//            make.top.equalToSuperview().inset(cell.frame.height).multipliedBy(0.80)
+//            make.bottom.equalToSuperview().inset(5)
+//            make.left.equalToSuperview().inset(5)
+//            make.right.equalToSuperview().inset(5)
+//        }
+
         return cell
 
     }
@@ -113,9 +124,15 @@ class LifeCycleTableViewController: UITableViewController {
         
         var duration = 0.0
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
+         
+            
+            
+//            cell.lifeCycleDetailView.collectionView?.reloadData()
+            
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
             duration = 0.5
+                
         } else {// close cell
             cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight
             cell.selectedAnimation(false, animated: true, completion: nil)
@@ -130,11 +147,11 @@ class LifeCycleTableViewController: UITableViewController {
         
     }
 
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        (cell as! CropLifeCycleTableViewCell).lifeCycleDetailView.removeFromParentViewController()
-        
-    }
+//    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        
+//        (cell as! CropLifeCycleTableViewCell).lifeCycleDetailView.removeFromParentViewController()
+//        
+//    }
 //MARK: - Helper methods
 
     private func createCellHeightsArray() {

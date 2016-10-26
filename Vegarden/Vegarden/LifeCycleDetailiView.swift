@@ -10,12 +10,7 @@ import UIKit
 
 class LifeCycleDetailiView: UICollectionViewController {
 
-    let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-    let lifeCycle = [lifeCyclceSates.Seed,
-                     lifeCyclceSates.Growig,
-                     lifeCyclceSates.Harvesting,
-                     lifeCyclceSates.Finish]
-
+   
     
     override func viewDidLoad() {
        
@@ -47,13 +42,15 @@ class LifeCycleDetailiView: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
-        return lifeCycle.count
+        return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.lifeCycleDetailViewCellIdentifier, for: indexPath) as! DetailViewCollectionViewCell)
         
-    
+        cell.stageTitle.text = "HOLAAAAAAAA"
+        
         return cell
     }
 
@@ -81,25 +78,25 @@ extension LifeCycleDetailiView : UICollectionViewDelegateFlowLayout {
     }
     
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //2
-        let paddingSpace = Int(sectionInsets.left) * (self.lifeCycle.count + 1)
-        let availableWidth = Int(view.frame.width) - paddingSpace
-        let widthPerItem = availableWidth / self.lifeCycle.count
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        //2
+//        let paddingSpace = Int(sectionInsets.left) * (self.lifeCycle.count + 1)
+//        let availableWidth = Int(view.frame.width) - paddingSpace
+//        let widthPerItem = availableWidth / self.lifeCycle.count
+//        
+//        return CGSize(width: widthPerItem, height: widthPerItem)
+//    }
     
     //3
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return sectionInsets
-    }
-    
-    // 4
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return sectionInsets.left
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
+//        
+//        return sectionInsets
+//    }
+//    
+//    // 4
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        
+//        return sectionInsets.left
+//    }
 }
