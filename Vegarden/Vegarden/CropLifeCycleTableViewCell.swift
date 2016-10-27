@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import MBCircularProgressBar
 import KCFloatingActionButton
+import SCLAlertView
 
 class CropLifeCycleTableViewCell: FoldingCell {
 
@@ -172,17 +173,20 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
             
+        
+            SCLAlertView().showNotice("Hello Notice", subTitle: "This is a more descriptive notice text.") // Notice
+            
             
         }
         
         actionMenu.addItem("Water", icon: UIImage(named:"icon_watering")) { (item) in
             
-            
+            SCLAlertView().showInfo("Hello Info", subTitle: "This is a more descriptive info text.") // Info
         }
         
         actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize")) { (item) in
             
-            
+            SCLAlertView().showEdit("Hello Edit", subTitle: "This is a more descriptive info text.") // Edit
         }
         
         //TODO: Ask the crop if it can be harvested to show this option!
