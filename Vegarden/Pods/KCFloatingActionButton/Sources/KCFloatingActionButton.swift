@@ -16,6 +16,10 @@ public enum KCFABOpenAnimationType {
     case none
 }
 
+public enum KCFABOpeningAnimationDirection {
+    case Horizontal
+    case Vertical
+}
 /**
     Floating Action Button Object. It has `KCFloatingActionButtonItem` objects.
     KCFloatingActionButton support storyboard designable.
@@ -139,6 +143,8 @@ open class KCFloatingActionButton: UIView {
     open var friendlyTap: Bool = true
     
     open var sticky: Bool = false
+    
+    open var openingAnimationDirection : KCFABOpeningAnimationDirection = .Vertical
     
     /**
      Delegate that can be used to learn more about the behavior of the FAB widget.
@@ -732,8 +738,19 @@ extension KCFloatingActionButton {
             item.layer.transform = CATransform3DIdentity
             let big = size > item.size ? size : item.size
             let small = size <= item.size ? size : item.size
-            item.frame.origin.x = big/2-small/2
-            item.frame.origin.y = -itemHeight
+           
+            
+             //TODO TRANSLATE it to every animation! Becarefull updating the pod!
+            
+            if (openingAnimationDirection == KCFABOpeningAnimationDirection.Vertical) {
+                item.frame.origin.x = big/2-small/2
+                item.frame.origin.y = -itemHeight
+            } else {
+                item.frame.origin.x = -itemHeight
+                item.frame.origin.y = big/2-small/2
+
+            }
+            
             item.layer.transform = CATransform3DMakeScale(0.4, 0.4, 1)
             UIView.animate(withDuration: 0.3, delay: delay,
                                        usingSpringWithDamping: 0.55,

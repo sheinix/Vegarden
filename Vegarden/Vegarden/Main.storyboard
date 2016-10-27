@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="86" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="320" height="168"/>
+                                    <frame key="frameInset" width="320" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V"/>
@@ -133,7 +133,7 @@
                                 <rect key="frame" x="0.0" y="136" width="768" height="638"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpw-n2-iGO" id="GrN-lR-leE">
-                                    <frame key="frameInset" width="768" height="637"/>
+                                    <frame key="frameInset" width="768" height="638"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-14-qfC" customClass="RotatedView" customModule="Vegarden" customModuleProvider="target">
@@ -216,27 +216,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-vF-utt" customClass="CircleActionMenu" customModule="Vegarden">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="RSc-vF-utt" secondAttribute="height" multiplier="80:89" id="GKQ-Na-8BS"/>
-                                                    </constraints>
-                                                    <state key="normal" image="menu-button"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9bl-B2-Rg5" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="6rz-UQ-aHf"/>
                                                 <constraint firstAttribute="bottom" secondItem="MO2-35-cEb" secondAttribute="bottom" constant="8" id="B8g-pC-dPT"/>
                                                 <constraint firstItem="MO2-35-cEb" firstAttribute="top" secondItem="JgY-14-qfC" secondAttribute="top" constant="8" id="Bv2-VU-QjS"/>
-                                                <constraint firstAttribute="bottom" secondItem="RSc-vF-utt" secondAttribute="bottom" constant="8" id="Kda-Ga-AOT"/>
                                                 <constraint firstAttribute="height" constant="100" id="LCB-hi-LK0"/>
                                                 <constraint firstItem="9bl-B2-Rg5" firstAttribute="top" secondItem="JgY-14-qfC" secondAttribute="top" constant="19" id="Lgj-cy-ogy"/>
                                                 <constraint firstItem="MO2-35-cEb" firstAttribute="leading" secondItem="JgY-14-qfC" secondAttribute="leading" constant="8" id="RLb-Sd-bv7"/>
                                                 <constraint firstItem="Xr5-yv-p4Q" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="Rx1-cH-JPC"/>
-                                                <constraint firstAttribute="trailing" secondItem="RSc-vF-utt" secondAttribute="trailing" constant="34" id="YVu-f3-3v0"/>
                                                 <constraint firstItem="NER-Ag-0BN" firstAttribute="leading" secondItem="MO2-35-cEb" secondAttribute="trailing" constant="20" id="YgG-KX-Ygv"/>
                                                 <constraint firstItem="NER-Ag-0BN" firstAttribute="top" secondItem="9bl-B2-Rg5" secondAttribute="bottom" constant="3" id="ZsD-7e-Mvk"/>
                                                 <constraint firstItem="Xr5-yv-p4Q" firstAttribute="top" secondItem="NER-Ag-0BN" secondAttribute="bottom" constant="7" id="eTz-49-T06"/>
-                                                <constraint firstItem="RSc-vF-utt" firstAttribute="top" secondItem="JgY-14-qfC" secondAttribute="top" constant="3" id="yV3-mA-szT"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-i2-q2C">
@@ -251,7 +242,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lifeCycleDetailViewCellIdentifier" id="PQd-di-f4b" customClass="DetailViewCollectionViewCell" customModule="Vegarden" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-6" width="190" height="368"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="368"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="368"/>
@@ -376,7 +367,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="actionMenu" destination="RSc-vF-utt" id="3LS-10-3Ha"/>
                                     <outlet property="collectionView" destination="70a-yz-CuL" id="Bya-3S-ebi"/>
                                     <outlet property="containerView" destination="ftt-i2-q2C" id="klc-6S-Him"/>
                                     <outlet property="containerViewTop" destination="8DL-bh-hOx" id="Yse-9p-dGO"/>
@@ -575,7 +565,4 @@
             <point key="canvasLocation" x="1524" y="444"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="menu-button" width="120" height="120"/>
-    </resources>
 </document>

@@ -9,6 +9,7 @@
 import UIKit
 import MBCircularProgressBar
 import SnapKit
+import KCFloatingActionButton
 
 class LifeCycleTableViewController: UITableViewController {
 
@@ -121,11 +122,15 @@ class LifeCycleTableViewController: UITableViewController {
                 
         } else {// close cell
             
+            //Remove the rotatedview copied
             cell.containerView.subviews.forEach({ (view) in
                 if (view is RotatedView) {
                     view.removeFromSuperview()
                 }
             })
+            
+            //When tableView handles close of cell, but Menu is open:
+            if (!cell.actionMenu.closed) { cell.actionMenu.close()}
             
             
             cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight

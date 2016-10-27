@@ -45,7 +45,9 @@ class MyCropsCollectionViewController: UICollectionViewController {
     func setupFloatingBttn() {
 
         let fab = KCFloatingActionButton()
-
+        fab.openAnimationType = KCFABOpenAnimationType.pop
+        fab.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
+        
         fab.addItem("Add Crop", icon: UIImage(named: "crops")!, handler: { item in
            
             let popOver = PopupCustomView.getAddCropTableViewPop()

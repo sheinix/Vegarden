@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import MBCircularProgressBar
-import CircleMenu
+import KCFloatingActionButton
 
 class CropLifeCycleTableViewCell: FoldingCell {
 
@@ -18,7 +18,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
     @IBOutlet weak var datePlanted: UILabel!
     @IBOutlet weak var harvestDate: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet weak var actionMenu: CircleMenu!
+   
+    var actionMenu : KCFloatingActionButton
+    
+    
     
     let items: [(icon: String, color: UIColor)] = [
                     ("icon_weeding", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
@@ -43,7 +46,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     required init?(coder aDecoder: NSCoder) {
         
-      //  crop = nil
+       actionMenu = KCFloatingActionButton()
         
         super.init(coder: aDecoder)
     }
@@ -65,17 +68,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
         collectionView.isScrollEnabled = true
      
         //Action Manu Setup:
-        actionMenu.clipsToBounds = false
-        actionMenu.layer.masksToBounds = false
-        actionMenu.superview?.clipsToBounds = false
-        //actionMenu.superview?.layer.masksToBounds = false
-        actionMenu.distance = 90
-        actionMenu.duration = 0.3
-        actionMenu.buttonsCount = 4
-        actionMenu.backgroundColor = UIColor.lightGray
-        actionMenu.delegate = self
-        actionMenu.layer.cornerRadius = actionMenu.frame.size.width / 2.0
-    
+
+       setupActionButtonMenu()
+        
+        
         super.awakeFromNib()
     }
 
@@ -158,32 +154,61 @@ class CropLifeCycleTableViewCell: FoldingCell {
             }
         })
     }
-}
-
-// MARK: <CircleMenuDelegate>
-
-extension CropLifeCycleTableViewCell : CircleMenuDelegate {
     
-    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
+    private func setupActionButtonMenu () {
         
-        button.backgroundColor = items[atIndex].color
+        actionMenu.openAnimationType = KCFABOpenAnimationType.pop
+        actionMenu.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
         
-        button.setImage(UIImage(named: items[atIndex].icon), for: .normal)
+        self.containerView.addSubview(actionMenu)
+//        
+//        actionMenu.snp.makeConstraints { (make) in
+//            make.right.equalToSuperview().offset(5)
+//          //  make.top.equalToSuperview().offset(5)
+//            make.bottom.equalToSuperview().offset(5)
+//            make.width.equalTo(50)
+//        }
         
-        // set highlited image
-        let highlightedImage  = UIImage(named: items[atIndex].icon)?.withRenderingMode(.alwaysTemplate)
-        button.setImage(highlightedImage, for: .highlighted)
-        button.tintColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
+        
+        actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
+            
+            
+        }
+        
+        actionMenu.addItem("Water", icon: UIImage(named:"icon_watering")) { (item) in
+            
+            
+        }
+        
+        actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize")) { (item) in
+            
+            
+        }
+        
+        //TODO: Ask the crop if it can be harvested to show this option!
+        actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
+            
+            
+        }
+        
+        //TODO: Ask the crop if it can be finished to show this option!
+        actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
+            
+            
+        }
+        
+        
     }
     
-    func circleMenu(_ circleMenu: CircleMenu, buttonWillSelected button: UIButton, atIndex: Int) {
-        print("button will selected: \(atIndex)")
-    }
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //If the touch is outside the button let the tableView handle the event
+        
+        let touch = touches.first
+        
+        let point = touch?.location(in: self.containerView)
     
-    func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
-      
-        print("button did selected: \(atIndex)")
-    
+        if (!actionMenu.frame.contains(point!)) { super.touchesBegan(touches, with: event) }
     }
     
 }
