@@ -22,6 +22,7 @@
 		9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */; };
 		9654A8AB1DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */; };
 		96561A311DC1BE1500577F4B /* ActionMenuAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */; };
+		966F92271DC33176005C46F1 /* DetailPatchRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F92261DC33176005C46F1 /* DetailPatchRowTableViewCell.swift */; };
 		96BB776C1DBDCED300DCADA9 /* LifeCycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776B1DBDCED300DCADA9 /* LifeCycleTableViewController.swift */; };
 		96BB776E1DBDD2D900DCADA9 /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776D1DBDD2D900DCADA9 /* MyGardenViewController.swift */; };
 		96BB77701DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */; };
@@ -118,6 +119,7 @@
 		9654A8A81DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9654A8A91DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Harvesting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertView.swift; sourceTree = "<group>"; };
+		966F92261DC33176005C46F1 /* DetailPatchRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPatchRowTableViewCell.swift; sourceTree = "<group>"; };
 		96BB776B1DBDCED300DCADA9 /* LifeCycleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleTableViewController.swift; sourceTree = "<group>"; };
 		96BB776D1DBDD2D900DCADA9 /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
 		96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropLifeCycleTableViewCell.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				96F723071DB3114C000100B2 /* CropDetailPageViewCell */,
 				BD3307B31DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift */,
 				960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */,
+				966F92261DC33176005C46F1 /* DetailPatchRowTableViewCell.swift */,
 			);
 			name = CellViews;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				BDE0617E1D9FDC660003364D /* RowLifeState+CoreDataClass.swift in Sources */,
 				96F7230C1DB3549B000100B2 /* Popup.m in Sources */,
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
+				966F92271DC33176005C46F1 /* DetailPatchRowTableViewCell.swift in Sources */,
 				BD3307B91DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift in Sources */,
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,
 				96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */,

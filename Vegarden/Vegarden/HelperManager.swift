@@ -25,6 +25,24 @@ public class HelperManager {
         return flowLayout
     }
     
+//    public class func stringAction (action: GrowingActions) -> String! {
+//        
+//        let strAction : String
+//        switch action {
+//        case GrowingActions.FertilizeAction:
+//            strAction = "Fertilize"
+//        case GrowingActions.WaterAction:
+//            strAction = "Water"
+//        case GrowingActions.WeedAction:
+//            strAction = "Weed"
+//        case GrowingActions.HarvestAction:
+//            strAction = "Harvest"
+//        }
+//        
+//        return strAction
+//        
+//    }
+
 //    public static func daysBetween(start: Date, end: Date) -> Int {
 //        
 //        return Calendar.current.dateComponents([.day], from: start, to: end).day!

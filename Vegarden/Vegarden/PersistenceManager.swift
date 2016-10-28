@@ -280,10 +280,10 @@ class PersistenceManager {
         }
         
         //TODO Clean this
-        let harvestDate = plantingCrop?.getEstimatedHarvestDate()
-        let dayPlanted = plantingCrop?.getDayPlanted()
-        let daysPassed = plantingCrop?.getDaysPassedSincePlanted()
-        let daysToHarvest = plantingCrop?.getEstimatedDaysLeftToHarvest()
+        _ = plantingCrop?.getEstimatedHarvestDate()
+        _ = plantingCrop?.getDayPlanted()
+        _ = plantingCrop?.getDaysPassedSincePlanted()
+        _ = plantingCrop?.getEstimatedDaysLeftToHarvest()
         
         saveContext()
         
@@ -339,9 +339,10 @@ class PersistenceManager {
     
     private func getStateFor(action:GrowingActions) -> (RowLifeState) {
         
-        let actionMade : RowLifeState
+        var actionMade : RowLifeState?
         
-        switch action {
+        
+        switch (action) {
             
         case GrowingActions.WeedAction:
             
@@ -354,12 +355,14 @@ class PersistenceManager {
         case GrowingActions.FertilizeAction:
             
             actionMade = Fertilized.mr_createEntity()!
+        
+        default : break
         }
         
-        actionMade.isDone = NSNumber(booleanLiteral: true)
-        actionMade.when = NSDate()
+        actionMade?.isDone = NSNumber(booleanLiteral: true)
+        actionMade?.when = NSDate()
         
-        return actionMade
+        return actionMade!
     }
     
     

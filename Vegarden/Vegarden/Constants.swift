@@ -25,6 +25,7 @@ struct CellIdentifiers {
     static let CropListTableViewCellIdentify = "CropListTableViewCellIdentify"
     static let lifeCycleTableViewCellIdentifier = "FoldingCell"
     static let lifeCycleDetailViewCellIdentifier = "lifeCycleDetailViewCellIdentifier"
+    static let DetailPatchRowTableViewCellIdentifier = "DetailPatchRowTableViewCellIdentifier"
 }
 
 struct FontSizes {
@@ -68,12 +69,16 @@ public struct plantingStates {
 }
 
 enum GrowingActions: Int {
-     case WeedAction, WaterAction, FertilizeAction
+     case WeedAction, WaterAction, FertilizeAction, HarvestAction
 }
 
 enum TimeLapses {
     
     case Days, Weeks, Months 
+}
+
+enum ActionUnits {
+    case Patch, Row, Garden
 }
 
 public struct lifeCyclceSates {
@@ -84,3 +89,4 @@ public struct lifeCyclceSates {
     static let Finish = "Finish"
     
 }
+
