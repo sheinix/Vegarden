@@ -18,10 +18,10 @@ let NotesLabelHeight: CGFloat = 20
 class ActionMenuAlertView: SCLAlertView {
 
     var listTableView: UITableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
-    var crop: Crop
+    var crop: Crop?
     var rows = ["Row 1","Row 2","Row 3","Row 4","Row 5","Row 6","Row 7","Row 8","Row 9","Row 10"]//[Row]
-    var actionUnit: ActionUnits
-    var growingAction: GrowingActions
+    var actionUnit: ActionUnits?
+    var growingAction: GrowingActions?
    
 //MARK: - Initializers
     
@@ -34,10 +34,17 @@ class ActionMenuAlertView: SCLAlertView {
         self.growingAction = action
         
         super.init()
-        
-        
     }
     
+    public init(appearance: SCLAppearance, crop: Crop, action: GrowingActions, and unit: ActionUnits) {
+        
+        self.crop = crop
+        self.actionUnit = unit
+        self.growingAction = action
+        
+        super.init(appearance: appearance)
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -65,6 +72,15 @@ class ActionMenuAlertView: SCLAlertView {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillLayoutSubviews() {
+        
+        
+        
+        
+        super.viewWillLayoutSubviews()
+    }
+    
     
 //MARK: - View Creations Methods
     
@@ -218,9 +234,10 @@ class ActionMenuAlertView: SCLAlertView {
     }
 
     public func createMainCustomView(with action: GrowingActions, and crop: Crop) -> UIView {
-    
-        let mainCustomView = UIView(frame: CGRect(x:0, y:0, width: 500, height: 600))
         
+        let frame = CGRect(x: 0, y: 0, width: screenWidth * 0.8, height: screenHeight*0.8)
+        
+        let mainCustomView = UIView(frame: frame)
         let titleView = createTitleSection(action: action, crop: crop)
         let notesView = createNotesSection()
         let buttonView = createButtonsSection(action: action)
@@ -234,18 +251,18 @@ class ActionMenuAlertView: SCLAlertView {
             make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(80)
         }
         
         listTableView.snp.makeConstraints { (make) in
             make.top.equalTo(titleView.snp.bottom)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalTo(notesView.snp.top)
+            make.height.equalTo(mainCustomView.frame.height * 0.5)
         }
         
         notesView.snp.makeConstraints { (make) in
-            //make.top.equalToSuperview()
+            make.top.equalTo(listTableView.snp.bottom)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalTo(buttonView.snp.top)
@@ -260,6 +277,22 @@ class ActionMenuAlertView: SCLAlertView {
         
         return mainCustomView
     }
+    
+    public func generateConfirmView() {
+        
+        guard let _ = self.growingAction , let _ = self.crop else { return }
+        
+        let subView = createMainCustomView(with: self.growingAction!, and: self.crop!)
+        
+        self.customSubview = subView
+        
+ //       subView.snp.makeConstraints { (make) in
+///            make.edges.equalToSuperview()
+ //       }
+        
+        
+    }
+    
     
     private func stringAction (action: GrowingActions) -> String! {
     

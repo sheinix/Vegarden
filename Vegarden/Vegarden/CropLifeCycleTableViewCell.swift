@@ -177,16 +177,22 @@ class CropLifeCycleTableViewCell: FoldingCell {
             dummyVeggie?.name = "Brocolli"
             
             
-            let alert = ActionMenuAlertView(with: dummyVeggie!,
-                                            action: GrowingActions.WeedAction,
-                                            and: ActionUnits.Row)
+       //     let alert = ActionMenuAlertView(with: dummyVeggie!,
+    //                                        action: GrowingActions.WeedAction,
+      //                                      and: ActionUnits.Row)
             
             
-            let appearance2 = SCLAlertView.SCLAppearance(kWindowWidth: 800)
-            let alert2 = SCLAlertView(appearance: appearance2)
-            alert2.customSubview = alert.createMainCustomView(with: GrowingActions.WeedAction, and: dummyVeggie!)
+            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                         kWindowHeight: screenHeight * 0.9)
             
-            alert2.showInfo("Login", subTitle: "", duration: 90)
+            let alert = ActionMenuAlertView(appearance: appearance,
+                                                crop: dummyVeggie!,
+                                                action: GrowingActions.WeedAction,
+                                                and: .Row)
+            
+            alert.generateConfirmView()
+            
+            alert.showInfo("Login", subTitle: "", duration: 90)
             
         }
         
