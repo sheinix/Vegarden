@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -213,8 +215,8 @@ open class SCLAlertView: UIViewController {
     // Members declaration
     var baseView = UIView()
     var labelTitle = UILabel()
-    var viewText = UITextView()
-    var contentView = UIView()
+    public var viewText = UITextView()
+    public var contentView = UIView()
     var circleBG = UIView(frame:CGRect(x:0, y:0, width:kCircleHeightBackground, height:kCircleHeightBackground))
     var circleView = UIView()
     var circleIconView : UIView?
@@ -319,6 +321,9 @@ open class SCLAlertView: UIViewController {
             viewTextHeight = min(customSubview.frame.height, maxViewTextHeight)
             viewText.text = ""
             viewText.addSubview(customSubview)
+            //viewText.clipsToBounds = true
+        
+            
         } else {
             // computing the right size to use for the textView
             let suggestedViewTextSize = viewText.sizeThatFits(CGSize(width: viewTextWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -368,6 +373,32 @@ open class SCLAlertView: UIViewController {
             btn.layer.cornerRadius = appearance.buttonCornerRadius
             y += appearance.kButtonHeight
         }
+        
+//        if let customSubview = customSubview {
+//         
+//            let leading = NSLayoutConstraint(item: customSubview,
+//                                             attribute: NSLayoutAttribute.leading,
+//                                             relatedBy: NSLayoutRelation.equal,
+//                                             toItem: customSubview.superview,
+//                                             attribute: NSLayoutAttribute.leading,
+//                                             multiplier: 1,
+//                                             constant: 0)
+//            
+//            let trailing = NSLayoutConstraint(item: customSubview,
+//                                              attribute: NSLayoutAttribute.trailing,
+//                                              relatedBy: NSLayoutRelation.equal,
+//                                              toItem: customSubview.superview,
+//                                              attribute: NSLayoutAttribute.trailing,
+//                                              multiplier: 1,
+//                                              constant: 0)
+//            
+//            
+//            
+//            
+//            
+//            NSLayoutConstraint.activate([leading, trailing])
+//        }
+    
     }
     
     override open func viewDidAppear(_ animated: Bool) {

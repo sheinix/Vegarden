@@ -15,7 +15,7 @@ target 'Vegarden' do
 	pod "KCFloatingActionButton", "~> 2.1.0"
 	pod 'AFNetworking', '~> 3.0'
 	pod "MagicalRecord"
-	pod 'SnapKit', '~> 3.0'
+	pod 'SnapKit', '~> 3.0.2'
 	pod 'Masonry'
 	#pod 'SwiftString'
 	pod "MBCircularProgressBar"

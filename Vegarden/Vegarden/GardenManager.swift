@@ -139,4 +139,20 @@ class GardenManager: GardenManagementProtocol {
 //        }
 //        return photos
 //    }
+    
+//MARK: - Action Mehotds
+    
+    //TODO Improve this call, 
+    public func make(action: GrowingActions, in crop: Crop, with unit: [Row]) {
+        
+        //TODO Improve this!
+        PersistenceManager.shared.makeGrowingAction(action: action, in: (crop.row?.allObjects[0] as! Row).paddock!)
+    }
+    
+    public func make(action: ActionMadeDTO) {
+        
+        PersistenceManager.shared.makeGrowingAction(action: action)
+  
+    }
+    
 }

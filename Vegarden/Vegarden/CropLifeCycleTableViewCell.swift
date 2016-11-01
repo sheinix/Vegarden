@@ -21,7 +21,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     @IBOutlet private weak var collectionView: UICollectionView!
    
     var actionMenu : KCFloatingActionButton
-    
+    var crop : Crop?
     
     
     let items: [(icon: String, color: UIColor)] = [
@@ -30,24 +30,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
                     ("icon_water", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
                     ("icon_harvest", UIColor(red:0.51, green:0.15, blue:1, alpha:1))
                     ]
-
-    
-//    @IBOutlet weak var accesoryView: UIView!
-    
-    //var lifeCycleDetailView : LifeCycleDetailiView
-   // var crop : Crop
-    
-//    var progressNumber : CGFloat {
-//        
-//        get {
-//            return CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest())
-//            }
-//    }
-    
     
     required init?(coder aDecoder: NSCoder) {
         
-       actionMenu = KCFloatingActionButton()
+        actionMenu = KCFloatingActionButton()
         
         super.init(coder: aDecoder)
     }
@@ -70,12 +56,12 @@ class CropLifeCycleTableViewCell: FoldingCell {
      
         //Action Manu Setup:
 
-       setupActionButtonMenu()
-        
+//       setupActionButtonMenu()
         
         super.awakeFromNib()
     }
 
+    
 //    public func copyCellHeaderView() -> (RotatedView) {
 //        
 //        let copiedCell : CropLifeCycleTableViewCell = self.copyView() as! CropLifeCycleTableViewCell
@@ -108,16 +94,22 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     public func setCellWith(crop: Crop) {
         
-        //self.crop = crop
+        self.crop = crop
         self.cropName.text = crop.name
-        self.datePlanted.text = "Date Planted: " + (crop.getDayPlanted()?.inCellDateFormat())!
-        self.harvestDate.text = "Harvest Date: " + (crop.getEstimatedHarvestDate().inCellDateFormat())
         
-        let progressNumber = CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest())
-        
-        self.ringProgressBar.setValue(progressNumber, animateWithDuration: 3.0)
-        
+        if let datePlanted = crop.getDayPlanted() {
+            
+            self.datePlanted.text = "Date Planted: " + datePlanted.inCellDateFormat()
+            self.harvestDate.text = "Harvest Date: " + (crop.getEstimatedHarvestDate()!.inCellDateFormat())
+            let progressNumber = CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest()!)
+            self.ringProgressBar.setValue(progressNumber, animateWithDuration: 3.0)
+            
+        } else {
+            
+            self.ringProgressBar.setValue(45, animateWithDuration: 3.0)
+        }
        
+        setupActionButtonMenu()
     }
     
     public func copyForegroundViewOfCellIntoContainer() {
@@ -162,64 +154,68 @@ class CropLifeCycleTableViewCell: FoldingCell {
         actionMenu.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
         
         self.containerView.addSubview(actionMenu)
-//        
-//        actionMenu.snp.makeConstraints { (make) in
-//            make.right.equalToSuperview().offset(5)
-//          //  make.top.equalToSuperview().offset(5)
-//            make.bottom.equalToSuperview().offset(5)
-//            make.width.equalTo(50)
-//        }
-        
+
+        guard let cropie = self.crop else { return  }
         
         actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
             
-            let dummyVeggie = Veggie.mr_createEntity()
-            dummyVeggie?.name = "Brocolli"
-            
-            
-       //     let alert = ActionMenuAlertView(with: dummyVeggie!,
-    //                                        action: GrowingActions.WeedAction,
-      //                                      and: ActionUnits.Row)
-            
-            
-            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                         kWindowHeight: screenHeight * 0.9)
-            
-            let alert = ActionMenuAlertView(appearance: appearance,
-                                                crop: dummyVeggie!,
-                                                action: GrowingActions.WeedAction,
-                                                and: .Row)
-            
-            alert.generateConfirmView()
-            
-            alert.showInfo("Login", subTitle: "", duration: 90)
-            
+            self.showConfirmationScreenFor(action: .WeedAction, crop: cropie)
         }
         
         actionMenu.addItem("Water", icon: UIImage(named:"icon_watering")) { (item) in
             
-            SCLAlertView().showInfo("Hello Info", subTitle: "This is a more descriptive info text.") // Info
+           self.showConfirmationScreenFor(action: .WaterAction, crop: cropie)
         }
         
         actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize")) { (item) in
             
-            SCLAlertView().showEdit("Hello Edit", subTitle: "This is a more descriptive info text.") // Edit
+           self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)
         }
         
-        //TODO: Ask the crop if it can be harvested to show this option!
-        actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
+        if (cropie.isReadyForHarvest()) {
             
-            
-        }
+            actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
+                
+                self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie)
+                
+            }
         
-        //TODO: Ask the crop if it can be finished to show this option!
-        actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
-            
-            
-        }
+            //TODO: Ask the crop if it can be finished to show this option!
+            actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
+                
+                self.showConfirmationScreenFor(action: .FinishAction, crop: cropie)
+            }
         
+        }
+    }
+    
+    private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {
+        
+        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                    kWindowHeight: screenHeight * 0.9,
+                                                    showCloseButton: true)
+        
+        let alert = ActionMenuAlertView(appearance: appearance,
+                                        crop: crop,
+                                        action: action,
+                                        and: .Row)
+        
+        
+        let actionString = alert.stringAction(action: action)
+        
+        
+        //TODO Improve this for showing different colors and images for the different actions
+        
+        
+        alert.showCustom(actionString!,
+                            subTitle: crop.name,
+                               color: UIColor.green,
+                                icon: UIImage(named:"icon_weeding")!)
+
         
     }
+    
+    
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         

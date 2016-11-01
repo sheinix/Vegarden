@@ -1,3 +1,4 @@
+
 //
 //  CropExtension.swift
 //  Vegarden
@@ -15,7 +16,9 @@ extension Crop {
     
     public func isReadyForHarvest() -> Bool {
         
-        return (getEstimatedDaysLeftToHarvest() == 0)
+        guard let daysToHarvest = getEstimatedDaysLeftToHarvest() else { return false }
+        
+        return (daysToHarvest == 0)
         
     }
     
@@ -28,53 +31,63 @@ extension Crop {
     
 //MARK: - Time Management Methods:
     
-    public func getEstimatedWeeksLeftToHarvest() -> Int {
+    public func getEstimatedWeeksLeftToHarvest() -> Int? {
         
-        return Date.weeksBetween(start: Date(), end: getEstimatedHarvestDate())
+        guard let harvestDate = getEstimatedHarvestDate() else { return nil }
+        
+        return Date.weeksBetween(start: Date(), end: harvestDate)
     }
     
  
-    public func getEstimatedMonthsLeftToHarvest() -> Int {
+    public func getEstimatedMonthsLeftToHarvest() -> Int? {
         
-        return Date.monthsBetween(start: Date(), end: getEstimatedHarvestDate())
+        guard let harvestDate = getEstimatedHarvestDate() else { return nil }
+        
+        return Date.monthsBetween(start: Date(), end: harvestDate)
     }
     
-    public func getEstimatedDaysLeftToHarvest() -> Int {
+    public func getEstimatedDaysLeftToHarvest() -> Int? {
         
-        return Date.daysBetween(start: Date(), end: getEstimatedHarvestDate())
+        guard let harvestDay = getEstimatedHarvestDate() else { return nil }
+        
+        return Date.daysBetween(start: Date(), end: harvestDay)
     }
     
-    public func getEstimatedHarvestDate() -> Date {
+    public func getEstimatedHarvestDate() -> Date? {
         
-        return Date.addNumberOf(days: self.timeToHarvest.intValue, to: getDayPlanted()!)
+        guard let dayPlanted = getDayPlanted() else { return nil }
+        
+        return Date.addNumberOf(days: self.timeToHarvest.intValue, to: dayPlanted)
     }
     
-    public func getDaysPassedSincePlanted() -> Int {
+    public func getDaysPassedSincePlanted() -> Int? {
         
-        return Date.daysBetween(start:getDayPlanted()!, end: Date())
+        guard let dayPlanted = getDayPlanted() else { return nil }
+        
+        return Date.daysBetween(start:dayPlanted, end: Date())
     }
     
     public func getDayPlanted() -> Date? {
         
-        let state = self.getPlantedtCropState()
-        
-        if let firstState = state {
+        if let firstState = self.getPlantedtCropState() {
             
             guard ((firstState is Seedling || firstState is Seed) && (firstState.date != nil)) else {
                 
                 return nil
             }
+            
+            return (firstState.date as Date)
         }
         
-        return (state?.date as! Date)
+        return nil
     }
     
 //MARK: - Helper Methods:
     
     private func getPlantedtCropState() -> CropState? {
         
-        let orderedStates = getOrderedStates()
-        
+        guard let orderedStates = getOrderedStates() else { return nil }
+    
         return orderedStates[0]
         
     }
@@ -109,15 +122,19 @@ extension Crop {
         return returnStates as! [Harvesting]?
     }
 
-    private func getOrderedStates() -> [CropState] {
+    private func getOrderedStates() -> [CropState]? {
         
-        let orderedStates = self.states?.allObjects.sorted(by: { (date1, date2) -> Bool in
+        let orderedStates = self.states?.allObjects.sorted(by: { (state1, state2) -> Bool in
+            
+            let date1 = (state1 as! CropState).date
+            let date2 = (state2 as! CropState).date
             
             return (date1 as! Date) > (date2 as! Date)
             
         })
         
-        return orderedStates as! [CropState]
+        return ((orderedStates?.count)! > 0 ? (orderedStates as! [CropState]) : nil)
+        
     }
     
     

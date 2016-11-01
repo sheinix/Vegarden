@@ -30,14 +30,14 @@ class DetailPatchRowTableViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(5)
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(5)
-            make.width.greaterThanOrEqualTo(100)
+            make.width.greaterThanOrEqualTo(300)
         }
         
         switchControl.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(5)
-            make.width.equalTo(20)
+            make.width.equalTo(90)
         }
         
     }
@@ -52,4 +52,5 @@ class DetailPatchRowTableViewCell: UITableViewCell {
 //        myLabel.frame = CGRect(x: 20, y: 0, width: 70, height: 30)
 //    }
 
+    
 }

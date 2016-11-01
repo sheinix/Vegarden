@@ -197,10 +197,25 @@ class PersistenceManager {
     
     
     
-    public func getPlantedCrops() -> [Crop] {
+    public func getPlantedCrops() -> [Crop]? {
     
         //TODO Get the crops that are planted! Return [] si no hay
-        return getAllCrops()
+        
+        var myPlantedCrops : [Crop]? = []
+        
+        let myCrops = Crop.mr_findAll()
+        
+       myCrops?.forEach({ (crop) in
+        
+            if ((((crop as! Crop).row)?.count)! > 0) {
+            
+                myPlantedCrops?.append(crop as! Crop)
+            }
+        })
+        
+        
+        return myPlantedCrops
+
     }
     
     
@@ -314,6 +329,24 @@ class PersistenceManager {
         })
     }
     
+    public func makeGrowingAction(action: ActionMadeDTO) {
+        
+        let state = getStateFor(action: action.actionMade)
+       
+        if let note = action.notes {
+            state.notes = note as NSString?
+        }
+        
+        action.rows.forEach { (row) in
+           row.addToLifeCycleState(state)
+            
+        }
+        
+        saveContext()
+        
+    }
+    
+    
     public func harvest(crop: Crop, from paddock: Paddock) {
        
         let harvestingState = Harvesting.mr_createEntity()
@@ -399,17 +432,26 @@ class PersistenceManager {
         let cropToPlant = Crop.mr_findFirst()
         let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
         
-        let plantedRow = plant(crop: cropToPlant!,
+        let plantedRow1 = plant(crop: cropToPlant!,
                                 in: paddock.rows?.allObjects.first as! Row,
                                 of: paddock,
                                 asA: plantingStates.begining.Seed)
         
+        let plantedRow2 = plant(crop: cropToPlant!,
+                               in: paddock.rows?.allObjects.first as! Row,
+                               of: paddock,
+                               asA: plantingStates.begining.Seedling)
         
-       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow, in:plantedRow.paddock! )
+        let plantedRow3 = plant(crop: cropToPlant!,
+                               in: paddock.rows?.allObjects.first as! Row,
+                               of: paddock,
+                               asA: plantingStates.begining.Seed)
         
-        harvest(crop: plantedRow.crops?.allObjects[0] as! Crop, from: plantedRow.paddock!)
+       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow1, in:plantedRow1.paddock! )
         
-        print("all good : \(plantedRow)")
+     //   harvest(crop: plantedRow.crops?.allObjects[0] as! Crop, from: plantedRow.paddock!)
+        
+        print("all good : \(plantedRow1)")
         
         
         

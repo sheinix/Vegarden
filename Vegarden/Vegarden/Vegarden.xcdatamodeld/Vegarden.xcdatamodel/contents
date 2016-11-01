@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Crop" representedClassName=".Crop" isAbstract="YES" syncable="YES">
         <attribute name="cropSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="cropType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -63,6 +63,7 @@
     </entity>
     <entity name="RowLifeState" representedClassName=".RowLifeState" isAbstract="YES" syncable="YES">
         <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="when" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="Seed" representedClassName=".Seed" parentEntity="CropState" syncable="YES"/>
@@ -89,7 +90,7 @@
         <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="133"/>
         <element name="PaddockLocation" positionX="-729" positionY="-2277" width="128" height="43"/>
         <element name="Row" positionX="-1098" positionY="-2601" width="128" height="148"/>
-        <element name="RowLifeState" positionX="-1082" positionY="-2413" width="128" height="73"/>
+        <element name="RowLifeState" positionX="-1082" positionY="-2413" width="128" height="90"/>
         <element name="Seed" positionX="-866" positionY="-2536" width="128" height="43"/>
         <element name="Seedling" positionX="-945" positionY="-2583" width="128" height="43"/>
         <element name="Soil" positionX="-794" positionY="-2475" width="128" height="58"/>

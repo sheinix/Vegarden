@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Harvested)
+//@objc(Harvested)
 
 public class Harvested: CropState {
 

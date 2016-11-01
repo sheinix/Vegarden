@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-@objc(Crop)
+//@objc(Crop)
 
 public class Crop: NSManagedObject {
         

@@ -18,5 +18,6 @@ extension RowLifeState {
 
     @NSManaged public var when: NSDate?
     @NSManaged public var isDone: NSNumber?
+    @NSManaged public var notes: NSString?
 
 }

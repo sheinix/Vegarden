@@ -26,7 +26,7 @@ class LifeCycleTableViewController: UITableViewController {
     let kCloseCellHeight: CGFloat = 150
     let kOpenCellHeight: CGFloat = 460
     
-    var myPlantedCrops = [MainViews.LifeCycleView, MainViews.MyGardenView, MainViews.AboutView] //GardenManager.shared.myPlantedCrops()
+    var myPlantedCrops = GardenManager.shared.myPlantedCrops()
     
     var cellHeights = [CGFloat]()
    
@@ -42,15 +42,20 @@ class LifeCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cellHeights = (0..<Int((myPlantedCrops.count))).map { _ in C.CellHeight.close }
+        if let myPlantedCrops = self.myPlantedCrops {
+            
+            cellHeights = (0..<Int((myPlantedCrops.count))).map { _ in C.CellHeight.close }
+
+        }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
     }
 
     override func didReceiveMemoryWarning() {
+
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
     // MARK: - Table view data source
@@ -62,7 +67,9 @@ class LifeCycleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (myPlantedCrops.count)
+        guard let count = myPlantedCrops?.count else { return 0  }
+        
+        return count
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -88,14 +95,11 @@ class LifeCycleTableViewController: UITableViewController {
       
         let cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.lifeCycleTableViewCellIdentifier, for: indexPath) as! CropLifeCycleTableViewCell)
         
-        cell.cropName.text = myPlantedCrops[indexPath.row]
-        cell.datePlanted.text = String(describing: Date())
-        cell.harvestDate.text = "Harvest Date: Septembre 10th 2017"
-        cell.ringProgressBar.setValue(25, animateWithDuration: 1.0)
+        let crop = myPlantedCrops![indexPath.row]
         
+        cell.setCellWith(crop: crop)
 
         return cell
-
     }
    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

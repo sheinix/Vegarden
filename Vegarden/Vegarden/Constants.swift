@@ -69,7 +69,7 @@ public struct plantingStates {
 }
 
 enum GrowingActions: Int {
-     case WeedAction, WaterAction, FertilizeAction, HarvestAction
+     case WeedAction, WaterAction, FertilizeAction, HarvestAction, FinishAction
 }
 
 enum TimeLapses {
