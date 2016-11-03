@@ -24,9 +24,9 @@ class ActionMenuAlertView: SCLAlertView {
     var growingAction: GrowingActions!
     var notesTxt : String?
     var allRows: Bool = false
-    
+    var notesTxtView: UITextField = UITextField()
     var rows : [Row]?
-    var rowsToMakeActions : [Row]?
+    var rowsToMakeActions : [Row] = []
     
     
 //MARK: - Initializers
@@ -40,7 +40,7 @@ class ActionMenuAlertView: SCLAlertView {
         
         self.actionUnit = unit
         self.growingAction = action
-        self.rowsToMakeActions?.reserveCapacity((self.rows?.count)!)
+        self.rowsToMakeActions.reserveCapacity((self.rows?.count)!)
        
         super.init()
     }
@@ -54,7 +54,7 @@ class ActionMenuAlertView: SCLAlertView {
 
         self.actionUnit = unit
         self.growingAction = action
-        self.rowsToMakeActions?.reserveCapacity((self.rows?.count)!)
+        self.rowsToMakeActions.reserveCapacity((self.rows?.count)!)
        
         super.init(appearance: appearance)
     }
@@ -176,21 +176,20 @@ class ActionMenuAlertView: SCLAlertView {
         notesLabel.textAlignment = NSTextAlignment.left
         notesLabel.text = "Notes:"
         
-        let notesTextField = UITextField()
-        
+
         //TODO Add customization appearance to the class appearence later
-        notesTextField.placeholder = "Something to add for remembering?"
-        notesTextField.font = UIFont.systemFont(ofSize: 15)
-        notesTextField.borderStyle = UITextBorderStyle.line
-        notesTextField.autocorrectionType = UITextAutocorrectionType.no
-        notesTextField.keyboardType = UIKeyboardType.default
-        notesTextField.returnKeyType = UIReturnKeyType.done
-        notesTextField.clearButtonMode = UITextFieldViewMode.whileEditing;
-        notesTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.top
+        notesTxtView.placeholder = "Something to add for remembering?"
+        notesTxtView.font = UIFont.systemFont(ofSize: 15)
+        notesTxtView.borderStyle = UITextBorderStyle.line
+        notesTxtView.autocorrectionType = UITextAutocorrectionType.no
+        notesTxtView.keyboardType = UIKeyboardType.default
+        notesTxtView.returnKeyType = UIReturnKeyType.done
+        notesTxtView.clearButtonMode = UITextFieldViewMode.whileEditing;
+        notesTxtView.contentVerticalAlignment = UIControlContentVerticalAlignment.top
         //notesTextField.delegate = self
         
         notesSection.addSubview(notesLabel)
-        notesSection.addSubview(notesTextField)
+        notesSection.addSubview(notesTxtView)
         
         
         notesLabel.snp.makeConstraints { (make) in
@@ -200,7 +199,7 @@ class ActionMenuAlertView: SCLAlertView {
             make.height.equalTo(NotesLabelHeight)
         }
         
-        notesTextField.snp.makeConstraints { (make) in
+        notesTxtView.snp.makeConstraints { (make) in
             make.top.equalTo(notesLabel.snp.bottom).offset(5)
             make.left.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
@@ -345,16 +344,12 @@ class ActionMenuAlertView: SCLAlertView {
         
         var notesString : String?
         
-        self.customSubview!.subviews.forEach { (view) in
-            if (view is UITextView) {
-                if (!(view as! UITextView).text.isEmpty) {
-                    notesString = (view as! UITextView).text
-                }
-            }
+        if (!(notesTxtView.text?.isEmpty)!) {
+                notesString = notesTxtView.text
         }
         
 
-        let actionToBeMade = ActionMadeDTO(with: rowsToMakeActions!,
+        let actionToBeMade = ActionMadeDTO(with: rowsToMakeActions,
                                            crop: self.crop,
                                            notes: notesString,
                                            and: self.growingAction)
@@ -392,9 +387,7 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         
         cell?.rowName.text = rows?[indexPath.row].name
         
-        
-        let indx = NSIndexPath(row: indexPath.row, section: indexPath.section)
-        let switchChanged = #selector(switchChangedFor(idx:indx))
+        let switchChanged = #selector(switchChangedFor)
         
         cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
         
@@ -403,24 +396,23 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    @objc func switchChangedFor(idx: NSIndexPath) {
-      
-        
-        //if (allRows) { rowsToMakeActions = rows ; return }
-        
-    //TODO use the row object!
+    @objc func switchChangedFor(sender: Any) {
+
+        guard let cell : DetailPatchRowTableViewCell = (sender as! UISwitch).superview!.superview as! DetailPatchRowTableViewCell? else { return }
     
-      //  let cell : DetailPatchRowTableViewCell = (tableView(self.listTableView, cellForRowAt: index) as! DetailPatchRowTableViewCell)
-    
+        if let idxPath = self.listTableView.indexPath(for: cell) {
+            
+            if (cell.switchControl.isOn) {
+                
+                rowsToMakeActions.insert((rows?[idxPath.row])!, at: idxPath.row)
+                
+            } else {
+                
+                rowsToMakeActions.remove(at: idxPath.row)
+            }
+
+        }
         
-//        if (cell.switchControl.isOn) {
-//           
-//            rowsToMakeActions?.insert((rows?[index.row])!, at: index.row)
-//            
-//        } else {
-//            
-//            rowsToMakeActions?.remove(at: index.row)
-//        }
         
         
         

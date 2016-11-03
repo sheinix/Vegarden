@@ -28,4 +28,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         
     }
 
+    
+    
+    
 }
