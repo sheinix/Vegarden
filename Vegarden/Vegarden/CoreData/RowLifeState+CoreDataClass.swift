@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(RowLifeState)
+//@objc(RowLifeState)
 
 public class RowLifeState: NSManagedObject {
     

@@ -17,6 +17,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var date2Label: UILabel!
     @IBOutlet weak var value2Label: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
+    @IBOutlet weak var notesStackView: UIStackView!
     
     
     override func awakeFromNib() {

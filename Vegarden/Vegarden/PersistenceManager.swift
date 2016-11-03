@@ -278,13 +278,13 @@ class PersistenceManager {
 
 //MARK: - LifeCycle Methods
     
-    public func plant(crop: Crop, in row:Row,  of paddock: Paddock, asA:plantingStates.begining) -> Row {
+    public func plant(crop: Crop, in row:Row,  of paddock: Paddock, asA:plantingStates) -> Row {
         
         let plantingCrop = crop.duplicateAssociated()
         
         saveContext()
         
-        let state : CropState = (asA == plantingStates.begining.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
+        let state : CropState = (asA == plantingStates.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
     
         state.date = NSDate()
         plantingCrop?.addToStates(state)
@@ -441,17 +441,17 @@ class PersistenceManager {
         let plantedRow1 = plant(crop: cropToPlant!,
                                 in: paddock.rows?.allObjects.first as! Row,
                                 of: paddock,
-                                asA: plantingStates.begining.Seed)
+                                asA: plantingStates.Seed)
         
         let plantedRow2 = plant(crop: cropToPlant!,
                                in: paddock.rows?.allObjects.first as! Row,
                                of: paddock,
-                               asA: plantingStates.begining.Seedling)
+                               asA: plantingStates.Seedling)
         
         let plantedRow3 = plant(crop: cropToPlant!,
                                in: paddock.rows?.allObjects.first as! Row,
                                of: paddock,
-                               asA: plantingStates.begining.Seed)
+                               asA: plantingStates.Seed)
         
        makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow1, in:plantedRow1.paddock! )
         

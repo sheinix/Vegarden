@@ -27,7 +27,9 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.lifeCycleDetailViewCellIdentifier, for: indexPath) as! DetailViewCollectionViewCell)
         
         cell.stageTitle.text = lifeCycle[indexPath.row]
-    
+        
+        
+        
         return cell
     }
     

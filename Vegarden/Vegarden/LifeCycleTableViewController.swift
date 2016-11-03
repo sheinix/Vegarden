@@ -20,6 +20,10 @@ class LifeCycleTableViewController: UITableViewController {
                      lifeCyclceSates.Harvesting,
                      lifeCyclceSates.Finish]
 
+    var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Seed: [],
+                                            lifeCyclceSates.Growig: [],
+                                            lifeCyclceSates.Harvesting: [],
+                                            lifeCyclceSates.Finish: []]
     
     
     //TableView sources:
@@ -98,7 +102,11 @@ class LifeCycleTableViewController: UITableViewController {
         let crop = myPlantedCrops![indexPath.row]
         
         cell.setCellWith(crop: crop)
-
+        
+        
+        setupNotes(crop: crop)
+        
+        
         return cell
     }
    
@@ -123,7 +131,10 @@ class LifeCycleTableViewController: UITableViewController {
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
             duration = 0.5
-                
+            
+            
+            
+            
         } else {// close cell
             
             //Remove the rotatedview copied
@@ -156,7 +167,43 @@ class LifeCycleTableViewController: UITableViewController {
 //        
 //    }
 //MARK: - Helper methods
+    
+    private func setupNotes(crop: Crop) {
+       
+        //Get the notes for the Growing Actions made to the rows:
+        
+        var growingNotes : [RowLifeState] = []
+        
+        crop.row?.allObjects.forEach({ (row) in
+            
+            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
+                
+                growingNotes.append(contentsOf: states)
+            }
+        })
 
+        //Get the planted state :
+        
+        let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling))
+        
+        lifeCycleDict.updateValue(plantState!, forKey: lifeCyclceSates.Seed)
+        
+        //Get the harvesting States:
+        
+        if let harvestingStates = crop.getStatesOf(type: .Harvested) {
+            
+            lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
+        }
+        
+        if (growingNotes.count < 0) {
+            
+            lifeCycleDict.updateValue(growingNotes, forKey: lifeCyclceSates.Growig)
+        }
+        
+        
+    }
+    
+    
     private func copyForegroundViewOfCellIntoContainer(cell: CropLifeCycleTableViewCell) {
         
         //Get the colletionView and copy the foreground into the "header" of the collection

@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Weed)
+//@objc(Weed)
 
 public class Weed: RowLifeState {
 

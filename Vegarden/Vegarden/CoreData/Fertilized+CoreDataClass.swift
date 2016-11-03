@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Fertilized)
+//@objc(Fertilized)
 
 public class Fertilized: RowLifeState {
 

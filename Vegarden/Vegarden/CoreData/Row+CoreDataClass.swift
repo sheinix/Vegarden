@@ -21,4 +21,8 @@ public class Row: NSManagedObject {
         
     }
 
+    public func getAllRowLifeStates() -> [RowLifeState] {
+        
+        return self.lifeCycleState?.allObjects as! [RowLifeState]
+    }
 }
