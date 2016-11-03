@@ -17,10 +17,10 @@ public class Crop: NSManagedObject {
     var typeCrop : CropTypes {
         
         get {
-            return CropTypes(rawValue: Int16(self.cropType.intValue))!
+            return CropTypes(rawValue: self.cropType)!
         }
         set {
-            self.cropType = NSNumber(value:Int16(newValue.rawValue))
+            self.cropType = Int16(NSNumber(value:Int16(newValue.rawValue)))
         }
     }
     
@@ -30,9 +30,9 @@ public class Crop: NSManagedObject {
        
         get {
             
-            let value = String(self.timeToHarvest.intValue).components(separatedBy: ".")
+            let value = String(self.timeToHarvest).components(separatedBy: ".")
             
-            return (self.timeToHarvest.intValue % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
+            return (self.timeToHarvest % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
             
             }
     }
@@ -51,10 +51,10 @@ public class Crop: NSManagedObject {
         crop.owned       =   false
         
         crop.cropType    =   0// dictionary["plantType"] as? String
-        crop.cropSize    =   NSNumber(value: (Int(dictionary["plantSize"] as! Int)))
-        crop.phLevels    =   NSNumber(value: (Int(dictionary["phLevels"] as! Int)))
-        crop.spacing     =   NSNumber(value: (Int(dictionary["spacing"] as! Int)))
-        crop.timeToHarvest = NSNumber(value: 30)
+        crop.cropSize    =   Int16(Int(dictionary["plantSize"] as! Int))
+        crop.phLevels    =   Int16(Int(dictionary["phLevels"] as! Int))
+        crop.spacing     =   Int16(Int(dictionary["spacing"] as! Int))
+        crop.timeToHarvest = 30
         
         crop.whenToPlant        = dictionary["whenToPlant"] as? String
         crop.plantingDirections = dictionary["plantDirections"] as? String

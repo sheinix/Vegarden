@@ -1,13 +1,14 @@
 //
 //  Row+CoreDataProperties.swift
-//  Vegarden
+//  
 //
-//  Created by Juan Nuvreni on 9/26/16.
-//  Copyright © 2016 Juan Nuvreni. All rights reserved.
+//  Created by Sarah Cleland on 3/11/16.
+//
 //
 
 import Foundation
-import CoreData 
+import CoreData
+
 
 extension Row {
 
@@ -15,12 +16,12 @@ extension Row {
         return NSFetchRequest<Row>(entityName: "Row");
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var estimatedNumberOfCrops: Int16
     @NSManaged public var id: String?
-    @NSManaged public var length: NSNumber?
-    @NSManaged public var estimatedNumberOfCrops: NSNumber?
+    @NSManaged public var length: Float
+    @NSManaged public var name: String?
     @NSManaged public var crops: NSSet?
-    @NSManaged public var lifeCycleState: NSArray?
+    @NSManaged public var lifeCycleState: NSSet?
     @NSManaged public var paddock: Paddock?
 
 }
@@ -39,17 +40,22 @@ extension Row {
 
     @objc(removeCrops:)
     @NSManaged public func removeFromCrops(_ values: NSSet)
-    
+
+}
+
+// MARK: Generated accessors for lifeCycleState
+extension Row {
+
     @objc(addLifeCycleStateObject:)
     @NSManaged public func addToLifeCycleState(_ value: RowLifeState)
-    
+
     @objc(removeLifeCycleStateObject:)
     @NSManaged public func removeFromLifeCycleState(_ value: RowLifeState)
-    
+
     @objc(addLifeCycleState:)
-    @NSManaged public func addToLifeCycleState(_ values: NSArray)
-    
+    @NSManaged public func addToLifeCycleState(_ values: NSSet)
+
     @objc(removeLifeCycleState:)
-    @NSManaged public func removeFromLifeCycleState(_ values: NSArray)
+    @NSManaged public func removeFromLifeCycleState(_ values: NSSet)
 
 }

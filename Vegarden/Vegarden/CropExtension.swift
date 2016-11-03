@@ -57,7 +57,7 @@ extension Crop {
         
         guard let dayPlanted = getDayPlanted() else { return nil }
         
-        return Date.addNumberOf(days: self.timeToHarvest.intValue, to: dayPlanted)
+        return Date.addNumberOf(days: Int(self.timeToHarvest), to: dayPlanted)
     }
     
     public func getDaysPassedSincePlanted() -> Int? {

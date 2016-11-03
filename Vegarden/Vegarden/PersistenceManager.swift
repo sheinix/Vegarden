@@ -139,7 +139,7 @@ class PersistenceManager {
         let newRow = Row.mr_createEntity()
         newRow?.name = rowName
         newRow?.id = UUID().uuidString
-        newRow?.length = (length == nil ? nil : NSNumber(value: length!))
+        newRow?.length = (length == nil ? 0 : length!)
         newRow?.paddock = paddock
         paddock.addToRows(newRow!)
         
@@ -203,16 +203,19 @@ class PersistenceManager {
         
         var myPlantedCrops : [Crop]? = []
         
-        let myCrops = Crop.mr_findAll()
+        let myRows = Row.mr_findAll()
         
-       myCrops?.forEach({ (crop) in
+       myRows?.forEach({ (row) in
         
-            if ((((crop as! Crop).row)?.count)! > 0) {
-            
+        
+            if  ((row as! Row).crops?.anyObject() != nil) {
+                
+                let crop = (row as! Row).crops?.anyObject()
+                 
                 myPlantedCrops?.append(crop as! Crop)
+            
             }
-        })
-        
+       })
         
         return myPlantedCrops
 
@@ -279,6 +282,8 @@ class PersistenceManager {
         
         let plantingCrop = crop.duplicateAssociated()
         
+        saveContext()
+        
         let state : CropState = (asA == plantingStates.begining.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
     
         state.date = NSDate()
@@ -287,12 +292,13 @@ class PersistenceManager {
         //TODO ReCalculate time to harvest depending on how was planted (seed or seedling()
         
         plantingCrop?.addToRow(row)
+        
         row.addToCrops(plantingCrop!)
         
-        if row.length != nil {
+       // if row.length != nil {
         
-            row.estimatedNumberOfCrops = NSNumber(value:round((row.length?.floatValue)! / Float(crop.spacing)))
-        }
+            row.estimatedNumberOfCrops = Int16(NSNumber(value:round((row.length) / Float((plantingCrop?.spacing)!))))
+        //}
         
         //TODO Clean this
         _ = plantingCrop?.getEstimatedHarvestDate()
@@ -479,6 +485,8 @@ class PersistenceManager {
         paddock1?.soil = nil
         paddock2?.soil = nil
         paddock3?.soil = nil
+        
+        saveContext()
         
         return [paddock1!, paddock2!, paddock3!]
         

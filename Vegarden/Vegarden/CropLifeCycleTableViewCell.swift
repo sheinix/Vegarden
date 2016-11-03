@@ -208,7 +208,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         
         alert.showCustom(actionString!,
-                            subTitle: crop.name,
+                            subTitle: crop.name!,
                                color: UIColor.green,
                                 icon: UIImage(named:"icon_weeding")!)
 
