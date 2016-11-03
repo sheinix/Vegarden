@@ -433,7 +433,6 @@
 				BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */,
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
 				BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */,
-				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -502,6 +501,7 @@
 				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
 				BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */,
 				96F723011DB30E5A000100B2 /* CropDetailCollectionViewController.swift */,
+				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
 				96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
 			);

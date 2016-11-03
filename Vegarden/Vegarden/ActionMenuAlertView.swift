@@ -391,30 +391,36 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.DetailPatchRowTableViewCellIdentifier) as! DetailPatchRowTableViewCell!
         
         cell?.rowName.text = rows?[indexPath.row].name
-        cell?.switchControl.addTarget(self, action: #selector(ActionMenuAlertView.switchChangedFor(index:)), for: UIControlEvents.valueChanged)
+        
+        
+        let indx = NSIndexPath(row: indexPath.row, section: indexPath.section)
+        let switchChanged = #selector(switchChangedFor(idx:indx))
+        
+        cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
         
         
         return cell!
     }
     
-    public func switchChangedFor(index: IndexPath) {
+    
+    @objc func switchChangedFor(idx: NSIndexPath) {
       
         
         //if (allRows) { rowsToMakeActions = rows ; return }
         
     //TODO use the row object!
     
-        let cell : DetailPatchRowTableViewCell = (tableView(self.listTableView, cellForRowAt: index) as! DetailPatchRowTableViewCell)
+      //  let cell : DetailPatchRowTableViewCell = (tableView(self.listTableView, cellForRowAt: index) as! DetailPatchRowTableViewCell)
     
         
-        if (cell.switchControl.isOn) {
-           
-            rowsToMakeActions?.insert((rows?[index.row])!, at: index.row)
-            
-        } else {
-            
-            rowsToMakeActions?.remove(at: index.row)
-        }
+//        if (cell.switchControl.isOn) {
+//           
+//            rowsToMakeActions?.insert((rows?[index.row])!, at: index.row)
+//            
+//        } else {
+//            
+//            rowsToMakeActions?.remove(at: index.row)
+//        }
         
         
         
@@ -425,7 +431,7 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
 //        let distinct = paddocks.filter { ($0?.contains($0))! }
 //        
 //        
-//        
+//
 //    }
     
    
