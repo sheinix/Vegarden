@@ -32,9 +32,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
         //CHTCollectionViewWaterfall lyout:
         (self.collectionView?.collectionViewLayout as! CHTCollectionViewWaterfallLayout).columnCount = 2
         
-        
         setupFloatingBttn()
-        
     }
 
     override func didReceiveMemoryWarning() {

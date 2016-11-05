@@ -253,6 +253,15 @@
 			name = DTO;
 			sourceTree = "<group>";
 		};
+		960E5ADB1DCE150F00ED39A8 /* MyCropsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */,
+				96F723011DB30E5A000100B2 /* CropDetailCollectionViewController.swift */,
+			);
+			name = MyCropsViewController;
+			sourceTree = "<group>";
+		};
 		9654A88F1DB5F65800A0A9D9 /* Crop */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,9 +520,8 @@
 				BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */,
 				96BB776D1DBDD2D900DCADA9 /* MyGardenViewController.swift */,
 				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
-				BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */,
-				96F723011DB30E5A000100B2 /* CropDetailCollectionViewController.swift */,
 				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
+				960E5ADB1DCE150F00ED39A8 /* MyCropsViewController */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
 			);
 			name = ViewControllers;
