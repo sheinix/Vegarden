@@ -15,6 +15,7 @@ class LifeCycleTableViewController: UITableViewController {
 
     //CollectionView sources:
     let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+    
     let lifeCycle = [lifeCyclceSates.Seed,
                      lifeCyclceSates.Growig,
                      lifeCyclceSates.Harvesting,
@@ -103,9 +104,7 @@ class LifeCycleTableViewController: UITableViewController {
         
         cell.setCellWith(crop: crop)
         
-        
         setupNotes(crop: crop)
-        
         
         return cell
     }
@@ -131,9 +130,6 @@ class LifeCycleTableViewController: UITableViewController {
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
             duration = 0.5
-            
-            
-            
             
         } else {// close cell
             
@@ -184,9 +180,10 @@ class LifeCycleTableViewController: UITableViewController {
 
         //Get the planted state :
         
-        let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling))
+        if let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling)) {
         
-        lifeCycleDict.updateValue(plantState!, forKey: lifeCyclceSates.Seed)
+            lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
+        }
         
         //Get the harvesting States:
         
@@ -195,11 +192,10 @@ class LifeCycleTableViewController: UITableViewController {
             lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
         }
         
-        if (growingNotes.count < 0) {
+        if (growingNotes.count > 0) {
             
             lifeCycleDict.updateValue(growingNotes, forKey: lifeCyclceSates.Growig)
         }
-        
         
     }
     

@@ -104,41 +104,42 @@ extension Crop {
     
     
     //TODO Make this method work with the planting states! For now use the different Methods above
-//    public func getStatesOf(type:plantingStates) -> [CropState]? {
-////
-////        guard let allStates = self.states?.allObjects else { return nil }
-////        
-////        var returnArray : [CropState]? = nil
-////        
-////        let growState = stateForType(type: type)
-////        
-////        for state in allStates as! [CropState] {
-////         
-////            if (state is growState) {
-////                
-////                returnArray?.append(state)
-////            }
-////
-//       
-//    }
+    public func getStatesOf(type:plantingStates) -> [CropState]? {
+
+        guard let allStates = self.states?.allObjects else { return nil }
+        
+        var returnArray = [CropState]()
+        
+        let growState : CropState.Type = stateForType(type: type)!
+        
+        for state in allStates as! [CropState] {
+            
+            if (state .isKind(of:growState)) {
+                
+                returnArray.append(state)
+            }
+        }
+        
+        return returnArray
+    }
 
     public func stateForType(type: plantingStates) -> CropState.Type? {
         
         var classState : CropState.Type? = nil
         
         switch type {
-        case .Seed:
-            classState = Seed.self
-        case .Seedling:
-            classState = Seedling.self
-        case .Growing:
-            classState = Growing.self
-        case .Grown:
-            classState = Grown.self
-        case .Harvested:
-            classState = Harvested.self
-        default:
-            break
+            case .Seed:
+                classState = Seed.self
+            case .Seedling:
+                classState = Seedling.self
+            case .Growing:
+                classState = Growing.self
+            case .Grown:
+                classState = Grown.self
+            case .Harvested:
+                classState = Harvested.self
+            default:
+                break
         }
         
         return classState
@@ -162,23 +163,23 @@ extension Crop {
         return returnStates as! [Harvesting]?
     }
 
-    public func getSeedState() -> Seed {
-        
-        var seedState : Seed
-        
-        
-        self.states?.allObjects.forEach({ (cropState) in
-            
-            if (type(of: cropState) == Seed.self) {
-                
-                seedState = (cropState as! Seed)
-            }
-            
-        })
-        
-        return seedState
-    }
-    
+//    public func getSeedState() -> Seed {
+//
+//        var seedState : Seed
+//        
+//        
+//        self.states?.allObjects.forEach({ (cropState) in
+//            
+//            if (type(of: cropState) == Seed.self) {
+//                
+//                seedState = (cropState as! Seed)
+//            }
+//            
+//        })
+//        
+//        return seedState
+//    }
+//    
     
     private func getOrderedStates() -> [CropState]? {
         

@@ -17,4 +17,3 @@ let gridWidth : CGFloat = (screenSize.width/2)-5.0
 let navigationHeight : CGFloat = 44.0
 let statubarHeight : CGFloat = 20.0
 let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
-

@@ -24,6 +24,18 @@ public class HelperManager {
         
         return flowLayout
     }
+//    
+//    public func stringForState(state: plantingStates) -> String! {
+//        
+//        var returnString = String()
+//        
+//        switch state {
+//        case .Seed:
+//            returnString = ""
+//        default:
+//            <#code#>
+//        }
+//    }
     
 //    public class func stringAction (action: GrowingActions) -> String! {
 //        

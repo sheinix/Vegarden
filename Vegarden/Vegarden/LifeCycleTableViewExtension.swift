@@ -28,8 +28,6 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
         
         cell.stageTitle.text = lifeCycle[indexPath.row]
         
-        
-        
         return cell
     }
     
@@ -49,6 +47,8 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        (cell as! DetailViewCollectionViewCell).addStatesNotesWith(dict: lifeCycleDict)
         
     }
     

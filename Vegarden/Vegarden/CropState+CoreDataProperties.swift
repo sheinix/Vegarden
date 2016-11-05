@@ -17,5 +17,5 @@ extension CropState {
     }
 
     @NSManaged public var date: NSDate!
-
+    @NSManaged public var notes: NSString?
 }

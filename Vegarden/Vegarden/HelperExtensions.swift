@@ -44,3 +44,20 @@ extension UIColor {
             alpha: alpha)
     }
 }
+
+public extension NSObject {
+   
+    public class var nameOfClass: String {
+        
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+
+    }
+    
+    public var nameOfClass: String {
+        
+        let strToTrim = NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
+        
+        return strToTrim.components(separatedBy: "_").first!
+
+    }
+}

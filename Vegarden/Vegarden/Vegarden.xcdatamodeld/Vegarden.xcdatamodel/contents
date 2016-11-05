@@ -24,6 +24,7 @@
     </entity>
     <entity name="CropState" representedClassName=".CropState" isAbstract="YES" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Fertilized" representedClassName=".Fertilized" parentEntity="RowLifeState" syncable="YES"/>
     <entity name="Fruit" representedClassName=".Fruit" parentEntity="Crop" syncable="YES"/>
@@ -75,7 +76,7 @@
     <entity name="Weed" representedClassName=".Weed" parentEntity="RowLifeState" syncable="YES"/>
     <elements>
         <element name="Crop" positionX="-1404" positionY="-2763" width="128" height="343"/>
-        <element name="CropState" positionX="-929" positionY="-2479" width="128" height="58"/>
+        <element name="CropState" positionX="-929" positionY="-2479" width="128" height="73"/>
         <element name="Fertilized" positionX="-1179" positionY="-2311" width="128" height="45"/>
         <element name="Fruit" positionX="-1116" positionY="-2655" width="128" height="45"/>
         <element name="Garden" positionX="-1082" positionY="-2277" width="128" height="88"/>

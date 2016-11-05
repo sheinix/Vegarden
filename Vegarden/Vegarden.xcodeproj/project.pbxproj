@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
+		960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5AD81DCDDC2200ED39A8 /* NoteView.swift */; };
 		962805E61DB49C2E00DF9176 /* CropListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */; };
 		962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */; };
 		962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */; };
@@ -106,6 +107,7 @@
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
+		960E5AD81DCDDC2200ED39A8 /* NoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		962805E51DB49C2E00DF9176 /* CropListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewController.swift; sourceTree = "<group>"; };
 		962805E71DB4A29D00DF9176 /* CropListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropListTableViewCell.swift; sourceTree = "<group>"; };
 		962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myOwnedCrops.plist; sourceTree = "<group>"; };
@@ -241,6 +243,14 @@
 				28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */,
 			);
 			name = c;
+			sourceTree = "<group>";
+		};
+		960E5ADA1DCDEFE300ED39A8 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 		9654A88F1DB5F65800A0A9D9 /* Crop */ = {
@@ -433,6 +443,7 @@
 				BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */,
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
 				BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */,
+				960E5AD81DCDDC2200ED39A8 /* NoteView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -474,6 +485,7 @@
 				962805E91DB4B7D500DF9176 /* myOwnedCrops.plist */,
 				BD46A6B01D991A1A004D7405 /* CoreData */,
 				BD83BF941D9FFEA300C7D79A /* ViewControllers */,
+				960E5ADA1DCDEFE300ED39A8 /* DTO */,
 				BD3307BD1DA9EEDB00F2EC6F /* CellViews */,
 				96F722F91DB309DD000100B2 /* Extensions */,
 				BD3307BE1DA9EEEB00F2EC6F /* Views */,
@@ -502,7 +514,6 @@
 				BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */,
 				96F723011DB30E5A000100B2 /* CropDetailCollectionViewController.swift */,
 				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
-				96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
 			);
 			name = ViewControllers;
@@ -712,6 +723,7 @@
 				BDE061841D9FDC660003364D /* Soil+CoreDataClass.swift in Sources */,
 				BDE061721D9FDC660003364D /* Herb+CoreDataClass.swift in Sources */,
 				BDE061781D9FDC660003364D /* Paddock+CoreDataClass.swift in Sources */,
+				960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */,
 				BD83BF931D9FFE9C00C7D79A /* CommonViewController.swift in Sources */,
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
