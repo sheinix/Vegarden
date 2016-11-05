@@ -199,7 +199,6 @@ class LifeCycleTableViewController: UITableViewController {
         
     }
     
-    
     private func copyForegroundViewOfCellIntoContainer(cell: CropLifeCycleTableViewCell) {
         
         //Get the colletionView and copy the foreground into the "header" of the collection

@@ -18,7 +18,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var value2Label: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var notesStackView: UIStackView!
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +27,8 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.cornerRadius = 8
         
+        self.scrollView.delegate = self
+        self.scrollView.showsVerticalScrollIndicator = true
     }
 
     public func addStatesNotesWith(dict:Dictionary<String, [Any]>) {
@@ -64,7 +66,24 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                 }
             })
         }
+        
+        //TODO Check if this is working right
+        
+        let newViewsCount = notesStackView.arrangedSubviews.count
+        let noteViewHeight = (newViewsCount > 0 ? notesStackView.arrangedSubviews[0].frame.height : 0)
+        
+        let newHeight = Int(self.frame.height) + (newViewsCount * Int(noteViewHeight))
+        
+        self.scrollView.contentSize = CGSize(width: self.frame.width, height: CGFloat(newHeight))
+        
     }
     
+    
+}
+extension DetailViewCollectionViewCell : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
     
 }
