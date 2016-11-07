@@ -22,6 +22,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        
         backgroundColor = UIColor.clear
         
         cropTitle.backgroundColor = UIColor.clear
@@ -58,7 +59,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,8 +96,18 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-        }else{
-            cell?.textLabel?.text = "try pull to pop view controller 😃"
+        } else {
+        
+            let frameLeft = CGRect(x: 0, y: 0, width: tableView.frame.width/2, height: tableView.frame.height)
+            var frameRight = frameLeft
+            frameRight.origin.x = frameLeft.width
+            
+            let leftCol  = CropDetailLabelView.loadFromNib()
+            leftCol?.setupValuesWith(crop: self.crop!)
+            let rightCol = CropDetailTextView(frame: frameRight, crop: self.crop!)
+           
+            cell?.viewsContainer?.addArrangedSubview(leftCol!)
+            cell?.viewsContainer?.addArrangedSubview(rightCol)
         }
        
         cell?.setNeedsLayout()
@@ -145,14 +156,5 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
-//        let point = touches.first?.location(in: tableView)
-//        
-//        if (!statusButton.frame.contains(point!)) { super.touchesBegan(touches, with: event) }
-
     }
 }

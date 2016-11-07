@@ -16,7 +16,7 @@ extension Crop {
         return NSFetchRequest<Crop>(entityName: "Crop");
     }
 
-    @NSManaged public var cropSize: Int16
+    @NSManaged public var cropSize: String?
     @NSManaged public var cropType: Int16
     @NSManaged public var diseases: String?
     @NSManaged public var family: String?

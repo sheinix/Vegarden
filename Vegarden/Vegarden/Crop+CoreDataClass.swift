@@ -51,7 +51,7 @@ public class Crop: NSManagedObject {
         crop.owned       =   false
         
         crop.cropType    =   0// dictionary["plantType"] as? String
-        crop.cropSize    =   Int16(Int(dictionary["plantSize"] as! Int))
+        crop.cropSize    =   dictionary["plantSize"] as! String
         crop.phLevels    =   Int16(Int(dictionary["phLevels"] as! Int))
         crop.spacing     =   Int16(Int(dictionary["spacing"] as! Int))
         crop.timeToHarvest = 30

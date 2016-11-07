@@ -196,9 +196,33 @@ extension Crop {
         
     }
     
-    
+    public func cropTypeStringValue() -> String {
+        
+        var stringValue : String
+        
+        switch self.typeCrop {
+            
+            case .Annual:
+        
+                stringValue = "Annunal"
+        
+            case .Perenneal:
+        
+                stringValue = "Perenneal"
+        
+            case .Tuba:
+        
+                stringValue = "Tuba"
+        
+            default:
+                stringValue = ""
+        }
+        
+        return stringValue
+        
+    }
 //    public func reCalculateTimeToHarvest() {
-//        
+//
 //        self.timeToHarvest = NSNumber(value:self.computedTimeToHarvest)
 //        
 //    }

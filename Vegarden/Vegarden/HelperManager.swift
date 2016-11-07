@@ -24,6 +24,7 @@ public class HelperManager {
         
         return flowLayout
     }
+    
 //    
 //    public func stringForState(state: plantingStates) -> String! {
 //        

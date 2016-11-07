@@ -53,7 +53,7 @@ struct FileNames {
     static let allCropsFileName = "AllCrops"
 }
 
-enum CropTypes: Int16 {
+public enum CropTypes: Int16 {
     case Annual, Perenneal, Tuba
 }
 
