@@ -54,7 +54,6 @@
 		BD3307B91DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */; };
 		BD3307BA1DA9EECA00F2EC6F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */; };
 		BD3307BB1DA9EECA00F2EC6F /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */; };
-		BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */; };
 		BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C0F31DA50FBD00265405 /* Constants.swift */; };
 		BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EA91D9118080063347D /* AppDelegate.swift */; };
 		BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD7B8EAB1D9118080063347D /* Vegarden.xcdatamodeld */; };
@@ -156,7 +155,6 @@
 		BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCropsCollectionViewController.swift; sourceTree = "<group>"; };
 		BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
-		BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
 		BD37C0F31DA50FBD00265405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7B8EA61D9118080063347D /* Vegarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7B8EA91D9118080063347D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -451,7 +449,6 @@
 				96F7230D1DB3549F000100B2 /* PopUpView */,
 				BD3307B51DA9EECA00F2EC6F /* PinterestLayout.swift */,
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
-				BD3307B71DA9EECA00F2EC6F /* UIImage+Decompression.swift */,
 				960E5AD81DCDDC2200ED39A8 /* NoteView.swift */,
 			);
 			name = Views;
@@ -676,7 +673,6 @@
 				BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */,
 				9654A89A1DB5F95800A0A9D9 /* CropState+CoreDataClass.swift in Sources */,
 				9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */,
-				BD3307BC1DA9EECA00F2EC6F /* UIImage+Decompression.swift in Sources */,
 				BDE0617A1D9FDC660003364D /* PaddockLocation+CoreDataClass.swift in Sources */,
 				BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */,
 				96F7230F1DB354EF000100B2 /* PopupCustomView.swift in Sources */,

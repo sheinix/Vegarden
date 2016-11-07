@@ -61,7 +61,10 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     let collectionCell: VCropDetailPageViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.CropDetailViewCellIdentify, for: indexPath) as! VCropDetailPageViewCell
     
+    
+        collectionCell.crop = self.cropList[indexPath.row]
         collectionCell.image = UIImage(named:self.cropList[indexPath.row].picture!)
+        collectionCell.cropTitle.text = self.cropList[indexPath.row].name
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset
@@ -101,12 +104,12 @@ class CropDetailCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
+
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
-    */
+
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
