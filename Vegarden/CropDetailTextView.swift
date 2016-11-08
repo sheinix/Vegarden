@@ -25,7 +25,7 @@ class CropDetailTextView: UIView {
         stackView.layer.borderColor = UIColor.red.cgColor
         stackView.layer.borderWidth = 2
         stackView.axis = .vertical
-        stackView.alignment = .fill
+        stackView.alignment = .leading
         
         
         
@@ -58,6 +58,10 @@ class CropDetailTextView: UIView {
         storageAndUse.text      = "Storage & Use"
         
         let cropSizeValue           = CropDetailText()
+        
+        cropSizeValue.layer.borderColor = UIColor.red.cgColor
+        cropSizeValue.layer.borderWidth = 2
+        
         let plantingDirectionsValue = CropDetailText()
         let plantingCompanionsValue = CropDetailText()
         let growingTipsValue        = CropDetailText()
@@ -67,6 +71,7 @@ class CropDetailTextView: UIView {
         let storageAndUseValue      = CropDetailText()
         
         cropSizeValue.text           = crop.cropSize
+        cropSizeValue.backgroundColor = UIColor.red
         plantingDirectionsValue.text = crop.plantingDirections
         plantingCompanionsValue.text = crop.plantingCompanions
         growingTipsValue.text        = crop.growingTips
@@ -75,21 +80,49 @@ class CropDetailTextView: UIView {
         harvestTipsValue.text        = crop.harvestTips
         storageAndUseValue.text      = crop.storageAndUse
 
-        stackView.addArrangedSubview(cropSizeLabel)
-        stackView.addArrangedSubview(cropSizeValue)
-        stackView.addArrangedSubview(plantingDirections)
-        stackView.addArrangedSubview(plantingDirectionsValue)
-        stackView.addArrangedSubview(plantingCompanions)
-        stackView.addArrangedSubview(plantingCompanionsValue)
-        stackView.addArrangedSubview(growingTips)
-        stackView.addArrangedSubview(growingTipsValue)
-        stackView.addArrangedSubview(potentialProblems)
-        stackView.addArrangedSubview(potentialProblemsValue)
-        stackView.addArrangedSubview(diseases)
-        stackView.addArrangedSubview(harvestTips)
-        stackView.addArrangedSubview(harvestTipsValue)
-        stackView.addArrangedSubview(storageAndUse)
-        stackView.addArrangedSubview(storageAndUseValue)
+        
+        
+        stackView.addArrangedSubview(createSquareView(title: cropSizeLabel, value: cropSizeValue))
+        stackView.addArrangedSubview(createSquareView(title: plantingDirections, value: plantingDirectionsValue))
+        stackView.addArrangedSubview(createSquareView(title: plantingCompanions, value: plantingCompanionsValue))
+        stackView.addArrangedSubview(createSquareView(title: growingTips, value: growingTipsValue))
+        stackView.addArrangedSubview(createSquareView(title: potentialProblems, value: potentialProblemsValue))
+        stackView.addArrangedSubview(createSquareView(title: diseases, value: diseasesValue))
+        stackView.addArrangedSubview(createSquareView(title: harvestTips, value: harvestTipsValue))
+        stackView.addArrangedSubview(createSquareView(title: storageAndUse, value: storageAndUseValue))
+        
+    }
+    
+    private func createSquareView(title: UILabel, value: UILabel) -> UIView {
+        
+        
+        
+        let squareView = UIView()
+        squareView.addSubview(title)
+        squareView.addSubview(value)
+        
+        title.sizeToFit()
+        value.sizeToFit()
+        value.numberOfLines = 0
+        
+        title.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
+        value.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.topMargin.equalTo(title.snp.bottomMargin)
+        }
+        
+       
+        
+       
+        
+        
+        return squareView
         
     }
 }
