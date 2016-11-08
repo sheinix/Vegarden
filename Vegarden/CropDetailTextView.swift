@@ -23,7 +23,7 @@ class CropDetailTextView: UIView {
         }
         
         stackView.axis = .vertical
-        stackView.alignment = .leading
+        stackView.alignment = .fill
         stackView.distribution = .fillProportionally
         setupLabelsWith(crop: crop)
         
@@ -99,15 +99,17 @@ class CropDetailTextView: UIView {
         //value.numberOfLines = 0
         
         title.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
             make.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalTo(50)
         }
         
         value.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.topMargin.equalTo(title.snp.bottomMargin)
+            make.top.equalTo(title.snp.bottom)
         }
         
         return squareView
