@@ -29,7 +29,8 @@ class VCropDetailPageTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         
         super.layoutSubviews()
-        let imageView :UIImageView = self.imageView!;
+        
+        let imageView : UIImageView = self.imageView!;
         imageView.frame = CGRect.zero
         
         if (imageView.image != nil) {
@@ -40,30 +41,43 @@ class VCropDetailPageTableViewCell: UITableViewCell {
             
         } else {
             
-            setupStackedViews()
-            
+            layoutStackedViews()
         }
     }
+    
+    private func layoutStackedViews() {
 
-    public func setupStackedViews() {
-        
         if (viewsContainer != nil) {
             return
         }
         
         viewsContainer = UIStackView(frame: CGRect(x:0, y:0, width:contentView.frame.width, height: contentView.frame.height))
-        viewsContainer?.layer.borderWidth = 1
-        viewsContainer?.layer.borderColor = UIColor.black.cgColor
         
-       // viewsContainer?.alignment = UIStackViewAlignment.top
         viewsContainer?.axis = .horizontal
-        viewsContainer?.distribution = UIStackViewDistribution.equalCentering
+        viewsContainer?.distribution = .equalSpacing
         
         addSubview(viewsContainer!)
         
         viewsContainer?.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+    }
+    
+    public func setupStackedViewsWith(crop: Crop, and frame: CGRect) {
+        
+        layoutStackedViews()
+        
+        let frameLeft = CGRect(x: 0, y: 0, width: frame.width/2, height: frame.height)
+        var frameRight = frameLeft
+        frameRight.origin.x = frameLeft.width
+        
+        let leftCol  = CropDetailLabelView.loadFromNib()
+        leftCol?.setupValuesWith(crop: crop)
+        let rightCol = CropDetailTextView(frame: frameRight, crop: crop)
+        
+        
+        viewsContainer?.addArrangedSubview(leftCol!)
+        viewsContainer?.addArrangedSubview(rightCol)
 
     }
     

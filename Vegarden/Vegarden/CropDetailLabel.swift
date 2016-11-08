@@ -15,10 +15,10 @@ public class CropDetailLabel: UILabel {
         super.init(frame: frame)
         
         self.textColor = UIColor.lightGray
-        self.textAlignment = .right
+        //self.textAlignment = .right
         self.font = UIFont.systemFont(ofSize: 20)
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.darkGray.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = UIColor.darkGray.cgColor
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -40,9 +40,9 @@ public class CropDetailText: UILabel {
         
         super.init(frame: frame)
         
-        self.textColor = UIColor.lightGray
-        self.textAlignment = .right
-        self.font = UIFont.systemFont(ofSize: 20)
+//        self.textColor = UIColor.lightGray
+//        self.textAlignment = .right
+//        self.font = UIFont.systemFont(ofSize: 20)
     }
     
     required public init?(coder aDecoder: NSCoder) {

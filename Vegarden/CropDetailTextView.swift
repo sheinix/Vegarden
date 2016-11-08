@@ -22,13 +22,9 @@ class CropDetailTextView: UIView {
             make.edges.equalToSuperview()
         }
         
-        stackView.layer.borderColor = UIColor.red.cgColor
-        stackView.layer.borderWidth = 2
         stackView.axis = .vertical
         stackView.alignment = .leading
-        
-        
-        
+        stackView.distribution = .fillProportionally
         setupLabelsWith(crop: crop)
         
     }
@@ -58,10 +54,6 @@ class CropDetailTextView: UIView {
         storageAndUse.text      = "Storage & Use"
         
         let cropSizeValue           = CropDetailText()
-        
-        cropSizeValue.layer.borderColor = UIColor.red.cgColor
-        cropSizeValue.layer.borderWidth = 2
-        
         let plantingDirectionsValue = CropDetailText()
         let plantingCompanionsValue = CropDetailText()
         let growingTipsValue        = CropDetailText()
@@ -72,6 +64,7 @@ class CropDetailTextView: UIView {
         
         cropSizeValue.text           = crop.cropSize
         cropSizeValue.backgroundColor = UIColor.red
+        
         plantingDirectionsValue.text = crop.plantingDirections
         plantingCompanionsValue.text = crop.plantingCompanions
         growingTipsValue.text        = crop.growingTips
@@ -95,15 +88,15 @@ class CropDetailTextView: UIView {
     
     private func createSquareView(title: UILabel, value: UILabel) -> UIView {
         
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.3)
         
-        
-        let squareView = UIView()
+        let squareView = UIView(frame: frame)
         squareView.addSubview(title)
         squareView.addSubview(value)
         
-        title.sizeToFit()
-        value.sizeToFit()
-        value.numberOfLines = 0
+       // title.sizeToFit()
+        //value.sizeToFit()
+        //value.numberOfLines = 0
         
         title.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
@@ -116,11 +109,6 @@ class CropDetailTextView: UIView {
             make.bottom.equalToSuperview()
             make.topMargin.equalTo(title.snp.bottomMargin)
         }
-        
-       
-        
-       
-        
         
         return squareView
         

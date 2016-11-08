@@ -97,20 +97,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             
             
         } else {
-        
-            cell?.setupStackedViews()
             
-            let frameLeft = CGRect(x: 0, y: 0, width: tableView.frame.width/2, height: tableView.frame.height)
-            var frameRight = frameLeft
-            frameRight.origin.x = frameLeft.width
-            
-            let leftCol  = CropDetailLabelView.loadFromNib()
-            leftCol?.setupValuesWith(crop: self.crop!)
-            let rightCol = CropDetailTextView(frame: frameRight, crop: self.crop!)
-           
-            cell?.viewsContainer?.backgroundColor = UIColor.green
-            cell?.viewsContainer?.addArrangedSubview(leftCol!)
-            cell?.viewsContainer?.addArrangedSubview(rightCol)
+            cell?.setupStackedViewsWith(crop: self.crop!, and: tableView.frame)
         }
        
         cell?.setNeedsLayout()
