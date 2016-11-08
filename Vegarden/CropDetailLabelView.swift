@@ -11,7 +11,7 @@ import UIKit
 class CropDetailLabelView: UIView {
     
     @IBOutlet weak var familyValue: CropDetailLabel!
-    @IBOutlet weak var typeValue: UILabel!
+    @IBOutlet weak var typeValue: CropDetailLabel!
     @IBOutlet weak var phLevelValue: CropDetailLabel!
     @IBOutlet weak var spacingValue: CropDetailLabel!
     @IBOutlet weak var isInGarden: CropDetailLabel!
@@ -50,6 +50,9 @@ class CropDetailLabelView: UIView {
         let view = Bundle.main.loadNibNamed("CropDetailLabelView", owner: self, options: nil)?[0] as! UIView
         
         self.addSubview(view)
+        view.layer.borderColor = UIColor.red.cgColor
+        view.layer.borderWidth = 2
+        view.backgroundColor = UIColor.green
     }
     
     public func setupValuesWith(crop: Crop) {

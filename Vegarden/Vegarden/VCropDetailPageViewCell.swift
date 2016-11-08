@@ -98,6 +98,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             
         } else {
         
+            cell?.setupStackedViews()
+            
             let frameLeft = CGRect(x: 0, y: 0, width: tableView.frame.width/2, height: tableView.frame.height)
             var frameRight = frameLeft
             frameRight.origin.x = frameLeft.width
@@ -106,6 +108,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             leftCol?.setupValuesWith(crop: self.crop!)
             let rightCol = CropDetailTextView(frame: frameRight, crop: self.crop!)
            
+            cell?.viewsContainer?.backgroundColor = UIColor.green
             cell?.viewsContainer?.addArrangedSubview(leftCol!)
             cell?.viewsContainer?.addArrangedSubview(rightCol)
         }
@@ -119,12 +122,16 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         
         var cellHeight : CGFloat = navigationHeight
+        let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
         
         if indexPath.row == 0{
-        
-            let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
-            cellHeight = imageHeight
+
+            //cellHeight = imageHeight
+            
+            return imageHeight
         }
+        
+        cellHeight = tableView.frame.height - imageHeight
         
         return cellHeight
     }

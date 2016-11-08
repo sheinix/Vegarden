@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // This tableview cell is the one that is inside the cropdetailview cell!
 
@@ -39,22 +40,38 @@ class VCropDetailPageTableViewCell: UITableViewCell {
             
         } else {
             
-            viewsContainer = UIStackView(frame: CGRect(x:0, y:0, width:screenWidth, height: screenHeight))
-            viewsContainer?.alignment = UIStackViewAlignment.bottom
-            viewsContainer?.axis = .horizontal
-            viewsContainer?.distribution = UIStackViewDistribution.fillProportionally
+            setupStackedViews()
             
         }
     }
 
+    public func setupStackedViews() {
+        
+        if (viewsContainer != nil) {
+            return
+        }
+        
+        viewsContainer = UIStackView(frame: CGRect(x:0, y:0, width:contentView.frame.width, height: contentView.frame.height))
+        viewsContainer?.layer.borderWidth = 1
+        viewsContainer?.layer.borderColor = UIColor.black.cgColor
+        
+       // viewsContainer?.alignment = UIStackViewAlignment.top
+        viewsContainer?.axis = .horizontal
+        viewsContainer?.distribution = UIStackViewDistribution.equalCentering
+        
+        addSubview(viewsContainer!)
+        
+        viewsContainer?.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-//        viewsContainer?.alignment = UIStackViewAlignment.bottom
-//        viewsContainer?.axis = .horizontal
-//        viewsContainer?.distribution = UIStackViewDistribution.fillProportionally
+   
         
     }
 

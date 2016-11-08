@@ -22,6 +22,12 @@ class CropDetailTextView: UIView {
             make.edges.equalToSuperview()
         }
         
+        stackView.layer.borderColor = UIColor.red.cgColor
+        stackView.layer.borderWidth = 2
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        
+        
         
         setupLabelsWith(crop: crop)
         
