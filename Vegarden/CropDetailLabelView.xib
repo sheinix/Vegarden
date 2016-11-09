@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -68,7 +68,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baq-4m-kGv" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="103" y="57" width="289" height="21"/>
+                    <rect key="frame" x="103" y="57" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -117,26 +117,26 @@
                 <constraint firstItem="4sH-b7-AlU" firstAttribute="leading" secondItem="19j-br-h9D" secondAttribute="trailing" constant="36" id="BU8-32-vZQ"/>
                 <constraint firstAttribute="trailing" secondItem="Gf9-gd-abd" secondAttribute="trailing" constant="94" id="Ccf-4H-kru"/>
                 <constraint firstAttribute="trailing" secondItem="yol-of-hmf" secondAttribute="trailing" constant="24" id="EIB-FO-CtK"/>
-                <constraint firstAttribute="bottom" secondItem="9t3-kg-TzE" secondAttribute="bottom" constant="29" id="FtY-yT-I2T"/>
                 <constraint firstItem="BGz-9i-Z3I" firstAttribute="top" secondItem="Gf9-gd-abd" secondAttribute="bottom" constant="20" id="H09-aX-DrA"/>
                 <constraint firstItem="9t3-kg-TzE" firstAttribute="top" secondItem="Uxi-bU-ptL" secondAttribute="bottom" constant="20" id="KON-Iw-ln0"/>
-                <constraint firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" constant="24" id="LgG-ig-B2J"/>
                 <constraint firstItem="yol-of-hmf" firstAttribute="top" secondItem="4sH-b7-AlU" secondAttribute="bottom" constant="20" id="TIE-by-VJu"/>
                 <constraint firstItem="BGz-9i-Z3I" firstAttribute="leading" secondItem="9t3-kg-TzE" secondAttribute="trailing" constant="8" id="TwY-r2-uPb"/>
                 <constraint firstAttribute="trailing" secondItem="4sH-b7-AlU" secondAttribute="trailing" constant="20" id="WN9-4f-I14"/>
                 <constraint firstItem="19j-br-h9D" firstAttribute="leading" secondItem="pMY-KK-8aj" secondAttribute="leading" id="ZdV-vJ-zsJ"/>
+                <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="top" secondItem="wn8-HH-o8G" secondAttribute="bottom" constant="9.5" id="aBb-FD-pG1"/>
                 <constraint firstItem="4sH-b7-AlU" firstAttribute="top" secondItem="baq-4m-kGv" secondAttribute="bottom" constant="20" id="eWV-rq-2zh"/>
-                <constraint firstAttribute="bottom" secondItem="BGz-9i-Z3I" secondAttribute="bottom" constant="29" id="ebq-Fo-uC4"/>
                 <constraint firstItem="Vql-aC-jDm" firstAttribute="leading" secondItem="Uxi-bU-ptL" secondAttribute="leading" id="f82-xt-ogS"/>
                 <constraint firstItem="wn8-HH-o8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="fE1-Qu-3bN"/>
                 <constraint firstItem="19j-br-h9D" firstAttribute="top" secondItem="Qs4-Xp-Iiv" secondAttribute="bottom" constant="20" id="fx4-F6-TNT"/>
                 <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="leading" secondItem="19j-br-h9D" secondAttribute="leading" id="i7A-2V-KcP"/>
                 <constraint firstAttribute="trailing" secondItem="jzH-hN-8nq" secondAttribute="trailing" constant="24" id="ih5-vi-tF7"/>
+                <constraint firstItem="baq-4m-kGv" firstAttribute="top" secondItem="wn8-HH-o8G" secondAttribute="bottom" constant="9.5" id="jFV-V2-pi6"/>
                 <constraint firstItem="jzH-hN-8nq" firstAttribute="top" secondItem="yol-of-hmf" secondAttribute="bottom" constant="20" id="k5b-tC-2uc"/>
                 <constraint firstAttribute="trailing" secondItem="wn8-HH-o8G" secondAttribute="trailing" constant="196" id="nnN-f5-2QB"/>
                 <constraint firstItem="jzH-hN-8nq" firstAttribute="leading" secondItem="Vql-aC-jDm" secondAttribute="trailing" constant="16" id="nsF-q2-Ahr"/>
                 <constraint firstItem="Uxi-bU-ptL" firstAttribute="leading" secondItem="9t3-kg-TzE" secondAttribute="leading" id="qgL-Ce-EY9"/>
                 <constraint firstItem="baq-4m-kGv" firstAttribute="leading" secondItem="Qs4-Xp-Iiv" secondAttribute="trailing" constant="25" id="rnG-05-XwU"/>
+                <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="sWd-Wi-O87"/>
                 <constraint firstItem="pMY-KK-8aj" firstAttribute="top" secondItem="19j-br-h9D" secondAttribute="bottom" constant="20" id="uZN-IV-6bH"/>
                 <constraint firstItem="yol-of-hmf" firstAttribute="leading" secondItem="pMY-KK-8aj" secondAttribute="trailing" constant="11" id="xQ2-Bx-oiJ"/>
                 <constraint firstItem="9t3-kg-TzE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xYZ-vs-0XO"/>
