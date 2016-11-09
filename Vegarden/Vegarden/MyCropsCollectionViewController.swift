@@ -105,6 +105,8 @@ extension MyCropsCollectionViewController : CHTCollectionViewDelegateWaterfallLa
                 
         let image = UIImage(named:self.myCrops[indexPath.row].picture!)
         
+     //   ((indexPath.row % 2) == 0 ? image!.size.height : image!.size.height * 1.3)
+        
         return CGSize(width: (image!.size.width), height: (image!.size.height))
     }
 
