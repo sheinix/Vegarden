@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Crop" representedClassName=".Crop" isAbstract="YES" syncable="YES">
-        <attribute name="cropSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cropSize" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cropType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="diseases" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="family" optional="YES" attributeType="String" syncable="YES"/>

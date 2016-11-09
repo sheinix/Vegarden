@@ -22,6 +22,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        
         backgroundColor = UIColor.clear
         
         cropTitle.backgroundColor = UIColor.clear
@@ -58,7 +59,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,8 +96,9 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-        }else{
-            cell?.textLabel?.text = "try pull to pop view controller 😃"
+        } else {
+            
+            cell?.setupStackedViewsWith(crop: self.crop!, and: tableView.frame)
         }
        
         cell?.setNeedsLayout()
@@ -108,12 +110,16 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         
         var cellHeight : CGFloat = navigationHeight
+        let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
         
         if indexPath.row == 0{
-        
-            let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
-            cellHeight = imageHeight
+
+            //cellHeight = imageHeight
+            
+            return imageHeight
         }
+        
+        cellHeight = tableView.frame.height - imageHeight
         
         return cellHeight
     }
@@ -145,14 +151,5 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
-//        let point = touches.first?.location(in: tableView)
-//        
-//        if (!statusButton.frame.contains(point!)) { super.touchesBegan(touches, with: event) }
-
     }
 }

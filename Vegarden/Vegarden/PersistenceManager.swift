@@ -267,7 +267,7 @@ class PersistenceManager {
     
     public func removeCropFromGarden(crop: Crop) {
         
-        let ownedCrop = NSPredicate(format: "name == %@ AND owned == true", argumentArray: [crop.name])
+        let ownedCrop = NSPredicate(format: "name == %@ AND owned == true", argumentArray: [crop.name!])
         
         let crop = Crop.mr_findFirst(with: ownedCrop)
         

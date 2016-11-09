@@ -18,12 +18,13 @@ public class HelperManager {
             CGSize(width:screenWidth, height:screenHeight+20) : CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight)
         
         flowLayout.itemSize = itemSize
-        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .horizontal
         
         return flowLayout
     }
+    
 //    
 //    public func stringForState(state: plantingStates) -> String! {
 //        

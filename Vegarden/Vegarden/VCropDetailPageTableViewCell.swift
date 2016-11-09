@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import SnapKit
 
 // This tableview cell is the one that is inside the cropdetailview cell!
 
 class VCropDetailPageTableViewCell: UITableViewCell {
 
+    var viewsContainer : UIStackView?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.textLabel?.font = UIFont.systemFont(ofSize: 13)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,20 +29,64 @@ class VCropDetailPageTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         
         super.layoutSubviews()
-        let imageView :UIImageView = self.imageView!;
+        
+        let imageView : UIImageView = self.imageView!;
         imageView.frame = CGRect.zero
         
         if (imageView.image != nil) {
+            
             let imageHeight = imageView.image!.size.height*screenWidth/imageView.image!.size.width
             imageView.frame = CGRect(x:0, y:0, width:screenWidth, height:imageHeight)
             imageView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+            
+        } else {
+            
+            layoutStackedViews()
         }
     }
+    
+    private func layoutStackedViews() {
 
+        if (viewsContainer != nil) {
+            return
+        }
+        
+        viewsContainer = UIStackView(frame: CGRect(x:0, y:0, width:contentView.frame.width, height: contentView.frame.height))
+        
+        viewsContainer?.axis = .horizontal
+        viewsContainer?.distribution = .equalSpacing
+        
+        addSubview(viewsContainer!)
+        
+        viewsContainer?.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    public func setupStackedViewsWith(crop: Crop, and frame: CGRect) {
+        
+        layoutStackedViews()
+        
+        let frameLeft = CGRect(x: 0, y: 0, width: frame.width/2, height: frame.height)
+        var frameRight = frameLeft
+        frameRight.origin.x = frameLeft.width
+        
+        let leftCol  = CropDetailLabelView.loadFromNib()
+        leftCol?.setupValuesWith(crop: crop)
+        let rightCol = CropDetailTextView(frame: frameRight, crop: crop)
+        
+        
+        viewsContainer?.addArrangedSubview(leftCol!)
+        viewsContainer?.addArrangedSubview(rightCol)
+
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+   
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
