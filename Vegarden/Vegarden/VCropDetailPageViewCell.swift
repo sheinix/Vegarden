@@ -10,6 +10,10 @@ import UIKit
 
 class VCropDetailPageViewCell: UICollectionViewCell {
     
+    var cropTitle = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
+    var statusButton = UIButton(type: .custom)
+    var crop : Crop?
+    
     var image : UIImage?
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
@@ -20,10 +24,23 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundColor = UIColor.clear
         
+        cropTitle.backgroundColor = UIColor.clear
+        cropTitle.textColor = UIColor.white
+        cropTitle.font = UIFont.systemFont(ofSize: 80)
+        
+        statusButton.frame = CGRect(x:0,y:0, width:100, height:40)
+        statusButton.backgroundColor = UIColor.clear
+        statusButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        statusButton.titleLabel?.textColor = UIColor.white
+        statusButton.layer.cornerRadius = 10
+        statusButton.layer.borderColor = UIColor.white.cgColor
+        statusButton.layer.borderWidth = 2
+        
         contentView.addSubview(tableView)
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
         tableView.delegate = self
         tableView.dataSource = self
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,7 +52,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.reloadData()
     }
     
-    
+
 }
 
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
@@ -55,6 +72,28 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
 //            let image = self.image
             cell?.imageView?.image = self.image
             cell?.imageView?.layer.cornerRadius = 10
+            cell?.imageView?.isUserInteractionEnabled = true
+            cell?.imageView?.addSubview(cropTitle)
+            cell?.imageView?.addSubview(statusButton)
+            
+            let buttonTitle = ((crop?.owned)!  ? "Plant" : "Add Crop")
+            statusButton.setTitle(buttonTitle, for: UIControlState.normal)
+            statusButton.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
+            
+            cropTitle.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(20)
+                make.bottom.equalToSuperview()
+                make.height.equalTo(200)
+                make.width.equalTo(400)
+            }
+            
+            statusButton.snp.makeConstraints { (make) in
+                make.right.equalToSuperview().offset(-20)
+                make.bottom.equalTo(cropTitle.snp.bottom).offset(-50)
+                make.height.equalTo(100)
+                make.width.equalTo(200)
+            }
+            
             
         }else{
             cell?.textLabel?.text = "try pull to pop view controller 😃"
@@ -79,8 +118,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         return cellHeight
     }
     
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
         tappedAction?()
     }
     
@@ -91,4 +130,29 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @objc fileprivate func actionButtonPressed(sender: UIButton) {
+        
+        if (sender.titleLabel?.text == "Plant") {
+            
+            print("GO TO PLANTING FLOW!")
+        } else {
+            
+            if let newCrop = self.crop {
+                
+                GardenManager.shared.addNewCropToGarden(crop: newCrop)
+                sender.setTitle("Plant", for: .normal)
+
+            }
+        }
+        
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+       
+//        let point = touches.first?.location(in: tableView)
+//        
+//        if (!statusButton.frame.contains(point!)) { super.touchesBegan(touches, with: event) }
+
+    }
 }

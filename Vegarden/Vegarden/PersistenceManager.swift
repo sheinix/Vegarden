@@ -240,14 +240,15 @@ class PersistenceManager {
     
     public func addCropToGarden(crop: Crop) {
        
-        let ownedCrop = NSPredicate(format: "name == %@ AND owned == false", argumentArray: [crop.name])
+        let ownedCrop = NSPredicate(format: "name == %@ AND owned == false", argumentArray: [crop.name!])
         
-        let crop = Crop.mr_findFirst(with: ownedCrop)
-        
-        crop?.owned = true
-        
-        saveContext()
-       
+        if let crop = Crop.mr_findFirst(with: ownedCrop) {
+            
+            if (crop.row?.count == 0)  {
+                crop.owned = true
+                saveContext()
+            }
+        }
     }
     
     public func removeCropsFromGarden(crops: [Crop]) {
