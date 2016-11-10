@@ -83,7 +83,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
         let layout = HelperManager.getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
         let pageDetailViewController =
             CropDetailCollectionViewController(collectionViewLayout: layout, currentIndexPath:indexPath as NSIndexPath)
-        
+    
         pageDetailViewController.cropList = myCrops
         collectionView.setToIndexPath(indexPath: indexPath as NSIndexPath)
         navigationController!.pushViewController(pageDetailViewController, animated: true)
@@ -124,7 +124,7 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
         
         let imageHeight = (image?.size.height)!*gridWidth/(image?.size.width)!
         
-        if imageHeight > 400 {//whatever you like, it's the max value for height of image
+        if imageHeight > 200 {//whatever you like, it's the max value for height of image
             position = .top
         }
         

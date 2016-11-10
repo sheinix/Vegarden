@@ -40,10 +40,10 @@ class CropDetailCollectionViewController: UICollectionViewController {
         
         super.init(collectionViewLayout:layout)
         
-        let collectionView :UICollectionView = self.collectionView!;
+        let collectionView : UICollectionView = self.collectionView!;
         collectionView.isPagingEnabled = true
         collectionView.register(VCropDetailPageViewCell.self, forCellWithReuseIdentifier: CellIdentifiers.CropDetailViewCellIdentify)
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         collectionView.setToIndexPath(indexPath: indexPath)
         collectionView.performBatchUpdates({collectionView.reloadData()}, completion: { finished in
          
@@ -56,22 +56,45 @@ class CropDetailCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+//        let offset = self.collectionView?.contentOffset
+//        let width  = self.collectionView?.bounds.size.width
 //        
-//        super.viewWillTransition(to: size, with: coordinator)
+//        let index     = round(offset!.x / width!);
+//        let newOffset = CGPoint(x:index * size.width, y:offset!.y);
 //        
-//        updateCollectionViewLayout(with: size)
-//    }
-//    
-//    private func updateCollectionViewLayout(with: CGSize) {
+//        self.collectionView?.setContentOffset(newOffset, animated: false)
+        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.invalidateLayout()
+        }
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) in
+            
+           
+
+//
+//            self.collectionView?.reloadData()
+//
+            
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) in
+            
+
+             //self.collectionView?.setContentOffset(newOffset, animated: false)
+        })
+    
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+//
+//    override func viewWillLayoutSubviews() {
 //        
-//        if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-//            
-//            layout.itemSize = screenSize //(size.width < size.height) ? screenSize : screenSize)
-//           
+//        super.viewWillLayoutSubviews()
+//        
+//        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
 //            layout.invalidateLayout()
 //        }
 //    }
+    
     
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
@@ -103,6 +126,29 @@ class CropDetailCollectionViewController: UICollectionViewController {
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+}
+
+extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var itemSize: CGSize?
+        let navBarHidden = self.navigationController?.isNavigationBarHidden
+        let size = self.collectionView?.frame.size
+        
+        if ((size?.width)! > (size?.height)!) { //landscape
+            
+            itemSize = CGSize(width: (size?.width)!, height: (navBarHidden! ? screenHeight+20 : screenHeight-navigationHeaderAndStatusbarHeight))
+        
+        } else {
+        
+            itemSize = (navBarHidden! ? CGSize(width:screenWidth, height:screenHeight+20) :
+                                       CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight))
+        }
+
+        return itemSize!
     }
     
 }
