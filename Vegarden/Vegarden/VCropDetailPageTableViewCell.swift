@@ -14,6 +14,7 @@ import SnapKit
 class VCropDetailPageTableViewCell: UITableViewCell {
 
     var viewsContainer : UIStackView?
+    var removeButton   : UIButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
@@ -42,6 +43,7 @@ class VCropDetailPageTableViewCell: UITableViewCell {
         } else {
             
             layoutStackedViews()
+
         }
     }
     

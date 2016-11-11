@@ -11,12 +11,17 @@ import Foundation
 
 protocol PersistanceCallBackProtocol: class {
     
+    func didRemoveCropFromGarden(crop: Crop)
+    
+    func didAddCropToGarden(crop: Crop)
+    
     func didHarvest(crop:Crop)
     
     func didFinishHarvestFor(crop: Crop)
     
     func didGrowingAction(action: GrowingActions, on row: Row)
     
+
     func didPlant(crop: Crop, in row: Row)
     
     //TODO Finish the protocol methods!

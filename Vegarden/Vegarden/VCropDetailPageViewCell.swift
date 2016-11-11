@@ -12,8 +12,8 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     
     var cropTitle = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
     var statusButton = UIButton(type: .custom)
+    var removeButton = UIButton(type: .custom)
     var crop : Crop?
-    
     var image : UIImage?
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
@@ -39,8 +39,14 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         contentView.addSubview(tableView)
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
+        tableView.tableFooterView = createFooterViewWith()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cropRemoved),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
+                                               object: nil)
 
     }
     
@@ -53,14 +59,27 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.reloadData()
     }
     
-
+    @objc func cropRemoved(notification: Notification) {
+        
+        if ((notification.userInfo?["crop"] as! Crop) === self.crop!) {
+            
+            print ("Its the same crop...")
+            
+        } else {
+            print ("Its NOT the same crop...")
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
 
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
+        return 2    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -96,15 +115,27 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-        } else {
+        } else if indexPath.row == 1 {
             
             cell?.setupStackedViewsWith(crop: self.crop!, and: tableView.frame)
+        
         }
        
         cell?.setNeedsLayout()
+        
+        //Add the selector here, when i have the crop setted
+        guard (removeButton.target(forAction: #selector(removeCropPressed), withSender: self) != nil) else {
+            removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
+            
+            return cell!
+        }
+        
        
         return cell!
     }
+    
+    
+    
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -129,6 +160,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         tappedAction?()
     }
     
+    
     func scrollViewWillBeginDecelerating(_ scrollView : UIScrollView){
         
         if scrollView.contentOffset.y < navigationHeight{
@@ -146,10 +178,46 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             if let newCrop = self.crop {
                 
                 GardenManager.shared.addNewCropToGarden(crop: newCrop)
+                
                 sender.setTitle("Plant", for: .normal)
 
             }
         }
         
     }
+    
+    fileprivate func createFooterViewWith() -> UIView {
+        
+        let height = self.tableView.frame.height * 0.1
+        let footerView = UIView(frame:CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: height))
+        
+        removeButton.frame = footerView.bounds
+        removeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        removeButton.layer.cornerRadius = 14
+        removeButton.backgroundColor = UIColor.red
+        removeButton.titleLabel?.textColor = UIColor.white
+        removeButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+        removeButton.setTitle("Remove Crop", for: .normal)
+        //removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
+        
+        footerView.addSubview(removeButton)
+        
+        removeButton.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview().inset(10)
+        }
+        
+        return footerView
+    }
+    
+    @objc fileprivate func removeCropPressed(sender: UIButton) {
+    
+        if self.crop != nil {
+            
+            GardenManager.shared.removeCropFromGarden(crop: self.crop!)
+        }
+        
+        
+    
+    }
+    
 }

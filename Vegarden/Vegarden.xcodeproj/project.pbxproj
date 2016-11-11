@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
+		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
 		960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5AD81DCDDC2200ED39A8 /* NoteView.swift */; };
@@ -110,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
+		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 			children = (
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				96F723101DB360BA000100B2 /* GardenManager.swift */,
+				266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */,
 				96F723151DB366FA000100B2 /* HelperManager.swift */,
 			);
 			name = Managers;
@@ -775,6 +778,7 @@
 				96561A311DC1BE1500577F4B /* ActionMenuAlertView.swift in Sources */,
 				96BB777A1DBF45CA00DCADA9 /* LifeCycleTableViewExtension.swift in Sources */,
 				BDE061881D9FDC660003364D /* Weed+CoreDataClass.swift in Sources */,
+				266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */,
 				9654A89E1DB5F9E400A0A9D9 /* Crop+CoreDataClass.swift in Sources */,
 				BDE0616E1D9FDC660003364D /* Grown+CoreDataClass.swift in Sources */,
 				BDE061801D9FDC660003364D /* Seed+CoreDataClass.swift in Sources */,

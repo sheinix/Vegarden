@@ -29,8 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
+        //Setup the persistance stack with MagicalRecord:
         PersistenceManager.shared.setupPersistanceStack()
         
+        //Setup the GardenManager as the call back delegate for the PersistanceManagaer:
+        PersistenceManager.shared.callBackDelegate? = GardenManager.shared
         
         return true
     }

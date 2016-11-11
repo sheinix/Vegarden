@@ -17,10 +17,10 @@ class GardenManager: GardenManagementProtocol {
     
     class var shared: GardenManager {
         
+        
         return sharedGadenManager
 
     }
-
     
 // MARK: - Garden Management Methods
     
@@ -99,11 +99,13 @@ class GardenManager: GardenManagementProtocol {
     public func removeCropFromGarden(crop:Crop) {
         
         PersistenceManager.shared.removeCropFromGarden(crop: crop)
+        
     }
     
     public func removeCropsFromGarden(crops:[Crop]) {
         
         PersistenceManager.shared.removeCropsFromGarden(crops: crops)
+    
     }
     
 // MARK: - Getter Methods
@@ -154,5 +156,4 @@ class GardenManager: GardenManagementProtocol {
         PersistenceManager.shared.makeGrowingAction(action: action)
   
     }
-    
 }

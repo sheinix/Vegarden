@@ -128,6 +128,10 @@ class CropDetailCollectionViewController: UICollectionViewController {
         return false
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        NotificationCenter.default.removeObserver(cell)
+    }
 }
 
 extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayout {

@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+
+struct NotificationIds {
+    static let NotiKeyCropRemoved = "CropRemoved"
+}
+
 struct UINumbericConstants {
     static let widthSideMenu : CGFloat = 0.2
     static let minimumWidthSideMenu : CGFloat = 120

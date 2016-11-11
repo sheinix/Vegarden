@@ -19,7 +19,7 @@ class PersistenceManager {
         return sharedPersistanceManager
     }
     
-    weak var callBackDelegate:PersistanceCallBackProtocol?
+    weak var callBackDelegate: PersistanceCallBackProtocol? = GardenManager.shared
     
     
 // MARK: - CoreData/MagicalRecord Methods
@@ -247,6 +247,8 @@ class PersistenceManager {
             if (crop.row?.count == 0)  {
                 crop.owned = true
                 saveContext()
+                
+                callBackDelegate?.didAddCropToGarden(crop: crop)
             }
         }
     }
@@ -274,6 +276,8 @@ class PersistenceManager {
         crop?.owned = false
         
         saveContext()
+        
+        callBackDelegate?.didRemoveCropFromGarden(crop: crop!)
         
     }
 
