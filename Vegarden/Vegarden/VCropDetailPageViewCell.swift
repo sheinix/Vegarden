@@ -39,7 +39,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         contentView.addSubview(tableView)
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
-        tableView.tableFooterView = createFooterViewWith()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -61,9 +60,22 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     
     @objc func cropRemoved(notification: Notification) {
         
-        if ((notification.userInfo?["crop"] as! Crop) === self.crop!) {
+        let infoCrop = (notification.userInfo?["crop"] as! Crop)
+        if (infoCrop.description == self.crop!.description) {
             
-            print ("Its the same crop...")
+            UIView.animate(withDuration: 2, animations: {
+                
+                let oldFrame = self.statusButton.frame
+                let newFrame = CGRect(origin: self.statusButton.frame.origin,
+                                     size: CGSize(width: 3, height: self.statusButton.frame.size.height))
+                
+                self.statusButton.frame = newFrame
+                self.statusButton.setTitle("Add Crop", for: .normal)
+                self.statusButton.frame = oldFrame
+            })
+            
+            
+           
             
         } else {
             print ("Its NOT the same crop...")
@@ -120,15 +132,21 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             cell?.setupStackedViewsWith(crop: self.crop!, and: tableView.frame)
         
         }
-       
+        
         cell?.setNeedsLayout()
         
         //Add the selector here, when i have the crop setted
-        guard (removeButton.target(forAction: #selector(removeCropPressed), withSender: self) != nil) else {
-            removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
-            
-            return cell!
+        
+        if (self.crop!.owned && tableView.tableFooterView == nil) {
+
+            tableView.tableFooterView = createFooterView()
         }
+        
+//        guard (removeButton.target(forAction: #selector(removeCropPressed), withSender: self) != nil) else {
+//            removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
+//            
+//            return cell!
+//        }
         
        
         return cell!
@@ -186,7 +204,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    fileprivate func createFooterViewWith() -> UIView {
+    fileprivate func createFooterView() -> UIView {
         
         let height = self.tableView.frame.height * 0.1
         let footerView = UIView(frame:CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: height))
@@ -198,7 +216,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         removeButton.titleLabel?.textColor = UIColor.white
         removeButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
         removeButton.setTitle("Remove Crop", for: .normal)
-        //removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
+        removeButton.addTarget(self, action: #selector(removeCropPressed), for: .touchUpInside)
         
         footerView.addSubview(removeButton)
         
