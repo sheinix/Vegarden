@@ -21,7 +21,8 @@ target 'Vegarden' do
 	pod "MBCircularProgressBar"
 	pod 'CircleMenu', '~> 2.0.1'
 	pod 'SCLAlertView'
-
+	pod 'M13Checkbox'
+	
 	#source 'https://github.com/CocoaPods/Specs.git'
 	#platform :ios, '8.0'
 	#use_frameworks!

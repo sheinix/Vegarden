@@ -38,6 +38,26 @@ extension UIView{
             self.alpha = 0.0
         }, completion: completion)
     }
+    
+    func addBlurEffect(style: UIBlurEffectStyle) {
+        
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+    
+    func removeVisualEffects() {
+        
+        self.subviews.forEach { (view) in
+            if (view is UIVisualEffectView) {
+                
+                view.removeFromSuperview()
+            }
+        }
+    }
 }
 
 var kIndexPathPointer = "kIndexPathPointer"

@@ -77,7 +77,6 @@ class MyCropsCollectionViewController: UICollectionViewController {
                 
                     self.myCrops?.remove(at: row)
                     collection.deleteItems(at: [idx])
-                
             }
             
             
@@ -152,8 +151,6 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
         
         var position : UICollectionViewScrollPosition =
             UICollectionViewScrollPosition.centeredHorizontally.intersection(.centeredVertically)
-        
-        //self.myCrops?.count)! > 0 ||
         
         //if something was deleted not scrolling back to position because it isnt there..
         guard ((self.myCrops?.count)! > pageIndex) else {

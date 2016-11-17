@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "59C5734CBDBC16DD52556632EF13C40B"
+               BlueprintIdentifier = "A6E9CEC9E5ACFE69D21456CCB70BEEA0"
                BuildableName = "KCFloatingActionButton.framework"
                BlueprintName = "KCFloatingActionButton"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "59C5734CBDBC16DD52556632EF13C40B"
+            BlueprintIdentifier = "A6E9CEC9E5ACFE69D21456CCB70BEEA0"
             BuildableName = "KCFloatingActionButton.framework"
             BlueprintName = "KCFloatingActionButton"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "59C5734CBDBC16DD52556632EF13C40B"
-            BuildableName = "KCFloatingActionButton.framework"
-            BlueprintName = "KCFloatingActionButton"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FC4B2785BB68892651401B8A26A15AD"
+               BlueprintIdentifier = "CAC840DD7C14BED838F74AD37CD7CBBA"
                BuildableName = "MBCircularProgressBar.bundle"
                BlueprintName = "MBCircularProgressBar-MBCircularProgressBar"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FC4B2785BB68892651401B8A26A15AD"
+            BlueprintIdentifier = "CAC840DD7C14BED838F74AD37CD7CBBA"
             BuildableName = "MBCircularProgressBar.bundle"
             BlueprintName = "MBCircularProgressBar-MBCircularProgressBar"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FC4B2785BB68892651401B8A26A15AD"
-            BuildableName = "MBCircularProgressBar.bundle"
-            BlueprintName = "MBCircularProgressBar-MBCircularProgressBar"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

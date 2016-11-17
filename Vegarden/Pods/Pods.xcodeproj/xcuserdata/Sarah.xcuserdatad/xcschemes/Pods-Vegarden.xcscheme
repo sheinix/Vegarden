@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30262811E665ADDF24E54119EB9F7455"
+               BlueprintIdentifier = "4ABBB9875E9D28B0B6452ED2C78E72FA"
                BuildableName = "Pods_Vegarden.framework"
                BlueprintName = "Pods-Vegarden"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "30262811E665ADDF24E54119EB9F7455"
+            BlueprintIdentifier = "4ABBB9875E9D28B0B6452ED2C78E72FA"
             BuildableName = "Pods_Vegarden.framework"
             BlueprintName = "Pods-Vegarden"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "30262811E665ADDF24E54119EB9F7455"
-            BuildableName = "Pods_Vegarden.framework"
-            BlueprintName = "Pods-Vegarden"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

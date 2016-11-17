@@ -19,11 +19,12 @@ PODS:
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
   - CircleMenu (2.0.1)
   - KCFloatingActionButton (2.1.1)
+  - M13Checkbox (3.1.2)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - Masonry (1.0.2)
-  - MBCircularProgressBar (0.3.4)
+  - MBCircularProgressBar (0.3.5)
   - SCLAlertView (0.7.0)
   - SnapKit (3.0.2)
 
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - CircleMenu (~> 2.0.1)
   - KCFloatingActionButton (~> 2.1.0)
+  - M13Checkbox
   - MagicalRecord
   - Masonry
   - MBCircularProgressBar
@@ -42,13 +44,14 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
-  KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
+  KCFloatingActionButton: '084cfe9d16b741be33393c99757f5967296c7645'
+  M13Checkbox: 7c7c7e8d90f514b6925523531762b768ca778e53
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MBCircularProgressBar: ff3b8e2f441214d9ee122a24ba0d4d00cc7de881
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 392c5187b6b603ed54f0d8745ce0fc57b56e052d
+PODFILE CHECKSUM: f4263e1b962279b710b40ee13be30c1863c4b00a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

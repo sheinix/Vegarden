@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class VCropDetailPageViewCell: UICollectionViewCell {
     
     var cropTitle = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
@@ -61,16 +62,17 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         let infoCrop = (notification.userInfo?["crop"] as! Crop)
       
         if (infoCrop === self.crop!) {
-            
-            animateButtonWith(title: "Add Crop")
-            
-            //TODO Show confirmation view!
-            self.pullAction!(self.tableView.contentOffset)
-        
 
+            let confirm = ConfirmationView(frame: self.bounds, title: "Crop Removed !")
             
-        } else {
-            print ("Its NOT the same crop...")
+            self.addSubview(confirm)
+
+            confirm.checkBox?.setCheckState(.checked, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
+                
+                self.pullAction!(self.tableView.contentOffset)
+            }
         }
     }
     
@@ -80,51 +82,49 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         let infoCrop = (notification.userInfo?["crop"] as! Crop)
         
         if (infoCrop === self.crop!) {
-            
-          animateButtonWith(title: "Plant")
-          
-            self.fadeOut(completion: { (finished: Bool) -> Void in
-                
-                if (finished) { self.pullAction!(self.tableView.contentOffset) }
-                
-            })
 
-            
-            
-        } else {
-            print ("Its NOT the same crop...")
+           
+                let confirm = ConfirmationView(frame: self.bounds, title: "Crop Added !")
+                
+                self.addSubview(confirm)
+                
+                confirm.checkBox?.setCheckState(.checked, animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
+                    
+                    self.pullAction!(self.tableView.contentOffset)
+                }
         }
-
     }
     
-    private func animateButtonWith(title: String!) {
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            
-            let oldFrame = self.statusButton.frame
-            let newFrame = CGRect(origin: self.statusButton.frame.origin,
-                                  size: CGSize(width: 3, height: self.statusButton.frame.size.height))
-            
-            self.statusButton.frame = newFrame
-            self.statusButton.setTitle(title, for: .normal)
-            self.statusButton.frame = oldFrame
-            
-            if (self.tableView.tableFooterView == nil) {
-            
-                self.tableView.tableFooterView = self.createFooterView()
-                
-            } else {
-                
-                let footer = self.tableView.tableFooterView
-                footer?.removeFromSuperview()
-                self.tableView.tableFooterView = nil
-            }
-            
-            
-        })
-
-    }
-    
+//    private func animateButtonWith(title: String!) {
+//        
+//        UIView.animate(withDuration: 0.5, animations: {
+//            
+//            let oldFrame = self.statusButton.frame
+//            let newFrame = CGRect(origin: self.statusButton.frame.origin,
+//                                  size: CGSize(width: 3, height: self.statusButton.frame.size.height))
+//            
+//            self.statusButton.frame = newFrame
+//            self.statusButton.setTitle(title, for: .normal)
+//            self.statusButton.frame = oldFrame
+//            
+//            if (self.tableView.tableFooterView == nil) {
+//            
+//                self.tableView.tableFooterView = self.createFooterView()
+//                
+//            } else {
+//                
+//                let footer = self.tableView.tableFooterView
+//                footer?.removeFromSuperview()
+//                self.tableView.tableFooterView = nil
+//            }
+//            
+//            
+//        })
+//
+//    }
+//    
     
     deinit {
         NotificationCenter.default.removeObserver(self)

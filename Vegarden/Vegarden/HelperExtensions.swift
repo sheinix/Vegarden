@@ -74,3 +74,13 @@ extension UIImage {
     }
     
 }
+
+//extension DispatchQueue {
+//
+//    func delay(_ timeInterval: TimeInterval, execute work: () -> Void) {
+//        
+//        let milliseconds = Int(timeInterval * Double(1000))
+//        
+//        after(when: .now() + .milliseconds(milliseconds), execute: work)
+//    }
+//}

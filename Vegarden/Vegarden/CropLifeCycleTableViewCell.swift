@@ -102,11 +102,12 @@ class CropLifeCycleTableViewCell: FoldingCell {
             self.datePlanted.text = "Date Planted: " + datePlanted.inCellDateFormat()
             self.harvestDate.text = "Harvest Date: " + (crop.getEstimatedHarvestDate()!.inCellDateFormat())
             let progressNumber = CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest()!)
-            self.ringProgressBar.setValue(progressNumber, animateWithDuration: 3.0)
+            self.ringProgressBar.value = progressNumber
+            //setValue(progressNumber, animateWithDuration: 3.0)
             
         } else {
             
-            self.ringProgressBar.setValue(45, animateWithDuration: 3.0)
+            self.ringProgressBar.value = 45 //setValue(45, animateWithDuration: 3.0)
         }
        
         setupActionButtonMenu()
