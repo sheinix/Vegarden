@@ -97,35 +97,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         }
     }
     
-//    private func animateButtonWith(title: String!) {
-//        
-//        UIView.animate(withDuration: 0.5, animations: {
-//            
-//            let oldFrame = self.statusButton.frame
-//            let newFrame = CGRect(origin: self.statusButton.frame.origin,
-//                                  size: CGSize(width: 3, height: self.statusButton.frame.size.height))
-//            
-//            self.statusButton.frame = newFrame
-//            self.statusButton.setTitle(title, for: .normal)
-//            self.statusButton.frame = oldFrame
-//            
-//            if (self.tableView.tableFooterView == nil) {
-//            
-//                self.tableView.tableFooterView = self.createFooterView()
-//                
-//            } else {
-//                
-//                let footer = self.tableView.tableFooterView
-//                footer?.removeFromSuperview()
-//                self.tableView.tableFooterView = nil
-//            }
-//            
-//            
-//        })
-//
-//    }
-//    
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
