@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V">
@@ -96,6 +96,7 @@
                         <segue destination="noJ-DX-uOa" kind="showDetail" identifier="showAboutView" id="S5k-eW-em7"/>
                         <segue destination="p6h-Ud-H2a" kind="showDetail" identifier="showMyCropsView" id="o0m-IF-mI6"/>
                         <segue destination="QQg-rb-ocj" kind="showDetail" identifier="showLifeCycleView" id="Ppo-ZR-fKO"/>
+                        <segue destination="p6h-Ud-H2a" kind="showDetail" identifier="showDataBaseView" id="xZ5-7Z-twh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -139,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="72" width="768" height="638"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpw-n2-iGO" id="GrN-lR-leE">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="637"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="638"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-14-qfC" customClass="RotatedView" customModule="Vegarden" customModuleProvider="target">
@@ -606,4 +607,7 @@
             <point key="canvasLocation" x="1524" y="444"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xZ5-7Z-twh"/>
+    </inferredMetricsTieBreakers>
 </document>

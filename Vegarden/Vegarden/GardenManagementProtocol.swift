@@ -48,7 +48,4 @@ protocol GardenManagementProtocol: class {
    
     // MARK: - Getter Methods
     
-    func allCrops() -> [Crop]
-    
-    func myOwnedCrops() -> [Crop]?
 }

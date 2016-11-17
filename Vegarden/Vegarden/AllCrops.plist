@@ -8,7 +8,7 @@
 		<key>picture</key>
 		<string>01</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>familia plantita</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
@@ -42,7 +42,7 @@
 		<key>picture</key>
 		<string>02</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>Brassicas</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
@@ -72,11 +72,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Carrot</string>
 		<key>picture</key>
 		<string>04</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>carrotitos</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
@@ -106,11 +106,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Repollo</string>
 		<key>picture</key>
 		<string>05</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>Brassicas</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
@@ -140,11 +140,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Pepino</string>
 		<key>picture</key>
-		<string>01</string>
+		<string>06</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>familia pepinesca</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>
@@ -174,487 +174,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Garlic</string>
 		<key>picture</key>
-		<string>01</string>
+		<string>07</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
-		<key>plantType</key>
-		<string></string>
-		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
-		<key>phLevels</key>
-		<integer>45</integer>
-		<key>spacing</key>
-		<integer>6</integer>
-		<key>whenToPlant</key>
-		<array>
-			<integer>1</integer>
-		</array>
-		<key>plantDirections</key>
-		<string></string>
-		<key>growingTips</key>
-		<string></string>
-		<key>diseases</key>
-		<string></string>
-		<key>potentialProblems</key>
-		<string></string>
-		<key>harvestTips</key>
-		<string></string>
-		<key>storage&amp;use</key>
-		<string></string>
-		<key>plantingCompanions</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Beetroot</string>
-		<key>picture</key>
-		<string>01</string>
-		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>garilic herbs</string>
 		<key>plantType</key>
 		<string></string>
 		<key>plantSize</key>

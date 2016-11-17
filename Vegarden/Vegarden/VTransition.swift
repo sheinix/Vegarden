@@ -38,10 +38,17 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             waterFallView?.layoutIfNeeded()
             
             let indexPath = pageView?.fromPageIndexPath()
-            let gridView = waterFallView?.cellForItem(at: indexPath as! IndexPath)
+            var gridView = waterFallView?.cellForItem(at: indexPath as! IndexPath)
+            
+            //In case last item of collection was deleted, cellForItem returns nil, so i create a dummy cell to keep going...
+            if (gridView == nil) {
+                gridView = MyCropsCollectionViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            }
+            
             let leftUpperPoint = gridView!.convert(CGPoint.zero, to: toViewController?.view)
             
             let snapShot = (gridView as! VTansitionWaterfallGridViewProtocol).snapShotForTransition()
+           
             snapShot?.transform = CGAffineTransform(scaleX: animationScale, y: animationScale)
            
             let pullOffsetY = (fromViewController as! VHorizontalPageViewControllerProtocol).pageViewCellScrollViewContentOffset().y
@@ -54,7 +61,7 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             toView?.isHidden = false
             toView?.alpha = 0
             toView?.transform = (snapShot?.transform)!
-            toView?.frame = CGRect(x:-(leftUpperPoint.x * animationScale),y:-((leftUpperPoint.y-offsetY) * animationScale+pullOffsetY+offsetY),
+            toView?.frame = CGRect(x:-((leftUpperPoint.x) * animationScale),y:-(((leftUpperPoint.y)-offsetY) * animationScale+pullOffsetY+offsetY),
                                    width:(toView?.frame.size.width)!, height:(toView?.frame.size.height)!)
             let whiteViewContainer = UIView(frame: screenBounds)
             whiteViewContainer.backgroundColor = UIColor.white
@@ -65,7 +72,7 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             UIView.animate(withDuration: animationDuration, animations: {
                 
                 snapShot?.transform = CGAffineTransform.identity
-                snapShot?.frame = CGRect(x:leftUpperPoint.x, y:leftUpperPoint.y, width:(snapShot?.frame.size.width)!, height:(snapShot?.frame.size.height)!)
+                snapShot?.frame = CGRect(x:(leftUpperPoint.x), y:(leftUpperPoint.y), width:(snapShot?.frame.size.width)!, height:(snapShot?.frame.size.height)!)
                 toView?.transform = CGAffineTransform.identity
                 toView?.frame = CGRect(x:0, y:0, width:(toView?.frame.size.width)!, height:(toView?.frame.size.height)!);
                 toView?.alpha = 1

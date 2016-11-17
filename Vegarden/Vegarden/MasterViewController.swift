@@ -10,7 +10,8 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    let objects = [MainViews.MyCropsView,
+    let objects = [MainViews.DataBaseView,
+                   MainViews.MyCropsView,
                    MainViews.LifeCycleView,
                    MainViews.MyGardenView,
                    MainViews.AboutView]
@@ -69,6 +70,9 @@ class MasterViewController: UITableViewController {
             case MainViews.MyCropsView:
                 img = UIImage(named: "crops")!
                 title = MainViews.MyCropsView
+            case MainViews.DataBaseView:
+                img = UIImage(named: "crops")!
+                title = MainViews.DataBaseView
             case MainViews.LifeCycleView:
                 img = UIImage(named: "lifecycle")!
                 title = MainViews.LifeCycleView
@@ -111,6 +115,9 @@ class MasterViewController: UITableViewController {
             
         case MainViews.MyCropsView:
             segueId = SegueIdentifiers.showMyCropsView
+        
+        case MainViews.DataBaseView:
+            segueId = SegueIdentifiers.showDataBaseView
             
         case MainViews.LifeCycleView:
             segueId = SegueIdentifiers.showLifeCycleView
@@ -126,5 +133,27 @@ class MasterViewController: UITableViewController {
         }
         
         self.performSegue(withIdentifier: segueId, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier ==  SegueIdentifiers.showMyCropsView) {
+            
+            let navController = (segue.destination as! ZoomInNavigationController)
+            
+            if let myCrops = navController.viewControllers.first {
+                
+                (myCrops as! MyCropsCollectionViewController).isDataBase = false
+            }
+            
+        } else if (segue.identifier ==  SegueIdentifiers.showDataBaseView) {
+            
+            let navController = (segue.destination as! ZoomInNavigationController)
+            
+            if let myCrops = navController.viewControllers.first {
+                
+                (myCrops as! MyCropsCollectionViewController).isDataBase = true
+            }
+        }
     }
 }

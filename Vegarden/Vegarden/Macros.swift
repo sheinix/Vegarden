@@ -18,3 +18,4 @@ let navigationHeight : CGFloat = 44.0
 let statubarHeight : CGFloat = 20.0
 let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
 let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
+

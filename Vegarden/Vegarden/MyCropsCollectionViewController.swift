@@ -15,14 +15,18 @@ import SnapKit
 private let reuseIdentifier = "MyCropCell"
 
 class MyCropsCollectionViewController: UICollectionViewController {
+    
+    var isDataBase : Bool = true
+    var myCrops    : [Crop]? = []//
 
-    var myCrops = GardenManager.shared.allCrops()
     let delegateHolder = ZoomInNavigationController()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+        myCrops = (isDataBase ? GardenManager.shared.unowedCrops() : GardenManager.shared.myCrops())
+        
         self.clearsSelectionOnViewWillAppear = false
         self.navigationController!.delegate = delegateHolder
         self.navigationController?.navigationBar.isTranslucent = true
@@ -32,7 +36,8 @@ class MyCropsCollectionViewController: UICollectionViewController {
         //CHTCollectionViewWaterfall lyout:
         (self.collectionView?.collectionViewLayout as! CHTCollectionViewWaterfallLayout).columnCount = 2
         
-        setupFloatingBttn()
+        self.addObserversForCropActions()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,61 +45,88 @@ class MyCropsCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupFloatingBttn() {
 
-        let fab = KCFloatingActionButton()
-        fab.openAnimationType = KCFABOpenAnimationType.pop
-        fab.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
-        
-        fab.addItem("Add Crop", icon: UIImage(named: "crops")!, handler: { item in
-           
-            let popOver = PopupCustomView.getAddCropTableViewPop()
-            popOver.delegate = self
-            popOver.show()
-            fab.close()
-        })
-        
-        
-        view.addSubview(fab)
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: UICollectionViewDataSource
+    private func addObserversForCropActions() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshCollection),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshCollection),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
+                                               object: nil)
+        
+        
+    }
+    
+    @objc private func refreshCollection(notification: Notification) {
+        
+        if let collection = self.collectionView {
+            
+            let crop = (notification.userInfo?["crop"] as! Crop)
+            
+            if let row = self.myCrops?.index(of:crop) {
+                
+                let idx =  IndexPath(row: row, section: 0)
+                
+                    self.myCrops?.remove(at: row)
+                    collection.deleteItems(at: [idx])
+                
+            }
+            
+            
+        }
+    }
+}
+
+// MARK: UICollectionViewDataSource / Delegate
+
+extension MyCropsCollectionViewController {
+    
+  
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return myCrops.count
+        return myCrops!.count
+        
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCropsCollectionViewCell
-
-        cell.crop = myCrops[indexPath.item]
+        
+        let crop = myCrops?[indexPath.row]
+        
+        cell.crop = crop
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
+        
         let layout = HelperManager.getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
         let pageDetailViewController =
             CropDetailCollectionViewController(collectionViewLayout: layout, currentIndexPath:indexPath as NSIndexPath)
-    
-        pageDetailViewController.cropList = myCrops
+        
+        
+        pageDetailViewController.cropList = myCrops!
         collectionView.setToIndexPath(indexPath: indexPath as NSIndexPath)
         navigationController!.pushViewController(pageDetailViewController, animated: true)
     }
     
-    // MARK: UICollectionViewDelegate
- 
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-
 }
 
 // MARK: CHTCollectionViewWaterfallLayoutDelegate
@@ -102,15 +134,16 @@ extension MyCropsCollectionViewController : CHTCollectionViewDelegateWaterfallLa
   
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-                
-        let image = UIImage(named:self.myCrops[indexPath.row].picture!)
+        
+        let stringImg = self.myCrops?[indexPath.row].picture
+        
+        let image = UIImage(named:stringImg!)
         
      //   ((indexPath.row % 2) == 0 ? image!.size.height : image!.size.height * 1.3)
         
         return CGSize(width: (image!.size.width), height: (image!.size.height))
     }
 
-    
 }
 
 extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewControllerProtocol {
@@ -119,14 +152,26 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
         
         var position : UICollectionViewScrollPosition =
             UICollectionViewScrollPosition.centeredHorizontally.intersection(.centeredVertically)
-      
-        let image =  UIImage(named:self.myCrops[pageIndex].picture!)
         
-        let imageHeight = (image?.size.height)!*gridWidth/(image?.size.width)!
+        //self.myCrops?.count)! > 0 ||
         
-        if imageHeight > 200 {//whatever you like, it's the max value for height of image
-            position = .top
+        //if something was deleted not scrolling back to position because it isnt there..
+        guard ((self.myCrops?.count)! > pageIndex) else {
+            return
         }
+        
+        
+        if let imgName = self.myCrops?[pageIndex].picture {
+           
+            let image =  UIImage(named:imgName)
+            
+            let imageHeight = (image?.size.height)!*gridWidth/(image?.size.width)!
+            
+            if imageHeight > 200 {//whatever you like, it's the max value for height of image
+                position = .top
+            }
+        }
+        
         
         let currentIndexPath = NSIndexPath(row: pageIndex, section: 0)
         let collectionView = self.collectionView!;
@@ -145,13 +190,3 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
     }
 }
 
-extension MyCropsCollectionViewController: PopupDelegate {
-    
-    func popupDidAppear(_ popup: Popup!) {
-        
-    }
-    
-    func popupPressButton(_ popup: Popup!, buttonType: PopupButtonType) {
-        
-    }
-}

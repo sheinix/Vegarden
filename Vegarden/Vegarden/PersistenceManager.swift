@@ -38,10 +38,11 @@ class PersistenceManager {
         
         if (UserDefaults.isFirstLaunch()) {
             populateDB()
+            generateASampleGarden()
             saveContext()
         }
         
-        generateASampleGarden()
+        
         
         print("done ok")
     }
@@ -180,23 +181,27 @@ class PersistenceManager {
     
 //MARK: - Crop Management Methods
     
+    
+    // Gets all the crops whos instances aren't planted. Just for the MyCropsScreen
     public func getAllCrops() -> [Crop] {
+  
+        let crops = Crop.mr_findAll()
         
-        return  Crop.mr_findAll() as! [Crop]
+        let distinct : [Crop] = crops?.filter({ (crop) -> Bool in
+            (crop as! Crop).states?.count == 0
+        }) as! [Crop]
+
+        return  distinct
      
     }
     
-    public func getMyCrops() -> [Crop]? {
+    public func getCrops(owned: Bool) -> [Crop] {
         
-        //TODO : Implement MagicalRecord fetch for all Crops
-        let ownedCrops = NSPredicate(format: "owned == true")
-        let crops = Crop.mr_findAll(with: ownedCrops)
-       
-        return crops as! [Crop]?
+        let crops = getAllCrops().filter { $0.owned == owned }
+        
+        return crops 
     }
-    
-    
-    
+        
     public func getPlantedCrops() -> [Crop]? {
     
         //TODO Get the crops that are planted! Return [] si no hay
@@ -441,6 +446,7 @@ class PersistenceManager {
         addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock, in: sampleGarden)
         
         let cropToPlant = Crop.mr_findFirst()
+        cropToPlant?.owned = true
         let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
         
         let plantedRow1 = plant(crop: cropToPlant!,

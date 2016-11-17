@@ -23,7 +23,8 @@ class CropDetailCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
+        
         // Do any additional setup after loading the view.
 //        self.navigationController?.navigationBar.backItem?.backBarButtonItem?
         self.view.layer.cornerRadius = 10
@@ -34,7 +35,6 @@ class CropDetailCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     init(collectionViewLayout layout: UICollectionViewLayout!, currentIndexPath indexPath: NSIndexPath){
         
@@ -106,7 +106,13 @@ class CropDetailCollectionViewController: UICollectionViewController {
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset
-            self.navigationController!.popViewController(animated: true)
+            
+            if let nav = self.navigationController {
+                    nav.popViewController(animated: true)
+            } else {
+                self.removeFromParentViewController()
+            }
+            
         }
         collectionCell.setNeedsLayout()
     

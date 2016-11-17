@@ -42,11 +42,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.delegate = self
         tableView.dataSource = self
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(cropRemoved),
-                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
-                                               object: nil)
-
+        addObserversForCropActions()
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,31 +59,91 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     @objc func cropRemoved(notification: Notification) {
         
         let infoCrop = (notification.userInfo?["crop"] as! Crop)
-        if (infoCrop.description == self.crop!.description) {
+      
+        if (infoCrop === self.crop!) {
             
-            UIView.animate(withDuration: 2, animations: {
-                
-                let oldFrame = self.statusButton.frame
-                let newFrame = CGRect(origin: self.statusButton.frame.origin,
-                                     size: CGSize(width: 3, height: self.statusButton.frame.size.height))
-                
-                self.statusButton.frame = newFrame
-                self.statusButton.setTitle("Add Crop", for: .normal)
-                self.statusButton.frame = oldFrame
-            })
+            animateButtonWith(title: "Add Crop")
             
-            
-           
+            //TODO Show confirmation view!
+            self.pullAction!(self.tableView.contentOffset)
+        
+
             
         } else {
             print ("Its NOT the same crop...")
         }
     }
     
+    
+    @objc func cropAdded(notification: Notification) {
+        
+        let infoCrop = (notification.userInfo?["crop"] as! Crop)
+        
+        if (infoCrop === self.crop!) {
+            
+          animateButtonWith(title: "Plant")
+          
+            self.fadeOut(completion: { (finished: Bool) -> Void in
+                
+                if (finished) { self.pullAction!(self.tableView.contentOffset) }
+                
+            })
+
+            
+            
+        } else {
+            print ("Its NOT the same crop...")
+        }
+
+    }
+    
+    private func animateButtonWith(title: String!) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            let oldFrame = self.statusButton.frame
+            let newFrame = CGRect(origin: self.statusButton.frame.origin,
+                                  size: CGSize(width: 3, height: self.statusButton.frame.size.height))
+            
+            self.statusButton.frame = newFrame
+            self.statusButton.setTitle(title, for: .normal)
+            self.statusButton.frame = oldFrame
+            
+            if (self.tableView.tableFooterView == nil) {
+            
+                self.tableView.tableFooterView = self.createFooterView()
+                
+            } else {
+                
+                let footer = self.tableView.tableFooterView
+                footer?.removeFromSuperview()
+                self.tableView.tableFooterView = nil
+            }
+            
+            
+        })
+
+    }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
+    private func addObserversForCropActions() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cropRemoved),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cropAdded),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
+                                               object: nil)
+
+
+    }
 }
 
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
@@ -140,6 +198,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         if (self.crop!.owned && tableView.tableFooterView == nil) {
 
             tableView.tableFooterView = createFooterView()
+            tableView.bringSubview(toFront: tableView.tableFooterView!)
         }
         
 //        guard (removeButton.target(forAction: #selector(removeCropPressed), withSender: self) != nil) else {
@@ -207,7 +266,12 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     fileprivate func createFooterView() -> UIView {
         
         let height = self.tableView.frame.height * 0.1
-        let footerView = UIView(frame:CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: height))
+        let frame  = CGRect(x: 0,
+                            y: self.tableView.frame.height,
+                        width: self.tableView.frame.width,
+                       height: height)
+        
+        let footerView = UIView(frame:frame)
         
         removeButton.frame = footerView.bounds
         removeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -233,9 +297,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             
             GardenManager.shared.removeCropFromGarden(crop: self.crop!)
         }
-        
-        
-    
     }
+
+    
     
 }

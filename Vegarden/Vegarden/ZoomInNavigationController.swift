@@ -11,6 +11,7 @@ import CHTCollectionViewWaterfallLayout
 
 class ZoomInNavigationController: UINavigationController {
 
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

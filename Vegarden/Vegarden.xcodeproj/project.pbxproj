@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2625955A1DDC589C007A5CBE /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262595591DDC589C007A5CBE /* SectionHeaderView.swift */; };
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
@@ -110,6 +111,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262595591DDC589C007A5CBE /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 			children = (
 				BD3307B41DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift */,
 				96F723011DB30E5A000100B2 /* CropDetailCollectionViewController.swift */,
+				262595591DDC589C007A5CBE /* SectionHeaderView.swift */,
 			);
 			name = MyCropsViewController;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				96BB776C1DBDCED300DCADA9 /* LifeCycleTableViewController.swift in Sources */,
+				2625955A1DDC589C007A5CBE /* SectionHeaderView.swift in Sources */,
 				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,
 				96A8A6481DD08DE0000A1673 /* CropDetailTextView.swift in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,

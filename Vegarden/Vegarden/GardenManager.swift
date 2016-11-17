@@ -116,9 +116,14 @@ class GardenManager: GardenManagementProtocol {
         
     }
     
-    public func myOwnedCrops() -> [Crop]? {
+    public func myCrops() -> [Crop] {
         
-        return PersistenceManager.shared.getMyCrops()
+        return PersistenceManager.shared.getCrops(owned: true)
+    }
+    
+    public func unowedCrops() -> [Crop] {
+        
+        return PersistenceManager.shared.getCrops(owned: false)
     }
     
     public func myPlantedCrops() -> [Crop]? {

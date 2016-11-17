@@ -12,6 +12,7 @@ import UIKit
 
 struct NotificationIds {
     static let NotiKeyCropRemoved = "CropRemoved"
+    static let NotiKeyCropAdded   = "CropAdded"
 }
 
 struct UINumbericConstants {
@@ -40,6 +41,7 @@ struct FontSizes {
 
 struct MainViews {
     static let MyCropsView: String = "My Crops"
+    static let DataBaseView: String = "Database"
     static let LifeCycleView: String = "Crops LifeCylce"
     static let MyGardenView: String = "My Garden"
     static let AboutView: String = "About"
@@ -47,6 +49,7 @@ struct MainViews {
 
 struct SegueIdentifiers {
     static let showMyCropsView = "showMyCropsView"
+    static let showDataBaseView = "showDataBaseView"
     static let showMyGardenView = "showMyGardenView"
     static let showLifeCycleView = "showLifeCycleView"
     static let showAboutView = "showAboutView"
@@ -89,3 +92,12 @@ public struct lifeCyclceSates {
     
 }
 
+public struct MyCropsSectionTitles {
+    static let OwnedCrops = "Owned Crops"
+    static let StockCrops = "Stock Crops"
+}
+
+public enum MyCropsSection : Int {
+    
+    case OwnedCrops, StockCrops
+}

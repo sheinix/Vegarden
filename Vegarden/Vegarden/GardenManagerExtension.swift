@@ -18,6 +18,8 @@ extension GardenManager : PersistanceCallBackProtocol {
     
     func didAddCropToGarden(crop: Crop) {
         
+         NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded), object: crop, userInfo: ["crop" : crop])
+        
     }
     
     func didHarvest(crop:Crop) {

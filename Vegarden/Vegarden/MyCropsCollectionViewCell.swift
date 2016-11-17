@@ -57,6 +57,12 @@ extension MyCropsCollectionViewCell: VTansitionWaterfallGridViewProtocol {
     
     func snapShotForTransition() -> UIView! {
         
+        //In case a dummy cell was created for an empty collection...
+        if (self.imgView == nil) {
+            
+            return UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize.zero))
+        }
+        
         let snapShotView = UIImageView(image: self.imgView?.image)
         snapShotView.frame = (imgView?.frame)!
         
