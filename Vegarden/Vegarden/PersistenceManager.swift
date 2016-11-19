@@ -41,9 +41,7 @@ class PersistenceManager {
             generateASampleGarden()
             saveContext()
         }
-        
-        
-        
+
         print("done ok")
     }
  
@@ -58,19 +56,6 @@ class PersistenceManager {
             
 
     }
-
-//    
-//    public func createGardenNamed(name: String!) -> Garden {
-//        
-//        let garden = Garden.mr_createEntity()
-//        garden?.name = name
-//        garden?.paddocks = nil
-//        garden?.location = nil
-//        
-//        saveContext()
-//        
-//        return garden!
-//    }
 
 //MARK: - Garden Management Methods
     
@@ -287,6 +272,31 @@ class PersistenceManager {
     }
 
 //MARK: - LifeCycle Methods
+    
+    public func plant(plantAction: PlantDTO) {
+        
+        let plantingCrop = plantAction.crop.duplicateAssociated()!
+        let plantingType = plantAction.state
+        let rows         = plantAction.rows!
+        
+        let state : CropState = (plantingType == plantingStates.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
+        
+        state.date = NSDate()
+        state.notes = plantAction.notes as NSString?
+        plantingCrop.addToStates(state)
+        
+        for row in rows {
+            
+            plantingCrop.addToRow(row)
+            row.addToCrops(plantingCrop)
+            row.estimatedNumberOfCrops = Int16(NSNumber(value:round((row.length) / Float((plantingCrop.spacing)))))
+        }
+        
+        saveContext()
+        
+        self.callBackDelegate?.didPlant(crop: plantingCrop, in: rows)
+    }
+    
     
     public func plant(crop: Crop, in row:Row,  of paddock: Paddock, asA:plantingStates) -> Row {
         

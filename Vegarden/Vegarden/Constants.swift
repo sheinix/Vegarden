@@ -13,6 +13,7 @@ import UIKit
 struct NotificationIds {
     static let NotiKeyCropRemoved = "CropRemoved"
     static let NotiKeyCropAdded   = "CropAdded"
+    static let NotiKeyCropPlanted = "CropPlanted"
 }
 
 struct UINumbericConstants {

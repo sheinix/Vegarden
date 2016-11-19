@@ -197,9 +197,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
                                                     showCloseButton: true)
         
         let alert = ActionMenuAlertView(appearance: appearance,
-                                        crop: crop,
-                                        action: action,
-                                        and: .Row)
+                                              crop: crop,
+                                            action: action,
+                                        isPlanting: false,
+                                               and: .Row)
         
         
         let actionString = alert.stringAction(action: action)

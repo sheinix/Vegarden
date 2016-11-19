@@ -10,6 +10,7 @@
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
+		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
 		960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5AD81DCDDC2200ED39A8 /* NoteView.swift */; };
@@ -114,6 +115,7 @@
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */,
+				2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */,
 			);
 			name = DTO;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */,
 				96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */,
 				BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */,
+				268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */,
 				BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */,
 				BDE061791D9FDC660003364D /* Paddock+CoreDataProperties.swift in Sources */,
 				96AF3C111DC83ACE00EA8D3D /* ActionMadeDTO.swift in Sources */,

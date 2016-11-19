@@ -17,7 +17,6 @@ class GardenManager: GardenManagementProtocol {
     
     class var shared: GardenManager {
         
-        
         return sharedGadenManager
 
     }
@@ -131,22 +130,6 @@ class GardenManager: GardenManagementProtocol {
         return PersistenceManager.shared.getPlantedCrops()
     }
     
-//    public func getObjectsFromPlist(named name:String!) -> [CropVeggie] {
-//        
-//        var photos = [CropVeggie]()
-//        if let URL = Bundle.main.url(forResource: name, withExtension: "plist") {
-//            
-//            if let photosFromPlist = NSArray(contentsOf: URL) {
-//                
-//                for dictionary in photosFromPlist {
-//                    let photo = CropVeggie(dictionary: dictionary as! NSDictionary)
-//                    photos.append(photo)
-//                }
-//            }
-//        }
-//        return photos
-//    }
-    
 //MARK: - Action Mehotds
     
     //TODO Improve this call, 
@@ -160,5 +143,12 @@ class GardenManager: GardenManagementProtocol {
         
         PersistenceManager.shared.makeGrowingAction(action: action)
   
+    }
+    
+    public func plant(plantAction: PlantDTO) {
+     
+       PersistenceManager.shared.plant(plantAction: plantAction)
+        
+       
     }
 }

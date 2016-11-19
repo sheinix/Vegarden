@@ -10,6 +10,13 @@ import Foundation
 
 extension GardenManager : PersistanceCallBackProtocol {
     
+    func didPlant(crop: Crop, in rows: [Row]) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropPlanted), object: crop, userInfo: ["crop" : crop])
+
+    }
+
+    
     
     func didRemoveCropFromGarden(crop: Crop) {
         

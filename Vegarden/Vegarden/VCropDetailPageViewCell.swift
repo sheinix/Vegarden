@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SCLAlertView
 
 class VCropDetailPageViewCell: UICollectionViewCell {
     
@@ -23,6 +23,22 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        
+        setupContent()
+        
+        addObserversForCropActions()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        tableView.reloadData()
+    }
+    
+    private func setupContent() {
         
         backgroundColor = UIColor.clear
         
@@ -42,19 +58,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        addObserversForCropActions()
-        
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        tableView.reloadData()
+
     }
     
     @objc func cropRemoved(notification: Notification) {
@@ -120,7 +124,8 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2    }
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -220,14 +225,27 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         
         if (sender.titleLabel?.text == "Plant") {
             
-            print("GO TO PLANTING FLOW!")
+            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                        kWindowHeight: screenHeight * 0.9,
+                                                        showCloseButton: true)
+            
+            let alert = ActionMenuAlertView(appearance: appearance,
+                                            crop: self.crop!,
+                                            action: nil,
+                                            isPlanting: true,
+                                            and: .Row)
+            
+            alert.showCustom("Plant",
+                             subTitle: (self.crop?.name)!,
+                             color: UIColor.green,
+                             icon: UIImage(named:"icon_weeding")!)
+
+            
         } else {
             
             if let newCrop = self.crop {
                 
                 GardenManager.shared.addNewCropToGarden(crop: newCrop)
-                
-                sender.setTitle("Plant", for: .normal)
 
             }
         }

@@ -67,6 +67,10 @@ class VCropDetailPageTableViewCell: UITableViewCell {
     
     public func setupStackedViewsWith(crop: Crop, and frame: CGRect) {
         
+        if (viewsContainer != nil) {
+            return
+        }
+        
         layoutStackedViews()
         
         let frameLeft = CGRect(x: 0, y: 0, width: frame.width/2, height: frame.height)
@@ -87,14 +91,10 @@ class VCropDetailPageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-   
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

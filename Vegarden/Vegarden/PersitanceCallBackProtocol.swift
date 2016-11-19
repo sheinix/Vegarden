@@ -22,7 +22,7 @@ protocol PersistanceCallBackProtocol: class {
     func didGrowingAction(action: GrowingActions, on row: Row)
     
 
-    func didPlant(crop: Crop, in row: Row)
+    func didPlant(crop: Crop, in rows: [Row])
     
     //TODO Finish the protocol methods!
 }

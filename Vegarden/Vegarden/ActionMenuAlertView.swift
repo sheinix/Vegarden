@@ -21,45 +21,42 @@ class ActionMenuAlertView: SCLAlertView {
     var listTableView: UITableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
     var crop: Crop!
     var actionUnit: ActionUnits?
-    var growingAction: GrowingActions!
+    var growingAction: GrowingActions?
+    var isPlantingACrop: Bool?
     var notesTxt : String?
     var allRows: Bool = false
     var notesTxtView: UITextField = UITextField()
     var rows : [Row]?
     var rowsToMakeActions : [Row] = []
-    
+    var segControl : UISegmentedControl?
     
 //MARK: - Initializers
     
-    required init(with crop: Crop, action: GrowingActions, and unit:ActionUnits) {
+    required init(appearance: SCLAppearance, crop: Crop, action: GrowingActions?, unit: ActionUnits, isPlanting: Bool) {
         
         self.crop = crop
+        
+        //IF IS PLANTING, WHERE DO I GET THE ROWS?
+        
         if let rows = crop.row {
             self.rows = (rows.allObjects as! [Row])
         }
         
+        self.isPlantingACrop = isPlanting
         self.actionUnit = unit
         self.growingAction = action
         self.rowsToMakeActions.reserveCapacity((self.rows?.count)!)
-       
-        super.init()
-    }
-    
-    public init(appearance: SCLAppearance, crop: Crop, action: GrowingActions, and unit: ActionUnits) {
         
-        self.crop = crop
-        if let rows = crop.row {
-            self.rows = (rows.allObjects as! [Row])
-        }
-
-        self.actionUnit = unit
-        self.growingAction = action
-        self.rowsToMakeActions.reserveCapacity((self.rows?.count)!)
-       
         super.init(appearance: appearance)
+
     }
 
-    
+    convenience init(appearance: SCLAppearance, crop: Crop,  action: GrowingActions?, isPlanting boolValue: Bool, and unit: ActionUnits) {
+        
+        self.init(appearance: appearance, crop: crop, action: action, unit: unit, isPlanting: boolValue)
+
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -84,7 +81,7 @@ class ActionMenuAlertView: SCLAlertView {
             self.confirmButtonPressed()
         }
         
-        super.viewDidLoad()
+       super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,7 +104,7 @@ class ActionMenuAlertView: SCLAlertView {
     
 //MARK: - View Creations Methods
     
-    private func createTitleSection(action: GrowingActions, crop: Crop) -> UIView {
+    private func createTitleSection() -> UIView {
         
 //        let frame = CGRect(origin: CGPoint.zero,
 //                             size: CGSize(width: self.view.frame.width, height: ActionTitleLabelHeight))
@@ -125,7 +122,7 @@ class ActionMenuAlertView: SCLAlertView {
         
         //Crop Name
         let cropNameLabel = UILabel()
-        cropNameLabel.text = crop.name
+        cropNameLabel.text = self.crop.name
         cropNameLabel.textAlignment = NSTextAlignment.center
         
         //Date label
@@ -249,18 +246,24 @@ class ActionMenuAlertView: SCLAlertView {
         return buttonsSection
     }
 
-    public func createMainCustomView(with action: GrowingActions, and crop: Crop) -> UIView {
+    private func createMainCustomView() -> UIView? {
+        
+        //let _ = self.growingAction,
+        
+        guard let _ = self.crop else { return nil }
         
         let frame = CGRect(x: 0, y: 0, width: screenWidth * 0.9, height: screenHeight*0.9)
+        
+        let typeOfPlanting : UIView? = nil
         
         let mainCustomView = UIView(frame: frame)
         mainCustomView.clipsToBounds = true
         
-        
-        let titleView = createTitleSection(action: action, crop: crop)
+        let titleView = createTitleSection()
         let notesView = createNotesSection()
         //let buttonView = createButtonsSection(action: action)
     
+        
         mainCustomView.addSubview(titleView)
         mainCustomView.addSubview(self.listTableView)
         mainCustomView.addSubview(notesView)
@@ -274,8 +277,21 @@ class ActionMenuAlertView: SCLAlertView {
             make.height.equalTo(80)
         }
         
+        if (isPlantingACrop)! { //If its planting a Crop should show the Seed/Seedling segmentControl
+            
+            confirgureSegmentedControl()
+            mainCustomView.addSubview(self.segControl!)
+            
+            self.segControl?.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.top.equalTo(titleView.snp.bottom).offset(10)
+                make.height.equalTo(50)
+            })
+        }
+
         listTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleView.snp.bottom)
+            make.top.equalTo( (isPlantingACrop! ? self.segControl!.snp.bottom : titleView.snp.bottom))
             make.left.equalToSuperview()
             make.right.equalToSuperview().offset(-10)
             make.height.equalTo(mainCustomView.frame.height * 0.5)
@@ -299,11 +315,25 @@ class ActionMenuAlertView: SCLAlertView {
         return mainCustomView
     }
     
+    private func confirgureSegmentedControl() {
+    
+        self.segControl = UISegmentedControl(items: ["Seed", "Seedling"])
+        
+        if let segmented = self.segControl {
+           
+            segmented.layer.borderColor = UIColor.green.cgColor
+            segmented.layer.borderWidth = 2
+            segmented.layer.cornerRadius = 9
+            segmented.tintColor = UIColor.green
+            segmented.selectedSegmentIndex = 0
+        }
+    }
+    
     public func generateConfirmView() {
         
         guard let _ = self.crop else { return }
         
-        let subView = createMainCustomView(with: self.growingAction, and: self.crop!)
+        let subView = createMainCustomView()
         
         self.customSubview = subView
         self.customSubview?.clipsToBounds = true
@@ -340,7 +370,7 @@ class ActionMenuAlertView: SCLAlertView {
     
     private func confirmButtonPressed() {
         
-        guard let _ = self.growingAction , let _ = self.crop else { return }
+        guard let _ = self.crop else { return }
         
         var notesString : String?
         
@@ -348,14 +378,28 @@ class ActionMenuAlertView: SCLAlertView {
                 notesString = notesTxtView.text
         }
         
+        
+        
+        if (isPlantingACrop)! {
+            
+            let plantToBeMade = PlantDTO(with: rowsToMakeActions,
+                                         crop: self.crop!,
+                                         notes: notesString,
+                                         and: plantingStates(rawValue: self.segControl!.selectedSegmentIndex)!)
+                
+            GardenManager.shared.plant(plantAction: plantToBeMade)
+            
+            
+        } else {
+            
+            let actionToBeMade = ActionMadeDTO(with: rowsToMakeActions,
+                                               crop: self.crop!,
+                                               notes: notesString,
+                                               and: self.growingAction!)
 
-        let actionToBeMade = ActionMadeDTO(with: rowsToMakeActions,
-                                           crop: self.crop,
-                                           notes: notesString,
-                                           and: self.growingAction)
+            GardenManager.shared.make(action: actionToBeMade)
+        }
         
-        
-        GardenManager.shared.make(action: actionToBeMade)
         
     }
 }
