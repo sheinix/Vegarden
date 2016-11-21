@@ -13,6 +13,13 @@ import CoreData
 
 public class Row: NSManagedObject {
     
+    public var isPlanted : Bool {
+        
+        get {
+            return ((self.crops?.count)! > 0)
+        }
+    }
+    
     public func reset() {
         
         _ = self.crops?.map({($0 as! Crop).mr_deleteEntity()})

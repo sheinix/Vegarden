@@ -19,38 +19,65 @@ let NotesLabelHeight:       CGFloat = 20
 class ActionMenuAlertView: SCLAlertView {
 
     var listTableView: UITableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
+    
     var crop: Crop!
     var actionUnit: ActionUnits?
     var growingAction: GrowingActions?
     var isPlantingACrop: Bool?
     var notesTxt : String?
-    var allRows: Bool = false
+    //var allRows: Bool = false
     var notesTxtView: UITextField = UITextField()
-    var rows : [Row]?
-    var rowsToMakeActions : [Row] = []
+   // var rows : [Row]?
+    var paddocks : [Paddock]?
     var segControl : UISegmentedControl?
+    
+    struct Elements {
+        
+        var patch : Paddock!
+        var rowsInPatch : [Row]!
+    }
+    
+    struct ElementActions {
+        var row : Row!
+        var idx : IndexPath!
+    }
+    
+    var dataSource = [Elements]()
+    var rowsToMakeActions = [ElementActions]()
+    
     
 //MARK: - Initializers
     
     required init(appearance: SCLAppearance, crop: Crop, action: GrowingActions?, unit: ActionUnits, isPlanting: Bool) {
         
         self.crop = crop
-        
-        //IF IS PLANTING, WHERE DO I GET THE ROWS?
-        
-        if let rows = crop.row {
-            self.rows = (rows.allObjects as! [Row])
-        }
-        
         self.isPlantingACrop = isPlanting
         self.actionUnit = unit
         self.growingAction = action
-        self.rowsToMakeActions.reserveCapacity((self.rows?.count)!)
+        
+        //Set the rows for Planting or GrowingActions:
+        
+        if (isPlanting) {
+            
+            self.paddocks = GardenManager.shared.getAllPaddocks()
+        
+        } else { //Need to get the paddocks from the crop.rows!
+            
+            let rows = crop.row?.allObjects as! [Row]
+            
+            self.paddocks = rows.map { ($0 as Row).paddock! }.uniqueElements
+        }
+        
+        //Make the datasource with paddocks and freerows for each paddock
+        
+        self.dataSource = self.paddocks!.map { Elements(patch: $0, rowsInPatch: $0.freeRows) }
+        
+        self.rowsToMakeActions.reserveCapacity(self.dataSource.count)
+        
         
         super.init(appearance: appearance)
-
+        
     }
-
     convenience init(appearance: SCLAppearance, crop: Crop,  action: GrowingActions?, isPlanting boolValue: Bool, and unit: ActionUnits) {
         
         self.init(appearance: appearance, crop: crop, action: action, unit: unit, isPlanting: boolValue)
@@ -366,7 +393,7 @@ class ActionMenuAlertView: SCLAlertView {
         
             return strAction
             
-        }
+    }
     
     private func confirmButtonPressed() {
         
@@ -382,7 +409,9 @@ class ActionMenuAlertView: SCLAlertView {
         
         if (isPlantingACrop)! {
             
-            let plantToBeMade = PlantDTO(with: rowsToMakeActions,
+            let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
+            
+            let plantToBeMade = PlantDTO(with: rows,
                                          crop: self.crop!,
                                          notes: notesString,
                                          and: plantingStates(rawValue: self.segControl!.selectedSegmentIndex)!)
@@ -392,7 +421,9 @@ class ActionMenuAlertView: SCLAlertView {
             
         } else {
             
-            let actionToBeMade = ActionMadeDTO(with: rowsToMakeActions,
+            let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
+            
+            let actionToBeMade = ActionMadeDTO(with: rows,
                                                crop: self.crop!,
                                                notes: notesString,
                                                and: self.growingAction!)
@@ -405,11 +436,6 @@ class ActionMenuAlertView: SCLAlertView {
 }
 
 
-//extension ActionMenuAlertView : UITextViewDelegate {
-//    
-//    
-//}
-
 
 extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
     
@@ -417,19 +443,22 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         
        //TODO For now, just do actions on rows, its a design thing to think if we can do actions on patch or crop
 
-        return rows!.count
+        return dataSource[section].rowsInPatch.count
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            //TODO Use the function!
-        return 3 //rows.map { $0.paddock }.count
+        
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.DetailPatchRowTableViewCellIdentifier) as! DetailPatchRowTableViewCell!
         
-        cell?.rowName.text = rows?[indexPath.row].name
+        let row : Row = dataSource[indexPath.section].rowsInPatch[indexPath.row]
+      
+        cell?.rowName.text = row.name//rows?[indexPath.row].name
         
         let switchChanged = #selector(switchChangedFor)
         
@@ -446,13 +475,17 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
     
         if let idxPath = self.listTableView.indexPath(for: cell) {
             
+            let patch = dataSource[idxPath.section]
+            let row = patch.rowsInPatch[idxPath.row]
+            
             if (cell.switchControl.isOn) {
                 
-                rowsToMakeActions.insert((rows?[idxPath.row])!, at: idxPath.row)
+                rowsToMakeActions.append(ElementActions(row: row, idx: idxPath))
+                
                 
             } else {
                 
-                rowsToMakeActions.remove(at: idxPath.row)
+                rowsToMakeActions = rowsToMakeActions.filter { $0.idx != idxPath }
             }
 
         }

@@ -41,9 +41,4 @@ extension GardenManager : PersistanceCallBackProtocol {
         
     }
     
-    
-    func didPlant(crop: Crop, in row: Row) {
-        
-    }
-    
 }

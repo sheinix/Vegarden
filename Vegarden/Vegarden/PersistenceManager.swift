@@ -164,6 +164,22 @@ class PersistenceManager {
         return Row.mr_findAll() as! [Row]
     }
     
+    public func getAllPlantedRows() -> [Row] {
+        
+        let rows = getAllRows()
+        
+        return rows.filter { (($0 as Row).crops?.count)! > 0 }
+        
+    }
+    
+    public func getAllFreeRows() -> [Row] {
+        
+        let rows = getAllRows()
+        
+        return rows.filter { (($0 as Row).crops?.count)! == 0 }
+        
+    }
+    
 //MARK: - Crop Management Methods
     
     
@@ -200,10 +216,12 @@ class PersistenceManager {
         
             if  ((row as! Row).crops?.anyObject() != nil) {
                 
-                let crop = (row as! Row).crops?.anyObject()
+                let crop : Crop = (row as! Row).crops?.anyObject() as! Crop
                  
-                myPlantedCrops?.append(crop as! Crop)
-            
+                if ((myPlantedCrops?.index(of: crop)) == nil) { //Need to check if its already added!
+                    
+                    myPlantedCrops?.append(crop)
+                }
             }
        })
         
@@ -455,30 +473,32 @@ class PersistenceManager {
         
         addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock, in: sampleGarden)
         
-        let cropToPlant = Crop.mr_findFirst()
-        cropToPlant?.owned = true
-        let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
+        saveContext()
         
-        let plantedRow1 = plant(crop: cropToPlant!,
-                                in: paddock.rows?.allObjects.first as! Row,
-                                of: paddock,
-                                asA: plantingStates.Seed)
-        
-        let plantedRow2 = plant(crop: cropToPlant!,
-                               in: paddock.rows?.allObjects.first as! Row,
-                               of: paddock,
-                               asA: plantingStates.Seedling)
-        
-        let plantedRow3 = plant(crop: cropToPlant!,
-                               in: paddock.rows?.allObjects.first as! Row,
-                               of: paddock,
-                               asA: plantingStates.Seed)
-        
-       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow1, in:plantedRow1.paddock! )
+//        let cropToPlant = Crop.mr_findFirst()
+//        cropToPlant?.owned = true
+//        let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
+//        
+//        let plantedRow1 = plant(crop: cropToPlant!,
+//                                in: paddock.rows?.allObjects.first as! Row,
+//                                of: paddock,
+//                                asA: plantingStates.Seed)
+//        
+//        let plantedRow2 = plant(crop: cropToPlant!,
+//                               in: paddock.rows?.allObjects.first as! Row,
+//                               of: paddock,
+//                               asA: plantingStates.Seedling)
+//        
+//        let plantedRow3 = plant(crop: cropToPlant!,
+//                               in: paddock.rows?.allObjects.first as! Row,
+//                               of: paddock,
+//                               asA: plantingStates.Seed)
+//        
+//       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow1, in:plantedRow1.paddock! )
         
      //   harvest(crop: plantedRow.crops?.allObjects[0] as! Crop, from: plantedRow.paddock!)
         
-        print("all good : \(plantedRow1)")
+//        print("all good : \(plantedRow1)")
         
         
         

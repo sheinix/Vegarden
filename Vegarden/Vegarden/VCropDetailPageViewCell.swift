@@ -87,7 +87,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         if (infoCrop === self.crop!) {
 
-           
                 let confirm = ConfirmationView(frame: self.bounds, title: "Crop Added !")
                 
                 self.addSubview(confirm)
@@ -100,6 +99,27 @@ class VCropDetailPageViewCell: UICollectionViewCell {
                 }
         }
     }
+    
+    @objc func cropPlanted(notification: Notification) {
+        
+       // let infoCrop = (notification.userInfo?["crop"] as! Crop)
+        
+        //if (infoCrop === self.crop!) {
+            
+            let confirm = ConfirmationView(frame: self.bounds, title: "Crop Planted! \n Check the Progress on the Life Cycle View!")
+            
+            self.addSubview(confirm)
+            
+            confirm.checkBox?.setCheckState(.checked, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2) ) {
+                
+                self.pullAction!(self.tableView.contentOffset)
+            }
+       // }
+
+    }
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -117,6 +137,11 @@ class VCropDetailPageViewCell: UICollectionViewCell {
                                                name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
                                                object: nil)
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cropPlanted),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropPlanted),
+                                               object: nil)
+        
 
     }
 }
@@ -235,7 +260,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
                                             isPlanting: true,
                                             and: .Row)
             
-            alert.showCustom("Plant",
+            let _ = alert.showCustom("Plant",
                              subTitle: (self.crop?.name)!,
                              color: UIColor.green,
                              icon: UIImage(named:"icon_weeding")!)

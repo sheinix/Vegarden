@@ -130,6 +130,29 @@ class GardenManager: GardenManagementProtocol {
         return PersistenceManager.shared.getPlantedCrops()
     }
     
+    public func getMyGarden() -> Garden {
+        
+        return PersistenceManager.shared.getAllGardens()[0]
+    
+    }
+    
+    public func getAllPaddocks() -> [Paddock] {
+        
+        return PersistenceManager.shared.getAllPaddocks()
+    }
+    
+    public func getAllRows() -> [Row] {
+        
+        return PersistenceManager.shared.getAllRows()
+    }
+    
+    public func getAllRowsWhere(planted: Bool) -> [Row] {
+        
+        return (planted ? PersistenceManager.shared.getAllPlantedRows() :
+                          PersistenceManager.shared.getAllFreeRows())
+        
+    }
+    
 //MARK: - Action Mehotds
     
     //TODO Improve this call, 

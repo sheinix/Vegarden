@@ -49,7 +49,7 @@
         <attribute name="paddockId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="garden" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Garden" inverseName="paddocks" inverseEntity="Garden" syncable="YES"/>
         <relationship name="location" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
-        <relationship name="rows" optional="YES" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Row" inverseName="paddock" inverseEntity="Row" syncable="YES"/>
+        <relationship name="rows" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Row" inverseName="paddock" inverseEntity="Row" syncable="YES"/>
         <relationship name="soil" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Soil" syncable="YES"/>
     </entity>
     <entity name="PaddockLocation" representedClassName=".PaddockLocation" parentEntity="Location" syncable="YES"/>
@@ -88,7 +88,7 @@
         <element name="Herb" positionX="-1116" positionY="-2763" width="128" height="45"/>
         <element name="Irrigated" positionX="-1260" positionY="-2358" width="128" height="45"/>
         <element name="Location" positionX="-900" positionY="-2232" width="128" height="45"/>
-        <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="133"/>
+        <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="135"/>
         <element name="PaddockLocation" positionX="-729" positionY="-2277" width="128" height="45"/>
         <element name="Row" positionX="-1098" positionY="-2601" width="128" height="148"/>
         <element name="RowLifeState" positionX="-1082" positionY="-2413" width="128" height="90"/>

@@ -61,6 +61,11 @@ public extension NSObject {
         return strToTrim.components(separatedBy: "_").first!
 
     }
+    
+    func propertyNames() -> [String] {
+        return Mirror(reflecting: self).children.flatMap { $0.label }
+        }
+
 }
 
 extension UIImage {
@@ -75,6 +80,25 @@ extension UIImage {
     
 }
 
+public extension Sequence where Iterator.Element: Hashable {
+    var uniqueElements: [Iterator.Element] {
+        return Array(
+            Set(self)
+        )
+    }
+}
+
+public extension Sequence where Iterator.Element: Equatable {
+    var uniqueElements: [Iterator.Element] {
+        return self.reduce([]){
+            uniqueElements, element in
+            
+            uniqueElements.contains(element)
+                ? uniqueElements
+                : uniqueElements + [element]
+        }
+    }
+}
 //extension DispatchQueue {
 //
 //    func delay(_ timeInterval: TimeInterval, execute work: () -> Void) {
