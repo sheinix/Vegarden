@@ -101,11 +101,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     }
     
     @objc func cropPlanted(notification: Notification) {
-        
-       // let infoCrop = (notification.userInfo?["crop"] as! Crop)
-        
-        //if (infoCrop === self.crop!) {
-            
+  
             let confirm = ConfirmationView(frame: self.bounds, title: "Crop Planted! \n Check the Progress on the Life Cycle View!")
             
             self.addSubview(confirm)
@@ -116,8 +112,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
                 
                 self.pullAction!(self.tableView.contentOffset)
             }
-       // }
-
     }
     
     
@@ -212,16 +206,12 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         
         var cellHeight : CGFloat = navigationHeight
         let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
         
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
 
             //cellHeight = imageHeight
             

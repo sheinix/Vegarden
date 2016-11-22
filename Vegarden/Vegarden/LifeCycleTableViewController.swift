@@ -16,16 +16,13 @@ class LifeCycleTableViewController: UITableViewController {
     //CollectionView sources:
     let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
     
+    //Manage an array of Dictionaries containing the life states (notes) for each crop
+    var lifeStatesArray = [ [String : [Any]]() ]
+    
     let lifeCycle = [lifeCyclceSates.Seed,
                      lifeCyclceSates.Growig,
                      lifeCyclceSates.Harvesting,
                      lifeCyclceSates.Finish]
-
-    var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Seed: [],
-                                            lifeCyclceSates.Growig: [],
-                                            lifeCyclceSates.Harvesting: [],
-                                            lifeCyclceSates.Finish: []]
-    
     
     //TableView sources:
     let kCloseCellHeight: CGFloat = 150
@@ -41,20 +38,16 @@ class LifeCycleTableViewController: UITableViewController {
             static let open: CGFloat = 460 // equal or greater containerView height
         }
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let myPlantedCrops = self.myPlantedCrops {
             
             cellHeights = (0..<Int((myPlantedCrops.count))).map { _ in C.CellHeight.close }
-
         }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,9 +95,14 @@ class LifeCycleTableViewController: UITableViewController {
         
         let crop = myPlantedCrops![indexPath.row]
         
-        cell.setCellWith(crop: crop)
-        
-        setupNotes(crop: crop)
+        if (cell.crop == nil || cell.crop !== crop) {
+            
+            cell.setCellWith(crop: crop)
+            
+            //Setup the dict in the cell and add it to the array!
+            let dict = cell.setupNotesForDictionaryWith(crop: crop)
+            self.lifeStatesArray.append(dict)
+        } 
         
         return cell
     }
@@ -163,41 +161,6 @@ class LifeCycleTableViewController: UITableViewController {
 //        
 //    }
 //MARK: - Helper methods
-    
-    private func setupNotes(crop: Crop) {
-       
-        //Get the notes for the Growing Actions made to the rows:
-        
-        var growingNotes : [RowLifeState] = []
-        
-        crop.row?.allObjects.forEach({ (row) in
-            
-            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
-                
-                growingNotes.append(contentsOf: states)
-            }
-        })
-
-        //Get the planted state :
-        
-        if let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling)) {
-        
-            lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
-        }
-        
-        //Get the harvesting States:
-        
-        if let harvestingStates = crop.getStatesOf(type: .Harvested) {
-            
-            lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
-        }
-        
-        if (growingNotes.count > 0) {
-            
-            lifeCycleDict.updateValue(growingNotes, forKey: lifeCyclceSates.Growig)
-        }
-        
-    }
     
     private func copyForegroundViewOfCellIntoContainer(cell: CropLifeCycleTableViewCell) {
         

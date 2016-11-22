@@ -22,7 +22,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
    
     var actionMenu : KCFloatingActionButton
     var crop : Crop?
-    
+   
+    var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Seed: [],
+                                            lifeCyclceSates.Growig: [],
+                                            lifeCyclceSates.Harvesting: [],
+                                            lifeCyclceSates.Finish: []]
     
     let items: [(icon: String, color: UIColor)] = [
                     ("icon_weeding", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
@@ -110,7 +114,44 @@ class CropLifeCycleTableViewCell: FoldingCell {
             self.ringProgressBar.value = 45 //setValue(45, animateWithDuration: 3.0)
         }
        
+        
         setupActionButtonMenu()
+    }
+    
+    public func setupNotesForDictionaryWith(crop: Crop) ->  [String : [Any]] {
+        
+        //Get the notes for the Growing Actions made to the rows:
+        
+        var growingNotes : [RowLifeState] = []
+        
+        crop.row?.allObjects.forEach({ (row) in
+            
+            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
+                
+                growingNotes.append(contentsOf: states)
+            }
+        })
+        
+        //Get the planted state :
+        
+        if let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling)) {
+            
+            lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
+        }
+        
+        //Get the harvesting States:
+        
+        if let harvestingStates = crop.getStatesOf(type: .Harvested) {
+            
+            lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
+        }
+        
+        if (growingNotes.count > 0) {
+            
+            lifeCycleDict.updateValue(growingNotes.uniqueElements, forKey: lifeCyclceSates.Growig)
+        }
+        
+        return lifeCycleDict
     }
     
     public func copyForegroundViewOfCellIntoContainer() {
@@ -209,7 +250,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
         //TODO Improve this for showing different colors and images for the different actions
         
         
-        alert.showCustom(actionString!,
+        let _ = alert.showCustom(actionString!,
                             subTitle: crop.name!,
                                color: UIColor.green,
                                 icon: UIImage(named:"icon_weeding")!)

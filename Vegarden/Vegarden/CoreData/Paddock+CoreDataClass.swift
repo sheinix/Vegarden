@@ -36,10 +36,10 @@ public class Paddock: NSManagedObject {
         })
     }
     
-//    public func getFreeRows() -> [Row] {
-//        
-//        return self.rows?.allObjects.filter { !($0 as! Row).isPlanted } as! [Row]
-//        
-//    }
+    public func getPlantedRowsFor(crop: Crop) -> [Row] {
+        
+        return plantedRows.filter { ($0.crops?.allObjects[0] as! Crop) == crop }
+        
+    }
     
 }

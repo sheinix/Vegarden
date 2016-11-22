@@ -25,9 +25,7 @@ class ActionMenuAlertView: SCLAlertView {
     var growingAction: GrowingActions?
     var isPlantingACrop: Bool?
     var notesTxt : String?
-    //var allRows: Bool = false
     var notesTxtView: UITextField = UITextField()
-   // var rows : [Row]?
     var paddocks : [Paddock]?
     var segControl : UISegmentedControl?
     
@@ -70,7 +68,7 @@ class ActionMenuAlertView: SCLAlertView {
         
         //Make the datasource with paddocks and freerows for each paddock
         
-        self.dataSource = self.paddocks!.map { Elements(patch: $0, rowsInPatch: $0.freeRows) }
+        self.dataSource = self.paddocks!.map { Elements(patch: $0, rowsInPatch: (isPlanting ? $0.freeRows : $0.getPlantedRowsFor(crop: crop) )) }
         
         self.rowsToMakeActions.reserveCapacity(self.dataSource.count)
         
@@ -458,13 +456,20 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         
         let row : Row = dataSource[indexPath.section].rowsInPatch[indexPath.row]
       
-        cell?.rowName.text = row.name//rows?[indexPath.row].name
+        cell?.rowName.text = row.name
         
-        let switchChanged = #selector(switchChangedFor)
+       let switchChanged = #selector(switchChangedFor)
         
-        cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
+        if ((rowsToMakeActions.filter { $0.idx == indexPath }).count) == 0 {
+            
+            cell?.switchControl.isOn = false
+            cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
         
-        
+        } else {
+            
+            cell?.switchControl.isOn = true
+        }
+
         return cell!
     }
     
