@@ -24,7 +24,7 @@ extension Crop {
     @NSManaged public var harvestTips: String?
     @NSManaged public var name: String?
     @NSManaged public var owned: Bool
-    @NSManaged public var phLevels: Int16
+    @NSManaged public var phLevels: String?
     @NSManaged public var picture: String?
     @NSManaged public var plantingCompanions: String?
     @NSManaged public var plantingDirections: String?

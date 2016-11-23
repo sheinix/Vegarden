@@ -393,9 +393,40 @@ class ActionMenuAlertView: SCLAlertView {
             
     }
     
+    private func showAlert () {
+//        let frame = CGRect(x: self.view.bounds.origin.x,
+//                           y: self.view.bounds.origin.y,
+//                           width: 100,
+//                           height: 100)
+        
+        let alert = UIAlertController(title: "Hold on Mate!",
+                                      message: "Select at least a row!",
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default) { (action:UIAlertAction!) in
+                                        
+        }
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion:nil)
+        
+
+    }
+    
     private func confirmButtonPressed() {
         
         guard let _ = self.crop else { return }
+        
+        let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
+        
+        if (rows.count == 0) {
+            
+            showAlert()
+            
+            return
+        }
+        
         
         var notesString : String?
         
@@ -407,8 +438,6 @@ class ActionMenuAlertView: SCLAlertView {
         
         if (isPlantingACrop)! {
             
-            let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
-            
             let plantToBeMade = PlantDTO(with: rows,
                                          crop: self.crop!,
                                          notes: notesString,
@@ -418,8 +447,6 @@ class ActionMenuAlertView: SCLAlertView {
             
             
         } else {
-            
-            let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
             
             let actionToBeMade = ActionMadeDTO(with: rows,
                                                crop: self.crop!,
@@ -521,4 +548,9 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
 //        
 //    }
 
+}
+extension ActionMenuAlertView : PopupDelegate {
+    
+    
+    
 }

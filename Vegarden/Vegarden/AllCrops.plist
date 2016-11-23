@@ -4,241 +4,1515 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Artichoke - Globe</string>
 		<key>picture</key>
-		<string>01</string>
+		<string>artichoke-globe</string>
 		<key>plantFamily</key>
-		<string>familia plantita</string>
+		<string>Asteraceae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Perennial, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-7</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>100</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
 	</dict>
-	<dict>
+		<dict>
+		<key>name</key>
+		<string>Artichoke - Jerusalem</string>
+		<key>picture</key>
+		<string>artichoke-jerusalem</string>
+		<key>plantFamily</key>
+		<string>Asteraceae</string>
+		<key>plantType</key>
+		<string>Perennial, Tuber</string>
+		<key>plantSize</key>
+		<string>1.5-3m Tall; Leaves up to 30cm long; Yellow flower 5-10cm diameter; Edible tuber 7.5-10cm long, 3.5cm thick</string>
+		<key>phLevels</key>
+		<string>4.5-8.5</string>
+		<key>spacing</key>
+		<integer>40</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the tuber 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Mostly sandy to mostly clay, most soil types. Optimal Sun: Sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. Watering, dry to moist.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>24 weeks to maturity. Tubers can stay in the ground until you are ready to use them (up to 20 weeks).</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Basil</string>
+		<key>picture</key>
+		<string>basil</string>
+		<key>plantFamily</key>
+		<string>Lamiaceae</string>
+		<key>plantType</key>
+		<string>Annual or Biennials (depending on species), Herb</string>
+		<key>plantSize</key>
+		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<key>phLevels</key>
+		<string>5.5-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>POutdoor location to get 6-8 hours full sun daily. Soil to be moist and well-drained. Plant the seed or seedling one cm in soil.  Optimal Soil: Loamy. Optimal Sun: Sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>110 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms).</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Beans - Climber</string>
+		<key>picture</key>
+		<string>beans-climber</string>
+		<key>plantFamily</key>
+		<string>Fabaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>10</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Beans - Dwarf</string>
+		<key>picture</key>
+		<string>beans-dwarf</string>
+		<key>plantFamily</key>
+		<string>Fabaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>20</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Beans - Runner</string>
+		<key>picture</key>
+		<string>beans-runner</string>
+		<key>plantFamily</key>
+		<string>Fabaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>25</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Beetroot</string>
+		<key>picture</key>
+		<string>beetroot</string>
+		<key>plantFamily</key>
+		<string>Chenopodiaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>Leaves 20-40cm tall; Root diameter 4-10cm, 6-12cm length </string>
+		<key>phLevels</key>
+		<string>6</string>
+		<key>spacing</key>
+		<integer>15</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Broad Beans</string>
+		<key>picture</key>
+		<string>broadbeans</string>
+		<key>plantFamily</key>
+		<string>Fabaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>0.5-1.8m Tall; Leaves 10-25cm long; Flowers 1-2.5cm long; Pods 5-10cm, 1cm Diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After first year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
 		<key>name</key>
 		<string>Broccoli</string>
 		<key>picture</key>
-		<string>02</string>
+		<string>broccoli</string>
 		<key>plantFamily</key>
-		<string>Brassicas</string>
+		<string>Brassicacae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Annual, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>10-20cm Heads in diameter; Thick stalks</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-7</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>30</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula. Does not go well with blueberries. </string>
 	</dict>
-	<dict>
+		<dict>
+		<key>name</key>
+		<string>Cabbage</string>
+		<key>picture</key>
+		<string>cabbage</string>
+		<key>plantFamily</key>
+		<string>Brassicacae</string>
+		<key>plantType</key>
+		<string>Annual, or Biennal, Vegetable</string>
+		<key>plantSize</key>
+		<string>40-60cm Tall (first year); 1.5-2m (second year)</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>40</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Broccoli, Cauliflower. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
 		<key>name</key>
 		<string>Carrot</string>
 		<key>picture</key>
-		<string>04</string>
+		<string>carrot</string>
 		<key>plantFamily</key>
-		<string>carrotitos</string>
+		<string>Apiaceae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Annual, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-7</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>0</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Coriander. Does not go well with blueberries. </string>
 	</dict>
-	<dict>
+		<dict>
 		<key>name</key>
-		<string>Repollo</string>
+		<string>Cauliflower</string>
 		<key>picture</key>
-		<string>05</string>
+		<string>cauliflower</string>
 		<key>plantFamily</key>
-		<string>Brassicas</string>
+		<string>Brassicacae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Annual, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-7</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>40</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
 	</dict>
-	<dict>
+		<dict>
 		<key>name</key>
-		<string>Pepino</string>
+		<string>Celery</string>
 		<key>picture</key>
-		<string>06</string>
+		<string>celery</string>
 		<key>plantFamily</key>
-		<string>familia pepinesca</string>
+		<string>Apiaceae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Annual, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>5-6</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>25</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
 	</dict>
-	<dict>
+		<dict>
+		<key>name</key>
+		<string>Chard</string>
+		<key>picture</key>
+		<string>chard</string>
+		<key>plantFamily</key>
+		<string>Chenopodaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Chilli</string>
+		<key>picture</key>
+		<string>chilli</string>
+		<key>plantFamily</key>
+		<string>Solanaceae</string>
+		<key>plantType</key>
+		<string>Annual or short-lived Perennial, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-6</string>
+		<key>spacing</key>
+		<integer>60</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Coriander</string>
+		<key>picture</key>
+		<string>coriander</string>
+		<key>plantFamily</key>
+		<string>Apiaceae</string>
+		<key>plantType</key>
+		<string>Annual, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>20</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Carrots. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Corn</string>
+		<key>picture</key>
+		<string>corn</string>
+		<key>plantFamily</key>
+		<string>Poaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5</string>
+		<key>spacing</key>
+		<integer>25</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Courgette</string>
+		<key>picture</key>
+		<string>courgette</string>
+		<key>plantFamily</key>
+		<string>Curcurbitaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>100</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Eggplant</string>
+		<key>picture</key>
+		<string>eggplant</string>
+		<key>plantFamily</key>
+		<string>Solanaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Fennel</string>
+		<key>picture</key>
+		<string>fennel</string>
+		<key>plantFamily</key>
+		<string>Apiaceae</string>
+		<key>plantType</key>
+		<string>Annnual of Short-Lived Perennial, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>7</string>
+		<key>spacing</key>
+		<integer>10</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
 		<key>name</key>
 		<string>Garlic</string>
 		<key>picture</key>
-		<string>07</string>
+		<string>garlic</string>
 		<key>plantFamily</key>
-		<string>garilic herbs</string>
+		<string>Amaryllidaceae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Annual, Vegetable</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-8</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>10</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
 	</dict>
-	<dict>
+		<dict>
 		<key>name</key>
-		<string>Beetroot</string>
+		<string>Ginger</string>
 		<key>picture</key>
-		<string>01</string>
+		<string>ginger</string>
 		<key>plantFamily</key>
-		<string>Is Ray hinting that perhaps it&apos;s Vicki&apos;s turn next year?</string>
+		<string>Zingiberaceae</string>
 		<key>plantType</key>
-		<string></string>
+		<string>Perennial, Rhizome</string>
 		<key>plantSize</key>
-		<string>30-50cm Tall; Leaves 3-11cm long, 1-6 cm wide</string>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
 		<key>phLevels</key>
-		<integer>45</integer>
+		<string>6-7</string>
 		<key>spacing</key>
-		<integer>6</integer>
+		<integer>25</integer>
 		<key>whenToPlant</key>
 		<array>
 			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
 		</array>
 		<key>plantDirections</key>
-		<string></string>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
 		<key>growingTips</key>
-		<string></string>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
 		<key>diseases</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>potentialProblems</key>
-		<string></string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
 		<key>harvestTips</key>
-		<string></string>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
 		<key>storage&amp;use</key>
-		<string></string>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
 		<key>plantingCompanions</key>
-		<string></string>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Kale</string>
+		<key>picture</key>
+		<string>kale</string>
+		<key>plantFamily</key>
+		<string>Brassicaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>40</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Leek</string>
+		<key>picture</key>
+		<string>leek</string>
+		<key>plantFamily</key>
+		<string>Amaryllidaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>10</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Lettuce</string>
+		<key>picture</key>
+		<string>lettuce</string>
+		<key>plantFamily</key>
+		<string>Asteraceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Mint</string>
+		<key>picture</key>
+		<string>mint</string>
+		<key>plantFamily</key>
+		<string>Lamiaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-7</string>
+		<key>spacing</key>
+		<integer>50</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Onion</string>
+		<key>picture</key>
+		<string>onion</string>
+		<key>plantFamily</key>
+		<string>Amaryllidaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>10</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Oregano</string>
+		<key>picture</key>
+		<string>oregano</string>
+		<key>plantFamily</key>
+		<string>Lamiaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>7-8</string>
+		<key>spacing</key>
+		<integer>40</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Parsley</string>
+		<key>picture</key>
+		<string>parsley</string>
+		<key>plantFamily</key>
+		<string>Apiaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Peas</string>
+		<key>picture</key>
+		<string>peas</string>
+		<key>plantFamily</key>
+		<string>Fabaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>15</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Potato</string>
+		<key>picture</key>
+		<string>potato</string>
+		<key>plantFamily</key>
+		<string>Solanaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Tuber</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-6</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Pumpkin</string>
+		<key>picture</key>
+		<string>pumpkin</string>
+		<key>plantFamily</key>
+		<string>Curcurbitaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>100</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant with love. Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Radish</string>
+		<key>picture</key>
+		<string>radish</string>
+		<key>plantFamily</key>
+		<string>Brassicaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-6</string>
+		<key>spacing</key>
+		<integer>0</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto.</string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries.</string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Rocket</string>
+		<key>picture</key>
+		<string>rocket</string>
+		<key>plantFamily</key>
+		<string>Brassicaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>0</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Rosemary</string>
+		<key>picture</key>
+		<string>rosemary</string>
+		<key>plantFamily</key>
+		<string>Lamiaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>7-8</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Silverbeet</string>
+		<key>picture</key>
+		<string>silverbeet</string>
+		<key>plantFamily</key>
+		<string>Chenopodaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>30</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Spinach</string>
+		<key>picture</key>
+		<string>spinach</string>
+		<key>plantFamily</key>
+		<string>Chenopodaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>10</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Spring Onion</string>
+		<key>picture</key>
+		<string>springonion</string>
+		<key>plantFamily</key>
+		<string>Alliaceae</string>
+		<key>plantType</key>
+		<string>Annual or Short-lived Perennial, Vegetable</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>5</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Thyme</string>
+		<key>picture</key>
+		<string>thyme</string>
+		<key>plantFamily</key>
+		<string>Lamiaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Herb</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>7-8</string>
+		<key>spacing</key>
+		<integer>40</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>
+		<dict>
+		<key>name</key>
+		<string>Tomato</string>
+		<key>picture</key>
+		<string>tomato</string>
+		<key>plantFamily</key>
+		<string>Solanaceae</string>
+		<key>plantType</key>
+		<string>Annual, Vegetable or Fruit</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>5-6</string>
+		<key>spacing</key>
+		<integer>50</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Sunny, well drained spot in garden, tomatoes wont do well in soggy soil. Optimal Soil: Loamy. Optimal Sun: Sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Basil, calendula. Does not go well with blueberries. </string>
+	</dict>	
+		<dict>
+		<key>name</key>
+		<string>Tumeric</string>
+		<key>picture</key>
+		<string>tumeric</string>
+		<key>plantFamily</key>
+		<string>Zingiberaceae</string>
+		<key>plantType</key>
+		<string>Perennial, Rhizome</string>
+		<key>plantSize</key>
+		<string>1.2-1.8m Tall; Leaves 20-32cm long, 50-82cm wide; Edible bud 5-15cm diameter</string>
+		<key>phLevels</key>
+		<string>6-7</string>
+		<key>spacing</key>
+		<integer>25</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Tomatoes, calendula and broccoli. Does not go well with blueberries. </string>
+	</dict>	
+		<dict>
+		<key>name</key>
+		<string>Zucchini</string>
+		<key>picture</key>
+		<string>zucchini</string>
+		<key>plantFamily</key>
+		<string>nuvreni</string>
+		<key>plantType</key>
+		<string>sexy beast</string>
+		<key>plantSize</key>
+		<string>So tall</string>
+		<key>phLevels</key>
+		<string>off the charts</string>
+		<key>spacing</key>
+		<integer>10000</integer>
+		<key>whenToPlant</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>plantDirections</key>
+		<string>Plant the seed or seedling 1 cm in soil. Plant 12cm deep. Best planted on well-drained soils. Little Fruit produced in first year of production. Optimal Soil: Loamy. Optimal Sun: Part sun to full sun.</string>
+		<key>growingTips</key>
+		<string>Plant indoors for 6 weeks then transplate in spring after last frost. Make sure soil remains moist and well-drained. Regular watering. Cover with green compost and mulch to get through winter. After fisrt year cut down to 15cm and cover in straw to protect during winter. More yield in second harvest.</string>
+		<key>diseases</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>potentialProblems</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Helped by: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+		<key>harvestTips</key>
+		<string>10 weeks to maturity with 8 weeks of harvest time once plant is matured. After seedling have their first six leaves, prune the plant to above the second set. The best time to harvest is when the plant starts to bud (before the flower blooms). Pinch the plant and remove for productive regrowth.</string>
+		<key>storage&amp;use</key>
+		<string>Best method of storing basil is freezing. This will prevent plant from losing its flavour. To quick-freeze basil, dry whole sprigs of basil and package in airtight plastic bags. Perfect for making pesto. </string>
+		<key>plantingCompanions</key>
+		<string>Sarah</string>
 	</dict>
 </array>
 </plist>

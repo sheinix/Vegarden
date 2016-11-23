@@ -19,7 +19,7 @@ protocol PersistanceCallBackProtocol: class {
     
     func didFinishHarvestFor(crop: Crop)
     
-    func didGrowingAction(action: GrowingActions, on row: Row)
+    func didGrowingAction(action: ActionMadeDTO)
     
 
     func didPlant(crop: Crop, in rows: [Row])

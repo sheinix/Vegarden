@@ -48,17 +48,11 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        
         let lifeCycleDict = self.lifeStatesArray[collectionView.tag]
         
+        (cell as! DetailViewCollectionViewCell).addStatesNotesWith(dict: lifeCycleDict)
         
-        if ((cell as! DetailViewCollectionViewCell).notesStackView.arrangedSubviews.count == 0) {
-            
-            (cell as! DetailViewCollectionViewCell).addStatesNotesWith(dict: lifeCycleDict)
-        }
     }
-    
-    
 }
 
 extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {

@@ -99,6 +99,12 @@ public extension Sequence where Iterator.Element: Equatable {
         }
     }
 }
+
+extension NotificationIds {
+    
+}
+
+
 //extension DispatchQueue {
 //
 //    func delay(_ timeInterval: TimeInterval, execute work: () -> Void) {

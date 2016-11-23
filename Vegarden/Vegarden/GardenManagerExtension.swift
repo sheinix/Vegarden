@@ -37,8 +37,16 @@ extension GardenManager : PersistanceCallBackProtocol {
         
     }
     
-    func didGrowingAction(action: GrowingActions, on row: Row) {
+    func didGrowingAction(action: ActionMadeDTO) {
+    
+        //let notiName = NotificationIds().notiIdForGrowing(action: action.actionMade)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyGrowingActionMade),
+                                      object: action,
+                                      userInfo: ["action" : action])
         
     }
+        
+    
     
 }

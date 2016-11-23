@@ -17,7 +17,12 @@ class LifeCycleTableViewController: UITableViewController {
     let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
     
     //Manage an array of Dictionaries containing the life states (notes) for each crop
-    var lifeStatesArray = [ [String : [Any]]() ]
+//    struct dict {
+//        var title : String!
+//        var states : [Any]
+//    }
+
+    var lifeStatesArray : [[String : [Any]]] = []
     
     let lifeCycle = [lifeCyclceSates.Seed,
                      lifeCyclceSates.Growig,
@@ -48,6 +53,13 @@ class LifeCycleTableViewController: UITableViewController {
         }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        NotificationCenter.default.addObserver(self,
+                                                selector: #selector(showConfirmView),
+                                                name: NSNotification.Name(rawValue: NotificationIds.NotiKeyGrowingActionMade),
+                                                object: nil)
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +68,43 @@ class LifeCycleTableViewController: UITableViewController {
 
     }
 
+    @objc func showConfirmView(notification: NSNotification) {
+        
+        let action : ActionMadeDTO = notification.userInfo?["action"] as! ActionMadeDTO
+        
+        
+        //First reload the row which have the crop. Use === to compare Instance!!
+        //TODO Test this with same crop planted two times...
+        
+        reloadCellNotes(crop: action.crop)
+        
+        let confirm = ConfirmationView(frame: self.tableView.bounds, title: action.screenTitle)
+        
+        self.tableView.addSubview(confirm)
+        
+        confirm.checkBox?.setCheckState(.checked, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
+            
+            confirm.removeFromSuperview()
+        }
+    }
+    
+    private func reloadCellNotes(crop: Crop) {
+        
+        //Get the tableCell of the Crop:
+        let idx = self.myPlantedCrops?.index(where: { $0 === crop })
+        let idxPath = IndexPath(row: idx!, section: 0)
+        let cell = (self.tableView.cellForRow(at: idxPath) as! CropLifeCycleTableViewCell)
+        
+        //Get the idx of cell dict:
+        self.lifeStatesArray.remove(at: idx!)
+        self.lifeStatesArray.insert(cell.reloadNotes()!, at: idx!)
+
+        cell.collectionView.reloadData()
+
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

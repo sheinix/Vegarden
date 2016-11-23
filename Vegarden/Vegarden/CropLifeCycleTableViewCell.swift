@@ -18,7 +18,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     @IBOutlet weak var cropName: UILabel!
     @IBOutlet weak var datePlanted: UILabel!
     @IBOutlet weak var harvestDate: UILabel!
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! //was private
    
     var actionMenu : KCFloatingActionButton
     var crop : Crop?
@@ -118,9 +118,26 @@ class CropLifeCycleTableViewCell: FoldingCell {
         setupActionButtonMenu()
     }
     
-    public func setupNotesForDictionaryWith(crop: Crop) ->  [String : [Any]] {
+    public func reloadNotes() ->  [String : [Any]]? {
         
-        //Get the notes for the Growing Actions made to the rows:
+        guard let crop = self.crop else { return nil }
+        
+        self.lifeCycleDict.removeValue(forKey: lifeCyclceSates.Growig)
+        self.setGrowingNotes(crop: crop)
+        
+        return self.lifeCycleDict
+    }
+    
+    public func setupNotesForDictionaryWith(crop: Crop) ->  [String : [Any]] {
+       
+        setPlantedStates(crop: crop)
+        setGrowingNotes(crop: crop)
+        setHarvestingStates(crop: crop)
+       
+        return self.lifeCycleDict
+    }
+    
+    private func setGrowingNotes(crop: Crop) {
         
         var growingNotes : [RowLifeState] = []
         
@@ -132,27 +149,29 @@ class CropLifeCycleTableViewCell: FoldingCell {
             }
         })
         
-        //Get the planted state :
+        if (growingNotes.count > 0) {
+            
+            self.lifeCycleDict.updateValue(growingNotes.uniqueElements, forKey: lifeCyclceSates.Growig)
+        }
+    }
+    
+    private func setPlantedStates(crop: Crop) {
         
         if let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling)) {
             
-            lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
+            self.lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
         }
-        
-        //Get the harvesting States:
-        
+    }
+    
+    private func setHarvestingStates(crop: Crop) {
+       
         if let harvestingStates = crop.getStatesOf(type: .Harvested) {
             
-            lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
+            self.lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
         }
-        
-        if (growingNotes.count > 0) {
-            
-            lifeCycleDict.updateValue(growingNotes.uniqueElements, forKey: lifeCyclceSates.Growig)
-        }
-        
-        return lifeCycleDict
+
     }
+    
     
     public func copyForegroundViewOfCellIntoContainer() {
         

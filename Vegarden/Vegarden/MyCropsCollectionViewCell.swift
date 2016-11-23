@@ -21,20 +21,45 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
         didSet {
             if let crop = crop {
                 imageView.image = UIImage(named:crop.picture!)
-                captionLabel.text = crop.name
-                commentLabel.text = crop.family
+                captionLabel.text = crop.family
+                commentLabel.text = crop.name
                 imgView = imageView
             }
         }
     }
     
-//    override init(frame: CGRect) {
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        
+//        self.captionLabel.font = UIFont.systemFont(ofSize: 20)
+//        self.captionLabel.textColor = UIColor.white
 //        
-//        super.init(frame: frame)
-//        backgroundColor = UIColor.lightGray
-//        //contentView.addSubview(imageViewContent)
+//        self.commentLabel.font = UIFont.systemFont(ofSize: 40)
+//        self.commentLabel.textColor = UIColor.white
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        
+        self.captionLabel.font = UIFont.systemFont(ofSize: 20)
+        self.captionLabel.textColor = UIColor.white
+        
+        self.commentLabel.font = UIFont.systemFont(ofSize: 40)
+        self.commentLabel.textColor = UIColor.white
+        
+        super.awakeFromNib()
+
+    }
+    
+//    required init(coder aDecoder: NSCoder) {
+//        //fatalError("init(coder:) has not been implemented")
 //    }
-//    
+//
 //    required init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }

@@ -388,6 +388,7 @@ class PersistenceManager {
         
         saveContext()
         
+        self.callBackDelegate?.didGrowingAction(action: action)
     }
     
     

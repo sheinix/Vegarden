@@ -29,13 +29,14 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         
         self.scrollView.delegate = self
         self.scrollView.showsVerticalScrollIndicator = true
+      
     }
 
     public func addStatesNotesWith(dict:Dictionary<String, [Any]>) {
         
         var isGrowing : Bool = true
         var noteView  : NoteView? = nil
-        
+    
         if (stageTitle.text == lifeCyclceSates.Seed || stageTitle.text == lifeCyclceSates.Seedling ||
             stageTitle.text == lifeCyclceSates.Harvesting || stageTitle.text == lifeCyclceSates.Finish) {
             
@@ -43,7 +44,9 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
             
         }
         
-        if let states = dict[stageTitle.text!] {
+        let states = dict[stageTitle.text!]!
+        
+        if (states.count > 0) {
             
             states.forEach({ (state) in
                 
@@ -52,7 +55,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                                          date: (state as! RowLifeState).when as! Date,
                                          text: (state as! RowLifeState).notes as String?,
                                          title:(state as! RowLifeState).nameOfClass)
-                } else {
+                } else if (state is Seed || state is Seedling) {
                     
                     noteView = NoteView(frame: CGRect(x:0,y:0, width:self.frame.width, height:200),
                                        date: (state as! CropState).date as Date,
@@ -62,7 +65,6 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                 if let noteViewUnr = noteView {
                     
                     notesStackView.addArrangedSubview(noteViewUnr)
-                    
                 }
             })
         }

@@ -78,8 +78,6 @@ class MyCropsCollectionViewController: UICollectionViewController {
                     self.myCrops?.remove(at: row)
                     collection.deleteItems(at: [idx])
             }
-            
-            
         }
     }
 }

@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
-
-struct NotificationIds {
-    static let NotiKeyCropRemoved = "CropRemoved"
-    static let NotiKeyCropAdded   = "CropAdded"
-    static let NotiKeyCropPlanted = "CropPlanted"
-}
+let screenBounds = UIScreen.main.bounds
+let screenSize   = screenBounds.size
+let screenWidth  = screenSize.width
+let screenHeight = screenSize.height
+let gridWidth : CGFloat = (screenSize.width/2)-5.0
+let navigationHeight : CGFloat = 44.0
+let statubarHeight : CGFloat = 20.0
+let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
+let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 
 struct UINumbericConstants {
     static let widthSideMenu : CGFloat = 0.2
@@ -71,7 +74,7 @@ public enum plantingStates: Int {
             case Seed, Seedling, Planted, Growing, Grown, Harvested
 }
 
-enum GrowingActions: Int {
+public enum GrowingActions: Int {
      case WeedAction, WaterAction, FertilizeAction, HarvestAction, FinishAction
 }
 
@@ -101,4 +104,47 @@ public struct MyCropsSectionTitles {
 public enum MyCropsSection : Int {
     
     case OwnedCrops, StockCrops
+}
+
+struct NotificationIds {
+    
+    static let NotiKeyCropRemoved = "CropRemoved"
+    static let NotiKeyCropAdded   = "CropAdded"
+    static let NotiKeyCropPlanted = "CropPlanted"
+    
+    static let NotiKeyCropWeeded = "CropWeeded"
+    static let NotiKeyCropIrrigated = "CropIrrigated"
+    static let NotiKeyCropFertilized = "CropFertilized"
+    static let NotiKeyCropHarvested = "CropHarvested"
+    static let NotiKeyGrowingActionMade = "GrowingActionMade"
+    static let NotiKeyCropFinished = "CropFinished"
+    
+    public func notiIdForGrowing(action: GrowingActions) -> String {
+        
+        var notiId : String?
+        
+        switch action {
+        case GrowingActions.FertilizeAction:
+            notiId = NotificationIds.NotiKeyCropFertilized
+            
+        case GrowingActions.WaterAction:
+            notiId = NotificationIds.NotiKeyCropIrrigated
+            
+        case GrowingActions.WeedAction:
+            notiId = NotificationIds.NotiKeyCropWeeded
+            
+        case GrowingActions.HarvestAction:
+            
+            notiId = NotificationIds.NotiKeyCropHarvested
+            
+        case GrowingActions.FinishAction:
+            notiId = NotificationIds.NotiKeyCropFinished
+            
+        default:
+            notiId = nil
+        }
+        
+        return notiId!
+    }
+    
 }
