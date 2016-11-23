@@ -49,7 +49,7 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
         self.captionLabel.font = UIFont.systemFont(ofSize: 20)
         self.captionLabel.textColor = UIColor.white
         
-        self.commentLabel.font = UIFont.systemFont(ofSize: 40)
+        self.commentLabel.font = UIFont.systemFont(ofSize: 30)
         self.commentLabel.textColor = UIColor.white
         
         super.awakeFromNib()
