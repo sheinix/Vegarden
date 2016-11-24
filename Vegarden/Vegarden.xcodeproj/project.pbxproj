@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
+		266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
@@ -114,6 +115,7 @@
 /* Begin PBXFileReference section */
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
+		266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertTableHeaderView.swift; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		266F509D1DE66EB60064C05D /* ActionMenuAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
+				266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */,
+			);
+			name = ActionMenuAlertView;
+			sourceTree = "<group>";
+		};
 		55AE3718F559B73804B39E4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,7 +572,7 @@
 				BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */,
 				96BB776D1DBDD2D900DCADA9 /* MyGardenViewController.swift */,
 				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
-				96561A301DC1BE1500577F4B /* ActionMenuAlertView.swift */,
+				266F509D1DE66EB60064C05D /* ActionMenuAlertView */,
 				960E5ADB1DCE150F00ED39A8 /* MyCropsViewController */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
 			);
@@ -754,6 +765,7 @@
 				96BB776E1DBDD2D900DCADA9 /* MyGardenViewController.swift in Sources */,
 				9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */,
 				96A8A6411DD08530000A1673 /* CropDetailLabelView.swift in Sources */,
+				266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				96BB77781DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift in Sources */,
 				BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */,
@@ -917,6 +929,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -934,6 +947,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

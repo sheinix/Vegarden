@@ -100,8 +100,12 @@ public extension Sequence where Iterator.Element: Equatable {
     }
 }
 
-extension NotificationIds {
+extension UITableView {
     
+    func indexPathsForRowsIn(section: Int) -> [IndexPath] {
+        
+        return (0..<self.numberOfRows(inSection: section)).map { IndexPath(row: $0, section: section) }
+    }
 }
 
 

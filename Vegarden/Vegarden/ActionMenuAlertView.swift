@@ -15,6 +15,7 @@ let ActionTitleLabelHeight: CGFloat = 60
 let CropNameLabelHeight:    CGFloat = 60
 let dateLabelHeight:        CGFloat = (CropNameLabelHeight*0.3)
 let NotesLabelHeight:       CGFloat = 20
+//let headerSectionsHeight:   CGFloat = 50
 
 class ActionMenuAlertView: SCLAlertView {
 
@@ -486,11 +487,11 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         cell?.rowName.text = row.name
         
        let switchChanged = #selector(switchChangedFor)
+        cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
         
         if ((rowsToMakeActions.filter { $0.idx == indexPath }).count) == 0 {
             
             cell?.switchControl.isOn = false
-            cell?.switchControl.addTarget(self, action: switchChanged, for: UIControlEvents.valueChanged)
         
         } else {
             
@@ -503,54 +504,110 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
     
     @objc func switchChangedFor(sender: Any) {
 
-        guard let cell : DetailPatchRowTableViewCell = (sender as! UISwitch).superview!.superview as! DetailPatchRowTableViewCell? else { return }
-    
-        if let idxPath = self.listTableView.indexPath(for: cell) {
-            
-            let patch = dataSource[idxPath.section]
-            let row = patch.rowsInPatch[idxPath.row]
-            
-            if (cell.switchControl.isOn) {
+        let view = (sender as! UISwitch).superview!.superview
+        
+        if (view is DetailPatchRowTableViewCell) {
+           
+            if let idxPath = self.listTableView.indexPath(for: (view as! DetailPatchRowTableViewCell)) {
                 
-                rowsToMakeActions.append(ElementActions(row: row, idx: idxPath))
+                let patch = dataSource[idxPath.section]
+                let row = patch.rowsInPatch[idxPath.row]
                 
+                if ((view as! DetailPatchRowTableViewCell).switchControl.isOn) {
+                    rowsToMakeActions.append(ElementActions(row: row, idx: idxPath))
+                } else {
+                    rowsToMakeActions = rowsToMakeActions.filter { $0.idx != idxPath }
+                }
                 
-            } else {
-                
-                rowsToMakeActions = rowsToMakeActions.filter { $0.idx != idxPath }
+                let idx = IndexSet(arrayLiteral: idxPath.section)
+                self.listTableView.reloadSections(idx, with: .none)
             }
+            
+        } else { //is the switch from the header
+            
+            //Switch on all the switchs from the rows of sections
+            let header = (view as! ActionMenuAlertTableHeaderView)
+            let section = header.tag
+          
+            if (header.switchAll.isOn) {   //Need to add the newRows that weren't previously added
+                
+                var allRowsInSectionSet = Set(self.dataSource[section].rowsInPatch)
+                let alreadyAddedRows : [Row] = rowsToMakeActions.filter { $0.idx.section == section }.map { $0.row }
+                
+                let addedRowsSet = Set(alreadyAddedRows)
+                
+                var newRows : [Row]
+                
+                if (addedRowsSet.count > 0 ) {
+                    
+                   allRowsInSectionSet.subtract(addedRowsSet)
+                   newRows = Array(allRowsInSectionSet)
+        
+                } else {
+                    
+                    newRows = self.dataSource[section].rowsInPatch
+                }
+                
+                newRows.forEach({ (row) in
+                    
+                    let rowNum = (self.dataSource[section].rowsInPatch).index(of: row)
+                    let idx = IndexPath(row: rowNum!, section: section)
+                    
+                    rowsToMakeActions.append(ElementActions(row: row, idx: idx))
+                    
+                })
+                
+            } else { // Just remove the rows of the section
+                
+                 rowsToMakeActions = rowsToMakeActions.filter { $0.idx.section != section }
+            }
+            
+            let idx = IndexSet(arrayLiteral: section)
+            self.listTableView.reloadSections(idx, with: .none)
 
+          
         }
+
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        
-        
+      return createHeaderFor(tableView: tableView, section: section)
         
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
-//        let paddocks = rows.map { $0.paddock?.name }
-//        let distinct = paddocks.filter { ($0?.contains($0))! }
-//        
-//        
-//
-//    }
     
-   
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        
-//        
-//        
-//        
-//    }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        
-//        return tableView.headerView(forSection: section)?.frame.height
-//        
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+      return CGFloat(integerLiteral: 60)
+        
+    }
 
+    private func createHeaderFor(tableView: UITableView, section: Int) -> UIView {
+        
+        let headerView = ActionMenuAlertTableHeaderView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: headerSectionsHeight))
+        
+        headerView.titleLabel.text = self.dataSource[section].patch.name
+        
+        let shouldShowHeader = (self.dataSource[section].rowsInPatch.count > 0)
+        
+        headerView.fullPatchLabel.isHidden = shouldShowHeader
+        headerView.switchTitle.isHidden = !shouldShowHeader
+        headerView.switchAll.isHidden = !shouldShowHeader
+        
+        headerView.switchAll.addTarget(self, action: #selector(switchChangedFor), for: UIControlEvents.valueChanged)
+        //Use the tag to recognize later the section that corresponds:
+        headerView.tag = section
+        
+        let numRowsActions = rowsToMakeActions.filter { $0.idx.section == section }.count
+        let numRowsSection = self.dataSource[section].rowsInPatch.count
+        
+        headerView.switchAll.setOn((numRowsActions == numRowsSection), animated: false)
+        
+        
+        return headerView
+        
+    }
+    
+    
 }
-extension ActionMenuAlertView : PopupDelegate {
-    
-    
-    
-}
+
