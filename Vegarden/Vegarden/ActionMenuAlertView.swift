@@ -519,8 +519,11 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
                     rowsToMakeActions = rowsToMakeActions.filter { $0.idx != idxPath }
                 }
                 
+                self.listTableView.reloadRows(at: [idxPath], with:UITableViewRowAnimation.none)
                 let idx = IndexSet(arrayLiteral: idxPath.section)
-                self.listTableView.reloadSections(idx, with: .none)
+                self.listTableView.reloadSections(idx, with: UITableViewRowAnimation.none)
+                
+                
             }
             
         } else { //is the switch from the header
@@ -563,8 +566,7 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
             }
             
             let idx = IndexSet(arrayLiteral: section)
-            self.listTableView.reloadSections(idx, with: .none)
-
+            self.listTableView.reloadSections(idx, with: UITableViewRowAnimation.none)
           
         }
 
@@ -598,16 +600,23 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
         //Use the tag to recognize later the section that corresponds:
         headerView.tag = section
         
-        let numRowsActions = rowsToMakeActions.filter { $0.idx.section == section }.count
-        let numRowsSection = self.dataSource[section].rowsInPatch.count
+//        let numRowsActions = rowsToMakeActions.filter { $0.idx.section == section }.count
+//        let numRowsSection = self.dataSource[section].rowsInPatch.count
         
-        headerView.switchAll.setOn((numRowsActions == numRowsSection), animated: false)
+        headerView.switchAll.setOn(areAllRowsSelectedIn(section: section), animated: false)
         
         
         return headerView
         
     }
     
-    
+    private func areAllRowsSelectedIn(section: Int) -> Bool {
+        
+        let numRowsActions = rowsToMakeActions.filter { $0.idx.section == section }.count
+        let numRowsSection = self.dataSource[section].rowsInPatch.count
+        
+       return (numRowsActions == numRowsSection)
+
+    }
 }
 
