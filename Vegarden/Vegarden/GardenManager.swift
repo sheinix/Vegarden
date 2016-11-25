@@ -15,6 +15,7 @@ private let sharedGadenManager = GardenManager()
 
 class GardenManager: GardenManagementProtocol {
     
+
     class var shared: GardenManager {
         
         return sharedGadenManager
@@ -106,6 +107,7 @@ class GardenManager: GardenManagementProtocol {
         PersistenceManager.shared.removeCropsFromGarden(crops: crops)
     
     }
+    
     
 // MARK: - Getter Methods
     

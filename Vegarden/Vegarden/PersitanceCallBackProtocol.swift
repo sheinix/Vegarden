@@ -21,6 +21,7 @@ protocol PersistanceCallBackProtocol: class {
     
     func didGrowingAction(action: ActionMadeDTO)
     
+    func didUnPlant(crop: Crop?, from rows: [Row])
 
     func didPlant(crop: Crop, in rows: [Row])
     

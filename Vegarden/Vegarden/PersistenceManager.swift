@@ -288,7 +288,10 @@ class PersistenceManager {
         callBackDelegate?.didRemoveCropFromGarden(crop: crop!)
         
     }
-
+    
+//    public func removePlantedCrop(crop: Crop)
+    
+    
 //MARK: - LifeCycle Methods
     
     public func plant(plantAction: PlantDTO) {
@@ -375,20 +378,46 @@ class PersistenceManager {
     
     public func makeGrowingAction(action: ActionMadeDTO) {
         
-        let state = getStateFor(action: action.actionMade)
-       
-        if let note = action.notes {
-            state.notes = note as NSString?
-        }
-        
-        action.rows.forEach { (row) in
-           row.addToLifeCycleState(state)
+        if (action.actionMade == GrowingActions.UnplantAction) {
             
+            unplant(crop: action.crop, at: action.rows)
+        
+        } else {
+        
+            //Need to create a new state for each row, because i can remove rows from crop while planted
+            action.rows.forEach { (row) in
+                
+                let state = getStateFor(action: action.actionMade)
+                
+                if let note = action.notes {
+                    state.notes = note
+                }
+                
+                row.addToLifeCycleState(state)
+                state.row = row
+                
+            }
+            
+            saveContext()
+            self.callBackDelegate?.didGrowingAction(action: action)
+        }
+    }
+    
+    private func unplant(crop: Crop, at rows: [Row]) {
+        
+        rows.forEach { $0.reset() }
+        
+        let clearCrop = (crop.row?.count == 0)
+        
+        if (clearCrop) {
+            
+            crop.mr_deleteEntity()
+
         }
         
         saveContext()
         
-        self.callBackDelegate?.didGrowingAction(action: action)
+        self.callBackDelegate?.didUnPlant(crop: (clearCrop ? nil : crop), from: rows)
     }
     
     
@@ -437,7 +466,7 @@ class PersistenceManager {
         default : break
         }
         
-        actionMade?.isDone = NSNumber(booleanLiteral: true)
+        actionMade?.isDone =  true
         actionMade?.when = NSDate()
         
         return actionMade!

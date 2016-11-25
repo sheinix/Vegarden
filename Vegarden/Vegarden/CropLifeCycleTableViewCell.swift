@@ -148,7 +148,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
                 growingNotes.append(contentsOf: states)
             }
         })
-        
+
         if (growingNotes.count > 0) {
             
             self.lifeCycleDict.updateValue(growingNotes.uniqueElements, forKey: lifeCyclceSates.Growig)
@@ -218,6 +218,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
 
         guard let cropie = self.crop else { return  }
         
+        actionMenu.addItem("Remove", icon: UIImage(named:"icon_fertilize")) { (item) in
+            
+            self.showConfirmationScreenFor(action: .UnplantAction, crop: cropie)
+        }
+
         actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
             
             self.showConfirmationScreenFor(action: .WeedAction, crop: cropie)
@@ -248,6 +253,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
             }
         
         }
+        
     }
     
     private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {
@@ -268,7 +274,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         //TODO Improve this for showing different colors and images for the different actions
         
-        
+
         let _ = alert.showCustom(actionString!,
                             subTitle: crop.name!,
                                color: UIColor.green,

@@ -214,8 +214,8 @@ extension Crop {
         
                 stringValue = "Tuba"
         
-            default:
-                stringValue = ""
+//            default:
+//                stringValue = ""
         }
         
         return stringValue

@@ -23,6 +23,13 @@ public class Crop: NSManagedObject {
             self.cropType = Int16(NSNumber(value:Int16(newValue.rawValue)))
         }
     }
+//    
+//    public func unPlant() {
+//  
+//        
+//    }
+
+    
     
     
     //Will be the computed time depending on how you plant the crop, if is seedling or seed. self.timeToHarvest will be a double with the Int part matchiing the seed time and the decimal part matching the seedling
@@ -51,8 +58,8 @@ public class Crop: NSManagedObject {
         crop.owned       =   false
         
         crop.cropType    =   0// dictionary["plantType"] as? String
-        crop.cropSize    =   dictionary["plantSize"] as! String
-        crop.phLevels    =   dictionary["phLevels"] as! String
+        crop.cropSize    =   dictionary["plantSize"] as? String
+        crop.phLevels    =   dictionary["phLevels"] as? String
         crop.spacing     =   Int16(Int(dictionary["spacing"] as! Int))
         crop.timeToHarvest = 30
         

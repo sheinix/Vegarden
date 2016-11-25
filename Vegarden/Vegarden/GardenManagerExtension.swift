@@ -46,6 +46,17 @@ extension GardenManager : PersistanceCallBackProtocol {
                                       userInfo: ["action" : action])
         
     }
+    
+    func didUnPlant(crop: Crop?, from rows: [Row]) {
+
+        let notiObj = NotificationIds.cropRow(crop: crop, rows: rows)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropUnPlanted),
+                                        object: rows,
+                                        userInfo: ["notiObj" : notiObj])
+
+        
+    }
         
     
     

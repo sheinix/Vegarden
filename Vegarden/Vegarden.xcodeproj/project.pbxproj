@@ -10,6 +10,7 @@
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */; };
+		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
@@ -98,7 +99,6 @@
 		BDE0617B1D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061511D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift */; };
 		BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061521D9FDC660003364D /* Row+CoreDataClass.swift */; };
 		BDE0617E1D9FDC660003364D /* RowLifeState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061541D9FDC660003364D /* RowLifeState+CoreDataClass.swift */; };
-		BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061551D9FDC660003364D /* RowLifeState+CoreDataProperties.swift */; };
 		BDE061801D9FDC660003364D /* Seed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061561D9FDC660003364D /* Seed+CoreDataClass.swift */; };
 		BDE061811D9FDC660003364D /* Seed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061571D9FDC660003364D /* Seed+CoreDataProperties.swift */; };
 		BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE061581D9FDC660003364D /* Seedling+CoreDataClass.swift */; };
@@ -116,6 +116,7 @@
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertTableHeaderView.swift; sourceTree = "<group>"; };
+		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +213,6 @@
 		BDE061511D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PaddockLocation+CoreDataProperties.swift"; path = "CoreData/PaddockLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE061521D9FDC660003364D /* Row+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Row+CoreDataClass.swift"; path = "CoreData/Row+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE061541D9FDC660003364D /* RowLifeState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RowLifeState+CoreDataClass.swift"; path = "CoreData/RowLifeState+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BDE061551D9FDC660003364D /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RowLifeState+CoreDataProperties.swift"; path = "CoreData/RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE061561D9FDC660003364D /* Seed+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seed+CoreDataClass.swift"; path = "CoreData/Seed+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE061571D9FDC660003364D /* Seed+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seed+CoreDataProperties.swift"; path = "CoreData/Seed+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE061581D9FDC660003364D /* Seedling+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Seedling+CoreDataClass.swift"; path = "CoreData/Seedling+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 				BDE061521D9FDC660003364D /* Row+CoreDataClass.swift */,
 				9660596A1DCAA63A00FC5012 /* Row+CoreDataProperties.swift */,
 				BDE061541D9FDC660003364D /* RowLifeState+CoreDataClass.swift */,
-				BDE061551D9FDC660003364D /* RowLifeState+CoreDataProperties.swift */,
+				267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */,
 			);
 			name = Row;
 			sourceTree = "<group>";
@@ -766,9 +766,9 @@
 				9654A8AA1DB8E06D00A0A9D9 /* Harvesting+CoreDataClass.swift in Sources */,
 				96A8A6411DD08530000A1673 /* CropDetailLabelView.swift in Sources */,
 				266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */,
+				267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				96BB77781DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift in Sources */,
-				BDE0617F1D9FDC660003364D /* RowLifeState+CoreDataProperties.swift in Sources */,
 				BDE0616B1D9FDC660003364D /* GardenLocation+CoreDataProperties.swift in Sources */,
 				962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */,
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,

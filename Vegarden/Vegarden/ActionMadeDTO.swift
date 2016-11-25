@@ -43,8 +43,9 @@ class ActionMadeDTO {
                 
                 return self.crop.name! + " Finished!"
                 
-                //            default:
-                //                    return self.crop.name! + "!"
+            case GrowingActions.UnplantAction:
+                
+                return self.crop.name! + " Removed!"
             }
         }
     }

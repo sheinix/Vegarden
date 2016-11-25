@@ -67,7 +67,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
       
         if (infoCrop === self.crop!) {
 
-            let confirm = ConfirmationView(frame: self.bounds, title: "Crop Removed !")
+            let msg = infoCrop.name! +  " Crop Removed ! "
+            
+            let confirm = ConfirmationView(frame: self.bounds, title: msg)
             
             self.addSubview(confirm)
 
@@ -87,7 +89,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         if (infoCrop === self.crop!) {
 
-                let confirm = ConfirmationView(frame: self.bounds, title: "Crop Added !")
+                let msg = infoCrop.name! +  " Crop Added ! "
+            
+                let confirm = ConfirmationView(frame: self.bounds, title:msg)
                 
                 self.addSubview(confirm)
                 
@@ -101,8 +105,10 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     }
     
     @objc func cropPlanted(notification: Notification) {
-  
-            let confirm = ConfirmationView(frame: self.bounds, title: "Crop Planted! \n Check the Progress on the Life Cycle View!")
+        
+            let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
+        
+            let confirm = ConfirmationView(frame: self.bounds, title: plantMsg)
             
             self.addSubview(confirm)
             

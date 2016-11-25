@@ -1,9 +1,9 @@
 //
 //  RowLifeState+CoreDataProperties.swift
-//  Vegarden
+//  
 //
-//  Created by Juan Nuvreni on 9/26/16.
-//  Copyright © 2016 Juan Nuvreni. All rights reserved.
+//  Created by Sarah Cleland on 25/11/16.
+//
 //
 
 import Foundation
@@ -16,8 +16,9 @@ extension RowLifeState {
         return NSFetchRequest<RowLifeState>(entityName: "RowLifeState");
     }
 
+    @NSManaged public var isDone: Bool
+    @NSManaged public var notes: String?
     @NSManaged public var when: NSDate?
-    @NSManaged public var isDone: NSNumber?
-    @NSManaged public var notes: NSString?
-
+    @NSManaged public var row: Row?
+    @NSManaged public var lifeStateId: String?
 }

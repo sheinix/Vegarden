@@ -58,7 +58,11 @@ class LifeCycleTableViewController: UITableViewController {
                                                 selector: #selector(showConfirmView),
                                                 name: NSNotification.Name(rawValue: NotificationIds.NotiKeyGrowingActionMade),
                                                 object: nil)
-
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cropUnplanted),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropUnPlanted),
+                                               object: nil)
 
     }
 
@@ -68,26 +72,39 @@ class LifeCycleTableViewController: UITableViewController {
 
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func cropUnplanted(notification: NSNotification) {
+        
+        let cropRow = notification.userInfo?["notiObj"] as! NotificationIds.cropRow
+        
+        if ((cropRow.crop) != nil) { //Crop has been removed from some rows!
+        
+
+            reloadCellNotes(crop: cropRow.crop!)
+            showConfirmViewWith(title: (cropRow.crop?.name)! + " has been unplanted from selcted Rows")
+            
+        } else { //Crop has been deleted!
+
+            self.myPlantedCrops = self.myPlantedCrops?.filter { !($0.hasBeenDeleted()) }
+            showConfirmViewWith(title:   " Crop deleted")
+            self.tableView.reloadData()
+        }
+        
+    }
+    
     @objc func showConfirmView(notification: NSNotification) {
         
         let action : ActionMadeDTO = notification.userInfo?["action"] as! ActionMadeDTO
-        
         
         //First reload the row which have the crop. Use === to compare Instance!!
         //TODO Test this with same crop planted two times...
         
         reloadCellNotes(crop: action.crop)
+        showConfirmViewWith(title: action.screenTitle)
         
-        let confirm = ConfirmationView(frame: self.tableView.bounds, title: action.screenTitle)
-        
-        self.tableView.addSubview(confirm)
-        
-        confirm.checkBox?.setCheckState(.checked, animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
-            
-            confirm.removeFromSuperview()
-        }
     }
     
     private func reloadCellNotes(crop: Crop) {
@@ -102,6 +119,21 @@ class LifeCycleTableViewController: UITableViewController {
         self.lifeStatesArray.insert(cell.reloadNotes()!, at: idx!)
 
         cell.collectionView.reloadData()
+
+    }
+    
+    private func showConfirmViewWith(title: String!) {
+    
+        let confirm = ConfirmationView(frame: self.tableView.bounds, title: title)
+        
+        self.tableView.addSubview(confirm)
+        
+        confirm.checkBox?.setCheckState(.checked, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
+            
+            confirm.removeFromSuperview()
+        }
 
     }
     

@@ -59,13 +59,15 @@
         <attribute name="length" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="crops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Crop" inverseName="row" inverseEntity="Crop" syncable="YES"/>
-        <relationship name="lifeCycleState" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RowLifeState" syncable="YES"/>
+        <relationship name="lifeCycleState" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RowLifeState" inverseName="row" inverseEntity="RowLifeState" syncable="YES"/>
         <relationship name="paddock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paddock" inverseName="rows" inverseEntity="Paddock" syncable="YES"/>
     </entity>
     <entity name="RowLifeState" representedClassName=".RowLifeState" isAbstract="YES" syncable="YES">
         <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lifeStateId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="when" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="row" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Row" inverseName="lifeCycleState" inverseEntity="Row" syncable="YES"/>
     </entity>
     <entity name="Seed" representedClassName=".Seed" parentEntity="CropState" syncable="YES"/>
     <entity name="Seedling" representedClassName=".Seedling" parentEntity="CropState" syncable="YES"/>
@@ -90,8 +92,8 @@
         <element name="Location" positionX="-900" positionY="-2232" width="128" height="43"/>
         <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="135"/>
         <element name="PaddockLocation" positionX="-729" positionY="-2277" width="128" height="43"/>
-        <element name="Row" positionX="-1098" positionY="-2601" width="128" height="148"/>
-        <element name="RowLifeState" positionX="-1082" positionY="-2413" width="128" height="90"/>
+        <element name="Row" positionX="-1134" positionY="-2601" width="128" height="148"/>
+        <element name="RowLifeState" positionX="-1098" positionY="-2403" width="128" height="118"/>
         <element name="Seed" positionX="-866" positionY="-2536" width="128" height="43"/>
         <element name="Seedling" positionX="-945" positionY="-2583" width="128" height="43"/>
         <element name="Soil" positionX="-794" positionY="-2475" width="128" height="58"/>

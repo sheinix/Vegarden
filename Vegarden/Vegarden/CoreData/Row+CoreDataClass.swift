@@ -20,12 +20,21 @@ public class Row: NSManagedObject {
         }
     }
     
+    
+//    public func resetFor(crop: Crop) {
+//TODO This commented code is in a future case where i can plant more than one crop in a row
+//        _ = self.crops?.filter { ($0 as! Crop) === crop }.forEach { ($0 as! Crop).removeFromRow(_:self) }
+    
     public func reset() {
+
+        self.lifeCycleState?.forEach { ($0 as! RowLifeState).mr_deleteEntity() }
         
-        _ = self.crops?.map({($0 as! Crop).mr_deleteEntity()})
-        
-        _ = self.lifeCycleState?.map({($0 as! Crop).mr_deleteEntity()})
-        
+        self.crops?.forEach({ crop in
+            
+            (crop as! Crop).removeFromRow(_:self)
+            self.removeFromCrops((crop as! Crop))
+        })
+
     }
 
     public func getAllRowLifeStates() -> [RowLifeState] {

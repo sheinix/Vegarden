@@ -62,9 +62,10 @@ class ActionMenuAlertView: SCLAlertView {
         
         } else { //Need to get the paddocks from the crop.rows!
             
-            let rows = crop.row?.allObjects as! [Row]
+            if let rows = crop.row?.allObjects as? [Row] {
             
-            self.paddocks = rows.map { ($0 as Row).paddock! }.uniqueElements
+                self.paddocks = rows.map { ($0 as Row).paddock! }.uniqueElements
+            }
         }
         
         //Make the datasource with paddocks and freerows for each paddock
@@ -385,9 +386,10 @@ class ActionMenuAlertView: SCLAlertView {
                 strAction = "Harvest"
             case GrowingActions.FinishAction:
                 strAction = "Finish Harvest"
- 
-            default:
-                break
+            case GrowingActions.UnplantAction:
+                strAction = "Unplant Crop"
+//            default:
+//                break
             }
         
             return strAction

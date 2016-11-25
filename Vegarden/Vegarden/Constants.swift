@@ -75,7 +75,7 @@ public enum plantingStates: Int {
 }
 
 public enum GrowingActions: Int {
-     case WeedAction, WaterAction, FertilizeAction, HarvestAction, FinishAction
+     case WeedAction, WaterAction, FertilizeAction, HarvestAction, FinishAction, UnplantAction
 }
 
 enum TimeLapses {
@@ -111,13 +111,19 @@ struct NotificationIds {
     static let NotiKeyCropRemoved = "CropRemoved"
     static let NotiKeyCropAdded   = "CropAdded"
     static let NotiKeyCropPlanted = "CropPlanted"
-    
+    static let NotiKeyCropUnPlanted = "CropUnPlanted"
     static let NotiKeyCropWeeded = "CropWeeded"
     static let NotiKeyCropIrrigated = "CropIrrigated"
     static let NotiKeyCropFertilized = "CropFertilized"
     static let NotiKeyCropHarvested = "CropHarvested"
     static let NotiKeyGrowingActionMade = "GrowingActionMade"
     static let NotiKeyCropFinished = "CropFinished"
+    
+    
+    struct cropRow {
+        var crop: Crop?
+        var rows: [Row]
+    }
     
     public func notiIdForGrowing(action: GrowingActions) -> String {
         
