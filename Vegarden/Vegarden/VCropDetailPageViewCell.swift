@@ -41,18 +41,22 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     private func setupContent() {
         
         backgroundColor = UIColor.clear
+
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 8
         
         cropTitle.backgroundColor = UIColor.clear
         cropTitle.textColor = UIColor.white
-        cropTitle.font = UIFont.systemFont(ofSize: 80)
+        cropTitle.font = Fonts.detailCropFont
+        cropTitle.adjustsFontSizeToFitWidth = true
+        cropTitle.layer.shadowOffset = CGSize(width: -1, height: -1)
+        cropTitle.layer.shadowOpacity = 1
+        cropTitle.layer.shadowRadius = 6
+        cropTitle.layer.shadowColor = UIColor.black.cgColor
         
         statusButton.frame = CGRect(x:0,y:0, width:100, height:40)
-        statusButton.backgroundColor = UIColor.clear
-        statusButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        statusButton.titleLabel?.textColor = UIColor.white
-        statusButton.layer.cornerRadius = 10
-        statusButton.layer.borderColor = UIColor.white.cgColor
-        statusButton.layer.borderWidth = 2
+        statusButton.setClearStyledButton()
+        statusButton.applyShadows()
         
         contentView.addSubview(tableView)
         tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
@@ -160,12 +164,14 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         cell?.textLabel?.text = nil
        
         if indexPath.row == 0 {
-//            let image = self.image
+        
             cell?.imageView?.image = self.image
-            cell?.imageView?.layer.cornerRadius = 10
+      
             cell?.imageView?.isUserInteractionEnabled = true
             cell?.imageView?.addSubview(cropTitle)
             cell?.imageView?.addSubview(statusButton)
+            
+            
             
             let buttonTitle = ((crop?.owned)!  ? "Plant" : "Add Crop")
             statusButton.setTitle(buttonTitle, for: UIControlState.normal)

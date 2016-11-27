@@ -47,6 +47,11 @@ class LifeCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //TODO make it show in the title!
+        self.navigationController?.title = "Crops Life Cycle"
+        self.navigationController?.navigationBar.tintColor = UIColor(cgColor: Colors.mainColor)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: Fonts.mainFont]
+        
         if let myPlantedCrops = self.myPlantedCrops {
             
             cellHeights = (0..<Int((myPlantedCrops.count))).map { _ in C.CellHeight.close }
@@ -55,7 +60,7 @@ class LifeCycleTableViewController: UITableViewController {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         NotificationCenter.default.addObserver(self,
-                                                selector: #selector(showConfirmView),
+                                                selector: #selector(actionMade),
                                                 name: NSNotification.Name(rawValue: NotificationIds.NotiKeyGrowingActionMade),
                                                 object: nil)
         
@@ -81,21 +86,26 @@ class LifeCycleTableViewController: UITableViewController {
         let cropRow = notification.userInfo?["notiObj"] as! NotificationIds.cropRow
         
         if ((cropRow.crop) != nil) { //Crop has been removed from some rows!
-        
-
-            reloadCellNotes(crop: cropRow.crop!)
-            showConfirmViewWith(title: (cropRow.crop?.name)! + " has been unplanted from selcted Rows")
+            
+            if ((cropRow.crop?.row?.filter { ($0 as! Row).hasActionsDone }.count)! > 0) {
+                    reloadCellNotes(crop: cropRow.crop!)
+            }
+            
+            let title = (cropRow.crop?.name)! + (cropRow.isFinished ? " Finished!" : " Unplanted!")
+            showConfirmViewWith(title: title)
             
         } else { //Crop has been deleted!
 
-            self.myPlantedCrops = self.myPlantedCrops?.filter { !($0.hasBeenDeleted()) }
-            showConfirmViewWith(title:   " Crop deleted")
+            self.myPlantedCrops = self.myPlantedCrops?.filter { $0.isPlanted }
+            
+            let title = (cropRow.isFinished ? " Crop Finished!" : "Crop Unplanted!")
+            showConfirmViewWith(title: title)
             self.tableView.reloadData()
         }
         
     }
     
-    @objc func showConfirmView(notification: NSNotification) {
+    @objc func actionMade(notification: NSNotification) {
         
         let action : ActionMadeDTO = notification.userInfo?["action"] as! ActionMadeDTO
         

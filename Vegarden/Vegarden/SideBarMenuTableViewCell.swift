@@ -18,11 +18,21 @@ class SideBarMenuTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        titleLabel.font = Fonts.mainFont
+        titleLabel.adjustsFontSizeToFitWidth = true
+        self.layer.borderWidth = 1.5
+        self.layer.cornerRadius = 9
+        self.layer.borderColor = UIColor.clear.cgColor
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+       
+ 
+        self.layer.borderColor = (selected ? Colors.mainColor : UIColor.clear.cgColor)
+        self.titleLabel.textColor = (selected ? UIColor(cgColor: Colors.mainColor) : UIColor.darkGray)
         
+        super.setSelected(selected, animated: animated)
 
     }
     

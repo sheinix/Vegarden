@@ -18,6 +18,10 @@ class CropDetailCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.isHidden = true
+        self.view.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
+       // self.collectionView?.isPagingEnabled = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,7 +31,6 @@ class CropDetailCollectionViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
 //        self.navigationController?.navigationBar.backItem?.backBarButtonItem?
-        self.view.layer.cornerRadius = 10
         
     }
 
@@ -138,6 +141,39 @@ class CropDetailCollectionViewController: UICollectionViewController {
         
         NotificationCenter.default.removeObserver(cell)
     }
+    
+//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        
+//        if let collectionView = collectionView {
+//            
+//            targetContentOffset.pointee = scrollView.contentOffset
+//            let pageWidth = scrollView.frame.width + (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
+//            
+//            var assistanceOffset : CGFloat = pageWidth / 3.0
+//            
+//            if velocity.x < 0 {
+//                assistanceOffset = -assistanceOffset
+//            }
+//            
+//            let assistedScrollPosition = (scrollView.contentOffset.x + assistanceOffset) / pageWidth
+//            
+//            var targetIndex = Int(round(assistedScrollPosition))
+//            
+//            
+//            if targetIndex < 0 {
+//                targetIndex = 0
+//            }
+//            else if targetIndex >= collectionView.numberOfItems(inSection: 0) {
+//                targetIndex = collectionView.numberOfItems(inSection: 0) - 1
+//            }
+//            
+//            print("targetIndex = \(targetIndex)")
+//            
+//            let indexPath = IndexPath(item: targetIndex, section: 0)
+//            collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+//            
+//        }
+//    }
 }
 
 extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayout {
@@ -160,7 +196,6 @@ extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayou
 
         return itemSize!
     }
-    
 }
 
 extension CropDetailCollectionViewController: VTransitionProtocol, VHorizontalPageViewControllerProtocol {

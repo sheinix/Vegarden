@@ -25,7 +25,7 @@ public class HelperManager {
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .horizontal
-        //flowLayout.sectionInset = UIEdgeInsets(top: 0,left: 5,bottom: 0,right: 5)
+        flowLayout.sectionInset = UIEdgeInsets(top: 5,left: 0,bottom: 5,right: 0)
         
         return flowLayout
     }

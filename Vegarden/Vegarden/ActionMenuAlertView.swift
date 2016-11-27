@@ -423,21 +423,9 @@ class ActionMenuAlertView: SCLAlertView {
         
         let rows : [Row] = rowsToMakeActions.flatMap { $0.row }
         
-        if (rows.count == 0) {
-            
-            showAlert()
-            
-            return
-        }
+        if (rows.count == 0) {   showAlert() ;  return    }
         
-        
-        var notesString : String?
-        
-        if (!(notesTxtView.text?.isEmpty)!) {
-                notesString = notesTxtView.text
-        }
-        
-        
+        let notesString : String? = ((!(notesTxtView.text?.isEmpty)!) ? notesTxtView.text : nil)
         
         if (isPlantingACrop)! {
             

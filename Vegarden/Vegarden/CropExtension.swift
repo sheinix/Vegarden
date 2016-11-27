@@ -137,7 +137,7 @@ extension Crop {
             case .Grown:
                 classState = Grown.self
             case .Harvested:
-                classState = Harvested.self
+                classState = Harvesting.self
             default:
                 break
         }

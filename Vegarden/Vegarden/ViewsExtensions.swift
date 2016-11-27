@@ -9,8 +9,30 @@
 import Foundation
 import UIKit
 
+extension UIButton {
+   
+    func setClearStyledButton() {
+        self.backgroundColor = UIColor.clear
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        self.titleLabel?.textColor = UIColor.white
+        self.layer.cornerRadius = 10
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 2
+    }
+    
+}
 extension UIView{
    
+    
+    func applyShadows() {
+        
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 6
+        self.layer.shadowColor = UIColor.black.cgColor
+    }
+    
+    
     func origin (point : CGPoint){
         frame.origin.x = point.x
         frame.origin.y = point.y

@@ -102,8 +102,8 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             pageView.scrollToItem(at: indexPath as IndexPath, at:.centeredHorizontally, animated: false)
             
             let offsetY : CGFloat = fromViewController!.navigationController!.isNavigationBarHidden ? 0.0 : navigationHeaderAndStatusbarHeight
-            let offsetStatuBar : CGFloat = fromViewController!.navigationController!.isNavigationBarHidden ? 0.0 :
-            statubarHeight;
+            let offsetStatuBar : CGFloat = fromViewController!.navigationController!.isNavigationBarHidden ? 0.0 : statubarHeight;
+            
             let snapShot = (gridView as! VTansitionWaterfallGridViewProtocol).snapShotForTransition()
             containerView.addSubview(snapShot!)
             snapShot?.origin(point: leftUpperPoint)

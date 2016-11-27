@@ -89,6 +89,7 @@ extension MyCropsCollectionViewCell: VTansitionWaterfallGridViewProtocol {
         }
         
         let snapShotView = UIImageView(image: self.imgView?.image)
+        
         snapShotView.frame = (imgView?.frame)!
         
         return snapShotView

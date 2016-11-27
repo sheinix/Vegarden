@@ -23,14 +23,16 @@ public class Crop: NSManagedObject {
             self.cropType = Int16(NSNumber(value:Int16(newValue.rawValue)))
         }
     }
-//    
-//    public func unPlant() {
-//  
-//        
-//    }
+    
+    var isPlanted : Bool {
+        
+        get {
+            guard (self.row?.count) != nil else { return false }
+            
+            return ((self.row?.count)! > 0)
+        }
+    }
 
-    
-    
     
     //Will be the computed time depending on how you plant the crop, if is seedling or seed. self.timeToHarvest will be a double with the Int part matchiing the seed time and the decimal part matching the seedling
     var computedTimeToHarvest: Int {

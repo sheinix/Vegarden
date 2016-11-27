@@ -19,6 +19,15 @@ let statubarHeight : CGFloat = 20.0
 let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
 let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 
+struct Colors {
+    static let mainColor = UIColor(red: 122/255, green: 250/255, blue: 208/255, alpha: 0.9).cgColor
+}
+struct Fonts {
+    static let mainFont : UIFont = UIFont(name: "OpenSans-Light", size: 26)!
+    static let detailCropFont : UIFont = UIFont(name: "GillSans", size: 80)!
+
+}
+
 struct UINumbericConstants {
     static let widthSideMenu : CGFloat = 0.2
     static let minimumWidthSideMenu : CGFloat = 120
@@ -46,7 +55,7 @@ struct FontSizes {
 struct MainViews {
     static let MyCropsView: String = "My Crops"
     static let DataBaseView: String = "Database"
-    static let LifeCycleView: String = "Crops LifeCylce"
+    static let LifeCycleView: String = "LifeCylce"
     static let MyGardenView: String = "My Garden"
     static let AboutView: String = "About"
 }
@@ -106,6 +115,11 @@ public enum MyCropsSection : Int {
     case OwnedCrops, StockCrops
 }
 
+public enum FinishReason : Int {
+    
+    case CropWasted, FinishHarvesting
+}
+
 struct NotificationIds {
     
     static let NotiKeyCropRemoved = "CropRemoved"
@@ -123,6 +137,7 @@ struct NotificationIds {
     struct cropRow {
         var crop: Crop?
         var rows: [Row]
+        var isFinished : Bool
     }
     
     public func notiIdForGrowing(action: GrowingActions) -> String {

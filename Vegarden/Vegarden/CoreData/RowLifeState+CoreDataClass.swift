@@ -13,5 +13,11 @@ import CoreData
 
 public class RowLifeState: NSManagedObject {
     
+    public var isBeenDeleted : Bool {
+        
+        get {
+            return (self.row == nil)
+        }
+    }
 
 }

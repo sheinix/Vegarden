@@ -51,6 +51,9 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
             states.forEach({ (state) in
                 
                 if (isGrowing) {
+                    
+                    guard !(state as! RowLifeState).isBeenDeleted else { return }
+                    
                     noteView = NoteView(frame: CGRect(x:0,y:0, width:self.frame.width, height:200),
                                          date: (state as! RowLifeState).when as! Date,
                                          text: (state as! RowLifeState).notes as String?,

@@ -22,6 +22,9 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.isScrollEnabled = false
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.isHidden = true
+        
         self.tableView.backgroundColor = UIColor(red: 213, green: 240, blue: 226, alpha: 0.5)
 
     }
@@ -71,7 +74,7 @@ class MasterViewController: UITableViewController {
                 img = UIImage(named: "crops")!
                 title = MainViews.MyCropsView
             case MainViews.DataBaseView:
-                img = UIImage(named: "crops")!
+                img = UIImage(named: "database")!
                 title = MainViews.DataBaseView
             case MainViews.LifeCycleView:
                 img = UIImage(named: "lifecycle")!

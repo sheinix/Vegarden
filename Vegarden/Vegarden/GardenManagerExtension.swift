@@ -15,8 +15,6 @@ extension GardenManager : PersistanceCallBackProtocol {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropPlanted), object: crop, userInfo: ["crop" : crop])
 
     }
-
-    
     
     func didRemoveCropFromGarden(crop: Crop) {
         
@@ -29,12 +27,16 @@ extension GardenManager : PersistanceCallBackProtocol {
         
     }
     
-    func didHarvest(crop:Crop) {
-        
-    }
+    
     
     func didFinishHarvestFor(crop: Crop) {
         
+    }
+    
+    func didHarvest(action: ActionMadeDTO) {
+        
+        //Just use didGrowingAction for NOW,because I need to do exactly the same as a growing action made when I harvest.
+        didGrowingAction(action: action)
     }
     
     func didGrowingAction(action: ActionMadeDTO) {
@@ -47,9 +49,11 @@ extension GardenManager : PersistanceCallBackProtocol {
         
     }
     
-    func didUnPlant(crop: Crop?, from rows: [Row]) {
-
-        let notiObj = NotificationIds.cropRow(crop: crop, rows: rows)
+    func didUnPlant(crop: Crop?, from rows: [Row], reason: FinishReason) {
+        
+        let notiObj = NotificationIds.cropRow(crop: crop,
+                                              rows: rows,
+                                        isFinished: (reason == .FinishHarvesting))
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropUnPlanted),
                                         object: rows,

@@ -20,6 +20,12 @@ public class Row: NSManagedObject {
         }
     }
     
+    public var hasActionsDone : Bool {
+        
+        get {
+            return ((self.lifeCycleState?.count)! > 0)
+        }
+    }
     
 //    public func resetFor(crop: Crop) {
 //TODO This commented code is in a future case where i can plant more than one crop in a row

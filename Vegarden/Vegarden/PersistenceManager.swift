@@ -318,129 +318,72 @@ class PersistenceManager {
         self.callBackDelegate?.didPlant(crop: plantingCrop, in: rows)
     }
     
-    
-    public func plant(crop: Crop, in row:Row,  of paddock: Paddock, asA:plantingStates) -> Row {
-        
-        let plantingCrop = crop.duplicateAssociated()
-        
-        saveContext()
-        
-        let state : CropState = (asA == plantingStates.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
-    
-        state.date = NSDate()
-        plantingCrop?.addToStates(state)
-        
-        //TODO ReCalculate time to harvest depending on how was planted (seed or seedling()
-        
-        plantingCrop?.addToRow(row)
-        
-        row.addToCrops(plantingCrop!)
-        
-       // if row.length != nil {
-        
-            row.estimatedNumberOfCrops = Int16(NSNumber(value:round((row.length) / Float((plantingCrop?.spacing)!))))
-        //}
-        
-        //TODO Clean this
-        _ = plantingCrop?.getEstimatedHarvestDate()
-        _ = plantingCrop?.getDayPlanted()
-        _ = plantingCrop?.getDaysPassedSincePlanted()
-        _ = plantingCrop?.getEstimatedDaysLeftToHarvest()
-        
-        saveContext()
-        
-        return row
-    }
 
-    public func makeGrowingAction(action:GrowingActions, to row:Row, in paddock: Paddock) {
-        
-        //Not quite the right name for this, but a growing action taken on a row, it modifies its row cycle state.
-        row.addToLifeCycleState(getStateFor(action: action))
-        
-        saveContext()
-        
-    }
-    
-    public func makeGrowingAction(action:GrowingActions, in paddock: Paddock) {
-        
-        paddock.rows?.forEach({ (row) in
-            makeGrowingAction(action: action, to:row as! Row, in: paddock)
-        })
-        
-    }
-    
-    public func makeGrowingAction(action: GrowingActions, in garden: Garden) {
-        
-        garden.paddocks?.forEach({ (paddock) in
-            makeGrowingAction(action: action, in: paddock as! Paddock)
-        })
-    }
     
     public func makeGrowingAction(action: ActionMadeDTO) {
         
-        if (action.actionMade == GrowingActions.UnplantAction) {
-            
-            unplant(crop: action.crop, at: action.rows)
+        switch action.actionMade! {
         
-        } else {
-        
-            //Need to create a new state for each row, because i can remove rows from crop while planted
-            action.rows.forEach { (row) in
-                
-                let state = getStateFor(action: action.actionMade)
-                
-                if let note = action.notes {
-                    state.notes = note
-                }
-                
-                row.addToLifeCycleState(state)
-                state.row = row
-                
-            }
+        case GrowingActions.UnplantAction:
+            unplant(crop: action.crop, at: action.rows, with: .CropWasted)
+        case GrowingActions.FinishAction:
+            unplant(crop: action.crop, at: action.rows, with: .FinishHarvesting)
+        case GrowingActions.HarvestAction:
+            harvest(action: action)
             
-            saveContext()
-            self.callBackDelegate?.didGrowingAction(action: action)
+        default:
+            makeGrowing(action: action)
         }
     }
     
-    private func unplant(crop: Crop, at rows: [Row]) {
+    private func harvest(action:ActionMadeDTO) {
+
+        guard let state = Harvesting.mr_createEntity() else { return }
+
+        state.date = NSDate()
+        if let note = action.notes {
+            state.notes = note as NSString?
+        }
+        
+        action.crop.addToStates(state)
+        
+        saveContext()
+        
+        self.callBackDelegate?.didHarvest(action: action)
+    }
+    
+    private func makeGrowing(action: ActionMadeDTO) {
+        
+        //Need to create a new state for each row, because i can remove rows from crop while planted
+        action.rows.forEach { (row) in
+            
+            let state = getStateFor(action: action.actionMade)
+            
+            if let note = action.notes {
+                state.notes = note
+            }
+            
+            row.addToLifeCycleState(state)
+            state.row = row
+            
+        }
+        
+        saveContext()
+        self.callBackDelegate?.didGrowingAction(action: action)
+    }
+    
+    private func unplant(crop: Crop, at rows: [Row], with reason: FinishReason) {
         
         rows.forEach { $0.reset() }
         
         let clearCrop = (crop.row?.count == 0)
         
-        if (clearCrop) {
-            
-            crop.mr_deleteEntity()
+        if (clearCrop) {  crop.mr_deleteEntity()  }
+        
+        saveContext()
 
-        }
-        
-        saveContext()
-        
-        self.callBackDelegate?.didUnPlant(crop: (clearCrop ? nil : crop), from: rows)
+        self.callBackDelegate?.didUnPlant(crop: (clearCrop ? nil : crop), from: rows, reason: reason )
     }
-    
-    
-    public func harvest(crop: Crop, from paddock: Paddock) {
-       
-        let harvestingState = Harvesting.mr_createEntity()
-        harvestingState?.date = NSDate()
-        crop.addToStates(harvestingState!)
-        
-        saveContext()
-        
-    }
-    
-    public func finishHarvestFor(crop: Crop, in paddock: Paddock) {
-        
-        let harvestedState = Harvested.mr_createEntity()
-        harvestedState?.date = NSDate()
-        crop.addToStates(harvestedState!)
-        
-        saveContext()
-        
-    }
-    
     
 //MARK: - Helper Methods
     
@@ -504,33 +447,6 @@ class PersistenceManager {
         addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock, in: sampleGarden)
         
         saveContext()
-        
-//        let cropToPlant = Crop.mr_findFirst()
-//        cropToPlant?.owned = true
-//        let paddock = sampleGarden.paddocks?.allObjects[0] as! Paddock
-//        
-//        let plantedRow1 = plant(crop: cropToPlant!,
-//                                in: paddock.rows?.allObjects.first as! Row,
-//                                of: paddock,
-//                                asA: plantingStates.Seed)
-//        
-//        let plantedRow2 = plant(crop: cropToPlant!,
-//                               in: paddock.rows?.allObjects.first as! Row,
-//                               of: paddock,
-//                               asA: plantingStates.Seedling)
-//        
-//        let plantedRow3 = plant(crop: cropToPlant!,
-//                               in: paddock.rows?.allObjects.first as! Row,
-//                               of: paddock,
-//                               asA: plantingStates.Seed)
-//        
-//       makeGrowingAction(action: GrowingActions.FertilizeAction, to: plantedRow1, in:plantedRow1.paddock! )
-        
-     //   harvest(crop: plantedRow.crops?.allObjects[0] as! Crop, from: plantedRow.paddock!)
-        
-//        print("all good : \(plantedRow1)")
-        
-        
         
         
     }

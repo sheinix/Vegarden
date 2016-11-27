@@ -15,13 +15,13 @@ protocol PersistanceCallBackProtocol: class {
     
     func didAddCropToGarden(crop: Crop)
     
-    func didHarvest(crop:Crop)
+    func didHarvest(action:ActionMadeDTO)
     
     func didFinishHarvestFor(crop: Crop)
     
     func didGrowingAction(action: ActionMadeDTO)
     
-    func didUnPlant(crop: Crop?, from rows: [Row])
+    func didUnPlant(crop: Crop?, from rows: [Row], reason: FinishReason)
 
     func didPlant(crop: Crop, in rows: [Row])
     

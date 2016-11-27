@@ -29,8 +29,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
         
         self.clearsSelectionOnViewWillAppear = false
         self.navigationController!.delegate = delegateHolder
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.isHidden = true
         self.automaticallyAdjustsScrollViewInsets = true;
         
         //CHTCollectionViewWaterfall lyout:

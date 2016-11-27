@@ -122,8 +122,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         guard let crop = self.crop else { return nil }
         
-        self.lifeCycleDict.removeValue(forKey: lifeCyclceSates.Growig)
+        self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Growig)
+        self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Harvesting)
+        
         self.setGrowingNotes(crop: crop)
+        self.setHarvestingStates(crop: crop)
         
         return self.lifeCycleDict
     }
@@ -238,21 +241,22 @@ class CropLifeCycleTableViewCell: FoldingCell {
            self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)
         }
         
-        if (cropie.isReadyForHarvest()) {
-            
+//        if (cropie.isReadyForHarvest()) {
+        
             actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
                 
                 self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie)
                 
             }
         
-            //TODO: Ask the crop if it can be finished to show this option!
-            actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
+            //TODO: Ask the crop if it can be finished to show this option!\
+            
+                actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
                 
                 self.showConfirmationScreenFor(action: .FinishAction, crop: cropie)
             }
         
-        }
+//        }
         
     }
     

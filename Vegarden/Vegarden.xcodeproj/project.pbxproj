@@ -13,6 +13,8 @@
 		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
+		26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A683311DE9BA5100902129 /* OpenSans-Light.ttf */; };
+		26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
 		960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5AD81DCDDC2200ED39A8 /* NoteView.swift */; };
@@ -119,6 +121,8 @@
 		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
+		26A683311DE9BA5100902129 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +249,15 @@
 				266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */,
 			);
 			name = ActionMenuAlertView;
+			sourceTree = "<group>";
+		};
+		26A683331DE9BC7C00902129 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */,
+				26A683311DE9BA5100902129 /* OpenSans-Light.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		55AE3718F559B73804B39E4A /* Frameworks */ = {
@@ -555,6 +568,7 @@
 				96F723121DB360C1000100B2 /* Managers */,
 				96F722F41DB30968000100B2 /* Constants & Macros */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
+				26A683331DE9BC7C00902129 /* Fonts */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				BD203E4C1DA4F84000951732 /* Main.storyboard */,
 				BD7B8EBA1D9118080063347D /* Info.plist */,
@@ -645,9 +659,11 @@
 			files = (
 				962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
+				26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
 				96A8A63F1DD08201000A1673 /* CropDetailLabelView.xib in Resources */,
+				26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */,
 				96D62C301DA9F4DF00DEF4EC /* AllCrops.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

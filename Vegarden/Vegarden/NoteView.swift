@@ -34,6 +34,7 @@ class NoteView: RoundedCornersView {
         if (title != nil) {
             
             titleLabel = UILabel()
+            titleLabel?.sizeToFit()
             titleLabel?.text = title
         }
     

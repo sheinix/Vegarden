@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import QuartzCore
 
 // This tableview cell is the one that is inside the cropdetailview cell!
 
@@ -19,8 +20,13 @@ class VCropDetailPageTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.textLabel?.font = UIFont.systemFont(ofSize: 13)
         
+        
+        self.textLabel?.font = UIFont.systemFont(ofSize: 13)
+        self.imageView?.layer.shouldRasterize = true
+        self.imageView?.layer.masksToBounds = true
+        self.imageView?.layer.cornerRadius = 9
+        self.isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +44,9 @@ class VCropDetailPageTableViewCell: UITableViewCell {
             
             let imageHeight = imageView.image!.size.height*screenWidth/imageView.image!.size.width
             imageView.frame = CGRect(x:0, y:0, width:screenWidth, height:imageHeight)
-            imageView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+            
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 9
             
         } else {
             
