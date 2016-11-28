@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Snapkit
+import SnapKit
 
 class MyGardenDetailTableViewCell: UITableViewCell {
     
@@ -18,26 +18,37 @@ class MyGardenDetailTableViewCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+           }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+
+    override func awakeFromNib() {
+        
+        self.backgroundColor = UIColor.gray
+        
         let layout = UICollectionViewFlowLayout()
         
         self.myGardenCollectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-        self.myGardenCollectionView?.delegate = self
-        self.myGardenCollectionView?.dataSource = self
+
+        if let myGardenCV = self.myGardenCollectionView {
+            myGardenCV.delegate = self
+            myGardenCV.dataSource = self
+            myGardenCV.register(MyGardenDetailCollectionViewCell.self, forCellWithReuseIdentifier: CellIdentifiers.MyGardenDeteailCollectionCellIdentifier)
+            self.addSubview(myGardenCV)
+        }
         
-        self.addSubview(self.myGardenCollectionView)
         
         self.myGardenCollectionView?.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview().offset(5)
         })
         
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    override func awakeFromNib() {
+
+        
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -77,7 +88,7 @@ extension MyGardenDetailTableViewCell : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (self.bounds.width / patchs.count) - 10
+        let width = (Int(self.bounds.width) / patchs.count) - 10
         
         return CGSize(width: width, height: 300)
         
@@ -85,7 +96,12 @@ extension MyGardenDetailTableViewCell : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 10
+        return CGFloat(integerLiteral: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 10)
     }
     
     

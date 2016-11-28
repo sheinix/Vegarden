@@ -31,7 +31,7 @@
     <entity name="Garden" representedClassName=".Garden" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
-        <relationship name="paddocks" optional="YES" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Paddock" inverseName="garden" inverseEntity="Paddock" syncable="YES"/>
+        <relationship name="paddocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Paddock" inverseName="garden" inverseEntity="Paddock" syncable="YES"/>
     </entity>
     <entity name="GardenLocation" representedClassName=".GardenLocation" parentEntity="Location" syncable="YES">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -47,7 +47,7 @@
     <entity name="Paddock" representedClassName=".Paddock" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paddockId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="garden" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Garden" inverseName="paddocks" inverseEntity="Garden" syncable="YES"/>
+        <relationship name="garden" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Garden" inverseName="paddocks" inverseEntity="Garden" syncable="YES"/>
         <relationship name="location" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
         <relationship name="rows" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Row" inverseName="paddock" inverseEntity="Row" syncable="YES"/>
         <relationship name="soil" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Soil" syncable="YES"/>
@@ -90,7 +90,7 @@
         <element name="Herb" positionX="-1116" positionY="-2763" width="128" height="43"/>
         <element name="Irrigated" positionX="-1260" positionY="-2358" width="128" height="43"/>
         <element name="Location" positionX="-900" positionY="-2232" width="128" height="43"/>
-        <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="135"/>
+        <element name="Paddock" positionX="-927" positionY="-2394" width="128" height="133"/>
         <element name="PaddockLocation" positionX="-729" positionY="-2277" width="128" height="43"/>
         <element name="Row" positionX="-1134" positionY="-2601" width="128" height="148"/>
         <element name="RowLifeState" positionX="-1098" positionY="-2403" width="128" height="118"/>

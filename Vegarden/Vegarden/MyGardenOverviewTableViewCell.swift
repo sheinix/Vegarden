@@ -20,62 +20,60 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
-        self.backgroundColor = UIColor.white
-        
-        
-        self.cropsTableView?.delegate = self
-        self.cropsTableView?.dataSource = self
-        
-        self.titleLabel.font = Fonts.mainFont
-        self.titleLabel.text = "Overview | Crops Planted : " + String(self.plantedCrops.count)
-        
-        //TODO Check if this shouldnt be added to the contentView of the cell! :/
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.cropsTableView!)
-        
-        setupConstraints()
-        
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        super.init(coder: aDecoder)
     }
     
     override func awakeFromNib() {
+       
+        self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
+        self.backgroundColor = UIColor.green
         
+        self.cropsTableView?.delegate = self
+        self.cropsTableView?.dataSource = self
+        self.cropsTableView?.register(MyGardenOverviewCropTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.MyGardenOverviewCropTableViewCellIdentifier)
+        
+//        self.titleLabel.font = Fonts.mainFont
+//        self.titleLabel.text = "Overview | Crops Planted : " + String(self.plantedCrops.count)
+        
+        //TODO Check if this shouldnt be added to the contentView of the cell! :/
+//        self.addSubview(self.titleLabel)
+        self.addSubview(self.cropsTableView!)
+        
+        setupConstraints()
+
         super.awakeFromNib()
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     private func setupConstraints() {
         
-        titleLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.snp.leading).offset(10)
-            make.trailing.equalTo(self.snp.trailing).offset(-10)
-            make.top.equalToSuperview().offset(5)
-            make.height.equalTo(40)
-        }
-        
+//        titleLabel.snp.makeConstraints { (make) in
+//            make.leading.equalTo(self.snp.leading).offset(10)
+//            make.trailing.equalTo(self.snp.trailing).offset(-10)
+//            make.top.equalToSuperview().offset(5)
+//            make.height.equalTo(40)
+//        }
         
         //TODO TableView size should be resizable with the cell size!
         cropsTableView?.snp.makeConstraints { (make) in
             make.leading.equalTo(self.snp.leading).offset(10)
             make.trailing.equalTo(self.snp.trailing).offset(-10)
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.height.equalToSuperview().multipliedBy(0.8)
+            make.bottom.equalToSuperview()
         }
-        
     }
-    
 }
+
 extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSource {
     
     

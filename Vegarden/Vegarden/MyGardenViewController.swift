@@ -10,14 +10,16 @@ import UIKit
 
 class MyGardenViewController: UITableViewController {
 
-    let totalPlantedCrops = String(describing: GardenManager.shared.myPlantedCrops()?.count)
-    let totalPaddocks = String(describing: GardenManager.shared.getMyGarden().paddocks?.count)
+    let totalPlantedCrops : Int = (GardenManager.shared.myPlantedCrops()?.count)!
+    let totalPaddocks : Int = (GardenManager.shared.getMyGarden().paddocks?.count)!
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 440
         
     }
 
@@ -37,7 +39,6 @@ class MyGardenViewController: UITableViewController {
         
         return 1
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -58,10 +59,10 @@ class MyGardenViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if (section == 0){
-            return "Overview  |  Planted Crops : " + totalPlantedCrops
+            return "Overview  |  Planted Crops : " + String(totalPlantedCrops)
         }
         
-        return "My Garden | Patchs : " + totalPaddocks
+        return "My Garden | Patchs : " + String(totalPaddocks)
         
         
     }
