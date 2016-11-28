@@ -58,13 +58,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-1L-2gv">
-                                            <rect key="frame" x="18" y="123" width="284" height="36"/>
+                                            <rect key="frame" x="18" y="122" width="284" height="37"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-FO-c9V">
-                                            <rect key="frame" x="106" y="12" width="108" height="108"/>
+                                            <rect key="frame" x="106" y="11" width="108" height="108"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="108" id="GRr-jN-Hzf"/>
                                                 <constraint firstAttribute="width" secondItem="6Zi-FO-c9V" secondAttribute="height" multiplier="1:1" id="fJB-6l-Y7M"/>
@@ -105,25 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="819" y="-630"/>
-        </scene>
-        <!--My Garden-->
-        <scene sceneID="7g0-Hg-Wzp">
-            <objects>
-                <viewController title="My Garden" id="9GY-AB-pqc" customClass="MyGardenViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VJt-fr-sH5"/>
-                        <viewControllerLayoutGuide type="bottom" id="qdT-rX-GIu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="geL-Nu-rZB">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Garden" id="12y-Dc-Mcm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MCu-RC-Zb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2896" y="-1610"/>
         </scene>
         <!--Life Cycle Table View Controller-->
         <scene sceneID="gET-MY-aR4">
@@ -560,12 +541,49 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9GY-AB-pqc" kind="relationship" relationship="rootViewController" id="otq-b1-kjq"/>
+                        <segue destination="79v-j2-Mjj" kind="relationship" relationship="rootViewController" id="OdT-7p-uNR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrp-J1-un9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1968" y="-1525"/>
+        </scene>
+        <!--My Garden View Controller-->
+        <scene sceneID="4Od-Yz-HOH">
+            <objects>
+                <tableViewController id="79v-j2-Mjj" customClass="MyGardenViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6d-NI-oWL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenOverviewCellIdentifier" rowHeight="418" id="HmU-II-D7e">
+                                <rect key="frame" x="0.0" y="28" width="768" height="418"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HmU-II-D7e" id="FHk-xK-TTA">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="417"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenDetailCellIdentifier" rowHeight="454" id="dWv-lG-SCU">
+                                <rect key="frame" x="0.0" y="446" width="768" height="454"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWv-lG-SCU" id="6HH-Sv-aRB">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="453"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="79v-j2-Mjj" id="tF1-N2-VNl"/>
+                            <outlet property="delegate" destination="79v-j2-Mjj" id="D4Y-5y-xhE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="858-Rx-IHH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4te-jq-Apz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663.28125" y="-1525.1953125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBf-sc-uJb">

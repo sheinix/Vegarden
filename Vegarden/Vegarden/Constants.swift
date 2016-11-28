@@ -45,6 +45,12 @@ struct CellIdentifiers {
     static let lifeCycleTableViewCellIdentifier = "FoldingCell"
     static let lifeCycleDetailViewCellIdentifier = "lifeCycleDetailViewCellIdentifier"
     static let DetailPatchRowTableViewCellIdentifier = "DetailPatchRowTableViewCellIdentifier"
+    
+    static let MyGardenOverviewCellIdentifier = "MyGardenOverviewCellIdentifier"
+    static let MyGardenDetailCellIdentifier = "MyGardenDetailCellIdentifier"
+    static let MyGardenOverviewCropTableViewCellIdentifier = "MyGardenOverviewCropTableViewCellIdentifier"
+    
+    static let MyGardenDeteailCollectionCellIdentifier = "MyGardenDeteailCollectionCellIdentifier"
 }
 
 struct FontSizes {
