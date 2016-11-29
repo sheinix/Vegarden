@@ -557,23 +557,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenOverviewCellIdentifier" rowHeight="418" id="HmU-II-D7e" customClass="MyGardenOverviewTableViewCell" customModule="Vegarden" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="768" height="418"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenOverviewCellIdentifier" rowHeight="394" id="HmU-II-D7e" customClass="MyGardenOverviewTableViewCell" customModule="Vegarden" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="394"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HmU-II-D7e" id="FHk-xK-TTA">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="417"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="393"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenDetailCellIdentifier" rowHeight="454" id="dWv-lG-SCU" customClass="MyGardenDetailTableViewCell" customModule="Vegarden" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="446" width="768" height="454"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGardenDetailCellIdentifier" rowHeight="535" id="dWv-lG-SCU" customClass="MyGardenDetailTableViewCell" customModule="Vegarden" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="422" width="768" height="535"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWv-lG-SCU" id="6HH-Sv-aRB">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="453"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="534"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="79v-j2-Mjj" id="tF1-N2-VNl"/>
                             <outlet property="delegate" destination="79v-j2-Mjj" id="D4Y-5y-xhE"/>

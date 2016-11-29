@@ -9,18 +9,16 @@
 import UIKit
 import SnapKit
 
+let cropRowHeight = 50
+
 class MyGardenOverviewTableViewCell: UITableViewCell {
 
     var plantedCrops : [Crop] = GardenManager.shared.myPlantedCrops()!
-    
-    var titleLabel : UILabel = UILabel()
     var cropsTableView : UITableView?
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,15 +28,7 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
        
-        self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
-        self.backgroundColor = UIColor.green
-        
-        self.cropsTableView?.delegate = self
-        self.cropsTableView?.dataSource = self
-        self.cropsTableView?.register(MyGardenOverviewCropTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.MyGardenOverviewCropTableViewCellIdentifier)
-        
-//        self.titleLabel.font = Fonts.mainFont
-//        self.titleLabel.text = "Overview | Crops Planted : " + String(self.plantedCrops.count)
+        setupTableView()
         
         //TODO Check if this shouldnt be added to the contentView of the cell! :/
 //        self.addSubview(self.titleLabel)
@@ -55,21 +45,31 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    private func setupConstraints() {
+    private func setupTableView() {
+       
+        self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
         
-//        titleLabel.snp.makeConstraints { (make) in
-//            make.leading.equalTo(self.snp.leading).offset(10)
-//            make.trailing.equalTo(self.snp.trailing).offset(-10)
-//            make.top.equalToSuperview().offset(5)
-//            make.height.equalTo(40)
-//        }
+        self.cropsTableView?.layer.borderColor = UIColor.lightGray.cgColor
+        self.cropsTableView?.layer.borderWidth = 1
+//        self.cropsTableView?.layer.shadowOffset = CGSize(width: -, height: 1)
+        self.cropsTableView?.layer.shadowOpacity = 2
+        self.cropsTableView?.layer.shadowRadius = 3
+        self.cropsTableView?.layer.shadowColor = UIColor.black.cgColor
+        
+        self.cropsTableView?.delegate = self
+        self.cropsTableView?.dataSource = self
+        self.cropsTableView?.estimatedRowHeight = CGFloat(cropRowHeight)
+        self.cropsTableView?.register(MyGardenOverviewCropTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.MyGardenOverviewCropTableViewCellIdentifier)
+    }
+    
+    private func setupConstraints() {
         
         //TODO TableView size should be resizable with the cell size!
         cropsTableView?.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.snp.leading).offset(10)
-            make.trailing.equalTo(self.snp.trailing).offset(-10)
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }
@@ -95,9 +95,18 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
         cell.harvestDate?.text = crop.getEstimatedHarvestDate()?.inCellDateFormat()
         cell.textLabel?.text = crop.name!
         
+        
         //TODO Set the progressView!
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cropRowHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cropRowHeight)
     }
 }

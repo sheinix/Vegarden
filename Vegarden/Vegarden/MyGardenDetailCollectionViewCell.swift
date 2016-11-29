@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-let buttonsViewHeight = 100
-let labelsHeight = 70
+let buttonsViewHeight = 60
+let labelsHeight = 50
 
 class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     
@@ -37,17 +37,32 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     var addRowsButton  = UIButton(type: UIButtonType.custom)
     var deleteRows  = UIButton(type: UIButtonType.custom)
     
-    
-    override func awakeFromNib() {
-      
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
         
         setupViews()
         
         setupConstraints()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
+
+    override func awakeFromNib() {
+      
+        super.awakeFromNib()
+        
+    }
+    
     private func setupViews() {
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 8
         
         self.removePatchButton.addTarget(self, action: #selector(removePatch), for: .touchUpInside)
         self.removePatchButton.setTitle("Remove Patch", for: .normal)
@@ -66,7 +81,6 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         addSubview(self.freeRowsLabel)
         addSubview(self.totalRows)
         
-        self.buttonsContainerView.backgroundColor = UIColor.red
         self.buttonsContainerView.addSubview(self.removePatchButton)
         self.buttonsContainerView.addSubview(self.addRowsButton)
         self.buttonsContainerView.addSubview(self.deleteRows)
@@ -87,29 +101,29 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         
         
         self.freeRowsLabel.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(5)
-            make.bottom.equalTo(buttonsContainerView.snp.top).offset(5)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.bottom.equalTo(buttonsContainerView.snp.top).offset(-5)
             make.height.equalTo(labelsHeight)
         }
         
         self.plantedRowsLabel.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
             make.bottom.equalTo(freeRowsLabel.snp.top).offset(5)
             make.height.equalTo(labelsHeight)
         }
         
         self.totalRows.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
             make.bottom.equalTo(plantedRowsLabel.snp.top).offset(5)
             make.height.equalTo(labelsHeight)
         }
         
         self.patchLabel.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
             make.top.equalToSuperview()
             make.bottom.equalTo(totalRows.snp.top)
         }
@@ -120,28 +134,28 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     private func setupConstraintsForButtons() {
     
         self.buttonsContainerView.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(buttonsViewHeight)
         }
     
         self.removePatchButton.snp.makeConstraints { (make) in
-            make.trailing.equalToSuperview()
+            make.left.equalToSuperview()
             make.bottom.equalToSuperview()
             make.top.equalToSuperview()
             make.width.equalToSuperview().dividedBy(2)
         }
     
         self.addRowsButton.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
+            make.left.equalTo(self.removePatchButton.snp.right)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.width.equalTo(self.removePatchButton.snp.width).dividedBy(2)
         }
     
         self.deleteRows.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.addRowsButton.snp.trailing)
+            make.left.equalTo(self.addRowsButton.snp.right)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.width.equalTo(self.removePatchButton.snp.width).dividedBy(2)
