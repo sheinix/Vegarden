@@ -22,7 +22,8 @@ target 'Vegarden' do
 	pod 'CircleMenu', '~> 2.0.1'
 	pod 'SCLAlertView'
 	pod 'M13Checkbox'
-	
+	pod 'SkyFloatingLabelTextField', '~> 1.0'
+
 	#source 'https://github.com/CocoaPods/Specs.git'
 	#platform :ios, '8.0'
 	#use_frameworks!

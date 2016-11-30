@@ -59,16 +59,14 @@ class PersistenceManager {
 
 //MARK: - Garden Management Methods
     
-    public func createGardenNamed(name: String!, in location:Location?, withPaddocks paddock: [Paddock]?) -> Garden {
+    public func createGardenNamed(name: String!, in location:Location?) -> Garden {
         
         let newGarden = Garden.mr_createEntity()
         
         newGarden?.name = name
         
-        //_ = paddock?.map { ($0 as Paddock).garden = garden }
-        
-        newGarden?.addToPaddocks(NSSet(array: paddock!))
-        _ = newGarden?.paddocks?.allObjects.map { ($0 as! Paddock).garden = newGarden }
+//        newGarden?.addToPaddocks(NSSet(array: paddock!))
+//        _ = newGarden?.paddocks?.allObjects.map { ($0 as! Paddock).garden = newGarden }
         newGarden?.location = location
         
         saveContext()
@@ -98,9 +96,48 @@ class PersistenceManager {
         garden.addToPaddocks(NSSet(array: paddocks))
     }
     
-    public func addPaddock(paddock: Paddock, to garden: Garden) {
+    public func update(paddock: Paddock!, data: PatchInfo) {
         
-        garden.addToPaddocks(paddock)
+        if let name = data.name { paddock.name = name }
+        
+        if let location = data.location { paddock.location?.locationName = location }
+        
+        if let phLevel = data.phLevel { paddock.soil?.phLevel = Int16(phLevel)! }
+        
+        if let rowNamePfx = data.rowNamesPrefix { paddock.rowsNamePrefix = rowNamePfx }
+        
+        saveContext()
+        
+        self.callBackDelegate?.didUpdate(paddock: paddock)
+        
+    }
+    
+    public func addPaddock(paddockInfo: PatchInfo) {
+        
+        let myGarden = self.getAllGardens()[0]
+        
+        let paddock = Paddock.mr_createEntity()
+        let location = PaddockLocation.mr_createEntity()
+        let soil = Soil.mr_createEntity()
+        
+        location?.locationName = paddockInfo.location
+        soil?.phLevel = Int16(paddockInfo.phLevel!)!
+        
+        paddock?.name = paddockInfo.name
+        paddock?.location = location
+        paddock?.soil = soil
+        paddock?.rowsNamePrefix = paddockInfo.rowNamesPrefix
+        
+        addRows(numberOfRows: paddockInfo.rowQtty!, to: paddock!)
+        
+        paddock!.garden = myGarden
+        
+        myGarden.addToPaddocks(paddock!)
+        
+        saveContext()
+        
+        self.callBackDelegate?.didAdd(paddock: paddock)
+        
     }
     
     public func removePaddocks(paddocks:[Paddock], from garden: Garden) {
@@ -120,7 +157,7 @@ class PersistenceManager {
     
 // MARK: - Row Management Methods
     
-    public func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden) {
+    public func addRow(rowName: String!, length: Float?, to paddock: Paddock) {
         
         let newRow = Row.mr_createEntity()
         newRow?.name = rowName
@@ -133,17 +170,19 @@ class PersistenceManager {
         
     }
     
-    public func addRows(numberOfRows: Int, to paddock: Paddock, in garden: Garden) {
+    public func addRows(numberOfRows: Int, to paddock: Paddock) {
         
         var rowName : String
+        var rowPrefix = paddock.rowsNamePrefix
         
         for _ in (0..<numberOfRows) {
- //TODO Check helper method to see how can i get the randoms with a fixed length
+ 
+            //TODO Check helper method to see how can i get the randoms with a fixed length
 //            rowName = "V_"+String(HelperManager.random(digits: 5))
-             rowName = "V_"+String(arc4random())
             
-            
-            addRow(rowName: rowName, length: nil, to: paddock, in: garden)
+            addRow(rowName: rowPrefix!+String(arc4random()),
+                    length: nil,
+                        to: paddock)
             
         }
     }
@@ -436,15 +475,17 @@ class PersistenceManager {
     
     public func generateASampleGarden() {
         
-        let paddocks = createSamplePaddocks()
+       // let paddocks = createSamplePaddocks()
         
-        let sampleGarden = createGardenNamed(name: "Sample Garden", in: nil, withPaddocks: paddocks)
+        
+        
+        let sampleGarden = createGardenNamed(name: "Sample Garden", in: nil)
     
-        addRows(numberOfRows: 10, to: sampleGarden.paddocks?.allObjects[0] as! Paddock, in: sampleGarden)
+        //addRows(numberOfRows: 10, to: sampleGarden.paddocks?.allObjects[0] as! Paddock)
         
-        addRows(numberOfRows: 5, to: sampleGarden.paddocks?.allObjects[1] as! Paddock, in: sampleGarden)
+       // addRows(numberOfRows: 5, to: sampleGarden.paddocks?.allObjects[1] as! Paddock)
         
-        addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock, in: sampleGarden)
+       // addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock)
         
         saveContext()
         
@@ -453,8 +494,12 @@ class PersistenceManager {
     public func createSamplePaddocks () -> [Paddock] {
         
         let paddock1 = Paddock.mr_createEntity()
+        
         let paddock2 = Paddock.mr_createEntity()
         let paddock3 = Paddock.mr_createEntity()
+        
+        
+        
         
         
         paddock1?.paddockId = UUID().uuidString

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 let buttonsViewHeight = 60
-let labelsHeight = 50
+let labelsHeight = 40
 
 class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     
@@ -20,22 +20,21 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
             
             if let newPatch = patch {
                 patchLabel.text = patch?.name!
-                totalRows.text = "Total Rows : " + String(describing: newPatch.rows?.count)
-                plantedRowsLabel.text = "Planted Rows : " + String(describing: newPatch.plantedRows.count)
+                totalRows.text = "Total Rows : " + String(newPatch.rows!.count)
+                plantedRowsLabel.text = "Planted Rows : " + String(newPatch.plantedRows.count)
                 freeRowsLabel.text = "Free Rows : " + String(describing: newPatch.freeRows.count)
             }
-
         }
     }
-    
-    var patchLabel = UILabel()
-    var plantedRowsLabel  = UILabel()
-    var freeRowsLabel = UILabel()
-    var totalRows = UILabel()
+
+    var patchLabel           = UILabel()
+    var plantedRowsLabel     = UILabel()
+    var freeRowsLabel        = UILabel()
+    var totalRows            = UILabel()
     var buttonsContainerView = UIView()
-    var removePatchButton = UIButton(type: UIButtonType.custom)
-    var addRowsButton  = UIButton(type: UIButtonType.custom)
-    var deleteRows  = UIButton(type: UIButtonType.custom)
+    var removePatchButton    = UIButton(type: UIButtonType.custom)
+    var addRowsButton        = UIButton(type: UIButtonType.custom)
+    var deleteRows           = UIButton(type: UIButtonType.custom)
     
     override init(frame: CGRect) {
         
@@ -64,16 +63,21 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 8
         
+        self.removePatchButton.setRoundedCornerStyled()
         self.removePatchButton.addTarget(self, action: #selector(removePatch), for: .touchUpInside)
         self.removePatchButton.setTitle("Remove Patch", for: .normal)
         self.removePatchButton.titleLabel?.sizeToFit()
         
+        self.addRowsButton.setRoundedCornerStyled()
         self.addRowsButton.addTarget(self, action: #selector(addRows), for: .touchUpInside)
-        self.addRowsButton.setTitle("Add Rows", for: .normal)
+        self.addRowsButton.setTitle("+", for: .normal)
+        self.addRowsButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         self.addRowsButton.titleLabel?.sizeToFit()
         
+        self.deleteRows.setRoundedCornerStyled()
         self.deleteRows.addTarget(self, action: #selector(deleteRowsFromPatch), for: .touchUpInside)
-        self.deleteRows.setTitle("Delete Rows", for: .normal)
+        self.deleteRows.setTitle("-", for: .normal)
+        self.deleteRows.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         self.deleteRows.titleLabel?.sizeToFit()
         
         addSubview(self.patchLabel)

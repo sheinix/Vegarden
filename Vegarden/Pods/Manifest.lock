@@ -26,6 +26,7 @@ PODS:
   - Masonry (1.0.2)
   - MBCircularProgressBar (0.3.5)
   - SCLAlertView (0.7.0)
+  - SkyFloatingLabelTextField (1.2.1)
   - SnapKit (3.0.2)
 
 DEPENDENCIES:
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - Masonry
   - MBCircularProgressBar
   - SCLAlertView
+  - SkyFloatingLabelTextField (~> 1.0)
   - SnapKit (~> 3.0.2)
 
 SPEC CHECKSUMS:
@@ -50,8 +52,9 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: f4263e1b962279b710b40ee13be30c1863c4b00a
+PODFILE CHECKSUM: cd44c4f9a08f5b0ccb80bf620c94a9b3ffe7c0c4
 
 COCOAPODS: 1.1.1

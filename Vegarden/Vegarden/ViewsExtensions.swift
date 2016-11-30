@@ -8,6 +8,25 @@
 
 import Foundation
 import UIKit
+import SkyFloatingLabelTextField
+
+extension SkyFloatingLabelTextField {
+    
+    func setupPatchEditionTextView() {
+        
+        self.tintColor = UIColor.lightText
+        self.textColor = UIColor.darkGray
+        self.lineColor = UIColor.lightGray
+        self.selectedTitleColor = Colors.mainColorUI
+        self.selectedLineColor = Colors.mainColorUI
+        
+        self.lineHeight = 1.0 // bottom line height in points
+        self.selectedLineHeight = 2.0
+        
+        
+    }
+    
+}
 
 extension UIButton {
    
@@ -17,6 +36,16 @@ extension UIButton {
         self.titleLabel?.textColor = UIColor.white
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 2
+    }
+    
+    
+    func setRoundedCornerStyled () {
+      
+//        self.titleLabel?.font = UIFont.systemFont(ofSize: 2)
+        self.titleLabel?.textColor = UIColor.gray
+        self.layer.cornerRadius = 10
+        self.layer.borderColor = UIColor.darkGray.cgColor
         self.layer.borderWidth = 2
     }
     

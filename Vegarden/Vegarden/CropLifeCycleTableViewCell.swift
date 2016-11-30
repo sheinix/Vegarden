@@ -114,7 +114,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
             self.ringProgressBar.value = 45 //setValue(45, animateWithDuration: 3.0)
         }
        
-        
+        //TODO Here's the problem when re-creating the button/....need to check its not already there!
         setupActionButtonMenu()
     }
     

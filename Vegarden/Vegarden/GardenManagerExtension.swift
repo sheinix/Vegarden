@@ -10,6 +10,7 @@ import Foundation
 
 extension GardenManager : PersistanceCallBackProtocol {
     
+    
     func didPlant(crop: Crop, in rows: [Row]) {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropPlanted), object: crop, userInfo: ["crop" : crop])
@@ -61,7 +62,12 @@ extension GardenManager : PersistanceCallBackProtocol {
 
         
     }
+    
+    func didAdd(paddock: Paddock!) {
+        //paddock added do some shit ?
+    }
+    
+    func didUpdate(paddock: Paddock!) {
         
-    
-    
+    }
 }

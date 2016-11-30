@@ -8,14 +8,18 @@
 
 import UIKit
 import SnapKit
+import KCFloatingActionButton
+import SCLAlertView
 
 class MyGardenDetailTableViewCell: UITableViewCell {
     
+    var actionMenu : KCFloatingActionButton?
     var myGardenCollectionView : UICollectionView?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         
     }
     
@@ -46,12 +50,46 @@ class MyGardenDetailTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(-5)
         })
         
-
+        setupFloatingButton()
+        
+        
         
         super.awakeFromNib()
         
     }
-
+    
+    fileprivate func setupFloatingButton() {
+    
+        actionMenu = KCFloatingActionButton()
+        
+        guard let actionMenu = actionMenu else { return }
+        
+        actionMenu.openAnimationType = KCFABOpenAnimationType.pop
+        actionMenu.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
+    
+        self.addSubview(actionMenu)
+    
+        actionMenu.addItem("Add New Patch", icon: UIImage(named:"icon_fertilize")) { (item) in
+    
+            self.showAddEditView()
+        }
+    }
+    
+    fileprivate func showAddEditView() {
+        
+        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                    kWindowHeight: screenHeight * 0.9,
+                                                    showCloseButton: true)
+        
+        let view = PatchAddEditViewController(appearance:appearance , patch: nil)
+  
+        
+        let _ = view.showEdit("Add New Patch", subTitle: "")
+        
+        
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -18,9 +18,9 @@ protocol GardenManagementProtocol: class {
     
     // MARK: - Paddock Management Methods
         
-    func addPaddocks(paddocks:[Paddock], to garden: Garden)
-    
-    func addPaddock(paddock: Paddock, to garden: Garden)
+//    func addPaddocks(paddocks:[Paddock], to garden: Garden)
+//    
+//    func addPaddock(paddock: Paddock, to garden: Garden)
    
     func removePaddocks(paddocks:[Paddock], from garden: Garden)
     

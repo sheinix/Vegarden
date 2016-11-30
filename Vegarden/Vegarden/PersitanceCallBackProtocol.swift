@@ -25,5 +25,9 @@ protocol PersistanceCallBackProtocol: class {
 
     func didPlant(crop: Crop, in rows: [Row])
     
+    func didAdd(paddock: Paddock!)
+    
+    func didUpdate(paddock: Paddock!)
+    
     //TODO Finish the protocol methods!
 }

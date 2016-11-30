@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2620FCE91DEE4A2A00352111 /* PatchAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */; };
+		2620FCEC1DEE4FFB00352111 /* PatchEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */; };
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */; };
 		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
+		2690D6D41DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */; };
 		26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A683311DE9BA5100902129 /* OpenSans-Light.ttf */; };
 		26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */; };
 		26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */; };
@@ -119,12 +122,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchAddEditViewController.swift; sourceTree = "<group>"; };
+		2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchEditionTableViewCell.swift; sourceTree = "<group>"; };
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertTableHeaderView.swift; sourceTree = "<group>"; };
 		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
+		2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenSectionHeaderView.swift; sourceTree = "<group>"; };
 		26A683311DE9BA5100902129 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +256,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2620FCE71DEE485100352111 /* MyGardenActionMenusAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */,
+			);
+			name = MyGardenActionMenusAlertView;
+			sourceTree = "<group>";
+		};
+		2620FCEA1DEE4FD900352111 /* PatchRowEditCells */ = {
+			isa = PBXGroup;
+			children = (
+				2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */,
+			);
+			name = PatchRowEditCells;
+			sourceTree = "<group>";
+		};
 		266F509D1DE66EB60064C05D /* ActionMenuAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +279,16 @@
 				266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */,
 			);
 			name = ActionMenuAlertView;
+			sourceTree = "<group>";
+		};
+		2690D6D21DEE8ED600259F26 /* MyGardenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */,
+				2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */,
+				2620FCE71DEE485100352111 /* MyGardenActionMenusAlertView */,
+			);
+			name = MyGardenViewController;
 			sourceTree = "<group>";
 		};
 		26A683331DE9BC7C00902129 /* Fonts */ = {
@@ -271,6 +303,7 @@
 		26BDDBEF1DEBA3CE003547BB /* MyGardenViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				2620FCEA1DEE4FD900352111 /* PatchRowEditCells */,
 				26BDDBF01DEBA411003547BB /* MyGardenOverviewTableViewCell.swift */,
 				26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */,
 				26BDDBF41DEBA95C003547BB /* MyGardenOverviewCropTableViewCell.swift */,
@@ -604,8 +637,8 @@
 				96F722D71DAD04AB000100B2 /* NavigationControllers */,
 				BD203E461DA2305800951732 /* MasterViewController.swift */,
 				BD83BF921D9FFE9C00C7D79A /* CommonViewController.swift */,
-				26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */,
 				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
+				2690D6D21DEE8ED600259F26 /* MyGardenViewController */,
 				266F509D1DE66EB60064C05D /* ActionMenuAlertView */,
 				960E5ADB1DCE150F00ED39A8 /* MyCropsViewController */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
@@ -790,6 +823,8 @@
 				96A8A6441DD08D3B000A1673 /* CropDetailLabel.swift in Sources */,
 				BDE061891D9FDC660003364D /* Weed+CoreDataProperties.swift in Sources */,
 				96F723051DB3111A000100B2 /* VCropDetailPageViewCell.swift in Sources */,
+				2620FCEC1DEE4FFB00352111 /* PatchEditionTableViewCell.swift in Sources */,
+				2690D6D41DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift in Sources */,
 				BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */,
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
 				2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */,
@@ -805,6 +840,7 @@
 				96A8A6411DD08530000A1673 /* CropDetailLabelView.swift in Sources */,
 				266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */,
 				267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */,
+				2620FCE91DEE4A2A00352111 /* PatchAddEditViewController.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */,
 				96BB77781DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift in Sources */,

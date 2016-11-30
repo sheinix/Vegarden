@@ -21,6 +21,7 @@ let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 
 struct Colors {
     static let mainColor = UIColor(red: 122/255, green: 250/255, blue: 208/255, alpha: 0.9).cgColor
+    static let mainColorUI = UIColor(cgColor: mainColor)
 }
 struct Fonts {
     static let mainFont : UIFont = UIFont(name: "OpenSans-Light", size: 26)!
@@ -51,6 +52,9 @@ struct CellIdentifiers {
     static let MyGardenOverviewCropTableViewCellIdentifier = "MyGardenOverviewCropTableViewCellIdentifier"
     
     static let MyGardenDeteailCollectionCellIdentifier = "MyGardenDeteailCollectionCellIdentifier"
+    
+    static let PatchEditionCellIdentifier = "PatchEditionCellIdentifier"
+    static let RowsEditionCellIdentifier = "RowsEditionCellIdentifier"
 }
 
 struct FontSizes {
@@ -146,6 +150,9 @@ struct NotificationIds {
         var isFinished : Bool
     }
     
+    
+    
+    
     public func notiIdForGrowing(action: GrowingActions) -> String {
         
         var notiId : String?
@@ -173,5 +180,59 @@ struct NotificationIds {
         
         return notiId!
     }
+    
+}
+
+//Used for add/edit patchs! :
+public enum patchEditionRows : Int {
+    
+    case PatchName, PatchLocation, PatchSoilPhLvl, PatchRowQtty, PatchRowNamesPrefix
+}
+
+struct PatchInfo {
+    
+    var name: String?
+    var location: String?
+    var phLevel: String?
+    var rowQtty: Int?
+    var rowNamesPrefix: String?
+    
+    var isReadyForCreation : Bool {
+        
+        get {
+            return  (name != nil &&
+                     location != nil &&
+                     phLevel != nil &&
+                     rowQtty != nil &&
+                     rowNamesPrefix != nil)
+        }
+    }
+    
+    var hasSomeDataToUpdate : Bool {
+        
+        get {
+            return  (name != nil ||
+                     location != nil ||
+                     phLevel != nil ||
+                     rowQtty != nil ||
+                     rowNamesPrefix != nil)
+        }
+    }
+    
+    
+}
+
+//Used for add/remove/edit rows! :
+struct rowsEdited {
+    
+    var patch : Paddock!     //Patch
+    var newRows: [newRow]?    //If new rows added
+    var editedRows: [Row]?      //If rows are deleted
+    var deletedRows: [Row]?     //If rows are edited
+}
+
+struct newRow  {
+    
+    var name: String!
     
 }

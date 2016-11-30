@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SkyFloatingLabelTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,57 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>27533A6098E2BDD80827924FA8F4E742</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30262811E665ADDF24E54119EB9F7455</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4ABBB9875E9D28B0B6452ED2C78E72FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>52C1B5A2084F9B3A2B61A89803680B93</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>59C5734CBDBC16DD52556632EF13C40B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E570E6E327C370CF68D1D3C72F0B665</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>860A9179BCFD9F1C616D8653DB2B4F91</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8FC4B2785BB68892651401B8A26A15AD</key>
+		<key>3D9FD6F1E341A889DD8A6087A4E012CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>96D028D8410E9A401CDCEFD40406EEC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A142D04914B39F03F095C6B1CE49DB56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,17 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9A83F63385AA43314397B8DD375464B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C46B8914D9EB7F3B1A7CE1868BF69F60</key>
+		<key>AFF292AE3AD0C4B51260BF4317024789</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CAC840DD7C14BED838F74AD37CD7CBBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD0F3737C672D614CC59DA61F0A76536</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,22 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D58D76EC529B4A92F3E5EDADE0A96661</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DFD43EA9B3A25E31B747D7D818BBF910</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>F579AA4D4755DD9570010BC36D0422F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FB3E96B942D5894D205AB8D8DC31F1C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

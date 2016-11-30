@@ -108,6 +108,26 @@ extension UITableView {
     }
 }
 
+extension UIViewController {
+    
+    public func showSimpleAlertViewWith(title: String!, message: String!, style: UIAlertControllerStyle) {
+        
+        let alert = UIAlertController(title: title,
+                                    message: message,
+                             preferredStyle:style)
+            
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default) { (action:UIAlertAction!) in
+                                            
+            }
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion:nil)
+            
+            
+        }
+}
+
 
 //extension DispatchQueue {
 //

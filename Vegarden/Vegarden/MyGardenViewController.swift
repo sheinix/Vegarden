@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class MyGardenViewController: UITableViewController {
 
@@ -59,7 +60,7 @@ class MyGardenViewController: UITableViewController {
                 
                 collection.delegate = self
                 collection.dataSource = self
-                collection.reloadData()
+               // collection.reloadData()
             }
             
         }
@@ -90,7 +91,6 @@ class MyGardenViewController: UITableViewController {
     }
     
  
-
 }
 
 extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -113,6 +113,23 @@ extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDat
         
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let patch = (collectionView.cellForItem(at: indexPath) as! MyGardenDetailCollectionViewCell).patch else { return }
+            
+        
+        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                    kWindowHeight: screenHeight * 0.9,
+                                                    showCloseButton: true,
+                                                    showCircularIcon: false)
+            
+        let alert = PatchAddEditViewController(appearance: appearance, patch: patch)
+        
+        
+        let _ = alert.showEdit(patch.name!,
+                                 subTitle: "")
     }
     
 }

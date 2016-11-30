@@ -21,7 +21,28 @@ extension Paddock {
     @NSManaged public var rows: NSSet?
     @NSManaged public var location: Location?
     @NSManaged public var soil: Soil?
+ 
+    public var rowsNamePrefix: String? {
+        
+        set {
+            self.willChangeValue(forKey: "rowsNamePrefix")
+            self.setPrimitiveValue(newValue, forKey: "rowsNamePrefix")
+            self.didChangeValue(forKey: "rowsNamePrefix")
 
+            if let rows = self.rows?.allObjects {
+                
+                rows.map { ($0 as! Row).name = rowsNamePrefix!+String(arc4random()) }
+            }
+
+        }
+        
+        get {
+            self.willAccessValue(forKey: "rowsNamePrefix")
+            let text = self.primitiveValue(forKey: "rowsNamePrefix") as? String
+            self.didAccessValue(forKey: "rowsNamePrefix")
+            return text
+        }
+    }
 }
 
 // MARK: Generated accessors for rows
