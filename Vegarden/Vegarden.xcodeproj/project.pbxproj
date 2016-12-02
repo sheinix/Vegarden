@@ -25,6 +25,7 @@
 		26BDDBF31DEBA428003547BB /* MyGardenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */; };
 		26BDDBF51DEBA95C003547BB /* MyGardenOverviewCropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF41DEBA95C003547BB /* MyGardenOverviewCropTableViewCell.swift */; };
 		26BDDBF71DEBB494003547BB /* MyGardenDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF61DEBB494003547BB /* MyGardenDetailCollectionViewCell.swift */; };
+		26DC41AB1DF1018A003A2597 /* RowAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC41AA1DF1018A003A2597 /* RowAddEditViewController.swift */; };
 		5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */; };
 		960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */; };
 		960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5AD81DCDDC2200ED39A8 /* NoteView.swift */; };
@@ -142,6 +143,7 @@
 		26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenDetailTableViewCell.swift; sourceTree = "<group>"; };
 		26BDDBF41DEBA95C003547BB /* MyGardenOverviewCropTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenOverviewCropTableViewCell.swift; sourceTree = "<group>"; };
 		26BDDBF61DEBB494003547BB /* MyGardenDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		26DC41AA1DF1018A003A2597 /* RowAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowAddEditViewController.swift; sourceTree = "<group>"; };
 		28D51BCF81742784B56D6C5C /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D01FD11EF1B9293D296143F /* Pods-Vegarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.release.xcconfig"; sourceTree = "<group>"; };
 		960CCF661DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */,
+				26DC41AA1DF1018A003A2597 /* RowAddEditViewController.swift */,
 			);
 			name = MyGardenActionMenusAlertView;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,
 				96A8A6481DD08DE0000A1673 /* CropDetailTextView.swift in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,
+				26DC41AB1DF1018A003A2597 /* RowAddEditViewController.swift in Sources */,
 				BDE0616A1D9FDC660003364D /* GardenLocation+CoreDataClass.swift in Sources */,
 				BDE061841D9FDC660003364D /* Soil+CoreDataClass.swift in Sources */,
 				BDE061721D9FDC660003364D /* Herb+CoreDataClass.swift in Sources */,

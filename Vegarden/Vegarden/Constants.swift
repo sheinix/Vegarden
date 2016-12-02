@@ -226,13 +226,14 @@ struct PatchInfo {
 }
 
 //Used for add/remove/edit rows! :
-struct rowsInfo {
+struct RowsInfo {
     
-    var patch : Paddock!     //Patch
+    public enum actionsRow : Int { case Edit, Delete }
+    
+    var patch : Paddock?     //Patch
     var newRows: [newRow]?    //If new rows added
     var editedRows: [Row]?      //If rows are deleted
     var deletedRows: [Row]?     //If rows are edited
-    
     
     var hasNewRows : Bool {
         get {
@@ -249,6 +250,23 @@ struct rowsInfo {
     var hasDeletedRows: Bool {
         get {
             return  ( deletedRows != nil && deletedRows!.count > 0)
+        }
+    }
+    
+    private func rowsEditedIdxFor(row: Row) -> Int {
+        
+        return (editedRows?.index(where: { $0 === row } ))!
+
+    }
+    
+    public mutating func addEdited(row: Row) {
+        
+        if let idx = editedRows?.index(where: { $0 === row } ) {
+            
+            editedRows?.remove(at: idx)
+            editedRows?.append(row)
+        } else {
+            editedRows?.append(row)
         }
     }
 }
