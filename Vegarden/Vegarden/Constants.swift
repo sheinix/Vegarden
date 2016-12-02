@@ -189,6 +189,9 @@ public enum patchEditionRows : Int {
     case PatchName, PatchLocation, PatchSoilPhLvl, PatchRowQtty, PatchRowNamesPrefix
 }
 
+
+
+
 struct PatchInfo {
     
     var name: String?
@@ -223,12 +226,31 @@ struct PatchInfo {
 }
 
 //Used for add/remove/edit rows! :
-struct rowsEdited {
+struct rowsInfo {
     
     var patch : Paddock!     //Patch
     var newRows: [newRow]?    //If new rows added
     var editedRows: [Row]?      //If rows are deleted
     var deletedRows: [Row]?     //If rows are edited
+    
+    
+    var hasNewRows : Bool {
+        get {
+            return  ( newRows != nil && newRows!.count > 0)
+        }
+    }
+    
+    var hasEditedRows: Bool {
+        get {
+             return  ( editedRows != nil && editedRows!.count > 0)
+        }
+    }
+    
+    var hasDeletedRows: Bool {
+        get {
+            return  ( deletedRows != nil && deletedRows!.count > 0)
+        }
+    }
 }
 
 struct newRow  {

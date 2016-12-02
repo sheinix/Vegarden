@@ -128,7 +128,14 @@ extension UIViewController {
         }
 }
 
-
+//extension String {
+//    
+//    func isANumber() -> Bool {
+//        
+//        return (Int(self) != nil)
+//    }
+//    
+//}
 //extension DispatchQueue {
 //
 //    func delay(_ timeInterval: TimeInterval, execute work: () -> Void) {

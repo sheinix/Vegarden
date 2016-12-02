@@ -9,6 +9,7 @@
 import UIKit
 import SCLAlertView
 import SnapKit
+import SkyFloatingLabelTextField
 
 class PatchAddEditViewController: SCLAlertView {
 
@@ -53,6 +54,10 @@ class PatchAddEditViewController: SCLAlertView {
         self.patchInfoTableView.delegate = self
         self.patchInfoTableView.dataSource = self
         self.patchInfoTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.PatchEditionCellIdentifier)
+        self.patchInfoTableView.isScrollEnabled = false
+        self.patchInfoTableView.separatorStyle = .none
+        
+        
         
         self.customSubview = self.patchInfoTableView
         self.customSubview?.clipsToBounds = true
@@ -117,40 +122,108 @@ extension PatchAddEditViewController : UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     
-        return (self.isAddingNewPatch! ? "New Patch" : self.patch?.name!)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        return 60
     }
 }
 extension PatchAddEditViewController : UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+         
+            switch floatingLabelTextField.tag {
+                case patchEditionRows.PatchSoilPhLvl.rawValue, patchEditionRows.PatchRowQtty.rawValue:
+                
+                    if (!floatingLabelTextField.hasOnlyNumbers()) {
+                        floatingLabelTextField.errorMessage = "Invalid Number"
+                    } else {
+                        floatingLabelTextField.errorMessage = ""
+                    }
+                
+            default:
+                break
+            }
+        }
+        return true
+    }
     
+//    
 //    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        //validate code
+//        
+//        KJ
 //        
 //    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        switch textField.tag {
+        guard let txtField = textField as? SkyFloatingLabelTextField else  { return }
+        
+        switch txtField.tag {
             
             case patchEditionRows.PatchName.rawValue:
-                self.patchUpdateInfo.name = textField.text!
+                self.patchUpdateInfo.name = txtField.text!
             
             case patchEditionRows.PatchLocation.rawValue:
-                self.patchUpdateInfo.location = textField.text!
+                self.patchUpdateInfo.location = txtField.text!
             
             case patchEditionRows.PatchSoilPhLvl.rawValue:
-                self.patchUpdateInfo.phLevel = textField.text!
-        
+               
+                validate(txtField: txtField, type: patchEditionRows.PatchSoilPhLvl)
+
+           
             case patchEditionRows.PatchRowQtty.rawValue:
-                self.patchUpdateInfo.rowQtty = Int(textField.text!)
+            
+                validate(txtField: txtField, type: patchEditionRows.PatchRowQtty)
+            
             
             case patchEditionRows.PatchRowNamesPrefix.rawValue:
-                self.patchUpdateInfo.rowNamesPrefix = textField.text!
+                self.patchUpdateInfo.rowNamesPrefix = txtField.text!
             
             default:
                 break
         }
     }
+    
+fileprivate func validate(txtField : SkyFloatingLabelTextField, type : patchEditionRows) {
+
+        if (!txtField.hasOnlyNumbers()) { //Check for numbers in txtfield
+            
+            txtField.errorMessage = "Invalid Number"
+
+            self.showSimpleAlertViewWith(title: (type == .PatchSoilPhLvl ? "Ph Level" :
+                                                                           "Row Quantity"),
+                                       message: (type == .PatchSoilPhLvl ? "Ph Level must be a number!" :
+                                        "Number of Rows must be a number!"),
+                                        style: .alert)
+            }
+
+         else {
+            
+            if (type == .PatchSoilPhLvl) { self.patchUpdateInfo.phLevel = txtField.text }
+           
+            else if (self.isAddingNewPatch!) {
+                
+                    self.patchUpdateInfo.rowQtty = Int(txtField.text!)
+                
+                 } else { //Check if its modifying num rows, validate planted ones!
+                
+                if  (Int(txtField.text!)! > (self.patch?.rows?.count)!) ||
+                    (Int(txtField.text!)! >= (self.patch?.plantedRows.count)!) {
+                    
+                    self.patchUpdateInfo.rowQtty = Int(txtField.text!)
+                    
+                } else {
+                    
+                    self.showSimpleAlertViewWith(title: "Number of Rows" ,
+                                                 message: "You are trying to modifiy a Patch with planted Rows. Please Check on the Delete Rows option before!",
+                                                 style: .alert)
+                }
+            }
+        }
+    }
+    
+    
 }

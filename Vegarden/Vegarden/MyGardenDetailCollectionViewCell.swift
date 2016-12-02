@@ -59,37 +59,40 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1
-        self.layer.cornerRadius = 8
-        
         self.removePatchButton.setRoundedCornerStyled()
         self.removePatchButton.addTarget(self, action: #selector(removePatch), for: .touchUpInside)
         self.removePatchButton.setTitle("Remove Patch", for: .normal)
+        self.removePatchButton.backgroundColor = UIColor.red
         self.removePatchButton.titleLabel?.sizeToFit()
         
         self.addRowsButton.setRoundedCornerStyled()
         self.addRowsButton.addTarget(self, action: #selector(addRows), for: .touchUpInside)
         self.addRowsButton.setTitle("+", for: .normal)
+        self.addRowsButton.backgroundColor = UIColor.green
         self.addRowsButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         self.addRowsButton.titleLabel?.sizeToFit()
         
         self.deleteRows.setRoundedCornerStyled()
+        self.deleteRows.backgroundColor = UIColor.red
         self.deleteRows.addTarget(self, action: #selector(deleteRowsFromPatch), for: .touchUpInside)
         self.deleteRows.setTitle("-", for: .normal)
         self.deleteRows.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         self.deleteRows.titleLabel?.sizeToFit()
         
-        addSubview(self.patchLabel)
-        addSubview(self.plantedRowsLabel)
-        addSubview(self.freeRowsLabel)
-        addSubview(self.totalRows)
+        self.contentView.addSubview(self.patchLabel)
+        self.contentView.addSubview(self.plantedRowsLabel)
+        self.contentView.addSubview(self.freeRowsLabel)
+        self.contentView.addSubview(self.totalRows)
         
         self.buttonsContainerView.addSubview(self.removePatchButton)
         self.buttonsContainerView.addSubview(self.addRowsButton)
         self.buttonsContainerView.addSubview(self.deleteRows)
         
-        addSubview(self.buttonsContainerView)
+        self.contentView.addSubview(self.buttonsContainerView)
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 8
         
     }
     
@@ -168,11 +171,17 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     
     @objc private func removePatch(_: UIButton) {
         
-    }
-    @objc private func addRows(_: UIButton) {
+        
         
     }
+    
+    @objc private func addRows(_: UIButton) {
+        
+        
+    }
+    
     @objc private func deleteRowsFromPatch(_: UIButton) {
+    
         
     }
     

@@ -18,6 +18,17 @@ class PatchEditionTableViewCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.txtField.setupPatchEditionTextView()
+        addSubview(self.txtField)
+        
+        self.txtField.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,15 +40,6 @@ class PatchEditionTableViewCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        self.txtField.setupPatchEditionTextView()
-        addSubview(self.txtField)
-        
-        self.txtField.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

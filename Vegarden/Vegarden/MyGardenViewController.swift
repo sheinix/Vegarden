@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class MyGardenViewController: UITableViewController {
+class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtocol {
 
     let totalPlantedCrops : Int = (GardenManager.shared.myPlantedCrops()?.count)!
     let totalPaddocks : Int = (GardenManager.shared.getMyGarden().paddocks?.count)!
@@ -81,6 +81,29 @@ class MyGardenViewController: UITableViewController {
  
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = MyGardenTableSectionHeaderView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 100))
+        
+        let title = (section == 0 ? "Overview  |  Planted Crops : " + String(totalPlantedCrops) : "My Garden | Patchs : " + String(totalPaddocks))
+        
+        header.titleLabel.text = title
+        header.addPatchButton.isHidden = (section == 0)
+        header.delegate = self
+        return header
+        
+    }
+    
+    func didPushAddButton(button: UIButton) {
+        
+        showAddEditPatch(patch: nil)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return (indexPath.section == 0 ? self.rowsHeight! : screenHeight - self.rowsHeight!)
@@ -90,7 +113,19 @@ class MyGardenViewController: UITableViewController {
         return (indexPath.section == 0 ? self.rowsHeight! : screenHeight - self.rowsHeight!)
     }
     
- 
+    fileprivate func showAddEditPatch(patch: Paddock?) {
+        
+        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
+                                                    kWindowHeight: screenHeight * 0.9,
+                                                    showCloseButton: true,
+                                                    showCircularIcon: false)
+        
+        let alert = PatchAddEditViewController(appearance: appearance, patch: patch)
+        
+        
+        let _ = alert.showEdit((patch != nil ? (patch?.name!)! : "Add New Patch"),
+                               subTitle: "")
+    }
 }
 
 extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -119,17 +154,8 @@ extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDat
         
         guard let patch = (collectionView.cellForItem(at: indexPath) as! MyGardenDetailCollectionViewCell).patch else { return }
             
-        
-        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                    kWindowHeight: screenHeight * 0.9,
-                                                    showCloseButton: true,
-                                                    showCircularIcon: false)
-            
-        let alert = PatchAddEditViewController(appearance: appearance, patch: patch)
-        
-        
-        let _ = alert.showEdit(patch.name!,
-                                 subTitle: "")
+        showAddEditPatch(patch: patch)
+      
     }
     
 }
@@ -137,9 +163,9 @@ extension MyGardenViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (Int(self.view.bounds.width) / patchs.count) - 10
+        let width = (Int(self.view.bounds.width) / 3) - 10
         
-        return CGSize(width: width, height: 300)
+        return CGSize(width: width, height: 255)
         
     }
     

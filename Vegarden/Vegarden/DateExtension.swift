@@ -89,4 +89,13 @@ extension Date {
         return convertedDateString
     }
    
+    public func currentTime() -> String {
+        
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: self)
+        let minutes = calendar.component(.minute, from: self)
+        
+        return (String(hour) + " : " + String(minutes))
+        
+    }
 }

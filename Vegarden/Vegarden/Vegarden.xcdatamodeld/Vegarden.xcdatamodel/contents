@@ -75,7 +75,7 @@
     <entity name="Seed" representedClassName=".Seed" parentEntity="CropState" syncable="YES"/>
     <entity name="Seedling" representedClassName=".Seedling" parentEntity="CropState" syncable="YES"/>
     <entity name="Soil" representedClassName=".Soil" syncable="YES">
-        <attribute name="phLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phLevel" optional="YES" attributeType="Double" minValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Veggie" representedClassName=".Veggie" parentEntity="Crop" syncable="YES"/>
     <entity name="Weed" representedClassName=".Weed" parentEntity="RowLifeState" syncable="YES"/>
@@ -99,7 +99,7 @@
         <element name="RowLifeState" positionX="-1098" positionY="-2403" width="128" height="118"/>
         <element name="Seed" positionX="-866" positionY="-2536" width="128" height="45"/>
         <element name="Seedling" positionX="-945" positionY="-2583" width="128" height="45"/>
-        <element name="Soil" positionX="-794" positionY="-2475" width="128" height="58"/>
+        <element name="Soil" positionX="-794" positionY="-2475" width="128" height="60"/>
         <element name="Veggie" positionX="-1116" positionY="-2709" width="128" height="45"/>
         <element name="Weed" positionX="-1251" positionY="-2421" width="128" height="45"/>
     </elements>

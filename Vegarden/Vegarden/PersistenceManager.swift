@@ -102,9 +102,40 @@ class PersistenceManager {
         
         if let location = data.location { paddock.location?.locationName = location }
         
-        if let phLevel = data.phLevel { paddock.soil?.phLevel = Int16(phLevel)! }
+        if let phLevel = data.phLevel {
+            
+            //TODO Validate that is number!!
+            paddock.soil?.phLevel = Double(phLevel)!
+        }
         
-        if let rowNamePfx = data.rowNamesPrefix { paddock.rowsNamePrefix = rowNamePfx }
+        if let rowNamePfx = data.rowNamesPrefix {
+        //TODO Validate that is number!!    
+            paddock.rowsNamePrefix = rowNamePfx
+        
+        }
+        
+        if let numRows = data.rowQtty {
+            
+            guard let patchRows = paddock?.rows?.count else { return }
+            
+            //Adding new rows case:
+            if (numRows > patchRows) { addRows(numberOfRows: (numRows - patchRows), to: paddock) }
+            
+            else if (numRows < patchRows) && (numRows >= paddock.plantedRows.count ) { //Deleting case
+                
+                let rowsToDelete : [Row] = paddock.freeRows
+                let plantedCount = paddock.plantedRows.count
+                
+                let limit = (numRows != plantedCount ? numRows - plantedCount : 1)
+                
+                
+                for idx in 0...limit {
+                    
+                        rowsToDelete[idx].reset()
+                        rowsToDelete[idx].mr_deleteEntity()
+                }
+            }
+        }
         
         saveContext()
         
@@ -121,7 +152,7 @@ class PersistenceManager {
         let soil = Soil.mr_createEntity()
         
         location?.locationName = paddockInfo.location
-        soil?.phLevel = Int16(paddockInfo.phLevel!)!
+        soil?.phLevel = Double(paddockInfo.phLevel!)!
         
         paddock?.name = paddockInfo.name
         paddock?.location = location

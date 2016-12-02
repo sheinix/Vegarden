@@ -10,10 +10,10 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    let objects = [MainViews.DataBaseView,
-                   MainViews.MyCropsView,
+    let objects = [MainViews.MyGardenView,
                    MainViews.LifeCycleView,
-                   MainViews.MyGardenView,
+                   MainViews.MyCropsView,
+                   MainViews.DataBaseView,
                    MainViews.AboutView]
     
     

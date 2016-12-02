@@ -15,7 +15,9 @@
 		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
-		2690D6D41DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */; };
+		2690D6D61DEF83BB00259F26 /* MyGardenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690D6D51DEF83BB00259F26 /* MyGardenHeaderView.swift */; };
+		2690D6D81DEF83D300259F26 /* MyGardenHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2690D6D71DEF83D300259F26 /* MyGardenHeaderView.xib */; };
+		2690D6DB1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690D6DA1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift */; };
 		26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A683311DE9BA5100902129 /* OpenSans-Light.ttf */; };
 		26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */; };
 		26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */; };
@@ -130,7 +132,9 @@
 		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
-		2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenSectionHeaderView.swift; sourceTree = "<group>"; };
+		2690D6D51DEF83BB00259F26 /* MyGardenHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenHeaderView.swift; sourceTree = "<group>"; };
+		2690D6D71DEF83D300259F26 /* MyGardenHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGardenHeaderView.xib; sourceTree = "<group>"; };
+		2690D6DA1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		26A683311DE9BA5100902129 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
@@ -285,10 +289,20 @@
 			isa = PBXGroup;
 			children = (
 				26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */,
-				2690D6D31DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift */,
+				2690D6DA1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift */,
+				2690D6D91DEF877300259F26 /* MyGardenTableHeaderView */,
 				2620FCE71DEE485100352111 /* MyGardenActionMenusAlertView */,
 			);
 			name = MyGardenViewController;
+			sourceTree = "<group>";
+		};
+		2690D6D91DEF877300259F26 /* MyGardenTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2690D6D51DEF83BB00259F26 /* MyGardenHeaderView.swift */,
+				2690D6D71DEF83D300259F26 /* MyGardenHeaderView.xib */,
+			);
+			name = MyGardenTableHeaderView;
 			sourceTree = "<group>";
 		};
 		26A683331DE9BC7C00902129 /* Fonts */ = {
@@ -712,6 +726,7 @@
 			files = (
 				962805EA1DB4B7D500DF9176 /* myOwnedCrops.plist in Resources */,
 				BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */,
+				2690D6D81DEF83D300259F26 /* MyGardenHeaderView.xib in Resources */,
 				26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
@@ -799,6 +814,7 @@
 				BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */,
 				BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */,
 				26BDDBF31DEBA428003547BB /* MyGardenDetailTableViewCell.swift in Sources */,
+				2690D6DB1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift in Sources */,
 				9654A89A1DB5F95800A0A9D9 /* CropState+CoreDataClass.swift in Sources */,
 				9654A8A11DB7211600A0A9D9 /* HelperExtensions.swift in Sources */,
 				BDE0617A1D9FDC660003364D /* PaddockLocation+CoreDataClass.swift in Sources */,
@@ -824,7 +840,6 @@
 				BDE061891D9FDC660003364D /* Weed+CoreDataProperties.swift in Sources */,
 				96F723051DB3111A000100B2 /* VCropDetailPageViewCell.swift in Sources */,
 				2620FCEC1DEE4FFB00352111 /* PatchEditionTableViewCell.swift in Sources */,
-				2690D6D41DEE8F0E00259F26 /* MyGardenSectionHeaderView.swift in Sources */,
 				BDE0617C1D9FDC660003364D /* Row+CoreDataClass.swift in Sources */,
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
 				2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */,
@@ -859,6 +874,7 @@
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				BD7B8EAD1D9118080063347D /* Vegarden.xcdatamodeld in Sources */,
 				96BB776C1DBDCED300DCADA9 /* LifeCycleTableViewController.swift in Sources */,
+				2690D6D61DEF83BB00259F26 /* MyGardenHeaderView.swift in Sources */,
 				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,
 				96A8A6481DD08DE0000A1673 /* CropDetailTextView.swift in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,
