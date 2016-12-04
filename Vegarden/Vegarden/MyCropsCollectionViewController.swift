@@ -110,7 +110,7 @@ extension MyCropsCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let layout = HelperManager.getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
+        let layout = getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
         let pageDetailViewController =
             CropDetailCollectionViewController(collectionViewLayout: layout, currentIndexPath:indexPath as NSIndexPath)
         

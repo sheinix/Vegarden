@@ -20,11 +20,12 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         
         super.viewDidLoad()
         
-        self.title = "My Garden"
+        self.navigationController?.navigationBar.isHidden = true
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.rowsHeight = (CGFloat(totalPlantedCrops) * CGFloat(cropRowHeight)) + 10
         self.tableView.estimatedRowHeight = self.rowsHeight!
+        self.tableView.tableHeaderView = MyGardenHeaderView.loadFromNibNamed(nibNamed: "MyGardenHeaderView")
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
         self.tableView.isScrollEnabled = false
@@ -157,6 +158,21 @@ extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDat
             
         showAddEditPatch(patch: patch)
       
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) in
+
+            self.tableView.tableHeaderView? = MyGardenHeaderView.loadFromNibNamed(nibNamed: "MyGardenHeaderView")!
+            
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) in
+        
+            
+        })
+        
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
 }

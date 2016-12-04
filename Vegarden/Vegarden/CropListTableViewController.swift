@@ -65,7 +65,7 @@ class CropListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let layout = HelperManager.getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
+        let layout = getCropDetailCollectionViewFlowLayoutIn(navigationController: self.navigationController!)
         let pageDetailViewController =
             CropDetailCollectionViewController(collectionViewLayout: layout, currentIndexPath:indexPath as NSIndexPath)
         

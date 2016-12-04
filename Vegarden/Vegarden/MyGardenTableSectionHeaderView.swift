@@ -22,10 +22,6 @@ class MyGardenTableSectionHeaderView: UIView {
     
     override func awakeFromNib() {
         
-//        setupViews()
-//        
-//        setupConstraints()
-        
         super.awakeFromNib()
     
     }
@@ -50,18 +46,13 @@ class MyGardenTableSectionHeaderView: UIView {
         self.layer.borderColor = UIColor.darkText.cgColor
         self.layer.borderWidth = 2
         
-        
-        
         self.titleLabel.font = Fonts.mainFont
         
-     
         self.addPatchButton.setImage(UIImage(named:"plusbutton"), for: .normal)
         self.addPatchButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         self.addPatchButton.layer.cornerRadius = self.addPatchButton.frame.size.width/2
         self.addPatchButton.clipsToBounds = true
         self.addPatchButton.addTarget(self, action: #selector(buttonPushed),for: .touchUpInside)
-//        self.addPatchButton.layer.cornerRadius = 1
-//        self.addPatchButton.layer.borderWidth = 3
         
         addSubview(self.titleLabel)
         addSubview(self.addPatchButton)

@@ -94,8 +94,9 @@ extension Date {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: self)
         let minutes = calendar.component(.minute, from: self)
+        let minutesStr = (minutes.array.count == 1 ? "0" + String(minutes) : String(minutes))
         
-        return (String(hour) + " : " + String(minutes))
+        return (String(hour) + " : " + minutesStr)
         
     }
 }

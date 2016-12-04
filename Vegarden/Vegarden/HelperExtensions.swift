@@ -32,6 +32,11 @@ extension Int {
         let max = UInt32(range.upperBound   + delta)
         self.init(Int(min + arc4random_uniform(max - min)) - delta)
     }
+    
+    var array: [Int] {
+            return description.characters.map{Int(String($0)) ?? 0}
+        }
+    
 }
 
 extension UIColor {

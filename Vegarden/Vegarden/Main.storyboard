@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-1L-2gv">
@@ -124,7 +124,7 @@
                                 <rect key="frame" x="0.0" y="72" width="768" height="638"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpw-n2-iGO" id="GrN-lR-leE">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="637"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="637.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-14-qfC" customClass="RotatedView" customModule="Vegarden" customModuleProvider="target">
@@ -561,7 +561,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="394"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HmU-II-D7e" id="FHk-xK-TTA">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="393"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="393.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -569,7 +569,7 @@
                                 <rect key="frame" x="0.0" y="422" width="768" height="535"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWv-lG-SCU" id="6HH-Sv-aRB">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="534"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="534.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -581,6 +581,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="858-Rx-IHH"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4te-jq-Apz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -39,6 +39,7 @@ class MyGardenDetailTableViewCell: UITableViewCell {
             myGardenCV.register(MyGardenDetailCollectionViewCell.self, forCellWithReuseIdentifier: CellIdentifiers.MyGardenDeteailCollectionCellIdentifier)
             
             myGardenCV.backgroundColor = UIColor.white
+            myGardenCV.isScrollEnabled = true
             
             self.addSubview(myGardenCV)
         }
