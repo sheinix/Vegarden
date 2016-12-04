@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+
+
+let tableAlertViewFrame = CGRect(x: 0,
+                                 y: 0,
+                                width: screenBounds.width * 0.85,
+                                height: screenBounds.height * 0.8)
 let screenBounds = UIScreen.main.bounds
 let screenSize   = screenBounds.size
 let screenWidth  = screenSize.width
@@ -235,6 +241,14 @@ struct RowsInfo {
     var editedRows: [Row]?      //If rows are deleted
     var deletedRows: [Row]?     //If rows are edited
     
+    init(paddock: Paddock!) {
+        
+        patch = paddock
+        newRows = []
+        editedRows = []
+        deletedRows = []
+    }
+    
     var hasNewRows : Bool {
         get {
             return  ( newRows != nil && newRows!.count > 0)
@@ -273,6 +287,6 @@ struct RowsInfo {
 
 struct newRow  {
     
-    var name: String!
+    var name: String?
     
 }

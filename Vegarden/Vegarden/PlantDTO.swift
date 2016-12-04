@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class PlantDTO {
+struct PlantDTO {
     
     var rows : [Row]!
     var crop : Crop!

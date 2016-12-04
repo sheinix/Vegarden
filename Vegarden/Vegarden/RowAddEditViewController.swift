@@ -14,18 +14,19 @@ import SkyFloatingLabelTextField
 class RowAddEditViewController: SCLAlertView {
 
     var isAddingRows : Bool?
-    var rowsTableView: UITableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
-    var rowsAddUpdateInfo = RowsInfo()
+    var rowsTableView: UITableView = UITableView(frame: tableAlertViewFrame, style: UITableViewStyle.plain)
+    var rowsAddUpdateInfo : RowsInfo!
     var rowList : [Any] = []
-    var patch : Paddock?
+    var patch : Paddock!
     
     required init(appearance: SCLAppearance, patch: Paddock?) {
         
         super.init(appearance: appearance)
         
+        //self.rowsTableView.frame = self.view.bounds
         self.patch = patch
         self.rowList = (patch?.rows?.allObjects)!
-        self.rowsAddUpdateInfo.patch = patch
+        self.rowsAddUpdateInfo = RowsInfo(paddock: self.patch)
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +40,7 @@ class RowAddEditViewController: SCLAlertView {
         
         super.viewDidLoad()
         
-        
+        setupViews()
 
     }
 
@@ -54,7 +55,7 @@ class RowAddEditViewController: SCLAlertView {
         self.rowsTableView.delegate = self
         self.rowsTableView.dataSource = self
         
-        self.rowsTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.PatchEditionCellIdentifier)
+        self.rowsTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.RowsEditionCellIdentifier)
         self.rowsTableView.isScrollEnabled = true
         self.rowsTableView.separatorStyle = .none
         
@@ -71,6 +72,7 @@ class RowAddEditViewController: SCLAlertView {
     
     fileprivate func confirmButtonPressed() {
         
+        GardenManager.shared.makeRowsEditions(rowsInfo: self.rowsAddUpdateInfo)
         
     }
 
@@ -89,17 +91,22 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.PatchEditionCellIdentifier) as! PatchEditionTableViewCell)
+        let cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.RowsEditionCellIdentifier) as! PatchEditionTableViewCell)
         
         
         if let aRow = self.rowList[indexPath.row] as? Row {
-            cell.txtField.placeholder = aRow.name!
+            
+            cell.txtField.text = aRow.name!
+            cell.needsRemakeConstraints(hasPlantedRow: aRow.isPlanted)
+            
+            
         } else if let newRow = self.rowList[indexPath.row] as? newRow {
             cell.txtField.placeholder = newRow.name!
         }
-    
+        
         cell.txtField.delegate = self
         cell.txtField.tag = indexPath.row
+        
         
         return cell
     }
@@ -120,12 +127,84 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
     
         } else if editingStyle == .insert {
             
-            let aNewRow = newRow(name:  (self.patch?.rowsNamePrefix)! + "_ complete row name")
-            self.rowsAddUpdateInfo.newRows?.append(aNewRow)
-            self.rowList.insert(aNewRow, at: indexPath.row)
-            self.rowsTableView.insertRows(at: [indexPath], with: .fade)
+//            let aNewRow = newRow(name:  (self.patch?.rowsNamePrefix)! + "_ complete row name")
+//            self.rowsAddUpdateInfo.newRows?.append(aNewRow)
+//            self.rowList.insert(aNewRow, at: indexPath.row)
+//            self.rowsTableView.insertRows(at: [indexPath], with: .fade)
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if let row = self.rowList[indexPath.row] as? Row {
+            return !row.isPlanted
+        }
+        
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return setupHeaderView()
+        
+    }
+    
+    @objc func addRow(sender: UIButton) {
+        
+        let aNewRow = newRow(name:  (self.patch?.rowsNamePrefix)! + "_ complete row name")
+//        self.rowsAddUpdateInfo.newRows?.append(aNewRow)
+        self.rowList.insert(aNewRow, at: 0)
+        
+        // Update Table Data
+        self.rowsTableView.beginUpdates()
+        
+        self.rowsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        
+        self.rowsTableView.endUpdates()
+        
+    }
+    
+    fileprivate func setupHeaderView() -> UIView {
+       
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.rowsTableView.bounds.width, height: 100))
+        
+        headerView.backgroundColor = UIColor.lightGray
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        let addButton = UIButton(type: .custom)
+        addButton.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        titleLabel.text = self.patch.name
+        
+        addButton.setImage(UIImage(named:"plusbutton"), for: .normal)
+        addButton.addTarget(self, action: #selector(addRow), for: .touchUpInside)
+        
+        headerView.addSubview(addButton)
+        headerView.addSubview(titleLabel)
+        
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(15)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.7)
+        }
+        
+        addButton.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(80)
+            make.height.equalTo(80)
+        }
+        
+        return headerView
+
+    }
+    
+    
 }
 extension RowAddEditViewController : UITextFieldDelegate {
     
@@ -155,13 +234,18 @@ extension RowAddEditViewController : UITextFieldDelegate {
             //Check if its a new row or not:
             
             if let aRow = self.rowList[textField.tag] as? Row { //old row
+                
+                aRow.name = txtField.text
                 self.rowsAddUpdateInfo.addEdited(row: aRow)
+                
+            } else if self.rowList[textField.tag] is newRow {
+                
+                    var newRowie = self.rowList[textField.tag] as! newRow
+                    newRowie.name = txtField.text
+                    self.rowsAddUpdateInfo.newRows?.append(newRowie)
             }
         }
-
     }
-    
-    
     
 }
 

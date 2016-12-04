@@ -24,17 +24,17 @@ protocol GardenManagementProtocol: class {
    
     func removePaddocks(paddocks:[Paddock], from garden: Garden)
     
-    func removePaddock(paddock: Paddock, from garden: Garden)
+    func removePatch(paddock: Paddock)
     
     // MARK: - Row Management Methods
     
-    func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden)
+//    func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden)
    
-    func addRows(numberOfRows: Int, to paddock: Paddock, in garden: Garden)
+//    func addRows(numberOfRows: Int, to paddock: Paddock, in garden: Garden)
    
-    func removeRow(row: Row, from paddock: Paddock, in garden: Garden)
+//    func removeRow(row: Row, from paddock: Paddock, in garden: Garden)
    
-    func removeRows(rows: [Row], from paddock: Paddock, in garden: Garden)
+//    func removeRows(rows: [Row], from paddock: Paddock, in garden: Garden)
     
     // MARK: - Crop Management Methods
     

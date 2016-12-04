@@ -145,6 +145,7 @@ extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDat
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.MyGardenDeteailCollectionCellIdentifier, for: indexPath) as! MyGardenDetailCollectionViewCell)
         
         cell.patch = patchs[indexPath.row]
+        cell.delegate = self
         
         return cell
         
@@ -168,17 +169,26 @@ extension MyGardenViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 255)
         
     }
+}
+extension MyGardenViewController : MyGardenDetailCollectionViewCellProtocol {
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //
-    //        return CGFloat(integerLiteral: 10)
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //
-    //        return CGFloat(integerLiteral: 10)
-    //    }
-    
-    
-    
+    func willDelete(patch: Paddock!) {
+       
+        
+        if (patch.isEmpty) {
+        
+                self.showAlertView(title:  "Delete " + patch.name!,
+                         message: "Are you sure want to delete the Patch? ",
+                           style: .alert,
+                    confirmBlock: { GardenManager.shared.removePatch(paddock: patch) },
+                     cancelBlock:  { })
+        
+        } else {
+            
+            self.showSimpleAlertViewWith(title: "Delete " + patch.name!,
+                                         message: "The Patch has planted Rows. Remove Crops from Patch before deleting it ",
+                                         style: .alert)
+            
+        }
+    }
 }

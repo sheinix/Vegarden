@@ -449,8 +449,8 @@
 		9654A8A21DB8870E00A0A9D9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
 				96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */,
+				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

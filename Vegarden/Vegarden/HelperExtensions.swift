@@ -126,6 +126,33 @@ extension UIViewController {
             
             
         }
+    
+    public func showAlertView(title: String!, message: String!, style: UIAlertControllerStyle,
+                              confirmBlock: @escaping () -> Void, cancelBlock:@escaping () -> Void) {
+        
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle:style)
+        
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default) { (action:UIAlertAction!) in
+                                        
+                     confirmBlock()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                     style: .default) { (action:UIAlertAction!) in
+                                        
+            cancelBlock()
+                                        
+        }
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion:nil)
+        
+        
+    }
 }
 
 //extension String {

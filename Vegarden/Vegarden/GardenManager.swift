@@ -61,12 +61,32 @@ class GardenManager: GardenManagementProtocol {
         PersistenceManager.shared.removePaddocks(paddocks: paddocks, from: garden)
     }
     
-    public func removePaddock(paddock: Paddock, from garden: Garden) {
+    public func removePatch(paddock: Paddock) {
         
-        PersistenceManager.shared.removePaddock(paddock: paddock, from: garden)
+        PersistenceManager.shared.removePatch(patch: paddock)
     }
     
 // MARK: - Row Management Methods
+    
+    
+    public func makeRowsEditions(rowsInfo: RowsInfo) {
+        
+        if (rowsInfo.patch != nil && rowsInfo.hasNewRows) {
+            
+            PersistenceManager.shared.addRows(rows:rowsInfo.newRows!, patch: rowsInfo.patch)
+        }
+        
+        if (rowsInfo.hasEditedRows) {
+            
+            PersistenceManager.shared.editRows(rows: rowsInfo.editedRows!)
+        }
+        
+        if (rowsInfo.hasDeletedRows) {
+            
+            PersistenceManager.shared.deleteRows(rows: rowsInfo.deletedRows!)
+        }
+    }
+    
     
     public func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden) {
         
@@ -79,10 +99,10 @@ class GardenManager: GardenManagementProtocol {
         PersistenceManager.shared.addRows(numberOfRows: numberOfRows, to: paddock)
     }
     
-    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
-        
-        PersistenceManager.shared.removeRow(row: row, from: paddock, in: garden)
-    }
+//    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
+//        
+//        PersistenceManager.shared.removeRows(rows: row, from: paddock, in: garden)
+//    }
     
     public func removeRows(rows: [Row], from paddock: Paddock, in garden: Garden) {
         

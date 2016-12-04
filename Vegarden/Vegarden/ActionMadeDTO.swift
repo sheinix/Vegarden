@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class ActionMadeDTO {
+struct ActionMadeDTO {
     
     var rows : [Row]!
     var crop : Crop!

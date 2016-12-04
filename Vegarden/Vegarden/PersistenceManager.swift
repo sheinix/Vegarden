@@ -176,9 +176,14 @@ class PersistenceManager {
         paddocks.forEach({ $0.mr_deleteEntity() })
     }
     
-    public func removePaddock(paddock: Paddock, from garden: Garden) {
+    public func removePatch(patch: Paddock) {
         
-        paddock.mr_deleteEntity()
+        //TODO Check if all the rows needs to be deleted aswell!
+        patch.mr_deleteEntity()
+        
+        saveContext()
+        
+        //TODO Call protocol callback did delete patch
     }
     
     public func getAllPaddocks() -> [Paddock] {
@@ -187,6 +192,13 @@ class PersistenceManager {
     }
     
 // MARK: - Row Management Methods
+    
+    public func editRows(rows: [Row]) {
+        
+        saveContext()
+
+    }
+
     
     public func addRow(rowName: String!, length: Float?, to paddock: Paddock) {
         
@@ -201,10 +213,18 @@ class PersistenceManager {
         
     }
     
+    public func addRows(rows:[newRow], patch: Paddock!) {
+        
+        rows.forEach { (newRow) in
+            
+            addRow(rowName: newRow.name, length: nil, to: patch)
+        }
+    }
+    
     public func addRows(numberOfRows: Int, to paddock: Paddock) {
         
-        var rowName : String
-        var rowPrefix = paddock.rowsNamePrefix
+        //var rowName : String
+        let rowPrefix = paddock.rowsNamePrefix
         
         for _ in (0..<numberOfRows) {
  
@@ -218,11 +238,23 @@ class PersistenceManager {
         }
     }
     
-    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
+    public func deleteRows(rows: [Row]) {
         
-        row.mr_deleteEntity()
+        //TODO Check if necessesary to delete de life states of the rows before, or its cascade delteing!
+         rows.forEach { (row) in
+            row.lifeCycleState?.forEach( { ($0 as! RowLifeState).mr_deleteEntity() } )
+            row.mr_deleteEntity()
+        }
         
+        
+        //TODO Call callback protcol
     }
+    
+//    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
+//        
+//        row.mr_deleteEntity()
+//        
+//    }
     
     public func removeRows(rows: [Row], from paddock: Paddock, in garden: Garden) {
         

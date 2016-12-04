@@ -29,6 +29,14 @@ public class Paddock: NSManagedObject {
         }
     }
     
+    public var isEmpty : Bool {
+        
+        get {
+            return (self.plantedRows.count == 0)
+        }
+    }
+    
+    
     public func reset() {
         
         self.rows?.forEach({ (element) in
