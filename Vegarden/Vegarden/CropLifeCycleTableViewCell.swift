@@ -101,11 +101,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
         self.crop = crop
         self.cropName.text = crop.name
         
-        if let datePlanted = crop.getDayPlanted() {
-            
+        if let datePlanted = crop.dayPlanted {
+        
             self.datePlanted.text = "Date Planted: " + datePlanted.inCellDateFormat()
-            self.harvestDate.text = "Harvest Date: " + (crop.getEstimatedHarvestDate()!.inCellDateFormat())
-            let progressNumber = CGFloat(integerLiteral: crop.getEstimatedDaysLeftToHarvest()!)
+            self.harvestDate.text = "Harvest Date: " + (crop.estimatedHarvestDate.inCellDateFormat())
+            let progressNumber = CGFloat(integerLiteral: crop.estimatedDaysLeftToHarvest)
             self.ringProgressBar.value = progressNumber
             //setValue(progressNumber, animateWithDuration: 3.0)
             
@@ -160,7 +160,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     private func setPlantedStates(crop: Crop) {
         
-        if let plantState = crop.getStatesOf(type: (crop.isFromSeed() ? .Seed : .Seedling)) {
+        if let plantState = crop.getStatesOf(type: (crop.isFromSeed ? .Seed : .Seedling)) {
             
             self.lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
         }
@@ -241,7 +241,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
            self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)
         }
         
-//        if (cropie.isReadyForHarvest()) {
+        if (cropie.isReadyForHarvest) {
         
             actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
                 
@@ -256,7 +256,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
                 self.showConfirmationScreenFor(action: .FinishAction, crop: cropie)
             }
         
-//        }
+        }
         
     }
     

@@ -99,4 +99,22 @@ extension Date {
         return (String(hour) + " : " + minutesStr)
         
     }
+    
+    public static func greetings() -> String! {
+        
+        var msg : String = "Good "
+        
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        switch hour {
+            case 6..<12  : msg = msg + "Morning"
+            case 12      : msg = msg + "Noon"
+            case 13..<17 : msg = msg + "Afternoon"
+            case 17..<22 : msg = msg + "Evening"
+            
+            default: msg = msg + "Night"
+        }
+        
+        return msg
+    }
 }

@@ -72,7 +72,6 @@
 		96F7230C1DB3549B000100B2 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F7230B1DB3549B000100B2 /* Popup.m */; };
 		96F7230F1DB354EF000100B2 /* PopupCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7230E1DB354EF000100B2 /* PopupCustomView.swift */; };
 		96F723111DB360BA000100B2 /* GardenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F723101DB360BA000100B2 /* GardenManager.swift */; };
-		96F723161DB366FA000100B2 /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F723151DB366FA000100B2 /* HelperManager.swift */; };
 		BD203E481DA2305800951732 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD203E461DA2305800951732 /* MasterViewController.swift */; };
 		BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD203E4C1DA4F84000951732 /* Main.storyboard */; };
 		BD3307B81DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3307B31DA9EECA00F2EC6F /* MyCropsCollectionViewCell.swift */; };
@@ -193,7 +192,6 @@
 		96F7230B1DB3549B000100B2 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Popup.m; sourceTree = "<group>"; };
 		96F7230E1DB354EF000100B2 /* PopupCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCustomView.swift; sourceTree = "<group>"; };
 		96F723101DB360BA000100B2 /* GardenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManager.swift; sourceTree = "<group>"; };
-		96F723151DB366FA000100B2 /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 		990DCAFE6F54E5AD9F2D944F /* Pods-Vegarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegarden.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vegarden/Pods-Vegarden.debug.xcconfig"; sourceTree = "<group>"; };
 		B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD203E461DA2305800951732 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -563,7 +561,6 @@
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				96F723101DB360BA000100B2 /* GardenManager.swift */,
 				266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */,
-				96F723151DB366FA000100B2 /* HelperManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -871,7 +868,6 @@
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,
 				26BDDBF71DEBB494003547BB /* MyGardenDetailCollectionViewCell.swift in Sources */,
 				BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */,
-				96F723161DB366FA000100B2 /* HelperManager.swift in Sources */,
 				96E08C061DBCDF3C00852683 /* PersitanceCallBackProtocol.swift in Sources */,
 				BDE061701D9FDC660003364D /* Harvested+CoreDataClass.swift in Sources */,
 				263BBCF41DF3E39900DA49F6 /* Macros.swift in Sources */,

@@ -25,7 +25,7 @@ class MyGardenHeaderView: UIView {
         
         setupViews()
 
-        self.greetingsLabel.text = "Good Morning Sarah!"
+        self.greetingsLabel.text = Date.greetings() + " Sarah!"
         self.timeLabel.text = Date().currentTime()
         self.dateLabel.text = Date().inCellDateFormat()
         

@@ -130,6 +130,27 @@ extension UIView{
             }
         }
     }
+    
+    public func showConfirmViewWith(title: String!, frame: CGRect?, afterAction: (() -> Void)?) {
+        
+        
+        let confirm = ConfirmationView(frame: (frame != nil ? frame! : self.bounds), title: title)
+        
+        self.addSubview(confirm)
+        
+        confirm.checkBox?.setCheckState(.checked, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
+            
+            if afterAction != nil  {
+                afterAction!()
+            } else {
+                confirm.removeFromSuperview()
+            }
+           
+        }
+    }
+
 }
 
 var kIndexPathPointer = "kIndexPathPointer"

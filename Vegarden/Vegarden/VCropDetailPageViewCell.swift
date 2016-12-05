@@ -72,17 +72,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         if (infoCrop === self.crop!) {
 
             let msg = infoCrop.name! +  " Crop Removed ! "
-            
-            let confirm = ConfirmationView(frame: self.bounds, title: msg)
-            
-            self.addSubview(confirm)
-
-            confirm.checkBox?.setCheckState(.checked, animated: true)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
-                
-                self.pullAction!(self.tableView.contentOffset)
-            }
+            self.showConfirmViewWith(title: msg,
+                                     frame: screenBounds,
+                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
         }
     }
     
@@ -95,16 +87,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 
                 let msg = infoCrop.name! +  " Crop Added ! "
             
-                let confirm = ConfirmationView(frame: self.bounds, title:msg)
-                
-                self.addSubview(confirm)
-                
-                confirm.checkBox?.setCheckState(.checked, animated: true)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
-                    
-                    self.pullAction!(self.tableView.contentOffset)
-                }
+            self.showConfirmViewWith(title: msg,
+                                     frame: screenBounds,
+                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
         }
     }
     
@@ -112,16 +97,10 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
             let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
         
-            let confirm = ConfirmationView(frame: self.bounds, title: plantMsg)
-            
-            self.addSubview(confirm)
-            
-            confirm.checkBox?.setCheckState(.checked, animated: true)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2) ) {
-                
-                self.pullAction!(self.tableView.contentOffset)
-            }
+        self.showConfirmViewWith(title: plantMsg,
+                                 frame: screenBounds,
+                                 afterAction: { self.pullAction!(self.tableView.contentOffset) })
+
     }
     
     

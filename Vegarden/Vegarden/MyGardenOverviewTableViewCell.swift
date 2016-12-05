@@ -92,7 +92,7 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
         
         let crop : Crop =  plantedCrops[indexPath.row]
         
-        cell.harvestDate?.text = crop.getEstimatedHarvestDate()?.inCellDateFormat()
+        cell.harvestDate?.text = crop.estimatedHarvestDate.inCellDateFormat()
         cell.textLabel?.text = crop.name!
         
         

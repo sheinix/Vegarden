@@ -183,7 +183,7 @@ class PersistenceManager {
         
         saveContext()
         
-        //TODO Call protocol callback did delete patch
+        self.callBackDelegate?.didDelete(paddock: patch)
     }
     
     public func getAllPaddocks() -> [Paddock] {
@@ -196,11 +196,13 @@ class PersistenceManager {
     public func editRows(rows: [Row]) {
         
         saveContext()
+        
+        self.callBackDelegate?.didUpdate(rows: rows)
 
     }
 
     
-    public func addRow(rowName: String!, length: Float?, to paddock: Paddock) {
+    public func addRow(rowName: String!, length: Float?, to paddock: Paddock) -> Row {
         
         let newRow = Row.mr_createEntity()
         newRow?.name = rowName
@@ -211,17 +213,25 @@ class PersistenceManager {
         
         saveContext()
         
+        return newRow!
+        
     }
     
     public func addRows(rows:[newRow], patch: Paddock!) {
         
+        var newRows : [Row] = []
+        
         rows.forEach { (newRow) in
             
-            addRow(rowName: newRow.name, length: nil, to: patch)
+            newRows.append(addRow(rowName: newRow.name, length: nil, to: patch))
         }
+        
+        self.callBackDelegate?.didAdd(rows: newRows)
     }
     
     public func addRows(numberOfRows: Int, to paddock: Paddock) {
+        
+        //var newRows : [Row] = []
         
         //var rowName : String
         let rowPrefix = paddock.rowsNamePrefix
@@ -231,11 +241,13 @@ class PersistenceManager {
             //TODO Check helper method to see how can i get the randoms with a fixed length
 //            rowName = "V_"+String(HelperManager.random(digits: 5))
             
-            addRow(rowName: rowPrefix!+String(arc4random()),
-                    length: nil,
-                        to: paddock)
+            _ = addRow(rowName: rowPrefix!+String(arc4random()),
+                                    length: nil,
+                                        to: paddock)
             
         }
+        
+       // self.callBackDelegate?.didAdd(rows: newRows)
     }
     
     public func deleteRows(rows: [Row]) {
@@ -247,7 +259,7 @@ class PersistenceManager {
         }
         
         
-        //TODO Call callback protcol
+        self.callBackDelegate?.didRemove(rows: rows)
     }
     
 //    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
@@ -554,36 +566,36 @@ class PersistenceManager {
         
         
     }
-    public func createSamplePaddocks () -> [Paddock] {
-        
-        let paddock1 = Paddock.mr_createEntity()
-        
-        let paddock2 = Paddock.mr_createEntity()
-        let paddock3 = Paddock.mr_createEntity()
-        
-        
-        
-        
-        
-        paddock1?.paddockId = UUID().uuidString
-        paddock2?.paddockId = UUID().uuidString
-        paddock3?.paddockId = UUID().uuidString
-        
-        paddock1?.name = "Paddock 1"
-        paddock2?.name = "Paddock 2"
-        paddock3?.name = "Paddock 3"
-        
-        paddock1?.location = nil
-        paddock2?.location = nil
-        paddock3?.location = nil
-        
-        paddock1?.soil = nil
-        paddock2?.soil = nil
-        paddock3?.soil = nil
-        
-        saveContext()
-        
-        return [paddock1!, paddock2!, paddock3!]
-        
-    }
+//    public func createSamplePaddocks () -> [Paddock] {
+//        
+//        let paddock1 = Paddock.mr_createEntity()
+//        
+//        let paddock2 = Paddock.mr_createEntity()
+//        let paddock3 = Paddock.mr_createEntity()
+//        
+//        
+//        
+//        
+//        
+//        paddock1?.paddockId = UUID().uuidString
+//        paddock2?.paddockId = UUID().uuidString
+//        paddock3?.paddockId = UUID().uuidString
+//        
+//        paddock1?.name = "Paddock 1"
+//        paddock2?.name = "Paddock 2"
+//        paddock3?.name = "Paddock 3"
+//        
+//        paddock1?.location = nil
+//        paddock2?.location = nil
+//        paddock3?.location = nil
+//        
+//        paddock1?.soil = nil
+//        paddock2?.soil = nil
+//        paddock3?.soil = nil
+//        
+//        saveContext()
+//        
+//        return [paddock1!, paddock2!, paddock3!]
+//        
+//    }
 }

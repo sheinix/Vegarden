@@ -29,12 +29,69 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
         self.tableView.isScrollEnabled = false
+        
+        addObservers()
+        
     }
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+
+    fileprivate func addObservers() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyNewPatch),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyPatchDeleted),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyPatchEdited),
+                                               object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsEdited),
+                                               object: nil)
+      
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsAdded),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(patchRowEdited),
+                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsDeleted),
+                                               object: nil)
+        }
+    
+
+   @objc fileprivate func patchRowEdited(notification: NSNotification) {
+    
+        if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
+        
+            if let myCV = cell.myGardenCollectionView {
+            
+                myCV.reloadData()
+            }
+        }
+    
+        self.view.showConfirmViewWith(title: screenMessage(notiId: notification.name.rawValue),
+                                      frame: nil,
+                                afterAction: nil)
+    }
+
 
     // MARK: - Table view data source
 
@@ -68,18 +125,6 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         
 
         return cell!
-    }
-    
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if (section == 0){
-            
-            return "Overview  |  Planted Crops : " + String(totalPlantedCrops)
-        }
-        
-        return "My Garden | Patchs : " + String(totalPaddocks)
- 
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

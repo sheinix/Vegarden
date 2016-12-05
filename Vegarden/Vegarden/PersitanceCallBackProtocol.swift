@@ -29,5 +29,13 @@ protocol PersistanceCallBackProtocol: class {
     
     func didUpdate(paddock: Paddock!)
     
+    func didDelete(paddock: Paddock!)
+    
+    func didAdd(rows:[Row])
+    
+    func didRemove(rows:[Row])
+    
+    func didUpdate(rows:[Row])
+    
     //TODO Finish the protocol methods!
 }

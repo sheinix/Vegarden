@@ -14,77 +14,90 @@ extension Crop {
     
 //MARK: - Boolean Methods:
     
-    public func isReadyForHarvest() -> Bool {
+    var isReadyForHarvest : Bool {
         
-        guard let daysToHarvest = getEstimatedDaysLeftToHarvest() else { return false }
-        
-        return (daysToHarvest == 0)
-        
+        get {
+            
+            return (estimatedDaysLeftToHarvest == 0)
+        }
     }
     
-    public func hasBeenHarvested() -> Bool {
+    public var hasBeenHarvested : Bool {
         
-        return getHarvestingStates() != nil
-        
+        get {
+            return getHarvestingStates() != nil
+        }
     }
     
-    public func isFromSeed() -> Bool {
+    public var isFromSeed : Bool {
         
-        return ((getStatesOf(type: .Seed) != nil) ? true : false )
-        
+        get {
+            return ((getStatesOf(type: .Seed) != nil) ? true : false )
+        }
+
     }
     
 //MARK: - Time Management Methods:
     
-    public func getEstimatedWeeksLeftToHarvest() -> Int? {
+    public var estimatedWeeksLeftToHarvest : Int {
         
-        guard let harvestDate = getEstimatedHarvestDate() else { return nil }
-        
-        return Date.weeksBetween(start: Date(), end: harvestDate)
+        get {
+            
+            return Date.weeksBetween(start: Date(), end: estimatedHarvestDate)
+        }
     }
     
  
-    public func getEstimatedMonthsLeftToHarvest() -> Int? {
+    public var estimatedMonthsLeftToHarves : Int {
         
-        guard let harvestDate = getEstimatedHarvestDate() else { return nil }
-        
-        return Date.monthsBetween(start: Date(), end: harvestDate)
-    }
-    
-    public func getEstimatedDaysLeftToHarvest() -> Int? {
-        
-        guard let harvestDay = getEstimatedHarvestDate() else { return nil }
-        
-        return Date.daysBetween(start: Date(), end: harvestDay)
-    }
-    
-    public func getEstimatedHarvestDate() -> Date? {
-        
-        guard let dayPlanted = getDayPlanted() else { return nil }
-        
-        return Date.addNumberOf(days: Int(self.timeToHarvest), to: dayPlanted)
-    }
-    
-    public func getDaysPassedSincePlanted() -> Int? {
-        
-        guard let dayPlanted = getDayPlanted() else { return nil }
-        
-        return Date.daysBetween(start:dayPlanted, end: Date())
-    }
-    
-    public func getDayPlanted() -> Date? {
-        
-        if let firstState = self.getPlantedtCropState() {
+        get {
             
-            guard ((firstState is Seedling || firstState is Seed) && (firstState.date != nil)) else {
-                
-                return nil
-            }
-            
-            return (firstState.date as Date)
+            return Date.monthsBetween(start: Date(), end: estimatedHarvestDate)
         }
         
-        return nil
+    }
+    
+    public var estimatedDaysLeftToHarvest : Int {
+        
+        get {
+            return Date.daysBetween(start: Date(), end: estimatedHarvestDate)
+        }
+    }
+    
+    public var estimatedHarvestDate : Date {
+        
+        get {
+            guard let dayPlanted = dayPlanted else { return Date() }
+            
+            return Date.addNumberOf(days: Int(self.timeToHarvest), to: dayPlanted)
+        }
+        
+    }
+    
+    public var daysPassedSincePlanted : Int {
+        
+        get {
+            guard let dayPlanted = dayPlanted else { return -1 }
+            
+            return Date.daysBetween(start:dayPlanted, end: Date())
+        }
+    }
+    
+    public var dayPlanted : Date? {
+        
+        get {
+            if let firstState = self.getPlantedtCropState() {
+                
+                guard ((firstState is Seedling || firstState is Seed) && (firstState.date != nil)) else {
+                    
+                    return nil
+                }
+                
+                return (firstState.date as Date)
+            }
+            
+            return nil
+        }
     }
     
 //MARK: - Helper Methods:

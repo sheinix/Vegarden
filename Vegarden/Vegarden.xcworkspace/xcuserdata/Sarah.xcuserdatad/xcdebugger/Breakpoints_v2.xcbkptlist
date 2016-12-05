@@ -70,86 +70,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vegarden/PatchAddEditViewController.swift"
-            timestampString = "502323147.683661"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "confirmButtonPressed()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vegarden/PatchAddEditViewController.swift"
-            timestampString = "502323219.774372"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "confirmButtonPressed()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vegarden/PersistenceManager.swift"
-            timestampString = "502323290.999482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "update(paddock:data:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Vegarden.PersistenceManager.update (paddock : Swift.ImplicitlyUnwrappedOptional&lt;Vegarden.Paddock&gt;, data : Vegarden.PatchInfo) -&gt; ()"
-                  moduleName = "Vegarden"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/PersistenceManager.swift"
-                  timestampString = "502324838.603627"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "350">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Vegarden.PersistenceManager.update (paddock : Swift.ImplicitlyUnwrappedOptional&lt;Vegarden.Paddock&gt;, data : Vegarden.PatchInfo) -&gt; ()"
-                  moduleName = "Vegarden"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/PersistenceManager.swift"
-                  timestampString = "502324838.606889"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "455">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -217,59 +137,43 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vegarden/PatchEditionTableViewCell.swift"
-            timestampString = "502500447.308222"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "init(style:reuseIdentifier:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Vegarden/PersistenceManager.swift"
-            timestampString = "502517720.830052"
+            timestampString = "502591168.348627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "deleteRows(rows:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Vegarden.PersistenceManager.deleteRows (rows : Swift.Array&lt;Vegarden.Row&gt;) -&gt; ()"
                   moduleName = "Vegarden"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/PersistenceManager.swift"
-                  timestampString = "502522972.163638"
+                  timestampString = "502591170.544914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
                   offsetFromSymbolStart = "53">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Vegarden.PersistenceManager.(deleteRows (rows : Swift.Array&lt;Vegarden.Row&gt;) -&gt; ()).(closure #1)"
                   moduleName = "Vegarden"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/PersistenceManager.swift"
-                  timestampString = "502522972.167282"
+                  timestampString = "502591170.548504"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
+                  startingLineNumber = "257"
+                  endingLineNumber = "257"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -384,6 +288,134 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "currentTime()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/MyGardenViewController.swift"
+            timestampString = "502591168.348627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "patchRowEdited(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502591168.348627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "didUpdate(rows:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502591168.348627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "didRemove(rows:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502590576.669999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "didAdd(rows:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502591003.889006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "didDelete(paddock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502591005.616705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "didUpdate(paddock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/GardenManagerExtension.swift"
+            timestampString = "502591006.936842"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "didAdd(paddock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/CropLifeCycleTableViewCell.swift"
+            timestampString = "502593214.117466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "setCellWith(crop:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

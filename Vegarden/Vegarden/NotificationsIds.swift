@@ -10,21 +10,24 @@ import Foundation
 
 struct NotificationIds {
     
-    static let NotiKeyCropRemoved = "CropRemoved"
-    static let NotiKeyCropAdded   = "CropAdded"
-    static let NotiKeyCropPlanted = "CropPlanted"
-    static let NotiKeyCropUnPlanted = "CropUnPlanted"
-    static let NotiKeyCropWeeded = "CropWeeded"
-    static let NotiKeyCropIrrigated = "CropIrrigated"
-    static let NotiKeyCropFertilized = "CropFertilized"
-    static let NotiKeyCropHarvested = "CropHarvested"
+    static let NotiKeyCropRemoved       = "CropRemoved"
+    static let NotiKeyCropAdded         = "CropAdded"
+    static let NotiKeyCropPlanted       = "CropPlanted"
+    static let NotiKeyCropUnPlanted     = "CropUnPlanted"
+    static let NotiKeyCropWeeded        = "CropWeeded"
+    static let NotiKeyCropIrrigated     = "CropIrrigated"
+    static let NotiKeyCropFertilized    = "CropFertilized"
+    static let NotiKeyCropHarvested     = "CropHarvested"
     static let NotiKeyGrowingActionMade = "GrowingActionMade"
-    static let NotiKeyCropFinished = "CropFinished"
+    static let NotiKeyCropFinished      = "CropFinished"
+
+    static let NotiKeyRowsEdited        = "RowsEdited"
+    static let NotiKeyRowsAdded         = "RowsAdded"
+    static let NotiKeyRowsDeleted       = "RowsDeleted"
     
-    static let NotiKeyRowEdited = "RowEdited"
-    static let NotiKeyPatchEdited = "PatchEdited"
-    static let NotiKeyNewPatch = "NewPatch"
-    static let NotiKeyPatchDeleted = "PatchDeleted"
+    static let NotiKeyPatchEdited       = "PatchEdited"
+    static let NotiKeyNewPatch          = "NewPatch"
+    static let NotiKeyPatchDeleted : String  = "PatchDeleted"
     
     
     struct cropRow {
@@ -34,8 +37,7 @@ struct NotificationIds {
     }
     
     
-    
-    
+       
     public func notiIdForGrowing(action: GrowingActions) -> String {
         
         var notiId : String?

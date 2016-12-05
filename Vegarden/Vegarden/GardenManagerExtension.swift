@@ -64,10 +64,46 @@ extension GardenManager : PersistanceCallBackProtocol {
     }
     
     func didAdd(paddock: Paddock!) {
-        //paddock added do some shit ?
+       
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyNewPatch),
+                                        object: paddock,
+                                        userInfo: ["patch" : paddock])
+
     }
     
     func didUpdate(paddock: Paddock!) {
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyPatchEdited),
+                                        object: paddock,
+                                        userInfo: ["patch" : paddock])
     }
+    
+    func didDelete(paddock: Paddock!) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyPatchDeleted),
+                                        object: paddock,
+                                        userInfo: ["patch" : paddock])
+    }
+    
+    func didAdd(rows:[Row]) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsAdded),
+                                        object: rows,
+                                        userInfo: ["rows" : rows])
+    }
+    
+    func didRemove(rows:[Row]) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsDeleted),
+                                        object: rows,
+                                        userInfo: ["rows" : rows])
+    }
+    
+    func didUpdate(rows:[Row]) {
+       
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsEdited),
+                                        object: rows,
+                                        userInfo: ["rows" : rows])
+    }
+
+    
+    
 }

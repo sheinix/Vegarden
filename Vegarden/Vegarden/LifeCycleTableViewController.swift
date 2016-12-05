@@ -92,14 +92,14 @@ class LifeCycleTableViewController: UITableViewController {
             }
             
             let title = (cropRow.crop?.name)! + (cropRow.isFinished ? " Finished!" : " Unplanted!")
-            showConfirmViewWith(title: title)
+            self.view.showConfirmViewWith(title: title, frame: nil, afterAction: nil)
             
         } else { //Crop has been deleted!
 
             self.myPlantedCrops = self.myPlantedCrops?.filter { $0.isPlanted }
             
             let title = (cropRow.isFinished ? " Crop Finished!" : "Crop Unplanted!")
-            showConfirmViewWith(title: title)
+            self.view.showConfirmViewWith(title: title, frame: nil, afterAction: nil)
             self.tableView.reloadData()
         }
         
@@ -113,7 +113,7 @@ class LifeCycleTableViewController: UITableViewController {
         //TODO Test this with same crop planted two times...
         
         reloadCellNotes(crop: action.crop)
-        showConfirmViewWith(title: action.screenTitle)
+        self.view.showConfirmViewWith(title: action.screenTitle, frame: nil, afterAction: nil)
         
     }
     
@@ -129,21 +129,6 @@ class LifeCycleTableViewController: UITableViewController {
         self.lifeStatesArray.insert(cell.reloadNotes()!, at: idx!)
 
         cell.collectionView.reloadData()
-
-    }
-    
-    private func showConfirmViewWith(title: String!) {
-    
-        let confirm = ConfirmationView(frame: self.tableView.bounds, title: title)
-        
-        self.tableView.addSubview(confirm)
-        
-        confirm.checkBox?.setCheckState(.checked, animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1) ) {
-            
-            confirm.removeFromSuperview()
-        }
 
     }
     
