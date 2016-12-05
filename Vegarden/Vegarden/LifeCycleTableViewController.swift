@@ -85,7 +85,7 @@ class LifeCycleTableViewController: UITableViewController {
         
         let cropRow = notification.userInfo?["notiObj"] as! NotificationIds.cropRow
         
-        if ((cropRow.crop) != nil) { //Crop has been removed from some rows!
+        if (cropRow.crop?.isPlanted)! { //Crop has been removed from some rows!
             
             if ((cropRow.crop?.row?.filter { ($0 as! Row).hasActionsDone }.count)! > 0) {
                     reloadCellNotes(crop: cropRow.crop!)
@@ -96,11 +96,23 @@ class LifeCycleTableViewController: UITableViewController {
             
         } else { //Crop has been deleted!
 
-            self.myPlantedCrops = self.myPlantedCrops?.filter { $0.isPlanted }
-            
+            if let idx = self.myPlantedCrops?.index(where: { $0 === cropRow.crop }) {
+                
+                self.myPlantedCrops?.remove(at: idx)
+                cellHeights = (0..<Int((myPlantedCrops?.count)!)).map { _ in C.CellHeight.close }
+                self.tableView.deleteRows(at: [IndexPath(row: idx, section:0)], with: .none)
+                
+            }
             let title = (cropRow.isFinished ? " Crop Finished!" : "Crop Unplanted!")
             self.view.showConfirmViewWith(title: title, frame: nil, afterAction: nil)
-            self.tableView.reloadData()
+            
+            //self.myPlantedCrops = self.myPlantedCrops?.filter { $0.isPlanted }
+            
+            
+            
+            
+            
+            
         }
         
     }

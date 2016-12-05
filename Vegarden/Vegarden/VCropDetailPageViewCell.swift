@@ -38,6 +38,13 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.reloadData()
     }
     
+//    override func prepareForReuse() {
+//     
+//        NotificationCenter.default.removeObserver(self)
+//        
+//        super.prepareForReuse()
+//    }
+    
     private func setupContent() {
         
         backgroundColor = UIColor.clear
@@ -90,12 +97,15 @@ class VCropDetailPageViewCell: UICollectionViewCell {
             self.showConfirmViewWith(title: msg,
                                      frame: screenBounds,
                                      afterAction: { self.pullAction!(self.tableView.contentOffset) })
+        } else {
+            print("infoCrop:  \(infoCrop.name)  - self.crop:   \(self.crop!.name)")
+            
         }
     }
     
     @objc func cropPlanted(notification: Notification) {
         
-            let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
+        let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
         
         self.showConfirmViewWith(title: plantMsg,
                                  frame: screenBounds,

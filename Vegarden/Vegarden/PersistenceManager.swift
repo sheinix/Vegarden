@@ -496,7 +496,7 @@ class PersistenceManager {
         
         saveContext()
 
-        self.callBackDelegate?.didUnPlant(crop: (clearCrop ? nil : crop), from: rows, reason: reason )
+        self.callBackDelegate?.didUnPlant(crop: crop, from: rows, reason: reason )
     }
     
 //MARK: - Helper Methods

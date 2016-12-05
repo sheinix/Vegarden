@@ -20,17 +20,9 @@ class CropDetailCollectionViewController: UICollectionViewController {
 
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        
-       // self.collectionView?.isPagingEnabled = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        
-        // Do any additional setup after loading the view.
-//        self.navigationController?.navigationBar.backItem?.backBarButtonItem?
         
     }
 
@@ -121,6 +113,17 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
         return collectionCell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if (cell as! VCropDetailPageViewCell).crop !== self.cropList[indexPath.row]  {
+            
+            print("We have a problem! Ouch!!!")
+        }
+        
+    }
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return cropList.count;

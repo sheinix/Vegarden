@@ -70,6 +70,8 @@ class ActionMenuAlertView: SCLAlertView {
         
         //Make the datasource with paddocks and freerows for each paddock
         
+        //TODO is breaking here with nil when unwrapping optional!
+        
         self.dataSource = self.paddocks!.map { Elements(patch: $0, rowsInPatch: (isPlanting ? $0.freeRows : $0.getPlantedRowsFor(crop: crop) )) }
         
         self.rowsToMakeActions.reserveCapacity(self.dataSource.count)

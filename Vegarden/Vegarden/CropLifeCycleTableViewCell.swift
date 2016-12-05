@@ -58,25 +58,9 @@ class CropLifeCycleTableViewCell: FoldingCell {
         //TODO If the collectionView fits allright in screen, no need to enable the scroll
         collectionView.isScrollEnabled = true
      
-        //Action Manu Setup:
-
-//       setupActionButtonMenu()
-        
         super.awakeFromNib()
     }
 
-    
-//    public func copyCellHeaderView() -> (RotatedView) {
-//        
-//        let copiedCell : CropLifeCycleTableViewCell = self.copyView() as! CropLifeCycleTableViewCell
-//        let progressNumber = CGFloat(integerLiteral: 54)
-//        copiedCell.ringProgressBar.setValue(progressNumber, animateWithDuration: 3.0)
-//        
-//        return copiedCell.foregroundView
-//        
-//        
-//    }
-    
     
     func setCollectionViewDataSourceDelegate <D: UICollectionViewDataSource & UICollectionViewDelegate>
         (dataSourceDelegate: D, forRow row: Int) {
@@ -114,8 +98,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
             self.ringProgressBar.value = 45 //setValue(45, animateWithDuration: 3.0)
         }
        
-        //TODO Here's the problem when re-creating the button/....need to check its not already there!
-        setupActionButtonMenu()
+
+        if !(actionMenu.superview != nil) {
+            setupActionButtonMenu()
+        }
+        
     }
     
     public func reloadNotes() ->  [String : [Any]]? {
