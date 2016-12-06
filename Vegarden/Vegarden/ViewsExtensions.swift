@@ -136,6 +136,9 @@ extension UIView{
         
         let confirm = ConfirmationView(frame: (frame != nil ? frame! : self.bounds), title: title)
         
+        self.clipsToBounds = false
+//        confirm.clipsToBounds = false
+        
         self.addSubview(confirm)
         
         confirm.checkBox?.setCheckState(.checked, animated: true)
@@ -149,6 +152,8 @@ extension UIView{
             }
            
         }
+        
+        self.clipsToBounds = true
     }    
 }
 

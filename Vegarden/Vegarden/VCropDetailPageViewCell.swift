@@ -84,37 +84,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 
     }
     
-//    @objc func cropRemoved(notification: Notification) {
-//        
-//        let infoCrop = (notification.userInfo?["crop"] as! Crop)
-//      
-//        if (infoCrop === self.crop!) {
-//
-//            let msg = infoCrop.name! +  " Crop Removed ! "
-//            self.showConfirmViewWith(title: msg,
-//                                     frame: screenBounds,
-//                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
-//        }
-//    }
-    
-    
-//    @objc func cropAdded(notification: Notification) {
-//        
-//        let infoCrop = (notification.userInfo?["crop"] as! Crop)
-//        
-//        if (infoCrop === self.crop!) {
-//
-//                let msg = infoCrop.name! +  " Crop Added ! "
-//            
-//            self.showConfirmViewWith(title: msg,
-//                                     frame: screenBounds,
-//                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
-//        } else {
-//            print("infoCrop:  \(infoCrop.name)  - self.crop:   \(self.crop!.name)")
-//            
-//        }
-//    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if context == &myContext {
@@ -144,7 +113,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
                                  frame: screenBounds,
                                  afterAction: { self.pullAction!(self.tableView.contentOffset) })
         }
-        else {
+        else { //TODO Clean this:
             print("crop name :\(crop.name)  ---- >  self.crop.name:  \(self.crop?.name)")
         }
     }
@@ -158,18 +127,6 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     }
     
     private func addObserversForCropActions() {
-        
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(cropRemoved),
-//                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
-//                                               object: nil)
-
-        
-        
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(cropAdded),
-//                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
-//                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(cropPlanted),

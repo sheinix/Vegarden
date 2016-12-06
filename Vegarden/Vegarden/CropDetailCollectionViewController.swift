@@ -143,7 +143,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        NotificationCenter.default.removeObserver(cell)
+       // NotificationCenter.default.removeObserver(cell)
       
         if let crop = (cell as! VCropDetailPageViewCell).crop {
         
