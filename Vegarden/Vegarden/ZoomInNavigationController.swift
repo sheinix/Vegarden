@@ -39,7 +39,12 @@ class ZoomInNavigationController: UINavigationController {
         
         //viewWillAppearWithPageIndex
         let childrenCount = self.viewControllers.count
-        let toViewController = self.viewControllers[childrenCount-2] as! VWaterFallViewControllerProtocol
+        
+        
+        //FIX Very bad, check later why there was always substracting 2 to the childrenCount!
+        let minusUnit = (childrenCount > 1 ? 2 : 1)
+        
+        let toViewController = self.viewControllers[childrenCount-minusUnit] as! VWaterFallViewControllerProtocol
         let toView = toViewController.transitionCollectionView()
         let popedViewController = self.viewControllers[childrenCount-1] as! UICollectionViewController
         let popView  = popedViewController.collectionView!;

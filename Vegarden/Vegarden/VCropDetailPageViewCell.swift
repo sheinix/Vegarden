@@ -14,7 +14,17 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     var cropTitle = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
     var statusButton = UIButton(type: .custom)
     var removeButton = UIButton(type: .custom)
-    var crop : Crop?
+    private var myContext = 0 //For KVO purposes, new way to do it in Apple Docs!
+    
+    var crop : Crop? {
+        didSet {
+            
+            self.crop?.addObserver(self,
+                                forKeyPath: "owned",
+                                   options: NSKeyValueObservingOptions.new,
+                                   context: &myContext)
+        }
+    }
     var image : UIImage?
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
@@ -38,12 +48,14 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView.reloadData()
     }
     
-//    override func prepareForReuse() {
-//     
-//        NotificationCenter.default.removeObserver(self)
-//        
-//        super.prepareForReuse()
-//    }
+    override func prepareForReuse() {
+     
+        if self.crop != nil {
+            self.crop?.removeObserver(self, forKeyPath: "owned")
+        }
+        
+        super.prepareForReuse()
+    }
     
     private func setupContent() {
         
@@ -72,63 +84,92 @@ class VCropDetailPageViewCell: UICollectionViewCell {
 
     }
     
-    @objc func cropRemoved(notification: Notification) {
-        
-        let infoCrop = (notification.userInfo?["crop"] as! Crop)
-      
-        if (infoCrop === self.crop!) {
-
-            let msg = infoCrop.name! +  " Crop Removed ! "
-            self.showConfirmViewWith(title: msg,
-                                     frame: screenBounds,
-                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
-        }
-    }
+//    @objc func cropRemoved(notification: Notification) {
+//        
+//        let infoCrop = (notification.userInfo?["crop"] as! Crop)
+//      
+//        if (infoCrop === self.crop!) {
+//
+//            let msg = infoCrop.name! +  " Crop Removed ! "
+//            self.showConfirmViewWith(title: msg,
+//                                     frame: screenBounds,
+//                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
+//        }
+//    }
     
     
-    @objc func cropAdded(notification: Notification) {
+//    @objc func cropAdded(notification: Notification) {
+//        
+//        let infoCrop = (notification.userInfo?["crop"] as! Crop)
+//        
+//        if (infoCrop === self.crop!) {
+//
+//                let msg = infoCrop.name! +  " Crop Added ! "
+//            
+//            self.showConfirmViewWith(title: msg,
+//                                     frame: screenBounds,
+//                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
+//        } else {
+//            print("infoCrop:  \(infoCrop.name)  - self.crop:   \(self.crop!.name)")
+//            
+//        }
+//    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        let infoCrop = (notification.userInfo?["crop"] as! Crop)
+        if context == &myContext {
         
-        if (infoCrop === self.crop!) {
-
-                let msg = infoCrop.name! +  " Crop Added ! "
-            
+            guard let cropie = object as? Crop else { return }
+        
+            let msg = cropie.name! +  (cropie.owned ? " Added !" : "  Removed!")
+        
             self.showConfirmViewWith(title: msg,
                                      frame: screenBounds,
                                      afterAction: { self.pullAction!(self.tableView.contentOffset) })
         } else {
-            print("infoCrop:  \(infoCrop.name)  - self.crop:   \(self.crop!.name)")
-            
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
     
     @objc func cropPlanted(notification: Notification) {
         
-        let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
+        let crop = notification.userInfo?["crop"] as! Crop
         
-        self.showConfirmViewWith(title: plantMsg,
+        //This time I need to compare names, because wont be same instance, as I copy the obj to plant!
+        if (self.crop?.name == crop.name) {
+        
+            let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
+        
+            self.showConfirmViewWith(title: plantMsg,
                                  frame: screenBounds,
                                  afterAction: { self.pullAction!(self.tableView.contentOffset) })
-
+        }
+        else {
+            print("crop name :\(crop.name)  ---- >  self.crop.name:  \(self.crop?.name)")
+        }
     }
     
     
     deinit {
+        
+        self.crop?.removeObserver(self, forKeyPath: "owned", context: &myContext)
+        
         NotificationCenter.default.removeObserver(self)
     }
     
     private func addObserversForCropActions() {
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(cropRemoved),
-                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
-                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(cropRemoved),
+//                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropRemoved),
+//                                               object: nil)
+
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(cropAdded),
-                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
-                                               object: nil)
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(cropAdded),
+//                                               name: NSNotification.Name(rawValue: NotificationIds.NotiKeyCropAdded),
+//                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(cropPlanted),
@@ -137,6 +178,8 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
 
     }
+    
+  
 }
 
 extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
@@ -300,7 +343,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
         if self.crop != nil {
             
-            GardenManager.shared.removeCropFromGarden(crop: self.crop!)
+                GardenManager.shared.removeCropFromGarden(crop: self.crop!)
         }
     }
 

@@ -109,6 +109,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
             }
             
         }
+
         collectionCell.setNeedsLayout()
     
         return collectionCell
@@ -143,6 +144,17 @@ class CropDetailCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         NotificationCenter.default.removeObserver(cell)
+      
+        if let crop = (cell as! VCropDetailPageViewCell).crop {
+        
+            if crop === self.cropList[indexPath.row] {
+                //crop.removeObserver(cell, forKeyPath: "owned")
+            }
+            
+            
+        }
+        
+        
     }
     
 //    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

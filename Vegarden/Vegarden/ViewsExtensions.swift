@@ -149,8 +149,7 @@ extension UIView{
             }
            
         }
-    }
-
+    }    
 }
 
 var kIndexPathPointer = "kIndexPathPointer"

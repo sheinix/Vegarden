@@ -368,7 +368,7 @@ class PersistenceManager {
             
             if (crop.row?.count == 0)  {
                 crop.owned = true
-                saveContext()
+               // saveContext()
                 
                 callBackDelegate?.didAddCropToGarden(crop: crop)
             }
@@ -397,7 +397,7 @@ class PersistenceManager {
         
         crop?.owned = false
         
-        saveContext()
+        ///saveContext()
         
         callBackDelegate?.didRemoveCropFromGarden(crop: crop!)
         

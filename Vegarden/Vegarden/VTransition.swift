@@ -27,6 +27,8 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
         
         let containerView = transitionContext.containerView
         
+        print("LLEGO HASTA ACAAAAAAA 1111")
+        
         if presenting {
             
             let toView = toViewController?.view!
@@ -36,6 +38,10 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             let waterFallView = (toViewController as! VTransitionProtocol).transitionCollectionView()
             let pageView = (fromViewController as! VTransitionProtocol).transitionCollectionView()
             waterFallView?.layoutIfNeeded()
+            
+            
+             print("LLEGO HASTA ACAAAAAAA 2222")
+            
             
             let indexPath = pageView?.fromPageIndexPath()
             var gridView = waterFallView?.cellForItem(at: indexPath as! IndexPath)
@@ -47,6 +53,10 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             
             let leftUpperPoint = gridView!.convert(CGPoint.zero, to: toViewController?.view)
             
+            
+             print("LLEGO HASTA ACAAAAAAA 3333")
+            
+            
             let snapShot = (gridView as! VTansitionWaterfallGridViewProtocol).snapShotForTransition()
            
             snapShot?.transform = CGAffineTransform(scaleX: animationScale, y: animationScale)
@@ -57,6 +67,8 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
             
             snapShot?.origin(point: CGPoint(x:0, y:-pullOffsetY+offsetY))
             containerView.addSubview(snapShot!)
+            
+             print("LLEGO HASTA ACAAAAAAA 4444")
             
             toView?.isHidden = false
             toView?.alpha = 0
