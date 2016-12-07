@@ -10,6 +10,7 @@ import UIKit
 import SCLAlertView
 import SnapKit
 import SkyFloatingLabelTextField
+import DZNEmptyDataSet
 
 class PatchAddEditViewController: SCLAlertView {
 
@@ -51,14 +52,13 @@ class PatchAddEditViewController: SCLAlertView {
     
     fileprivate func setupViews () {
         
-        self.patchInfoTableView.delegate = self
         self.patchInfoTableView.dataSource = self
+        self.patchInfoTableView.delegate = self
         self.patchInfoTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.PatchEditionCellIdentifier)
         self.patchInfoTableView.isScrollEnabled = false
         self.patchInfoTableView.separatorStyle = .none
         
-        
-        
+
         self.customSubview = self.patchInfoTableView
         self.customSubview?.clipsToBounds = true
         self.customSubview?.layer.masksToBounds = true

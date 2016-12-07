@@ -23,6 +23,7 @@ target 'Vegarden' do
 	pod 'SCLAlertView'
 	pod 'M13Checkbox'
 	pod 'SkyFloatingLabelTextField', '~> 1.0'
+	pod 'DZNEmptyDataSet'
 
 	#source 'https://github.com/CocoaPods/Specs.git'
 	#platform :ios, '8.0'

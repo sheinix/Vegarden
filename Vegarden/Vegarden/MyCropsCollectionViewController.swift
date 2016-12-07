@@ -11,6 +11,7 @@ import AVFoundation
 import KCFloatingActionButton
 import CHTCollectionViewWaterfallLayout
 import SnapKit
+import DZNEmptyDataSet
 
 private let reuseIdentifier = "MyCropCell"
 
@@ -31,6 +32,9 @@ class MyCropsCollectionViewController: UICollectionViewController {
         self.navigationController!.delegate = delegateHolder
         self.navigationController?.navigationBar.isHidden = true
         self.automaticallyAdjustsScrollViewInsets = true;
+        
+        self.collectionView?.emptyDataSetSource = self
+        self.collectionView?.emptyDataSetDelegate = self
         
         //CHTCollectionViewWaterfall lyout:
         (self.collectionView?.collectionViewLayout as! CHTCollectionViewWaterfallLayout).columnCount = 2
@@ -76,6 +80,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
                 
                     self.myCrops?.remove(at: row)
                     collection.deleteItems(at: [idx])
+                    collection.reloadData()
             }
         }
     }
@@ -184,3 +189,55 @@ extension MyCropsCollectionViewController : VTransitionProtocol, VWaterFallViewC
     }
 }
 
+extension MyCropsCollectionViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        return (UIImage(named: "NoCropsInMyCrops"))
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        
+        let msg = NSMutableAttributedString(string: "Oops! No Crops Added yet!",
+                                            attributes: [NSFontAttributeName:Fonts.emptyStateFont])
+        msg.addAttribute(NSForegroundColorAttributeName,
+                         value: Colors.mainColorUI,
+                         range: NSRange(location:0, length:msg.length))
+        
+        
+        return msg
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Choose the Crops you want to have from the Database and add them to your Crops to start planting them ! ";
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center;
+        
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 24),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 20)
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+}

@@ -204,7 +204,7 @@ extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayou
             itemSize = CGSize(width: (size?.width)!, height: (navBarHidden! ? screenHeight+20 : screenHeight-navigationHeaderAndStatusbarHeight))
         
         } else {
-        
+            
             itemSize = (navBarHidden! ? CGSize(width:screenWidth, height:screenHeight+20) :
                                        CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight))
         }

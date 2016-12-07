@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-HH-o8G">
-                    <rect key="frame" x="20" y="12" width="200" height="35.5"/>
+                    <rect key="frame" x="20" y="12" width="200" height="40.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="q0a-JA-WYr"/>
                     </constraints>
                     <attributedString key="attributedText">
                         <fragment content="Information">
                             <attributes>
-                                <font key="NSFont" size="25" name="Avenir-Light"/>
+                                <font key="NSFont" size="29" name="OpenSans-Light"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
@@ -32,73 +32,73 @@
                     <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-Xp-Iiv" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="57" width="58" height="21"/>
+                    <rect key="frame" x="20" y="62" width="58" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19j-br-h9D" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="98" width="51" height="21"/>
+                    <rect key="frame" x="20" y="103" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pH Level :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMY-KK-8aj" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="139" width="76" height="21"/>
+                    <rect key="frame" x="20" y="144" width="76" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacing :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-aC-jDm" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="180" width="71" height="21"/>
+                    <rect key="frame" x="20" y="185" width="71" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is in garden? : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxi-bU-ptL" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="221" width="111" height="21"/>
+                    <rect key="frame" x="20" y="226" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t3-kg-TzE" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="262" width="111" height="21"/>
+                    <rect key="frame" x="20" y="267" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baq-4m-kGv" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="103" y="57" width="42" height="21"/>
+                    <rect key="frame" x="103" y="62" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-b7-AlU" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="98" width="289" height="21"/>
+                    <rect key="frame" x="107" y="103" width="289" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yol-of-hmf" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="139" width="285" height="21"/>
+                    <rect key="frame" x="107" y="144" width="285" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-hN-8nq" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="180" width="285" height="21"/>
+                    <rect key="frame" x="107" y="185" width="285" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf9-gd-abd" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="139" y="221" width="183" height="21"/>
+                    <rect key="frame" x="139" y="226" width="183" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGz-9i-Z3I" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="139" y="262" width="253" height="21"/>
+                    <rect key="frame" x="139" y="267" width="253" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="253" id="YYn-hF-X0d"/>
                     </constraints>

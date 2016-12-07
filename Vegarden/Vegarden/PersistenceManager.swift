@@ -554,7 +554,7 @@ class PersistenceManager {
         
         
         
-        let sampleGarden = createGardenNamed(name: "Sample Garden", in: nil)
+        _ = createGardenNamed(name: "Sample Garden", in: nil)
     
         //addRows(numberOfRows: 10, to: sampleGarden.paddocks?.allObjects[0] as! Paddock)
         

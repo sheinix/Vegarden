@@ -50,14 +50,15 @@ class CropDetailLabelView: UIView {
         let view = Bundle.main.loadNibNamed("CropDetailLabelView", owner: self, options: nil)?[0] as! UIView
         
         self.addSubview(view)
-        view.layer.borderColor = UIColor.red.cgColor
+        
         view.layer.borderWidth = 2
-        view.backgroundColor = UIColor.green
+        view.layer.borderColor = UIColor.gray.cgColor
+        view.backgroundColor = UIColor.yellow
     }
     
     public func setupValuesWith(crop: Crop) {
         
-        self.typeValue.text = crop.cropTypeStringValue()
+        self.typeValue.text = crop.cropTypeStringValue
         self.familyValue.text = crop.family
         self.phLevelValue.text = crop.phLevels
         self.spacingValue.text = String(crop.spacing)

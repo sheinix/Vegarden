@@ -8,6 +8,9 @@
 
 import UIKit
 import SCLAlertView
+import DZNEmptyDataSet
+
+let rowsMaxHeight = screenHeight/2
 
 class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtocol {
 
@@ -111,6 +114,9 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         
         if (indexPath.section == 0) {
             cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.MyGardenOverviewCellIdentifier, for: indexPath) as! MyGardenOverviewTableViewCell)
+            if let table = (cell as! MyGardenOverviewTableViewCell).cropsTableView {
+                table.isScrollEnabled = (self.rowsHeight! > rowsMaxHeight)
+            }
         
         } else {
             cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.MyGardenDetailCellIdentifier, for: indexPath) as! MyGardenDetailTableViewCell)
@@ -118,6 +124,8 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
                 
                 collection.delegate = self
                 collection.dataSource = self
+                collection.emptyDataSetDelegate = self
+                collection.emptyDataSetSource = self
                // collection.reloadData()
             }
             
@@ -152,7 +160,21 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return (indexPath.section == 0 ? self.rowsHeight! : screenHeight - self.rowsHeight!)
+        //Set a minimum height if it doesnt have any rows:
+        let realHeight = (self.rowsHeight! > CGFloat(integerLiteral: cropRowHeight) ?
+            self.rowsHeight : 250)
+        
+        if  (indexPath.section == 0) {
+            
+            return (self.rowsHeight! > rowsMaxHeight ? rowsMaxHeight : realHeight!)
+        
+        } else {
+            
+            return (self.rowsHeight! > rowsMaxHeight ? rowsMaxHeight : screenHeight - realHeight!)
+        }
+        
+        
+        //return (indexPath.section == 0 ? self.rowsHeight! : screenHeight - self.rowsHeight!)
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -251,5 +273,53 @@ extension MyGardenViewController : MyGardenDetailCollectionViewCellProtocol {
                                          style: .alert)
             
         }
+    }
+}
+extension MyGardenViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        return (UIImage(named: "NoAvailablePaddocks"))
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        
+        let msg = NSMutableAttributedString(string: "Oops! No Available Patchs!",
+                                            attributes: [NSFontAttributeName:Fonts.emptyStateFont])
+        msg.addAttribute(NSForegroundColorAttributeName,
+                         value: Colors.mainColorUI,
+                         range: NSRange(location:0, length:msg.length))
+        
+        
+        return msg
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Start by adding a new patch with the plus button ! ";
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center;
+        
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 24),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 20)
     }
 }

@@ -15,12 +15,6 @@ class LifeCycleTableViewController: UITableViewController {
 
     //CollectionView sources:
     let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
-    
-    //Manage an array of Dictionaries containing the life states (notes) for each crop
-//    struct dict {
-//        var title : String!
-//        var states : [Any]
-//    }
 
     var lifeStatesArray : [[String : [Any]]] = []
     
@@ -58,6 +52,14 @@ class LifeCycleTableViewController: UITableViewController {
         }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        
+        // A little trick for removing the cell separators
+        //self.tableView.tableFooterView = UIView.new
+        
+        
         
         NotificationCenter.default.addObserver(self,
                                                 selector: #selector(actionMade),
@@ -101,6 +103,7 @@ class LifeCycleTableViewController: UITableViewController {
                 self.myPlantedCrops?.remove(at: idx)
                 cellHeights = (0..<Int((myPlantedCrops?.count)!)).map { _ in C.CellHeight.close }
                 self.tableView.deleteRows(at: [IndexPath(row: idx, section:0)], with: .none)
+                self.tableView.reloadData()
                 
             }
             let title = (cropRow.isFinished ? " Crop Finished!" : "Crop Unplanted!")

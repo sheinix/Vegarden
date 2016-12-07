@@ -209,29 +209,33 @@ extension Crop {
         
     }
     
-    public func cropTypeStringValue() -> String {
-        
-        var stringValue : String
-        
-        switch self.typeCrop {
+    public var cropTypeStringValue : String {
+      
+        get {
+            var stringValue : String
             
+            switch self.typeCrop {
+                
             case .Annual:
-        
+                
                 stringValue = "Annunal"
-        
+                
             case .Perenneal:
-        
+                
                 stringValue = "Perenneal"
-        
+                
             case .Tuba:
-        
+                
                 stringValue = "Tuba"
-        
-//            default:
-//                stringValue = ""
+                
+                //            default:
+                //                stringValue = ""
+            }
+            
+            return stringValue
         }
         
-        return stringValue
+        
         
     }
 //    public func reCalculateTimeToHarvest() {

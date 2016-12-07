@@ -90,7 +90,7 @@ class GardenManager: GardenManagementProtocol {
     
     public func addRow(rowName: String!, length: Float?, to paddock: Paddock, in garden: Garden) {
         
-        PersistenceManager.shared.addRow(rowName: rowName, length: length, to: paddock)
+        let _ = PersistenceManager.shared.addRow(rowName: rowName, length: length, to: paddock)
         
     }
     

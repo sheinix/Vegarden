@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import DZNEmptyDataSet
 
 let cropRowHeight = 50
 
@@ -58,6 +59,11 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
         
         self.cropsTableView?.delegate = self
         self.cropsTableView?.dataSource = self
+        self.cropsTableView?.emptyDataSetSource = self
+        self.cropsTableView?.emptyDataSetDelegate = self
+        
+        self.cropsTableView?.tableFooterView = UIView()
+        
         self.cropsTableView?.estimatedRowHeight = CGFloat(cropRowHeight)
         self.cropsTableView?.register(MyGardenOverviewCropTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.MyGardenOverviewCropTableViewCellIdentifier)
     }
@@ -108,5 +114,57 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cropRowHeight)
+    }
+}
+extension MyGardenOverviewTableViewCell : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        return (UIImage(named: "NoCropsPlanted"))
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        
+        let msg = NSMutableAttributedString(string: "Oops! No Crops Planted yet!",
+                                            attributes: [NSFontAttributeName:Fonts.mainFont])
+        msg.addAttribute(NSForegroundColorAttributeName,
+                         value: Colors.mainColorUI,
+                         range: NSRange(location:0, length:msg.length))
+        
+        
+        return msg
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Choose a crop in My Crops view and plant it to see it here ! ";
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center;
+        
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 15)
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
     }
 }

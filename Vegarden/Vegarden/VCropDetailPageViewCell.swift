@@ -28,7 +28,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     var image : UIImage?
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
-    let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
+//    let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
+    
+    var tableView : UITableView?
     
     override init(frame: CGRect) {
         
@@ -45,7 +47,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        tableView.reloadData()
+        tableView?.reloadData()
     }
     
     override func prepareForReuse() {
@@ -77,12 +79,17 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         statusButton.setClearStyledButton()
         statusButton.applyShadows()
         
-        contentView.addSubview(tableView)
-        tableView.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        //let tableFrame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        tableView = UITableView(frame:self.bounds, style: UITableViewStyle.plain)
+        
+        contentView.addSubview(tableView!)
+        tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
+        tableView?.delegate = self
+        tableView?.dataSource = self
 
     }
+
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
@@ -94,7 +101,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
             self.showConfirmViewWith(title: msg,
                                      frame: screenBounds,
-                                     afterAction: { self.pullAction!(self.tableView.contentOffset) })
+                                     afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
         } else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
@@ -111,7 +118,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
             self.showConfirmViewWith(title: plantMsg,
                                  frame: screenBounds,
-                                 afterAction: { self.pullAction!(self.tableView.contentOffset) })
+                                 afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
         }
         else { //TODO Clean this:
             print("crop name :\(crop.name)  ---- >  self.crop.name:  \(self.crop?.name)")
@@ -183,7 +190,11 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.row == 1 {
             
-            cell?.setupStackedViewsWith(crop: self.crop!, and: tableView.frame)
+            
+            var frame = tableView.frame
+            frame.size.height = tableView.contentSize.height
+            
+            cell?.setupStackedViewsWith(crop: self.crop!, and: frame)
         
         }
         
@@ -270,10 +281,10 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     fileprivate func createFooterView() -> UIView {
         
-        let height = self.tableView.frame.height * 0.1
+        let height = (self.tableView?.frame.height)! * 0.1
         let frame  = CGRect(x: 0,
-                            y: self.tableView.frame.height,
-                        width: self.tableView.frame.width,
+                            y: (self.tableView?.frame.height)!,
+                        width: (self.tableView?.frame.width)!,
                        height: height)
         
         let footerView = UIView(frame:frame)

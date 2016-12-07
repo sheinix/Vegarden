@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DZNEmptyDataSet
 
 extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -89,4 +90,56 @@ extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
 //        
 //        return sectionInsets.left
 //    }
+}
+extension LifeCycleTableViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        return (UIImage(named: "NoCropsPlanted"))
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+   
+    
+        let msg = NSMutableAttributedString(string: "Oops! No Crops Planted yet!",
+                                        attributes: [NSFontAttributeName:Fonts.emptyStateFont])
+        msg.addAttribute(NSForegroundColorAttributeName,
+                         value: Colors.mainColorUI,
+                         range: NSRange(location:0, length:msg.length))
+        
+        
+        return msg
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Choose a crop in My Crops view and plant it to follow it's Life cycle ! ";
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center;
+        
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 24),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 20)
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
 }

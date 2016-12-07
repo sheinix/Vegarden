@@ -31,7 +31,7 @@ extension Paddock {
 
             if let rows = self.rows?.allObjects {
                 
-                rows.map { ($0 as! Row).name = rowsNamePrefix!+String(arc4random()) }
+                _ = rows.map { ($0 as! Row).name = rowsNamePrefix!+String(arc4random()) }
             }
 
         }

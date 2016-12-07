@@ -26,14 +26,20 @@ let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHe
 let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 
 struct Colors {
-    static let mainColor = UIColor(red: 122/255, green: 250/255, blue: 208/255, alpha: 0.9).cgColor
+    static let mainColor = UIColor(red: 121/255, green: 178/255, blue: 159/255, alpha: 0.9).cgColor
     static let mainColorUI = UIColor(cgColor: mainColor)
     static let greetingsHeaderColor =  UIColor(red: 57/255, green: 145/255, blue: 233/255, alpha: 0.9)
 }
+
 struct Fonts {
     static let mainFont : UIFont = UIFont(name: "OpenSans-Light", size: 26)!
     static let detailCropFont : UIFont = UIFont(name: "GillSans", size: 80)!
-
+    static let emptyStateFont : UIFont = UIFont(name: "OpenSans-Light", size: 46)!
+    
+    
+    static let appleGoticUltraLightFont : UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28)!
+    
+    static let cropInfoLabelFont : UIFont = UIFont(name: "Avenir-Light", size: 15)!
 }
 
 struct UINumbericConstants {

@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import SCLAlertView
 import SnapKit
+import DZNEmptyDataSet
 
 let ActionTitleLabelHeight: CGFloat = 60
 let CropNameLabelHeight:    CGFloat = 60
@@ -100,7 +101,9 @@ class ActionMenuAlertView: SCLAlertView {
         
         listTableView.dataSource = self
         listTableView.delegate   = self
-        
+        listTableView.emptyDataSetSource = self
+        listTableView.emptyDataSetDelegate = self
+        listTableView.separatorStyle = .none
         listTableView.register(DetailPatchRowTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.DetailPatchRowTableViewCellIdentifier)
         
         generateConfirmView()
@@ -611,4 +614,55 @@ extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
 
     }
 }
-
+extension ActionMenuAlertView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        return (UIImage(named: "NoAvailablePaddocks"))
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        
+        let msg = NSMutableAttributedString(string: "Oops! No Patchs Added yet!",
+                                            attributes: [NSFontAttributeName:Fonts.mainFont])
+        msg.addAttribute(NSForegroundColorAttributeName,
+                         value: Colors.mainColorUI,
+                         range: NSRange(location:0, length:msg.length))
+        
+        
+        return msg
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Start adding a new Patch on My Garden section! ";
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center;
+        
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        
+        return CGFloat(integerLiteral: 15)
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+}

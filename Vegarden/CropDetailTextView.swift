@@ -63,8 +63,6 @@ class CropDetailTextView: UIView {
         let storageAndUseValue      = CropDetailText()
         
         cropSizeValue.text           = crop.cropSize
-        cropSizeValue.backgroundColor = UIColor.red
-        
         plantingDirectionsValue.text = crop.plantingDirections
         plantingCompanionsValue.text = crop.plantingCompanions
         growingTipsValue.text        = crop.growingTips

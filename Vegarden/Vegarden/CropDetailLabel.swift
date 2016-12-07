@@ -15,8 +15,8 @@ public class CropDetailLabel: UILabel {
         super.init(frame: frame)
         
         self.textColor = UIColor.lightGray
-        //self.textAlignment = .right
-        self.font = UIFont.systemFont(ofSize: 20)
+        self.textAlignment = .left
+        self.font = Fonts.detailCropFont
         self.sizeToFit()
 //        self.layer.borderColor = UIColor.darkGray.cgColor
     }
@@ -41,8 +41,9 @@ public class CropDetailText: UILabel {
         super.init(frame: frame)
         
         self.sizeToFit()
-//        self.textAlignment = .right
-//        self.font = UIFont.systemFont(ofSize: 20)
+        self.textAlignment = .left
+        self.font = Fonts.cropInfoLabelFont
+        self.numberOfLines = 0
     }
     
     required public init?(coder aDecoder: NSCoder) {
