@@ -14,6 +14,7 @@
 		263BBCEF1DF3E1B400DA49F6 /* PatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263BBCEE1DF3E1B400DA49F6 /* PatchInfo.swift */; };
 		263BBCF11DF3E22000DA49F6 /* NotificationsIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263BBCF01DF3E22000DA49F6 /* NotificationsIds.swift */; };
 		263BBCF41DF3E39900DA49F6 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263BBCF31DF3E39900DA49F6 /* Macros.swift */; };
+		266B557C1DF7B124001D2E8D /* CropInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B557B1DF7B124001D2E8D /* CropInformationView.xib */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */; };
 		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
@@ -51,7 +52,6 @@
 		96A8A63F1DD08201000A1673 /* CropDetailLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A8A63E1DD08201000A1673 /* CropDetailLabelView.xib */; };
 		96A8A6411DD08530000A1673 /* CropDetailLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8A6401DD08530000A1673 /* CropDetailLabelView.swift */; };
 		96A8A6441DD08D3B000A1673 /* CropDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8A6431DD08D3B000A1673 /* CropDetailLabel.swift */; };
-		96A8A6481DD08DE0000A1673 /* CropDetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8A6471DD08DE0000A1673 /* CropDetailTextView.swift */; };
 		96AF3C111DC83ACE00EA8D3D /* ActionMadeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */; };
 		96BB776C1DBDCED300DCADA9 /* LifeCycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776B1DBDCED300DCADA9 /* LifeCycleTableViewController.swift */; };
 		96BB77701DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */; };
@@ -131,6 +131,7 @@
 		263BBCEE1DF3E1B400DA49F6 /* PatchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchInfo.swift; sourceTree = "<group>"; };
 		263BBCF01DF3E22000DA49F6 /* NotificationsIds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsIds.swift; sourceTree = "<group>"; };
 		263BBCF31DF3E39900DA49F6 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+		266B557B1DF7B124001D2E8D /* CropInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropInformationView.xib; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertTableHeaderView.swift; sourceTree = "<group>"; };
 		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 		96A8A63E1DD08201000A1673 /* CropDetailLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropDetailLabelView.xib; sourceTree = "<group>"; };
 		96A8A6401DD08530000A1673 /* CropDetailLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailLabelView.swift; sourceTree = "<group>"; };
 		96A8A6431DD08D3B000A1673 /* CropDetailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailLabel.swift; sourceTree = "<group>"; };
-		96A8A6471DD08DE0000A1673 /* CropDetailTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailTextView.swift; sourceTree = "<group>"; };
 		96AF3C101DC83ACE00EA8D3D /* ActionMadeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMadeDTO.swift; sourceTree = "<group>"; };
 		96BB776B1DBDCED300DCADA9 /* LifeCycleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleTableViewController.swift; sourceTree = "<group>"; };
 		96BB776F1DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropLifeCycleTableViewCell.swift; sourceTree = "<group>"; };
@@ -459,9 +459,9 @@
 			isa = PBXGroup;
 			children = (
 				96A8A63C1DD07FA3000A1673 /* CropInformationView.swift */,
+				266B557B1DF7B124001D2E8D /* CropInformationView.xib */,
 				96A8A6401DD08530000A1673 /* CropDetailLabelView.swift */,
 				96A8A63E1DD08201000A1673 /* CropDetailLabelView.xib */,
-				96A8A6471DD08DE0000A1673 /* CropDetailTextView.swift */,
 			);
 			name = CropInfoViews;
 			path = ..;
@@ -728,6 +728,7 @@
 				2690D6D81DEF83D300259F26 /* MyGardenHeaderView.xib in Resources */,
 				26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */,
 				BD203E4D1DA4F84000951732 /* Main.storyboard in Resources */,
+				266B557C1DF7B124001D2E8D /* CropInformationView.xib in Resources */,
 				BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */,
 				96A8A63F1DD08201000A1673 /* CropDetailLabelView.xib in Resources */,
 				26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */,
@@ -875,7 +876,6 @@
 				96BB776C1DBDCED300DCADA9 /* LifeCycleTableViewController.swift in Sources */,
 				2690D6D61DEF83BB00259F26 /* MyGardenHeaderView.swift in Sources */,
 				96EE77F11DB9033800971EBF /* FoldingCell.swift in Sources */,
-				96A8A6481DD08DE0000A1673 /* CropDetailTextView.swift in Sources */,
 				96F723021DB30E5A000100B2 /* CropDetailCollectionViewController.swift in Sources */,
 				26DC41AB1DF1018A003A2597 /* RowAddEditViewController.swift in Sources */,
 				BDE0616A1D9FDC660003364D /* GardenLocation+CoreDataClass.swift in Sources */,

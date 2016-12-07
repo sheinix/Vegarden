@@ -12,13 +12,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CropDetailLabelView" customModule="Vegarden" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="416" height="312"/>
+            <rect key="frame" x="0.0" y="0.0" width="487" height="623"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-HH-o8G">
-                    <rect key="frame" x="20" y="12" width="200" height="40.5"/>
+                    <rect key="frame" x="20" y="12" width="275" height="40.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="q0a-JA-WYr"/>
+                        <constraint firstAttribute="width" constant="275" id="q0a-JA-WYr"/>
                     </constraints>
                     <attributedString key="attributedText">
                         <fragment content="Information">
@@ -32,126 +32,187 @@
                     <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-Xp-Iiv" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="62" width="58" height="21"/>
+                    <rect key="frame" x="20" y="62.5" width="58" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19j-br-h9D" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="103" width="51" height="21"/>
+                    <rect key="frame" x="20" y="103.5" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pH Level :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMY-KK-8aj" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="144" width="76" height="21"/>
+                    <rect key="frame" x="20" y="144.5" width="76" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacing :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-aC-jDm" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="185" width="71" height="21"/>
+                    <rect key="frame" x="20" y="185.5" width="71" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is in garden? : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxi-bU-ptL" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="226" width="111" height="21"/>
+                    <rect key="frame" x="20" y="226.5" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t3-kg-TzE" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="20" y="267" width="111" height="21"/>
+                    <rect key="frame" x="20" y="267.5" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baq-4m-kGv" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="103" y="62" width="42" height="21"/>
+                    <rect key="frame" x="103" y="62.5" width="360" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-b7-AlU" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="103" width="289" height="21"/>
+                    <rect key="frame" x="107" y="103.5" width="356" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yol-of-hmf" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="144" width="285" height="21"/>
+                    <rect key="frame" x="107" y="144.5" width="356" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-hN-8nq" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="107" y="185" width="285" height="21"/>
+                    <rect key="frame" x="107" y="185.5" width="356" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf9-gd-abd" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="139" y="226" width="183" height="21"/>
+                    <rect key="frame" x="139" y="226.5" width="324" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGz-9i-Z3I" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="139" y="267" width="253" height="21"/>
+                    <rect key="frame" x="139" y="267.5" width="317" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="253" id="YYn-hF-X0d"/>
+                        <constraint firstAttribute="width" constant="317" id="5Ln-LC-MeI"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crop Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcx-Dp-dpk">
+                    <rect key="frame" x="20" y="319.5" width="419" height="31.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="crop size text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-EE-8cj">
+                    <rect key="frame" x="20" y="361" width="447" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potential Problems" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zck-4Z-7ee">
+                    <rect key="frame" x="20" y="392" width="419" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diseases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-ax-Bph">
+                    <rect key="frame" x="20" y="463" width="419" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="potential problems text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjY-ig-Jta">
+                    <rect key="frame" x="20" y="432" width="419" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="disesases text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-5Z-utM">
+                    <rect key="frame" x="20" y="503" width="447" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="zck-4Z-7ee" firstAttribute="top" secondItem="mOx-EE-8cj" secondAttribute="bottom" constant="10" id="06Y-ac-cx4"/>
                 <constraint firstItem="Vql-aC-jDm" firstAttribute="top" secondItem="pMY-KK-8aj" secondAttribute="bottom" constant="20" id="1oJ-pb-oXL"/>
+                <constraint firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" constant="24" id="5cj-Zs-l7O"/>
+                <constraint firstItem="PdH-ax-Bph" firstAttribute="trailing" secondItem="rcx-Dp-dpk" secondAttribute="trailing" id="5dZ-6v-Lb1"/>
                 <constraint firstItem="pMY-KK-8aj" firstAttribute="leading" secondItem="Vql-aC-jDm" secondAttribute="leading" id="6PG-8E-XlM"/>
                 <constraint firstItem="Gf9-gd-abd" firstAttribute="leading" secondItem="Uxi-bU-ptL" secondAttribute="trailing" constant="8" id="6Wv-IM-X71"/>
                 <constraint firstItem="Gf9-gd-abd" firstAttribute="top" secondItem="jzH-hN-8nq" secondAttribute="bottom" constant="20" id="6gV-bs-jhw"/>
                 <constraint firstItem="Uxi-bU-ptL" firstAttribute="top" secondItem="Vql-aC-jDm" secondAttribute="bottom" constant="20" id="9TV-HM-VyE"/>
                 <constraint firstItem="4sH-b7-AlU" firstAttribute="leading" secondItem="19j-br-h9D" secondAttribute="trailing" constant="36" id="BU8-32-vZQ"/>
-                <constraint firstAttribute="trailing" secondItem="Gf9-gd-abd" secondAttribute="trailing" constant="94" id="Ccf-4H-kru"/>
-                <constraint firstAttribute="trailing" secondItem="yol-of-hmf" secondAttribute="trailing" constant="24" id="EIB-FO-CtK"/>
+                <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="leading" secondItem="wn8-HH-o8G" secondAttribute="leading" id="CVb-rl-1KP"/>
+                <constraint firstItem="rcx-Dp-dpk" firstAttribute="leading" secondItem="wn8-HH-o8G" secondAttribute="leading" id="EHO-5z-lbd"/>
+                <constraint firstItem="rcx-Dp-dpk" firstAttribute="top" secondItem="9t3-kg-TzE" secondAttribute="bottom" constant="31" id="EjB-19-Na2"/>
                 <constraint firstItem="BGz-9i-Z3I" firstAttribute="top" secondItem="Gf9-gd-abd" secondAttribute="bottom" constant="20" id="H09-aX-DrA"/>
+                <constraint firstItem="Gf9-gd-abd" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="H6e-Br-jZQ"/>
+                <constraint firstItem="yol-of-hmf" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="KJd-b7-wda"/>
                 <constraint firstItem="9t3-kg-TzE" firstAttribute="top" secondItem="Uxi-bU-ptL" secondAttribute="bottom" constant="20" id="KON-Iw-ln0"/>
+                <constraint firstItem="PdH-ax-Bph" firstAttribute="leading" secondItem="rcx-Dp-dpk" secondAttribute="leading" id="ObQ-kE-XO9"/>
+                <constraint firstItem="mOx-EE-8cj" firstAttribute="leading" secondItem="rcx-Dp-dpk" secondAttribute="leading" id="PY9-Oj-dW6"/>
+                <constraint firstItem="gNY-5Z-utM" firstAttribute="trailing" secondItem="mOx-EE-8cj" secondAttribute="trailing" id="R2V-M9-fTK"/>
                 <constraint firstItem="yol-of-hmf" firstAttribute="top" secondItem="4sH-b7-AlU" secondAttribute="bottom" constant="20" id="TIE-by-VJu"/>
+                <constraint firstItem="PdH-ax-Bph" firstAttribute="top" secondItem="bjY-ig-Jta" secondAttribute="bottom" constant="10" id="Tc3-Ln-lVy"/>
                 <constraint firstItem="BGz-9i-Z3I" firstAttribute="leading" secondItem="9t3-kg-TzE" secondAttribute="trailing" constant="8" id="TwY-r2-uPb"/>
-                <constraint firstAttribute="trailing" secondItem="4sH-b7-AlU" secondAttribute="trailing" constant="20" id="WN9-4f-I14"/>
+                <constraint firstItem="zck-4Z-7ee" firstAttribute="leading" secondItem="rcx-Dp-dpk" secondAttribute="leading" id="WlR-Ll-E2V"/>
+                <constraint firstItem="gNY-5Z-utM" firstAttribute="top" secondItem="PdH-ax-Bph" secondAttribute="bottom" constant="10" id="Wsl-xn-0AK"/>
                 <constraint firstItem="19j-br-h9D" firstAttribute="leading" secondItem="pMY-KK-8aj" secondAttribute="leading" id="ZdV-vJ-zsJ"/>
                 <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="top" secondItem="wn8-HH-o8G" secondAttribute="bottom" constant="9.5" id="aBb-FD-pG1"/>
                 <constraint firstItem="4sH-b7-AlU" firstAttribute="top" secondItem="baq-4m-kGv" secondAttribute="bottom" constant="20" id="eWV-rq-2zh"/>
+                <constraint firstItem="jzH-hN-8nq" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="ei8-UE-FxM"/>
+                <constraint firstItem="bjY-ig-Jta" firstAttribute="trailing" secondItem="rcx-Dp-dpk" secondAttribute="trailing" id="elQ-0Q-cxC"/>
                 <constraint firstItem="Vql-aC-jDm" firstAttribute="leading" secondItem="Uxi-bU-ptL" secondAttribute="leading" id="f82-xt-ogS"/>
                 <constraint firstItem="wn8-HH-o8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="fE1-Qu-3bN"/>
+                <constraint firstItem="bjY-ig-Jta" firstAttribute="top" secondItem="zck-4Z-7ee" secondAttribute="bottom" constant="10" id="fEi-Zu-SJC"/>
                 <constraint firstItem="19j-br-h9D" firstAttribute="top" secondItem="Qs4-Xp-Iiv" secondAttribute="bottom" constant="20" id="fx4-F6-TNT"/>
+                <constraint firstItem="bjY-ig-Jta" firstAttribute="leading" secondItem="rcx-Dp-dpk" secondAttribute="leading" id="g0q-oO-wtR"/>
                 <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="leading" secondItem="19j-br-h9D" secondAttribute="leading" id="i7A-2V-KcP"/>
-                <constraint firstAttribute="trailing" secondItem="jzH-hN-8nq" secondAttribute="trailing" constant="24" id="ih5-vi-tF7"/>
                 <constraint firstItem="baq-4m-kGv" firstAttribute="top" secondItem="wn8-HH-o8G" secondAttribute="bottom" constant="9.5" id="jFV-V2-pi6"/>
                 <constraint firstItem="jzH-hN-8nq" firstAttribute="top" secondItem="yol-of-hmf" secondAttribute="bottom" constant="20" id="k5b-tC-2uc"/>
-                <constraint firstAttribute="trailing" secondItem="wn8-HH-o8G" secondAttribute="trailing" constant="196" id="nnN-f5-2QB"/>
+                <constraint firstItem="mOx-EE-8cj" firstAttribute="top" secondItem="rcx-Dp-dpk" secondAttribute="bottom" constant="10" id="kbd-c1-lNP"/>
+                <constraint firstItem="zck-4Z-7ee" firstAttribute="trailing" secondItem="rcx-Dp-dpk" secondAttribute="trailing" id="mQV-7M-oRZ"/>
                 <constraint firstItem="jzH-hN-8nq" firstAttribute="leading" secondItem="Vql-aC-jDm" secondAttribute="trailing" constant="16" id="nsF-q2-Ahr"/>
+                <constraint firstAttribute="trailing" secondItem="mOx-EE-8cj" secondAttribute="trailing" constant="20" id="p14-AF-WtE"/>
                 <constraint firstItem="Uxi-bU-ptL" firstAttribute="leading" secondItem="9t3-kg-TzE" secondAttribute="leading" id="qgL-Ce-EY9"/>
                 <constraint firstItem="baq-4m-kGv" firstAttribute="leading" secondItem="Qs4-Xp-Iiv" secondAttribute="trailing" constant="25" id="rnG-05-XwU"/>
-                <constraint firstItem="Qs4-Xp-Iiv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="sWd-Wi-O87"/>
                 <constraint firstItem="pMY-KK-8aj" firstAttribute="top" secondItem="19j-br-h9D" secondAttribute="bottom" constant="20" id="uZN-IV-6bH"/>
+                <constraint firstItem="mOx-EE-8cj" firstAttribute="leading" secondItem="wn8-HH-o8G" secondAttribute="leading" id="uwe-oh-7JI"/>
                 <constraint firstItem="yol-of-hmf" firstAttribute="leading" secondItem="pMY-KK-8aj" secondAttribute="trailing" constant="11" id="xQ2-Bx-oiJ"/>
                 <constraint firstItem="9t3-kg-TzE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xYZ-vs-0XO"/>
+                <constraint firstItem="4sH-b7-AlU" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="xZd-kX-rom"/>
                 <constraint firstItem="wn8-HH-o8G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xn3-45-qjn"/>
+                <constraint firstAttribute="trailing" secondItem="rcx-Dp-dpk" secondAttribute="trailing" constant="48" id="yaq-Po-ZfS"/>
+                <constraint firstItem="gNY-5Z-utM" firstAttribute="leading" secondItem="mOx-EE-8cj" secondAttribute="leading" id="ynG-UX-X1U"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="classificationValue" destination="BGz-9i-Z3I" id="Zto-4i-2eK"/>
+                <outlet property="cropSizeTitle" destination="rcx-Dp-dpk" id="aCC-jK-vF4"/>
+                <outlet property="cropSizeTxt" destination="mOx-EE-8cj" id="eJq-EQ-hb7"/>
+                <outlet property="diseasesText" destination="gNY-5Z-utM" id="QCs-so-2eO"/>
+                <outlet property="diseasesTitle" destination="PdH-ax-Bph" id="A0v-YM-C6O"/>
                 <outlet property="familyValue" destination="baq-4m-kGv" id="nUU-mG-Rw8"/>
                 <outlet property="isInGarden" destination="Gf9-gd-abd" id="z4y-TS-UFg"/>
                 <outlet property="phLevelValue" destination="yol-of-hmf" id="FeF-Tr-pyK"/>
+                <outlet property="potentialProbemsTitle" destination="zck-4Z-7ee" id="Q6M-qa-T6f"/>
+                <outlet property="potentialProblemsText" destination="bjY-ig-Jta" id="Jkb-Tx-But"/>
                 <outlet property="spacingValue" destination="jzH-hN-8nq" id="6Qy-ee-fbX"/>
                 <outlet property="typeValue" destination="4sH-b7-AlU" id="5Hs-8P-lqg"/>
             </connections>
-            <point key="canvasLocation" x="-29" y="-83"/>
+            <point key="canvasLocation" x="-10.5" y="2.5"/>
         </view>
     </objects>
 </document>

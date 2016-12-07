@@ -54,6 +54,7 @@ struct UINumbericConstants {
 struct CellIdentifiers {
     static let sideTabCellIdentifier = "SideTabScreenCellIdentifier"
     static let CropDetailViewCellIdentify = "CropDetailViewCellIdentify"
+    static let CropDetailViewCellImageIdentify = "CropDetailViewCellImageIdentify"
     static let CropDetailTableViewCellIdentify = "CropDetailTableViewCellIdentify"
     static let CropListTableViewCellIdentify = "CropListTableViewCellIdentify"
     static let lifeCycleTableViewCellIdentifier = "FoldingCell"

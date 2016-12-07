@@ -73,6 +73,11 @@ extension UIButton {
 }
 extension UIView{
    
+    public var hasSuperview : Bool {
+        get {
+            return (self.superview != nil)
+        }
+    }
     
     func applyShadows() {
         

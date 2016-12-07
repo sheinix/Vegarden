@@ -14,7 +14,8 @@ import QuartzCore
 
 class VCropDetailPageTableViewCell: UITableViewCell {
 
-    var viewsContainer : UIStackView?
+    var cropInfoView : CropInformationView = CropInformationView.loadFromNibNamed(nibNamed: "CropInformationView") as! CropInformationView
+    var cropDetailView : CropDetailLabelView = CropDetailLabel.loadFromNibNamed(nibNamed: "CropDetailLabelView") as! CropDetailLabelView
     var removeButton   : UIButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -27,8 +28,18 @@ class VCropDetailPageTableViewCell: UITableViewCell {
         self.imageView?.layer.masksToBounds = true
         self.imageView?.layer.cornerRadius = 9
         self.isUserInteractionEnabled = true
+        
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -50,59 +61,52 @@ class VCropDetailPageTableViewCell: UITableViewCell {
             
         } else {
             
-            layoutStackedViews()
-
+          
         }
     }
     
-    private func layoutStackedViews() {
+    public func setupCropInfoWith(crop: Crop) {
 
-        if (viewsContainer != nil) {
-            return
+        if !(self.cropInfoView.hasSuperview && self.cropDetailView.hasSuperview) {
+            
+            setupCellViews()
         }
         
-        viewsContainer = UIStackView(frame: CGRect(x:0, y:0, width:contentView.frame.width, height: contentView.frame.height))
+        self.cropInfoView.setupViewWith(crop: crop)
+        self.cropDetailView.setupValuesWith(crop: crop)
         
-        viewsContainer?.axis = .horizontal
-        viewsContainer?.distribution = .equalSpacing
+    }
+    
+    fileprivate func setupCellViews() {
         
-        addSubview(viewsContainer!)
+        addSubview(self.cropInfoView)
+        addSubview(self.cropDetailView)
+    
+        self.cropDetailView.layer.borderColor = UIColor.red.cgColor
+        self.cropDetailView.layer.borderWidth = 2
+        self.cropInfoView.layer.borderColor = UIColor.green.cgColor
+        self.cropInfoView.layer.borderWidth = 2
+    
+        setupConstraints()
+
+    }
+
+    fileprivate func setupConstraints() {
         
-        viewsContainer?.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+        self.cropInfoView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.6)
+            make.height.greaterThanOrEqualTo(300)
         }
-    }
-    
-    public func setupStackedViewsWith(crop: Crop, and frame: CGRect) {
         
-        if (viewsContainer != nil) {
-            return
+        
+        self.cropDetailView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalTo(self.cropInfoView.snp.left)
+            make.height.equalTo(200)
         }
         
-        layoutStackedViews()
-        
-        let frameLeft = CGRect(x: 0, y: 0, width: frame.width/2, height: frame.height)
-        var frameRight = frameLeft
-        frameRight.origin.x = frameLeft.width
-        
-        let leftCol  = CropDetailLabelView.loadFromNib()
-        leftCol?.setupValuesWith(crop: crop)
-        let rightCol = CropDetailTextView(frame: frameRight, crop: crop)
-        
-        
-        viewsContainer?.addArrangedSubview(leftCol!)
-        viewsContainer?.addArrangedSubview(rightCol)
-
     }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
 }

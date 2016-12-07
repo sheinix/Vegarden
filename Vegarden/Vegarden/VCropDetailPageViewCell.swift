@@ -82,9 +82,14 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         //let tableFrame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         tableView = UITableView(frame:self.bounds, style: UITableViewStyle.plain)
+        tableView?.estimatedRowHeight = screenHeight / 2
+//        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.separatorStyle = .none
+        tableView?.allowsSelection = false
         
         contentView.addSubview(tableView!)
         tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
+//        tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailViewCellImageIdentify)
         tableView?.delegate = self
         tableView?.dataSource = self
 
@@ -154,6 +159,9 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+//        let cellId = (indexPath.row == 0 ? CellIdentifiers.CropDetailViewCellImageIdentify :
+//                                           CellIdentifiers.CropDetailTableViewCellIdentify)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify) as! VCropDetailPageTableViewCell!
         
         cell?.imageView?.image = nil
@@ -190,11 +198,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.row == 1 {
             
-            
-            var frame = tableView.frame
-            frame.size.height = tableView.contentSize.height
-            
-            cell?.setupStackedViewsWith(crop: self.crop!, and: frame)
+            cell?.setupCropInfoWith(crop: self.crop!)
         
         }
         
