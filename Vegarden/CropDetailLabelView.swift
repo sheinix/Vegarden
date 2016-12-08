@@ -52,5 +52,10 @@ class CropDetailLabelView: UIView {
         self.cropSizeTxt.font           = Fonts.cropInfoLabelFont
         self.potentialProblemsText.font = Fonts.cropInfoLabelFont
         self.diseasesText.font          = Fonts.cropInfoLabelFont
+        
+        self.cropSizeTitle.font = Fonts.appleGoticUltraLightFont
+        self.potentialProbemsTitle.font = Fonts.appleGoticUltraLightFont
+        self.diseasesTitle.font = Fonts.appleGoticUltraLightFont
+       
     }
 }

@@ -249,8 +249,8 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {
         
-        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                    kWindowHeight: screenHeight * 0.9,
+        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: self.bounds.width * 0.85,
+                                                   // kWindowHeight: screenHeight * 0.9,
                                                     showCloseButton: true)
         
         let alert = ActionMenuAlertView(appearance: appearance,
@@ -265,12 +265,14 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         //TODO Improve this for showing different colors and images for the different actions
         
-
-        let _ = alert.showCustom(actionString!,
-                            subTitle: crop.name!,
-                               color: UIColor.green,
-                                icon: UIImage(named:"icon_weeding")!)
-
+        let _ = alert.showInfo(actionString!,
+                               subTitle: "",
+                               closeButtonTitle: "Close",
+                               duration: 0,
+                               colorStyle: colorFor(growingAction: action).1!,
+                               colorTextButton: 0xFFFFFF,
+                               circleIconImage: UIImage(named:"icon_weeding"),
+                               animationStyle: .topToBottom)
         
     }
     

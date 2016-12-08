@@ -82,8 +82,8 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         //let tableFrame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         tableView = UITableView(frame:self.bounds, style: UITableViewStyle.plain)
-        tableView?.estimatedRowHeight = screenHeight / 2
-//        tableView?.rowHeight = UITableViewAutomaticDimension
+        //tableView?.estimatedRowHeight = 1050
+//       tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.separatorStyle = .none
         tableView?.allowsSelection = false
         
@@ -222,6 +222,12 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return (indexPath.row == 0 ? (self.image?.size.height)!*screenWidth/(self.image?.size.width)! :
+                UITableViewAutomaticDimension)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         
         var cellHeight : CGFloat = navigationHeight
@@ -234,9 +240,9 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             return imageHeight
         }
         
-        cellHeight = tableView.frame.height - imageHeight
+     //   cellHeight = tableView.frame.height - imageHeight
         
-        return cellHeight
+        return 1050//cellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -256,8 +262,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         
         if (sender.titleLabel?.text == "Plant") {
             
-            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                        kWindowHeight: screenHeight * 0.9,
+            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: self.bounds.width*0.85,
+                                                        kWindowHeight: 700,
                                                         showCloseButton: true)
             
             let alert = ActionMenuAlertView(appearance: appearance,
@@ -266,10 +272,15 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
                                             isPlanting: true,
                                             and: .Row)
             
-            let _ = alert.showCustom("Plant",
-                             subTitle: (self.crop?.name)!,
-                             color: UIColor.green,
-                             icon: UIImage(named:"icon_weeding")!)
+            let _ = alert.showInfo("Plant",
+                                subTitle: "",
+                        closeButtonTitle: "Close",
+                                duration: 0,
+                              colorStyle: Colors.plantColorHex,
+                         colorTextButton: 0xFFFFFF,
+                         circleIconImage: UIImage(named:"icon_weeding"),
+                          animationStyle: .topToBottom)
+
 
             
         } else {

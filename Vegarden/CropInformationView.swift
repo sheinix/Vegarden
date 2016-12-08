@@ -27,7 +27,14 @@ class CropInformationView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-         
+        
+        
+        plantingDirectionsTitle.font = Fonts.appleGoticUltraLightFont
+        plantingCompanionsTitle.font = Fonts.appleGoticUltraLightFont
+        growingTipsTitle.font = Fonts.appleGoticUltraLightFont
+        harvestTipsTitle.font = Fonts.appleGoticUltraLightFont
+        storageAndUseTitle.font = Fonts.appleGoticUltraLightFont
+        
         plantingDirectionsText.font = Fonts.cropInfoLabelFont
         plantingCompanionsText.font = Fonts.cropInfoLabelFont
         growingTipsText.font = Fonts.cropInfoLabelFont

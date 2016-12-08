@@ -29,6 +29,29 @@ struct Colors {
     static let mainColor = UIColor(red: 121/255, green: 178/255, blue: 159/255, alpha: 0.9).cgColor
     static let mainColorUI = UIColor(cgColor: mainColor)
     static let greetingsHeaderColor =  UIColor(red: 57/255, green: 145/255, blue: 233/255, alpha: 0.9)
+    
+    
+    static let plantColorHex : UInt     = 0x9CD085
+    static let plantColor : UIColor = UIColor(netHex: Int(plantColorHex))
+    
+    static let waterColorHex : UInt     = 0x85BAC5
+    static let waterColor : UIColor = UIColor(netHex: Int(waterColorHex))
+    
+    static let weedColorHex  : UInt     = 0x416531
+    static let weedColor : UIColor = UIColor(netHex: Int(weedColorHex))
+    
+    static let fertilizeColorHex : UInt = 0xDB9B58
+    static let fertilizeColor : UIColor = UIColor(netHex: Int(fertilizeColorHex))
+    
+    static let removeColorHex : UInt    = 0xE16565
+    static let removeColor : UIColor = UIColor(netHex: Int(removeColorHex))
+    
+    static let harvestColorHex : UInt   = 0xD971D9
+    static let harvestColor : UIColor = UIColor(netHex: Int(harvestColorHex))
+    
+    static let finishHarvestColorHex : UInt = 0x27639A
+    static let finishHarvestColor : UIColor = UIColor(netHex: Int(finishHarvestColorHex))
+    
 }
 
 struct Fonts {

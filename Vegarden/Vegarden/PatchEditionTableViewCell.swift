@@ -95,10 +95,13 @@ class PatchEditionTableViewCell: UITableViewCell {
                 self.txtField.placeholder =  "Soil pH Level"
                 self.txtField.title = "The Ph of the Soil"
                 self.txtField.text = (isNewPatch ? "" : String(patch!.soil!.phLevel))
+                self.txtField.keyboardType = UIKeyboardType.numberPad
+            
             case 3:
                 self.txtField.placeholder =  "Rows Quantity"
                 self.txtField.title = "Number of Rows in Patch"
                 self.txtField.text = (isNewPatch ? "" : String(patch!.rows!.count))
+                self.txtField.keyboardType = UIKeyboardType.numberPad
             case 4:
                 self.txtField.placeholder =  "Row names prefix"
                 self.txtField.title = "Prefix of Row names in Patch"

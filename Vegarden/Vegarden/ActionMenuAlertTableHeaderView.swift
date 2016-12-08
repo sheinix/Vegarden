@@ -22,12 +22,11 @@ class ActionMenuAlertTableHeaderView: UIView {
         
         super.init(frame: frame)
         
-        self.backgroundColor =  UIColor.lightGray
+        self.layer.cornerRadius = 6
         
         self.titleLabel.frame = CGRect(x: 0, y: 0, width: 250, height: headerSectionsHeight)
-        self.titleLabel.font = UIFont.systemFont(ofSize: 25)
-        self.titleLabel.textColor = UIColor.darkGray
-        
+        self.titleLabel.font = Fonts.appleGoticUltraLightFont
+        self.titleLabel.textColor = UIColor.white
         
         self.fullPatchLabel.frame = CGRect(x: 0, y: 0, width: 200, height: headerSectionsHeight)
         self.fullPatchLabel.font = UIFont.systemFont(ofSize: 18)
@@ -37,12 +36,13 @@ class ActionMenuAlertTableHeaderView: UIView {
         self.switchView = UIView(frame:CGRect(x: 0, y: 0, width: 300, height: 200))
         
         self.switchTitle = UILabel(frame: titleLabel.frame)
+        self.switchTitle.textColor = UIColor.white
         self.switchTitle.text = "Select All Rows"
         self.switchTitle.font = UIFont.systemFont(ofSize: 20)
         self.switchTitle.textColor = UIColor.darkGray
         
         self.switchAll = UISwitch(frame: CGRect(x: 0, y: 0, width: 200, height: headerSectionsHeight))
-        //self.switchAll.setOn(false, animated: false)
+        self.switchAll.tintColor = UIColor.white
         
         
         self.switchView.addSubview(self.switchTitle)

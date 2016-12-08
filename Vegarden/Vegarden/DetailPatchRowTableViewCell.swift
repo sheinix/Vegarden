@@ -22,6 +22,7 @@ class DetailPatchRowTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.switchControl.setOn(false, animated: false)
+        self.switchControl.layer.cornerRadius = 16
         
         self.contentView.addSubview(rowName)
         self.contentView.addSubview(switchControl)

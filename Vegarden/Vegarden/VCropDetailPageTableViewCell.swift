@@ -82,11 +82,6 @@ class VCropDetailPageTableViewCell: UITableViewCell {
         addSubview(self.cropInfoView)
         addSubview(self.cropDetailView)
     
-        self.cropDetailView.layer.borderColor = UIColor.red.cgColor
-        self.cropDetailView.layer.borderWidth = 2
-        self.cropInfoView.layer.borderColor = UIColor.green.cgColor
-        self.cropInfoView.layer.borderWidth = 2
-    
         setupConstraints()
 
     }

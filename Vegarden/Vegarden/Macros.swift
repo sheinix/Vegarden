@@ -51,21 +51,36 @@ import Foundation
     
         return msg
     }
+    public func colorFor(growingAction: GrowingActions!) -> (UIColor?, UInt?) {
+    
+        var color : (UIColor?, UInt?)
+    
+        switch growingAction! {
+            
+            case GrowingActions.FertilizeAction:
+                
+                 color = (Colors.fertilizeColor, Colors.fertilizeColorHex)
+            
+            case GrowingActions.WaterAction:
+            
+                color = (Colors.waterColor, Colors.waterColorHex)
+            
+            case GrowingActions.WeedAction:
+            
+                color = (Colors.weedColor, Colors.weedColorHex)
+            
+            case GrowingActions.HarvestAction:
+            
+                color = (Colors.harvestColor, Colors.harvestColorHex)
+            
+            case GrowingActions.FinishAction:
+            
+                color = (Colors.finishHarvestColor, Colors.finishHarvestColorHex)
+            
+            case GrowingActions.UnplantAction:
+            
+                color = (Colors.removeColor, Colors.removeColorHex)
+        }
 
-//    public func getGreetings() -> String! {
-//        
-//        let msg : String = "Good "
-//        
-//        let hour = Calendar.current.component(.hour, from: Date())
-//    
-//        switch hour {
-//            case 6..<12  : msg = msg + "Morning"
-//            case 12      : msg = msg + "Noon"
-//            case 13..<17 : msg = msg + "Afternoon"
-//            case 17..<22 : msg = msg + "Evening"
-//            
-//            default: msg = msg + "Night"
-//        }
-//    
-//        return msg
-//}
+        return color
+}
