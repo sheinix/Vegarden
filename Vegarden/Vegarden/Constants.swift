@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import SCLAlertView
 
-
-let tableAlertViewFrame = CGRect(x: 0,
-                                 y: 0,
-                                width: screenBounds.width * 0.85,
-                                height: screenBounds.height * 0.8)
 let screenBounds = UIScreen.main.bounds
 let screenSize   = screenBounds.size
 let screenWidth  = screenSize.width
@@ -27,9 +22,9 @@ let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 
 
 struct Appereance {
-    public func appereanceForAlert(frame: CGRect, color: UIColor) -> SCLAlertView.SCLAppearance {
+    public func appereanceForAlert(frame: CGRect, color: UIColor, needsTitle: Bool) -> SCLAlertView.SCLAppearance {
        
-        let appereance = SCLAlertView.SCLAppearance(kTitleTop: 0,
+        let appereance = SCLAlertView.SCLAppearance(kTitleTop: (needsTitle ? 40 : 0),
                                                     kTitleHeight: 28,
             kWindowWidth: frame.width*0.85,
             kTextHeight: 0,
@@ -46,6 +41,17 @@ struct Appereance {
         
         return appereance
     }
+    
+//    public func appereanceForAlertPatch(frame: CGrect, color: UIColor) -> SCLAlertView.SCLAppearance {
+//        
+//        SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.85,
+//                                   kWindowHeight: screenHeight * 0.85,
+//                                   showCloseButton: true,
+//                                   showCircularIcon: false)
+    
+//    }
+    
+    
 }
 
 
@@ -54,6 +60,8 @@ struct Colors {
     static let mainColorUI = UIColor(cgColor: mainColor)
     static let greetingsHeaderColor =  UIColor(red: 57/255, green: 145/255, blue: 233/255, alpha: 0.9)
     
+    
+    static let mainColorHex : UInt  = 0x79b29f
     
     static let plantColorHex : UInt     = 0x9CD085
     static let plantColor : UIColor = UIColor(netHex: Int(plantColorHex))

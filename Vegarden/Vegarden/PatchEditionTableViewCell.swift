@@ -24,7 +24,7 @@ class PatchEditionTableViewCell: UITableViewCell {
         
         self.txtField.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
-            make.right.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-24)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
         }
@@ -35,7 +35,7 @@ class PatchEditionTableViewCell: UITableViewCell {
             self.hasPlantedCropsLabel?.text = "Has Planted Crops"
             self.hasPlantedCropsLabel?.textColor = UIColor.red
             self.hasPlantedCropsLabel?.isHidden = true
-            
+            self.hasPlantedCropsLabel?.backgroundColor = UIColor.clear
             addSubview(self.hasPlantedCropsLabel!)
         }
     }
@@ -52,9 +52,8 @@ class PatchEditionTableViewCell: UITableViewCell {
             
             self.hasPlantedCropsLabel?.snp.makeConstraints { (make) in
                 make.width.equalToSuperview().multipliedBy(0.3)
-                make.right.equalToSuperview().offset(5)
-                make.top.equalToSuperview()
-                make.bottom.equalToSuperview()
+                make.right.equalToSuperview().offset(-25)
+                make.centerY.equalToSuperview()
             }
         }
         

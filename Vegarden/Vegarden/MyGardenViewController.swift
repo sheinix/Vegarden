@@ -183,16 +183,19 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     fileprivate func showAddEditPatch(patch: Paddock?) {
         
-        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                    kWindowHeight: screenHeight * 0.9,
-                                                    showCloseButton: true,
-                                                    showCircularIcon: false)
+        let appearance = Appereance().appereanceForAlert(frame: self.view.bounds, color: Colors.mainColorUI, needsTitle: true)
         
         let alert = PatchAddEditViewController(appearance: appearance, patch: patch)
         
+        let _ = alert.showInfo((patch != nil ? (patch?.name!)! : "Add New Patch"),
+                               subTitle: "",
+                               closeButtonTitle: "Close",
+                               duration: 0,
+                               colorStyle: Colors.mainColorHex,
+                               colorTextButton: 0xFFFFFF,
+                               animationStyle: .topToBottom)
         
-        let _ = alert.showEdit((patch != nil ? (patch?.name!)! : "Add New Patch"),
-                               subTitle: "")
+        
     }
 }
 

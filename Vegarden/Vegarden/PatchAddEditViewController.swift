@@ -12,12 +12,14 @@ import SnapKit
 import SkyFloatingLabelTextField
 import DZNEmptyDataSet
 
+let patchRowHeight = 60
+
 class PatchAddEditViewController: SCLAlertView {
 
     var patch : Paddock?
-    var patchInfoTableView: UITableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
+    var patchInfoTableView: UITableView?
     var isAddingNewPatch : Bool!
-    
+    var tableViewHeight : Int?
     var patchUpdateInfo = PatchInfo()
     
     
@@ -27,6 +29,9 @@ class PatchAddEditViewController: SCLAlertView {
         
         self.patch = patch
         self.isAddingNewPatch = !(patch != nil)
+       
+        
+        
     }
   
     required init?(coder aDecoder: NSCoder) {
@@ -52,11 +57,15 @@ class PatchAddEditViewController: SCLAlertView {
     
     fileprivate func setupViews () {
         
-        self.patchInfoTableView.dataSource = self
-        self.patchInfoTableView.delegate = self
-        self.patchInfoTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.PatchEditionCellIdentifier)
-        self.patchInfoTableView.isScrollEnabled = false
-        self.patchInfoTableView.separatorStyle = .none
+        let tableHeight = patchRowHeight * 5
+        self.patchInfoTableView = UITableView(frame: CGRect(x: 0, y: 0,
+                                                            width: Int(self.view.bounds.width),
+                                                            height: tableHeight), style: .plain)
+        self.patchInfoTableView?.dataSource = self
+        self.patchInfoTableView?.delegate = self
+        self.patchInfoTableView?.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.PatchEditionCellIdentifier)
+        self.patchInfoTableView?.isScrollEnabled = false
+        self.patchInfoTableView?.separatorStyle = .none
         
 
         self.customSubview = self.patchInfoTableView
@@ -125,7 +134,7 @@ extension PatchAddEditViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 60
+        return CGFloat(patchRowHeight)
     }
 }
 extension PatchAddEditViewController : UITextFieldDelegate {

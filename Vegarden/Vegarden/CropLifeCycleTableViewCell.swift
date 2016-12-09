@@ -229,8 +229,9 @@ class CropLifeCycleTableViewCell: FoldingCell {
                 self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie)
                 
             }
+        }
         
-            //TODO: Ask the crop if it can be finished to show this option!\
+        if (cropie.hasBeenHarvested) {
             
                 actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
                 
@@ -244,7 +245,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {
         
         let appearance = Appereance().appereanceForAlert(frame: self.bounds,
-                                                         color: colorFor(growingAction: action).0!)
+                                                         color: colorFor(growingAction: action).0!,needsTitle: false)
 
         let alert = ActionMenuAlertView(appearance: appearance,
                                               crop: crop,

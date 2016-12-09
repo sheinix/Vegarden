@@ -278,7 +278,8 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     fileprivate func showPlantAlertView() {
         
         let appearance = Appereance().appereanceForAlert(frame: self.bounds,
-                                                         color: Colors.plantColor)
+                                                         color: Colors.plantColor,
+                                                    needsTitle: false)
         
         
         let alert = ActionMenuAlertView(appearance: appearance,

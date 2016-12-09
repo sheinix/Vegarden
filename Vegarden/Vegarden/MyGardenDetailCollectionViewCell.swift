@@ -165,15 +165,17 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
 
     @objc private func editRows(_: UIButton) {
         
-        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: screenWidth * 0.9,
-                                                    kWindowHeight: screenHeight * 0.9,
-                                                    showCloseButton: true,
-                                                    showCircularIcon: false)
+        let appearance = Appereance().appereanceForAlert(frame: screenBounds, color: Colors.mainColorUI, needsTitle: true)
         
         let alert = RowAddEditViewController(appearance: appearance, patch: patch)
         
-        
-        let _ = alert.showEdit("Edit Rows of " + (patch?.name!)!, subTitle: "")
+        let _ = alert.showInfo("Edit Rows of " + (patch?.name!)!,
+                               subTitle: "",
+                               closeButtonTitle: "Close",
+                               duration: 0,
+                               colorStyle: Colors.mainColorHex,
+                               colorTextButton: 0xFFFFFF,
+                               animationStyle: .topToBottom)
 
     }
 }

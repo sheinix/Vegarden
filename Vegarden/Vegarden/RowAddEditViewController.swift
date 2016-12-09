@@ -11,22 +11,26 @@ import SCLAlertView
 import SnapKit
 import SkyFloatingLabelTextField
 
+let tableHeaderHeight = 70
+
 class RowAddEditViewController: SCLAlertView {
 
     var isAddingRows : Bool?
-    var rowsTableView: UITableView = UITableView(frame: tableAlertViewFrame, style: UITableViewStyle.plain)
+    var rowsTableView: UITableView?
     var rowsAddUpdateInfo : RowsInfo!
     var rowList : [Any] = []
     var patch : Paddock!
     
     required init(appearance: SCLAppearance, patch: Paddock?) {
         
-        super.init(appearance: appearance)
-        
-        //self.rowsTableView.frame = self.view.bounds
         self.patch = patch
         self.rowList = (patch?.rows?.allObjects)!
         self.rowsAddUpdateInfo = RowsInfo(paddock: self.patch)
+            
+        super.init(appearance: appearance)
+        
+        //self.rowsTableView.frame = self.view.bounds
+       
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -51,13 +55,17 @@ class RowAddEditViewController: SCLAlertView {
     
 
     fileprivate func setupViews () {
+
+        let frame = CGRect(x: 0, y: 0,
+                           width: Int(self.view.bounds.width - 140), height: self.rowList.count * patchRowHeight + tableHeaderHeight)
         
-        self.rowsTableView.delegate = self
-        self.rowsTableView.dataSource = self
+        self.rowsTableView = UITableView(frame:frame, style: UITableViewStyle.plain)
+        self.rowsTableView?.delegate = self
+        self.rowsTableView?.dataSource = self
         
-        self.rowsTableView.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.RowsEditionCellIdentifier)
-        self.rowsTableView.isScrollEnabled = true
-        self.rowsTableView.separatorStyle = .none
+        self.rowsTableView?.register(PatchEditionTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.RowsEditionCellIdentifier)
+        self.rowsTableView?.isScrollEnabled = true
+        self.rowsTableView?.separatorStyle = .none
         
         self.customSubview = self.rowsTableView
         self.customSubview?.clipsToBounds = true
@@ -122,7 +130,7 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
             
             self.rowsAddUpdateInfo.deletedRows?.append(self.rowList[indexPath.row] as! Row)
             self.rowList.remove(at: indexPath.row)
-            self.rowsTableView.deleteRows(at: [indexPath], with: .fade)
+            self.rowsTableView?.deleteRows(at: [indexPath], with: .fade)
             
     
         } else if editingStyle == .insert {
@@ -144,7 +152,7 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return CGFloat(tableHeaderHeight)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -160,26 +168,29 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
         self.rowList.insert(aNewRow, at: 0)
         
         // Update Table Data
-        self.rowsTableView.beginUpdates()
+        self.rowsTableView?.beginUpdates()
         
-        self.rowsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        self.rowsTableView?.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
         
-        self.rowsTableView.endUpdates()
+        self.rowsTableView?.endUpdates()
         
     }
     
     fileprivate func setupHeaderView() -> UIView {
        
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.rowsTableView.bounds.width, height: 100))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: Int((self.rowsTableView?.bounds.width)!), height: tableHeaderHeight))
         
-        headerView.backgroundColor = UIColor.lightGray
+        headerView.backgroundColor = Colors.mainColorUI
+        headerView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
         let addButton = UIButton(type: .custom)
         addButton.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = Fonts.appleGoticUltraLightFont
         titleLabel.text = self.patch.name
         
-        addButton.setImage(UIImage(named:"plusbutton"), for: .normal)
+        addButton.setImage(UIImage(named:"plusbuttonwhite"), for: .normal)
         addButton.addTarget(self, action: #selector(addRow), for: .touchUpInside)
         
         headerView.addSubview(addButton)
