@@ -28,16 +28,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
                                             lifeCyclceSates.Harvesting: [],
                                             lifeCyclceSates.Finish: []]
     
-    let items: [(icon: String, color: UIColor)] = [
-                    ("icon_weeding", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
-                    ("icon_fertilize", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
-                    ("icon_water", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
-                    ("icon_harvest", UIColor(red:0.51, green:0.15, blue:1, alpha:1))
-                    ]
-    
     required init?(coder aDecoder: NSCoder) {
         
         actionMenu = KCFloatingActionButton()
+        actionMenu.buttonColor = Colors.plantColor
         
         super.init(coder: aDecoder)
     }
@@ -249,10 +243,9 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {
         
-        let appearance = SCLAlertView.SCLAppearance(kWindowWidth: self.bounds.width * 0.85,
-                                                   // kWindowHeight: screenHeight * 0.9,
-                                                    showCloseButton: true)
-        
+        let appearance = Appereance().appereanceForAlert(frame: self.bounds,
+                                                         color: colorFor(growingAction: action).0!)
+
         let alert = ActionMenuAlertView(appearance: appearance,
                                               crop: crop,
                                             action: action,
@@ -260,18 +253,14 @@ class CropLifeCycleTableViewCell: FoldingCell {
                                                and: .Row)
         
         
-        let actionString = alert.stringAction(action: action)
+       // let actionString = alert.stringAction(action: action)
         
-        
-        //TODO Improve this for showing different colors and images for the different actions
-        
-        let _ = alert.showInfo(actionString!,
+        let _ = alert.showInfo("",
                                subTitle: "",
                                closeButtonTitle: "Close",
                                duration: 0,
                                colorStyle: colorFor(growingAction: action).1!,
                                colorTextButton: 0xFFFFFF,
-                               circleIconImage: UIImage(named:"icon_weeding"),
                                animationStyle: .topToBottom)
         
     }

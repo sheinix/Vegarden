@@ -18,6 +18,8 @@ let dateLabelHeight:        CGFloat = (CropNameLabelHeight*0.3)
 let NotesLabelHeight:       CGFloat = 20
 let tableViewMaxHeight:     Int = 450
 let rowHeight:              Int = 50
+let segControlHeight:       Int = 40
+let notesViewHeight:        Int = 100
 
 class ActionMenuAlertView: SCLAlertView {
 
@@ -31,7 +33,7 @@ class ActionMenuAlertView: SCLAlertView {
     var notesTxtView: UITextField = UITextField()
     var paddocks : [Paddock]?
     var segControl : UISegmentedControl?
-    var tableViewHeight: Int?
+    public var tableViewHeight: Int?
     
     struct Elements {
         
@@ -150,13 +152,15 @@ class ActionMenuAlertView: SCLAlertView {
     private func createTitleSection() -> UIView {
         
         let titleView = UIView()
-        titleView.layer.borderColor = UIColor.lightGray.cgColor
-        titleView.layer.borderWidth = 1
-        titleView.layer.cornerRadius = 9
+        //titleView.layer.borderColor = UIColor.lightGray.cgColor
+      //  titleView.layer.borderWidth = 1
+      //  titleView.layer.cornerRadius = 9
 
         //Crop Name
+        let title = (isPlantingACrop! ? "Plant" : stringAction(action: self.growingAction!))
+        
         let cropNameLabel = UILabel()
-        cropNameLabel.text = self.crop.name
+        cropNameLabel.text =  title! + " " + self.crop.name!
         cropNameLabel.textAlignment = NSTextAlignment.center
         cropNameLabel.font = UIFont.systemFont(ofSize: 30)
         cropNameLabel.textColor = (isPlantingACrop! ? Colors.plantColor :
@@ -166,7 +170,7 @@ class ActionMenuAlertView: SCLAlertView {
         let dateLabel = UILabel()
         dateLabel.text = Date().inCellDateFormat()
         dateLabel.textAlignment = NSTextAlignment.center
-        dateLabel.font = UIFont.systemFont(ofSize: 10)
+        dateLabel.font = UIFont.systemFont(ofSize: 20)
         dateLabel.textColor = Colors.mainColorUI
         
         //Add them to the view
@@ -175,7 +179,7 @@ class ActionMenuAlertView: SCLAlertView {
         
         //Make the Constraints
         cropNameLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
            // make.height.equalTo(CropNameLabelHeight)
@@ -278,9 +282,14 @@ class ActionMenuAlertView: SCLAlertView {
 
     private func createMainCustomView() -> UIView? {
 
-        //let frame = CGRect(x: 0, y: 0, width: screenWidth * 0.9, height: screenHeight*0.9)
-      
-        let mainCustomView = UIView(frame: self.view.bounds)
+        let heightSum = (self.tableViewHeight! + Int(CropNameLabelHeight) + segControlHeight + notesViewHeight)
+        let newFrame = CGRect(x: self.view.bounds.origin.x,
+                              y: self.view.bounds.origin.y,
+                          width: self.view.bounds.width,
+                         height: CGFloat(heightSum + 70))
+        
+        
+        let mainCustomView = UIView(frame: newFrame)
         mainCustomView.clipsToBounds = true
         
         let titleView = createTitleSection()
@@ -296,7 +305,7 @@ class ActionMenuAlertView: SCLAlertView {
         titleView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(-24)
             make.height.equalTo(CropNameLabelHeight)
         }
         
@@ -307,32 +316,25 @@ class ActionMenuAlertView: SCLAlertView {
             
             self.segControl?.snp.makeConstraints({ (make) in
                 make.left.equalToSuperview()
-                make.right.equalToSuperview()
+                make.right.equalToSuperview().offset(-24)
                 make.top.equalTo(titleView.snp.bottom).offset(10)
-                make.height.equalTo(40)
+                make.height.equalTo(segControlHeight)
             })
         }
 
         listTableView?.snp.makeConstraints { (make) in
             make.top.equalTo( (isPlantingACrop! ? self.segControl!.snp.bottom : titleView.snp.bottom)).offset(10)
             make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(-24)
             make.height.equalTo(self.tableViewHeight!)
         }
         
         notesView.snp.makeConstraints { (make) in
             make.top.equalTo((listTableView?.snp.bottom)!)
             make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(100)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(notesViewHeight)
         }
-        
-//        buttonView.snp.makeConstraints { (make) in
-//            //make.top.equalToSuperview()
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview().offset(-10)
-//            make.bottom.equalToSuperview()
-//        }
         
         return mainCustomView
     }

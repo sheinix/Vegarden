@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/SCLAlertView/SCLAlertView/SCLAlertView.swift"
-            timestampString = "502866749.191607"
+            timestampString = "502948869.603566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "viewWillLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vegarden/ActionMenuAlertView.swift"
-            timestampString = "502875400.101323"
+            timestampString = "502948209.435842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "init(appearance:crop:action:unit:isPlanting:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -160,6 +160,22 @@
             startingLineNumber = "359"
             endingLineNumber = "359"
             landmarkName = "viewWillLayoutSubviews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "1"
+            continueAfterRunningActions = "No"
+            filePath = "Vegarden/ZoomInNavigationController.swift"
+            timestampString = "502940404.088204"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "popViewController(animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

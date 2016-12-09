@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SCLAlertView
 
 
 let tableAlertViewFrame = CGRect(x: 0,
@@ -24,6 +24,30 @@ let navigationHeight : CGFloat = 44.0
 let statubarHeight : CGFloat = 20.0
 let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
 let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
+
+
+struct Appereance {
+    public func appereanceForAlert(frame: CGRect, color: UIColor) -> SCLAlertView.SCLAppearance {
+       
+        let appereance = SCLAlertView.SCLAppearance(kTitleTop: 0,
+                                                    kTitleHeight: 28,
+            kWindowWidth: frame.width*0.85,
+            kTextHeight: 0,
+            kTitleFont: UIFont.systemFont(ofSize: 30),
+            showCloseButton: true,
+            showCircularIcon: false,
+            shouldAutoDismiss: true,
+            contentViewCornerRadius: UINumbericConstants.commonCornerRadius,
+            fieldCornerRadius: UINumbericConstants.commonCornerRadius,
+            buttonCornerRadius: UINumbericConstants.commonCornerRadius,
+            hideWhenBackgroundViewIsTapped: true,
+            contentViewBorderColor: UIColor.clear,
+            titleColor: color)
+        
+        return appereance
+    }
+}
+
 
 struct Colors {
     static let mainColor = UIColor(red: 121/255, green: 178/255, blue: 159/255, alpha: 0.9).cgColor
@@ -71,7 +95,7 @@ struct UINumbericConstants {
     static let maximumwidthSideMenu : CGFloat = 220
     static let floatingBttnSize : CGFloat = 100
     static let floattingBttnCGSize : CGSize = CGSize(width:floatingBttnSize, height:floatingBttnSize)
-    static let commonCornerRadius : CGFloat = 10
+    static let commonCornerRadius : CGFloat = 9
 }
 
 struct CellIdentifiers {

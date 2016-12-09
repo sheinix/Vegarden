@@ -262,26 +262,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         
         if (sender.titleLabel?.text == "Plant") {
             
-            let appearance = SCLAlertView.SCLAppearance(kWindowWidth: self.bounds.width*0.85,
-                                                        kWindowHeight: 700,
-                                                        showCloseButton: true)
-            
-            let alert = ActionMenuAlertView(appearance: appearance,
-                                            crop: self.crop!,
-                                            action: nil,
-                                            isPlanting: true,
-                                            and: .Row)
-            
-            let _ = alert.showInfo("Plant",
-                                subTitle: "",
-                        closeButtonTitle: "Close",
-                                duration: 0,
-                              colorStyle: Colors.plantColorHex,
-                         colorTextButton: 0xFFFFFF,
-                         circleIconImage: UIImage(named:"icon_weeding"),
-                          animationStyle: .topToBottom)
-
-
+            showPlantAlertView()
             
         } else {
             
@@ -293,6 +274,29 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+    
+    fileprivate func showPlantAlertView() {
+        
+        let appearance = Appereance().appereanceForAlert(frame: self.bounds,
+                                                         color: Colors.plantColor)
+        
+        
+        let alert = ActionMenuAlertView(appearance: appearance,
+                                        crop: self.crop!,
+                                        action: nil,
+                                        isPlanting: true,
+                                        and: .Row)
+        
+        let _ = alert.showInfo("",
+                               subTitle: "",//"Plant " + self.crop!.name!,
+                               closeButtonTitle: "Close",
+                               duration: 0,
+                               colorStyle: Colors.plantColorHex,
+                               colorTextButton: 0xFFFFFF,
+                               animationStyle: .topToBottom)
+
+    }
+    
     
     fileprivate func createFooterView() -> UIView {
         
