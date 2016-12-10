@@ -26,7 +26,7 @@ class VCropDetailPageTableViewCell: UITableViewCell {
         self.textLabel?.font = UIFont.systemFont(ofSize: 13)
         self.imageView?.layer.shouldRasterize = true
         self.imageView?.layer.masksToBounds = true
-        self.imageView?.layer.cornerRadius = 9
+        self.imageView?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         self.isUserInteractionEnabled = true
         
     }
@@ -57,7 +57,7 @@ class VCropDetailPageTableViewCell: UITableViewCell {
             imageView.frame = CGRect(x:0, y:0, width:screenWidth, height:imageHeight)
             
             imageView.layer.masksToBounds = true
-            imageView.layer.cornerRadius = 9
+            imageView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
             
         } else {
             

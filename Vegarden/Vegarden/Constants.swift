@@ -84,6 +84,9 @@ struct Colors {
     static let finishHarvestColorHex : UInt = 0x27639A
     static let finishHarvestColor : UIColor = UIColor(netHex: Int(finishHarvestColorHex))
     
+    
+    static let notesColor = UIColor(red: 243/255, green: 235/255, blue: 122/255, alpha: 0.9)
+
 }
 
 struct Fonts {

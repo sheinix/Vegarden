@@ -35,14 +35,10 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
     // MARK: UICollectionViewDelegate
     
     
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return false
     }
     
-    
-    
-    // Uncomment this method to specify if the specified item should be selected
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -58,12 +54,6 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
 
 extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        
-//        return CGSize(width: 100, height: 100)
-//    }
-//    
-//    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 
@@ -71,7 +61,6 @@ extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width:width,height: collectionView.frame.height)
     }
     
-    //3
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return sectionInsets
@@ -80,16 +69,13 @@ extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         
-        return CGFloat(1)
+        return CGFloat(0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(0)
     }
     
-
-//
-//    // 4
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        
-//        return sectionInsets.left
-//    }
 }
 extension LifeCycleTableViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     

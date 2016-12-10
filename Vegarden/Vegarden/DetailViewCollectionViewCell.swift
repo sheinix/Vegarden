@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SnapKit
+
+
+let noteHeight = CGFloat(integerLiteral:80)
 
 class DetailViewCollectionViewCell: UICollectionViewCell {
     
@@ -23,12 +27,12 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.cornerRadius = 8
-        
         self.scrollView.delegate = self
         self.scrollView.showsVerticalScrollIndicator = true
+        self.scrollView.isDirectionalLockEnabled = true
+        self.scrollView.alwaysBounceHorizontal = false
+        self.scrollView.showsHorizontalScrollIndicator = false
+        self.scrollView.backgroundColor = UIColor.red
       
     }
 
@@ -54,37 +58,45 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                     
                     guard !(state as! RowLifeState).isBeenDeleted else { return }
                     
-                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.frame.width, height:200),
+                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.bounds.width, height:noteHeight),
                                          date: (state as! RowLifeState).when as! Date,
                                          text: (state as! RowLifeState).notes as String?,
                                          title:(state as! RowLifeState).nameOfClass)
                 } else if (state is Seed || state is Seedling) {
                     
-                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.frame.width, height:200),
+                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.bounds.width, height:noteHeight),
                                        date: (state as! CropState).date as Date,
-                                       text: (state as! CropState).notes as String?)
+                                       text: (state as! CropState).notes as String?,
+                                       title: "Planted from " + (state as! CropState).nameOfClass)
                 }
                 
                 if let noteViewUnr = noteView {
                     
+                    let newHeightSize = scrollView.contentSize.height + noteHeight + 20
+                   
+                    notesStackView.snp.updateConstraints({ (update) in
+                        update.height.equalTo(newHeightSize)
+                    })
+                    scrollView.contentSize = CGSize(width: notesStackView.frame.width,
+                                                    height: CGFloat(newHeightSize))
                     notesStackView.addArrangedSubview(noteViewUnr)
+//                    scrollView.layoutSubviews()
+                    
                 }
             })
         }
         
         //TODO Check if this is working right
         
-        let newViewsCount = notesStackView.arrangedSubviews.count
-        let noteViewHeight = (newViewsCount > 0 ? notesStackView.arrangedSubviews[0].frame.height : 0)
-        
-        let newHeight = Int(self.frame.height) + (newViewsCount * Int(noteViewHeight))
-        
-        self.scrollView.contentSize = CGSize(width: self.frame.width, height: CGFloat(newHeight))
+//        let noteViewHeight = (newViewsCount > 0 ? scrollView.subviews.[0].frame.height : 0)
+//        
+//        let newHeight = Int(self.frame.height) + (newViewsCount * Int(noteViewHeight))
+//        
+//        self.scrollView.contentSize = CGSize(width: self.frame.width, height: CGFloat(newHeight))
         
     }
-    
-    
 }
+
 extension DetailViewCollectionViewCell : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

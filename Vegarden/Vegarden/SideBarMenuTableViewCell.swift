@@ -21,7 +21,7 @@ class SideBarMenuTableViewCell: UITableViewCell {
         titleLabel.font = Fonts.mainFont
         titleLabel.adjustsFontSizeToFitWidth = true
         self.layer.borderWidth = 1.5
-        self.layer.cornerRadius = 9
+        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         self.layer.borderColor = UIColor.clear.cgColor
         self.selectionStyle = .none
     }

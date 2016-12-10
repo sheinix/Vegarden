@@ -201,7 +201,7 @@ class ActionMenuAlertView: SCLAlertView {
         let notesSection = UIView()
         notesSection.layer.borderColor = UIColor.lightGray.cgColor
         notesSection.layer.borderWidth = 2
-        notesSection.layer.cornerRadius = 9
+        notesSection.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
         let notesLabel = UILabel()
         notesLabel.textAlignment = NSTextAlignment.left
@@ -246,7 +246,7 @@ class ActionMenuAlertView: SCLAlertView {
         let buttonsSection = UIView()
         buttonsSection.layer.borderColor = UIColor.lightGray.cgColor
         buttonsSection.layer.borderWidth = 1
-        buttonsSection.layer.cornerRadius = 6
+        buttonsSection.layer.cornerRadius = UINumbericConstants.commonCornerRadius//6
         
         let cancelButton = UIButton(type: UIButtonType.custom)
         cancelButton.titleLabel?.text = "Cancel"
@@ -345,7 +345,7 @@ class ActionMenuAlertView: SCLAlertView {
         
         if let segmented = self.segControl {
             
-            segmented.layer.cornerRadius = 10
+            segmented.layer.cornerRadius = UINumbericConstants.commonCornerRadius
             segmented.layer.borderColor = Colors.plantColor.cgColor
             segmented.layer.borderWidth = 1
             segmented.layer.masksToBounds = true

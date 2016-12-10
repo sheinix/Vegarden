@@ -311,7 +311,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         
         removeButton.frame = footerView.bounds
         removeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        removeButton.layer.cornerRadius = 14
+        removeButton.layer.cornerRadius = UINumbericConstants.commonCornerRadius//14
         removeButton.backgroundColor = UIColor.red
         removeButton.titleLabel?.textColor = UIColor.white
         removeButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)

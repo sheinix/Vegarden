@@ -8,12 +8,13 @@
 
 import UIKit
 
+let titleLabelsHeight = 40
+
 class NoteView: RoundedCornersView {
 
     var titleLabel  : UILabel?
     var noteDate    = UILabel()
     var noteTxt     = UILabel()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,47 +28,58 @@ class NoteView: RoundedCornersView {
     }
     
     init(frame: CGRect, date: Date, text: String?, title: String?) {
-        
-        noteDate.text = date.inCellDateFormat()
-        noteTxt.text = text
+
+        super.init(frame: frame)
         
         if (title != nil) {
             
             titleLabel = UILabel()
             titleLabel?.sizeToFit()
             titleLabel?.text = title
+           
         }
     
-        super.init(frame: frame)
+        self.backgroundColor   = Colors.notesColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
-        self.backgroundColor = UIColor.yellow
         
         addSubview(noteDate)
         addSubview(noteTxt)
         
         if (title != nil) {
             addSubview(titleLabel!)
-        
+            
             titleLabel?.snp.makeConstraints { (make) in
-                make.left.equalToSuperview()
+                make.left.equalToSuperview().offset(5)
                 make.top.equalToSuperview()
-                make.height.equalTo(50)
-                make.width.equalTo(200)
+                make.height.equalTo(titleLabelsHeight)
+                make.right.equalToSuperview()
             }
         }
         
+        
         noteDate.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().offset(5)
             make.top.equalTo(((title != nil) ? titleLabel!.snp.bottom : noteDate.superview!.snp.top))
-            make.height.equalTo(50)
-            make.width.equalTo(200)
+            make.height.equalTo(titleLabelsHeight)
+            make.right.equalToSuperview()
         }
+        
         
         noteTxt.snp.makeConstraints { (make) in
             make.top.equalTo(noteDate.snp.bottom)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.height.equalTo(0) //need to update this when animation zooms in
+        }
+        
+        noteDate.text = date.inCellDateFormat()
+        noteTxt.text = text
+        
+        self.snp.makeConstraints { (make) in
+            make.height.equalTo(labelsHeight * 2 + 20)
         }
     }
     

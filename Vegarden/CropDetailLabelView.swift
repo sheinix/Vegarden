@@ -17,7 +17,6 @@ class CropDetailLabelView: UIView {
     @IBOutlet weak var isInGarden: CropDetailLabel!
     @IBOutlet weak var classificationValue: CropDetailLabel!
     
-    
     @IBOutlet weak var cropSizeTitle: UILabel!
     @IBOutlet weak var cropSizeTxt: UILabel!
     @IBOutlet weak var potentialProbemsTitle: UILabel!
@@ -33,6 +32,12 @@ class CropDetailLabelView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        familyValue.textColor = UIColor.darkGray
+        typeValue.textColor = UIColor.darkGray
+        phLevelValue.textColor = UIColor.darkGray
+        spacingValue.textColor = UIColor.darkGray
+        isInGarden.textColor = UIColor.darkGray
+        classificationValue.textColor = UIColor.darkGray
         
     }
         

@@ -31,7 +31,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     required init?(coder aDecoder: NSCoder) {
         
         actionMenu = KCFloatingActionButton()
-        actionMenu.buttonColor = Colors.plantColor
+        actionMenu.buttonColor = Colors.mainColorUI
         
         super.init(coder: aDecoder)
     }
@@ -39,11 +39,11 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     override func awakeFromNib() {
         
-        foregroundView.layer.cornerRadius = 10
+        foregroundView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         foregroundView.layer.masksToBounds = true
         foregroundView.layer.borderWidth = 1
-        foregroundView.layer.borderColor = UIColor.lightGray.cgColor
-        containerView.layer.cornerRadius = 10
+        foregroundView.layer.borderColor = Colors.mainColorUI.cgColor
+        containerView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
 //        containerView.layer.masksToBounds = true
 //        containerView.layer.borderWidth = 1
 //        containerView.layer.borderColor = UIColor.lightGray.cgColor
@@ -51,7 +51,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         //TODO If the collectionView fits allright in screen, no need to enable the scroll
         collectionView.isScrollEnabled = true
-     
+        collectionView.layer.borderColor = Colors.mainColorUI.cgColor
+        collectionView.layer.borderWidth = 1
+        collectionView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        
         super.awakeFromNib()
     }
 
@@ -204,27 +207,35 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         actionMenu.addItem("Remove", icon: UIImage(named:"icon_fertilize")) { (item) in
             
+           item.circleShadowColor = Colors.removeColor
             self.showConfirmationScreenFor(action: .UnplantAction, crop: cropie)
         }
 
         actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
-            
+           
+            item.circleShadowColor = Colors.weedColor
             self.showConfirmationScreenFor(action: .WeedAction, crop: cropie)
         }
         
         actionMenu.addItem("Water", icon: UIImage(named:"icon_watering")) { (item) in
             
+            item.circleShadowColor = Colors.waterColor
+            
            self.showConfirmationScreenFor(action: .WaterAction, crop: cropie)
         }
         
         actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize")) { (item) in
-            
+           
+            item.circleShadowColor = Colors.fertilizeColor
+           
            self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)
         }
         
         if (cropie.isReadyForHarvest) {
         
             actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
+                
+                item.circleShadowColor = Colors.harvestColor
                 
                 self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie)
                 
@@ -235,6 +246,8 @@ class CropLifeCycleTableViewCell: FoldingCell {
             
                 actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
                 
+                item.circleShadowColor = Colors.finishHarvestColor
+
                 self.showConfirmationScreenFor(action: .FinishAction, crop: cropie)
             }
         

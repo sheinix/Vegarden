@@ -14,7 +14,7 @@ import KCFloatingActionButton
 class LifeCycleTableViewController: UITableViewController {
 
     //CollectionView sources:
-    let sectionInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+    let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     var lifeStatesArray : [[String : [Any]]] = []
     
@@ -25,7 +25,7 @@ class LifeCycleTableViewController: UITableViewController {
     
     //TableView sources:
     let kCloseCellHeight: CGFloat = 150
-    let kOpenCellHeight: CGFloat = 460
+    let kOpenCellHeight: CGFloat = 600
     
     var myPlantedCrops = GardenManager.shared.myPlantedCrops()
     
@@ -34,7 +34,7 @@ class LifeCycleTableViewController: UITableViewController {
     fileprivate struct C {
         struct CellHeight {
             static let close: CGFloat = 150 // equal or greater foregroundView height
-            static let open: CGFloat = 460 // equal or greater containerView height
+            static let open: CGFloat = 600 // equal or greater containerView height
         }
     }
 

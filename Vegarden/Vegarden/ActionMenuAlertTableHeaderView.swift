@@ -22,7 +22,7 @@ class ActionMenuAlertTableHeaderView: UIView {
         
         super.init(frame: frame)
         
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius//6
         
         self.titleLabel.frame = CGRect(x: 0, y: 0, width: 250, height: headerSectionsHeight)
         self.titleLabel.font = Fonts.appleGoticUltraLightFont

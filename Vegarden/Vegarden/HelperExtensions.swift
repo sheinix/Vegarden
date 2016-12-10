@@ -39,17 +39,6 @@ extension Int {
     
 }
 
-extension UIColor {
-    
-    static func color(_ red: Int, green: Int, blue: Int, alpha: Float) -> UIColor {
-        
-        return UIColor(
-            colorLiteralRed: Float(1.0) / Float(255.0) * Float(red),
-            green: Float(1.0) / Float(255.0) * Float(green),
-            blue: Float(1.0) / Float(255.0) * Float(blue),
-            alpha: alpha)
-    }
-}
 
 public extension NSObject {
    
@@ -173,6 +162,15 @@ extension UIColor {
     
     convenience init(netHex:Int) {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
+    
+    static func color(_ red: Int, green: Int, blue: Int, alpha: Float) -> UIColor {
+        
+        return UIColor(
+            colorLiteralRed: Float(1.0) / Float(255.0) * Float(red),
+            green: Float(1.0) / Float(255.0) * Float(green),
+            blue: Float(1.0) / Float(255.0) * Float(blue),
+            alpha: alpha)
     }
 }
 //extension String {

@@ -16,9 +16,9 @@ public class CropDetailLabel: UILabel {
         
         self.textColor = UIColor.lightGray
         self.textAlignment = .left
-        self.font = Fonts.detailCropFont
+        self.font = Fonts.appleGoticUltraLightFont
         self.sizeToFit()
-//        self.layer.borderColor = UIColor.darkGray.cgColor
+        self.textColor = UIColor.darkText
     }
     
     required public init?(coder aDecoder: NSCoder) {
