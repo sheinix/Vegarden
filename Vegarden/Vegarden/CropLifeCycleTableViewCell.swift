@@ -44,12 +44,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
         foregroundView.layer.borderWidth = 1
         foregroundView.layer.borderColor = Colors.mainColorUI.cgColor
         containerView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-//        containerView.layer.masksToBounds = true
-//        containerView.layer.borderWidth = 1
-//        containerView.layer.borderColor = UIColor.lightGray.cgColor
      
-        
-        //TODO If the collectionView fits allright in screen, no need to enable the scroll
         collectionView.isScrollEnabled = true
         collectionView.layer.borderColor = Colors.mainColorUI.cgColor
         collectionView.layer.borderWidth = 1

@@ -42,7 +42,7 @@ class NoteView: RoundedCornersView {
         self.backgroundColor   = Colors.notesColor
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.layer.cornerRadius = 6
         
         
         addSubview(noteDate)
@@ -58,7 +58,6 @@ class NoteView: RoundedCornersView {
                 make.right.equalToSuperview()
             }
         }
-        
         
         noteDate.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
@@ -77,10 +76,7 @@ class NoteView: RoundedCornersView {
         
         noteDate.text = date.inCellDateFormat()
         noteTxt.text = text
-        
-        self.snp.makeConstraints { (make) in
-            make.height.equalTo(labelsHeight * 2 + 20)
-        }
+    
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -16,13 +16,16 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stageTitle: UILabel!
     @IBOutlet weak var progressStepView: UIView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var date2Label: UILabel!
-    @IBOutlet weak var value2Label: UILabel!
+//    @IBOutlet weak var dateLabel: UILabel!
+//    @IBOutlet weak var valueLabel: UILabel!
+//    @IBOutlet weak var date2Label: UILabel!
+//    @IBOutlet weak var value2Label: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var notesStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +35,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         self.scrollView.isDirectionalLockEnabled = true
         self.scrollView.alwaysBounceHorizontal = false
         self.scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.backgroundColor = UIColor.red
+    
       
     }
 
@@ -58,13 +61,16 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                     
                     guard !(state as! RowLifeState).isBeenDeleted else { return }
                     
-                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.bounds.width, height:noteHeight),
+                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.notesStackView.frame.width, height:noteHeight),
                                          date: (state as! RowLifeState).when as! Date,
                                          text: (state as! RowLifeState).notes as String?,
                                          title:(state as! RowLifeState).nameOfClass)
                 } else if (state is Seed || state is Seedling) {
                     
-                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.bounds.width, height:noteHeight),
+                    noteView = NoteView(frame: CGRect(x:0,
+                                                      y:0,
+                                                  width:self.notesStackView.frame.width,
+                                                 height:noteHeight),
                                        date: (state as! CropState).date as Date,
                                        text: (state as! CropState).notes as String?,
                                        title: "Planted from " + (state as! CropState).nameOfClass)
@@ -72,13 +78,12 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                 
                 if let noteViewUnr = noteView {
                     
-                    let newHeightSize = scrollView.contentSize.height + noteHeight + 20
+                  let newHeightSize = scrollView.contentSize.height + noteHeight + 20
                    
-                    notesStackView.snp.updateConstraints({ (update) in
-                        update.height.equalTo(newHeightSize)
-                    })
+                    self.stackViewHeight.constant = newHeightSize
                     scrollView.contentSize = CGSize(width: notesStackView.frame.width,
                                                     height: CGFloat(newHeightSize))
+                    
                     notesStackView.addArrangedSubview(noteViewUnr)
 //                    scrollView.layoutSubviews()
                     
