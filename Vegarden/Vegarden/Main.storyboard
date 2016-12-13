@@ -251,21 +251,8 @@
                                                                         <color key="textColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ6-m0-bfW">
-                                                                        <rect key="frame" x="8" y="38" width="174" height="46"/>
-                                                                        <color key="backgroundColor" red="0.49306942500000001" green="0.56357078009999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="46" id="2L9-0o-TZY"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNz-V5-LrG">
-                                                                        <rect key="frame" x="8" y="94" width="174" height="33"/>
-                                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                                                        <color key="textColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-HE-3js">
-                                                                        <rect key="frame" x="8" y="137" width="174" height="223"/>
+                                                                        <rect key="frame" x="8" y="98" width="174" height="263"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-fL-hL3">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="100"/>
@@ -275,37 +262,38 @@
                                                                             </stackView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="Mo2-fL-hL3" secondAttribute="bottom" constant="123" id="7Tr-Ue-j9q"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Mo2-fL-hL3" secondAttribute="bottom" constant="163" id="7Tr-Ue-j9q"/>
                                                                             <constraint firstItem="Mo2-fL-hL3" firstAttribute="leading" secondItem="pNG-HE-3js" secondAttribute="leading" id="8Zd-44-Ymv"/>
-                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Lqu-aa-gT7"/>
                                                                             <constraint firstAttribute="trailing" secondItem="Mo2-fL-hL3" secondAttribute="trailing" id="PnN-cn-KSj"/>
                                                                             <constraint firstItem="Mo2-fL-hL3" firstAttribute="top" secondItem="pNG-HE-3js" secondAttribute="top" id="VWV-Ey-b4W"/>
-                                                                            <constraint firstAttribute="height" constant="223" id="kj5-Dm-Upo"/>
+                                                                            <constraint firstAttribute="height" constant="263" id="kj5-Dm-Upo"/>
                                                                             <constraint firstItem="Mo2-fL-hL3" firstAttribute="centerX" secondItem="pNG-HE-3js" secondAttribute="centerX" id="zym-lJ-EXV"/>
                                                                         </constraints>
                                                                     </scrollView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNz-V5-LrG">
+                                                                        <rect key="frame" x="8" y="48" width="174" height="37.5"/>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                                        <color key="textColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottomMargin" secondItem="pNG-HE-3js" secondAttribute="bottom" id="317-pZ-P5Z"/>
-                                                                <constraint firstItem="pNG-HE-3js" firstAttribute="top" secondItem="eNz-V5-LrG" secondAttribute="bottom" constant="10" id="AXT-tN-Mf1"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="pNG-HE-3js" secondAttribute="bottom" constant="-1" id="317-pZ-P5Z"/>
+                                                                <constraint firstItem="pNG-HE-3js" firstAttribute="top" secondItem="eNz-V5-LrG" secondAttribute="bottom" constant="12.5" id="AXT-tN-Mf1"/>
                                                                 <constraint firstItem="pNG-HE-3js" firstAttribute="leading" secondItem="PQd-di-f4b" secondAttribute="leadingMargin" id="I4T-Gg-BFS"/>
                                                                 <constraint firstItem="eNz-V5-LrG" firstAttribute="leading" secondItem="PQd-di-f4b" secondAttribute="leadingMargin" id="KcJ-YS-AMi"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="n8d-We-09E" secondAttribute="trailing" id="YfG-cE-bk9"/>
-                                                                <constraint firstItem="qQ6-m0-bfW" firstAttribute="top" secondItem="n8d-We-09E" secondAttribute="bottom" constant="-3" id="mgT-Hu-Ql6"/>
-                                                                <constraint firstAttribute="leadingMargin" secondItem="qQ6-m0-bfW" secondAttribute="leading" id="oFo-IM-Kna"/>
+                                                                <constraint firstItem="eNz-V5-LrG" firstAttribute="top" secondItem="n8d-We-09E" secondAttribute="bottom" constant="7" id="fwg-cg-WbQ"/>
                                                                 <constraint firstAttribute="leadingMargin" secondItem="n8d-We-09E" secondAttribute="leading" id="pLl-QB-w01"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="qQ6-m0-bfW" secondAttribute="trailing" id="rcz-8E-Hh5"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="eNz-V5-LrG" secondAttribute="trailing" id="ro5-fy-r2j"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="pNG-HE-3js" secondAttribute="trailing" id="vD3-jE-kHE"/>
-                                                                <constraint firstItem="eNz-V5-LrG" firstAttribute="top" secondItem="qQ6-m0-bfW" secondAttribute="bottom" constant="10" id="yHx-NK-jpY"/>
                                                                 <constraint firstAttribute="topMargin" secondItem="n8d-We-09E" secondAttribute="top" id="zHq-EB-Qgz"/>
                                                             </constraints>
                                                             <size key="customSize" width="190" height="368"/>
                                                             <connections>
                                                                 <outlet property="notesLabel" destination="eNz-V5-LrG" id="37Q-mo-lWS"/>
                                                                 <outlet property="notesStackView" destination="Mo2-fL-hL3" id="hQu-CT-WpB"/>
-                                                                <outlet property="progressStepView" destination="qQ6-m0-bfW" id="ngN-9E-gz3"/>
                                                                 <outlet property="scrollView" destination="pNG-HE-3js" id="UQH-kQ-Ih1"/>
                                                                 <outlet property="stackViewHeight" destination="ait-6b-U8Q" id="bQp-1K-OuJ"/>
                                                                 <outlet property="stageTitle" destination="n8d-We-09E" id="riY-eC-wOn"/>

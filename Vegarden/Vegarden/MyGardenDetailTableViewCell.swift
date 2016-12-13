@@ -13,7 +13,6 @@ import SCLAlertView
 
 class MyGardenDetailTableViewCell: UITableViewCell {
     
-    var actionMenu : KCFloatingActionButton?
     var myGardenCollectionView : UICollectionView?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

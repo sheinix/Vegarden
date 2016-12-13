@@ -234,10 +234,31 @@ extension Crop {
             
             return stringValue
         }
-        
-        
-        
     }
+    
+    public var actionsMade : [RowLifeState] {
+        
+        get {
+            
+            var states : [RowLifeState] = []
+            
+            self.row?.forEach({ (row) in
+                
+                (row as! Row).lifeCycleState?.forEach({ (rowState) in
+                    
+                   if !(states.contains(where:{ (staty) -> Bool in
+                    
+                    return (staty.lifeStateId == (rowState as! RowLifeState).lifeStateId) })) {
+                    
+                        states.append(rowState as! RowLifeState)
+                    }
+                })
+            })
+            
+            return states
+        }
+    }
+    
 //    public func reCalculateTimeToHarvest() {
 //
 //        self.timeToHarvest = NSNumber(value:self.computedTimeToHarvest)

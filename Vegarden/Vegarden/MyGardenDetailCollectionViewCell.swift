@@ -40,7 +40,7 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     var freeRowsLabel        = UILabel()
     var totalRows            = UILabel()
     var removePatchButton    = UIButton(type: UIButtonType.custom)
-    var editRowsButton        = UIButton(type: UIButtonType.custom)
+    var editRowsButton       = UIButton(type: UIButtonType.custom)
     
     override init(frame: CGRect) {
         
@@ -65,18 +65,41 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        self.removePatchButton.setRoundedCornerStyled()
+        
+        self.patchLabel.textColor = Colors.mainColorUI
+        self.patchLabel.font = Fonts.appleGoticUltraLightFont
+        self.patchLabel.textAlignment = .center
+        
+        self.plantedRowsLabel.textColor = UIColor.darkGray
+        self.plantedRowsLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        self.freeRowsLabel.textColor = UIColor.darkGray
+        self.freeRowsLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        self.totalRows.textColor = UIColor.darkGray
+        self.totalRows.font = UIFont.systemFont(ofSize: 20)
+        
+        self.removePatchButton.layer.borderColor = UIColor.red.cgColor
+        self.removePatchButton.layer.borderWidth = 1
+        self.removePatchButton.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.removePatchButton.backgroundColor = UIColor.white
+        self.removePatchButton.titleLabel?.sizeToFit()
+        self.removePatchButton.setTitleColor(UIColor.red, for: .normal)
+        self.removePatchButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        
         self.removePatchButton.addTarget(self, action: #selector(removePatch), for: .touchUpInside)
         self.removePatchButton.setTitle("Remove Patch", for: .normal)
-        self.removePatchButton.backgroundColor = UIColor.red
-        self.removePatchButton.titleLabel?.sizeToFit()
         
-        self.editRowsButton.setRoundedCornerStyled()
-        self.editRowsButton.addTarget(self, action: #selector(editRows), for: .touchUpInside)
-        self.editRowsButton.setTitle("Edit Rows", for: .normal)
-
+        
+        self.editRowsButton.layer.borderColor = Colors.mainColorUI.cgColor
+        self.editRowsButton.layer.borderWidth = 1
+        self.editRowsButton.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         self.editRowsButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         self.editRowsButton.titleLabel?.sizeToFit()
+        self.editRowsButton.setTitleColor(Colors.mainColorUI, for: .normal)
+        
+        self.editRowsButton.addTarget(self, action: #selector(editRows), for: .touchUpInside)
+        self.editRowsButton.setTitle("Edit Rows", for: .normal)
         
         
         self.contentView.addSubview(self.patchLabel)
@@ -90,7 +113,7 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(self.removePatchButton)
         self.contentView.addSubview(self.editRowsButton)
         
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderColor = Colors.mainColorUI.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
@@ -142,17 +165,17 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
 
     
         self.removePatchButton.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
             make.height.equalTo(buttonsViewHeight)
-            make.width.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview().dividedBy(2).offset(-5)
         }
     
         self.editRowsButton.snp.makeConstraints { (make) in
-            make.left.equalTo(self.removePatchButton.snp.right)
+            make.left.equalTo(self.removePatchButton.snp.right).offset(5)
             make.height.equalTo(buttonsViewHeight)
-            make.bottom.equalToSuperview()
-            make.width.equalToSuperview().dividedBy(2)
+            make.bottom.equalToSuperview().offset(-5)
+            make.right.equalToSuperview().offset(-5)
         }
     
     }

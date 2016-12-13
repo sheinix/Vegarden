@@ -18,7 +18,7 @@ extension RowLifeState {
 
     @NSManaged public var isDone: Bool
     @NSManaged public var notes: String?
-    @NSManaged public var when: NSDate?
+    @NSManaged public var when: Date?
     @NSManaged public var row: Row?
     @NSManaged public var lifeStateId: String?
 }

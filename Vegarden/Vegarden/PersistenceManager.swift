@@ -524,7 +524,8 @@ class PersistenceManager {
         }
         
         actionMade?.isDone =  true
-        actionMade?.when = NSDate()
+        actionMade?.when = Date()
+        actionMade?.lifeStateId = (actionMade?.nameOfClass)! + (actionMade?.when!.strMinSecId)!
         
         return actionMade!
     }

@@ -65,7 +65,7 @@ extension UIButton {
       
 //        self.titleLabel?.font = UIFont.systemFont(ofSize: 2)
         self.titleLabel?.textColor = UIColor.gray
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         self.layer.borderColor = UIColor.darkGray.cgColor
         self.layer.borderWidth = 2
     }
@@ -159,7 +159,24 @@ extension UIView{
         }
         
         self.clipsToBounds = true
-    }    
+    }
+    
+    func layerGradientWith(colors: [CGColor]) {
+        
+        let layer : CAGradientLayer = CAGradientLayer()
+        layer.frame = self.frame
+        //layer.frame.origin = CGPoint.zero
+        //layer.cornerRadius = CGFloat(frame.width / 20)
+        
+        
+        layer.colors = colors
+        
+       // layer.colors = [color0,color1,color2,color3,color4,color5,color6]
+        self.layer.insertSublayer(layer, at: 0)
+//        self.layer.addSublayer(layer)
+    }
+    
+    
 }
 
 var kIndexPathPointer = "kIndexPathPointer"

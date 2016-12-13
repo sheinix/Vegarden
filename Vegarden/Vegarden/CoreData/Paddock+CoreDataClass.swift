@@ -36,7 +36,6 @@ public class Paddock: NSManagedObject {
         }
     }
     
-    
     public func reset() {
         
         self.rows?.forEach({ (element) in

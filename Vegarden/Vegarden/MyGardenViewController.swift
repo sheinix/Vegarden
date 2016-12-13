@@ -11,12 +11,13 @@ import SCLAlertView
 import DZNEmptyDataSet
 
 let rowsMaxHeight = screenHeight/2
+let headerHeight = 80
 
 class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtocol {
 
     let totalPlantedCrops : Int = (GardenManager.shared.myPlantedCrops()?.count)!
-    let totalPaddocks : Int = (GardenManager.shared.getMyGarden().paddocks?.count)!
-    let patchs : [Paddock] = (GardenManager.shared.getMyGarden().paddocks?.allObjects as! [Paddock])
+    var totalPaddocks : Int = (GardenManager.shared.getMyGarden().paddocks?.count)!
+    var patchs : [Paddock] = (GardenManager.shared.getMyGarden().paddocks?.allObjects as! [Paddock])
     var rowsHeight : CGFloat?
     
     override func viewDidLoad() {
@@ -49,12 +50,12 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     fileprivate func addObservers() {
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(patchRowEdited),
+                                               selector: #selector(newPatchAdded),
                                                name: NSNotification.Name(rawValue: NotificationIds.NotiKeyNewPatch),
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(patchRowEdited),
+                                               selector: #selector(patchDeleted),
                                                name: NSNotification.Name(rawValue: NotificationIds.NotiKeyPatchDeleted),
                                                object: nil)
         
@@ -78,15 +79,65 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
                                                name: NSNotification.Name(rawValue: NotificationIds.NotiKeyRowsDeleted),
                                                object: nil)
         }
-    
+ 
+    @objc fileprivate func newPatchAdded(notification: NSNotification) {
+        
+        if let patch = notification.userInfo?["patch"] as? Paddock {
+            
+            self.patchs.append(patch)
+            self.totalPaddocks += 1
+            
+            if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
+                
+                if let myCV = cell.myGardenCollectionView {
+                    
+                    let header = (self.tableView(self.tableView, viewForHeaderInSection: 1) as! MyGardenTableSectionHeaderView)
+                    
+                    DispatchQueue.main.async {
+                        header.titleLabel.text = "My Garden | Number of Patchs : " + String(self.totalPaddocks)
+                    }
+                    myCV.reloadData()
+                }
+            }
+        }
 
+        
+    }
+    
+    @objc fileprivate func patchDeleted(notification: NSNotification) {
+        
+        if let patch = notification.userInfo?["patch"] as? Paddock {
+            
+            let idx = self.patchs.index(of: patch)
+            self.patchs.remove(at: idx!)
+            self.totalPaddocks -= 1
+            
+            if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
+                
+                if let myCV = cell.myGardenCollectionView {
+                
+                    myCV.deleteItems(at: [IndexPath(row: idx!, section: 0)])
+                    let header = (self.tableView(self.tableView, viewForHeaderInSection: 1) as! MyGardenTableSectionHeaderView)
+                    DispatchQueue.main.async {
+                        header.titleLabel.text = "My Garden | Number of Patchs : " + String(self.totalPaddocks)
+                    }
+                }
+            }
+        }
+    }
+    
    @objc fileprivate func patchRowEdited(notification: NSNotification) {
     
         if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
         
+            
+            
+            
+            
             if let myCV = cell.myGardenCollectionView {
             
-                myCV.reloadData()
+                DispatchQueue.main.async { myCV.reloadData() }
+                
             }
         }
     
@@ -137,9 +188,9 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let header = MyGardenTableSectionHeaderView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 100))
+        let header = MyGardenTableSectionHeaderView(frame: CGRect(x: 2, y: 0, width: Int(screenWidth)-2, height: headerHeight))
         
-        let title = (section == 0 ? "Overview  |  Planted Crops : " + String(totalPlantedCrops) : "My Garden | Patchs : " + String(totalPaddocks))
+        let title = (section == 0 ? "Overview  |  Planted Crops : " + String(totalPlantedCrops) : "My Garden | Number of Patchs : " + String(totalPaddocks))
         
         header.titleLabel.text = title
         header.addPatchButton.isHidden = (section == 0)
@@ -155,7 +206,7 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return CGFloat(headerHeight)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

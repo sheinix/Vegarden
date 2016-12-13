@@ -14,14 +14,13 @@ import KCFloatingActionButton
 class LifeCycleTableViewController: UITableViewController {
 
     //CollectionView sources:
-    let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
+    
     var lifeStatesArray : [[String : [Any]]] = []
     
     let lifeCycle = [lifeCyclceSates.Seed,
                      lifeCyclceSates.Growig,
-                     lifeCyclceSates.Harvesting,
-                     lifeCyclceSates.Finish]
+                     lifeCyclceSates.Harvesting]
+        
     
     //TableView sources:
     let kCloseCellHeight: CGFloat = 150
@@ -142,8 +141,8 @@ class LifeCycleTableViewController: UITableViewController {
         //Get the idx of cell dict:
         self.lifeStatesArray.remove(at: idx!)
         self.lifeStatesArray.insert(cell.reloadNotes()!, at: idx!)
-
-        cell.collectionView.reloadData()
+        
+        cell.collectionView.reloadItems(at: [IndexPath(row: 1, section: 0)])//,IndexPath(row:2, section:0)])
 
     }
     

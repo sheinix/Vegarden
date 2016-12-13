@@ -117,4 +117,30 @@ extension Date {
         
         return msg
     }
+    
+    public func isGreaterThanDate(dateToCompare: Date) -> Bool {
+    
+        return self.compare(dateToCompare) == ComparisonResult.orderedDescending
+    }
+    
+    public func isLessThanDate(dateToCompare: Date) -> Bool {
+    
+        return self.compare(dateToCompare as Date) == ComparisonResult.orderedAscending
+    }
+    
+    public func isEqualToDate(dateToCompare: Date) -> Bool {
+  
+        return self.compare(dateToCompare) == ComparisonResult.orderedSame
+    }
+    
+    public var strMinSecId : String {
+        
+        get {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssx"
+            return formatter.string(from: self)
+
+        }
+    }
 }

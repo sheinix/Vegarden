@@ -15,11 +15,7 @@ let noteHeight = CGFloat(integerLiteral:80)
 class DetailViewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stageTitle: UILabel!
-    @IBOutlet weak var progressStepView: UIView!
-//    @IBOutlet weak var dateLabel: UILabel!
-//    @IBOutlet weak var valueLabel: UILabel!
-//    @IBOutlet weak var date2Label: UILabel!
-//    @IBOutlet weak var value2Label: UILabel!
+    //@IBOutlet weak var progressStepView: UIView!
     @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var notesStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -62,7 +58,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                     guard !(state as! RowLifeState).isBeenDeleted else { return }
                     
                     noteView = NoteView(frame: CGRect(x:0,y:0, width:self.notesStackView.frame.width, height:noteHeight),
-                                         date: (state as! RowLifeState).when as! Date,
+                                         date: (state as! RowLifeState).when!,
                                          text: (state as! RowLifeState).notes as String?,
                                          title:(state as! RowLifeState).nameOfClass)
                 } else if (state is Seed || state is Seedling) {
@@ -90,14 +86,6 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                 }
             })
         }
-        
-        //TODO Check if this is working right
-        
-//        let noteViewHeight = (newViewsCount > 0 ? scrollView.subviews.[0].frame.height : 0)
-//        
-//        let newHeight = Int(self.frame.height) + (newViewsCount * Int(noteViewHeight))
-//        
-//        self.scrollView.contentSize = CGSize(width: self.frame.width, height: CGFloat(newHeight))
         
     }
 }

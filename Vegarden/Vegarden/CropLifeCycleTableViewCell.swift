@@ -25,8 +25,8 @@ class CropLifeCycleTableViewCell: FoldingCell {
    
     var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Seed: [],
                                             lifeCyclceSates.Growig: [],
-                                            lifeCyclceSates.Harvesting: [],
-                                            lifeCyclceSates.Finish: []]
+                                            lifeCyclceSates.Harvesting: []]
+//                                            lifeCyclceSates.Finish: []]
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -102,10 +102,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
         guard let crop = self.crop else { return nil }
         
         self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Growig)
-        self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Harvesting)
+       // self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Harvesting)
         
         self.setGrowingNotes(crop: crop)
-        self.setHarvestingStates(crop: crop)
+        //self.setHarvestingStates(crop: crop)
         
         return self.lifeCycleDict
     }
@@ -121,15 +121,30 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     private func setGrowingNotes(crop: Crop) {
         
-        var growingNotes : [RowLifeState] = []
+        let growingNotes : [RowLifeState] = crop.actionsMade
         
-        crop.row?.allObjects.forEach({ (row) in
-            
-            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
-                
-                growingNotes.append(contentsOf: states)
-            }
-        })
+//        crop.row?.allObjects.forEach({ (row) in
+//            
+//            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
+//                
+//                states.forEach({ (state) in
+//                    
+//                    if !growingNotes.contains(where: { (rowLifeState) -> Bool in
+//                        
+//                        return (rowLifeState.when == state.when &&
+//                              //  rowLifeState.self == state.self &&
+//                               // rowLifeState.lifeStateId == state.lifeStateId &&
+//                                rowLifeState.notes == state.notes)
+//                    }) {
+//                
+//                        growingNotes.append(state)
+//                    }
+//
+//                })
+//                
+//                
+//            }
+//        })
 
         if (growingNotes.count > 0) {
             

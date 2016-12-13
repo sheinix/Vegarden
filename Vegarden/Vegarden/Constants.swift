@@ -86,8 +86,16 @@ struct Colors {
     
     
     static let notesColor = UIColor(red: 243/255, green: 235/255, blue: 122/255, alpha: 0.9)
-
-}
+    
+    
+    static let headerGradient = [mainColor,
+                                // UIColor(red:34/255, green:181/255, blue:235/255, alpha:0.5).cgColor,
+                                 UIColor(red:41/255, green:243/255, blue: 185/255, alpha:0.3).cgColor]
+                                // UIColor(red:88/255, green:199/255, blue: 140/255, alpha:0.1).cgColor,
+    
+//                                 UIColor(red:50.0/255, green:50.0/255, blue:50.0/255, alpha:0.1).CGColor]
+    }
+    
 
 struct Fonts {
     static let mainFont : UIFont = UIFont(name: "OpenSans-Light", size: 26)!
@@ -202,3 +210,7 @@ public enum FinishReason : Int {
     case CropWasted, FinishHarvesting
 }
 
+public struct lifeStates {
+    let lifeCycleKey : lifeCyclceSates
+    var lifeState : Any
+}

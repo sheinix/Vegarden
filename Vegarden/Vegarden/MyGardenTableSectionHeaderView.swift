@@ -43,13 +43,15 @@ class MyGardenTableSectionHeaderView: UIView {
     
     fileprivate func setupViews() {
         
-        self.layer.borderColor = UIColor.darkText.cgColor
-        self.layer.borderWidth = 2
+//        self.layer.borderColor = Colors.mainColorUI.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
         self.titleLabel.font = Fonts.mainFont
+        self.titleLabel.textColor = Colors.mainColorUI
         
         self.addPatchButton.setImage(UIImage(named:"plusbutton"), for: .normal)
-        self.addPatchButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        self.addPatchButton.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         self.addPatchButton.layer.cornerRadius = self.addPatchButton.frame.size.width/2
         self.addPatchButton.clipsToBounds = true
         self.addPatchButton.addTarget(self, action: #selector(buttonPushed),for: .touchUpInside)
@@ -62,14 +64,14 @@ class MyGardenTableSectionHeaderView: UIView {
     fileprivate func setupConstraints() {
         
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(15)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.width.equalTo(screenWidth).multipliedBy(0.7)
         }
         
         self.addPatchButton.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().offset(-15)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.width.equalTo(100)

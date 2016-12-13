@@ -40,16 +40,19 @@ class MyGardenHeaderView: UIView {
     
     fileprivate func setupViews() {
         
-        self.backgroundColor = Colors.greetingsHeaderColor
+        self.layerGradientWith(colors: Colors.headerGradient)
         
         self.greetingsLabel.textColor = UIColor.white
+        self.greetingsLabel.applyShadows()
         self.greetingsLabel.font = UIFont.systemFont(ofSize: 36)
         
         self.dateLabel.textColor = UIColor.white
         self.dateLabel.font = Fonts.mainFont
+        self.dateLabel.applyShadows()
         
         self.timeLabel.textColor = UIColor.white
         self.timeLabel.font = Fonts.mainFont
+        self.timeLabel.applyShadows()
         
         self.weatherView.isHidden = true
         self.weatherLabel.isHidden = true

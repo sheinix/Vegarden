@@ -50,9 +50,10 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
        
         self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
         
-        self.cropsTableView?.layer.borderColor = UIColor.lightGray.cgColor
+        self.cropsTableView?.layer.borderColor = Colors.mainColorUI.cgColor
         self.cropsTableView?.layer.borderWidth = 1
-//        self.cropsTableView?.layer.shadowOffset = CGSize(width: -, height: 1)
+        self.cropsTableView?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.cropsTableView?.layer.shadowOffset = CGSize(width: 0, height: -1)
         self.cropsTableView?.layer.shadowOpacity = 2
         self.cropsTableView?.layer.shadowRadius = 3
         self.cropsTableView?.layer.shadowColor = UIColor.black.cgColor

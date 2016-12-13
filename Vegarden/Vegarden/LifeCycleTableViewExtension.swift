@@ -28,6 +28,7 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.lifeCycleDetailViewCellIdentifier, for: indexPath) as! DetailViewCollectionViewCell)
         
         cell.stageTitle.text = lifeCycle[indexPath.row]
+        cell.stackViewHeight.constant = 100
         
         return cell
     }
@@ -47,8 +48,13 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
         
         let lifeCycleDict = self.lifeStatesArray[collectionView.tag]
         
-        (cell as! DetailViewCollectionViewCell).addStatesNotesWith(dict: lifeCycleDict)
-        
+        if let detailCell = cell as? DetailViewCollectionViewCell {
+            
+            if (lifeCycleDict[detailCell.stageTitle.text!]?.count)! > 0 {
+                
+                detailCell.addStatesNotesWith(dict: lifeCycleDict)
+            }
+        }
     }
 }
 
@@ -63,7 +69,7 @@ extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,  insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return sectionInsets
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
