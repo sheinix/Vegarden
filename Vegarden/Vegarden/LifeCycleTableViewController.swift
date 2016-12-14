@@ -41,7 +41,7 @@ class LifeCycleTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //TODO make it show in the title!
-        self.navigationController?.title = "Crops Life Cycle"
+        self.title = "Crops Life Cycle"
         self.navigationController?.navigationBar.tintColor = UIColor(cgColor: Colors.mainColor)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: Fonts.mainFont]
         

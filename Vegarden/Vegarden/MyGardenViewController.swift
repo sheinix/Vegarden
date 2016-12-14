@@ -10,7 +10,7 @@ import UIKit
 import SCLAlertView
 import DZNEmptyDataSet
 
-let rowsMaxHeight = screenHeight/2
+let rowsMaxHeight = UIScreen.main.bounds.height/2
 let headerHeight = 80
 
 enum patchAction : Int {
@@ -30,13 +30,13 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         
         self.navigationController?.navigationBar.isHidden = true
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+     //   self.tableView.rowHeight = UITableViewAutomaticDimension
         self.rowsHeight = (CGFloat(totalPlantedCrops) * CGFloat(cropRowHeight)) + CGFloat(headerHeight)
         self.tableView.estimatedRowHeight = self.rowsHeight!
         self.tableView.tableHeaderView = MyGardenHeaderView.loadFromNibNamed(nibNamed: "MyGardenHeaderView")
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
-        self.tableView.isScrollEnabled = false
+        self.tableView.isScrollEnabled = true
         
         addObservers()
         
@@ -149,16 +149,7 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
    @objc fileprivate func patchRowEdited(notification: NSNotification) {
     
         if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
-        
-            
-            
-            
-            
-            if let myCV = cell.myGardenCollectionView {
-            
-                DispatchQueue.main.async { myCV.reloadData() }
-                
-            }
+           if let myCV = cell.myGardenCollectionView { DispatchQueue.main.async { myCV.reloadData() } }
         }
     
         self.view.showConfirmViewWith(title: screenMessage(notiId: notification.name.rawValue),
@@ -201,6 +192,7 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
                 collection.dataSource = self
                 collection.emptyDataSetDelegate = self
                 collection.emptyDataSetSource = self
+                
                // collection.reloadData()
             }
             
@@ -235,7 +227,9 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        //Set a minimum height if it doesnt have any rows:
+        //If we dont have any rows planted:
+       // if self.totalPlantedCrops == 0 { realHeight = CGFloat(250) }
+        
         let realHeight = (self.rowsHeight! > CGFloat(integerLiteral: cropRowHeight) ?
             self.rowsHeight : 250)
         

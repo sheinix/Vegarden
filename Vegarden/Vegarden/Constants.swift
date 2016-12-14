@@ -35,7 +35,7 @@ struct Appereance {
             contentViewCornerRadius: UINumbericConstants.commonCornerRadius,
             fieldCornerRadius: UINumbericConstants.commonCornerRadius,
             buttonCornerRadius: UINumbericConstants.commonCornerRadius,
-            hideWhenBackgroundViewIsTapped: true,
+            hideWhenBackgroundViewIsTapped: false,
             contentViewBorderColor: UIColor.clear,
             titleColor: color)
         
@@ -106,6 +106,9 @@ struct Fonts {
     static let appleGoticUltraLightFont : UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28)!
     
     static let cropInfoLabelFont : UIFont = UIFont(name: "Avenir-Light", size: 15)!
+    
+    static let gardenOverviewFont : UIFont = UIFont(name: "OpenSans-Light", size: 18)!
+    static let sideBarFont : UIFont = UIFont(name: "OpenSans-Light", size: 20)!
 }
 
 struct UINumbericConstants {

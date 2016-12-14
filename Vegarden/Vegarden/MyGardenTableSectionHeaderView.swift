@@ -46,7 +46,7 @@ class MyGardenTableSectionHeaderView: UIView {
 //        self.layer.borderColor = Colors.mainColorUI.cgColor
 //        self.layer.borderWidth = 1
 //        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-        
+        self.backgroundColor = UIColor.white
         self.titleLabel.font = Fonts.mainFont
         self.titleLabel.textColor = Colors.mainColorUI
         

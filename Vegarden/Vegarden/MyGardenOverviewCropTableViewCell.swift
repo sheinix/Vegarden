@@ -42,20 +42,23 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
     
     private func setupViews() {
         
-        self.layer.borderColor = Colors.mainColor
-        self.layer.borderWidth = 1
+        //self.layer.borderColor = Colors.mainColor
+        //self.layer.borderWidth = 1
       //  self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
         
         self.harvestDate = UILabel()
-        self.harvestDate?.font = UIFont.systemFont(ofSize: 18)
+        self.harvestDate?.font = Fonts.gardenOverviewFont
+        self.harvestDate?.textColor = Colors.mainColorUI
         self.harvestDate?.sizeToFit()
         
         self.progressBar = UIView()
-        self.progressBar?.backgroundColor = UIColor(cgColor: Colors.mainColor)
+        self.progressBar?.backgroundColor = Colors.plantColor
+        self.progressBar?.layer.borderWidth = 1
+        self.progressBar?.layer.borderColor = Colors.mainColor
         self.progressBar?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
-        self.textLabel?.font = Fonts.cropInfoLabelFont
+        self.textLabel?.font = Fonts.gardenOverviewFont
         self.textLabel?.textColor = Colors.mainColorUI
         self.textLabel?.sizeToFit()
         
@@ -69,10 +72,10 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
     private func setupConstraints() {
     
         self.textLabel?.snp.makeConstraints({ (make) in
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.width.equalTo(200)
+            make.width.equalTo(160)
         })
         
         self.textLabel?.backgroundColor = UIColor.green

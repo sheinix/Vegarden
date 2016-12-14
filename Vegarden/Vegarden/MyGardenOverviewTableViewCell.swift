@@ -60,7 +60,9 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
         
         self.cropsTableView?.delegate = self
         self.cropsTableView?.dataSource = self
-        self.cropsTableView?.separatorStyle = .none
+        self.cropsTableView?.separatorStyle = .singleLine
+        self.cropsTableView?.separatorColor = Colors.mainColorUI
+        self.cropsTableView?.separatorInset = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
         self.cropsTableView?.allowsSelection = false
         self.cropsTableView?.emptyDataSetSource = self
         self.cropsTableView?.emptyDataSetDelegate = self
@@ -101,7 +103,7 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
         
         let crop : Crop =  plantedCrops[indexPath.row]
         
-        cell.harvestDate?.text = crop.estimatedHarvestDate.inCellDateFormat()
+        cell.harvestDate?.text = crop.estimatedHarvestDate.inShortFormat()
         cell.textLabel?.text = crop.name!
         
         

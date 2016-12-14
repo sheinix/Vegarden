@@ -89,6 +89,16 @@ extension Date {
         return convertedDateString
     }
    
+    public func inShortFormat() -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        let convertedDateString = dateFormatter.string(from: self)
+        
+        return convertedDateString
+    }
     public func currentTime() -> String {
         
         let calendar = Calendar.current

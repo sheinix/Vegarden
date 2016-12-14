@@ -18,7 +18,7 @@ class SideBarMenuTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.font = Fonts.mainFont
+        titleLabel.font = Fonts.sideBarFont
         titleLabel.adjustsFontSizeToFitWidth = true
         self.layer.borderWidth = 1.5
         self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
