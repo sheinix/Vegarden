@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import DZNEmptyDataSet
 
-let cropRowHeight = 50
+let cropRowHeight = 60
 
 class MyGardenOverviewTableViewCell: UITableViewCell {
 
@@ -50,16 +50,18 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
        
         self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
         
-        self.cropsTableView?.layer.borderColor = Colors.mainColorUI.cgColor
-        self.cropsTableView?.layer.borderWidth = 1
-        self.cropsTableView?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-        self.cropsTableView?.layer.shadowOffset = CGSize(width: 0, height: -1)
-        self.cropsTableView?.layer.shadowOpacity = 2
-        self.cropsTableView?.layer.shadowRadius = 3
-        self.cropsTableView?.layer.shadowColor = UIColor.black.cgColor
+//        self.cropsTableView?.layer.borderColor = Colors.mainColorUI.cgColor
+//        self.cropsTableView?.layer.borderWidth = 0
+//        self.cropsTableView?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+//        self.cropsTableView?.layer.shadowOffset = CGSize(width: 0, height: -1)
+//        self.cropsTableView?.layer.shadowOpacity = 2
+//        self.cropsTableView?.layer.shadowRadius = 3
+//        self.cropsTableView?.layer.shadowColor = UIColor.black.cgColor
         
         self.cropsTableView?.delegate = self
         self.cropsTableView?.dataSource = self
+        self.cropsTableView?.separatorStyle = .none
+        self.cropsTableView?.allowsSelection = false
         self.cropsTableView?.emptyDataSetSource = self
         self.cropsTableView?.emptyDataSetDelegate = self
         

@@ -131,28 +131,28 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         
         
         self.freeRowsLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-5)
             make.bottom.equalTo(editRowsButton.snp.top).offset(-5)
             make.height.equalTo(labelsHeight)
         }
         
         self.plantedRowsLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-5)
             make.bottom.equalTo(freeRowsLabel.snp.top).offset(5)
             make.height.equalTo(labelsHeight)
         }
         
         self.totalRows.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-5)
             make.bottom.equalTo(plantedRowsLabel.snp.top).offset(5)
             make.height.equalTo(labelsHeight)
         }
         
         self.patchLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-5)
             make.top.equalToSuperview()
             make.bottom.equalTo(totalRows.snp.top)

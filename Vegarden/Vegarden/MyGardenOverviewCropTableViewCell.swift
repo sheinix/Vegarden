@@ -18,6 +18,9 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        setupViews()
+        
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,9 +31,7 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        setupViews()
         
-        setupConstraints()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,12 +42,22 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
     
     private func setupViews() {
         
+        self.layer.borderColor = Colors.mainColor
+        self.layer.borderWidth = 1
+      //  self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        
+        
         self.harvestDate = UILabel()
+        self.harvestDate?.font = UIFont.systemFont(ofSize: 18)
         self.harvestDate?.sizeToFit()
-        self.harvestDate?.backgroundColor = UIColor.red
         
         self.progressBar = UIView()
         self.progressBar?.backgroundColor = UIColor(cgColor: Colors.mainColor)
+        self.progressBar?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        
+        self.textLabel?.font = Fonts.cropInfoLabelFont
+        self.textLabel?.textColor = Colors.mainColorUI
+        self.textLabel?.sizeToFit()
         
         
         addSubview(self.harvestDate!)
@@ -57,6 +68,16 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
     
+        self.textLabel?.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(200)
+        })
+        
+        self.textLabel?.backgroundColor = UIColor.green
+        
+        
         self.harvestDate?.snp.makeConstraints { (make) in
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -65,9 +86,10 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
         }
         
         self.progressBar?.snp.makeConstraints { (make) in
-            make.right.equalTo((self.harvestDate?.snp.left)!).offset(10)
+            make.right.equalTo((self.harvestDate?.snp.left)!).offset(-10)
             make.left.equalTo((self.textLabel?.snp.right)!).offset(10)
-            make.height.equalToSuperview().multipliedBy(0.4)
+            make.height.equalToSuperview().multipliedBy(0.5)
+            make.centerY.equalToSuperview()
         }
         
     }

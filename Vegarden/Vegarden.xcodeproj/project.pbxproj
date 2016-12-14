@@ -120,7 +120,6 @@
 		BDE061871D9FDC660003364D /* Veggie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0615D1D9FDC660003364D /* Veggie+CoreDataProperties.swift */; };
 		BDE061881D9FDC660003364D /* Weed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0615E1D9FDC660003364D /* Weed+CoreDataClass.swift */; };
 		BDE061891D9FDC660003364D /* Weed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0615F1D9FDC660003364D /* Weed+CoreDataProperties.swift */; };
-		D7FCD5BF14C395F84B2CEA6C /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -253,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */,
-				D7FCD5BF14C395F84B2CEA6C /* Pods_Vegarden.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +688,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Juan Nuvreni";
 				TargetAttributes = {
 					BD7B8EA51D9118060063347D = {
