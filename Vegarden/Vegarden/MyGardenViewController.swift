@@ -13,6 +13,10 @@ import DZNEmptyDataSet
 let rowsMaxHeight = screenHeight/2
 let headerHeight = 80
 
+enum patchAction : Int {
+    case AddPatch, DeletePatch
+}
+
 class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtocol {
 
     let totalPlantedCrops : Int = (GardenManager.shared.myPlantedCrops()?.count)!
@@ -80,23 +84,39 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
                                                object: nil)
         }
  
+    fileprivate func reloadSectionFor(action: patchAction) {
+        
+        DispatchQueue.main.async {
+            
+            if (action == .AddPatch) { self.totalPaddocks += 1 } else { self.totalPaddocks -= 1 }
+            
+            //self.totalPaddocks += 1
+            let header = (self.tableView(self.tableView, viewForHeaderInSection: 1) as! MyGardenTableSectionHeaderView)
+            header.titleLabel.text = "My Garden | Number of Patchs : " + String(self.totalPaddocks)
+            self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
+        }
+
+    }
+    
+    
     @objc fileprivate func newPatchAdded(notification: NSNotification) {
+        
         
         if let patch = notification.userInfo?["patch"] as? Paddock {
             
+            
             self.patchs.append(patch)
-            self.totalPaddocks += 1
             
             if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
                 
                 if let myCV = cell.myGardenCollectionView {
-                    
-                    let header = (self.tableView(self.tableView, viewForHeaderInSection: 1) as! MyGardenTableSectionHeaderView)
-                    
-                    DispatchQueue.main.async {
-                        header.titleLabel.text = "My Garden | Number of Patchs : " + String(self.totalPaddocks)
-                    }
-                    myCV.reloadData()
+                    myCV.performBatchUpdates({
+                        
+                        self.view.showConfirmViewWith(title: "Patch Added!", frame: self.view.bounds, afterAction: nil)
+                        
+                        myCV.insertItems(at: [IndexPath(row:(self.totalPaddocks-1), section:0)])
+                        
+                    }, completion: { (_) in })
                 }
             }
         }
@@ -110,17 +130,17 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
             
             let idx = self.patchs.index(of: patch)
             self.patchs.remove(at: idx!)
-            self.totalPaddocks -= 1
             
             if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
                 
                 if let myCV = cell.myGardenCollectionView {
-                
-                    myCV.deleteItems(at: [IndexPath(row: idx!, section: 0)])
-                    let header = (self.tableView(self.tableView, viewForHeaderInSection: 1) as! MyGardenTableSectionHeaderView)
-                    DispatchQueue.main.async {
-                        header.titleLabel.text = "My Garden | Number of Patchs : " + String(self.totalPaddocks)
-                    }
+
+                    self.view.showConfirmViewWith(title: "Patch Deleted!", frame: self.view.bounds, afterAction: nil)
+                    
+                    myCV.performBatchUpdates({
+                        myCV.deleteItems(at: [IndexPath(row: idx!, section: 0)])
+                        
+                    }, completion: { (_) in })
                 }
             }
         }
@@ -149,6 +169,10 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
 
     // MARK: - Table view data source
 
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 2

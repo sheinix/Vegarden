@@ -51,7 +51,7 @@ class MyGardenTableSectionHeaderView: UIView {
         self.titleLabel.textColor = Colors.mainColorUI
         
         self.addPatchButton.setImage(UIImage(named:"plusbutton"), for: .normal)
-        self.addPatchButton.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        self.addPatchButton.frame = CGRect(x: 0, y: 0, width: 70, height: 75)
         self.addPatchButton.layer.cornerRadius = self.addPatchButton.frame.size.width/2
         self.addPatchButton.clipsToBounds = true
         self.addPatchButton.addTarget(self, action: #selector(buttonPushed),for: .touchUpInside)
