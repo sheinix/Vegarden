@@ -17,6 +17,8 @@
 		266B557C1DF7B124001D2E8D /* CropInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B557B1DF7B124001D2E8D /* CropInformationView.xib */; };
 		266CFC791DD5D0730043FD5B /* GardenManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */; };
 		266F509F1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */; };
+		2670BF091E0212FF007F0862 /* YLProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2670BF081E0212FF007F0862 /* YLProgressBar.m */; };
+		2670BF0C1E021358007F0862 /* ProgessBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670BF0B1E021358007F0862 /* ProgessBar.swift */; };
 		267CE9391DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */; };
 		2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */; };
 		268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */; };
@@ -133,6 +135,9 @@
 		266B557B1DF7B124001D2E8D /* CropInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropInformationView.xib; sourceTree = "<group>"; };
 		266CFC781DD5D0730043FD5B /* GardenManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenManagerExtension.swift; sourceTree = "<group>"; };
 		266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMenuAlertTableHeaderView.swift; sourceTree = "<group>"; };
+		2670BF071E0212FF007F0862 /* YLProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLProgressBar.h; sourceTree = "<group>"; };
+		2670BF081E0212FF007F0862 /* YLProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLProgressBar.m; sourceTree = "<group>"; };
+		2670BF0B1E021358007F0862 /* ProgessBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgessBar.swift; sourceTree = "<group>"; };
 		267CE9381DE7CCFE00702636 /* RowLifeState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RowLifeState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		2681451F1DDEBF7B00BE6018 /* PlantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDTO.swift; sourceTree = "<group>"; };
@@ -282,6 +287,16 @@
 				266F509E1DE66EF70064C05D /* ActionMenuAlertTableHeaderView.swift */,
 			);
 			name = ActionMenuAlertView;
+			sourceTree = "<group>";
+		};
+		2670BF0A1E021303007F0862 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				2670BF071E0212FF007F0862 /* YLProgressBar.h */,
+				2670BF081E0212FF007F0862 /* YLProgressBar.m */,
+				2670BF0B1E021358007F0862 /* ProgessBar.swift */,
+			);
+			name = ProgressBar;
 			sourceTree = "<group>";
 		};
 		2690D6D21DEE8ED600259F26 /* MyGardenViewController */ = {
@@ -579,6 +594,7 @@
 		BD3307BE1DA9EEEB00F2EC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2670BF0A1E021303007F0862 /* ProgressBar */,
 				96A8A6421DD08D08000A1673 /* Appereance */,
 				96F7230D1DB3549F000100B2 /* PopUpView */,
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
@@ -823,6 +839,7 @@
 				9660596B1DCAA63A00FC5012 /* Row+CoreDataProperties.swift in Sources */,
 				BDE0617E1D9FDC660003364D /* RowLifeState+CoreDataClass.swift in Sources */,
 				96F7230C1DB3549B000100B2 /* Popup.m in Sources */,
+				2670BF0C1E021358007F0862 /* ProgessBar.swift in Sources */,
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
 				966F92271DC33176005C46F1 /* DetailPatchRowTableViewCell.swift in Sources */,
 				263BBCF11DF3E22000DA49F6 /* NotificationsIds.swift in Sources */,
@@ -862,6 +879,7 @@
 				962805E81DB4A29D00DF9176 /* CropListTableViewCell.swift in Sources */,
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
+				2670BF091E0212FF007F0862 /* YLProgressBar.m in Sources */,
 				9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */,
 				9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,

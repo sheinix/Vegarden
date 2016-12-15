@@ -10,7 +10,7 @@ import UIKit
 import SCLAlertView
 import DZNEmptyDataSet
 
-let rowsMaxHeight = UIScreen.main.bounds.height/2
+let rowsMaxHeight = UIScreen.main.bounds.height/3
 let headerHeight = 80
 
 enum patchAction : Int {
@@ -101,27 +101,28 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     @objc fileprivate func newPatchAdded(notification: NSNotification) {
         
-        
         if let patch = notification.userInfo?["patch"] as? Paddock {
             
-            
             self.patchs.append(patch)
+            self.totalPaddocks += 1
+          //  reloadSectionFor(action: .AddPatch)
             
-            if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
+           if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
                 
-                if let myCV = cell.myGardenCollectionView {
-                    myCV.performBatchUpdates({
-                        
-                        self.view.showConfirmViewWith(title: "Patch Added!", frame: self.view.bounds, afterAction: nil)
-                        
+            if let myCV = cell.myGardenCollectionView {
+                
+                myCV.performBatchUpdates({
+
+                        self.view.showConfirmViewWith(title: "Patch Added!",
+                                                      frame: self.view.bounds,
+                                                afterAction: nil)
+                
                         myCV.insertItems(at: [IndexPath(row:(self.totalPaddocks-1), section:0)])
-                        
-                    }, completion: { (_) in })
+                
+                    }, completion: { (succes) in  } )
                 }
             }
         }
-
-        
     }
     
     @objc fileprivate func patchDeleted(notification: NSNotification) {
@@ -130,17 +131,19 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
             
             let idx = self.patchs.index(of: patch)
             self.patchs.remove(at: idx!)
+            //reloadSectionFor(action: .DeletePatch)
+            self.totalPaddocks -= 1
             
             if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
-                
+            
                 if let myCV = cell.myGardenCollectionView {
 
                     self.view.showConfirmViewWith(title: "Patch Deleted!", frame: self.view.bounds, afterAction: nil)
-                    
+            
                     myCV.performBatchUpdates({
                         myCV.deleteItems(at: [IndexPath(row: idx!, section: 0)])
-                        
-                    }, completion: { (_) in })
+            
+                   }, completion: { (succes) in DispatchQueue.main.async { myCV.reloadData() } } )
                 }
             }
         }
@@ -206,7 +209,7 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         
         let header = MyGardenTableSectionHeaderView(frame: CGRect(x: 2, y: 0, width: Int(screenWidth)-2, height: headerHeight))
         
-        let title = (section == 0 ? "Overview  |  Planted Crops : " + String(totalPlantedCrops) : "My Garden | Number of Patchs : " + String(totalPaddocks))
+        let title = (section == 0 ? "Overview  |  Planted Crops : " + String(self.totalPlantedCrops) : "My Garden | Number of Patchs : " + String(self.totalPaddocks))
         
         header.titleLabel.text = title
         header.addPatchButton.isHidden = (section == 0)
@@ -230,8 +233,8 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         //If we dont have any rows planted:
        // if self.totalPlantedCrops == 0 { realHeight = CGFloat(250) }
         
-        let realHeight = (self.rowsHeight! > CGFloat(integerLiteral: cropRowHeight) ?
-            self.rowsHeight : 250)
+        let realHeight = ((self.rowsHeight! - CGFloat(headerHeight)) > CGFloat(integerLiteral: cropRowHeight) ?
+            self.rowsHeight : 255)
         
         if  (indexPath.section == 0) {
             

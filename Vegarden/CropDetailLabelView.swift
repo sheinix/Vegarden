@@ -38,6 +38,8 @@ class CropDetailLabelView: UIView {
         spacingValue.textColor = UIColor.darkGray
         isInGarden.textColor = UIColor.darkGray
         classificationValue.textColor = UIColor.darkGray
+        classificationValue.adjustsFontSizeToFitWidth = true
+        classificationValue.minimumScaleFactor = 0.5
         
     }
         
@@ -46,7 +48,7 @@ class CropDetailLabelView: UIView {
         self.typeValue.text           = crop.cropTypeStringValue
         self.familyValue.text         = crop.family
         self.phLevelValue.text        = crop.phLevels
-        self.spacingValue.text        = String(crop.spacing)
+        self.spacingValue.text        = String(crop.spacing) + " cm"
         self.isInGarden.text          = (crop.owned ? "Yes" : "No")
         self.classificationValue.text = crop.plantType
         

@@ -46,11 +46,19 @@ class MyCropsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         
-        self.captionLabel.font = UIFont.systemFont(ofSize: 20)
-        self.captionLabel.textColor = UIColor.white
+        self.captionLabel.font = Fonts.cropCellFontSmall
+        self.captionLabel.textColor = UIColor.darkGray
         
-        self.commentLabel.font = UIFont.systemFont(ofSize: 30)
-        self.commentLabel.textColor = UIColor.white
+        self.commentLabel.font = Fonts.cropCellFontBig
+        self.commentLabel.textColor = Colors.mainColorUI
+        
+        self.contentView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.imageView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 6
+        self.layer.shadowColor = UIColor.lightGray.cgColor
         
         super.awakeFromNib()
 

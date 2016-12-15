@@ -39,6 +39,16 @@ extension Crop {
     
 //MARK: - Time Management Methods:
     
+    public var percentageCompleted : Double {
+        get {
+            
+            let percentage = Double(daysPassedSincePlanted / computedTimeToHarvest).roundTo(places: 2)
+            
+            return (percentage <= 0.00 ? 0.01 : percentage)
+        }
+    }
+    
+    
     public var estimatedWeeksLeftToHarvest : Int {
         
         get {

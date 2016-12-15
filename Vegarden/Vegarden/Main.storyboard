@@ -384,47 +384,47 @@
                         <collectionViewLayout key="collectionViewLayout" id="YET-vG-PfL" customClass="CHTCollectionViewWaterfallLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCropCell" id="Qff-n6-ooV" customClass="MyCropsCollectionViewCell" customModule="Vegarden">
-                                <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
+                                <rect key="frame" x="0.0" y="0.0" width="274" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="274" height="249"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="275"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-bG-G3v" customClass="RoundedCornersView" customModule="Vegarden" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="8" width="258" height="233"/>
+                                            <rect key="frame" x="8" y="8" width="258" height="259"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-bq-TFA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="233"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="259"/>
                                                     <color key="backgroundColor" red="0.18996866732074269" green="1" blue="0.29348715628865996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-ep-zh1">
-                                                    <rect key="frame" x="0.0" y="149" width="258" height="84"/>
+                                                    <rect key="frame" x="0.0" y="194" width="258" height="65"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-b4-HJW">
-                                                            <rect key="frame" x="8" y="26" width="242" height="21"/>
+                                                            <rect key="frame" x="8" y="16" width="242" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.71567038949999995" blue="0.77897135419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-gJ-FWZ">
-                                                            <rect key="frame" x="8" y="52" width="237" height="17"/>
+                                                            <rect key="frame" x="8" y="42" width="237" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="17" id="vuZ-Jn-NLp"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.71567038949999995" blue="0.77897135419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Kbb-b4-HJW" secondAttribute="trailing" constant="8" id="DGR-5Z-MUL"/>
-                                                        <constraint firstAttribute="height" constant="84" id="HCc-62-A7Y"/>
+                                                        <constraint firstAttribute="height" constant="65" id="HCc-62-A7Y"/>
                                                         <constraint firstAttribute="trailing" secondItem="Jge-gJ-FWZ" secondAttribute="trailing" constant="13" id="aW2-ln-p9E"/>
                                                         <constraint firstItem="Jge-gJ-FWZ" firstAttribute="leading" secondItem="EfL-ep-zh1" secondAttribute="leading" constant="8" id="bsd-WH-f4Z"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Jge-gJ-FWZ" secondAttribute="bottom" constant="15" id="e9M-ug-XwK"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Jge-gJ-FWZ" secondAttribute="bottom" constant="6" id="e9M-ug-XwK"/>
                                                         <constraint firstItem="Kbb-b4-HJW" firstAttribute="leading" secondItem="EfL-ep-zh1" secondAttribute="leading" constant="8" id="gOP-Y2-jAZ"/>
                                                         <constraint firstItem="Jge-gJ-FWZ" firstAttribute="top" secondItem="Kbb-b4-HJW" secondAttribute="bottom" constant="5" id="uCg-qD-tKg"/>
                                                     </constraints>
@@ -454,7 +454,7 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="S1G-bG-G3v" secondAttribute="bottom" id="qIS-EU-apB"/>
                                     <constraint firstItem="S1G-bG-G3v" firstAttribute="top" secondItem="Qff-n6-ooV" secondAttribute="topMargin" id="vGf-FV-WAU"/>
                                 </constraints>
-                                <size key="customSize" width="274" height="249"/>
+                                <size key="customSize" width="274" height="275"/>
                                 <connections>
                                     <outlet property="captionLabel" destination="Jge-gJ-FWZ" id="4vf-bJ-JBA"/>
                                     <outlet property="commentLabel" destination="Kbb-b4-HJW" id="hAn-R9-S3F"/>
@@ -536,7 +536,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="noJ-DX-uOa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l02-Lj-pkj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l02-Lj-pkj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -555,7 +555,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="p6h-Ud-H2a" customClass="ZoomInNavigationController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kgw-uH-uXE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3y-LT-MBd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c3y-LT-MBd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -573,7 +573,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQg-rb-ocj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEe-px-fWX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bEe-px-fWX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

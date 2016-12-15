@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -69,7 +69,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-hN-8nq" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-hN-8nq" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
                     <rect key="frame" x="182" y="152" width="281" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
@@ -81,12 +81,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGz-9i-Z3I" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
-                    <rect key="frame" x="150.5" y="240" width="317" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGz-9i-Z3I" customClass="CropDetailLabel" customModule="Vegarden" customModuleProvider="target">
+                    <rect key="frame" x="151" y="232.5" width="316" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="317" id="5Ln-LC-MeI"/>
+                        <constraint firstAttribute="height" constant="38" id="HwK-wv-J85"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -131,6 +131,7 @@
             <constraints>
                 <constraint firstItem="zck-4Z-7ee" firstAttribute="top" secondItem="mOx-EE-8cj" secondAttribute="bottom" constant="10" id="06Y-ac-cx4"/>
                 <constraint firstItem="Vql-aC-jDm" firstAttribute="top" secondItem="pMY-KK-8aj" secondAttribute="bottom" constant="20" id="1oJ-pb-oXL"/>
+                <constraint firstAttribute="trailing" secondItem="BGz-9i-Z3I" secondAttribute="trailing" constant="20" id="2b5-lW-wgA"/>
                 <constraint firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" constant="24" id="5cj-Zs-l7O"/>
                 <constraint firstItem="PdH-ax-Bph" firstAttribute="trailing" secondItem="rcx-Dp-dpk" secondAttribute="trailing" id="5dZ-6v-Lb1"/>
                 <constraint firstItem="pMY-KK-8aj" firstAttribute="leading" secondItem="Vql-aC-jDm" secondAttribute="leading" id="6PG-8E-XlM"/>
@@ -141,7 +142,7 @@
                 <constraint firstItem="4sH-b7-AlU" firstAttribute="leading" secondItem="19j-br-h9D" secondAttribute="trailing" constant="15" id="BU8-32-vZQ"/>
                 <constraint firstItem="rcx-Dp-dpk" firstAttribute="top" secondItem="9t3-kg-TzE" secondAttribute="bottom" constant="18" id="EjB-19-Na2"/>
                 <constraint firstItem="rcx-Dp-dpk" firstAttribute="leading" secondItem="Qs4-Xp-Iiv" secondAttribute="leading" id="Fd1-NR-02G"/>
-                <constraint firstItem="BGz-9i-Z3I" firstAttribute="top" secondItem="Gf9-gd-abd" secondAttribute="bottom" constant="20" id="H09-aX-DrA"/>
+                <constraint firstItem="rcx-Dp-dpk" firstAttribute="top" secondItem="BGz-9i-Z3I" secondAttribute="bottom" constant="9" id="Guy-ON-oTC"/>
                 <constraint firstItem="Gf9-gd-abd" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="H6e-Br-jZQ"/>
                 <constraint firstItem="yol-of-hmf" firstAttribute="trailing" secondItem="baq-4m-kGv" secondAttribute="trailing" id="KJd-b7-wda"/>
                 <constraint firstItem="9t3-kg-TzE" firstAttribute="top" secondItem="Uxi-bU-ptL" secondAttribute="bottom" constant="20" id="KON-Iw-ln0"/>

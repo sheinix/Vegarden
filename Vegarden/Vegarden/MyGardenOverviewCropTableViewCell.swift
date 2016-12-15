@@ -12,7 +12,7 @@ import SnapKit
 class MyGardenOverviewCropTableViewCell: UITableViewCell {
 
     var harvestDate : UILabel?
-    var progressBar : UIView?
+    var progressBar : ProgessBar?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
@@ -52,11 +52,12 @@ class MyGardenOverviewCropTableViewCell: UITableViewCell {
         self.harvestDate?.textColor = Colors.mainColorUI
         self.harvestDate?.sizeToFit()
         
-        self.progressBar = UIView()
-        self.progressBar?.backgroundColor = Colors.plantColor
-        self.progressBar?.layer.borderWidth = 1
-        self.progressBar?.layer.borderColor = Colors.mainColor
-        self.progressBar?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.progressBar = ProgessBar(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        self.progressBar?.setProgress(0.2, animated: true)
+//        self.progressBar?.backgroundColor = Colors.plantColor
+//        self.progressBar?.layer.borderWidth = 1
+//        self.progressBar?.layer.borderColor = Colors.mainColor
+//        self.progressBar?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         
         self.textLabel?.font = Fonts.gardenOverviewFont
         self.textLabel?.textColor = Colors.mainColorUI

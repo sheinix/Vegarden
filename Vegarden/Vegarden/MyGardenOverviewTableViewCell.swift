@@ -105,7 +105,7 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
         
         cell.harvestDate?.text = crop.estimatedHarvestDate.inShortFormat()
         cell.textLabel?.text = crop.name!
-        
+        cell.progressBar?.setProgress(CGFloat(crop.percentageCompleted), animated: true)
         
         //TODO Set the progressView!
         

@@ -99,7 +99,7 @@ struct Colors {
 
 struct Fonts {
     static let mainFont : UIFont = UIFont(name: "OpenSans-Light", size: 26)!
-    static let detailCropFont : UIFont = UIFont(name: "GillSans", size: 80)!
+    static let detailCropFont : UIFont = UIFont(name: "GillSans", size: 80)! //GillSans
     static let emptyStateFont : UIFont = UIFont(name: "OpenSans-Light", size: 46)!
     
     
@@ -109,6 +109,9 @@ struct Fonts {
     
     static let gardenOverviewFont : UIFont = UIFont(name: "OpenSans-Light", size: 18)!
     static let sideBarFont : UIFont = UIFont(name: "OpenSans-Light", size: 20)!
+    
+    static let cropCellFontBig : UIFont = UIFont(name: "GillSans", size: 30)!
+    static let cropCellFontSmall : UIFont = UIFont(name: "GillSans", size: 20)!
 }
 
 struct UINumbericConstants {
