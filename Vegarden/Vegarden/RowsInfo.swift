@@ -65,6 +65,6 @@ struct RowsInfo {
 
 struct newRow  {
     
-    var name: String?
+    var name : String!
     
 }

@@ -258,6 +258,7 @@ class PersistenceManager {
             row.mr_deleteEntity()
         }
         
+        saveContext()
         
         self.callBackDelegate?.didRemove(rows: rows)
     }

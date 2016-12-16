@@ -116,7 +116,7 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = Colors.mainColorUI.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-        
+
     }
     
     private func setupConstraints() {

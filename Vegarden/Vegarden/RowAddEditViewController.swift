@@ -56,8 +56,12 @@ class RowAddEditViewController: SCLAlertView {
 
     fileprivate func setupViews () {
 
+        let tableHeight =  self.rowList.count * patchRowHeight + tableHeaderHeight
+        
+        
+        
         let frame = CGRect(x: 0, y: 0,
-                           width: Int(self.view.bounds.width - 140), height: self.rowList.count * patchRowHeight + tableHeaderHeight)
+                           width: Int(self.view.bounds.width - 140), height:(tableHeight < tableViewMaxHeight ? tableHeight : tableViewMaxHeight))
         
         self.rowsTableView = UITableView(frame:frame, style: UITableViewStyle.plain)
         self.rowsTableView?.delegate = self
@@ -79,6 +83,9 @@ class RowAddEditViewController: SCLAlertView {
     }
     
     fileprivate func confirmButtonPressed() {
+        
+        //Send a resign first responder in order to resign all textfields that has data!
+        UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
         
         GardenManager.shared.makeRowsEditions(rowsInfo: self.rowsAddUpdateInfo)
         
@@ -105,11 +112,23 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
         if let aRow = self.rowList[indexPath.row] as? Row {
             
             cell.txtField.text = aRow.name!
+            cell.txtField.titleLabel.text = ""
             cell.needsRemakeConstraints(hasPlantedRow: aRow.isPlanted)
             
             
         } else if let newRow = self.rowList[indexPath.row] as? newRow {
-            cell.txtField.placeholder = newRow.name!
+            
+                if !(cell.hasPlantedCropsLabel?.isHidden)! {
+                    cell.makeTxtFieldConstraints()
+                    cell.hasPlantedCropsLabel?.isHidden = true
+                }
+            
+                cell.txtField.placeholder = newRow.name!
+                cell.txtField.text = (cell.txtField.text != newRow.name! ?
+                    "": cell.txtField.text)
+            
+            
+            
         }
         
         cell.txtField.delegate = self
@@ -251,7 +270,7 @@ extension RowAddEditViewController : UITextFieldDelegate {
                 
             } else if self.rowList[textField.tag] is newRow {
                 
-                    var newRowie = self.rowList[textField.tag] as! newRow
+                    var newRowie = (self.rowList[textField.tag] as! newRow)
                     newRowie.name = txtField.text
                     self.rowsAddUpdateInfo.newRows?.append(newRowie)
             }

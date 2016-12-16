@@ -22,6 +22,26 @@ class PatchEditionTableViewCell: UITableViewCell {
         self.txtField.setupPatchEditionTextView()
         addSubview(self.txtField)
         
+        makeTxtFieldConstraints()
+        
+        
+        if (reuseIdentifier == CellIdentifiers.RowsEditionCellIdentifier) {
+          
+            self.hasPlantedCropsLabel = UILabel()
+            self.hasPlantedCropsLabel?.text = "Has Planted Crops"
+            self.hasPlantedCropsLabel?.textColor = UIColor.red
+            self.hasPlantedCropsLabel?.textAlignment = .center
+            self.hasPlantedCropsLabel?.isHidden = true
+            self.hasPlantedCropsLabel?.backgroundColor = UIColor.clear
+            self.hasPlantedCropsLabel?.layer.borderWidth = 1
+            self.hasPlantedCropsLabel?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+            self.hasPlantedCropsLabel?.layer.borderColor = UIColor.red.cgColor
+            
+            addSubview(self.hasPlantedCropsLabel!)
+        }
+    }
+    
+    public func makeTxtFieldConstraints() {
         self.txtField.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview().offset(-24)
@@ -29,15 +49,6 @@ class PatchEditionTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview()
         }
         
-        if (reuseIdentifier == CellIdentifiers.RowsEditionCellIdentifier) {
-          
-            self.hasPlantedCropsLabel = UILabel()
-            self.hasPlantedCropsLabel?.text = "Has Planted Crops"
-            self.hasPlantedCropsLabel?.textColor = UIColor.red
-            self.hasPlantedCropsLabel?.isHidden = true
-            self.hasPlantedCropsLabel?.backgroundColor = UIColor.clear
-            addSubview(self.hasPlantedCropsLabel!)
-        }
     }
     
     public func needsRemakeConstraints(hasPlantedRow: Bool) {
@@ -52,8 +63,9 @@ class PatchEditionTableViewCell: UITableViewCell {
             
             self.hasPlantedCropsLabel?.snp.makeConstraints { (make) in
                 make.width.equalToSuperview().multipliedBy(0.3)
-                make.right.equalToSuperview().offset(-25)
+                make.right.equalToSuperview().offset(-20)
                 make.centerY.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.6)
             }
         }
         
@@ -94,13 +106,13 @@ class PatchEditionTableViewCell: UITableViewCell {
                 self.txtField.placeholder =  "Soil pH Level"
                 self.txtField.title = "The Ph of the Soil"
                 self.txtField.text = (isNewPatch ? "" : String(patch!.soil!.phLevel))
-                self.txtField.keyboardType = UIKeyboardType.numberPad
+                self.txtField.keyboardType = .numberPad
             
             case 3:
                 self.txtField.placeholder =  "Rows Quantity"
                 self.txtField.title = "Number of Rows in Patch"
                 self.txtField.text = (isNewPatch ? "" : String(patch!.rows!.count))
-                self.txtField.keyboardType = UIKeyboardType.numberPad
+                self.txtField.keyboardType = .numberPad
             case 4:
                 self.txtField.placeholder =  "Row names prefix"
                 self.txtField.title = "Prefix of Row names in Patch"

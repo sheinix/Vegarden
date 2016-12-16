@@ -81,6 +81,9 @@ class PatchAddEditViewController: SCLAlertView {
     
     fileprivate func confirmButtonPressed() {
         
+        //Send a resign first responder in order to resign all textfields that has data!
+        UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
+        
         if (self.isAddingNewPatch!) {
             
             if (self.patchUpdateInfo.isReadyForCreation) {
@@ -159,12 +162,19 @@ extension PatchAddEditViewController : UITextFieldDelegate {
         return true
     }
     
-//    
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        
-//        KJ
-//        
-//    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+        if (textField.tag == patchEditionRows.PatchSoilPhLvl.rawValue ||
+            textField.tag == patchEditionRows.PatchRowQtty.rawValue) {
+            
+            textField.inputView = LNNumberpad.default()
+            textField.reloadInputViews()
+        }
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         

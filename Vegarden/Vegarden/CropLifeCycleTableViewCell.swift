@@ -42,13 +42,16 @@ class CropLifeCycleTableViewCell: FoldingCell {
         foregroundView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         foregroundView.layer.masksToBounds = true
         foregroundView.layer.borderWidth = 1
+        
         foregroundView.layer.borderColor = Colors.mainColorUI.cgColor
         containerView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-     
+        
+        
         collectionView.isScrollEnabled = true
         collectionView.layer.borderColor = Colors.mainColorUI.cgColor
         collectionView.layer.borderWidth = 1
         collectionView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        collectionView.applyLightShadow()
         
         super.awakeFromNib()
     }

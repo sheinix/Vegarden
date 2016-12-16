@@ -289,6 +289,7 @@ extension MyGardenViewController : UICollectionViewDelegate, UICollectionViewDat
         
         cell.patch = patchs[indexPath.row]
         cell.delegate = self
+        cell.applyLightShadow()
         
         return cell
         

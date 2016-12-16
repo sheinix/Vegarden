@@ -87,6 +87,12 @@ extension UIView{
         self.layer.shadowColor = UIColor.black.cgColor
     }
     
+    func applyLightShadow() {
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 6
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+    }
     
     func origin (point : CGPoint){
         frame.origin.x = point.x

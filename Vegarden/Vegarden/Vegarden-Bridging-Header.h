@@ -6,6 +6,6 @@
 //#define MR_SHORTHAND
 #import "NSManagedObject+Duplicate.h"
 #import "YLProgressBar.h"
-//#import "SMMasterViewController.h"
+#import "LNNumberpad.h"
 //#import "SMDetailViewController.h"
 //#import "SMTabBarItemCell.h"
