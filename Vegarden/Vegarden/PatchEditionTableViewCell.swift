@@ -48,7 +48,6 @@ class PatchEditionTableViewCell: UITableViewCell {
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
     }
     
     public func needsRemakeConstraints(hasPlantedRow: Bool) {
@@ -57,9 +56,9 @@ class PatchEditionTableViewCell: UITableViewCell {
         
         if (hasPlantedRow) {
             
-            self.txtField.snp.remakeConstraints({ (remake) in
-                remake.width.equalToSuperview().multipliedBy(0.65)
-            })
+//            self.txtField.snp.remakeConstraints({ (remake) in
+//                remake.width.equalToSuperview().multipliedBy(0.65)
+//            })
             
             self.hasPlantedCropsLabel?.snp.makeConstraints { (make) in
                 make.width.equalToSuperview().multipliedBy(0.3)
@@ -70,6 +69,21 @@ class PatchEditionTableViewCell: UITableViewCell {
         }
         
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+       
+        if !(self.hasPlantedCropsLabel?.isHidden)! {
+            self.hasPlantedCropsLabel?.snp.removeConstraints()
+
+        
+            self.makeTxtFieldConstraints()
+            self.hasPlantedCropsLabel?.isHidden = true
+            self.layoutSubviews()
+        }
+    }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         

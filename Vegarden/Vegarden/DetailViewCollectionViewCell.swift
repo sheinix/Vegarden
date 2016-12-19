@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-
+let defaultStackViewHeight = 109
 let noteHeight = CGFloat(integerLiteral:80)
 
 class DetailViewCollectionViewCell: UICollectionViewCell {
@@ -22,6 +22,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
+  //  @IBOutlet weak var bottomLimit: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,10 +32,18 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         self.scrollView.isDirectionalLockEnabled = true
         self.scrollView.alwaysBounceHorizontal = false
         self.scrollView.showsHorizontalScrollIndicator = false
-    
-      
-    }
 
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        notesStackView.arrangedSubviews.forEach( { notesStackView.removeArrangedSubview($0) } )
+        notesStackView.subviews.forEach( { $0.removeFromSuperview() } )
+        stackViewHeight.constant = CGFloat(defaultStackViewHeight)
+        scrollView.contentSize = CGSize.zero
+    }
+    
     public func addStatesNotesWith(dict:Dictionary<String, [Any]>) {
         
         var isGrowing : Bool = true
@@ -74,13 +83,17 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                 
                 if let noteViewUnr = noteView {
                     
-                  let newHeightSize = scrollView.contentSize.height + noteHeight + 20
-                   
+                  let newHeightSize = scrollView.contentSize.height + noteHeight //+ 20
+                  notesStackView.addArrangedSubview(noteViewUnr)
+                    
                     self.stackViewHeight.constant = newHeightSize
+                    //self.bottomLimit.constant -= newHeightSize
+                    //self.notesStackView.frame.size.height = newHeightSize
+                    
                     scrollView.contentSize = CGSize(width: notesStackView.frame.width,
                                                     height: CGFloat(newHeightSize))
                     
-                    notesStackView.addArrangedSubview(noteViewUnr)
+                    
 //                    scrollView.layoutSubviews()
                     
                 }

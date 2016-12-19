@@ -53,6 +53,12 @@ class CropLifeCycleTableViewCell: FoldingCell {
         collectionView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         collectionView.applyLightShadow()
         
+        
+        datePlanted.adjustsFontSizeToFitWidth = true
+        datePlanted.sizeToFit()
+        
+        harvestDate.sizeToFit()
+        
         super.awakeFromNib()
     }
 
@@ -75,6 +81,13 @@ class CropLifeCycleTableViewCell: FoldingCell {
     }
     
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.crop = nil
+    
+    }
+    
     public func setCellWith(crop: Crop) {
         
         self.crop = crop
@@ -91,6 +104,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
 
         if !(actionMenu.superview != nil) {
             setupActionButtonMenu()
+     
+        } else {
+            
+            updateActionButtonMenu()
         }
         
     }
@@ -120,29 +137,6 @@ class CropLifeCycleTableViewCell: FoldingCell {
     private func setGrowingNotes(crop: Crop) {
         
         let growingNotes : [RowLifeState] = crop.actionsMade
-        
-//        crop.row?.allObjects.forEach({ (row) in
-//            
-//            if let states = (row as! Row).lifeCycleState?.allObjects as! [RowLifeState]? {
-//                
-//                states.forEach({ (state) in
-//                    
-//                    if !growingNotes.contains(where: { (rowLifeState) -> Bool in
-//                        
-//                        return (rowLifeState.when == state.when &&
-//                              //  rowLifeState.self == state.self &&
-//                               // rowLifeState.lifeStateId == state.lifeStateId &&
-//                                rowLifeState.notes == state.notes)
-//                    }) {
-//                
-//                        growingNotes.append(state)
-//                    }
-//
-//                })
-//                
-//                
-//            }
-//        })
 
         if (growingNotes.count > 0) {
             
@@ -204,6 +198,42 @@ class CropLifeCycleTableViewCell: FoldingCell {
         })
     }
     
+    fileprivate func updateActionButtonMenu () {
+      
+        guard let cropie = self.crop else { return  }
+        
+        actionMenu.items.forEach { (buttonMenu) in
+            
+            switch buttonMenu.title! {
+                
+            case "Remove":
+                
+                buttonMenu.handler = { buttonMenu in  self.showConfirmationScreenFor(action: .UnplantAction, crop: cropie) }
+                
+            case "Weed":
+                
+                buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .WeedAction, crop: cropie) }
+                
+            case "Water":
+                
+                buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .WaterAction, crop: cropie) }
+                
+            case "Fertilize":
+                
+                buttonMenu.handler = { buttonMenu in  self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)}
+                
+            case "Harvest":
+                
+                buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie) }
+                
+            case "Finish":
+                
+                buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .FinishAction, crop: cropie) }
+            
+            default: break
+            }
+        }
+    }
     private func setupActionButtonMenu () {
         
         actionMenu.openAnimationType = KCFABOpenAnimationType.pop
@@ -213,54 +243,15 @@ class CropLifeCycleTableViewCell: FoldingCell {
 
         guard let cropie = self.crop else { return  }
         
-        actionMenu.addItem("Remove", icon: UIImage(named:"icon_fertilize")) { (item) in
-            
-           item.circleShadowColor = Colors.removeColor
-            self.showConfirmationScreenFor(action: .UnplantAction, crop: cropie)
-        }
-
-        actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding")) { (item) in
-           
-            item.circleShadowColor = Colors.weedColor
-            self.showConfirmationScreenFor(action: .WeedAction, crop: cropie)
-        }
+        actionMenu.addItem("Remove", icon: UIImage(named:"icon_fertilize"))
+        actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding"))
+        actionMenu.addItem("Water", icon: UIImage(named:"icon_watering"))
+        actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize"))
         
-        actionMenu.addItem("Water", icon: UIImage(named:"icon_watering")) { (item) in
-            
-            item.circleShadowColor = Colors.waterColor
-            
-           self.showConfirmationScreenFor(action: .WaterAction, crop: cropie)
-        }
+        if (cropie.isReadyForHarvest) {actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest"))}
+        if (cropie.hasBeenHarvested) {actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest"))}
         
-        actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize")) { (item) in
-           
-            item.circleShadowColor = Colors.fertilizeColor
-           
-           self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)
-        }
-        
-        if (cropie.isReadyForHarvest) {
-        
-            actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest")) { (item) in
-                
-                item.circleShadowColor = Colors.harvestColor
-                
-                self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie)
-                
-            }
-        }
-        
-        if (cropie.hasBeenHarvested) {
-            
-                actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest")) { (item) in
-                
-                item.circleShadowColor = Colors.finishHarvestColor
-
-                self.showConfirmationScreenFor(action: .FinishAction, crop: cropie)
-            }
-        
-        }
-        
+        updateActionButtonMenu()
     }
     
     private func showConfirmationScreenFor(action: GrowingActions, crop: Crop) {

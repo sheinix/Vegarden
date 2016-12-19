@@ -469,10 +469,14 @@ class PersistenceManager {
     
     private func makeGrowing(action: ActionMadeDTO) {
         
+        //Create an unique Id for single action in many rows, to identify layer:
+        let actionId = UUID().uuidString
+        
         //Need to create a new state for each row, because i can remove rows from crop while planted
         action.rows.forEach { (row) in
             
             let state = getStateFor(action: action.actionMade)
+            state.lifeStateId = actionId
             
             if let note = action.notes {
                 state.notes = note
@@ -526,7 +530,7 @@ class PersistenceManager {
         
         actionMade?.isDone =  true
         actionMade?.when = Date()
-        actionMade?.lifeStateId = (actionMade?.nameOfClass)! + (actionMade?.when!.strMinSecId)!
+//        actionMade?.lifeStateId = (actionMade?.nameOfClass)! + (actionMade?.when!.strMinSecId)!
         
         return actionMade!
     }

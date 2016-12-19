@@ -213,7 +213,9 @@ class LifeCycleTableViewController: UITableViewController {
         var duration = 0.0
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
          
-            cell.copyForegroundViewOfCellIntoContainer()
+            //TODO:
+            //This line here, is copying the heder cell and triggering the nslayoutunsatisfy constraints:
+           // cell.copyForegroundViewOfCellIntoContainer()
             
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)

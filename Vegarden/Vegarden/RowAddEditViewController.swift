@@ -118,11 +118,6 @@ extension RowAddEditViewController : UITableViewDelegate, UITableViewDataSource 
             
         } else if let newRow = self.rowList[indexPath.row] as? newRow {
             
-                if !(cell.hasPlantedCropsLabel?.isHidden)! {
-                    cell.makeTxtFieldConstraints()
-                    cell.hasPlantedCropsLabel?.isHidden = true
-                }
-            
                 cell.txtField.placeholder = newRow.name!
                 cell.txtField.text = (cell.txtField.text != newRow.name! ?
                     "": cell.txtField.text)
