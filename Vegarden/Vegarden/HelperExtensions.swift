@@ -180,20 +180,13 @@ extension UIColor {
             alpha: alpha)
     }
 }
-//extension String {
-//    
-//    func isANumber() -> Bool {
-//        
-//        return (Int(self) != nil)
-//    }
-//    
-//}
-//extension DispatchQueue {
-//
-//    func delay(_ timeInterval: TimeInterval, execute work: () -> Void) {
-//        
-//        let milliseconds = Int(timeInterval * Double(1000))
-//        
-//        after(when: .now() + .milliseconds(milliseconds), execute: work)
-//    }
-//}
+extension String {
+    
+    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+        
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        
+        return ceil(boundingBox.height) + 10
+    }
+}

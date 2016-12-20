@@ -257,7 +257,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-HE-3js">
-                                                                        <rect key="frame" x="8" y="88.5" width="174" height="272.5"/>
+                                                                        <rect key="frame" x="8" y="89" width="174" height="272"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-fL-hL3">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="109"/>
@@ -364,13 +364,125 @@
                     <view key="view" contentMode="scaleToFill" id="8EE-b3-so1">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAR-gg-umo">
+                                <rect key="frame" x="20" y="119" width="728" height="279"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for using Vegarden !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-l2-Xx3">
+                                        <rect key="frame" x="10" y="12" width="708" height="54"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="bkj-rG-HUO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="32"/>
+                                        <color key="textColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-yA-RfS">
+                                        <rect key="frame" x="10" y="83" width="708" height="178"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales tellus tincidunt sem efficitur, nec aliquam odio elementum. Ut libero ipsum, maximus sit amet rhoncus scelerisque, facilisis sit amet risus. Nullam facilisis condimentum nunc, sed egestas lectus dapibus sit amet. Integer vestibulum justo sit amet ipsum hendrerit feugiat. Pellentesque ultrices condimentum molestie. Integer aliquam sapien vel faucibus iaculis. Quisque a risus nisl. In eleifend ex in maximus eleifend. Etiam et lacinia leo, sit amet ornare ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sed congue dolor. Cras eu rutrum </mutableString>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hLb-yA-RfS" secondAttribute="bottom" constant="18" id="KUM-Qp-uxO"/>
+                                    <constraint firstAttribute="trailing" secondItem="oQi-l2-Xx3" secondAttribute="trailing" constant="10" id="PnE-Cl-rvs"/>
+                                    <constraint firstItem="oQi-l2-Xx3" firstAttribute="leading" secondItem="dAR-gg-umo" secondAttribute="leading" constant="10" id="SC6-ea-hDl"/>
+                                    <constraint firstItem="hLb-yA-RfS" firstAttribute="leading" secondItem="oQi-l2-Xx3" secondAttribute="leading" id="WKL-7t-WQ4"/>
+                                    <constraint firstAttribute="height" constant="279" id="d4j-Qh-dC6"/>
+                                    <constraint firstItem="oQi-l2-Xx3" firstAttribute="top" secondItem="dAR-gg-umo" secondAttribute="top" constant="12" id="diX-zi-s8i"/>
+                                    <constraint firstItem="hLb-yA-RfS" firstAttribute="top" secondItem="oQi-l2-Xx3" secondAttribute="bottom" constant="17" id="ff6-Wo-vPG"/>
+                                    <constraint firstItem="hLb-yA-RfS" firstAttribute="trailing" secondItem="oQi-l2-Xx3" secondAttribute="trailing" id="wc8-hW-1ip"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf7-xB-Bt6">
+                                <rect key="frame" x="20" y="426" width="728" height="295"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Useful Tips &amp; Tricks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leC-xq-w5r">
+                                        <rect key="frame" x="8" y="15" width="712" height="64"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="eFw-o5-J62"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
+                                        <color key="textColor" red="0.50980392156862742" green="0.32156862745098036" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo9-7d-sa1">
+                                        <rect key="frame" x="10" y="87" width="708" height="190"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales tellus tincidunt sem efficitur, nec aliquam odio elementum. Ut libero ipsum, maximus sit amet rhoncus scelerisque, facilisis sit amet risus. Nullam facilisis condimentum nunc, sed egestas lectus dapibus sit amet. Integer vestibulum justo sit amet ipsum hendrerit feugiat. Pellentesque ultrices condimentum molestie. Integer aliquam sapien vel faucibus iaculis. Quisque a risus nisl. In eleifend ex in maximus eleifend. Etiam et lacinia leo, sit amet ornare ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sed congue dolor. Cras eu rutrum </mutableString>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="0.50980392156862742" green="0.32156862745098036" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Yo9-7d-sa1" firstAttribute="top" secondItem="leC-xq-w5r" secondAttribute="bottom" constant="8" id="07i-v4-b4O"/>
+                                    <constraint firstItem="Yo9-7d-sa1" firstAttribute="leading" secondItem="leC-xq-w5r" secondAttribute="leading" constant="2" id="96o-lx-u1U"/>
+                                    <constraint firstAttribute="trailing" secondItem="leC-xq-w5r" secondAttribute="trailing" constant="8" id="9A8-Xe-PZ9"/>
+                                    <constraint firstAttribute="height" constant="295" id="ACA-a5-jcY"/>
+                                    <constraint firstItem="leC-xq-w5r" firstAttribute="leading" secondItem="wf7-xB-Bt6" secondAttribute="leading" constant="8" id="X5a-nB-RM3"/>
+                                    <constraint firstItem="Yo9-7d-sa1" firstAttribute="trailing" secondItem="leC-xq-w5r" secondAttribute="trailing" constant="-2" id="e1Q-Tt-nW9"/>
+                                    <constraint firstItem="leC-xq-w5r" firstAttribute="top" secondItem="wf7-xB-Bt6" secondAttribute="top" constant="15" id="nIF-b8-F2T"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yo9-7d-sa1" secondAttribute="bottom" constant="18" id="xLv-9u-9so"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMR-ow-YHR">
+                                <rect key="frame" x="20" y="749" width="728" height="255"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support our Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-2T-7ra">
+                                        <rect key="frame" x="8" y="19" width="712" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="lcf-uK-Maz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                        <color key="textColor" red="0.21035188163807186" green="0.43406320210375809" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-X7-v3k">
+                                        <rect key="frame" x="8" y="79" width="712" height="168"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales tellus tincidunt sem efficitur, nec aliquam odio elementum. Ut libero ipsum, maximus sit amet rhoncus scelerisque, facilisis sit amet risus. Nullam facilisis condimentum nunc, sed egestas lectus dapibus sit amet. Integer vestibulum justo sit amet ipsum hendrerit feugiat. Pellentesque ultrices condimentum molestie. Integer aliquam sapien vel faucibus iaculis. Quisque a risus nisl. In eleifend ex in maximus eleifend. Etiam et lacinia leo, sit amet ornare ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sed congue dolor. Cras eu rutrum </mutableString>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" red="0.21035188163807186" green="0.43406320210375809" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cNm-X7-v3k" firstAttribute="leading" secondItem="YSy-2T-7ra" secondAttribute="leading" id="0T6-Yf-hfe"/>
+                                    <constraint firstItem="cNm-X7-v3k" firstAttribute="trailing" secondItem="YSy-2T-7ra" secondAttribute="trailing" id="1RJ-bJ-1uT"/>
+                                    <constraint firstItem="YSy-2T-7ra" firstAttribute="leading" secondItem="JMR-ow-YHR" secondAttribute="leading" constant="8" id="fYc-Cs-ryu"/>
+                                    <constraint firstItem="cNm-X7-v3k" firstAttribute="top" secondItem="YSy-2T-7ra" secondAttribute="bottom" constant="21" id="gqN-r7-sog"/>
+                                    <constraint firstAttribute="bottom" secondItem="cNm-X7-v3k" secondAttribute="bottom" constant="8" id="iDL-mK-5Z8"/>
+                                    <constraint firstAttribute="height" constant="255" id="sph-1b-YMh"/>
+                                    <constraint firstAttribute="trailing" secondItem="YSy-2T-7ra" secondAttribute="trailing" constant="8" id="x2l-Qe-WhX"/>
+                                    <constraint firstItem="YSy-2T-7ra" firstAttribute="top" secondItem="JMR-ow-YHR" secondAttribute="top" constant="19" id="zJe-xW-Vpe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="dAR-gg-umo" secondAttribute="leading" id="5Be-QL-FiB"/>
+                            <constraint firstItem="wf7-xB-Bt6" firstAttribute="top" secondItem="dAR-gg-umo" secondAttribute="bottom" constant="28" id="Eze-1y-hjz"/>
+                            <constraint firstItem="JMR-ow-YHR" firstAttribute="trailing" secondItem="wf7-xB-Bt6" secondAttribute="trailing" id="F8A-iM-ysB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dAR-gg-umo" secondAttribute="trailing" id="KcC-GR-Czt"/>
+                            <constraint firstItem="wf7-xB-Bt6" firstAttribute="leading" secondItem="dAR-gg-umo" secondAttribute="leading" id="kEu-hP-BfO"/>
+                            <constraint firstItem="wf7-xB-Bt6" firstAttribute="trailing" secondItem="dAR-gg-umo" secondAttribute="trailing" id="mVZ-HC-Kjz"/>
+                            <constraint firstItem="JMR-ow-YHR" firstAttribute="leading" secondItem="wf7-xB-Bt6" secondAttribute="leading" id="tht-KX-76e"/>
+                            <constraint firstItem="JMR-ow-YHR" firstAttribute="top" secondItem="wf7-xB-Bt6" secondAttribute="bottom" constant="28" id="v7F-O3-kfE"/>
+                            <constraint firstItem="dAR-gg-umo" firstAttribute="top" secondItem="5zW-Wp-ibN" secondAttribute="bottom" constant="55" id="xqI-oG-cmp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About Vegarden" id="zI5-Iz-rE2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d5-VF-epu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="2291"/>
+            <point key="canvasLocation" x="707.8125" y="2290.4296875"/>
         </scene>
         <!--My Crops Collection View Controller-->
         <scene sceneID="lOK-Yi-UVO">

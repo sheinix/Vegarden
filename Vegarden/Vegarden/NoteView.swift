@@ -8,10 +8,10 @@
 
 import UIKit
 
-let titleLabelsHeight = 40
+let titleLabelsHeight = 35
 
 class NoteView: RoundedCornersView {
-
+    
     var titleLabel  : UILabel?
     var noteDate    = UILabel()
     var noteTxt     = UILabel()
@@ -30,21 +30,34 @@ class NoteView: RoundedCornersView {
     init(frame: CGRect, date: Date, text: String?, title: String?) {
 
         super.init(frame: frame)
+       
+        self.backgroundColor   = Colors.notesColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = Colors.notesColor.cgColor
+        self.layer.cornerRadius = 8
+        self.applyLightShadow()
+        
+        noteDate.textAlignment = .right
+        noteDate.font = UIFont(name: "TrebuchetMS-Italic", size: 14)
+        noteDate.textColor = UIColor.darkGray
+        noteDate.text = date.inCellDateFormat()
+        
+        noteTxt.font = Fonts.notesTextFont
+        noteTxt.textColor = UIColor.darkGray
+        noteTxt.numberOfLines = 0
+        noteTxt.text = text
         
         if (title != nil) {
             
             titleLabel = UILabel()
+            titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
+            titleLabel?.textColor = UIColor.darkText
             titleLabel?.sizeToFit()
             titleLabel?.text = title
+            
            
         }
     
-        self.backgroundColor   = Colors.notesColor
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.cornerRadius = 6
-        
-        
         addSubview(noteDate)
         addSubview(noteTxt)
         
@@ -63,25 +76,26 @@ class NoteView: RoundedCornersView {
             make.left.equalToSuperview().offset(5)
             make.top.equalTo(((title != nil) ? titleLabel!.snp.bottom : noteDate.superview!.snp.top))
             make.height.equalTo(titleLabelsHeight)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(-7)
         }
         
         
+        
+//        guard let noteText = noteTxt.text else { return }
+//        let txtHeight = noteText.heightWithConstrainedWidth(width: self.bounds.width, font: noteTxt.font)
+//        
         noteTxt.snp.makeConstraints { (make) in
             make.top.equalTo(noteDate.snp.bottom)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(0) //need to update this when animation zooms in
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-5)
         }
         
-        noteDate.text = date.inCellDateFormat()
-        noteTxt.text = text
+        
     
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
 }

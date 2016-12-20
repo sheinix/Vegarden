@@ -14,6 +14,7 @@ let screenBounds = UIScreen.main.bounds
 let screenSize   = screenBounds.size
 let screenWidth  = screenSize.width
 let screenHeight = screenSize.height
+let screenCenter = CGPoint(x: screenWidth/2, y: screenHeight/2)
 let gridWidth : CGFloat = (screenSize.width/2)-5.0
 let navigationHeight : CGFloat = 44.0
 let statubarHeight : CGFloat = 20.0
@@ -112,6 +113,13 @@ struct Fonts {
     
     static let cropCellFontBig : UIFont = UIFont(name: "GillSans", size: 30)!
     static let cropCellFontSmall : UIFont = UIFont(name: "GillSans", size: 20)!
+    
+    
+    static let notesTextFont : UIFont = UIFont.systemFont(ofSize: 14)
+    
+    static let greetingFont : UIFont = UIFont(name: "Avenir-Medium", size: 38)!
+    static let greetingTimeFont : UIFont = UIFont(name: "Avenir-Medium", size: 28)!
+    //Apple SD Gothic Neo Bold
 }
 
 struct UINumbericConstants {

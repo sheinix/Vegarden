@@ -417,8 +417,8 @@ class PersistenceManager {
         
         let state : CropState = (plantingType == plantingStates.Seed ? Seed.mr_createEntity()! : Seedling.mr_createEntity()!)
         
-        state.date = NSDate()
-        state.notes = plantAction.notes as NSString?
+        state.date = Date()
+        state.notes = plantAction.notes
         plantingCrop.addToStates(state)
         
         for row in rows {
@@ -455,9 +455,9 @@ class PersistenceManager {
 
         guard let state = Harvesting.mr_createEntity() else { return }
 
-        state.date = NSDate()
+        state.date = Date()
         if let note = action.notes {
-            state.notes = note as NSString?
+            state.notes = note
         }
         
         action.crop.addToStates(state)

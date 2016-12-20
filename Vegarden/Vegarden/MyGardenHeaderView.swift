@@ -43,16 +43,16 @@ class MyGardenHeaderView: UIView {
         self.layerGradientWith(colors: Colors.headerGradient)
         
         self.greetingsLabel.textColor = UIColor.white
-        self.greetingsLabel.applyShadows()
-        self.greetingsLabel.font = UIFont.systemFont(ofSize: 36)
+        self.greetingsLabel.applyLightShadow()
+        self.greetingsLabel.font = Fonts.greetingFont
         
         self.dateLabel.textColor = UIColor.white
-        self.dateLabel.font = Fonts.mainFont
-        self.dateLabel.applyShadows()
+        self.dateLabel.font = Fonts.greetingTimeFont
+        self.dateLabel.applyLightShadow()
         
         self.timeLabel.textColor = UIColor.white
-        self.timeLabel.font = Fonts.mainFont
-        self.timeLabel.applyShadows()
+        self.timeLabel.font = Fonts.greetingTimeFont
+        self.timeLabel.applyLightShadow()
         
         self.weatherView.isHidden = true
         self.weatherLabel.isHidden = true

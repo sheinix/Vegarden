@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2620FCE91DEE4A2A00352111 /* PatchAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */; };
 		2620FCEC1DEE4FFB00352111 /* PatchEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */; };
+		262784F01E0894CA00E70BCC /* Zoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262784EF1E0894CA00E70BCC /* Zoomable.swift */; };
+		262784F21E08B44800E70BCC /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262784F11E08B44800E70BCC /* ZoomView.swift */; };
 		26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */; };
 		263BBCED1DF3E18800DA49F6 /* RowsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263BBCEC1DF3E18800DA49F6 /* RowsInfo.swift */; };
 		263BBCEF1DF3E1B400DA49F6 /* PatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263BBCEE1DF3E1B400DA49F6 /* PatchInfo.swift */; };
@@ -130,6 +132,8 @@
 /* Begin PBXFileReference section */
 		2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchAddEditViewController.swift; sourceTree = "<group>"; };
 		2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchEditionTableViewCell.swift; sourceTree = "<group>"; };
+		262784EF1E0894CA00E70BCC /* Zoomable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zoomable.swift; sourceTree = "<group>"; };
+		262784F11E08B44800E70BCC /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		26359EBA1DD40B9500C6D698 /* CropDetailsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropDetailsFlowLayout.swift; sourceTree = "<group>"; };
 		263BBCEC1DF3E18800DA49F6 /* RowsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowsInfo.swift; sourceTree = "<group>"; };
 		263BBCEE1DF3E1B400DA49F6 /* PatchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchInfo.swift; sourceTree = "<group>"; };
@@ -482,6 +486,7 @@
 			children = (
 				96E08C051DBCDF3C00852683 /* PersitanceCallBackProtocol.swift */,
 				9654A8A31DB8875E00A0A9D9 /* GardenManagementProtocol.swift */,
+				262784EF1E0894CA00E70BCC /* Zoomable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				BD3307B61DA9EECA00F2EC6F /* RoundedCornersView.swift */,
 				960E5AD81DCDDC2200ED39A8 /* NoteView.swift */,
 				2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */,
+				262784F11E08B44800E70BCC /* ZoomView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -863,6 +869,7 @@
 				2670BF0C1E021358007F0862 /* ProgessBar.swift in Sources */,
 				BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */,
 				966F92271DC33176005C46F1 /* DetailPatchRowTableViewCell.swift in Sources */,
+				262784F21E08B44800E70BCC /* ZoomView.swift in Sources */,
 				263BBCF11DF3E22000DA49F6 /* NotificationsIds.swift in Sources */,
 				BD3307B91DA9EECA00F2EC6F /* MyCropsCollectionViewController.swift in Sources */,
 				BDE061821D9FDC660003364D /* Seedling+CoreDataClass.swift in Sources */,
@@ -901,6 +908,7 @@
 				96F722D91DAD04DA000100B2 /* ZoomInNavigationController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
 				2670BF091E0212FF007F0862 /* YLProgressBar.m in Sources */,
+				262784F01E0894CA00E70BCC /* Zoomable.swift in Sources */,
 				9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */,
 				9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */,
 				BD7B8EAA1D9118080063347D /* AppDelegate.swift in Sources */,

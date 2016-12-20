@@ -211,7 +211,7 @@ extension Crop {
             let date1 = (state1 as! CropState).date
             let date2 = (state2 as! CropState).date
             
-            return (date1 as! Date) > (date2 as! Date)
+            return date1! > date2!
             
         })
         

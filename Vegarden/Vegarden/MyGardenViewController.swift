@@ -29,7 +29,6 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
-        
      //   self.tableView.rowHeight = UITableViewAutomaticDimension
         self.rowsHeight = (CGFloat(totalPlantedCrops) * CGFloat(cropRowHeight)) + CGFloat(headerHeight)
         self.tableView.estimatedRowHeight = self.rowsHeight!

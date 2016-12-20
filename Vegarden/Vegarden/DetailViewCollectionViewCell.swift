@@ -66,39 +66,73 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                     
                     guard !(state as! RowLifeState).isBeenDeleted else { return }
                     
-                    noteView = NoteView(frame: CGRect(x:0,y:0, width:self.notesStackView.frame.width, height:noteHeight),
-                                         date: (state as! RowLifeState).when!,
-                                         text: (state as! RowLifeState).notes as String?,
-                                         title:(state as! RowLifeState).nameOfClass)
+                    noteView = createNoteFromRow((lifeState: state as! RowLifeState))
+                
                 } else if (state is Seed || state is Seedling) {
                     
-                    noteView = NoteView(frame: CGRect(x:0,
-                                                      y:0,
-                                                  width:self.notesStackView.frame.width,
-                                                 height:noteHeight),
-                                       date: (state as! CropState).date as Date,
-                                       text: (state as! CropState).notes as String?,
-                                       title: "Planted from " + (state as! CropState).nameOfClass)
+                    noteView = createNoteFromCrop(cropState: (state as! CropState))
+                    
                 }
                 
                 if let noteViewUnr = noteView {
                     
-                  let newHeightSize = scrollView.contentSize.height + noteHeight //+ 20
+                  let newHeightSize = scrollView.contentSize.height + noteViewUnr.frame.height
                   notesStackView.addArrangedSubview(noteViewUnr)
                     
                     self.stackViewHeight.constant = newHeightSize
-                    //self.bottomLimit.constant -= newHeightSize
-                    //self.notesStackView.frame.size.height = newHeightSize
-                    
                     scrollView.contentSize = CGSize(width: notesStackView.frame.width,
-                                                    height: CGFloat(newHeightSize))
-                    
-                    
-//                    scrollView.layoutSubviews()
-                    
+                                                    height: CGFloat(newHeightSize))                    
                 }
             })
         }
+        
+    }
+    
+    //TODO : THIS IS ABSOLUTELY SHIT! CODE REPETEAD UNNECESARRY, CHANGE IT, NOT TIME FOR NOW, DID A QUICK FIX!
+    
+    fileprivate func createNoteFromCrop(cropState: CropState) -> NoteView {
+        
+        var newHeight : CGFloat?
+        
+        if (cropState.notes != nil) {
+            
+            newHeight = noteHeight +  (cropState.notes?.heightWithConstrainedWidth(width: self.notesStackView.frame.width, font: Fonts.notesTextFont))!
+            
+        } else {
+            
+            newHeight = noteHeight + 10
+        }
+        
+        
+        let frame = CGRect(x:0,y:0, width:self.notesStackView.frame.width, height:newHeight!)
+        
+        return  NoteView(frame:frame,
+                         date: cropState.date!,
+                         text: cropState.notes as String?,
+                         title:"Planted from " + cropState.nameOfClass)
+    }
+    
+    
+    fileprivate func createNoteFromRow(lifeState: RowLifeState) -> NoteView {
+        
+        var newHeight : CGFloat?
+        
+        if (lifeState.notes != nil) {
+            
+            newHeight = noteHeight +  (lifeState.notes?.heightWithConstrainedWidth(width: self.notesStackView.frame.width, font: Fonts.notesTextFont))!
+            
+        } else {
+            
+            newHeight = noteHeight
+        }
+        
+    
+        let frame = CGRect(x:0,y:0, width:self.notesStackView.frame.width, height:newHeight!)
+        
+        return  NoteView(frame:frame,
+                          date: lifeState.when!,
+                          text: lifeState.notes as String?,
+                         title:lifeState.nameOfClass)
         
     }
 }
