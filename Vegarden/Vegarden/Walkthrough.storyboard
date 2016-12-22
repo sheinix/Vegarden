@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master Walkthrough View Controller-->
+        <scene sceneID="tAF-A2-CBN">
+            <objects>
+                <viewController storyboardIdentifier="Master" id="h7U-qD-dO4" customClass="MasterWalkthroughViewController" customModule="Vegarden" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bp4-eu-0Vd"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4I-zo-qwK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kj1-qZ-asg">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2B-dM-a26">
+                                <rect key="frame" x="645" y="28" width="93" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Fba-jg-w3c"/>
+                                    <constraint firstAttribute="width" constant="93" id="beo-6o-4Sg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="h7U-qD-dO4" eventType="touchUpInside" id="Xzl-Ns-Ybg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-gQ-zFw">
+                                <rect key="frame" x="197" y="888" width="375" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="A31-D5-shq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextPage" destination="h7U-qD-dO4" eventType="touchUpInside" id="LCp-Jc-b8v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFm-BG-G7K">
+                                <rect key="frame" x="245" y="156" width="279" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="10v-3z-7cH"/>
+                                    <constraint firstAttribute="width" constant="279" id="jk7-4u-Vwy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="CREATE PATCH">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createNewPatch:" destination="h7U-qD-dO4" eventType="touchUpInside" id="qgt-SN-VWt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TD-fS-tNv">
+                                <rect key="frame" x="34.5" y="805" width="700" height="119"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="35V-Zt-7rR"/>
+                                    <constraint firstAttribute="height" constant="119" id="G5e-Wh-RG0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="Enough! Let's plant some veggies!">
+                                    <color key="titleColor" red="1" green="0.43954875440000002" blue="0.35755142029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishAction:" destination="h7U-qD-dO4" eventType="touchUpInside" id="f7X-3A-wu5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J2B-dM-a26" firstAttribute="top" secondItem="bp4-eu-0Vd" secondAttribute="bottom" constant="8" id="1x5-U9-RFN"/>
+                            <constraint firstItem="E4I-zo-qwK" firstAttribute="top" secondItem="0TD-fS-tNv" secondAttribute="bottom" constant="100" id="3kD-6e-1T6"/>
+                            <constraint firstItem="jWk-gQ-zFw" firstAttribute="leading" secondItem="Kj1-qZ-asg" secondAttribute="leadingMargin" constant="177" id="Cgf-L8-Lyn"/>
+                            <constraint firstItem="E4I-zo-qwK" firstAttribute="top" secondItem="jWk-gQ-zFw" secondAttribute="bottom" constant="46" id="Rnb-Yv-qw1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J2B-dM-a26" secondAttribute="trailing" constant="10" id="Y8v-bQ-iIg"/>
+                            <constraint firstItem="0TD-fS-tNv" firstAttribute="centerX" secondItem="Kj1-qZ-asg" secondAttribute="centerX" id="YWh-rp-oUA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jWk-gQ-zFw" secondAttribute="trailing" constant="176" id="fbm-aS-bBC"/>
+                            <constraint firstItem="PFm-BG-G7K" firstAttribute="centerX" secondItem="Kj1-qZ-asg" secondAttribute="centerX" id="i8g-uU-pkZ"/>
+                            <constraint firstItem="PFm-BG-G7K" firstAttribute="top" secondItem="bp4-eu-0Vd" secondAttribute="bottom" constant="136" id="taZ-0I-qac"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="J2B-dM-a26" id="hTF-yO-dGC"/>
+                        <outlet property="createPatchBttn" destination="PFm-BG-G7K" id="lbd-NC-asY"/>
+                        <outlet property="finishBttn" destination="0TD-fS-tNv" id="uLo-hZ-fxZ"/>
+                        <outlet property="nextButton" destination="jWk-gQ-zFw" id="ocE-F9-tnn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8r-V3-vdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1706.25" y="-298.2421875"/>
+        </scene>
+        <!--Welcome Vegarden View Controller-->
+        <scene sceneID="BAH-k2-9I4">
+            <objects>
+                <viewController storyboardIdentifier="page1" id="O1p-yb-gMA" customClass="WelcomeVegardenViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yr6-4M-pd8"/>
+                        <viewControllerLayoutGuide type="bottom" id="cl5-Hq-aJP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6MQ-uI-hOp">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Vegarden!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpa-iq-4Vv">
+                                <rect key="frame" x="34" y="96" width="700" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="PHI-M4-jun"/>
+                                    <constraint firstAttribute="height" constant="54" id="hlo-Zk-97F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegarden is an app for managing your veggie garden!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xM-oF-Jm6">
+                                <rect key="frame" x="34" y="219" width="700" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="fyk-Rz-6TZ"/>
+                                    <constraint firstAttribute="width" constant="700" id="s6p-O7-ezA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do a few things with Vegarden :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t3-Ir-j2F">
+                                <rect key="frame" x="133" y="297" width="502" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="502" id="fZa-9w-fy0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn about different crops with the Vegarden database" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-uc-kwa">
+                                <rect key="frame" x="95" y="435" width="522" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your own crops in a separate place, always ready to query them" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5X-43-S3X">
+                                <rect key="frame" x="95" y="506" width="628" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Follow the life cycle of your planted crops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ave-Gf-52M">
+                                <rect key="frame" x="95" y="577" width="522" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your garden adding or removing patches and rows!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xJ-2V-mmY">
+                                <rect key="frame" x="95" y="648" width="526" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.52359932661056519" green="0.68451350927352905" blue="0.62380659580230713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cl5-Hq-aJP" firstAttribute="top" secondItem="5t3-Ir-j2F" secondAttribute="bottom" constant="638" id="Ob6-0q-lbs"/>
+                            <constraint firstItem="3xM-oF-Jm6" firstAttribute="top" secondItem="Kpa-iq-4Vv" secondAttribute="bottom" constant="69" id="TOe-if-4yS"/>
+                            <constraint firstItem="Kpa-iq-4Vv" firstAttribute="top" secondItem="Yr6-4M-pd8" secondAttribute="bottom" constant="76" id="lsM-BN-I52"/>
+                            <constraint firstItem="Kpa-iq-4Vv" firstAttribute="centerX" secondItem="6MQ-uI-hOp" secondAttribute="centerX" id="mWL-7s-cOC"/>
+                            <constraint firstItem="5t3-Ir-j2F" firstAttribute="top" secondItem="3xM-oF-Jm6" secondAttribute="bottom" constant="49" id="pVJ-o7-w0G"/>
+                            <constraint firstItem="5t3-Ir-j2F" firstAttribute="centerX" secondItem="6MQ-uI-hOp" secondAttribute="centerX" id="tqf-NE-7gm"/>
+                            <constraint firstItem="3xM-oF-Jm6" firstAttribute="centerX" secondItem="6MQ-uI-hOp" secondAttribute="centerX" id="zkB-DZ-CS7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="2oE-uc-kwa" id="O04-aj-NgP"/>
+                        <outlet property="fourthLabel" destination="0xJ-2V-mmY" id="wmP-kX-a3T"/>
+                        <outlet property="secondLabel" destination="J5X-43-S3X" id="yyG-Wn-ojw"/>
+                        <outlet property="thirdLabel" destination="Ave-Gf-52M" id="iEa-fV-9nr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwK-mk-SX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739.0625" y="-76.171875"/>
+        </scene>
+        <!--Create Patch View Controller-->
+        <scene sceneID="IKi-Co-EXm">
+            <objects>
+                <viewController storyboardIdentifier="page2" id="9gq-Bh-QYQ" customClass="CreatePatchViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lmB-9h-MQW"/>
+                        <viewControllerLayoutGuide type="bottom" id="fXo-4U-rNX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5G4-f0-k3K">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started and create your first Patch!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-3w-VjW">
+                                <rect key="frame" x="34" y="72" width="700" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="tFy-wt-7RA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21035188160000001" green="0.43406320209999999" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1JL-3w-VjW" firstAttribute="centerX" secondItem="5G4-f0-k3K" secondAttribute="centerX" id="oTX-h7-6nM"/>
+                            <constraint firstItem="1JL-3w-VjW" firstAttribute="top" secondItem="lmB-9h-MQW" secondAttribute="bottom" constant="52" id="wDV-PV-w1P"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="1" y="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Curve"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpU-cR-A6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38.28125" y="-79.1015625"/>
+        </scene>
+        <!--Final Step View Controller-->
+        <scene sceneID="QuZ-fQ-vJK">
+            <objects>
+                <viewController storyboardIdentifier="page3" id="dT5-5w-AY9" customClass="FinalStepViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iZp-dJ-47G"/>
+                        <viewControllerLayoutGuide type="bottom" id="bWb-iX-1dZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RSN-Da-oFr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-Nt-weo">
+                                <rect key="frame" x="179" y="54" width="411" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="411" id="36a-xN-i4x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almost Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-Ue-dFH">
+                                <rect key="frame" x="179" y="139" width="411" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="411" id="McV-4d-7vE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are a few tips to make your experience awesome!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxa-fc-Umg">
+                                <rect key="frame" x="76" y="212" width="616" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="616" id="eLw-Ay-dyo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can swipe right at any time to show your side bar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Q-OW-dsY">
+                                <rect key="frame" x="58" y="329" width="655" height="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On My Crops screen are all the crops that you added and want to grow, is just a quick access t them!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-tL-rfJ">
+                                <rect key="frame" x="58" y="380" width="655" height="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On the Life Cycle screen you can add notes when you Fertilize, Water or Weed your crops!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1s-BK-N5d">
+                                <rect key="frame" x="58" y="457" width="655" height="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-Z9-Pvf">
+                                <rect key="frame" x="58" y="571" width="655" height="78"/>
+                                <string key="text">On the Overview screen you can see all the crops you are growing and manage your veggie patchs by adding or removing them, and creating or deleting rows!</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.43954875440000002" blue="0.35755142029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fxx-Z9-Pvf" firstAttribute="trailing" secondItem="G1s-BK-N5d" secondAttribute="trailing" id="1Cb-ON-ejH"/>
+                            <constraint firstItem="qxa-fc-Umg" firstAttribute="centerX" secondItem="RSN-Da-oFr" secondAttribute="centerX" id="1EW-8u-gUp"/>
+                            <constraint firstItem="Tts-Nt-weo" firstAttribute="top" secondItem="iZp-dJ-47G" secondAttribute="bottom" constant="34" id="3DB-Ey-y82"/>
+                            <constraint firstItem="G1s-BK-N5d" firstAttribute="top" secondItem="qsd-tL-rfJ" secondAttribute="bottom" constant="25" id="3Hx-SD-P3Y"/>
+                            <constraint firstItem="G1s-BK-N5d" firstAttribute="leading" secondItem="qsd-tL-rfJ" secondAttribute="leading" id="4wQ-da-W6d"/>
+                            <constraint firstItem="Tts-Nt-weo" firstAttribute="centerX" secondItem="RSN-Da-oFr" secondAttribute="centerX" id="5cM-JK-rAi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qsd-tL-rfJ" secondAttribute="trailing" constant="35" id="65L-cC-OKc"/>
+                            <constraint firstItem="qxa-fc-Umg" firstAttribute="top" secondItem="bo0-Ue-dFH" secondAttribute="bottom" constant="24.5" id="6bh-m8-csd"/>
+                            <constraint firstItem="Fxx-Z9-Pvf" firstAttribute="leading" secondItem="G1s-BK-N5d" secondAttribute="leading" id="7Qj-qL-o2g"/>
+                            <constraint firstItem="S2Q-OW-dsY" firstAttribute="trailing" secondItem="qsd-tL-rfJ" secondAttribute="trailing" id="9F9-LE-wA8"/>
+                            <constraint firstItem="bo0-Ue-dFH" firstAttribute="centerX" secondItem="RSN-Da-oFr" secondAttribute="centerX" id="COo-LB-GYR"/>
+                            <constraint firstItem="qsd-tL-rfJ" firstAttribute="top" secondItem="S2Q-OW-dsY" secondAttribute="bottom" constant="25" id="H0z-1g-gd6"/>
+                            <constraint firstItem="Fxx-Z9-Pvf" firstAttribute="top" secondItem="G1s-BK-N5d" secondAttribute="bottom" constant="62" id="IiA-pt-DT0"/>
+                            <constraint firstItem="S2Q-OW-dsY" firstAttribute="top" secondItem="qxa-fc-Umg" secondAttribute="bottom" constant="43" id="SCw-6e-C5s"/>
+                            <constraint firstItem="S2Q-OW-dsY" firstAttribute="leading" secondItem="qsd-tL-rfJ" secondAttribute="leading" id="aVH-Uy-mTR"/>
+                            <constraint firstItem="G1s-BK-N5d" firstAttribute="trailing" secondItem="qsd-tL-rfJ" secondAttribute="trailing" id="dHr-cT-Ryn"/>
+                            <constraint firstItem="qsd-tL-rfJ" firstAttribute="leading" secondItem="RSN-Da-oFr" secondAttribute="leadingMargin" constant="38" id="dTP-BZ-AGK"/>
+                            <constraint firstItem="bo0-Ue-dFH" firstAttribute="top" secondItem="Tts-Nt-weo" secondAttribute="bottom" constant="27" id="kXh-h4-ThN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXF-kY-hCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650.78125" y="-79.1015625"/>
+        </scene>
+    </scenes>
+</document>

@@ -11,7 +11,7 @@ import UIKit
 /**
     KCFloatingActionButton dependent on UIWindow.
 */
-class KCFABManager: NSObject {
+open class KCFABManager: NSObject {
     private static var __once: () = {
             StaticInstance.instance = KCFABManager()
         }()
@@ -37,7 +37,7 @@ class KCFABManager: NSObject {
     }
     
     var _fabController: KCFABViewController? = nil
-    var fabController: KCFABViewController {
+    open var fabController: KCFABViewController {
         get {
             if _fabController == nil {
                 _fabController = KCFABViewController()

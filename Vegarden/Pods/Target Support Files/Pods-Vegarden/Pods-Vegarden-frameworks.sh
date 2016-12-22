@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/BWWalkthrough/BWWalkthrough.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CircleMenu/CircleMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
@@ -99,6 +100,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/BWWalkthrough/BWWalkthrough.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CircleMenu/CircleMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"

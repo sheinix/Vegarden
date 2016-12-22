@@ -237,7 +237,6 @@ class CropLifeCycleTableViewCell: FoldingCell {
     private func setupActionButtonMenu () {
         
         actionMenu.openAnimationType = KCFABOpenAnimationType.pop
-        actionMenu.openingAnimationDirection = KCFABOpeningAnimationDirection.Vertical
         
         self.containerView.addSubview(actionMenu)
 

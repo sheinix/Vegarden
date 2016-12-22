@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CHTCollectionViewWaterfallLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,22 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D7146D5C939244301B83959F2F62D49</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3D9FD6F1E341A889DD8A6087A4E012CF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>96D028D8410E9A401CDCEFD40406EEC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A142D04914B39F03F095C6B1CE49DB56</key>
+		<key>9889562781163BF5CB84E06A985BCE44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0578C032F1B3073748FF5F2AF4340A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,22 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB1793850D9BB17738F5A3DECE932533</key>
+		<key>BF625D28117290CD7C3A17E92B07BB8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFF292AE3AD0C4B51260BF4317024789</key>
+		<key>CA85F03D69DDB1AE4D209BF5F8FE8F01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CAC840DD7C14BED838F74AD37CD7CBBA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CD0F3737C672D614CC59DA61F0A76536</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,12 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3D5C52F68AEAB9FF9D6FAE3547388AB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E4794A729BA633EB67CBDE77CCAD1E14</key>
+		<key>ED2A0448B3E1042239C79D394FBBF98F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

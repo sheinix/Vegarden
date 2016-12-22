@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
@@ -18,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         
         splitViewController.minimumPrimaryColumnWidth = UINumbericConstants.minimumWidthSideMenu
         splitViewController.maximumPrimaryColumnWidth = UINumbericConstants.maximumwidthSideMenu
         splitViewController.preferredPrimaryColumnWidthFraction = UINumbericConstants.widthSideMenu
        
-        
-        
+    
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem

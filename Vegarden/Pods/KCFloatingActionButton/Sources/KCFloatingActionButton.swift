@@ -16,10 +16,6 @@ public enum KCFABOpenAnimationType {
     case none
 }
 
-public enum KCFABOpeningAnimationDirection {
-    case Horizontal
-    case Vertical
-}
 /**
     Floating Action Button Object. It has `KCFloatingActionButtonItem` objects.
     KCFloatingActionButton support storyboard designable.
@@ -143,8 +139,6 @@ open class KCFloatingActionButton: UIView {
     open var friendlyTap: Bool = true
     
     open var sticky: Bool = false
-    
-    open var openingAnimationDirection : KCFABOpeningAnimationDirection = .Vertical
     
     /**
      Delegate that can be used to learn more about the behavior of the FAB widget.
@@ -583,7 +577,6 @@ open class KCFloatingActionButton: UIView {
                 width: size,
                 height: size
             )
-            print(frame)
         }
 
         if friendlyTap == true {
@@ -693,6 +686,10 @@ open class KCFloatingActionButton: UIView {
         guard let keyboardSize: CGFloat = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
             return
         }
+        
+        if sticky == true {
+            return
+        }
 
         if isCustomFrame == false {
             setRightBottomFrame(keyboardSize)
@@ -711,6 +708,11 @@ open class KCFloatingActionButton: UIView {
     }
 
     internal func keyboardWillHide(_ notification: Notification) {
+        
+        if sticky == true {
+            return
+        }
+        
         UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions(), animations: {
             if self.isCustomFrame == false {
                 self.setRightBottomFrame()
@@ -738,19 +740,8 @@ extension KCFloatingActionButton {
             item.layer.transform = CATransform3DIdentity
             let big = size > item.size ? size : item.size
             let small = size <= item.size ? size : item.size
-           
-            
-             //TODO TRANSLATE it to every animation! Becarefull updating the pod!
-            
-            if (openingAnimationDirection == KCFABOpeningAnimationDirection.Vertical) {
-                item.frame.origin.x = big/2-small/2
-                item.frame.origin.y = -itemHeight
-            } else {
-                item.frame.origin.x = -itemHeight
-                item.frame.origin.y = big/2-small/2
-
-            }
-            
+            item.frame.origin.x = big/2-small/2
+            item.frame.origin.y = -itemHeight
             item.layer.transform = CATransform3DMakeScale(0.4, 0.4, 1)
             UIView.animate(withDuration: 0.3, delay: delay,
                                        usingSpringWithDamping: 0.55,
@@ -881,7 +872,6 @@ extension KCFloatingActionButton {
             itemHeight += item.size + itemSpace
             UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: { () -> Void in
                                         item.frame.origin.y = itemHeight
-                                        item.frame.origin.x = 4
                                         item.alpha = 1
                 }, completion: nil)
         }

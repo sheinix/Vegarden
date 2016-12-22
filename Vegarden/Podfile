@@ -24,7 +24,7 @@ target 'Vegarden' do
 	pod 'M13Checkbox'
 	pod 'SkyFloatingLabelTextField', '~> 1.0'
 	pod 'DZNEmptyDataSet'
-
+	pod "BWWalkthrough"
 	#source 'https://github.com/CocoaPods/Specs.git'
 	#platform :ios, '8.0'
 	#use_frameworks!
