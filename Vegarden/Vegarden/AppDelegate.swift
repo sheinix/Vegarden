@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         //Setup the GardenManager as the call back delegate for the PersistanceManagaer:
         PersistenceManager.shared.callBackDelegate? = GardenManager.shared
         
+        
         return true
     }
 

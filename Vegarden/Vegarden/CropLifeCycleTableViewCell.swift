@@ -39,6 +39,8 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     override func awakeFromNib() {
         
+        self.applyLightShadow()
+        
         foregroundView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         foregroundView.layer.masksToBounds = true
         foregroundView.layer.borderWidth = 1

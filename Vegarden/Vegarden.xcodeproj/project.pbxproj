@@ -582,11 +582,11 @@
 			children = (
 				9654A8A51DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.h */,
 				9654A8A61DB8C2C000A0A9D9 /* NSManagedObject+Duplicate.m */,
+				26B899051E0CCC81006C2A7B /* EXTView.h */,
+				26B899061E0CCC81006C2A7B /* EXTView.m */,
 				96F722F71DB309CD000100B2 /* ViewsExtensions.swift */,
 				9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */,
 				96EE77F41DB9E97C00971EBF /* DateExtension.swift */,
-				26B899051E0CCC81006C2A7B /* EXTView.h */,
-				26B899061E0CCC81006C2A7B /* EXTView.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";

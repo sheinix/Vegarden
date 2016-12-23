@@ -37,7 +37,7 @@ class WalkthroughManager {
             
             showWalkthroughIn(viewController: viewController)
       //TODO Change it for production!
-         //   UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
+           // UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
         }
     }
@@ -79,10 +79,14 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
     
     func walkthroughPageDidChange(_ pageNumber: Int) {
         
+        
+        
+        self.walkThrough?.nextButton?.isHidden  = (pageNumber != 0 || pageNumber != 2)
+        
+    
         let isLastStep = ((self.walkThrough?.numberOfPages)! - 1 == pageNumber)
       
-        self.walkThrough?.hiddenFinishBttn = !isLastStep //|| (self.walkThrough?.nameTextField.text?.isEmpty)!
-        self.walkThrough?.nextButton?.isHidden  = (pageNumber != 0 || pageNumber != 2)
+        self.walkThrough?.hiddenFinishBttn = !isLastStep
         self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
         self.walkThrough?.nameMsgLabel.isHidden = !isLastStep
         self.walkThrough?.nameTextField.isHidden = !isLastStep

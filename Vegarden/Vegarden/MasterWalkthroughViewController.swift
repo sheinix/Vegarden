@@ -32,7 +32,13 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
         }
     }
     
+    open var hiddenNextBttn : Bool? {
+        didSet {
+            self.nextButton?.isHidden = hiddenNextBttn!
     
+    }
+
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

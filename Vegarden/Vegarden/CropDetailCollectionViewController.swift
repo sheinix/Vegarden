@@ -119,7 +119,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
         
         if (cell as! VCropDetailPageViewCell).crop !== self.cropList[indexPath.row]  {
             
-            print("We have a problem! Ouch!!!")
+            //print("We have a problem! Ouch!!!")
         }
         
     }
