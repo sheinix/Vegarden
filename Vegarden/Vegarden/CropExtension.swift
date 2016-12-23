@@ -32,7 +32,7 @@ extension Crop {
     public var isFromSeed : Bool {
         
         get {
-            return ((getStatesOf(type: .Seed) != nil) ? true : false )
+            return ((getStatesOf(type: .Seed)!.count > 0) ? true : false )
         }
 
     }

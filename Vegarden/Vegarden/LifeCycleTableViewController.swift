@@ -17,7 +17,7 @@ class LifeCycleTableViewController: UITableViewController {
     
     var lifeStatesArray : [[String : [Any]]] = []
     
-    let lifeCycle = [lifeCyclceSates.Seed,
+    let lifeCycle = [lifeCyclceSates.Planted,
                      lifeCyclceSates.Growig,
                      lifeCyclceSates.Harvesting]
         
@@ -102,6 +102,9 @@ class LifeCycleTableViewController: UITableViewController {
                 self.myPlantedCrops?.remove(at: idx)
                 cellHeights = (0..<Int((myPlantedCrops?.count)!)).map { _ in C.CellHeight.close }
                 self.tableView.deleteRows(at: [IndexPath(row: idx, section:0)], with: .none)
+                
+                self.lifeStatesArray.remove(at: idx)
+                
                 self.tableView.reloadData()
                 
             }
@@ -109,12 +112,7 @@ class LifeCycleTableViewController: UITableViewController {
             self.view.showConfirmViewWith(title: title, frame: nil, afterAction: nil)
             
             //self.myPlantedCrops = self.myPlantedCrops?.filter { $0.isPlanted }
-            
-            
-            
-            
-            
-            
+
         }
         
     }

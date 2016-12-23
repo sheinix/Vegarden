@@ -49,7 +49,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         var isGrowing : Bool = true
         var noteView  : NoteView? = nil
     
-        if (stageTitle.text == lifeCyclceSates.Seed || stageTitle.text == lifeCyclceSates.Seedling ||
+        if (stageTitle.text == lifeCyclceSates.Planted ||
             stageTitle.text == lifeCyclceSates.Harvesting || stageTitle.text == lifeCyclceSates.Finish) {
             
             isGrowing = false

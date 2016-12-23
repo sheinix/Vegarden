@@ -13,7 +13,7 @@ import UIKit
 extension UISplitViewController : WalkthroughDelegate {
     
     override open func viewDidAppear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        super.viewDidAppear(animated)
         
         WalkthroughManager.shared.initializeWalkthroughIn(viewController: self)
         WalkthroughManager.shared.delegate = self
@@ -23,7 +23,7 @@ extension UISplitViewController : WalkthroughDelegate {
     }
     
     func didCloseWalkthrough() {
-        self.dismiss(animated: true) {
+        self.dismiss(animated: false) {
             
             //self.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: nil)
         }

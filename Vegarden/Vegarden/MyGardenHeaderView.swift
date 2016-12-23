@@ -25,7 +25,14 @@ class MyGardenHeaderView: UIView {
         
         setupViews()
 
-        self.greetingsLabel.text = Date.greetings() + " Sarah!"
+        var greetingsMsg = Date.greetings()
+        
+        if let userName = UserDefaults.standard.value(forKey: UserDefaultsKeys.userNameKey) as? String {
+            
+            greetingsMsg = greetingsMsg! + " " + userName
+        }
+        
+        self.greetingsLabel.text = greetingsMsg
         self.timeLabel.text = Date().currentTime()
         self.dateLabel.text = Date().inCellDateFormat()
         

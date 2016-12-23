@@ -39,6 +39,7 @@
 		26B899001E0B600A006C2A7B /* CreatePatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B898FF1E0B600A006C2A7B /* CreatePatchViewController.swift */; };
 		26B899021E0B6485006C2A7B /* FinalStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B899011E0B6485006C2A7B /* FinalStepViewController.swift */; };
 		26B899041E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B899031E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift */; };
+		26B899071E0CCC81006C2A7B /* EXTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B899061E0CCC81006C2A7B /* EXTView.m */; };
 		26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */; };
 		26BDDBF11DEBA411003547BB /* MyGardenOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF01DEBA411003547BB /* MyGardenOverviewTableViewCell.swift */; };
 		26BDDBF31DEBA428003547BB /* MyGardenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */; };
@@ -171,6 +172,8 @@
 		26B898FF1E0B600A006C2A7B /* CreatePatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePatchViewController.swift; sourceTree = "<group>"; };
 		26B899011E0B6485006C2A7B /* FinalStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalStepViewController.swift; sourceTree = "<group>"; };
 		26B899031E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterWalkthroughViewController.swift; sourceTree = "<group>"; };
+		26B899051E0CCC81006C2A7B /* EXTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTView.h; sourceTree = "<group>"; };
+		26B899061E0CCC81006C2A7B /* EXTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTView.m; sourceTree = "<group>"; };
 		26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
 		26BDDBF01DEBA411003547BB /* MyGardenOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 				96F722F71DB309CD000100B2 /* ViewsExtensions.swift */,
 				9654A8A01DB7211600A0A9D9 /* HelperExtensions.swift */,
 				96EE77F41DB9E97C00971EBF /* DateExtension.swift */,
+				26B899051E0CCC81006C2A7B /* EXTView.h */,
+				26B899061E0CCC81006C2A7B /* EXTView.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 				96F7230F1DB354EF000100B2 /* PopupCustomView.swift in Sources */,
 				BD37C0F41DA50FBD00265405 /* Constants.swift in Sources */,
 				96BB77701DBDD34000DCADA9 /* CropLifeCycleTableViewCell.swift in Sources */,
+				26B899071E0CCC81006C2A7B /* EXTView.m in Sources */,
 				9660596B1DCAA63A00FC5012 /* Row+CoreDataProperties.swift in Sources */,
 				BDE0617E1D9FDC660003364D /* RowLifeState+CoreDataClass.swift in Sources */,
 				96F7230C1DB3549B000100B2 /* Popup.m in Sources */,

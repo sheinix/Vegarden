@@ -201,8 +201,7 @@ enum ActionUnits {
 }
 
 public struct lifeCyclceSates {
-    static let Seed = "Seed"
-    static let Seedling = "Seedling"
+    static let Planted = "Planted"
     static let Growig = "Growing"
     static let Harvesting = "Harvesting"
     static let Finish = "Finish"
@@ -227,4 +226,9 @@ public enum FinishReason : Int {
 public struct lifeStates {
     let lifeCycleKey : lifeCyclceSates
     var lifeState : Any
+}
+
+public struct UserDefaultsKeys {
+    static let userNameKey = "userName"
+    static let walkthroughKey = "walkthroughPresented"
 }

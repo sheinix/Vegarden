@@ -13,6 +13,9 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
 
     @IBOutlet weak open var createPatchBttn: UIButton!
     @IBOutlet weak open var finishBttn: UIButton!
+    @IBOutlet weak var nameMsgLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    
     
     open var hiddenCreatePatchBttn : Bool? {
         
@@ -25,6 +28,7 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
         
         didSet {
             self.finishBttn.isHidden = hiddenFinishBttn!
+            
         }
     }
     
@@ -38,16 +42,13 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.createPatchBttn.layer.shadowOffset = CGSize(width: 2, height: 2)
-        self.createPatchBttn.layer.shadowOpacity = 2
-        self.createPatchBttn.layer.shadowRadius = 5
-        self.createPatchBttn.layer.shadowColor = UIColor.darkGray.cgColor
+        self.createPatchBttn.setClearStyledButton()
+        self.finishBttn.setClearStyledButton()
+        self.nextButton?.setClearStyledButton()
+        self.nameTextField.applyShadowsForWalkthrough()
         
+        self.nameTextField.delegate = self
         
-        self.finishBttn.layer.shadowOffset = CGSize(width: 2, height: -2)
-        self.finishBttn.layer.shadowOpacity = 2
-        self.finishBttn.layer.shadowRadius = 5
-        self.finishBttn.layer.shadowColor = UIColor.darkGray.cgColor
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(newPatchAdded),
@@ -65,7 +66,12 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
     @objc fileprivate func newPatchAdded(notification: NSNotification) {
         
         self.createPatchBttn.isHidden = true
-        self.nextButton?.sendActions(for: .touchUpInside)
+        
+        self.view.showConfirmViewWith(title: "Cool! Patch was created!",
+                                      frame: self.view.bounds,
+                                      afterAction: {self.nextButton?.sendActions(for: .touchUpInside)})
+        
+        
         
     }
     
@@ -75,7 +81,7 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
         
         let alert = PatchAddEditViewController(appearance: appearance, patch: nil)
         
-        let _ = alert.showInfo("Add New Patch",
+        let _ = alert.showInfo("Create your First Patch",
                                subTitle: "",
                                closeButtonTitle: "Close",
                                duration: 0,
@@ -86,7 +92,63 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
     
     @IBAction func finishAction(_ sender: Any) {
         
-        self.delegate?.walkthroughCloseButtonPressed!()
+        //Send a resign first responder in order to resign all textfields that has data!
+//        UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
+        
+        if !((nameTextField.text?.isEmpty)!) {
+            
+            UserDefaults.standard.synchronize()
+            self.delegate?.walkthroughCloseButtonPressed!()
+        
+        } else {
+            
+            showAlert()
+        }
+        
+    }
+    
+}
+extension MasterWalkthroughViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+
+        validate(txtField: textField)
+
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        validate(txtField: textField)
+    }
+    
+    
+    fileprivate func validate(txtField: UITextField) {
+       
+        if (txtField.text?.isEmpty)! {
+            showAlert()
+        } else {
+            
+            UserDefaults.standard.setValue(txtField.text!, forKey: UserDefaultsKeys.userNameKey)
+        }
+ 
+    }
+    
+    fileprivate func showAlert() {
+        self.showAlertView(title: "Please provide a name!",
+                           message: "Promise is the last step! :)",
+                           style: .alert,
+                           confirmBlock: {},
+                           cancelBlock: {})
     }
     
 }

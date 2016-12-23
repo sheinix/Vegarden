@@ -79,6 +79,8 @@ extension UIView{
         }
     }
     
+    
+    //Put everyhing in a Protocol and extend it for every item, this repetead code make me sick! :\
     func applyShadows() {
         
         self.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -93,6 +95,16 @@ extension UIView{
         self.layer.shadowRadius = 6
         self.layer.shadowColor = UIColor.lightGray.cgColor
     }
+    
+    func applyShadowsForWalkthrough() {
+        
+        self.layer.shadowOffset = CGSize(width: 2, height: -2)
+        self.layer.shadowOpacity = 2
+        self.layer.shadowRadius = 5
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+    }
+    
+    
     
     func origin (point : CGPoint){
         frame.origin.x = point.x
@@ -158,10 +170,8 @@ extension UIView{
             
             if afterAction != nil  {
                 afterAction!()
-            } else {
-                confirm.removeFromSuperview()
             }
-           
+           confirm.removeFromSuperview()
         }
         
         self.clipsToBounds = true

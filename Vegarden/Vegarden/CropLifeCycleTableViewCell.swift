@@ -23,7 +23,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     var actionMenu : KCFloatingActionButton
     var crop : Crop?
    
-    var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Seed: [],
+    var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Planted: [],
                                             lifeCyclceSates.Growig: [],
                                             lifeCyclceSates.Harvesting: []]
 //                                            lifeCyclceSates.Finish: []]
@@ -148,7 +148,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
         
         if let plantState = crop.getStatesOf(type: (crop.isFromSeed ? .Seed : .Seedling)) {
             
-            self.lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Seed)
+            self.lifeCycleDict.updateValue(plantState, forKey: lifeCyclceSates.Planted)
         }
     }
     

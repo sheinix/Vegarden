@@ -33,11 +33,11 @@ class WalkthroughManager {
     
     public func initializeWalkthroughIn(viewController: UIViewController) {
         
-        if !UserDefaults.standard.bool(forKey: "walkthroughPresented") {
+        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.walkthroughKey) {
             
             showWalkthroughIn(viewController: viewController)
       //TODO Change it for production!
-     //       UserDefaults.standard.set(true, forKey: "walkthroughPresented")
+         //   UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
         }
     }
@@ -49,16 +49,20 @@ class WalkthroughManager {
         
         self.walkThrough =   stb.instantiateViewController(withIdentifier: "Master") as? MasterWalkthroughViewController
         
-        let pageOne    = stb.instantiateViewController(withIdentifier:"page1") as UIViewController
-        let pageTwo    = stb.instantiateViewController(withIdentifier:"page2") as UIViewController
-        let pageThree  = stb.instantiateViewController(withIdentifier:"page3") as UIViewController
+        let welcomePage   = stb.instantiateViewController(withIdentifier:"page1") as UIViewController
+        let patchPage     = stb.instantiateViewController(withIdentifier:"page2") as UIViewController
+        let featuresPage  = stb.instantiateViewController(withIdentifier:"page23") as UIViewController
+        let lastStepPage  = stb.instantiateViewController(withIdentifier:"page3") as UIViewController
         
         // Attach the pages to the master
-
+        
+       // walkThrough?.closeButton?.isHidden = true
+        
         walkThrough?.delegate = self
-        walkThrough?.add(viewController:pageOne)
-        walkThrough?.add(viewController:pageTwo)
-        walkThrough?.add(viewController:pageThree)
+        walkThrough?.add(viewController:welcomePage)
+        walkThrough?.add(viewController:patchPage)
+        walkThrough?.add(viewController:featuresPage)
+        walkThrough?.add(viewController:lastStepPage)
         
         viewController.present(walkThrough!, animated: true, completion: nil)
         
@@ -72,14 +76,23 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
         delegate?.didCloseWalkthrough()
     }
     
+    
     func walkthroughPageDidChange(_ pageNumber: Int) {
         
         let isLastStep = ((self.walkThrough?.numberOfPages)! - 1 == pageNumber)
-        
-        self.walkThrough?.closeButton?.isHidden = !isLastStep
-        self.walkThrough?.hiddenFinishBttn      = !isLastStep
-        self.walkThrough?.nextButton?.isHidden  = (pageNumber != 0)
+      
+        self.walkThrough?.hiddenFinishBttn = !isLastStep //|| (self.walkThrough?.nameTextField.text?.isEmpty)!
+        self.walkThrough?.nextButton?.isHidden  = (pageNumber != 0 || pageNumber != 2)
         self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
+        self.walkThrough?.nameMsgLabel.isHidden = !isLastStep
+        self.walkThrough?.nameTextField.isHidden = !isLastStep
+        
+        if (isLastStep) {
+            self.walkThrough?.nameTextField.becomeFirstResponder()
+        } else if (self.walkThrough?.nameTextField.isFirstResponder)! {
+            self.walkThrough?.nameTextField.resignFirstResponder()
+        }
+        
         
         delegate?.didChangeWalkthroughPage(pageNumber: pageNumber)
     }

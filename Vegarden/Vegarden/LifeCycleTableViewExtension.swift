@@ -56,6 +56,7 @@ extension LifeCycleTableViewController : UICollectionViewDelegate, UICollectionV
             }
         }
     }
+    
 }
 
 extension LifeCycleTableViewController : UICollectionViewDelegateFlowLayout {
