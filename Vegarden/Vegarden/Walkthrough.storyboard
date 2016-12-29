@@ -285,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are a few thing that you can do with Vegarden!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osr-Vy-FPg">
-                                <rect key="frame" x="34" y="72" width="700" height="34.5"/>
+                                <rect key="frame" x="34" y="72" width="700" height="29.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="d2P-3O-ccJ"/>
                                 </constraints>
@@ -294,31 +294,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Crops to My Crops screen from database to have a quick access" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-S0-wZL">
-                                <rect key="frame" x="65" y="218.5" width="637" height="68.5"/>
+                                <rect key="frame" x="65" y="213.5" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Notes from the Life Cycle screen every time you Fertilize, Weed or Water your crops!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-jv-3Ja">
-                                <rect key="frame" x="65" y="344" width="637" height="68.5"/>
+                                <rect key="frame" x="65" y="329" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the progress of your crops from My Garde screen or Life Cycle!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-Bn-ndL">
-                                <rect key="frame" x="65" y="469.5" width="637" height="68.5"/>
+                                <rect key="frame" x="65" y="444.5" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add, Remove or Edit your veggie patchs from My Garden Screen!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX3-zA-JKF">
-                                <rect key="frame" x="65" y="595" width="637" height="68.5"/>
+                                <rect key="frame" x="65" y="560" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add, Remove or Edit rows of any patch from My Garden Screen!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C12-JG-Psi">
-                                <rect key="frame" x="65" y="720.5" width="637" height="68.5"/>
+                                <rect key="frame" x="65" y="675.5" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -371,7 +371,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-Nt-weo">
-                                <rect key="frame" x="179" y="54" width="411" height="69.5"/>
+                                <rect key="frame" x="179" y="54" width="411" height="59.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="411" id="36a-xN-i4x"/>
                                 </constraints>
@@ -380,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almost Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-Ue-dFH">
-                                <rect key="frame" x="179" y="150.5" width="411" height="60"/>
+                                <rect key="frame" x="179" y="140.5" width="411" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="411" id="McV-4d-7vE"/>
                                 </constraints>

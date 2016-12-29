@@ -32,15 +32,6 @@
             symbolName = "UICollectionViewFlowLayoutBreakForInvalidSizes"
             moduleName = "">
             <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UICollectionViewFlowLayoutBreakForInvalidSizes"
-                  moduleName = "UIKit"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,38 +65,6 @@
             endingLineNumber = "31"
             landmarkName = "rateApp(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Vegarden.AboutViewController.rateApp (Any) -&gt; ()"
-                  moduleName = "Vegarden"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/AboutViewController.swift"
-                  timestampString = "504665057.136248"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Vegarden.AboutViewController.(rateApp (Any) -&gt; ()).(closure #1)"
-                  moduleName = "Vegarden"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bazooka/vegarden/Vegarden/Vegarden/AboutViewController.swift"
-                  timestampString = "504665057.142145"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
