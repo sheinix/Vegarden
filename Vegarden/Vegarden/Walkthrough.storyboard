@@ -110,11 +110,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomNextBttnConstraint" destination="Rnb-Yv-qw1" id="ckf-YB-HE4"/>
                         <outlet property="createPatchBttn" destination="PFm-BG-G7K" id="lbd-NC-asY"/>
                         <outlet property="finishBttn" destination="0TD-fS-tNv" id="uLo-hZ-fxZ"/>
                         <outlet property="nameMsgLabel" destination="Omb-Z3-lDT" id="qSA-QD-VUd"/>
                         <outlet property="nameTextField" destination="jS9-yg-doX" id="QBn-YI-6Vl"/>
                         <outlet property="nextButton" destination="jWk-gQ-zFw" id="ocE-F9-tnn"/>
+                        <outlet property="topCreatePatchConstraint" destination="taZ-0I-qac" id="Nka-Xb-UDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8r-V3-vdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

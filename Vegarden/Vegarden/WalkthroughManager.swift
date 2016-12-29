@@ -37,7 +37,7 @@ class WalkthroughManager {
             
             showWalkthroughIn(viewController: viewController)
       //TODO Change it for production!
-           // UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
+          //  UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
         }
     }
@@ -80,14 +80,12 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
     func walkthroughPageDidChange(_ pageNumber: Int) {
         
         
+        animateButton(pageNumber: pageNumber)
         
-        self.walkThrough?.nextButton?.isHidden  = (pageNumber != 0 || pageNumber != 2)
-        
-    
         let isLastStep = ((self.walkThrough?.numberOfPages)! - 1 == pageNumber)
       
         self.walkThrough?.hiddenFinishBttn = !isLastStep
-        self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
+       // self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
         self.walkThrough?.nameMsgLabel.isHidden = !isLastStep
         self.walkThrough?.nameTextField.isHidden = !isLastStep
         
@@ -100,4 +98,32 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
         
         delegate?.didChangeWalkthroughPage(pageNumber: pageNumber)
     }
+    
+    fileprivate func animateButton(pageNumber: Int) {
+    
+        let nextValue = (pageNumber == 0 || pageNumber == 2 ? defaultBottomValue : -80)
+        let patchValue = (pageNumber == 1 ? defaultTopPatchBttnValue : -800)
+        
+        let bttnAnimation = UIViewPropertyAnimator(duration: 0.2,
+                                                   curve: UIViewAnimationCurve.linear,
+                                                   animations: {
+                    
+                self.walkThrough?.bottomNextBttnConstraint.constant = CGFloat(nextValue)
+                self.walkThrough?.view.layoutIfNeeded()
+        })
+        
+        let createPatchBttn = UIViewPropertyAnimator(duration: 0.2,
+                                                     curve: UIViewAnimationCurve.linear,
+                                                     animations: {
+                                                        
+                                                        self.walkThrough?.topCreatePatchConstraint.constant = CGFloat(patchValue)
+                                                        self.walkThrough?.view.layoutIfNeeded()
+        })
+
+        bttnAnimation.startAnimation()
+        createPatchBttn.startAnimation()
+    }
+    
+    
+    
 }

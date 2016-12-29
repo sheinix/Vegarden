@@ -9,14 +9,18 @@
 import UIKit
 import BWWalkthrough
 
+let defaultBottomValue = 78
+let defaultTopPatchBttnValue = 380
+
 class MasterWalkthroughViewController: BWWalkthroughViewController {
 
     @IBOutlet weak open var createPatchBttn: UIButton!
     @IBOutlet weak open var finishBttn: UIButton!
     @IBOutlet weak var nameMsgLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var bottomNextBttnConstraint: NSLayoutConstraint!
     
-    
+    @IBOutlet weak var topCreatePatchConstraint: NSLayoutConstraint!
     open var hiddenCreatePatchBttn : Bool? {
         
         didSet {
