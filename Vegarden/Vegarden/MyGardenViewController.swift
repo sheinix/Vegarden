@@ -100,59 +100,36 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
     
     @objc fileprivate func newPatchAdded(notification: NSNotification) {
         
-        if let patch = notification.userInfo?["patch"] as? Paddock {
-            
-            self.patchs.append(patch)
-            self.totalPaddocks += 1
-          //  reloadSectionFor(action: .AddPatch)
-            
-           if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
-                
-            if let myCV = cell.myGardenCollectionView {
-                
-                myCV.performBatchUpdates({
+        guard let patch = notification.userInfo?["patch"] as? Paddock else { return }
+        
+        self.patchs.append(patch)
+        self.view.showConfirmViewWith(title: "Patch Added!",
+                                      frame: self.view.bounds,
+                                      afterAction: nil)
 
-                        self.view.showConfirmViewWith(title: "Patch Added!",
-                                                      frame: self.view.bounds,
-                                                afterAction: nil)
-                
-                        myCV.insertItems(at: [IndexPath(row:(self.totalPaddocks-1), section:0)])
-                
-                    }, completion: { (succes) in  } )
-                }
-            }
-        }
+        reloadSectionFor(action: .AddPatch)
+        
     }
+    
     
     @objc fileprivate func patchDeleted(notification: NSNotification) {
         
-        if let patch = notification.userInfo?["patch"] as? Paddock {
-            
-            let idx = self.patchs.index(of: patch)
-            self.patchs.remove(at: idx!)
-            //reloadSectionFor(action: .DeletePatch)
-            self.totalPaddocks -= 1
-            
-            if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
-            
-                if let myCV = cell.myGardenCollectionView {
+        guard let patch = notification.userInfo?["patch"] as? Paddock else { return }
+        
+        let idx = self.patchs.index(of: patch)
+        self.patchs.remove(at: idx!)
+        
+        self.view.showConfirmViewWith(title: "Patch Deleted!", frame: self.view.bounds, afterAction: nil)
 
-                    self.view.showConfirmViewWith(title: "Patch Deleted!", frame: self.view.bounds, afterAction: nil)
-            
-                    myCV.performBatchUpdates({
-                        myCV.deleteItems(at: [IndexPath(row: idx!, section: 0)])
-            
-                   }, completion: { (succes) in DispatchQueue.main.async { myCV.reloadData() } } )
-                }
-            }
-        }
+        reloadSectionFor(action: .DeletePatch)
     }
+
     
    @objc fileprivate func patchRowEdited(notification: NSNotification) {
     
-        if let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell {
-           if let myCV = cell.myGardenCollectionView { DispatchQueue.main.async { myCV.reloadData() } }
-        }
+        guard let cell = self.tableView.cellForRow(at: IndexPath(row:0, section:1)) as?  MyGardenDetailTableViewCell else { return }
+    
+        if let myCV = cell.myGardenCollectionView { DispatchQueue.main.async { myCV.reloadData() } }
     
         self.view.showConfirmViewWith(title: screenMessage(notiId: notification.name.rawValue),
                                       frame: nil,
@@ -161,10 +138,6 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
 
 
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -195,7 +168,7 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
                 collection.emptyDataSetDelegate = self
                 collection.emptyDataSetSource = self
                 
-               // collection.reloadData()
+                collection.reloadData()
             }
             
         }

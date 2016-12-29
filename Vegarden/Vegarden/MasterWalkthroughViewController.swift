@@ -19,8 +19,8 @@ class MasterWalkthroughViewController: BWWalkthroughViewController {
     @IBOutlet weak var nameMsgLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bottomNextBttnConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var topCreatePatchConstraint: NSLayoutConstraint!
+    
     open var hiddenCreatePatchBttn : Bool? {
         
         didSet {
