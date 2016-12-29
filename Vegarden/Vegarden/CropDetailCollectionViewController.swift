@@ -117,11 +117,20 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if (cell as! VCropDetailPageViewCell).crop !== self.cropList[indexPath.row]  {
+        guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
+        
+        if cropDetailCell.crop !== self.cropList[indexPath.row]  {
             
             //print("We have a problem! Ouch!!!")
         }
         
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+         guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
+        
+//         cropDetailCell.crop?.removeObserver(cropDetailCell, forKeyPath: "owned", context: &cropDetailCell.myContext)
     }
     
     
@@ -140,22 +149,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return false
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-       // NotificationCenter.default.removeObserver(cell)
-      
-        if let crop = (cell as! VCropDetailPageViewCell).crop {
-        
-            if crop === self.cropList[indexPath.row] {
-                //crop.removeObserver(cell, forKeyPath: "owned")
-            }
-            
-            
-        }
-        
-        
-    }
+}
     
 //    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //        
@@ -189,7 +183,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
 //            
 //        }
 //    }
-}
+
 
 extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayout {
     

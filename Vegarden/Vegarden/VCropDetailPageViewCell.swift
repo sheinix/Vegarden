@@ -11,25 +11,22 @@ import SCLAlertView
 
 class VCropDetailPageViewCell: UICollectionViewCell {
     
-    var cropTitle = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
+    var cropTitle    = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
     var statusButton = UIButton(type: .custom)
     var removeButton = UIButton(type: .custom)
-    private var myContext = 0 //For KVO purposes, new way to do it in Apple Docs!
+    
+    var myContext = 0 //For KVO purposes, new way to do it in Apple Docs!
     
     var crop : Crop? {
+        
         didSet {
-            
-            self.crop?.addObserver(self,
-                                forKeyPath: "owned",
-                                   options: NSKeyValueObservingOptions.new,
-                                   context: &myContext)
+            addObserverFromCrop()
         }
     }
+    
     var image : UIImage?
     var pullAction : ((_ offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
-//    let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.plain)
-    
     var tableView : UITableView?
     
     override init(frame: CGRect) {
@@ -46,19 +43,33 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        
         super.layoutSubviews()
         tableView?.reloadData()
     }
     
     override func prepareForReuse() {
      
-        if self.crop != nil {
-            self.crop?.removeObserver(self, forKeyPath: "owned")
-        }
-        
         super.prepareForReuse()
     }
     
+    fileprivate func removeObserverFromCrop() {
+        
+        if self.crop != nil {
+            self.crop?.removeObserver(self, forKeyPath: "owned", context: &myContext)
+        }
+    }
+   
+    fileprivate func addObserverFromCrop() {
+        if self.crop != nil  {
+            
+            self.crop?.addObserver(self,
+                               forKeyPath: "owned",
+                               options: NSKeyValueObservingOptions.new,
+                               context: &myContext)
+        }
+    }
+
     private func setupContent() {
         
         backgroundColor = UIColor.clear
@@ -66,50 +77,45 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 8
         
-        cropTitle.backgroundColor = UIColor.clear
-        cropTitle.textColor = UIColor.white
-        cropTitle.font = Fonts.detailCropFont
+        cropTitle.backgroundColor           = UIColor.clear
+        cropTitle.textColor                 = UIColor.white
+        cropTitle.font                      = Fonts.detailCropFont
         cropTitle.adjustsFontSizeToFitWidth = true
-        cropTitle.layer.shadowOffset = CGSize(width: -1, height: -1)
-        cropTitle.layer.shadowOpacity = 1
-        cropTitle.layer.shadowRadius = 6
+        cropTitle.layer.shadowOffset        = CGSize(width: -1, height: -1)
+        cropTitle.layer.shadowOpacity       = 1
+        cropTitle.layer.shadowRadius        = 6
         cropTitle.layer.shadowColor = UIColor.black.cgColor
         
         statusButton.frame = CGRect(x:0,y:0, width:100, height:40)
         statusButton.setClearStyledButton()
         statusButton.applyShadows()
         
-        
-        //let tableFrame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
-        tableView = UITableView(frame:self.bounds, style: UITableViewStyle.plain)
-        //tableView?.estimatedRowHeight = 1050
-//       tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.separatorStyle = .none
+        tableView                  = UITableView(frame:self.bounds, style: UITableViewStyle.plain)
+        tableView?.separatorStyle  = .none
         tableView?.allowsSelection = false
+        tableView?.delegate        = self
+        tableView?.dataSource = self
+        tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
         
         contentView.addSubview(tableView!)
-        tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
-//        tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailViewCellImageIdentify)
-        tableView?.delegate = self
-        tableView?.dataSource = self
-
     }
 
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        if context == &myContext {
+        if context != &myContext {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+            return
+        }
         
-            guard let cropie = object as? Crop else { return }
+        guard let cropie = object as? Crop else { return }
         
-            let msg = cropie.name! +  (cropie.owned ? " Added !" : "  Removed!")
-        
-            self.showConfirmViewWith(title: msg,
+        let msg = cropie.name! +  (cropie.owned ? " Added !" : "  Removed!")
+                
+        self.showConfirmViewWith(title: msg,
                                      frame: screenBounds,
                                      afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
+
     }
     
     @objc func cropPlanted(notification: Notification) {
@@ -117,24 +123,16 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         let crop = notification.userInfo?["crop"] as! Crop
         
         //This time I need to compare names, because wont be same instance, as I copy the obj to plant!
-        if (self.crop?.name == crop.name) {
-        
-            let plantMsg = (notification.userInfo?["crop"] as! Crop).name! + " Planted! "
-        
-            self.showConfirmViewWith(title: plantMsg,
+        if (self.crop?.name != crop.name) { return }
+     
+        self.showConfirmViewWith(title: crop.name! + " Planted! ",
                                  frame: screenBounds,
                                  afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
-        }
-        else { //TODO Clean this:
-            print("crop name :\(crop.name)  ---- >  self.crop.name:  \(self.crop?.name)")
-        }
     }
-    
     
     deinit {
         
-        self.crop?.removeObserver(self, forKeyPath: "owned", context: &myContext)
-        
+        removeObserverFromCrop()
         NotificationCenter.default.removeObserver(self)
     }
     

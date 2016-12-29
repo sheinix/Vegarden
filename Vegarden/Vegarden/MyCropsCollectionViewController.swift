@@ -69,23 +69,20 @@ class MyCropsCollectionViewController: UICollectionViewController {
     }
     
     @objc private func refreshCollection(notification: Notification) {
+    
+        guard let collection = self.collectionView,
+               let crop = (notification.userInfo?["crop"] as? Crop),
+               let rowIdx = self.myCrops?.index(of:crop) else { return }
         
-        if let collection = self.collectionView {
-            
-            let crop = (notification.userInfo?["crop"] as! Crop)
-            
-            if let row = self.myCrops?.index(of:crop) {
+       
+        let idx =  IndexPath(row: rowIdx, section: 0)
                 
-                let idx =  IndexPath(row: row, section: 0)
-                
-                    self.myCrops?.remove(at: row)
-                    collection.deleteItems(at: [idx])
-                    collection.reloadData()
-            }
-        }
+        self.myCrops?.remove(at: rowIdx)
+        collection.deleteItems(at: [idx])
+        collection.reloadData()
+        
     }
 }
-
 // MARK: UICollectionViewDataSource / Delegate
 
 extension MyCropsCollectionViewController {
