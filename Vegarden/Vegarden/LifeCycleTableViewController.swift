@@ -140,7 +140,7 @@ class LifeCycleTableViewController: UITableViewController {
         self.lifeStatesArray.remove(at: idx!)
         self.lifeStatesArray.insert(cell.reloadNotes()!, at: idx!)
         
-        cell.collectionView.reloadItems(at: [IndexPath(row: 1, section: 0)])//,IndexPath(row:2, section:0)])
+        cell.collectionView.reloadItems(at: [IndexPath(row: 1, section: 0),IndexPath(row:2, section:0)])
 
     }
     

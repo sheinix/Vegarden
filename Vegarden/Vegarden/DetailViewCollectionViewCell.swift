@@ -68,7 +68,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
                     
                     noteView = createNoteFromRow((lifeState: state as! RowLifeState))
                 
-                } else if (state is Seed || state is Seedling) {
+                } else if (state is Seed || state is Seedling || state is Harvesting) {
                     
                     noteView = createNoteFromCrop(cropState: (state as! CropState))
                     
@@ -109,7 +109,7 @@ class DetailViewCollectionViewCell: UICollectionViewCell {
         return  NoteView(frame:frame,
                          date: cropState.date!,
                          text: cropState.notes as String?,
-                         title:"Planted from " + cropState.nameOfClass)
+                         title:(cropState is Harvesting ? "Harvested" : "Planted from " + cropState.nameOfClass))
     }
     
     

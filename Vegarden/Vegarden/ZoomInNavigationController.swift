@@ -41,10 +41,13 @@ class ZoomInNavigationController: UINavigationController {
         let childrenCount = self.viewControllers.count
         
         
-        //FIX Very bad, check later why there was always substracting 2 to the childrenCount!
+        //FIX: Its crashing when count is one (because its been called twice sometimes.
+        //TODO : Check why this method is been calling twice
+        guard childrenCount == 2 else { return self.viewControllers[0] }
         let minusUnit = (childrenCount > 1 ? 2 : 1)
+        //===================================================================
         
-        let toViewController = self.viewControllers[childrenCount-minusUnit] as! VWaterFallViewControllerProtocol
+         let toViewController = self.viewControllers[childrenCount-minusUnit] as! VWaterFallViewControllerProtocol
         let toView = toViewController.transitionCollectionView()
         let popedViewController = self.viewControllers[childrenCount-1] as! UICollectionViewController
         let popView  = popedViewController.collectionView!;

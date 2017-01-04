@@ -114,9 +114,11 @@ extension Crop {
     
     private func getPlantedtCropState() -> CropState? {
         
-        guard let orderedStates = getOrderedStates() else { return nil }
-    
-        return orderedStates[0]
+        let state =  self.states?.allObjects.filter( { ($0 as! CropState) is Seed || ($0 as! CropState) is Seedling } )
+        
+        guard let states = state, (state?.count)! > 0 else { return nil }
+        
+        return (states[0] as! CropState)
         
     }
     
@@ -169,40 +171,15 @@ extension Crop {
     }
 
 
-    private func getHarvestingStates() -> [Harvesting]? {
+    public func getHarvestingStates() -> [Harvesting]? {
         
-        var returnStates : [CropState]? = nil
+        guard let returnStates : [Harvesting] = self.states?.filter( { ($0 as! CropState) is Harvesting }) as! [Harvesting]? else { return nil }
         
         
-        self.states?.allObjects.forEach({ (cropState) in
-            
-            if (type(of: cropState) == Harvesting.self) {
-                
-                returnStates?.append(cropState as! CropState)
-            }
-            
-        })
-        
-        return returnStates as! [Harvesting]?
+        return (returnStates.count > 0 ?  returnStates.sorted(by: { (harv1, harv2) -> Bool in
+            return harv1.date > harv2.date
+        }) : nil )
     }
-
-//    public func getSeedState() -> Seed {
-//
-//        var seedState : Seed
-//        
-//        
-//        self.states?.allObjects.forEach({ (cropState) in
-//            
-//            if (type(of: cropState) == Seed.self) {
-//                
-//                seedState = (cropState as! Seed)
-//            }
-//            
-//        })
-//        
-//        return seedState
-//    }
-//    
     
     private func getOrderedStates() -> [CropState]? {
         
@@ -265,7 +242,9 @@ extension Crop {
                 })
             })
             
-            return states
+            return states.sorted(by: { (rowState1, rowState2) -> Bool in
+                return (rowState1 as! RowLifeState).when! > (rowState2 as! RowLifeState).when!
+            })
         }
     }
     

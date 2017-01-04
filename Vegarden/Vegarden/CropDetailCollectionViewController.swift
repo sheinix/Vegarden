@@ -128,7 +128,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-         guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
+         //guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
         
 //         cropDetailCell.crop?.removeObserver(cropDetailCell, forKeyPath: "owned", context: &cropDetailCell.myContext)
     }

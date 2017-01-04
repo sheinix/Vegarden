@@ -119,10 +119,10 @@ class CropLifeCycleTableViewCell: FoldingCell {
         guard let crop = self.crop else { return nil }
         
         self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Growig)
-       // self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Harvesting)
+        self.lifeCycleDict.updateValue([], forKey: lifeCyclceSates.Harvesting)
         
         self.setGrowingNotes(crop: crop)
-        //self.setHarvestingStates(crop: crop)
+        self.setHarvestingStates(crop: crop)
         
         return self.lifeCycleDict
     }
@@ -156,7 +156,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     private func setHarvestingStates(crop: Crop) {
        
-        if let harvestingStates = crop.getStatesOf(type: .Harvested) {
+        if let harvestingStates = crop.getHarvestingStates() {
             
             self.lifeCycleDict.updateValue(harvestingStates, forKey: lifeCyclceSates.Harvesting)
         }
