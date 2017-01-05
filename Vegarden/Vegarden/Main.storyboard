@@ -525,7 +525,7 @@
         <scene sceneID="lOK-Yi-UVO">
             <objects>
                 <collectionViewController id="gFG-Wk-Wde" customClass="MyCropsCollectionViewController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NjZ-S8-XLq">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="NjZ-S8-XLq">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -627,7 +627,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ulf-iw-qSp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uWC-BU-zgC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uWC-BU-zgC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -684,7 +684,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="noJ-DX-uOa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l02-Lj-pkj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l02-Lj-pkj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -703,7 +703,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="p6h-Ud-H2a" customClass="ZoomInNavigationController" customModule="Vegarden" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kgw-uH-uXE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3y-LT-MBd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c3y-LT-MBd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -721,7 +721,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQg-rb-ocj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEe-px-fWX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bEe-px-fWX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

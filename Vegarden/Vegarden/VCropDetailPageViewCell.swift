@@ -9,11 +9,17 @@
 import UIKit
 import SCLAlertView
 
+protocol RemoveCropButtonDelegate : class {
+    func didPressRemoveCropBttn(crop: Crop)
+}
+
 class VCropDetailPageViewCell: UICollectionViewCell {
     
     var cropTitle    = UILabel(frame:CGRect(x:0,y:0, width:200, height:90))
     var statusButton = UIButton(type: .custom)
     var removeButton = UIButton(type: .custom)
+    
+    weak var delegate : RemoveCropButtonDelegate?
     
     var myContext = 0 //For KVO purposes, new way to do it in Apple Docs!
     
@@ -109,12 +115,12 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         }
         
         guard let cropie = object as? Crop else { return }
+        //FIX: Doing this check because theres another instance of the cell watching the property
+       // guard cropie === self.crop else { return }
         
-        let msg = cropie.name! +  (cropie.owned ? " Added !" : "  Removed!")
-                
-        self.showConfirmViewWith(title: msg,
-                                     frame: screenBounds,
-                                     afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
+        self.showConfirmViewWith(title: cropie.name! +  (cropie.owned ? " Added !" : "  Removed!"),
+                                 frame: screenBounds,
+                                 afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
 
     }
     
@@ -258,19 +264,10 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     @objc fileprivate func actionButtonPressed(sender: UIButton) {
         
-        if (sender.titleLabel?.text == "Plant") {
-            
-            showPlantAlertView()
-            
-        } else {
-            
-            if let newCrop = self.crop {
-                
-                GardenManager.shared.addNewCropToGarden(crop: newCrop)
-
-            }
+        if (sender.titleLabel?.text == "Plant") { showPlantAlertView() }
+        else {
+                if let newCrop = self.crop { GardenManager.shared.addNewCropToGarden(crop: newCrop) }
         }
-        
     }
     
     fileprivate func showPlantAlertView() {
@@ -327,12 +324,10 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     @objc fileprivate func removeCropPressed(sender: UIButton) {
     
-        if self.crop != nil {
-            
-                GardenManager.shared.removeCropFromGarden(crop: self.crop!)
-        }
+        guard let crop = self.crop else { return }
+        
+        self.delegate?.didPressRemoveCropBttn(crop: crop)
+        
     }
 
-    
-    
 }

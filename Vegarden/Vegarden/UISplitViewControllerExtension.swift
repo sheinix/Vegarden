@@ -12,20 +12,29 @@ import UIKit
 
 extension UISplitViewController : WalkthroughDelegate {
     
+     var seguePerformer : UIViewController  {
+        
+        return (self.viewControllers[self.viewControllers.count-1] as! UINavigationController).topViewController!
+    }
+    
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        WalkthroughManager.shared.initializeWalkthroughIn(viewController: self)
         WalkthroughManager.shared.delegate = self
+        WalkthroughManager.shared.initializeWalkthroughIn(viewController: self)
         
-//        let myGarden = self.
-//        splitViewController.showDetailViewController(myGarden, sender: nil)
+
+    }
+    
+    func walkthroughDidFinishEarly() {
+       
+        self.seguePerformer.performSegue(withIdentifier: "showMyGardenView" , sender:self)
+       
     }
     
     func didCloseWalkthrough() {
         self.dismiss(animated: false) {
             
-            //self.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: nil)
         }
     }
     

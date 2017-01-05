@@ -15,6 +15,8 @@ protocol WalkthroughDelegate: class {
     
     func didChangeWalkthroughPage(pageNumber: Int)
     
+    func walkthroughDidFinishEarly()
+    
 }
 
 
@@ -39,6 +41,10 @@ class WalkthroughManager {
       //TODO Change it for production!
             UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
+        
+        } else {
+            //Not the first time!
+            delegate?.walkthroughDidFinishEarly()
         }
     }
     

@@ -95,6 +95,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
         let collectionCell: VCropDetailPageViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.CropDetailViewCellIdentify, for: indexPath) as! VCropDetailPageViewCell
     
+        collectionCell.delegate = self
         collectionCell.crop = self.cropList[indexPath.row]
         collectionCell.image = UIImage(named:self.cropList[indexPath.row].picture!)
         collectionCell.cropTitle.text = self.cropList[indexPath.row].name
@@ -151,39 +152,6 @@ class CropDetailCollectionViewController: UICollectionViewController {
     }
 }
     
-//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        
-//        if let collectionView = collectionView {
-//            
-//            targetContentOffset.pointee = scrollView.contentOffset
-//            let pageWidth = scrollView.frame.width + (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
-//            
-//            var assistanceOffset : CGFloat = pageWidth / 3.0
-//            
-//            if velocity.x < 0 {
-//                assistanceOffset = -assistanceOffset
-//            }
-//            
-//            let assistedScrollPosition = (scrollView.contentOffset.x + assistanceOffset) / pageWidth
-//            
-//            var targetIndex = Int(round(assistedScrollPosition))
-//            
-//            
-//            if targetIndex < 0 {
-//                targetIndex = 0
-//            }
-//            else if targetIndex >= collectionView.numberOfItems(inSection: 0) {
-//                targetIndex = collectionView.numberOfItems(inSection: 0) - 1
-//            }
-//            
-//            print("targetIndex = \(targetIndex)")
-//            
-//            let indexPath = IndexPath(item: targetIndex, section: 0)
-//            collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
-//            
-//        }
-//    }
-
 
 extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayout {
     
@@ -204,6 +172,22 @@ extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayou
         }
 
         return itemSize!
+    }
+}
+extension CropDetailCollectionViewController : RemoveCropButtonDelegate {
+    
+    func didPressRemoveCropBttn(crop: Crop) {
+        
+        if crop.isPlanted  {
+            self.showAlertView(title: "Wait!",
+                             message: "This crop is still planted. Please Unplant it from the LifeCycle screen first!",
+                               style: .alert,
+                        confirmBlock: {},
+                         cancelBlock: {})
+        } else {
+        
+            GardenManager.shared.removeCropFromGarden(crop: crop)
+        }
     }
 }
 
