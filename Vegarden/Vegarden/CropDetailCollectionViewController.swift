@@ -14,6 +14,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
 
     var pullOffset = CGPoint.zero
     var cropList: Array <Crop> = []
+    var fromDatabase : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
         let collectionCell: VCropDetailPageViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.CropDetailViewCellIdentify, for: indexPath) as! VCropDetailPageViewCell
     
+    
         collectionCell.delegate = self
         collectionCell.crop = self.cropList[indexPath.row]
         collectionCell.image = UIImage(named:self.cropList[indexPath.row].picture!)
@@ -102,6 +104,8 @@ class CropDetailCollectionViewController: UICollectionViewController {
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset
+            
+          //  collectionCell.crop?.removeObserver(collectionCell, forKeyPath: "owned", context: &collectionCell.myContext)
             
             if let nav = self.navigationController {
                     nav.popViewController(animated: true)
@@ -129,8 +133,8 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-         //guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
-        
+//         guard let cropDetailCell = cell as? VCropDetailPageViewCell else { return }
+//        
 //         cropDetailCell.crop?.removeObserver(cropDetailCell, forKeyPath: "owned", context: &cropDetailCell.myContext)
     }
     

@@ -58,7 +58,7 @@ extension Crop {
     }
     
  
-    public var estimatedMonthsLeftToHarves : Int {
+    public var estimatedMonthsLeftToHarvest : Int {
         
         get {
             
@@ -79,7 +79,7 @@ extension Crop {
         get {
             guard let dayPlanted = dayPlanted else { return Date() }
             
-            return Date.addNumberOf(days: Int(self.timeToHarvest), to: dayPlanted)
+            return Date.addNumberOf(days: self.computedTimeToHarvest, to: dayPlanted)
         }
         
     }
@@ -243,7 +243,7 @@ extension Crop {
             })
             
             return states.sorted(by: { (rowState1, rowState2) -> Bool in
-                return (rowState1 as! RowLifeState).when! > (rowState2 as! RowLifeState).when!
+                return rowState1.when! > rowState2.when!
             })
         }
     }

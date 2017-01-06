@@ -32,7 +32,7 @@ extension Crop {
     @NSManaged public var potentialProblems: String?
     @NSManaged public var spacing: Int16
     @NSManaged public var storageAndUse: String?
-    @NSManaged public var timeToHarvest: Int16
+    @NSManaged public var timeToHarvest: String!
     @NSManaged public var whenToPlant: String?
     @NSManaged public var row: NSSet?
     @NSManaged public var states: NSSet?

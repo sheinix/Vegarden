@@ -34,14 +34,19 @@ public class Crop: NSManagedObject {
     }
 
     
-    //Will be the computed time depending on how you plant the crop, if is seedling or seed. self.timeToHarvest will be a double with the Int part matchiing the seed time and the decimal part matching the seedling
+    //Computed time depending on how you plant the crop:
+    // if is Seedling or Seed. TimeToHarvest is a String with two components separated by "."
+    // First component is time for Seed and last for Seedling
+    
     var computedTimeToHarvest: Int {
        
         get {
             
-            let value = String(self.timeToHarvest).components(separatedBy: ".")
+            let value = self.timeToHarvest.components(separatedBy: ".")
             
-            return (self.timeToHarvest % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
+            return self.isFromSeed ? Int(value.first!)! : Int(value.last!)!
+            
+//            return (self.timeToHarvest % 1) == 0 ? Int(value.first!)! : Int(value.last!)!
             
             }
     }
@@ -63,7 +68,7 @@ public class Crop: NSManagedObject {
         crop.cropSize    =   dictionary["plantSize"] as? String
         crop.phLevels    =   dictionary["phLevels"] as? String
         crop.spacing     =   Int16(Int(dictionary["spacing"] as! Int))
-        crop.timeToHarvest = 30
+        crop.timeToHarvest =  "30.45"
         
         crop.whenToPlant        = dictionary["whenToPlant"] as? String
         crop.plantingDirections = dictionary["plantDirections"] as? String

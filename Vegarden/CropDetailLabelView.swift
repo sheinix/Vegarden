@@ -49,7 +49,7 @@ class CropDetailLabelView: UIView {
         self.familyValue.text         = crop.family
         self.phLevelValue.text        = crop.phLevels
         self.spacingValue.text        = String(crop.spacing) + " cm"
-        self.isInGarden.text          = (crop.owned ? "Yes" : "No")
+        self.isInGarden.text          = crop.timeToHarvest.components(separatedBy:".").first! + " days"
         self.classificationValue.text = crop.plantType
         
         self.cropSizeTxt.text            = crop.cropSize

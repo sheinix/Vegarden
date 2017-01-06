@@ -21,7 +21,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     
     weak var delegate : RemoveCropButtonDelegate?
     
-    var myContext = 0 //For KVO purposes, new way to do it in Apple Docs!
+    public var myContext = arc4random_uniform(100) //For KVO purposes, new way to do it in Apple Docs!
     
     var crop : Crop? {
         
@@ -47,7 +47,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         
         super.layoutSubviews()
@@ -62,17 +62,20 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     fileprivate func removeObserverFromCrop() {
         
         if self.crop != nil {
+            
             self.crop?.removeObserver(self, forKeyPath: "owned", context: &myContext)
+        
         }
     }
-   
+    
     fileprivate func addObserverFromCrop() {
+
         if self.crop != nil  {
-            
+
             self.crop?.addObserver(self,
-                               forKeyPath: "owned",
-                               options: NSKeyValueObservingOptions.new,
-                               context: &myContext)
+                                       forKeyPath: "owned",
+                                       options: NSKeyValueObservingOptions.new,
+                                       context: &myContext)
         }
     }
 
@@ -109,7 +112,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        if context != &myContext {
+        guard context == &myContext else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             return
         }
@@ -120,13 +123,25 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         self.showConfirmViewWith(title: cropie.name! +  (cropie.owned ? " Added !" : "  Removed!"),
                                  frame: screenBounds,
-                                 afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
+                                 afterAction: {
+                                    self.pullAction!((self.tableView?.contentOffset)!) })
 
     }
     
+//    @objc func cropRemoved(notification: Notification) {
+//        
+//        guard let cropie = notification.userInfo?["crop"] as? Crop else { return }
+//        if (self.crop?.name != cropie.name) { return }
+//        
+//        self.showConfirmViewWith(title: cropie.name! +  (cropie.owned ? " Added !" : "  Removed!"),
+//                                 frame: screenBounds,
+//                                 afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
+//
+//
+//    }
     @objc func cropPlanted(notification: Notification) {
         
-        let crop = notification.userInfo?["crop"] as! Crop
+        guard let crop = notification.userInfo?["crop"] as? Crop else { return }
         
         //This time I need to compare names, because wont be same instance, as I copy the obj to plant!
         if (self.crop?.name != crop.name) { return }

@@ -116,7 +116,7 @@ extension MyCropsCollectionViewController {
         let pageDetailViewController =
             CropDetailCollectionViewController(collectionViewLayout: layout, currentIndexPath:indexPath as NSIndexPath)
         
-        
+        pageDetailViewController.fromDatabase = isDataBase
         pageDetailViewController.cropList = myCrops!
         collectionView.setToIndexPath(indexPath: indexPath as NSIndexPath)
         navigationController!.pushViewController(pageDetailViewController, animated: true)

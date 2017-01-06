@@ -40,6 +40,11 @@
 		26B899021E0B6485006C2A7B /* FinalStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B899011E0B6485006C2A7B /* FinalStepViewController.swift */; };
 		26B899041E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B899031E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift */; };
 		26B899071E0CCC81006C2A7B /* EXTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B899061E0CCC81006C2A7B /* EXTView.m */; };
+		26BC1A1A1E1F366C004C8FDC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC1A191E1F366C004C8FDC /* Colors.swift */; };
+		26BC1A1C1E1F3696004C8FDC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC1A1B1E1F3696004C8FDC /* Fonts.swift */; };
+		26BC1A1E1E1F491B004C8FDC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC1A1D1E1F491B004C8FDC /* AboutViewController.swift */; };
+		26BC1A201E1F4D24004C8FDC /* AboutInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC1A1F1E1F4D24004C8FDC /* AboutInfoDataSource.swift */; };
+		26BC1A231E1FAB71004C8FDC /* AboutInfoAppereace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC1A221E1FAB71004C8FDC /* AboutInfoAppereace.swift */; };
 		26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */; };
 		26BDDBF11DEBA411003547BB /* MyGardenOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF01DEBA411003547BB /* MyGardenOverviewTableViewCell.swift */; };
 		26BDDBF31DEBA428003547BB /* MyGardenDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */; };
@@ -98,7 +103,6 @@
 		BD7B8EB61D9118080063347D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB51D9118080063347D /* Assets.xcassets */; };
 		BD7B8EB91D9118080063347D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */; };
 		BD83BF6C1D9FE56800C7D79A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */; };
-		BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83BFA91DA0034700C7D79A /* AboutViewController.swift */; };
 		BDE061641D9FDC660003364D /* Fertilized+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */; };
 		BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */; };
 		BDE061661D9FDC660003364D /* Fruit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */; };
@@ -174,6 +178,11 @@
 		26B899031E0B7C8F006C2A7B /* MasterWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterWalkthroughViewController.swift; sourceTree = "<group>"; };
 		26B899051E0CCC81006C2A7B /* EXTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTView.h; sourceTree = "<group>"; };
 		26B899061E0CCC81006C2A7B /* EXTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTView.m; sourceTree = "<group>"; };
+		26BC1A191E1F366C004C8FDC /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		26BC1A1B1E1F3696004C8FDC /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		26BC1A1D1E1F491B004C8FDC /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		26BC1A1F1E1F4D24004C8FDC /* AboutInfoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInfoDataSource.swift; sourceTree = "<group>"; };
+		26BC1A221E1FAB71004C8FDC /* AboutInfoAppereace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInfoAppereace.swift; sourceTree = "<group>"; };
 		26BDDBED1DEBA031003547BB /* MyGardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenViewController.swift; sourceTree = "<group>"; };
 		26BDDBF01DEBA411003547BB /* MyGardenOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		26BDDBF21DEBA428003547BB /* MyGardenDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -240,7 +249,6 @@
 		BD7B8EBA1D9118080063347D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		BD83BF6E1D9FFA1B00C7D79A /* Vegarden-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vegarden-Bridging-Header.h"; sourceTree = "<group>"; };
-		BD83BFA91DA0034700C7D79A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BDE0613A1D9FDC660003364D /* Fertilized+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataClass.swift"; path = "CoreData/Fertilized+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BDE0613B1D9FDC660003364D /* Fertilized+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fertilized+CoreDataProperties.swift"; path = "CoreData/Fertilized+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BDE0613C1D9FDC660003364D /* Fruit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fruit+CoreDataClass.swift"; path = "CoreData/Fruit+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -376,6 +384,16 @@
 				26B899011E0B6485006C2A7B /* FinalStepViewController.swift */,
 			);
 			name = Walkthrough;
+			sourceTree = "<group>";
+		};
+		26BC1A211E1F4D3F004C8FDC /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26BC1A1D1E1F491B004C8FDC /* AboutViewController.swift */,
+				26BC1A1F1E1F4D24004C8FDC /* AboutInfoDataSource.swift */,
+				26BC1A221E1FAB71004C8FDC /* AboutInfoAppereace.swift */,
+			);
+			name = AboutViewController;
 			sourceTree = "<group>";
 		};
 		26BDDBEF1DEBA3CE003547BB /* MyGardenViewCells */ = {
@@ -570,9 +588,12 @@
 		96F722F41DB30968000100B2 /* Constants & Macros */ = {
 			isa = PBXGroup;
 			children = (
+				26A683331DE9BC7C00902129 /* Fonts */,
+				26BC1A1B1E1F3696004C8FDC /* Fonts.swift */,
 				BD37C0F31DA50FBD00265405 /* Constants.swift */,
 				263BBCF01DF3E22000DA49F6 /* NotificationsIds.swift */,
 				263BBCF31DF3E39900DA49F6 /* Macros.swift */,
+				26BC1A191E1F366C004C8FDC /* Colors.swift */,
 			);
 			name = "Constants & Macros";
 			sourceTree = "<group>";
@@ -707,7 +728,6 @@
 				96F723121DB360C1000100B2 /* Managers */,
 				96F722F41DB30968000100B2 /* Constants & Macros */,
 				BD7B8EB51D9118080063347D /* Assets.xcassets */,
-				26A683331DE9BC7C00902129 /* Fonts */,
 				BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */,
 				2627851F1E0B335400E70BCC /* Walkthrough.storyboard */,
 				BD203E4C1DA4F84000951732 /* Main.storyboard */,
@@ -724,11 +744,11 @@
 				96F722FA1DB309FC000100B2 /* Transitions */,
 				96F722D71DAD04AB000100B2 /* NavigationControllers */,
 				BD203E461DA2305800951732 /* MasterViewController.swift */,
-				BD83BFA91DA0034700C7D79A /* AboutViewController.swift */,
 				2690D6D21DEE8ED600259F26 /* MyGardenViewController */,
 				266F509D1DE66EB60064C05D /* ActionMenuAlertView */,
 				960E5ADB1DCE150F00ED39A8 /* MyCropsViewController */,
 				96BB77731DBF052000DCADA9 /* LifeCycleViewController */,
+				26BC1A211E1F4D3F004C8FDC /* AboutViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -916,6 +936,7 @@
 				96EE77F31DB9E77200971EBF /* CropExtension.swift in Sources */,
 				BDE0617B1D9FDC660003364D /* PaddockLocation+CoreDataProperties.swift in Sources */,
 				960CCF681DAB7EB100CB62C5 /* SideBarMenuTableViewCell.swift in Sources */,
+				26BC1A1A1E1F366C004C8FDC /* Colors.swift in Sources */,
 				96F723111DB360BA000100B2 /* GardenManager.swift in Sources */,
 				26BDDBF11DEBA411003547BB /* MyGardenOverviewTableViewCell.swift in Sources */,
 				BDE061861D9FDC660003364D /* Veggie+CoreDataClass.swift in Sources */,
@@ -927,7 +948,6 @@
 				BDE061681D9FDC660003364D /* Garden+CoreDataClass.swift in Sources */,
 				2681451E1DDD7B6700BE6018 /* ConfirmationView.swift in Sources */,
 				96EE77F51DB9E97C00971EBF /* DateExtension.swift in Sources */,
-				BD83BFAB1DA0034700C7D79A /* AboutViewController.swift in Sources */,
 				268145201DDEBF7B00BE6018 /* PlantDTO.swift in Sources */,
 				BDE061651D9FDC660003364D /* Fertilized+CoreDataProperties.swift in Sources */,
 				BDE061791D9FDC660003364D /* Paddock+CoreDataProperties.swift in Sources */,
@@ -941,6 +961,7 @@
 				2620FCE91DEE4A2A00352111 /* PatchAddEditViewController.swift in Sources */,
 				BDE061831D9FDC660003364D /* Seedling+CoreDataProperties.swift in Sources */,
 				26BDDBEE1DEBA031003547BB /* MyGardenViewController.swift in Sources */,
+				26BC1A201E1F4D24004C8FDC /* AboutInfoDataSource.swift in Sources */,
 				96BB77781DBF18B800DCADA9 /* DetailViewCollectionViewCell.swift in Sources */,
 				BDE0616B1D9FDC660003364D /* GardenLocation+CoreDataProperties.swift in Sources */,
 				263BBCED1DF3E18800DA49F6 /* RowsInfo.swift in Sources */,
@@ -969,9 +990,12 @@
 				BDE061841D9FDC660003364D /* Soil+CoreDataClass.swift in Sources */,
 				BDE061721D9FDC660003364D /* Herb+CoreDataClass.swift in Sources */,
 				264938CC1E03633B00B081F7 /* LNNumberpad.m in Sources */,
+				26BC1A231E1FAB71004C8FDC /* AboutInfoAppereace.swift in Sources */,
+				26BC1A1E1E1F491B004C8FDC /* AboutViewController.swift in Sources */,
 				26359EBB1DD40B9600C6D698 /* CropDetailsFlowLayout.swift in Sources */,
 				BDE061781D9FDC660003364D /* Paddock+CoreDataClass.swift in Sources */,
 				960E5AD91DCDDC2200ED39A8 /* NoteView.swift in Sources */,
+				26BC1A1C1E1F3696004C8FDC /* Fonts.swift in Sources */,
 				BDE061691D9FDC660003364D /* Garden+CoreDataProperties.swift in Sources */,
 				BDE0616D1D9FDC660003364D /* Growing+CoreDataProperties.swift in Sources */,
 				96561A311DC1BE1500577F4B /* ActionMenuAlertView.swift in Sources */,

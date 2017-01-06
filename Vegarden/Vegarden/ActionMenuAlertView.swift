@@ -385,7 +385,7 @@ class ActionMenuAlertView: SCLAlertView {
             case GrowingActions.FinishAction:
                 strAction = "Finish Harvest"
             case GrowingActions.UnplantAction:
-                strAction = "Unplant Crop"
+                strAction = "Unplant"
 //            default:
 //                break
             }

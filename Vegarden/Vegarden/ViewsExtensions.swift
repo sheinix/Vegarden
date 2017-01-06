@@ -60,7 +60,15 @@ extension UIButton {
         self.layer.borderWidth = 2
     }
     
-    
+    func setRoundedCornerStyledWith(borderColor: CGColor, textColor: UIColor) {
+        
+        self.backgroundColor = UIColor.clear
+        self.setTitleColor(textColor, for: .normal)
+        self.layer.cornerRadius = UINumbericConstants.commonCornerRadius
+        self.layer.borderColor = borderColor
+        self.layer.borderWidth = 1
+        
+    }
     func setRoundedCornerStyled () {
       
 //        self.titleLabel?.font = UIFont.systemFont(ofSize: 2)
@@ -154,10 +162,10 @@ extension UIView{
         }
     }
     
-    public func showConfirmViewWith(title: String!, frame: CGRect?, afterAction: (() -> Void)?) {
+    public func showConfirmViewWith(title: String!, frame: CGRect? = screenBounds, afterAction: (() -> Void)?) {
         
         
-        let confirm = ConfirmationView(frame: (frame != nil ? frame! : self.bounds), title: title)
+        let confirm = ConfirmationView(frame: frame!, title: title)
         
         self.clipsToBounds = false
 //        confirm.clipsToBounds = false

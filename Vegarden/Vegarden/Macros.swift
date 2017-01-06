@@ -24,7 +24,6 @@ import Foundation
         UIApplication.shared.open(url, options: [:], completionHandler: completion)
     }
 
-
     public func getCropDetailCollectionViewFlowLayoutIn (navigationController navController:UINavigationController) -> UICollectionViewFlowLayout {
         
         let flowLayout = CropDetailsFlowLayout()
