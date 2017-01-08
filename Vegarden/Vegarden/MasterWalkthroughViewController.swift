@@ -155,7 +155,7 @@ extension MasterWalkthroughViewController : UITextFieldDelegate {
     
     fileprivate func showAlert() {
         self.showAlertView(title: "Please provide a name!",
-                           message: "Promise is the last step! :)",
+                           message: "I promise, this is the last step! :)",
                            style: .alert,
                            confirmBlock: {},
                            cancelBlock: {})

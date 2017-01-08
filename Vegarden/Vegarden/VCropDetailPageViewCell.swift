@@ -51,7 +51,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         
         super.layoutSubviews()
-        tableView?.reloadData()
+        //tableView?.reloadData()
     }
     
     override func prepareForReuse() {
@@ -125,6 +125,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
                                  frame: screenBounds,
                                  afterAction: {
                                     self.pullAction!((self.tableView?.contentOffset)!) })
+        
 
     }
     
@@ -310,18 +311,17 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     
     fileprivate func createFooterView() -> UIView {
-        
-        let height = (self.tableView?.frame.height)! * 0.1
+
         let frame  = CGRect(x: 0,
                             y: (self.tableView?.frame.height)!,
                         width: (self.tableView?.frame.width)!,
-                       height: height)
+                       height: (self.tableView?.frame.height)! * 0.1)
         
         let footerView = UIView(frame:frame)
         
         removeButton.frame = footerView.bounds
-        removeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        removeButton.layer.cornerRadius = UINumbericConstants.commonCornerRadius//14
+        //removeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
+        removeButton.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         removeButton.backgroundColor = UIColor.red
         removeButton.titleLabel?.textColor = UIColor.white
         removeButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
@@ -331,7 +331,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
         footerView.addSubview(removeButton)
         
         removeButton.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(10)
+            make.edges.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         
         return footerView

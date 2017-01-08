@@ -32,7 +32,9 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
      //   self.tableView.rowHeight = UITableViewAutomaticDimension
         self.rowsHeight = (CGFloat(totalPlantedCrops) * CGFloat(cropRowHeight)) + CGFloat(headerHeight)
         self.tableView.estimatedRowHeight = self.rowsHeight!
-        self.tableView.tableHeaderView = MyGardenHeaderView.loadFromNibNamed(nibNamed: "MyGardenHeaderView")
+        
+        let tableHeader = MyGardenHeaderView.loadFromNibNamed(nibNamed: "MyGardenHeaderView")
+        self.tableView.tableHeaderView = tableHeader
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
         self.tableView.isScrollEnabled = true
@@ -317,7 +319,7 @@ extension MyGardenViewController : MyGardenDetailCollectionViewCellProtocol {
         } else {
             
             self.showSimpleAlertViewWith(title: "Delete " + patch.name!,
-                                         message: "The Patch has planted Rows. Remove Crops from Patch before deleting it ",
+                                         message: "The Patch has planted Rows. Remove all crops in this patch from the LifeCycle screen before deleting it ",
                                          style: .alert)
             
         }
@@ -335,7 +337,7 @@ extension MyGardenViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
         
-        let msg = NSMutableAttributedString(string: "Oops! No Available Patchs!",
+        let msg = NSMutableAttributedString(string: "Oops! No Available Patches!",
                                             attributes: [NSFontAttributeName:Fonts.emptyStateFont])
         msg.addAttribute(NSForegroundColorAttributeName,
                          value: Colors.mainColorUI,
@@ -348,7 +350,7 @@ extension MyGardenViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
     
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
-        let text = "Start by adding a new patch with the plus button ! ";
+        let text = "Start by adding a new patch with the + button ! ";
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping

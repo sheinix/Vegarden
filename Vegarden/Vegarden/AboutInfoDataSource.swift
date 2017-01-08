@@ -21,23 +21,20 @@ public struct tableSections {
 
  
     
-    static let textSections = [["We believe that everyone should be aware of where their food comes from and what they are really eating. The best way to acheive this is by growing your own food. This app intent to be a simple tool for everyone to learn about food and where it comes from.",
-                                "Our Mission is to improve the lifestyle of the people by providing meaningful tools and easy to use gardening assistance to make better food decisions"],
-                            ["Check out the Crops database, you can add the crops you want to have a quick access. Once you do, you will see them on My Crops screen",
-                                "You can remove the crop that you dont want at any time from My Crops screen",
-                                "Plant your crops from My Crop screen!",
-                                "On the Life Cycle screen you will see all the planted crops with the percentage completion for the harvest time! ",
-                                "You can log every time you weed, water or fertilize a crop ",
-                                "If you don't want a crop anymore on the LifeCycle screen because it is dead or unplanted just remove the crop from from the detailed view!",
-                                "On MyGarden View you can see all your planted crops and the progress to reach the harvest date!",
-                                "You can also add, delete or edit your patchs from the MyGarden screen",
-                                "If you need to change, remove or add more rows to a patch you can do it from MyGarden Screen aswell!"],
-                                ["This project isn´t funded and all the hard work comes from our love, so we are very grateful that you are using it and we would love to hear about your experience using Vegarden.",
-                                                  "All Images has been taken from internet and we do not claim ownership on them, if you found any issue with the images please report to the support email address and we will be in contact to resolve the issue.",
-                                                  "There's a few ways on how you can help us keep growing and improving our community! You can spread the word by rating us on the appstore and liking our Facebook Page!"]]
+    static let textSections = [["We believe that everyone should be aware of where their food comes from and what they are eating. The best way to acheive this is by growing your own food. This app intents to be a simple tool for everyone, whether you are a beginner or a bit more advanced, to assist in your veggie gardening", "Our Mission is to improve the lifestyle of the people by providing meaningful tools and easy to use gardening assistance to make better food decisions"],
+                            ["Swipe right to access the side bar",
+                             "Check out the Database - there you can choose the plants you want to grow and add them to the My Crops screen for quick access",
+                             "Remove the plants that you dont want at anytime from My Crops screen ",
+                             "Plant vegetables from the My Crops screen ",
+                             "LifeCycle screen shows all your planted crops with the percentage progress to harvest! ",
+                             "On the LifeCycle screen you can log every time you weed, water or fertilize a crop by tapping on the vegetable cell and using the + button",
+                             "If you want to remove a crop from the LifeCycle screen tap onthe vegetable cell, use the + button and choose Remove",
+                             "MyGarden View shows all your planted crops and the progress to reach harvest!",
+                             "Add, edit or delete your patches and rows from the MyGarden screen"],
+                            ["This project isn´t funded and all the hard work comes from our passion for making growing your own food easy, so we are very grateful that you are using it and would love to hear about your experience using Vegarden. ",
+                            "All Images have been taken from internet and we do not claim ownership on them, if you have any issues with the images please report to the support email address and we will be in contact to resolve the issue.",
+                            "To help us keep improve and grow our communtiy you can rate us on the appstore and like our Facebook Page!"]]
 
-    
-    
     
     public static func titleFor(section: Int) -> String {
         

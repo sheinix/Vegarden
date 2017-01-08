@@ -30,7 +30,7 @@ class MyGardenDetailCollectionViewCell: UICollectionViewCell {
                 patchLabel.text = patch?.name!
                 totalRows.text = "Total Rows : " + String(newPatch.rows!.count)
                 plantedRowsLabel.text = "Planted Rows : " + String(newPatch.plantedRows.count)
-                freeRowsLabel.text = "Free Rows : " + String(describing: newPatch.freeRows.count)
+                freeRowsLabel.text = "Available Rows : " + String(describing: newPatch.freeRows.count)
             }
         }
     }

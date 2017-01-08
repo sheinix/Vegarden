@@ -162,10 +162,10 @@ extension UIView{
         }
     }
     
-    public func showConfirmViewWith(title: String!, frame: CGRect? = screenBounds, afterAction: (() -> Void)?) {
+    public func showConfirmViewWith(title: String!, frame: CGRect?, afterAction: (() -> Void)?) {
         
         
-        let confirm = ConfirmationView(frame: frame!, title: title)
+        let confirm = ConfirmationView(frame: (frame != nil ? frame! : screenBounds), title: title)
         
         self.clipsToBounds = false
 //        confirm.clipsToBounds = false

@@ -46,7 +46,11 @@ class MyGardenHeaderView: UIView {
     
     
     fileprivate func setupViews() {
-        
+     
+        //Fix for iPadPro 12.9 inch:
+       // if UIDevice.current.isiPadPro12Inch {
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: self.frame.height)
+       // }
         self.layerGradientWith(colors: Colors.headerGradient)
         
         self.greetingsLabel.textColor = UIColor.white
