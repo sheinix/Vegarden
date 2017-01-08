@@ -40,8 +40,7 @@ class LifeCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //TODO make it show in the title!
-        self.title =  "Crops Life Cycle"
+        self.title =  "Crops LifeCycle"
         self.navigationController?.navigationBar.tintColor = UIColor(cgColor: Colors.mainColor)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: Fonts.mainFont]
         
@@ -57,8 +56,6 @@ class LifeCycleTableViewController: UITableViewController {
         
         // A little trick for removing the cell separators
         //self.tableView.tableFooterView = UIView.new
-        
-        
         
         NotificationCenter.default.addObserver(self,
                                                 selector: #selector(actionMade),
@@ -160,19 +157,15 @@ class LifeCycleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard case let cell as FoldingCell = cell else {
-            return
-        }
+        guard case let cell as FoldingCell = cell else { return }
         
-        cell.backgroundColor = UIColor.clear
+        //cell.backgroundColor = UIColor.clear
         
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight {
             cell.selectedAnimation(false, animated: false, completion:nil)
         } else {
             cell.selectedAnimation(true, animated: false, completion: nil)
         }
-        
-        //guard let newCell = cell as? CropLifeCycleTableViewCell else { return }
         
         (cell as! CropLifeCycleTableViewCell).setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
@@ -204,16 +197,17 @@ class LifeCycleTableViewController: UITableViewController {
         
         let cell = tableView.cellForRow(at: indexPath) as! CropLifeCycleTableViewCell
         
-        if cell.isAnimating() {
-            return
-        }
+        if cell.isAnimating() { return }
         
         var duration = 0.0
+        
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
          
             //TODO:
             //This line here, is copying the heder cell and triggering the nslayoutunsatisfy constraints:
            // cell.copyForegroundViewOfCellIntoContainer()
+            
+            cell.setCloseBttn()
             
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
@@ -222,11 +216,13 @@ class LifeCycleTableViewController: UITableViewController {
         } else {// close cell
             
             //Remove the rotatedview copied
-            cell.containerView.subviews.forEach({ (view) in
-                if (view is RotatedView) {
-                    view.removeFromSuperview()
-                }
-            })
+//            cell.containerView.subviews.forEach({ (view) in
+//                if (view is RotatedView) {
+//                    view.removeFromSuperview()
+//                }
+//            })
+            
+            cell.removeCloseBttn()
             
             //When tableView handles close of cell, but Menu is open:
             if (!cell.actionMenu.closed) { cell.actionMenu.close()}

@@ -109,7 +109,7 @@ extension LifeCycleTableViewController : DZNEmptyDataSetSource, DZNEmptyDataSetD
     
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
-        let text = "Choose a crop in My Crops view and plant it to follow it's Life cycle ! ";
+        let text = "Choose a crop in My Crops view and plant it to follow it's LifeCycle ! ";
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping

@@ -31,14 +31,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFm-BG-G7K">
-                                <rect key="frame" x="245" y="400" width="279" height="89"/>
+                                <rect key="frame" x="244.5" y="400" width="279" height="89"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="10v-3z-7cH"/>
                                     <constraint firstAttribute="width" constant="279" id="jk7-4u-Vwy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
-                                <state key="normal" title="CREATE PATCH"/>
+                                <state key="normal" title="Create Veggie Patch"/>
                                 <connections>
                                     <action selector="createNewPatch:" destination="h7U-qD-dO4" eventType="touchUpInside" id="qgt-SN-VWt"/>
                                 </connections>
@@ -83,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-gQ-zFw">
-                                <rect key="frame" x="286" y="884" width="197" height="62"/>
+                                <rect key="frame" x="285.5" y="884" width="197" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="6LQ-mB-Tdi"/>
                                     <constraint firstAttribute="height" constant="62" id="A31-D5-shq"/>
@@ -156,7 +156,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do a few things with Vegarden :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t3-Ir-j2F">
-                                <rect key="frame" x="34" y="326" width="700" height="60"/>
+                                <rect key="frame" x="34" y="326" width="700" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="fZa-9w-fy0"/>
                                 </constraints>
@@ -164,14 +164,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn about different crops with the Vegarden database" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-uc-kwa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn about different crops with the Vegarden Database" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-uc-kwa">
                                 <rect key="frame" x="95" y="435" width="522" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your own crops in a separate place, always ready to query them" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5X-43-S3X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your planting from My Crops view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5X-43-S3X">
                                 <rect key="frame" x="95" y="506" width="628" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
@@ -185,8 +185,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your garden adding or removing patches and rows!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xJ-2V-mmY">
-                                <rect key="frame" x="95" y="648" width="526" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your garden by adding or removing patches and rows!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xJ-2V-mmY">
+                                <rect key="frame" x="95" y="648" width="552" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,7 +194,6 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="cl5-Hq-aJP" firstAttribute="top" secondItem="5t3-Ir-j2F" secondAttribute="bottom" constant="638" id="Ob6-0q-lbs"/>
                             <constraint firstItem="3xM-oF-Jm6" firstAttribute="top" secondItem="Kpa-iq-4Vv" secondAttribute="bottom" constant="69" id="TOe-if-4yS"/>
                             <constraint firstItem="Kpa-iq-4Vv" firstAttribute="top" secondItem="Yr6-4M-pd8" secondAttribute="bottom" constant="76" id="lsM-BN-I52"/>
                             <constraint firstItem="Kpa-iq-4Vv" firstAttribute="centerX" secondItem="6MQ-uI-hOp" secondAttribute="centerX" id="mWL-7s-cOC"/>
@@ -234,8 +233,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Let's get started and create your first Veggie Patch!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-3w-VjW">
-                                <rect key="frame" x="34" y="150" width="700" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started and create your first Veggie Patch!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-3w-VjW">
+                                <rect key="frame" x="34" y="172" width="700" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="tFy-wt-7RA"/>
                                 </constraints>
@@ -284,7 +283,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are a few thing that you can do with Vegarden!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osr-Vy-FPg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More things you can do with Vegarden!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osr-Vy-FPg">
                                 <rect key="frame" x="34" y="72" width="700" height="29.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="d2P-3O-ccJ"/>
@@ -293,32 +292,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Crops to My Crops screen from database to have a quick access" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-S0-wZL">
-                                <rect key="frame" x="65" y="213.5" width="637" height="58.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Notes from the Life Cycle screen every time you Fertilize, Weed or Water your crops!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-jv-3Ja">
-                                <rect key="frame" x="65" y="329" width="637" height="58.5"/>
+                                <rect key="frame" x="65" y="311.5" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the progress of your crops from My Garde screen or Life Cycle!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-Bn-ndL">
-                                <rect key="frame" x="65" y="444.5" width="637" height="58.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the progress of your crops from the My Garden or LifeCycle screens!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-Bn-ndL">
+                                <rect key="frame" x="64" y="392.5" width="638" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add, Remove or Edit your veggie patchs from My Garden Screen!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX3-zA-JKF">
-                                <rect key="frame" x="65" y="560" width="637" height="58.5"/>
+                                <rect key="frame" x="65" y="477.5" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add, Remove or Edit rows of any patch from My Garden Screen!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C12-JG-Psi">
-                                <rect key="frame" x="65" y="675.5" width="637" height="58.5"/>
+                                <rect key="frame" x="65" y="578" width="637" height="58.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add crops to My Crops screen from the Database to have a quick access" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-S0-wZL">
+                                <rect key="frame" x="65" y="207" width="637" height="58.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -332,16 +331,16 @@
                             <constraint firstItem="C12-JG-Psi" firstAttribute="leading" secondItem="Z7I-S0-wZL" secondAttribute="leading" id="BCt-zY-dLL"/>
                             <constraint firstItem="osr-Vy-FPg" firstAttribute="top" secondItem="NAk-Es-5Mg" secondAttribute="bottom" constant="52" id="LYp-dB-w2t"/>
                             <constraint firstItem="Z7I-S0-wZL" firstAttribute="leading" secondItem="pEq-qI-sAJ" secondAttribute="leadingMargin" constant="45" id="O5C-NB-vxn"/>
-                            <constraint firstItem="Ufs-Bn-ndL" firstAttribute="leading" secondItem="Z7I-S0-wZL" secondAttribute="leading" id="QXo-eu-mpJ"/>
-                            <constraint firstItem="zXt-jv-3Ja" firstAttribute="top" secondItem="Z7I-S0-wZL" secondAttribute="bottom" constant="57" id="RBy-eq-hFi"/>
+                            <constraint firstItem="Ufs-Bn-ndL" firstAttribute="leading" secondItem="Z7I-S0-wZL" secondAttribute="leading" constant="-1" id="QXo-eu-mpJ"/>
+                            <constraint firstItem="zXt-jv-3Ja" firstAttribute="top" secondItem="Z7I-S0-wZL" secondAttribute="bottom" constant="46" id="RBy-eq-hFi"/>
                             <constraint firstItem="Ufs-Bn-ndL" firstAttribute="trailing" secondItem="Z7I-S0-wZL" secondAttribute="trailing" id="SmO-x8-7YQ"/>
                             <constraint firstItem="lX3-zA-JKF" firstAttribute="trailing" secondItem="Z7I-S0-wZL" secondAttribute="trailing" id="Vk7-ZG-ArB"/>
-                            <constraint firstItem="Ufs-Bn-ndL" firstAttribute="top" secondItem="zXt-jv-3Ja" secondAttribute="bottom" constant="57" id="gPD-Ec-rRk"/>
+                            <constraint firstItem="Ufs-Bn-ndL" firstAttribute="top" secondItem="zXt-jv-3Ja" secondAttribute="bottom" constant="22.5" id="gPD-Ec-rRk"/>
                             <constraint firstItem="lX3-zA-JKF" firstAttribute="leading" secondItem="Z7I-S0-wZL" secondAttribute="leading" id="i59-gV-9Z8"/>
-                            <constraint firstItem="C12-JG-Psi" firstAttribute="top" secondItem="lX3-zA-JKF" secondAttribute="bottom" constant="57" id="kRe-Yi-omp"/>
-                            <constraint firstItem="lX3-zA-JKF" firstAttribute="top" secondItem="Ufs-Bn-ndL" secondAttribute="bottom" constant="57" id="sgy-Qb-aid"/>
+                            <constraint firstItem="C12-JG-Psi" firstAttribute="top" secondItem="lX3-zA-JKF" secondAttribute="bottom" constant="42" id="kRe-Yi-omp"/>
+                            <constraint firstItem="lX3-zA-JKF" firstAttribute="top" secondItem="Ufs-Bn-ndL" secondAttribute="bottom" constant="26.5" id="sgy-Qb-aid"/>
                             <constraint firstItem="zXt-jv-3Ja" firstAttribute="trailing" secondItem="Z7I-S0-wZL" secondAttribute="trailing" id="v9E-1T-rl2"/>
-                            <constraint firstItem="Z7I-S0-wZL" firstAttribute="top" secondItem="osr-Vy-FPg" secondAttribute="bottom" constant="111.5" id="wKT-qc-mPf"/>
+                            <constraint firstItem="Z7I-S0-wZL" firstAttribute="top" secondItem="osr-Vy-FPg" secondAttribute="bottom" constant="105.5" id="wKT-qc-mPf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z7I-S0-wZL" secondAttribute="trailing" constant="46" id="xaz-Xb-GEA"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -371,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-Nt-weo">
-                                <rect key="frame" x="179" y="54" width="411" height="59.5"/>
+                                <rect key="frame" x="178.5" y="54" width="411" height="59.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="411" id="36a-xN-i4x"/>
                                 </constraints>
@@ -380,7 +379,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almost Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-Ue-dFH">
-                                <rect key="frame" x="179" y="140.5" width="411" height="51.5"/>
+                                <rect key="frame" x="178.5" y="140.5" width="411" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="411" id="McV-4d-7vE"/>
                                 </constraints>

@@ -182,16 +182,17 @@ extension CropDetailCollectionViewController : RemoveCropButtonDelegate {
     
     func didPressRemoveCropBttn(crop: Crop) {
         
-        if crop.isPlanted  {
-            self.showAlertView(title: "Wait!",
-                             message: "This crop is still planted. Please Unplant it from the LifeCycle screen first!",
-                               style: .alert,
-                        confirmBlock: {},
-                         cancelBlock: {})
-        } else {
+//        guard (GardenManager.shared.myPlantedCrops()?.filter { $0.name == crop.name } != nil) else {
         
             GardenManager.shared.removeCropFromGarden(crop: crop)
-        }
+//            return
+//        }
+        
+//        self.showAlertView(title: "Wait!",
+//                            message: "This crop is still planted. Please Unplant it from the LifeCycle screen first!",
+//                               style: .alert,
+//                        confirmBlock: {},
+//                         cancelBlock: {})
     }
 }
 

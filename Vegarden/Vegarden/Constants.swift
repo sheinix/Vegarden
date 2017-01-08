@@ -82,7 +82,7 @@ struct CellIdentifiers {
 struct MainViews {
     static let MyCropsView: String = "My Crops"
     static let DataBaseView: String = "Database"
-    static let LifeCycleView: String = "LifeCylce"
+    static let LifeCycleView: String = "LifeCycle"
     static let MyGardenView: String = "My Garden"
     static let AboutView: String = "About"
 }

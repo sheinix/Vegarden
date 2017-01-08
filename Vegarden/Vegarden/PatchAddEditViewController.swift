@@ -229,6 +229,8 @@ fileprivate func validate(txtField : SkyFloatingLabelTextField, type : patchEdit
                 
                  } else { //Check if its modifying num rows, validate planted ones!
                 
+                
+                //TODO : Check this validation is not working properly i believe!
                 if  (Int(txtField.text!)! > (self.patch?.rows?.count)!) ||
                     (Int(txtField.text!)! >= (self.patch?.plantedRows.count)!) {
                     

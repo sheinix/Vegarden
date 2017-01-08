@@ -211,7 +211,7 @@ extension MyCropsCollectionViewController : DZNEmptyDataSetSource, DZNEmptyDataS
     
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
-        let text = "Choose the Crops you want to have from the Database and add them to your Crops to start planting them ! ";
+        let text = "Choose the veggies you want from the Database and add them to My Crops to start planting them! ";
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping

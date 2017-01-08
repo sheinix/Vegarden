@@ -209,7 +209,7 @@ class ActionMenuAlertView: SCLAlertView {
         
 
         //TODO Add customization appearance to the class appearence later
-        notesTxtView.placeholder = "Something to add for remembering?"
+        notesTxtView.placeholder = "Something to add to remember?"
         notesTxtView.font = UIFont.systemFont(ofSize: 15)
         notesTxtView.borderStyle = UITextBorderStyle.none
         notesTxtView.autocorrectionType = UITextAutocorrectionType.no
@@ -401,7 +401,7 @@ class ActionMenuAlertView: SCLAlertView {
 //                           height: 100)
         
         let alert = UIAlertController(title: "Hold on Mate!",
-                                      message: "Select at least a row!",
+                                      message: "Select at least one row!",
                                       preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK",
@@ -627,7 +627,7 @@ extension ActionMenuAlertView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
         
-        let msg = NSMutableAttributedString(string: "Oops! No Patchs Added yet!",
+        let msg = NSMutableAttributedString(string: "Oops! No Patches Added yet!",
                                             attributes: [NSFontAttributeName:Fonts.mainFont])
         msg.addAttribute(NSForegroundColorAttributeName,
                          value: Colors.mainColorUI,

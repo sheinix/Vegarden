@@ -19,10 +19,12 @@ class CropLifeCycleTableViewCell: FoldingCell {
     @IBOutlet weak var datePlanted: UILabel!
     @IBOutlet weak var harvestDate: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! //was private
-   
+    
     var actionMenu : KCFloatingActionButton
     var crop : Crop?
-   
+    var closeBttn : UIButton?
+    
+    
     var lifeCycleDict : [String : [Any]] = [lifeCyclceSates.Planted: [],
                                             lifeCyclceSates.Growig: [],
                                             lifeCyclceSates.Harvesting: []]
@@ -162,43 +164,29 @@ class CropLifeCycleTableViewCell: FoldingCell {
         }
 
     }
+  
+    public func removeCloseBttn() {
+        
+        guard let bttn = self.closeBttn else { return }
+        
+        bttn.removeFromSuperview()
+        
+    }
     
-    
-//    public func copyForegroundViewOfCellIntoContainer() {
-//        
-//        //Get the colletionView and copy the foreground into the "header" of the collection
-//        self.containerView.subviews.forEach({ (view) in
-//            
-//            if (view is UICollectionView) {
-//                
-//                let referencedCollectionView = (view as! UICollectionView)
-//                let copiedView : UIView = self.foregroundView.copyView()
-//                
-//                copiedView.subviews.forEach({ (view) in
-//                    if (view is MBCircularProgressBarView) {
-//                        //TODO Uncomment when using real datasource!
-//                        //  let progressNumber = CGFloat(integerLiteral: myPlantedCrops[indexPath.row].getEstimatedDaysLeftToHarvest())
-//                        
-//                        //                            (view as!  MBCircularProgressBarView).setValue(progressNumber, animateWithDuration: 3.0)
-//                    }
-//                })
-//                
-//                
-//                self.containerView.addSubview(copiedView)
-//                
-//                copiedView.snp.makeConstraints({ (make) in
-//                    make.top.equalToSuperview()
-//                    make.left.equalToSuperview()
-//                    make.right.equalToSuperview()
-//                    make.bottom.equalTo(referencedCollectionView.snp.top)
-//                })
-//                
-//                copiedView.layer.borderColor = self.layer.borderColor
-//                copiedView.layer.borderWidth = self.layer.borderWidth
-//                copiedView.layer.cornerRadius = self.layer.cornerRadius
-//            }
-//        })
-//    }
+    public func setCloseBttn() {
+        
+        self.closeBttn = UIButton(type: .custom)
+        self.closeBttn?.setTitle("Close Detail Cell", for: .normal)
+        self.closeBttn?.isUserInteractionEnabled = false
+        self.closeBttn?.setRoundedCornerStyledWith(borderColor: Colors.mainColor, textColor: Colors.mainColorUI)
+        self.containerView.addSubview(self.closeBttn!)
+        
+        self.closeBttn?.snp.makeConstraints({ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(25)
+            make.width.equalToSuperview().multipliedBy(0.4)
+        })
+    }
     
     fileprivate func updateActionButtonMenu () {
       

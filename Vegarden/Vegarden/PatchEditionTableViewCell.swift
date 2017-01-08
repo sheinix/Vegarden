@@ -123,7 +123,7 @@ class PatchEditionTableViewCell: UITableViewCell {
                 self.txtField.keyboardType = .numberPad
             
             case 3:
-                self.txtField.placeholder =  "Rows Quantity"
+                self.txtField.placeholder =  "Quantity of Rows"
                 self.txtField.title = "Number of Rows in Patch"
                 self.txtField.text = (isNewPatch ? "" : String(patch!.rows!.count))
                 self.txtField.keyboardType = .numberPad

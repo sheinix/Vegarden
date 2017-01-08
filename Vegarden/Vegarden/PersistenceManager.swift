@@ -85,7 +85,10 @@ class PersistenceManager {
     
     public func getAllGardens() -> [Garden] {
         
-        return Garden.mr_findAll() as! [Garden]
+        //Just make sure I have gardens when someone asks!
+        guard let myGardens = Garden.mr_findAll() else { return [self.createGardenNamed(name: "MyGarden", in: nil)] }
+        
+        return myGardens as! [Garden]
     }
     
 // MARK: - Paddock Management Methods
@@ -102,17 +105,11 @@ class PersistenceManager {
         
         if let location = data.location { paddock.location?.locationName = location }
         
-        if let phLevel = data.phLevel {
-            
-            //TODO Validate that is number!!
-            paddock.soil?.phLevel = Double(phLevel)!
-        }
+        //TODO Validate that is number!!
+        if let phLevel = data.phLevel { paddock.soil?.phLevel = Double(phLevel)! }
         
-        if let rowNamePfx = data.rowNamesPrefix {
-        //TODO Validate that is number!!    
-            paddock.rowsNamePrefix = rowNamePfx
-        
-        }
+        //TODO Validate that is number!!
+        if let rowNamePfx = data.rowNamesPrefix { paddock.rowsNamePrefix = rowNamePfx }
         
         if let numRows = data.rowQtty {
             
@@ -126,10 +123,9 @@ class PersistenceManager {
                 let rowsToDelete : [Row] = paddock.freeRows
                 let plantedCount = paddock.plantedRows.count
                 
-                let limit = (numRows != plantedCount ? numRows - plantedCount : 1)
+                let limit = (numRows != plantedCount ? patchRows - numRows : 1)
                 
-                
-                for idx in 0...limit {
+                for idx in 0...limit-1 {
                     
                         rowsToDelete[idx].reset()
                         rowsToDelete[idx].mr_deleteEntity()
@@ -556,18 +552,7 @@ class PersistenceManager {
     
     public func generateASampleGarden() {
         
-       // let paddocks = createSamplePaddocks()
-        
-        
-        
-        _ = createGardenNamed(name: "Sample Garden", in: nil)
-    
-        //addRows(numberOfRows: 10, to: sampleGarden.paddocks?.allObjects[0] as! Paddock)
-        
-       // addRows(numberOfRows: 5, to: sampleGarden.paddocks?.allObjects[1] as! Paddock)
-        
-       // addRows(numberOfRows: 8, to: sampleGarden.paddocks?.allObjects[2] as! Paddock)
-        
+        _ = createGardenNamed(name: "My Garden", in: nil)
         saveContext()
         
         
