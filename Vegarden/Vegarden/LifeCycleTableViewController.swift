@@ -203,10 +203,6 @@ class LifeCycleTableViewController: UITableViewController {
         
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
          
-            //TODO:
-            //This line here, is copying the heder cell and triggering the nslayoutunsatisfy constraints:
-           // cell.copyForegroundViewOfCellIntoContainer()
-            
             cell.setCloseBttn()
             
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
@@ -214,13 +210,6 @@ class LifeCycleTableViewController: UITableViewController {
             duration = 0.5
             
         } else {// close cell
-            
-            //Remove the rotatedview copied
-//            cell.containerView.subviews.forEach({ (view) in
-//                if (view is RotatedView) {
-//                    view.removeFromSuperview()
-//                }
-//            })
             
             cell.removeCloseBttn()
             
@@ -240,47 +229,5 @@ class LifeCycleTableViewController: UITableViewController {
         
         
     }
-
-//    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        
-//        (cell as! CropLifeCycleTableViewCell).lifeCycleDetailView.removeFromParentViewController()
-//        
-//    }
-//MARK: - Helper methods
-    
-    private func copyForegroundViewOfCellIntoContainer(cell: CropLifeCycleTableViewCell) {
-        
-        //Get the colletionView and copy the foreground into the "header" of the collection
-        cell.containerView.subviews.forEach({ (view) in
-            
-            if (view is UICollectionView) {
-                
-                let referencedCollectionView = (view as! UICollectionView)
-                let copiedView : UIView = cell.foregroundView.copyView()
-                
-                copiedView.subviews.forEach({ (view) in
-                    if (view is MBCircularProgressBarView) {
-                        //TODO Uncomment when using real datasource!
-                        //  let progressNumber = CGFloat(integerLiteral: myPlantedCrops[indexPath.row].getEstimatedDaysLeftToHarvest())
-                        
-                        //                            (view as!  MBCircularProgressBarView).setValue(progressNumber, animateWithDuration: 3.0)
-                    }
-                })
-                
-                
-                cell.containerView.addSubview(copiedView)
-                
-                copiedView.snp.makeConstraints({ (make) in
-                    make.top.equalToSuperview()
-                    make.left.equalToSuperview()
-                    make.right.equalToSuperview()
-                    make.bottom.equalTo(referencedCollectionView.snp.top)
-                })
-                
-                copiedView.layer.borderColor = cell.layer.borderColor
-                copiedView.layer.borderWidth = cell.layer.borderWidth
-                copiedView.layer.cornerRadius = cell.layer.cornerRadius
-            }
-        })
-    }
 }
+

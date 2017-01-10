@@ -239,7 +239,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         
-        var cellHeight : CGFloat = navigationHeight
+       // var cellHeight : CGFloat = navigationHeight
         let imageHeight = (self.image?.size.height)!*screenWidth/(self.image?.size.width)!
         
         if indexPath.row == 0 {

@@ -31,8 +31,6 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
        
         setupTableView()
         
-        //TODO Check if this shouldnt be added to the contentView of the cell! :/
-//        self.addSubview(self.titleLabel)
         self.addSubview(self.cropsTableView!)
         
         setupConstraints()
@@ -49,14 +47,6 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
     private func setupTableView() {
        
         self.cropsTableView = UITableView(frame: self.bounds, style: .plain)
-        
-//        self.cropsTableView?.layer.borderColor = Colors.mainColorUI.cgColor
-//        self.cropsTableView?.layer.borderWidth = 0
-//        self.cropsTableView?.layer.cornerRadius = UINumbericConstants.commonCornerRadius
-//        self.cropsTableView?.layer.shadowOffset = CGSize(width: 0, height: -1)
-//        self.cropsTableView?.layer.shadowOpacity = 2
-//        self.cropsTableView?.layer.shadowRadius = 3
-//        self.cropsTableView?.layer.shadowColor = UIColor.black.cgColor
         
         self.cropsTableView?.delegate = self
         self.cropsTableView?.dataSource = self
@@ -75,7 +65,6 @@ class MyGardenOverviewTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         
-        //TODO TableView size should be resizable with the cell size!
         cropsTableView?.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
@@ -106,8 +95,6 @@ extension MyGardenOverviewTableViewCell : UITableViewDelegate, UITableViewDataSo
         cell.harvestDate?.text = crop.estimatedHarvestDate.inShortFormat()
         cell.textLabel?.text = crop.name!
         cell.progressBar?.setProgress(CGFloat(crop.percentageCompleted), animated: true)
-        
-        //TODO Set the progressView!
         
         return cell
         

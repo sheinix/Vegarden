@@ -93,9 +93,6 @@ class GestureInstructionView: UIView {
                 self.messageLabel.text = "Swipe Right to show menu"
             case .swipeDown:
                 self.messageLabel.text = "Swipe down and release to go back"
-            default:
-            
-                break
             }
         
         return self.messageLabel
@@ -114,8 +111,7 @@ class GestureInstructionView: UIView {
             imgView.image = UIImage(named:"swipeRight")
         case .swipeDown:
             imgView.image = UIImage(named:"swipeDown")
-        default:
-            break
+
         }
         
         return imgView

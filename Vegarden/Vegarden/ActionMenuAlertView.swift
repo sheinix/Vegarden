@@ -60,7 +60,7 @@ class ActionMenuAlertView: SCLAlertView {
         self.actionUnit = unit
         self.growingAction = action
         
-        self.listTableView = UITableView()//frame: screenBounds, style: UITableViewStyle.plain)
+        self.listTableView = UITableView()
         
         //Set the rows for Planting or GrowingActions:
         
@@ -75,10 +75,6 @@ class ActionMenuAlertView: SCLAlertView {
                 self.paddocks = rows.map { ($0 as Row).paddock! }.uniqueElements
             }
         }
-        
-        //Make the datasource with paddocks and freerows for each paddock
-        
-        //TODO is breaking here with nil when unwrapping optional!
         
         self.dataSource = self.paddocks!.map { Elements(patch: $0, rowsInPatch: (isPlanting ? $0.freeRows : $0.getPlantedRowsFor(crop: crop) )) }
         
@@ -152,10 +148,7 @@ class ActionMenuAlertView: SCLAlertView {
     private func createTitleSection() -> UIView {
         
         let titleView = UIView()
-        //titleView.layer.borderColor = UIColor.lightGray.cgColor
-      //  titleView.layer.borderWidth = 1
-      //  titleView.layer.cornerRadius = 9
-
+      
         //Crop Name
         let title = (isPlantingACrop! ? "Plant" : stringAction(action: self.growingAction!))
         
@@ -182,14 +175,12 @@ class ActionMenuAlertView: SCLAlertView {
             make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-           // make.height.equalTo(CropNameLabelHeight)
         }
         
         dateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(cropNameLabel.snp.bottom).offset(5)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-//            make.height.equalTo(dateLabelHeight)
         }
         
         return titleView
@@ -454,9 +445,7 @@ class ActionMenuAlertView: SCLAlertView {
 extension ActionMenuAlertView : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-       //TODO For now, just do actions on rows, its a design thing to think if we can do actions on patch or crop
-
+      
         return dataSource[section].rowsInPatch.count
         
     }

@@ -47,14 +47,7 @@ class PersistenceManager {
  
     public func saveContext() {
         
-        //TODO Try to see how to save on background, because now is blocking the main thread for saving
-        
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
-        
-
-        print ("all good")
-            
-
     }
 
 //MARK: - Garden Management Methods
@@ -64,14 +57,9 @@ class PersistenceManager {
         let newGarden = Garden.mr_createEntity()
         
         newGarden?.name = name
-        
-//        newGarden?.addToPaddocks(NSSet(array: paddock!))
-//        _ = newGarden?.paddocks?.allObjects.map { ($0 as! Paddock).garden = newGarden }
         newGarden?.location = location
         
         saveContext()
-        
-        //TODO FIX IT: When saving context the paddoc.garden = garden relationship is lost!
         
         return newGarden!
     }
@@ -105,10 +93,8 @@ class PersistenceManager {
         
         if let location = data.location { paddock.location?.locationName = location }
         
-        //TODO Validate that is number!!
         if let phLevel = data.phLevel { paddock.soil?.phLevel = Double(phLevel)! }
         
-        //TODO Validate that is number!!
         if let rowNamePfx = data.rowNamesPrefix { paddock.rowsNamePrefix = rowNamePfx }
         
         if let numRows = data.rowQtty {
@@ -174,7 +160,6 @@ class PersistenceManager {
     
     public func removePatch(patch: Paddock) {
         
-        //TODO Check if all the rows needs to be deleted aswell!
         patch.mr_deleteEntity()
         
         saveContext()
@@ -227,28 +212,19 @@ class PersistenceManager {
     
     public func addRows(numberOfRows: Int, to paddock: Paddock) {
         
-        //var newRows : [Row] = []
-        
-        //var rowName : String
         let rowPrefix = paddock.rowsNamePrefix
         
         for _ in (0..<numberOfRows) {
- 
-            //TODO Check helper method to see how can i get the randoms with a fixed length
-//            rowName = "V_"+String(HelperManager.random(digits: 5))
-            
+
             _ = addRow(rowName: rowPrefix!+String(arc4random()),
                                     length: nil,
                                         to: paddock)
             
         }
-        
-       // self.callBackDelegate?.didAdd(rows: newRows)
     }
     
     public func deleteRows(rows: [Row]) {
         
-        //TODO Check if necessesary to delete de life states of the rows before, or its cascade delteing!
          rows.forEach { (row) in
             row.lifeCycleState?.forEach( { ($0 as! RowLifeState).mr_deleteEntity() } )
             row.mr_deleteEntity()
@@ -258,12 +234,6 @@ class PersistenceManager {
         
         self.callBackDelegate?.didRemove(rows: rows)
     }
-    
-//    public func removeRow(row: Row, from paddock: Paddock, in garden: Garden) {
-//        
-//        row.mr_deleteEntity()
-//        
-//    }
     
     public func removeRows(rows: [Row], from paddock: Paddock, in garden: Garden) {
         
@@ -316,8 +286,6 @@ class PersistenceManager {
         
     public func getPlantedCrops() -> [Crop]? {
     
-        //TODO Get the crops that are planted! Return [] si no hay
-        
         var myPlantedCrops : [Crop]? = []
         
         let myRows = Row.mr_findAll()
@@ -365,8 +333,7 @@ class PersistenceManager {
             
             if (crop.row?.count == 0)  {
                 crop.owned = true
-               // saveContext()
-                
+               
                 callBackDelegate?.didAddCropToGarden(crop: crop)
             }
         }
@@ -394,13 +361,9 @@ class PersistenceManager {
         
         crop?.owned = false
         
-        ///saveContext()
-        
         callBackDelegate?.didRemoveCropFromGarden(crop: crop!)
         
     }
-    
-//    public func removePlantedCrop(crop: Crop)
     
     
 //MARK: - LifeCycle Methods

@@ -80,27 +80,22 @@ class AboutViewController: UITableViewController {
         return aboutAppereance.headerHeight
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+ 
     @objc public func rateApp() {
         rateApplication(appId: "", completion: {_ in })
     }
     
     @objc public func likeUs() {
        
-        UIApplication.shared.open(facebookURL, options: [:]) { (success) in
-            
-            if !success {
-                 self.showAlertView(title: "Oops!", message: "Can't open the page right now!", style: .alert, confirmBlock: {}, cancelBlock: {})
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(facebookURL, options: [:]) { (success) in
+                
+                if !success {
+                    self.showAlertView(title: "Oops!", message: "Can't open the page right now!", style: .alert, confirmBlock: {}, cancelBlock: {})
+                }
             }
+        } else {
+            
         }
     }
     

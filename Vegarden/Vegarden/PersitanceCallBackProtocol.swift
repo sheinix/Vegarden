@@ -36,6 +36,4 @@ protocol PersistanceCallBackProtocol: class {
     func didRemove(rows:[Row])
     
     func didUpdate(rows:[Row])
-    
-    //TODO Finish the protocol methods!
 }

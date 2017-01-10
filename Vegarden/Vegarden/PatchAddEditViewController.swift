@@ -126,7 +126,6 @@ extension PatchAddEditViewController : UITableViewDelegate, UITableViewDataSourc
         
         let cell = (tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.PatchEditionCellIdentifier) as! PatchEditionTableViewCell)
         
-        //TODO Change later, not good design to ask for the cell passing the row...
         cell.setTxtViewWith(patch: self.patch, forCellAt: indexPath.row)
         cell.txtField.delegate = self
         cell.txtField.tag = indexPath.row
@@ -229,8 +228,6 @@ fileprivate func validate(txtField : SkyFloatingLabelTextField, type : patchEdit
                 
                  } else { //Check if its modifying num rows, validate planted ones!
                 
-                
-                //TODO : Check this validation is not working properly i believe!
                 if  (Int(txtField.text!)! > (self.patch?.rows?.count)!) ||
                     (Int(txtField.text!)! >= (self.patch?.plantedRows.count)!) {
                     
