@@ -168,7 +168,7 @@ extension UIView{
         let confirm = ConfirmationView(frame: (frame != nil ? frame! : screenBounds), title: title)
         
         self.clipsToBounds = false
-//        confirm.clipsToBounds = false
+       confirm.clipsToBounds = false
         
         self.addSubview(confirm)
         

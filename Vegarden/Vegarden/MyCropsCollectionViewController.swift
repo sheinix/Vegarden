@@ -32,6 +32,7 @@ class MyCropsCollectionViewController: UICollectionViewController {
         self.navigationController!.delegate = delegateHolder
         self.navigationController?.navigationBar.isHidden = true
         self.automaticallyAdjustsScrollViewInsets = true;
+        self.collectionView?.backgroundColor = UIColor.white
         
         self.collectionView?.emptyDataSetSource = self
         self.collectionView?.emptyDataSetDelegate = self

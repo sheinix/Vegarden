@@ -40,7 +40,14 @@ class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtoco
         self.tableView.isScrollEnabled = true
         
         addObservers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        super.viewDidAppear(animated)
+        
+        let animationPoint = CGPoint(x: self.view.frame.origin.x + 20, y: self.view.frame.height/2 - 200)
+        InstructionsManager.shared.animate(gesture: .swipeRight, in: animationPoint, of: self.view)
     }
     
     deinit {

@@ -19,7 +19,7 @@ class CropDetailCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.clear.withAlphaComponent(0)
 
         // Register cell classes
@@ -105,8 +105,6 @@ class CropDetailCollectionViewController: UICollectionViewController {
         collectionCell.pullAction = { offset in
             self.pullOffset = offset
             
-          //  collectionCell.crop?.removeObserver(collectionCell, forKeyPath: "owned", context: &collectionCell.myContext)
-            
             if let nav = self.navigationController {
                     nav.popViewController(animated: true)
             } else {
@@ -165,14 +163,16 @@ extension CropDetailCollectionViewController : UICollectionViewDelegateFlowLayou
         let navBarHidden = self.navigationController?.isNavigationBarHidden
         let size = self.collectionView?.frame.size
         
+        
+        
         if ((size?.width)! > (size?.height)!) { //landscape
             
             itemSize = CGSize(width: (size?.width)!, height: (navBarHidden! ? screenHeight+20 : screenHeight-navigationHeaderAndStatusbarHeight))
         
         } else {
             
-            itemSize = (navBarHidden! ? CGSize(width:screenWidth, height:screenHeight+20) :
-                                       CGSize(width:screenWidth, height:screenHeight-navigationHeaderAndStatusbarHeight))
+            itemSize = (navBarHidden! ? CGSize(width:screenWidth, height:collectionView.frame.size.height) :
+                                       CGSize(width:screenWidth, height:collectionView.frame.size.height/*screenHeight-navigationHeaderAndStatusbarHeight*/))
         }
 
         return itemSize!

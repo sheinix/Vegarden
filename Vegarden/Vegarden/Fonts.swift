@@ -35,6 +35,8 @@ struct Fonts {
     
     static let aboutInfoFontTitle : UIFont = UIFont(name: "OpenSans-Light", size: 34)!
     static let aboutInfoFontText : UIFont = UIFont(name: "Avenir-Medium", size: 18)!
+    
+    static let instructionFont : UIFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 37)!
 }
 
 struct FontSizes {

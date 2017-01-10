@@ -26,6 +26,7 @@ class VTransition : NSObject , UIViewControllerAnimatedTransitioning{
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as UIViewController!
         
         let containerView = transitionContext.containerView
+        containerView.backgroundColor = UIColor.white
         
         if presenting {
             

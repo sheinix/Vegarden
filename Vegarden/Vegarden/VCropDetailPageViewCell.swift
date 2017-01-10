@@ -51,12 +51,12 @@ class VCropDetailPageViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         
         super.layoutSubviews()
-        //tableView?.reloadData()
     }
     
     override func prepareForReuse() {
      
         super.prepareForReuse()
+        tableView?.reloadData()
     }
     
     fileprivate func removeObserverFromCrop() {
@@ -107,6 +107,9 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         tableView?.register(VCropDetailPageTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.CropDetailTableViewCellIdentify)
         
         contentView.addSubview(tableView!)
+        
+        let animationPoint = CGPoint(x: (self.contentView.frame.width/2)-250, y:(self.frame.size.height/2)-250)
+        InstructionsManager.shared.animate(gesture: .swipeDown, in: animationPoint, of: self.contentView)
     }
 
     
@@ -128,18 +131,7 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
 
     }
-    
-//    @objc func cropRemoved(notification: Notification) {
-//        
-//        guard let cropie = notification.userInfo?["crop"] as? Crop else { return }
-//        if (self.crop?.name != cropie.name) { return }
-//        
-//        self.showConfirmViewWith(title: cropie.name! +  (cropie.owned ? " Added !" : "  Removed!"),
-//                                 frame: screenBounds,
-//                                 afterAction: { self.pullAction!((self.tableView?.contentOffset)!) })
-//
-//
-//    }
+
     @objc func cropPlanted(notification: Notification) {
         
         guard let crop = notification.userInfo?["crop"] as? Crop else { return }
@@ -195,8 +187,6 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
             cell?.imageView?.addSubview(cropTitle)
             cell?.imageView?.addSubview(statusButton)
             
-            
-            
             let buttonTitle = ((crop?.owned)!  ? "Plant" : "Add Crop")
             statusButton.setTitle(buttonTitle, for: UIControlState.normal)
             statusButton.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
@@ -214,8 +204,7 @@ extension VCropDetailPageViewCell: UITableViewDelegate, UITableViewDataSource {
                 make.height.equalTo(100)
                 make.width.equalTo(200)
             }
-            
-            
+        
         } else if indexPath.row == 1 {
             
             cell?.setupCropInfoWith(crop: self.crop!)

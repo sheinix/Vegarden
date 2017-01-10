@@ -34,6 +34,8 @@
 		2690D6DB1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690D6DA1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift */; };
 		26A683321DE9BA5100902129 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A683311DE9BA5100902129 /* OpenSans-Light.ttf */; };
 		26A6833B1DEA830E00902129 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */; };
+		26B124631E23471300E24FDB /* InstructionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B124621E23471300E24FDB /* InstructionsManager.swift */; };
+		26B124651E23489B00E24FDB /* GestureInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B124641E23489B00E24FDB /* GestureInstructionView.swift */; };
 		26B898F71E0B3F1F006C2A7B /* UISplitViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B898F61E0B3F1F006C2A7B /* UISplitViewControllerExtension.swift */; };
 		26B898FE1E0B5D8F006C2A7B /* WelcomeVegardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B898FD1E0B5D8F006C2A7B /* WelcomeVegardenViewController.swift */; };
 		26B899001E0B600A006C2A7B /* CreatePatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B898FF1E0B600A006C2A7B /* CreatePatchViewController.swift */; };
@@ -171,6 +173,8 @@
 		2690D6DA1DEF880000259F26 /* MyGardenTableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGardenTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		26A683311DE9BA5100902129 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		26A6833A1DEA830E00902129 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		26B124621E23471300E24FDB /* InstructionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsManager.swift; sourceTree = "<group>"; };
+		26B124641E23489B00E24FDB /* GestureInstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureInstructionView.swift; sourceTree = "<group>"; };
 		26B898F61E0B3F1F006C2A7B /* UISplitViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISplitViewControllerExtension.swift; sourceTree = "<group>"; };
 		26B898FD1E0B5D8F006C2A7B /* WelcomeVegardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVegardenViewController.swift; sourceTree = "<group>"; };
 		26B898FF1E0B600A006C2A7B /* CreatePatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePatchViewController.swift; sourceTree = "<group>"; };
@@ -645,6 +649,7 @@
 		96F723121DB360C1000100B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				26B124621E23471300E24FDB /* InstructionsManager.swift */,
 				262785211E0B37FD00E70BCC /* WalkthroughManager.swift */,
 				BD83BF6B1D9FE56800C7D79A /* PersistenceManager.swift */,
 				96F723101DB360BA000100B2 /* GardenManager.swift */,
@@ -677,6 +682,7 @@
 				960E5AD81DCDDC2200ED39A8 /* NoteView.swift */,
 				2681451D1DDD7B6700BE6018 /* ConfirmationView.swift */,
 				262784F11E08B44800E70BCC /* ZoomView.swift */,
+				26B124641E23489B00E24FDB /* GestureInstructionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B124651E23489B00E24FDB /* GestureInstructionView.swift in Sources */,
 				9654A8AB1DB8E06D00A0A9D9 /* Harvesting+CoreDataProperties.swift in Sources */,
 				262785221E0B37FD00E70BCC /* WalkthroughManager.swift in Sources */,
 				26BDDBF51DEBA95C003547BB /* MyGardenOverviewCropTableViewCell.swift in Sources */,
@@ -971,6 +978,7 @@
 				26B899021E0B6485006C2A7B /* FinalStepViewController.swift in Sources */,
 				BDE061731D9FDC660003364D /* Herb+CoreDataProperties.swift in Sources */,
 				2670BF091E0212FF007F0862 /* YLProgressBar.m in Sources */,
+				26B124631E23471300E24FDB /* InstructionsManager.swift in Sources */,
 				262784F01E0894CA00E70BCC /* Zoomable.swift in Sources */,
 				9654A8A41DB8875E00A0A9D9 /* GardenManagementProtocol.swift in Sources */,
 				9654A89B1DB5F95800A0A9D9 /* CropState+CoreDataProperties.swift in Sources */,
