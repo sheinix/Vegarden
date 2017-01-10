@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -274,7 +273,7 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="yjN-P6-YiT">
             <objects>
-                <viewController storyboardIdentifier="page23" id="60z-eq-e6d" customClass="BWWalkthroughPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page23" id="60z-eq-e6d" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NAk-Es-5Mg"/>
                         <viewControllerLayoutGuide type="bottom" id="oUF-sv-5Ez"/>

@@ -9,8 +9,8 @@
 import UIKit
 import BWWalkthrough
 
-let defaultBottomValue = 78
-let defaultTopPatchBttnValue = 380
+let defaultBottomValue =  iOS10available() ? 78 : screenHeight - 200
+let defaultTopPatchBttnValue = iOS10available() ? 380 : (screenHeight/2) - 100
 
 class MasterWalkthroughViewController: BWWalkthroughViewController {
 

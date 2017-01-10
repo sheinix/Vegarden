@@ -8,6 +8,11 @@
 
 import Foundation
 
+    public func iOS10available() -> Bool {
+        if #available(iOS 10.0, *) { return true } else { return false }
+    }
+
+
     public func rateApplication(appId: String, completion: @escaping ((_ success: Bool)->())) {
         
         guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {

@@ -39,7 +39,7 @@ class WalkthroughManager {
             
             showWalkthroughIn(viewController: viewController)
 
-            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
+            //UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
         
         } else {
@@ -91,7 +91,7 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
         let isLastStep = ((self.walkThrough?.numberOfPages)! - 1 == pageNumber)
       
         self.walkThrough?.hiddenFinishBttn = !isLastStep
-       // self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
+        self.walkThrough?.hiddenCreatePatchBttn = (pageNumber != 1)
         self.walkThrough?.nameMsgLabel.isHidden = !isLastStep
         self.walkThrough?.nameTextField.isHidden = !isLastStep
         
@@ -107,53 +107,43 @@ extension WalkthroughManager : BWWalkthroughViewControllerDelegate {
     
     fileprivate func animateButton(pageNumber: Int) {
     
-        let nextValue = (pageNumber == 0 || pageNumber == 2 ? defaultBottomValue : -80)
+        let nextValue = (pageNumber == 0 || pageNumber == 2 ? defaultBottomValue : (iOS10available() ? -80 : -2000))
         let patchValue = (pageNumber == 1 ? defaultTopPatchBttnValue : -800)
         
-//        if #available(iOS 10.0, *) {
-//            let bttnAnimation = UIViewPropertyAnimator(duration: 0.2,
-//                                                       curve: UIViewAnimationCurve.linear,
-//                                                       animations: {
-//                                                        
-//                                                        self.walkThrough?.bottomNextBttnConstraint.constant = CGFloat(nextValue)
-//                                                        self.walkThrough?.view.layoutIfNeeded()
-//            })
-//        } else {
+        if #available(iOS 10.0, *) {
+            let bttnAnimation = UIViewPropertyAnimator(duration: 0.2,
+                                                       curve: UIViewAnimationCurve.linear,
+                                                       animations: {
+                                                        
+                                                        self.walkThrough?.bottomNextBttnConstraint.constant = CGFloat(nextValue)
+                                                        self.walkThrough?.view.layoutIfNeeded()
+            })
+            
+            let createPatchBttn = UIViewPropertyAnimator(duration: 0.2,
+                                                         curve: UIViewAnimationCurve.linear,
+                                                         animations: {
+                                                            
+                                                            self.walkThrough?.topCreatePatchConstraint.constant = CGFloat(patchValue)
+                                                            self.walkThrough?.view.layoutIfNeeded()
+            })
+
+            bttnAnimation.startAnimation()
+            createPatchBttn.startAnimation()
+            
+        } else {
+        
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: .curveLinear, animations:  {
                 
                 self.walkThrough?.nextButton?.frame.origin.y = CGFloat(nextValue)
                 
             }, completion: { (success) in self.walkThrough?.view.layoutIfNeeded() })
-//        }
         
-//        if #available(iOS 10.0, *) {
-//            let createPatchBttn = UIViewPropertyAnimator(duration: 0.2,
-//                                                         curve: UIViewAnimationCurve.linear,
-//                                                         animations: {
-//                                                            
-//                                                            self.walkThrough?.topCreatePatchConstraint.constant = CGFloat(patchValue)
-//                                                            self.walkThrough?.view.layoutIfNeeded()
-//            })
-//        } else {
+        if pageNumber == 1 {
             UIView.animate(withDuration: 0.5, delay: 1.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: .curveLinear, animations:  {
                 
                 self.walkThrough?.createPatchBttn?.frame.origin.y = CGFloat(patchValue)
                 
-            }, completion: { (success) in self.walkThrough?.view.layoutIfNeeded() })
-//        }
-//
-//        if #available(iOS 10.0, *) {
-//            bttnAnimation.startAnimation()
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//        if #available(iOS 10.0, *) {
-//            createPatchBttn.startAnimation()
-//        } else {
-//            // Fallback on earlier versions
-//        }
+            }, completion: { (success) in self.walkThrough?.view.layoutIfNeeded() }) }
+        }
     }
-    
-    
-    
 }
