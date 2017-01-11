@@ -25,7 +25,7 @@ class MasterViewController: UITableViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationController?.navigationBar.isHidden = true
         
-        self.tableView.backgroundColor = UIColor(red: 213, green: 240, blue: 226, alpha: 0.5)
+        self.tableView.backgroundColor = UIColor.white//UIColor(red: 213, green: 240, blue: 226, alpha: 0.5)
 
     }
     
@@ -40,17 +40,6 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Segues
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//   
-//        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-//        controller.viewControllerInside = insideVC
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-//        controller.navigationItem.leftItemsSupplementBackButton = true
-//        
-//    }
     
     // MARK: - Table View
     

@@ -82,7 +82,7 @@ class AboutViewController: UITableViewController {
     
  
     @objc public func rateApp() {
-        rateApplication(appId: "", completion: {_ in })
+        rateApplication(appId: appId, completion: {_ in })
     }
     
     @objc public func likeUs() {

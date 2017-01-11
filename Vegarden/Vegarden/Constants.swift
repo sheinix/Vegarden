@@ -22,6 +22,7 @@ let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHe
 let isLandscape = UIApplication.shared.statusBarOrientation.isLandscape
 let facebookURL = URL(string: "https://www.facebook.com/akiwiandagaucho/")!
 let appVersion = String(describing: (Bundle.main.infoDictionary!["CFBundleShortVersionString"]!))
+let appId = "1193844204"
 
 struct Appereance {
     public func appereanceForAlert(frame: CGRect, color: UIColor, needsTitle: Bool) -> SCLAlertView.SCLAppearance {

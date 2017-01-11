@@ -39,7 +39,7 @@ class WalkthroughManager {
             
             showWalkthroughIn(viewController: viewController)
 
-            //UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
+            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.walkthroughKey)
             UserDefaults.standard.synchronize()
         
         } else {

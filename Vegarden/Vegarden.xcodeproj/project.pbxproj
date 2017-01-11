@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0932730E28F2E745911225 /* Pods_Vegarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68186E19560B2D502A8A817 /* Pods_Vegarden.framework */; };
 		2620FCE91DEE4A2A00352111 /* PatchAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */; };
 		2620FCEC1DEE4FFB00352111 /* PatchEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */; };
+		26213FDD1E25D2FF007352E3 /* VegardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26213FDC1E25D2FF007352E3 /* VegardenUITests.swift */; };
+		26213FE51E25D345007352E3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26213FE41E25D345007352E3 /* SnapshotHelper.swift */; };
 		262784F01E0894CA00E70BCC /* Zoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262784EF1E0894CA00E70BCC /* Zoomable.swift */; };
 		262784F21E08B44800E70BCC /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262784F11E08B44800E70BCC /* ZoomView.swift */; };
 		262785201E0B335400E70BCC /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2627851F1E0B335400E70BCC /* Walkthrough.storyboard */; };
@@ -143,9 +146,23 @@
 		BDE061891D9FDC660003364D /* Weed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0615F1D9FDC660003364D /* Weed+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		26213FDF1E25D2FF007352E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7B8E9E1D9118060063347D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD7B8EA51D9118060063347D;
+			remoteInfo = Vegarden;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2620FCE81DEE4A2A00352111 /* PatchAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchAddEditViewController.swift; sourceTree = "<group>"; };
 		2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchEditionTableViewCell.swift; sourceTree = "<group>"; };
+		26213FDA1E25D2FF007352E3 /* VegardenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VegardenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26213FDC1E25D2FF007352E3 /* VegardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegardenUITests.swift; sourceTree = "<group>"; };
+		26213FDE1E25D2FF007352E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26213FE41E25D345007352E3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		262784EF1E0894CA00E70BCC /* Zoomable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zoomable.swift; sourceTree = "<group>"; };
 		262784F11E08B44800E70BCC /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		2627851F1E0B335400E70BCC /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
@@ -292,11 +309,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		26213FD71E25D2FF007352E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD7B8EA31D9118060063347D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5E74EA8800A53DA97085CCD5 /* Pods_Vegarden.framework in Frameworks */,
+				0B0932730E28F2E745911225 /* Pods_Vegarden.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +343,16 @@
 				2620FCEB1DEE4FFB00352111 /* PatchEditionTableViewCell.swift */,
 			);
 			name = PatchRowEditCells;
+			sourceTree = "<group>";
+		};
+		26213FDB1E25D2FF007352E3 /* VegardenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26213FDC1E25D2FF007352E3 /* VegardenUITests.swift */,
+				26213FE41E25D345007352E3 /* SnapshotHelper.swift */,
+				26213FDE1E25D2FF007352E3 /* Info.plist */,
+			);
+			path = VegardenUITests;
 			sourceTree = "<group>";
 		};
 		264938C61E03632C00B081F7 /* NumberPad */ = {
@@ -701,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7B8EA81D9118080063347D /* Vegarden */,
+				26213FDB1E25D2FF007352E3 /* VegardenUITests */,
 				BD7B8EA71D9118080063347D /* Products */,
 				6F59DDC4D0791FBC80CE3F13 /* Pods */,
 				7A1AD46C11CADAE35089C031 /* c */,
@@ -712,6 +748,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7B8EA61D9118080063347D /* Vegarden.app */,
+				26213FDA1E25D2FF007352E3 /* VegardenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -762,6 +799,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		26213FD91E25D2FF007352E3 /* VegardenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26213FE11E25D2FF007352E3 /* Build configuration list for PBXNativeTarget "VegardenUITests" */;
+			buildPhases = (
+				26213FD61E25D2FF007352E3 /* Sources */,
+				26213FD71E25D2FF007352E3 /* Frameworks */,
+				26213FD81E25D2FF007352E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26213FE01E25D2FF007352E3 /* PBXTargetDependency */,
+			);
+			name = VegardenUITests;
+			productName = VegardenUITests;
+			productReference = 26213FDA1E25D2FF007352E3 /* VegardenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BD7B8EA51D9118060063347D /* Vegarden */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD7B8EBD1D9118080063347D /* Build configuration list for PBXNativeTarget "Vegarden" */;
@@ -788,15 +843,21 @@
 		BD7B8E9E1D9118060063347D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Juan Nuvreni";
 				TargetAttributes = {
+					26213FD91E25D2FF007352E3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = C8499A962H;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD7B8EA51D9118060063347D;
+					};
 					BD7B8EA51D9118060063347D = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = C8499A962H;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -814,11 +875,19 @@
 			projectRoot = "";
 			targets = (
 				BD7B8EA51D9118060063347D /* Vegarden */,
+				26213FD91E25D2FF007352E3 /* VegardenUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		26213FD81E25D2FF007352E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD7B8EA41D9118060063347D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -889,6 +958,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		26213FD61E25D2FF007352E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26213FDD1E25D2FF007352E3 /* VegardenUITests.swift in Sources */,
+				26213FE51E25D345007352E3 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD7B8EA21D9118060063347D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1019,6 +1097,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		26213FE01E25D2FF007352E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD7B8EA51D9118060063347D /* Vegarden */;
+			targetProxy = 26213FDF1E25D2FF007352E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BD7B8EB71D9118080063347D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1031,6 +1117,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		26213FE21E25D2FF007352E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C8499A962H;
+				INFOPLIST_FILE = VegardenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JuanNuvreni.VegardenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Vegarden;
+			};
+			name = Debug;
+		};
+		26213FE31E25D2FF007352E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C8499A962H;
+				INFOPLIST_FILE = VegardenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JuanNuvreni.VegardenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Vegarden;
+			};
+			name = Release;
+		};
 		BD7B8EBB1D9118080063347D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1053,6 +1169,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1104,7 +1221,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Juan Nuvreni (C8499A962H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Juan Nuvreni (C8499A962H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1133,15 +1251,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C8499A962H;
 				INFOPLIST_FILE = Vegarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sheinix.Vegarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "66fc1d00-f803-4b65-bd7e-da36119ed7dc";
+				PROVISIONING_PROFILE_SPECIFIER = "sheinix.Vegarden AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1152,20 +1276,35 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C8499A962H;
 				INFOPLIST_FILE = Vegarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sheinix.Vegarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "66fc1d00-f803-4b65-bd7e-da36119ed7dc";
+				PROVISIONING_PROFILE_SPECIFIER = "sheinix.Vegarden AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vegarden/Vegarden-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		26213FE11E25D2FF007352E3 /* Build configuration list for PBXNativeTarget "VegardenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26213FE21E25D2FF007352E3 /* Debug */,
+				26213FE31E25D2FF007352E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BD7B8EA11D9118060063347D /* Build configuration list for PBXProject "Vegarden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
