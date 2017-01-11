@@ -29,7 +29,12 @@ class InstructionsManager {
        
     public func animate(gesture: gestureTypes, in point: CGPoint, of screen: UIView) {
         
-        if !UserDefaults.isFirstLaunch() { return }
+        guard !UserDefaults.standard.bool(forKey: gesture.keyForGesture) else {
+           return
+        }
+        
+        UserDefaults.standard.set(true, forKey: gesture.keyForGesture)
+        UserDefaults.standard.synchronize()
         
         let frame = CGRect(x: point.x, y: point.y, width: 250, height: 250)
         

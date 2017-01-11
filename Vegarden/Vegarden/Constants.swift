@@ -155,4 +155,6 @@ public struct lifeStates {
 public struct UserDefaultsKeys {
     static let userNameKey = "userName"
     static let walkthroughKey = "walkthroughPresented"
+    static let swipeRightKey = "instructionSwipeRight"
+    static let swipeDownKey = "instructionSwipeDown"
 }

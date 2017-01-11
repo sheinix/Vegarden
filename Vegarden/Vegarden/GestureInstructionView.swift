@@ -20,6 +20,16 @@ protocol GestureInstructionViewDelegate: class {
 
 public enum gestureTypes : Int  {
     case swipeRight = 0, swipeDown
+    
+    public var keyForGesture : String! {
+        switch self {
+        case .swipeDown:
+            return UserDefaultsKeys.swipeDownKey
+        case .swipeRight:
+            return UserDefaultsKeys.swipeRightKey
+
+        }
+    }
 }
 
 

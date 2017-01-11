@@ -270,7 +270,8 @@ class PersistenceManager {
         let crops = Crop.mr_findAll()
         
         let distinct : [Crop] = crops?.filter({ (crop) -> Bool in
-            (crop as! Crop).states?.count == 0
+            ((crop as! Crop).states?.count)! == 0 }).sorted(by: { (crop1, crop2) -> Bool in
+            (crop1 as! Crop).name! < (crop2 as! Crop).name!
         }) as! [Crop]
 
         return  distinct

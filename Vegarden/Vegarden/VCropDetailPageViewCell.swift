@@ -108,8 +108,8 @@ class VCropDetailPageViewCell: UICollectionViewCell {
         
         contentView.addSubview(tableView!)
         
-        let animationPoint = CGPoint(x: (self.contentView.frame.width/2)-250, y:(self.frame.size.height/2)-250)
-        InstructionsManager.shared.animate(gesture: .swipeDown, in: animationPoint, of: self.contentView)
+//        let animationPoint = CGPoint(x: (self.contentView.frame.width/2)-250, y:(self.frame.size.height/2)-250)
+//        InstructionsManager.shared.animate(gesture: .swipeDown, in: animationPoint, of: self.contentView)
     }
 
     

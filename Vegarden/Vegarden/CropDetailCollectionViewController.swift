@@ -81,16 +81,6 @@ class CropDetailCollectionViewController: UICollectionViewController {
     
         super.viewWillTransition(to: size, with: coordinator)
     }
-//
-//    override func viewWillLayoutSubviews() {
-//        
-//        super.viewWillLayoutSubviews()
-//        
-//        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.invalidateLayout()
-//        }
-//    }
-    
     
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
@@ -126,6 +116,14 @@ class CropDetailCollectionViewController: UICollectionViewController {
             
             //print("We have a problem! Ouch!!!")
         }
+        
+        let animationPoint = CGPoint(x: (cropDetailCell.contentView.frame.width/2)-250,
+                                     y:(cropDetailCell.frame.size.height/2)-250)
+        
+        InstructionsManager.shared.animate(gesture: .swipeDown,
+                                                in: animationPoint,
+                                                of: cropDetailCell.contentView)
+        
         
     }
     
