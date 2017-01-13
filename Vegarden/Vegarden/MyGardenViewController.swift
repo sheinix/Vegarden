@@ -18,7 +18,7 @@ enum patchAction : Int {
 }
 
 class MyGardenViewController: UITableViewController, TableHeaderAddButtonProtocol {
-
+    
     let totalPlantedCrops : Int = (GardenManager.shared.myPlantedCrops()?.count)!
     var totalPaddocks : Int = (GardenManager.shared.getMyGarden().paddocks?.count)!
     var patchs : [Paddock] = (GardenManager.shared.getMyGarden().paddocks?.allObjects as! [Paddock])

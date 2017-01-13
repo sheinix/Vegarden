@@ -200,6 +200,7 @@ class ActionMenuAlertView: SCLAlertView {
         
 
         //TODO Add customization appearance to the class appearence later
+        notesTxtView.accessibilityLabel = "notes"
         notesTxtView.placeholder = "Something to add to remember?"
         notesTxtView.font = UIFont.systemFont(ofSize: 15)
         notesTxtView.borderStyle = UITextBorderStyle.none

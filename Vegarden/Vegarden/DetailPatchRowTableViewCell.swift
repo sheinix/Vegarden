@@ -23,6 +23,7 @@ class DetailPatchRowTableViewCell: UITableViewCell {
         
         self.switchControl.setOn(false, animated: false)
         self.switchControl.layer.cornerRadius = 16
+        self.switchControl.accessibilityLabel = "switchAction"
         
         self.contentView.addSubview(rowName)
         self.contentView.addSubview(switchControl)

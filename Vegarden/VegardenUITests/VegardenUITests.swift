@@ -19,64 +19,102 @@ class VegardenUITests: XCTestCase {
         app.launch()
     }
     
-//    override func tearDown() {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//        super.tearDown()
-//    }
-    
     func testExample() {
+    
         
         let app = XCUIApplication()
+        
+        testMyGardenViewScreen(app: app)
+        
+        testDatabase(app: app)
+        
+        testPlanting(app: app)
+        
+     //   testLifeCycle(app: app)
+    }
+    
+    func testLifeCycle(app: XCUIApplication) {
+        
+        let cells = app.tables.cells
+       
+        cells.staticTexts["LifeCycle"].tap()
+        
+        app.otherElements["PopoverDismissRegion"].tap()
+        
+        app.tables.cells.staticTexts["Carrot"].tap()
+        
+        let celdas = app.tables.cells
+        
+        //let bttn = celdas.children(matching: .).matching(identifier: "actionMenu")
+       // bttn.tap()
+        
+    }
+    
+    func testPlanting(app: XCUIApplication) {
+        
+        let cells = app.tables.cells
+        cells.staticTexts["My Crops"].tap()
+        
+        app.otherElements["PopoverDismissRegion"].tap()
+        
+        app.collectionViews.images["carrot"].tap()
+        app.collectionViews.tables.buttons["Plant"].tap()
+    
+        
+       // let switch01 = app.tables.cells.staticTexts["switchAction"]
+       // let sw0 = switches.element
+        //switch01.tap()
+        
+        let txtField = app.textFields["notes"]
+        UIPasteboard.general.string = "Planting some Carrots on a Sunny Day! =) "
+       
+        txtField.press(forDuration: 1.1)
+        app.menuItems["Paste"].tap()
+        
+        snapshot("Planting01")
+        
+        
+    }
+    
+    func testDatabase(app : XCUIApplication) {
+        
+        
+        let cells = app.tables.cells
+        cells.staticTexts["Database"].tap()
+       
+        app.otherElements["PopoverDismissRegion"].tap()
+        
+        snapshot("Database0")
+        
+        app.collectionViews.images["basil"].tap()
+        
+        snapshot("Basil")
+        
+        app.collectionViews.cells.tables.cells.staticTexts["Basil"].swipeDown()
+        
+        app.collectionViews.images["cabbage"].tap()
+        
+        snapshot("Cabbage")
+        
+        app.collectionViews.cells.tables.cells.staticTexts["Cabbage"].swipeDown()
+        
+        
+        
+    }
+    
+    func testMyGardenViewScreen(app : XCUIApplication) {
+       
+        app.otherElements["PopoverDismissRegion"].tap()
+        
         let tablesQuery = app.tables
         
-        snapshot("03")
+        snapshot("MyGardenView01")
         
-        tablesQuery.staticTexts["Total Rows : 4"].tap()
+        tablesQuery.staticTexts["Brassicas"].tap()
         
-        snapshot("04")
-        
-        app.buttons["Confirm"].tap()
-        
-        snapshot("05")
-        
-        app.alerts["Information"].buttons["OK"].tap()
-        
-        tablesQuery.cells.containing(.staticText, identifier:"Dsfasdf from").children(matching: .button).matching(identifier: "Edit Rows").element(boundBy: 1).tap()
-        
-        snapshot("04")
+        snapshot("MyGardenView01_EditPatch")
         
         app.buttons["Close"].tap()
-        tablesQuery.cells.tables.children(matching: .cell).element(boundBy: 0).swipeRight()
-        
-        let collectionViewsQuery = XCUIApplication().collectionViews
-        
-        snapshot("05")
-        
-        collectionViewsQuery.children(matching: .cell).element(boundBy: 3).children(matching: .other).element.swipeUp()
-        
-        snapshot("06")
-        
-        collectionViewsQuery.tables.staticTexts["Carrot"].swipeDown()
-        
-        snapshot("07")
-        
-        
-        XCUIApplication().collectionViews.images["rocket"].swipeUp()
-        XCUIApplication().collectionViews.tables.buttons["Plant"].tap()
-        
-        snapshot("08")
-        
-        let collectionViewsQuery2 = XCUIApplication().collectionViews
-        collectionViewsQuery2.images["carrot"].tap()
-        
-        snapshot("09")
-        
-        collectionViewsQuery2.tables.buttons["Plant"].tap()
-        
-        snapshot("11")
-        
-        XCUIApplication().buttons["Water"].tap()
-        
         
         
     }
