@@ -39,7 +39,7 @@ class CropLifeCycleTableViewCell: FoldingCell {
     
     override func awakeFromNib() {
         
-        self.applyLightShadow()
+        //self.applyLightShadow()
         
         foregroundView.layer.cornerRadius = UINumbericConstants.commonCornerRadius
         foregroundView.layer.masksToBounds = true
@@ -164,41 +164,41 @@ class CropLifeCycleTableViewCell: FoldingCell {
     }
     
     
-    public func copyForegroundViewOfCellIntoContainer() {
-        
-        //Get the colletionView and copy the foreground into the "header" of the collection
-        self.containerView.subviews.forEach({ (view) in
-            
-            if (view is UICollectionView) {
-                
-                let referencedCollectionView = (view as! UICollectionView)
-                let copiedView : UIView = self.foregroundView.copyView()
-                
-                copiedView.subviews.forEach({ (view) in
-                    if (view is MBCircularProgressBarView) {
-                        //TODO Uncomment when using real datasource!
-                        //  let progressNumber = CGFloat(integerLiteral: myPlantedCrops[indexPath.row].getEstimatedDaysLeftToHarvest())
-                        
-                        //                            (view as!  MBCircularProgressBarView).setValue(progressNumber, animateWithDuration: 3.0)
-                    }
-                })
-                
-                
-                self.containerView.addSubview(copiedView)
-                
-                copiedView.snp.makeConstraints({ (make) in
-                    make.top.equalToSuperview()
-                    make.left.equalToSuperview()
-                    make.right.equalToSuperview()
-                    make.bottom.equalTo(referencedCollectionView.snp.top)
-                })
-                
-                copiedView.layer.borderColor = self.layer.borderColor
-                copiedView.layer.borderWidth = self.layer.borderWidth
-                copiedView.layer.cornerRadius = self.layer.cornerRadius
-            }
-        })
-    }
+//    public func copyForegroundViewOfCellIntoContainer() {
+//        
+//        //Get the colletionView and copy the foreground into the "header" of the collection
+//        self.containerView.subviews.forEach({ (view) in
+//            
+//            if (view is UICollectionView) {
+//                
+//                let referencedCollectionView = (view as! UICollectionView)
+//                let copiedView : UIView = self.foregroundView.copyView()
+//                
+//                copiedView.subviews.forEach({ (view) in
+//                    if (view is MBCircularProgressBarView) {
+//                        //TODO Uncomment when using real datasource!
+//                        //  let progressNumber = CGFloat(integerLiteral: myPlantedCrops[indexPath.row].getEstimatedDaysLeftToHarvest())
+//                        
+//                        //                            (view as!  MBCircularProgressBarView).setValue(progressNumber, animateWithDuration: 3.0)
+//                    }
+//                })
+//                
+//                
+//                self.containerView.addSubview(copiedView)
+//                
+//                copiedView.snp.makeConstraints({ (make) in
+//                    make.top.equalToSuperview()
+//                    make.left.equalToSuperview()
+//                    make.right.equalToSuperview()
+//                    make.bottom.equalTo(referencedCollectionView.snp.top)
+//                })
+//                
+//                copiedView.layer.borderColor = self.layer.borderColor
+//                copiedView.layer.borderWidth = self.layer.borderWidth
+//                copiedView.layer.cornerRadius = self.layer.cornerRadius
+//            }
+//        })
+//    }
     
     fileprivate func updateActionButtonMenu () {
       
@@ -210,26 +210,27 @@ class CropLifeCycleTableViewCell: FoldingCell {
                 
             case "Remove":
                 
+                buttonMenu.buttonColor = Colors.removeColor
                 buttonMenu.handler = { buttonMenu in  self.showConfirmationScreenFor(action: .UnplantAction, crop: cropie) }
                 
             case "Weed":
-                
+                buttonMenu.buttonColor = Colors.weedColor
                 buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .WeedAction, crop: cropie) }
                 
             case "Water":
-                
+                buttonMenu.buttonColor = Colors.waterColor
                 buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .WaterAction, crop: cropie) }
                 
             case "Fertilize":
-                
+                buttonMenu.buttonColor = Colors.fertilizeColor
                 buttonMenu.handler = { buttonMenu in  self.showConfirmationScreenFor(action: .FertilizeAction, crop: cropie)}
                 
             case "Harvest":
-                
+                buttonMenu.buttonColor = Colors.harvestColor
                 buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .HarvestAction, crop: cropie) }
                 
             case "Finish":
-                
+                buttonMenu.buttonColor = Colors.finishHarvestColor
                 buttonMenu.handler = { buttonMenu in self.showConfirmationScreenFor(action: .FinishAction, crop: cropie) }
             
             default: break
@@ -244,13 +245,14 @@ class CropLifeCycleTableViewCell: FoldingCell {
 
         guard let cropie = self.crop else { return  }
         
-        actionMenu.addItem("Remove", icon: UIImage(named:"icon_fertilize"))
-        actionMenu.addItem("Weed", icon: UIImage(named: "icon_weeding"))
-        actionMenu.addItem("Water", icon: UIImage(named:"icon_watering"))
-        actionMenu.addItem("Fertilize", icon: UIImage(named:"icon_fertilize"))
+        actionMenu.addItem(title: "Remove")
+        actionMenu.addItem(title: "Weed")
+        actionMenu.addItem(title: "Water")
+        actionMenu.addItem(title: "Fertilize")
         
-        if (cropie.isReadyForHarvest) {actionMenu.addItem("Harvest", icon: UIImage(named:"icon_harvest"))}
-        if (cropie.hasBeenHarvested) {actionMenu.addItem("Finish", icon: UIImage(named:"icon_harvest"))}
+        
+        if (cropie.isReadyForHarvest) {actionMenu.addItem(title:"Harvest")}
+        if (cropie.hasBeenHarvested) {actionMenu.addItem(title:"Finish")}
         
         updateActionButtonMenu()
     }

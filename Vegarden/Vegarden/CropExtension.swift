@@ -18,7 +18,7 @@ extension Crop {
         
         get {
             
-            return (estimatedDaysLeftToHarvest == 0)
+            return (estimatedDaysLeftToHarvest <= 0)
         }
     }
     
@@ -42,9 +42,9 @@ extension Crop {
     public var percentageCompleted : Double {
         get {
             
-            let percentage = Double(daysPassedSincePlanted / computedTimeToHarvest).roundTo(places: 2)
+            let percentage = Double(Double(daysPassedSincePlanted) / Double(computedTimeToHarvest)).roundTo(places: 2)
             
-            return (percentage <= 0.00 ? 0.01 : percentage)
+            return (percentage <= 0.00 ? 0.01 : (percentage > 1 ? 1.00 : percentage))
         }
     }
     
