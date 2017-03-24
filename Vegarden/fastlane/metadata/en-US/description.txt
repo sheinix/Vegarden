@@ -1,1 +1,24 @@
 Vegarden is a veggie gardening database and management app designed to improve and enhace your health by allowing you to grow better and healthier veggies.
+Dig into the veggie database to know more about them. Each vegetable has a lot of useful information and a personalized approach to gardening, with information about the potential problems and diseases, planting directions, planting companions, growing and harvest tips, storage and use.
+
+
+Features: 
+
+- Browse through our well cared database
+- Add vegetables to My Crops to have an easy and quick access
+- 
+- Learn the tips/tricks of growing vegetables 
+- Track progress of your planted veggies
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+Credits: 
+- Icons by http://www.flaticon.com/
