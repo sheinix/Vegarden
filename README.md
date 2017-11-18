@@ -2,7 +2,7 @@
 
 ### Vegarden is an app for managing your veggie garden
 
-Is written in Swift 3 and focused for running manily on iPad devices. Is an ongoing project, that is a bit abondened at the moment.
+It's written in Swift 3 and is focused to run mainily on iPad devices. It's an ongoing project, that's on hold at the moment.
 
 #### Here's a list of things you can do with Vegarden App:
 
