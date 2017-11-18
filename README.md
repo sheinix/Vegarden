@@ -15,8 +15,15 @@ It's written in Swift 3 and is focused to run mainily on iPad devices. It's an o
 - Add, Remove or Edit your veggie patchs from My Garden Screen
 - Add, Remove or Edit rows of any patch from My Garden Screen
 
+## Screenshots
+![Alt text 1](https://github.com/sheinix/Vegarden/blob/master/Vegarden/Screenshots/IMG_0071.PNG?raw=false "Vegarden")
+![Alt text 2](https://github.com/sheinix/Vegarden/blob/master/Vegarden/Screenshots/IMG_0072.PNG?raw=false "Vegarden")
+![Alt text 3](https://github.com/sheinix/Vegarden/blob/master/Vegarden/Screenshots/IMG_0075.PNG?raw=false "Vegarden")
 
-#### There's still a lot of things to do:
+
+
+
+### There's still a lot of things to do:
 
 - Refactor and clean up of code (most of the code is quite old and can be done much better)
 - It needs an API for the database, currently is running a CoreData database with all the veggies
